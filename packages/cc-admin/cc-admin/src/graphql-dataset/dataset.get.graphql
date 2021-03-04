@@ -1,0 +1,14 @@
+query getDataset($id:ID!) {
+  dataset(id:$id) {
+    id
+    url
+    labels
+    name
+    description
+    author
+    dateCreated
+    dateModified
+    license
+    distribution
+  }
+}

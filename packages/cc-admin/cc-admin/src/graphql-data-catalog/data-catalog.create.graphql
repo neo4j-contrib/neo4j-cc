@@ -1,0 +1,13 @@
+mutation createDataCatalog($input: CreateDataCatalogInput!) {
+  createDataCatalog(createDataCatalogInput:$input) {
+    id
+    labels
+    name
+    url
+    description
+    author
+    dateCreated
+    dateModified
+    license
+  }
+}
