@@ -40,6 +40,22 @@ type Dataset {
   distribution: String!
 }
 
+type Person {
+  """UUID"""
+  id: ID!
+  labels: [String!]
+  name: String!
+  url: String
+
+  """
+  A callsign, as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles. Typically correlates with username, when available.
+  """
+  callSign: String
+
+  """Primary email address"""
+  email: String
+}
+
 type Query {
   users: [User!]!
   user(id: ID!): User!
@@ -47,6 +63,8 @@ type Query {
   dataCatalog(id: ID!): DataCatalog!
   datasets: [Dataset!]!
   dataset(id: ID!): Dataset!
+  persons: [Person!]!
+  person(id: ID!): Person!
 }
 
 type Mutation {
@@ -58,7 +76,10 @@ type Mutation {
   removeDataCatalog(id: ID!): Boolean!
   createDataset(createDatasetInput: CreateDatasetInput!): Dataset!
   updateDataset(updateDatasetInput: UpdateDatasetInput!): Dataset!
-  removeDataset(id: ID!): Dataset!
+  removeDataset(id: ID!): Boolean!
+  createPerson(createPersonInput: CreatePersonInput!): Person!
+  updatePerson(updatePersonInput: UpdatePersonInput!): Person!
+  removePerson(id: ID!): Boolean!
 }
 
 input CreateUserInput {
@@ -130,4 +151,34 @@ input UpdateDatasetInput {
   URL to the direct data download. Distinct from the optional "url" field, which should lead to a page about the data.
   """
   distribution: String
+}
+
+input CreatePersonInput {
+  labels: [String!] = []
+  name: String
+  url: String
+
+  """
+  A callsign, as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles. Typically correlates with username, when available.
+  """
+  callSign: String
+
+  """Primary email address"""
+  email: String
+}
+
+input UpdatePersonInput {
+  """UUID"""
+  id: ID
+  labels: [String!] = []
+  name: String
+  url: String
+
+  """
+  A callsign, as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles. Typically correlates with username, when available.
+  """
+  callSign: String
+
+  """Primary email address"""
+  email: String
 }

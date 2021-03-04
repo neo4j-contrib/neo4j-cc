@@ -1,12 +1,14 @@
-query dataCatalogs {
-  dataCatalogs {
+query datasets {
+  datasets {
     id
-    labels
     url
+    labels
     name
     description
     author
     dateCreated
     dateModified
+    license
+    distribution
   }
 }

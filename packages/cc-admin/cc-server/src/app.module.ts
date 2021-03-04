@@ -12,6 +12,8 @@ import { DataCatalogModule } from './data-catalog/data-catalog.module';
 import { DataCatalog } from './data-catalog/data-catalog.entity';
 import { DatasetModule } from './dataset/dataset.module';
 import { Dataset } from './dataset/dataset.entity';
+import { PersonModule } from './person/person.module';
+import { Person } from './person/person.entity';
 
 @Module({
   imports: [
@@ -24,11 +26,12 @@ import { Dataset } from './dataset/dataset.entity';
       host: 'localhost',
       database: 'cc-dev',
       synchronize: true,
-      entities: [User, DataCatalog, Dataset],
+      entities: [User, DataCatalog, Dataset, Person],
     }),
     UserModule,
     DataCatalogModule,
     DatasetModule,
+    PersonModule,
   ],
   controllers: [AppController],
   providers: [AppService],

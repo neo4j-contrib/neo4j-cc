@@ -1,0 +1,10 @@
+query person($id:ID!) {
+  person(id:$id) {
+    id
+    url
+    labels
+    name
+    email
+    callSign
+  }
+}

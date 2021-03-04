@@ -1,8 +1,8 @@
 import React from 'react';
-import { SummaryPanel } from './components/SummaryPanel';
-import { UserForm } from './components/UserForm';
-import { UserTable } from './components/UserTable';
-
+import { SummaryPanel } from '../components/SummaryPanel';
+import { UserForm } from '../components/UserForm';
+import { QueryResultTable } from '../components/QueryResultTable';
+import { useUsersQuery } from '../services/graphql';
 
 const UserPage = () => (
   <div className="flex flex-col space-y-4">
@@ -12,7 +12,7 @@ const UserPage = () => (
       </p>
     </SummaryPanel>
     <UserForm />
-    <UserTable />
+    <QueryResultTable useQueryHook={useUsersQuery} accessor={(r) => r.users} />
   </div>
 )
 

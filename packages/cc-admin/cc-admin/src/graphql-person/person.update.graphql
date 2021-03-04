@@ -1,0 +1,10 @@
+mutation updatePerson($input:UpdatePersonInput!) {
+  updatePerson(updatePersonInput:$input) {
+    id
+    url
+    labels
+    name
+    email
+    callSign
+  }
+}

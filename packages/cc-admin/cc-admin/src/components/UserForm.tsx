@@ -2,7 +2,7 @@ import React from 'react';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import { useCreateUserMutation } from '../services/graphql';
-import { CCTextInput } from './CCTextInput';
+import { CcTextInput } from './CcTextInput';
 
 export const FormButtons:React.FC = () => (
   <div className="pt-5">
@@ -45,12 +45,12 @@ export const UserForm = () => {
         <div className="px-4 py-5 sm:p-6">
 
           <Form className="space-y-6 sm:pt-10 sm:space-y-5">
-            <CCTextInput
+            <CcTextInput
               label="First Name"
               name="firstName"
               type="text"
             />
-            <CCTextInput
+            <CcTextInput
               label="Last Name"
               name="lastName"
               type="text"
