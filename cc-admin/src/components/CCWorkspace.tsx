@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const CCWorkspace:React.FC = ({children}) => {
+export const  CcWorkspace:React.FC = ({children}) => {
   return (
     <div className="flex flex-col w-0 flex-1 overflow-hidden">
       <div className="md:hidden pl-1 pt-1 sm:pl-3 sm:pt-3">
@@ -18,7 +18,7 @@ export const CCWorkspace:React.FC = ({children}) => {
           {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
             <h1 className="text-2xl font-semibold text-gray-900">...</h1>
           </div> */}
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+          <div className="mx-auto px-4 sm:px-6 md:px-8">
             {children}
           </div>
         </div>

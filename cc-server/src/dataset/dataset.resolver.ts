@@ -35,7 +35,7 @@ export class DatasetResolver {
     );
   }
 
-  @Mutation(() => Dataset)
+  @Mutation(() => Boolean)
   removeDataset(@Args('id', { type: () => ID }) id: string) {
     return this.datasetService.remove(id);
   }

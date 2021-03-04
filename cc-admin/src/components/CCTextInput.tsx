@@ -6,7 +6,7 @@ interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
   name:string;
 }
 
-export const CCTextInput:React.FC<TextInputProps> = ({label, ...props}) => {
+export const CcTextInput:React.FC<TextInputProps> = ({label, ...props}) => {
   const [field, meta] = useField(props);
   return (
 

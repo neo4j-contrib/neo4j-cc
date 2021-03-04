@@ -5,19 +5,22 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import { CCSidebar } from './components/CCSidebar';
-import { CCWorkspace } from './components/CCWorkspace';
+import {CcSidebar } from './components/CcSidebar';
+import {CcWorkspace } from './components/CcWorkspace';
 
-import UserPage from './UserPage';
-import DataCatalogPage from './DataCatalogPage';
+
+import {DataCatalogsPage} from './pages/DataCatalogsPage';
+import {DatasetsPage} from './pages/DatasetsPage';
+import {PeoplePage} from './pages/PeoplePage';
+import UserPage from './pages/UserPage';
 
 function App() {
   return (
 
     <Router>
       <div className="App h-screen flex overflow-hidden bg-white">
-        <CCSidebar />
-        <CCWorkspace>
+        <CcSidebar />
+        <CcWorkspace>
           
           {/* A <Switch> looks through its children <Route>s and
               renders the first one that matches the current URL. */}
@@ -25,12 +28,18 @@ function App() {
             <Route path="/users">
               <UserPage />
             </Route>
-            <Route path="/datacatalog">
-              <DataCatalogPage />
+            <Route path="/people">
+              <PeoplePage />
+            </Route>
+            <Route path="/datacatalogs">
+              <DataCatalogsPage />
+            </Route>
+            <Route path="/datasets">
+              <DatasetsPage />
             </Route>
           </Switch>
 
-        </CCWorkspace>
+        </CcWorkspace>
       </div>
     </Router>
   );

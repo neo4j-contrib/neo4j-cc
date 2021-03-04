@@ -1,5 +1,12 @@
 import React from 'react';
 
-export const CCRandomPhrase:React.FC<{oneOf:string[]}> = ({oneOf, ...props}) => (
-  <span {...props}>{oneOf[Math.floor(Math.random() * oneOf.length)]}</span>
+export interface CcRandomPhraseProps {
+  adjectives: string[];
+  nouns: string[];
+}
+
+const randomWord = (words:string[]) => words[Math.floor(Math.random() * words.length)]
+
+export const CcRandomPhrase:React.FC<CcRandomPhraseProps> = ({nouns, adjectives, ...props}) => (
+  <span {...props}>{randomWord(adjectives)} {randomWord(nouns)}</span>
 )

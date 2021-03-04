@@ -1,8 +1,9 @@
-import React, { Fragment } from 'react';
-import { DataCatalogTable } from './components/DataCatalogTable';
-import { SummaryPanel } from './components/SummaryPanel';
+import React from 'react';
+import { QueryResultTable } from '../components/QueryResultTable';
+import { SummaryPanel } from '../components/SummaryPanel';
+import { DataCatalogsQuery, useDataCatalogsQuery } from '../services/graphql';
 
-const DataCatalogPage = () => (
+export const DataCatalogsPage = () => (
   <div className="flex flex-col space-y-4">
     <SummaryPanel title="Data Catalog">
         <p className="mt-1 text-sm text-gray-600">
@@ -13,8 +14,8 @@ const DataCatalogPage = () => (
         </p>
     </SummaryPanel>
     {/* <UserForm /> */}
-    <DataCatalogTable />
+    <QueryResultTable useQueryHook={useDataCatalogsQuery} accessor={(r:DataCatalogsQuery) => r.dataCatalogs} />
+
   </div>
 )
 
-export default DataCatalogPage;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const CCMobileMenu:React.FC = () => (
+export const CcMobileMenu:React.FC = () => (
   <div className="md:hidden">
   <div className="fixed inset-0 flex z-40">
     {/* <!--

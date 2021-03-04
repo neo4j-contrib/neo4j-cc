@@ -1,0 +1,10 @@
+mutation createPerson($input: CreatePersonInput!) {
+  createPerson(createPersonInput: $input) {
+    id
+    url
+    labels
+    name
+    callSign
+    email
+  }
+}

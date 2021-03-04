@@ -1,0 +1,3 @@
+mutation removeDataset($id:ID!) {
+  removeDataset(id:$id)
+}

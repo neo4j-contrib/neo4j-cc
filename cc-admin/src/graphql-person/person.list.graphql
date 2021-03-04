@@ -1,0 +1,10 @@
+query persons {
+  persons {
+    id
+    url
+    labels
+    name
+    email
+    callSign
+  }
+}
