@@ -1,0 +1,3 @@
+mutation removeDataCatalog($id:ID!) {
+  removeDataCatalog(id:$id)
+}

@@ -1,0 +1,133 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type User {
+  id: ID!
+  firstName: String!
+  lastName: String!
+  isActive: Boolean!
+}
+
+type DataCatalog {
+  """UUID"""
+  id: ID!
+  labels: [String!]
+  name: String!
+  url: String
+  description: String
+  author: String
+  dateCreated: String
+  dateModified: String
+  license: String
+}
+
+type Dataset {
+  """UUID"""
+  id: ID!
+  labels: [String!]
+  name: String!
+  url: String
+  description: String
+  author: String
+  dateCreated: String
+  dateModified: String
+  license: String
+
+  """
+  URL to the direct data download. Distinct from the optional "url" field, which should lead to a page about the data.
+  """
+  distribution: String!
+}
+
+type Query {
+  users: [User!]!
+  user(id: ID!): User!
+  dataCatalogs: [DataCatalog!]!
+  dataCatalog(id: ID!): DataCatalog!
+  datasets: [Dataset!]!
+  dataset(id: ID!): Dataset!
+}
+
+type Mutation {
+  createUser(createUserInput: CreateUserInput!): User!
+  updateUser(updateUserInput: UpdateUserInput!): User!
+  removeUser(id: ID!): Boolean!
+  createDataCatalog(createDataCatalogInput: CreateDataCatalogInput!): DataCatalog!
+  updateDataCatalog(updateDataCatalogInput: UpdateDataCatalogInput!): DataCatalog!
+  removeDataCatalog(id: ID!): Boolean!
+  createDataset(createDatasetInput: CreateDatasetInput!): Dataset!
+  updateDataset(updateDatasetInput: UpdateDatasetInput!): Dataset!
+  removeDataset(id: ID!): Dataset!
+}
+
+input CreateUserInput {
+  firstName: String
+  lastName: String
+  isActive: Boolean
+}
+
+input UpdateUserInput {
+  id: ID
+  firstName: String
+  lastName: String
+  isActive: Boolean
+}
+
+input CreateDataCatalogInput {
+  labels: [String!] = []
+  name: String
+  url: String
+  description: String
+  author: String
+  dateCreated: String
+  dateModified: String
+  license: String
+}
+
+input UpdateDataCatalogInput {
+  """UUID"""
+  id: ID
+  labels: [String!] = []
+  name: String
+  url: String
+  description: String
+  author: String
+  dateCreated: String
+  dateModified: String
+  license: String
+}
+
+input CreateDatasetInput {
+  labels: [String!] = []
+  name: String
+  url: String
+  description: String
+  author: String
+  dateCreated: String
+  dateModified: String
+  license: String
+
+  """
+  URL to the direct data download. Distinct from the optional "url" field, which should lead to a page about the data.
+  """
+  distribution: String
+}
+
+input UpdateDatasetInput {
+  """UUID"""
+  id: ID
+  labels: [String!] = []
+  name: String
+  url: String
+  description: String
+  author: String
+  dateCreated: String
+  dateModified: String
+  license: String
+
+  """
+  URL to the direct data download. Distinct from the optional "url" field, which should lead to a page about the data.
+  """
+  distribution: String
+}
