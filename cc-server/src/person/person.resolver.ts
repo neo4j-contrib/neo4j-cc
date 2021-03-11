@@ -1,4 +1,4 @@
-import { Resolver, Query, Mutation, Args, Int, ID } from '@nestjs/graphql';
+import { Resolver, Query, Mutation, Args, ID } from '@nestjs/graphql';
 import { PersonService } from './person.service';
 import { Person } from './person.entity';
 import { CreatePersonInput } from './dto/create-person.input';
@@ -27,9 +27,10 @@ export class PersonResolver {
 
   @Mutation(() => Person)
   updatePerson(
+    @Args('id', { type: () => ID }) id: string,
     @Args('updatePersonInput') updatePersonInput: UpdatePersonInput,
   ) {
-    return this.personService.update(updatePersonInput.id, updatePersonInput);
+    return this.personService.update(id, updatePersonInput);
   }
 
   @Mutation(() => Boolean)

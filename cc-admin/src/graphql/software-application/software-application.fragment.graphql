@@ -1,0 +1,18 @@
+fragment softwareApplicationFields on SoftwareApplication {
+    id
+    labels
+    url
+    name
+    description
+    creator
+    dateCreated
+    dateModified
+    about
+    publisher
+    license
+    softwareVersion
+    applicationCategory
+    downloadUrl
+    installUrl
+    operatingSystem
+}

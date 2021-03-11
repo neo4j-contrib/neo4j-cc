@@ -1,0 +1,10 @@
+query organization($id:ID!) {
+  organization(id:$id) {
+    id
+    url
+    labels
+    name
+    description
+    email
+  }
+}

@@ -11,7 +11,7 @@ export const BasicTable:React.FC<any> = ({ columns, data }) => {
     prepareRow,
   } = useTable({
     columns,
-    data,
+    data, 
   })
 
   // Render the UI for your table

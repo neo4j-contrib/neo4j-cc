@@ -1,0 +1,5 @@
+query notebook($id:ID!) {
+  notebook(id:$id) {
+    ...notebookFields
+  }
+}

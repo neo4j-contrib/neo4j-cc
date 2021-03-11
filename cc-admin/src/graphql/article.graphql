@@ -1,0 +1,46 @@
+fragment articleFields on Article {
+    id
+    labels
+    name
+    url
+    description
+    about
+    creator
+    publisher
+    dateCreated
+    dateModified
+    license
+}
+
+# create
+mutation createArticle($input: CreateArticleInput!) {
+  createArticle(createArticleInput: $input) {
+    ...articleFields
+  }
+}
+
+# Find one
+query article($id:ID!) {
+  article(id:$id) {
+    ...articleFields
+  }
+}
+
+# Find all
+query articles {
+  articles {
+    ...articleFields
+  }
+}
+
+#  update
+mutation updateArticle($id:ID!, $input: UpdateArticleInput!) {
+  updateArticle(id:$id, updateArticleInput: $input) {
+    ...articleFields
+  }
+}
+
+# remove
+mutation removeArticle($id:ID!) {
+  removeArticle(id:$id)
+}

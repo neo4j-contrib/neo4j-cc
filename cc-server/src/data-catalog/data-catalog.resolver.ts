@@ -28,13 +28,11 @@ export class DataCatalogResolver {
 
   @Mutation(() => DataCatalog)
   updateDataCatalog(
+    @Args('id', { type: () => ID }) id: string,
     @Args('updateDataCatalogInput')
     updateDataCatalogInput: UpdateDataCatalogInput,
   ) {
-    return this.dataCatalogService.update(
-      updateDataCatalogInput.id,
-      updateDataCatalogInput,
-    );
+    return this.dataCatalogService.update(id, updateDataCatalogInput);
   }
 
   @Mutation(() => Boolean)

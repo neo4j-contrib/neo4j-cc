@@ -9,14 +9,14 @@ export class User {
   id: string;
 
   @Column()
-  @Field(() => String)
-  firstName: string;
+  @Field(() => String, { defaultValue: 'Unidentified' })
+  firstName!: string;
 
   @Column()
   @Field(() => String)
   lastName: string;
 
   @Column({ default: true })
-  @Field(() => Boolean)
+  @Field(() => Boolean, { defaultValue: true })
   isActive: boolean;
 }

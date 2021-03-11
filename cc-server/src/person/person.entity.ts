@@ -1,6 +1,6 @@
 import { ObjectType, Field, Int } from '@nestjs/graphql';
 import { Person as PersonDTS } from 'schema-dts';
-import { Thing } from 'src/base-entities';
+import { Thing } from 'src/abstract-entity/base-entities';
 import { Column, Entity } from 'typeorm';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -52,7 +52,7 @@ const prototypical: Person = {
 };
 
 /**
- * A person.
+ * A person (alive, dead, undead, or fictional).
  */
 @Entity()
 @ObjectType()

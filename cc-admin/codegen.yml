@@ -2,9 +2,12 @@ overwrite: true
 schema: "http://localhost:5000/graphql"
 documents: "src/**/*.graphql"
 generates:
-  src/services/graphql.tsx:
+  src/graphql/generated.tsx:
     plugins:
       - "typescript"
       - "typescript-operations"
-      # - "typescript-react-query"
       - "typescript-urql"
+  src/graphql/introspection.json:
+    plugins:
+      - introspection:
+          minify: false

@@ -1,0 +1,5 @@
+mutation createNotebook($input: CreateNotebookInput!) {
+  createNotebook(createNotebookInput: $input) {
+    ...notebookFields
+  }
+}

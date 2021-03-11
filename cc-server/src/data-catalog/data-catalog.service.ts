@@ -26,9 +26,7 @@ export class DataCatalogService {
   }
 
   async update(id: string, updateDataCatalogInput: UpdateDataCatalogInput) {
-    const entity = await this.entityRepository.findOne(
-      updateDataCatalogInput.id,
-    );
+    const entity = await this.entityRepository.findOne(id);
     this.entityRepository.merge(entity, updateDataCatalogInput);
     return await this.entityRepository.save(entity);
   }

@@ -1,0 +1,16 @@
+fragment softwareSourceCodeFields on SoftwareSourceCode {
+    id
+    labels
+    name
+    url
+    description
+    creator
+    dateCreated
+    dateModified
+    license
+    about
+    publisher
+    codeRepository
+    programmingLanguage
+    runtimePlatform
+}

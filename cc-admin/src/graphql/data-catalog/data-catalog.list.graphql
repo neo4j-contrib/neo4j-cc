@@ -1,0 +1,12 @@
+query dataCatalogs {
+  dataCatalogs {
+    id
+    labels
+    url
+    name
+    description
+    creator
+    dateCreated
+    dateModified
+  }
+}

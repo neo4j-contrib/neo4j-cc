@@ -14,6 +14,24 @@ import { DatasetModule } from './dataset/dataset.module';
 import { Dataset } from './dataset/dataset.entity';
 import { PersonModule } from './person/person.module';
 import { Person } from './person/person.entity';
+import { NotebookModule } from './notebook/notebook.module';
+import { Notebook } from './notebook/notebook.entity';
+import { OrganizationModule } from './organization/organization.module';
+import { Organization } from './organization/organization.entity';
+import { SoftwareApplicationModule } from './software-application/software-application.module';
+import { SoftwareApplication } from './software-application/software-application.entity';
+import { SoftwareSourceCodeModule } from './software-source-code/software-source-code.module';
+import { SoftwareSourceCode } from './software-source-code/software-source-code.entity';
+import { EventModule } from './event/event.module';
+import { CourseModule } from './course/course.module';
+import { BookModule } from './book/book.module';
+import { ArticleModule } from './article/article.module';
+import { CommentModule } from './comment/comment.module';
+import { Event } from './event/event.entity';
+import { Article } from './article/article.entity';
+import { Book } from './book/book.entity';
+import { Course } from './course/course.entity';
+import { Comment } from './comment/comment.entity';
 
 @Module({
   imports: [
@@ -26,12 +44,35 @@ import { Person } from './person/person.entity';
       host: 'localhost',
       database: 'cc-dev',
       synchronize: true,
-      entities: [User, DataCatalog, Dataset, Person],
+      entities: [
+        User,
+        DataCatalog,
+        Dataset,
+        Person,
+        Notebook,
+        Organization,
+        SoftwareApplication,
+        SoftwareSourceCode,
+        Event,
+        Article,
+        Book,
+        Course,
+        Comment,
+      ],
     }),
     UserModule,
     DataCatalogModule,
     DatasetModule,
     PersonModule,
+    NotebookModule,
+    OrganizationModule,
+    SoftwareApplicationModule,
+    SoftwareSourceCodeModule,
+    EventModule,
+    CourseModule,
+    BookModule,
+    ArticleModule,
+    CommentModule,
   ],
   controllers: [AppController],
   providers: [AppService],

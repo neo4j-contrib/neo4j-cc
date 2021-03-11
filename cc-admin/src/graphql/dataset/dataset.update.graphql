@@ -1,0 +1,13 @@
+mutation updateDataset($id:ID!, $input: UpdateDatasetInput!) {
+  updateDataset(id:$id, updateDatasetInput: $input) {
+    id
+    labels
+    url
+    name
+    description
+    creator
+    dateCreated
+    dateModified
+    distribution
+  }
+}
