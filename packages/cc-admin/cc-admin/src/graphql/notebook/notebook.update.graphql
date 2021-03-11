@@ -1,0 +1,5 @@
+mutation updateNotebook($id:ID!, $input: UpdateNotebookInput!) {
+  updateNotebook(id:$id, updateNotebookInput: $input) {
+    ...notebookFields
+  }
+}

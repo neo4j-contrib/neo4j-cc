@@ -1,0 +1,14 @@
+query datasets {
+  datasets {
+    id
+    url
+    labels
+    name
+    description
+    creator
+    dateCreated
+    dateModified
+    license
+    distribution
+  }
+}

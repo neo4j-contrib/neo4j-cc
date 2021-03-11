@@ -30,7 +30,7 @@ export type DataCatalog = {
   name: Scalars['String'];
   url?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
-  author?: Maybe<Scalars['String']>;
+  creator?: Maybe<Scalars['String']>;
   dateCreated?: Maybe<Scalars['String']>;
   dateModified?: Maybe<Scalars['String']>;
   license?: Maybe<Scalars['String']>;
@@ -44,7 +44,7 @@ export type Dataset = {
   name: Scalars['String'];
   url?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
-  author?: Maybe<Scalars['String']>;
+  creator?: Maybe<Scalars['String']>;
   dateCreated?: Maybe<Scalars['String']>;
   dateModified?: Maybe<Scalars['String']>;
   license?: Maybe<Scalars['String']>;
@@ -191,7 +191,7 @@ export type CreateDataCatalogInput = {
   name?: Maybe<Scalars['String']>;
   url?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
-  author?: Maybe<Scalars['String']>;
+  creator?: Maybe<Scalars['String']>;
   dateCreated?: Maybe<Scalars['String']>;
   dateModified?: Maybe<Scalars['String']>;
   license?: Maybe<Scalars['String']>;
@@ -204,7 +204,7 @@ export type UpdateDataCatalogInput = {
   name?: Maybe<Scalars['String']>;
   url?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
-  author?: Maybe<Scalars['String']>;
+  creator?: Maybe<Scalars['String']>;
   dateCreated?: Maybe<Scalars['String']>;
   dateModified?: Maybe<Scalars['String']>;
   license?: Maybe<Scalars['String']>;
@@ -215,7 +215,7 @@ export type CreateDatasetInput = {
   name?: Maybe<Scalars['String']>;
   url?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
-  author?: Maybe<Scalars['String']>;
+  creator?: Maybe<Scalars['String']>;
   dateCreated?: Maybe<Scalars['String']>;
   dateModified?: Maybe<Scalars['String']>;
   license?: Maybe<Scalars['String']>;
@@ -230,7 +230,7 @@ export type UpdateDatasetInput = {
   name?: Maybe<Scalars['String']>;
   url?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
-  author?: Maybe<Scalars['String']>;
+  creator?: Maybe<Scalars['String']>;
   dateCreated?: Maybe<Scalars['String']>;
   dateModified?: Maybe<Scalars['String']>;
   license?: Maybe<Scalars['String']>;
@@ -269,7 +269,7 @@ export type CreateDataCatalogMutation = (
   { __typename?: 'Mutation' }
   & { createDataCatalog: (
     { __typename?: 'DataCatalog' }
-    & Pick<DataCatalog, 'id' | 'labels' | 'name' | 'url' | 'description' | 'author' | 'dateCreated' | 'dateModified' | 'license'>
+    & Pick<DataCatalog, 'id' | 'labels' | 'name' | 'url' | 'description' | 'creator' | 'dateCreated' | 'dateModified' | 'license'>
   ) }
 );
 
@@ -282,7 +282,7 @@ export type GetDataCatalogQuery = (
   { __typename?: 'Query' }
   & { dataCatalog: (
     { __typename?: 'DataCatalog' }
-    & Pick<DataCatalog, 'id' | 'labels' | 'name' | 'url' | 'description' | 'author' | 'dateCreated' | 'dateModified' | 'license'>
+    & Pick<DataCatalog, 'id' | 'labels' | 'name' | 'url' | 'description' | 'creator' | 'dateCreated' | 'dateModified' | 'license'>
   ) }
 );
 
@@ -293,7 +293,7 @@ export type DataCatalogsQuery = (
   { __typename?: 'Query' }
   & { dataCatalogs: Array<(
     { __typename?: 'DataCatalog' }
-    & Pick<DataCatalog, 'id' | 'labels' | 'url' | 'name' | 'description' | 'author' | 'dateCreated' | 'dateModified'>
+    & Pick<DataCatalog, 'id' | 'labels' | 'url' | 'name' | 'description' | 'creator' | 'dateCreated' | 'dateModified'>
   )> }
 );
 
@@ -316,7 +316,7 @@ export type UpdateDataCatalogMutation = (
   { __typename?: 'Mutation' }
   & { updateDataCatalog: (
     { __typename?: 'DataCatalog' }
-    & Pick<DataCatalog, 'id' | 'labels' | 'url' | 'name' | 'description' | 'author' | 'dateCreated' | 'dateModified'>
+    & Pick<DataCatalog, 'id' | 'labels' | 'url' | 'name' | 'description' | 'creator' | 'dateCreated' | 'dateModified'>
   ) }
 );
 
@@ -329,7 +329,7 @@ export type CreateDatasetMutation = (
   { __typename?: 'Mutation' }
   & { createDataset: (
     { __typename?: 'Dataset' }
-    & Pick<Dataset, 'id' | 'url' | 'labels' | 'name' | 'description' | 'author' | 'dateCreated' | 'dateModified' | 'license' | 'distribution'>
+    & Pick<Dataset, 'id' | 'url' | 'labels' | 'name' | 'description' | 'creator' | 'dateCreated' | 'dateModified' | 'license' | 'distribution'>
   ) }
 );
 
@@ -342,7 +342,7 @@ export type GetDatasetQuery = (
   { __typename?: 'Query' }
   & { dataset: (
     { __typename?: 'Dataset' }
-    & Pick<Dataset, 'id' | 'url' | 'labels' | 'name' | 'description' | 'author' | 'dateCreated' | 'dateModified' | 'license' | 'distribution'>
+    & Pick<Dataset, 'id' | 'url' | 'labels' | 'name' | 'description' | 'creator' | 'dateCreated' | 'dateModified' | 'license' | 'distribution'>
   ) }
 );
 
@@ -353,7 +353,7 @@ export type DatasetsQuery = (
   { __typename?: 'Query' }
   & { datasets: Array<(
     { __typename?: 'Dataset' }
-    & Pick<Dataset, 'id' | 'url' | 'labels' | 'name' | 'description' | 'author' | 'dateCreated' | 'dateModified' | 'license' | 'distribution'>
+    & Pick<Dataset, 'id' | 'url' | 'labels' | 'name' | 'description' | 'creator' | 'dateCreated' | 'dateModified' | 'license' | 'distribution'>
   )> }
 );
 
@@ -376,7 +376,7 @@ export type UpdateDatasetMutation = (
   { __typename?: 'Mutation' }
   & { updateDataset: (
     { __typename?: 'Dataset' }
-    & Pick<Dataset, 'id' | 'labels' | 'url' | 'name' | 'description' | 'author' | 'dateCreated' | 'dateModified' | 'distribution'>
+    & Pick<Dataset, 'id' | 'labels' | 'url' | 'name' | 'description' | 'creator' | 'dateCreated' | 'dateModified' | 'distribution'>
   ) }
 );
 
@@ -513,7 +513,7 @@ export const CreateDataCatalogDocument = gql`
     name
     url
     description
-    author
+    creator
     dateCreated
     dateModified
     license
@@ -532,7 +532,7 @@ export const GetDataCatalogDocument = gql`
     name
     url
     description
-    author
+    creator
     dateCreated
     dateModified
     license
@@ -551,7 +551,7 @@ export const DataCatalogsDocument = gql`
     url
     name
     description
-    author
+    creator
     dateCreated
     dateModified
   }
@@ -578,7 +578,7 @@ export const UpdateDataCatalogDocument = gql`
     url
     name
     description
-    author
+    creator
     dateCreated
     dateModified
   }
@@ -596,7 +596,7 @@ export const CreateDatasetDocument = gql`
     labels
     name
     description
-    author
+    creator
     dateCreated
     dateModified
     license
@@ -616,7 +616,7 @@ export const GetDatasetDocument = gql`
     labels
     name
     description
-    author
+    creator
     dateCreated
     dateModified
     license
@@ -636,7 +636,7 @@ export const DatasetsDocument = gql`
     labels
     name
     description
-    author
+    creator
     dateCreated
     dateModified
     license
@@ -665,7 +665,7 @@ export const UpdateDatasetDocument = gql`
     url
     name
     description
-    author
+    creator
     dateCreated
     dateModified
     distribution

@@ -1,0 +1,3 @@
+mutation removeNotebook($id:ID!) {
+  removeNotebook(id:$id)
+}

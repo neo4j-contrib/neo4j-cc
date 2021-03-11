@@ -1,0 +1,13 @@
+query softwareApplication($id:ID!) {
+  softwareApplication(id:$id) {
+    id
+    labels
+    name
+    url
+    description
+    creator
+    dateCreated
+    dateModified
+    license
+  }
+}

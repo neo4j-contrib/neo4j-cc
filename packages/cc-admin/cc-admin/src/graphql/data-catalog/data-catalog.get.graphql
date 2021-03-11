@@ -1,0 +1,13 @@
+query getDataCatalog($id:ID!) {
+  dataCatalog(id:$id) {
+    id
+    labels
+    name
+    url
+    description
+    creator
+    dateCreated
+    dateModified
+    license
+  }
+}

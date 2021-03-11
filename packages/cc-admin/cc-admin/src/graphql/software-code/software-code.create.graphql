@@ -1,0 +1,5 @@
+mutation createSoftwareSourceCode($input: CreateSoftwareSourceCodeInput!) {
+  createSoftwareSourceCode(createSoftwareSourceCodeInput:$input) {
+    ...softwareSourceCodeFields
+  }
+}

@@ -27,12 +27,10 @@ export class DatasetResolver {
 
   @Mutation(() => Dataset)
   updateDataset(
+    @Args('id', { type: () => ID }) id: string,
     @Args('updateDatasetInput') updateDatasetInput: UpdateDatasetInput,
   ) {
-    return this.datasetService.update(
-      updateDatasetInput.id,
-      updateDatasetInput,
-    );
+    return this.datasetService.update(id, updateDatasetInput);
   }
 
   @Mutation(() => Boolean)

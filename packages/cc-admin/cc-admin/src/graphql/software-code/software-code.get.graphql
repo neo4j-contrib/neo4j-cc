@@ -1,0 +1,5 @@
+query softwareSourceCode($id:ID!) {
+  softwareSourceCode(id:$id) {
+    ...softwareSourceCodeFields
+  }
+}

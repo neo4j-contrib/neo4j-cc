@@ -14,9 +14,16 @@ type DataCatalog {
   id: ID!
   labels: [String!]
   name: String!
-  url: String
+
+  """A brief description of this Thing."""
   description: String
-  author: String
+  url: String
+
+  """Reference to Person who created the work."""
+  creator: ID
+
+  """Reference to Person who published the work."""
+  publisher: ID
   dateCreated: String
   dateModified: String
   license: String
@@ -27,9 +34,16 @@ type Dataset {
   id: ID!
   labels: [String!]
   name: String!
-  url: String
+
+  """A brief description of this Thing."""
   description: String
-  author: String
+  url: String
+
+  """Reference to Person who created the work."""
+  creator: ID
+
+  """Reference to Person who published the work."""
+  publisher: ID
   dateCreated: String
   dateModified: String
   license: String
@@ -45,6 +59,9 @@ type Person {
   id: ID!
   labels: [String!]
   name: String!
+
+  """A brief description of this Thing."""
+  description: String
   url: String
 
   """
@@ -56,6 +73,262 @@ type Person {
   email: String
 }
 
+type SoftwareSourceCode {
+  """UUID"""
+  id: ID!
+  labels: [String!]
+  name: String!
+
+  """A brief description of this Thing."""
+  description: String
+  url: String
+
+  """Reference to Person who created the work."""
+  creator: ID
+
+  """Reference to Person who published the work."""
+  publisher: ID
+  dateCreated: String
+  dateModified: String
+  license: String
+
+  """
+  Link to the repository where the un-compiled, human readable code and related code is located (SVN, github, CodePlex).
+  """
+  codeRepository: String
+
+  """The computer programming language."""
+  programmingLanguage: String
+
+  """
+  Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).
+  """
+  runtimePlatform: String
+}
+
+type Notebook {
+  """UUID"""
+  id: ID!
+  labels: [String!]
+  name: String!
+
+  """A brief description of this Thing."""
+  description: String
+  url: String
+
+  """Reference to Person who created the work."""
+  creator: ID
+
+  """Reference to Person who published the work."""
+  publisher: ID
+  dateCreated: String
+  dateModified: String
+  license: String
+
+  """
+  Link to the repository where the un-compiled, human readable code and related code is located (SVN, github, CodePlex).
+  """
+  codeRepository: String
+
+  """The computer programming language"""
+  programmingLanguage: String
+
+  """
+  Runtime platform or script interpreter dependencies. For example: GraphGist, Jupyter, ObservableHQ
+  """
+  runtimePlatform: String
+}
+
+type Organization {
+  """UUID"""
+  id: ID!
+  labels: [String!]
+  name: String!
+
+  """A brief description of this Thing."""
+  description: String
+  url: String
+
+  """Primary email address"""
+  email: String
+}
+
+type SoftwareApplication {
+  """UUID"""
+  id: ID!
+  labels: [String!]
+  name: String!
+
+  """A brief description of this Thing."""
+  description: String
+  url: String
+
+  """Reference to Person who created the work."""
+  creator: ID
+
+  """Reference to Person who published the work."""
+  publisher: ID
+  dateCreated: String
+  dateModified: String
+  license: String
+
+  """Semantic version of the software instance."""
+  softwareVersion: String
+
+  """Type of software application, e.g. "Game, Multimedia"."""
+  applicationCategory: String
+
+  """If the file can be downloaded, URL to download the binary."""
+  downloadUrl: String
+
+  """
+  URL at which the app may be installed, if different from the URL of the item.
+  """
+  installUrl: String
+
+  """Operating systems supported (Windows 7, OSX 10.6, Android 1.6)."""
+  operatingSystem: String
+}
+
+type Event {
+  """UUID"""
+  id: ID!
+  labels: [String!]
+  name: String!
+
+  """A brief description of this Thing."""
+  description: String
+  url: String
+
+  """
+  The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.
+  """
+  duration: String!
+
+  """The end date and time of the item (in ISO 8601 date format)."""
+  endDate: String!
+
+  """The start date and time of the item (in ISO 8601 date format)."""
+  startDate: String!
+
+  """
+  The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+  """
+  location: String!
+}
+
+type Course {
+  """UUID"""
+  id: ID!
+  labels: [String!]
+  name: String!
+
+  """A brief description of this Thing."""
+  description: String
+  url: String
+
+  """Reference to Person who created the work."""
+  creator: ID
+
+  """Reference to Person who published the work."""
+  publisher: ID
+  dateCreated: String
+  dateModified: String
+  license: String
+
+  """The certification awarded for successful completion of this course."""
+  award: String!
+
+  """
+  The LearningResource being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
+  """
+  teaches: String
+
+  """
+  Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity in order to do something such as earn an Educational Occupational Credential or understand a LearningResource.
+  """
+  competencyRequired: [String!]
+
+  """
+  The identifier for the Course used by the course provider (e.g. CS101 or cypher-101)
+  """
+  courseCode: String!
+}
+
+type Book {
+  """UUID"""
+  id: ID!
+  labels: [String!]
+  name: String!
+
+  """A brief description of this Thing."""
+  description: String
+  url: String
+
+  """Reference to Person who created the work."""
+  creator: ID
+
+  """Reference to Person who published the work."""
+  publisher: ID
+  dateCreated: String
+  dateModified: String
+  license: String
+
+  """The ISBN of the book"""
+  isbn: String!
+}
+
+type Article {
+  """UUID"""
+  id: ID!
+  labels: [String!]
+  name: String!
+
+  """A brief description of this Thing."""
+  description: String
+  url: String
+
+  """Reference to Person who created the work."""
+  creator: ID
+
+  """Reference to Person who published the work."""
+  publisher: ID
+  dateCreated: String
+  dateModified: String
+  license: String
+}
+
+type Comment {
+  """UUID"""
+  id: ID!
+  labels: [String!]
+  name: String!
+
+  """A brief description of this Thing."""
+  description: String
+  url: String
+
+  """Reference to Person who created the work."""
+  creator: ID
+
+  """Reference to Person who published the work."""
+  publisher: ID
+  dateCreated: String
+  dateModified: String
+  license: String
+  text: String
+
+  """
+  The number of upvotes this question, answer or comment has received from the community.
+  """
+  upvoteCount: Int!
+
+  """
+  The number of downvotes this question, answer or comment has received from the community.
+  """
+  downvoteCount: Int!
+}
+
 type Query {
   users: [User!]!
   user(id: ID!): User!
@@ -65,6 +338,24 @@ type Query {
   dataset(id: ID!): Dataset!
   persons: [Person!]!
   person(id: ID!): Person!
+  notebooks: [Notebook!]!
+  notebook(id: ID!): Notebook!
+  organizations: [Organization!]!
+  organization(id: ID!): Organization!
+  softwareApplications: [SoftwareApplication!]!
+  softwareApplication(id: ID!): SoftwareApplication!
+  softwareSourceCodes: [SoftwareSourceCode!]!
+  softwareSourceCode(id: ID!): SoftwareSourceCode!
+  events: [Event!]!
+  event(id: ID!): Event!
+  courses: [Course!]!
+  course(id: ID!): Course!
+  books: [Book!]!
+  book(id: ID!): Book!
+  articles: [Article!]!
+  article(id: ID!): Article!
+  comments: [Comment!]!
+  comment(id: ID!): Comment!
 }
 
 type Mutation {
@@ -72,48 +363,87 @@ type Mutation {
   updateUser(updateUserInput: UpdateUserInput!): User!
   removeUser(id: ID!): Boolean!
   createDataCatalog(createDataCatalogInput: CreateDataCatalogInput!): DataCatalog!
-  updateDataCatalog(updateDataCatalogInput: UpdateDataCatalogInput!): DataCatalog!
+  updateDataCatalog(updateDataCatalogInput: UpdateDataCatalogInput!, id: ID!): DataCatalog!
   removeDataCatalog(id: ID!): Boolean!
   createDataset(createDatasetInput: CreateDatasetInput!): Dataset!
-  updateDataset(updateDatasetInput: UpdateDatasetInput!): Dataset!
+  updateDataset(updateDatasetInput: UpdateDatasetInput!, id: ID!): Dataset!
   removeDataset(id: ID!): Boolean!
   createPerson(createPersonInput: CreatePersonInput!): Person!
-  updatePerson(updatePersonInput: UpdatePersonInput!): Person!
+  updatePerson(updatePersonInput: UpdatePersonInput!, id: ID!): Person!
   removePerson(id: ID!): Boolean!
+  createNotebook(createNotebookInput: CreateNotebookInput!): Notebook!
+  updateNotebook(updateNotebookInput: UpdateNotebookInput!, id: ID!): Notebook!
+  removeNotebook(id: ID!): Boolean!
+  createOrganization(createOrganizationInput: CreateOrganizationInput!): Organization!
+  updateOrganization(updateOrganizationInput: UpdateOrganizationInput!, id: ID!): Organization!
+  removeOrganization(id: ID!): Boolean!
+  createSoftwareApplication(createSoftwareApplicationInput: CreateSoftwareApplicationInput!): SoftwareApplication!
+  updateSoftwareApplication(updateSoftwareApplicationInput: UpdateSoftwareApplicationInput!, id: ID!): SoftwareApplication!
+  removeSoftwareApplication(id: ID!): Boolean!
+  createSoftwareSourceCode(createSoftwareSourceCodeInput: CreateSoftwareSourceCodeInput!): SoftwareSourceCode!
+  updateSoftwareSourceCode(updateSoftwareSourceCodeInput: UpdateSoftwareSourceCodeInput!, id: ID!): SoftwareSourceCode!
+  removeSoftwareSourceCode(id: ID!): Boolean!
+  createEvent(createEventInput: CreateEventInput!): Event!
+  updateEvent(updateEventInput: UpdateEventInput!, id: ID!): Event!
+  removeEvent(id: ID!): Boolean!
+  createCourse(createCourseInput: CreateCourseInput!): Course!
+  updateCourse(updateCourseInput: UpdateCourseInput!, id: ID!): Course!
+  removeCourse(id: ID!): Boolean!
+  createBook(createBookInput: CreateBookInput!): Book!
+  updateBook(updateBookInput: UpdateBookInput!, id: ID!): Book!
+  removeBook(id: ID!): Boolean!
+  createArticle(createArticleInput: CreateArticleInput!): Article!
+  updateArticle(updateArticleInput: UpdateArticleInput!, id: ID!): Article!
+  removeArticle(id: ID!): Boolean!
+  createComment(createCommentInput: CreateCommentInput!): Comment!
+  updateComment(updateCommentInput: UpdateCommentInput!, id: ID!): Comment!
+  removeComment(id: ID!): Boolean!
 }
 
 input CreateUserInput {
-  firstName: String
-  lastName: String
-  isActive: Boolean
+  firstName: String = "Unidentified"
+  lastName: String!
+  isActive: Boolean = true
 }
 
 input UpdateUserInput {
   id: ID
-  firstName: String
+  firstName: String = "Unidentified"
   lastName: String
-  isActive: Boolean
+  isActive: Boolean = true
 }
 
 input CreateDataCatalogInput {
   labels: [String!] = []
-  name: String
-  url: String
+  name: String!
+
+  """A brief description of this Thing."""
   description: String
-  author: String
+  url: String
+
+  """Reference to Person who created the work."""
+  creator: ID
+
+  """Reference to Person who published the work."""
+  publisher: ID
   dateCreated: String
   dateModified: String
   license: String
 }
 
 input UpdateDataCatalogInput {
-  """UUID"""
-  id: ID
   labels: [String!] = []
   name: String
-  url: String
+
+  """A brief description of this Thing."""
   description: String
-  author: String
+  url: String
+
+  """Reference to Person who created the work."""
+  creator: ID
+
+  """Reference to Person who published the work."""
+  publisher: ID
   dateCreated: String
   dateModified: String
   license: String
@@ -121,10 +451,17 @@ input UpdateDataCatalogInput {
 
 input CreateDatasetInput {
   labels: [String!] = []
-  name: String
-  url: String
+  name: String!
+
+  """A brief description of this Thing."""
   description: String
-  author: String
+  url: String
+
+  """Reference to Person who created the work."""
+  creator: ID
+
+  """Reference to Person who published the work."""
+  publisher: ID
   dateCreated: String
   dateModified: String
   license: String
@@ -132,17 +469,22 @@ input CreateDatasetInput {
   """
   URL to the direct data download. Distinct from the optional "url" field, which should lead to a page about the data.
   """
-  distribution: String
+  distribution: String!
 }
 
 input UpdateDatasetInput {
-  """UUID"""
-  id: ID
   labels: [String!] = []
   name: String
-  url: String
+
+  """A brief description of this Thing."""
   description: String
-  author: String
+  url: String
+
+  """Reference to Person who created the work."""
+  creator: ID
+
+  """Reference to Person who published the work."""
+  publisher: ID
   dateCreated: String
   dateModified: String
   license: String
@@ -155,7 +497,10 @@ input UpdateDatasetInput {
 
 input CreatePersonInput {
   labels: [String!] = []
-  name: String
+  name: String!
+
+  """A brief description of this Thing."""
+  description: String
   url: String
 
   """
@@ -168,10 +513,11 @@ input CreatePersonInput {
 }
 
 input UpdatePersonInput {
-  """UUID"""
-  id: ID
   labels: [String!] = []
   name: String
+
+  """A brief description of this Thing."""
+  description: String
   url: String
 
   """
@@ -181,4 +527,480 @@ input UpdatePersonInput {
 
   """Primary email address"""
   email: String
+}
+
+input CreateNotebookInput {
+  labels: [String!] = []
+  name: String!
+
+  """A brief description of this Thing."""
+  description: String
+  url: String
+
+  """Reference to Person who created the work."""
+  creator: ID
+
+  """Reference to Person who published the work."""
+  publisher: ID
+  dateCreated: String
+  dateModified: String
+  license: String
+
+  """
+  Link to the repository where the un-compiled, human readable code and related code is located (SVN, github, CodePlex).
+  """
+  codeRepository: String
+
+  """The computer programming language."""
+  programmingLanguage: String
+
+  """
+  Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).
+  """
+  runtimePlatform: String
+}
+
+input UpdateNotebookInput {
+  labels: [String!] = []
+  name: String
+
+  """A brief description of this Thing."""
+  description: String
+  url: String
+
+  """Reference to Person who created the work."""
+  creator: ID
+
+  """Reference to Person who published the work."""
+  publisher: ID
+  dateCreated: String
+  dateModified: String
+  license: String
+
+  """
+  Link to the repository where the un-compiled, human readable code and related code is located (SVN, github, CodePlex).
+  """
+  codeRepository: String
+
+  """The computer programming language."""
+  programmingLanguage: String
+
+  """
+  Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).
+  """
+  runtimePlatform: String
+}
+
+input CreateOrganizationInput {
+  labels: [String!] = []
+  name: String!
+
+  """A brief description of this Thing."""
+  description: String
+  url: String
+
+  """Primary email address"""
+  email: String
+}
+
+input UpdateOrganizationInput {
+  labels: [String!] = []
+  name: String
+
+  """A brief description of this Thing."""
+  description: String
+  url: String
+
+  """Primary email address"""
+  email: String
+}
+
+input CreateSoftwareApplicationInput {
+  labels: [String!] = []
+  name: String!
+
+  """A brief description of this Thing."""
+  description: String
+  url: String
+
+  """Reference to Person who created the work."""
+  creator: ID
+
+  """Reference to Person who published the work."""
+  publisher: ID
+  dateCreated: String
+  dateModified: String
+  license: String
+
+  """Semantic version of the software instance."""
+  softwareVersion: String
+
+  """Type of software application, e.g. "Game, Multimedia"."""
+  applicationCategory: String
+
+  """If the file can be downloaded, URL to download the binary."""
+  downloadUrl: String
+
+  """
+  URL at which the app may be installed, if different from the URL of the item.
+  """
+  installUrl: String
+
+  """Operating systems supported (Windows 7, OSX 10.6, Android 1.6)."""
+  operatingSystem: String
+}
+
+input UpdateSoftwareApplicationInput {
+  labels: [String!] = []
+  name: String
+
+  """A brief description of this Thing."""
+  description: String
+  url: String
+
+  """Reference to Person who created the work."""
+  creator: ID
+
+  """Reference to Person who published the work."""
+  publisher: ID
+  dateCreated: String
+  dateModified: String
+  license: String
+
+  """Semantic version of the software instance."""
+  softwareVersion: String
+
+  """Type of software application, e.g. "Game, Multimedia"."""
+  applicationCategory: String
+
+  """If the file can be downloaded, URL to download the binary."""
+  downloadUrl: String
+
+  """
+  URL at which the app may be installed, if different from the URL of the item.
+  """
+  installUrl: String
+
+  """Operating systems supported (Windows 7, OSX 10.6, Android 1.6)."""
+  operatingSystem: String
+}
+
+input CreateSoftwareSourceCodeInput {
+  labels: [String!] = []
+  name: String!
+
+  """A brief description of this Thing."""
+  description: String
+  url: String
+
+  """Reference to Person who created the work."""
+  creator: ID
+
+  """Reference to Person who published the work."""
+  publisher: ID
+  dateCreated: String
+  dateModified: String
+  license: String
+
+  """
+  Link to the repository where the un-compiled, human readable code and related code is located (SVN, github, CodePlex).
+  """
+  codeRepository: String
+
+  """The computer programming language."""
+  programmingLanguage: String
+
+  """
+  Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).
+  """
+  runtimePlatform: String
+}
+
+input UpdateSoftwareSourceCodeInput {
+  labels: [String!] = []
+  name: String
+
+  """A brief description of this Thing."""
+  description: String
+  url: String
+
+  """Reference to Person who created the work."""
+  creator: ID
+
+  """Reference to Person who published the work."""
+  publisher: ID
+  dateCreated: String
+  dateModified: String
+  license: String
+
+  """
+  Link to the repository where the un-compiled, human readable code and related code is located (SVN, github, CodePlex).
+  """
+  codeRepository: String
+
+  """The computer programming language."""
+  programmingLanguage: String
+
+  """
+  Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).
+  """
+  runtimePlatform: String
+}
+
+input CreateEventInput {
+  labels: [String!] = []
+  name: String!
+
+  """A brief description of this Thing."""
+  description: String
+  url: String
+
+  """
+  The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.
+  """
+  duration: String!
+
+  """The end date and time of the item (in ISO 8601 date format)."""
+  endDate: String!
+
+  """The start date and time of the item (in ISO 8601 date format)."""
+  startDate: String!
+
+  """
+  The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+  """
+  location: String!
+}
+
+input UpdateEventInput {
+  labels: [String!] = []
+  name: String
+
+  """A brief description of this Thing."""
+  description: String
+  url: String
+
+  """
+  The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.
+  """
+  duration: String
+
+  """The end date and time of the item (in ISO 8601 date format)."""
+  endDate: String
+
+  """The start date and time of the item (in ISO 8601 date format)."""
+  startDate: String
+
+  """
+  The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+  """
+  location: String
+}
+
+input CreateCourseInput {
+  labels: [String!] = []
+  name: String!
+
+  """A brief description of this Thing."""
+  description: String
+  url: String
+
+  """Reference to Person who created the work."""
+  creator: ID
+
+  """Reference to Person who published the work."""
+  publisher: ID
+  dateCreated: String
+  dateModified: String
+  license: String
+
+  """An award won by or for this LearningResource."""
+  award: String
+
+  """
+  The LearningResource being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
+  """
+  teaches: String
+
+  """
+  Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity in order to do something such as earn an Educational Occupational Credential or understand a LearningResource.
+  """
+  competencyRequired: [String!] = []
+
+  """
+  The identifier for the Course used by the course provider (e.g. CS101 or cypher-101)
+  """
+  courseCode: String!
+}
+
+input UpdateCourseInput {
+  labels: [String!] = []
+  name: String
+
+  """A brief description of this Thing."""
+  description: String
+  url: String
+
+  """Reference to Person who created the work."""
+  creator: ID
+
+  """Reference to Person who published the work."""
+  publisher: ID
+  dateCreated: String
+  dateModified: String
+  license: String
+
+  """An award won by or for this LearningResource."""
+  award: String
+
+  """
+  The LearningResource being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
+  """
+  teaches: String
+
+  """
+  Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity in order to do something such as earn an Educational Occupational Credential or understand a LearningResource.
+  """
+  competencyRequired: [String!] = []
+
+  """
+  The identifier for the Course used by the course provider (e.g. CS101 or cypher-101)
+  """
+  courseCode: String
+}
+
+input CreateBookInput {
+  labels: [String!] = []
+  name: String!
+
+  """A brief description of this Thing."""
+  description: String
+  url: String
+
+  """Reference to Person who created the work."""
+  creator: ID
+
+  """Reference to Person who published the work."""
+  publisher: ID
+  dateCreated: String
+  dateModified: String
+  license: String
+
+  """The ISBN of the book"""
+  isbn: String!
+}
+
+input UpdateBookInput {
+  labels: [String!] = []
+  name: String
+
+  """A brief description of this Thing."""
+  description: String
+  url: String
+
+  """Reference to Person who created the work."""
+  creator: ID
+
+  """Reference to Person who published the work."""
+  publisher: ID
+  dateCreated: String
+  dateModified: String
+  license: String
+
+  """The ISBN of the book"""
+  isbn: String
+}
+
+input CreateArticleInput {
+  labels: [String!] = []
+  name: String!
+
+  """A brief description of this Thing."""
+  description: String
+  url: String
+
+  """Reference to Person who created the work."""
+  creator: ID
+
+  """Reference to Person who published the work."""
+  publisher: ID
+  dateCreated: String
+  dateModified: String
+  license: String
+}
+
+input UpdateArticleInput {
+  labels: [String!] = []
+  name: String
+
+  """A brief description of this Thing."""
+  description: String
+  url: String
+
+  """Reference to Person who created the work."""
+  creator: ID
+
+  """Reference to Person who published the work."""
+  publisher: ID
+  dateCreated: String
+  dateModified: String
+  license: String
+}
+
+input CreateCommentInput {
+  labels: [String!] = []
+  name: String!
+
+  """A brief description of this Thing."""
+  description: String
+  url: String
+
+  """Reference to Person who created the work."""
+  creator: ID
+
+  """Reference to Person who published the work."""
+  publisher: ID
+  dateCreated: String
+  dateModified: String
+  license: String
+  text: String
+
+  """
+  The number of upvotes this question, answer or comment has received from the community.
+  """
+  upvoteCount: Int!
+
+  """
+  The number of downvotes this question, answer or comment has received from the community.
+  """
+  downvoteCount: Int!
+}
+
+input UpdateCommentInput {
+  labels: [String!] = []
+  name: String
+
+  """A brief description of this Thing."""
+  description: String
+  url: String
+
+  """Reference to Person who created the work."""
+  creator: ID
+
+  """Reference to Person who published the work."""
+  publisher: ID
+  dateCreated: String
+  dateModified: String
+  license: String
+  text: String
+
+  """
+  The number of upvotes this question, answer or comment has received from the community.
+  """
+  upvoteCount: Int
+
+  """
+  The number of downvotes this question, answer or comment has received from the community.
+  """
+  downvoteCount: Int
 }

@@ -1,0 +1,12 @@
+mutation updateDataCatalog($id:ID!, $input: UpdateDataCatalogInput!) {
+  updateDataCatalog(id:$id, updateDataCatalogInput: $input) {
+    id
+    labels
+    url
+    name
+    description
+    creator
+    dateCreated
+    dateModified
+  }
+}

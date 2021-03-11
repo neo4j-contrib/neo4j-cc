@@ -1,0 +1,13 @@
+fragment notebookFields on Notebook {
+    id
+    url
+    labels
+    name
+    description
+    creator
+    dateCreated
+    dateModified
+    license
+    programmingLanguage
+    runtimePlatform
+}

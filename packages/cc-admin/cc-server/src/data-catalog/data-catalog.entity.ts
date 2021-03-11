@@ -1,13 +1,10 @@
-import { ObjectType, Field, ID } from '@nestjs/graphql';
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
-import {
-  DataCatalog as DataCatalogDTS,
-  Dataset as DatasetDTS,
-} from 'schema-dts';
-import { CreativeWork } from 'src/base-entities';
+import { ObjectType } from '@nestjs/graphql';
+import { Entity } from 'typeorm';
+import { DataCatalog as DataCatalogDTS } from 'schema-dts';
+import { CreativeWork } from 'src/abstract-entity/base-entities';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const prototypicalDataCatalog: DataCatalogDTS = {
+const prototypical: DataCatalogDTS = {
   '@type': 'DataCatalog',
   dataset: [
     {

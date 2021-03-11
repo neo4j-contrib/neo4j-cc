@@ -1,7 +1,20 @@
 import React from 'react';
 import { QueryResultTable } from '../components/QueryResultTable';
 import { SummaryPanel } from '../components/SummaryPanel';
-import { DataCatalogsQuery, useDataCatalogsQuery } from '../services/graphql';
+import { DataCatalogsQuery, useCreateDataCatalogMutation, useDataCatalogsQuery } from '../graphql/generated';
+
+import { pipe, unsafeCoerce } from 'fp-ts/lib/function';
+import { IntrospectionSchema } from 'graphql';
+import { fold } from 'fp-ts/lib/Either';
+import { CcDataForm } from '../components/CcDataForm';
+
+import { findIntrospectionInputObject } from '../graphql/utils';
+import {__schema as introspection} from '../graphql/introspection.json';
+
+const introspectionInputObjectOrNotFound = pipe(    
+  unsafeCoerce<any,IntrospectionSchema>(introspection),
+  findIntrospectionInputObject('CreateDataCatalogInput')
+)
 
 export const DataCatalogsPage = () => (
   <div className="flex flex-col space-y-4">
@@ -13,7 +26,15 @@ export const DataCatalogsPage = () => (
           <a href="https://schema.org/DataCatalog">schema.org/DataCatalog</a>
         </p>
     </SummaryPanel>
-    {/* <UserForm /> */}
+
+    {pipe(
+      introspectionInputObjectOrNotFound,
+      fold(
+        (e) => {throw new Error(e)},
+        (introspectionInputObject) => (<CcDataForm useMutationHook={useCreateDataCatalogMutation} introspectionInputObject={introspectionInputObject} />),
+        )
+    )}
+
     <QueryResultTable useQueryHook={useDataCatalogsQuery} accessor={(r:DataCatalogsQuery) => r.dataCatalogs} />
 
   </div>

@@ -1,0 +1,14 @@
+mutation createDataset($input: CreateDatasetInput!) {
+  createDataset(createDatasetInput: $input) {
+    id
+    url
+    labels
+    name
+    description
+    creator
+    dateCreated
+    dateModified
+    license
+    distribution
+  }
+}

@@ -1,0 +1,3 @@
+mutation removeSoftwareSourceCode($id:ID!) {
+  removeSoftwareSourceCode(id:$id)
+}

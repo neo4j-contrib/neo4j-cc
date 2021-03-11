@@ -26,7 +26,7 @@ export class DatasetService {
   }
 
   async update(id: string, updateDatasetInput: UpdateDatasetInput) {
-    const entity = await this.entityRepository.findOne(updateDatasetInput.id);
+    const entity = await this.entityRepository.findOne(id);
     this.entityRepository.merge(entity, updateDatasetInput);
     return await this.entityRepository.save(entity);
   }

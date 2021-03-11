@@ -1,0 +1,50 @@
+fragment courseFields on Course {
+    id
+    labels
+    name
+    url
+    description
+    about
+    creator
+    publisher
+    dateCreated
+    dateModified
+    license
+    award
+    teaches
+    competencyRequired
+    courseCode
+}
+
+# create
+mutation createCourse($input: CreateCourseInput!) {
+  createCourse(createCourseInput: $input) {
+    ...courseFields
+  }
+}
+
+# Find one
+query course($id:ID!) {
+  course(id:$id) {
+    ...courseFields
+  }
+}
+
+# Find all
+query courses {
+  courses {
+    ...courseFields
+  }
+}
+
+#  update
+mutation updateCourse($id:ID!, $input: UpdateCourseInput!) {
+  updateCourse(id:$id, updateCourseInput: $input) {
+    ...courseFields
+  }
+}
+
+# remove
+mutation removeCourse($id:ID!) {
+  removeCourse(id:$id)
+}

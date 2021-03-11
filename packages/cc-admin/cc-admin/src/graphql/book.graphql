@@ -1,0 +1,46 @@
+fragment bookFields on Book {
+    id
+    labels
+    name
+    url
+    description
+    about
+    creator
+    publisher
+    dateCreated
+    dateModified
+    license
+}
+
+# create
+mutation createBook($input: CreateBookInput!) {
+  createBook(createBookInput: $input) {
+    ...bookFields
+  }
+}
+
+# Find one
+query book($id:ID!) {
+  book(id:$id) {
+    ...bookFields
+  }
+}
+
+# Find all
+query books {
+  books {
+    ...bookFields
+  }
+}
+
+#  update
+mutation updateBook($id:ID!, $input: UpdateBookInput!) {
+  updateBook(id:$id, updateBookInput: $input) {
+    ...bookFields
+  }
+}
+
+# remove
+mutation removeBook($id:ID!) {
+  removeBook(id:$id)
+}

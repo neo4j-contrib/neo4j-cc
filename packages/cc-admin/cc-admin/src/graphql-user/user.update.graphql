@@ -1,8 +1,0 @@
-mutation updateUser($id:ID!, $firstName:String, $lastName:String, $isActive:Boolean) {
-  updateUser(updateUserInput:{id:$id, firstName:$firstName, lastName:$lastName, isActive:$isActive}) {
-    id
-    firstName
-    lastName
-    isActive
-  }
-}

@@ -1,5 +1,8 @@
-import { InputType, Field, Int, PartialType } from '@nestjs/graphql';
-import { Person } from '../person.entity';
+import { InputType, PartialType } from '@nestjs/graphql';
+import { CreatePersonInput } from './create-person.input';
 
 @InputType()
-export class UpdatePersonInput extends PartialType(Person, InputType) {}
+export class UpdatePersonInput extends PartialType(
+  CreatePersonInput,
+  InputType,
+) {}
