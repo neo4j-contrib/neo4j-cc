@@ -1,5 +1,0 @@
-mutation updateSoftwareApplication($id:ID!, $input: UpdateSoftwareApplicationInput!) {
-  updateSoftwareApplication(id:$id, updateSoftwareApplicationInput: $input) {
-    ...softwareApplicationFields
-  }
-}

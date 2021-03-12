@@ -1,5 +1,0 @@
-mutation createSoftwareApplication($input: CreateSoftwareApplicationInput!) {
-  createSoftwareApplication(createSoftwareApplicationInput:$input) {
-    ...softwareApplicationFields
-  }
-}

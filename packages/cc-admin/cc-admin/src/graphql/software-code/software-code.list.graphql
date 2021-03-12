@@ -1,5 +1,0 @@
-query softwareSourceCodes {
-  softwareSourceCodes {
-    ...softwareSourceCodeFields
-  }
-}

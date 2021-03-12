@@ -1,5 +1,0 @@
-mutation updateSoftwareSourceCode($id:ID!, $input: UpdateSoftwareSourceCodeInput!) {
-  updateSoftwareSourceCode(id:$id, updateSoftwareSourceCodeInput: $input) {
-    ...softwareSourceCodeFields
-  }
-}

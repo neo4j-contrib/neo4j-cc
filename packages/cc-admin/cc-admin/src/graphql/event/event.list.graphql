@@ -1,5 +1,0 @@
-query events {
-  events {
-    ...eventFields
-  }
-}

@@ -1,3 +1,0 @@
-mutation removeSoftwareApplication($id:ID!) {
-  removeSoftwareApplication(id:$id)
-}
