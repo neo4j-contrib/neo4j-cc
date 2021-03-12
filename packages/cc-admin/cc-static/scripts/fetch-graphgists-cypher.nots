@@ -1,0 +1,40 @@
+import neo4j, { Driver } from "neo4j-driver";
+
+import {map} from 'rxjs/operators';
+
+require("dotenv").config({
+  path: `.env.development`,
+});
+
+const driver: Driver = neo4j.driver(
+  process.env.NEO4J_URL_GG!, 
+  neo4j.auth.basic('neo4j', process.env.NEO4J_PASSWORD_GG!)
+);
+
+const session = driver.rxSession({ defaultAccessMode: neo4j.session.READ });
+
+let firstTime = true;
+const toConsole = (o:any) => { console.log(`${firstTime ? "":",\n"}${JSON.stringify(o)}`); firstTime = false; }
+
+console.log('[');
+
+session.run('MATCH (n:GraphGist) RETURN {id:id(n), title:n.title, created_at:n.created_at, url:n.url} as o')
+  .records()
+  .pipe(
+    map(record => record.toObject()),
+    map(record => {record.o.id = record.o.id.toString(); return record; })
+  )
+  .subscribe({
+    next: d => toConsole(d.o),
+    complete: () => {
+      console.log(']');
+      session.close();
+      driver.close();
+    },
+    error: err => {
+      console.log(err)
+      session.close();
+      driver.close();
+    }
+  })
+ 
