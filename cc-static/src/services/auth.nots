@@ -1,0 +1,98 @@
+import auth0, { WebAuth } from "auth0-js"
+
+import { pipe } from "fp-ts/function";
+import {Option, some, none, map} from "fp-ts/Option"
+
+import { navigate } from "gatsby"
+
+const isBrowser = typeof window !== "undefined"
+
+const auth:Option<WebAuth> = isBrowser
+  ? some(new auth0.WebAuth({
+      domain: process.env.AUTH0_DOMAIN!,
+      clientID: process.env.AUTH0_CLIENTID!,
+      redirectUri: process.env.AUTH0_CALLBACK,
+      responseType: "token id_token",
+      scope: "openid profile email",
+    }))
+  : none;
+
+type StringOrBoolean = string | boolean;
+type NumberOrBoolean = number | boolean;
+
+type TokenStore = {
+  accessToken: StringOrBoolean;
+  idToken: StringOrBoolean;
+  expiresAt: NumberOrBoolean;
+}
+
+const tokens:TokenStore = {
+  accessToken: false,
+  idToken: false,
+  expiresAt: false,
+}
+  
+let user = {}
+  
+export const isAuthenticated = () => {
+  if (!isBrowser) {
+    return false;
+  }
+
+  return localStorage.getItem("isLoggedIn") === "true"
+}
+  
+export const login = () => {
+  pipe(
+    auth,
+    map( a => a.authorize() )
+  )
+}
+export const logout = () => {
+  localStorage.setItem("isLoggedIn", "false")
+  user = {};
+  pipe(
+    auth,
+    map((a) => a.logout({}))
+  )
+}
+
+
+  
+const setSession = (cb:Callback = () => {}) => (err:any, authResult:any) => {
+  if (err) {
+    navigate("/")
+    cb()
+    return
+  }
+
+  console.log(authResult);
+
+  if (authResult && authResult.accessToken && authResult.idToken) {
+    let expiresAt = authResult.expiresIn * 1000 + new Date().getTime()
+    tokens.accessToken = authResult.accessToken
+    tokens.idToken = authResult.idToken
+    tokens.expiresAt = expiresAt
+    user = authResult.idTokenPayload
+    console.log(user);
+    localStorage.setItem("isLoggedIn", "true")
+    navigate("/account")
+    cb()
+  }
+}
+  
+  export const handleAuthentication = () => {
+    // if (!isBrowser) {
+    //   return;
+    // }
+    pipe(
+      auth,
+      map( a => a.parseHash(setSession()))
+    )
+  }
+  
+  export const getProfile = () => {
+    return user
+  }
+  
+  
