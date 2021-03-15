@@ -31,7 +31,7 @@ export const BasicTable:React.FC<any> = ({ columns, data }) => {
                 ))}
               </thead>
               <tbody {...getTableBodyProps()} className="bg-white divide-y divide-gray-200">
-                {rows.map((row, i) => {
+                {rows.map((row) => {
                   prepareRow(row)
                   return (
                     <tr {...row.getRowProps()}>

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { QueryResultTable } from '../components/QueryResultTable';
 import { SummaryPanel } from '../components/SummaryPanel';
 import { SoftwareSourceCodesQuery, useCreateSoftwareSourceCodeMutation, useSoftwareSourceCodesQuery } from '../graphql/generated';

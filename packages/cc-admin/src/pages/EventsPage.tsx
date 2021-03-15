@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { QueryResultTable } from '../components/QueryResultTable';
 import { SummaryPanel } from '../components/SummaryPanel';
 import { EventsQuery, useCreateEventMutation, useEventsQuery } from '../graphql/generated';

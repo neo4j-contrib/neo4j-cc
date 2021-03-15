@@ -1,4 +1,4 @@
-import { flow, pipe } from 'fp-ts/lib/function';
+import { flow } from 'fp-ts/lib/function';
 
 import { IntrospectionInputObjectType, IntrospectionSchema } from 'graphql';
 import { findFirst } from 'fp-ts/lib/Array';

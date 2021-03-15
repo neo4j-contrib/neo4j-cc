@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+
 import { QueryResultTable } from '../components/QueryResultTable';
 import { SummaryPanel } from '../components/SummaryPanel';
 import { DatasetsQuery, useCreateDatasetMutation, useDatasetsQuery } from '../graphql/generated'

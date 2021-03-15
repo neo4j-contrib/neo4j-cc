@@ -1,14 +1,11 @@
 import React, { PropsWithChildren } from 'react';
 import { Formik, Form } from 'formik';
-import * as Yup from 'yup';
 import { CcCheckbox, CcTextInput } from './CcFormInputs';
-import {__schema as introspection} from '../graphql/introspection.json';
-import { DocumentNode, IntrospectionInputObjectType, IntrospectionInputTypeRef, IntrospectionInputValue } from 'graphql';
+import { IntrospectionInputObjectType, IntrospectionInputTypeRef, IntrospectionInputValue } from 'graphql';
 import { map, toNullable, fromNullable } from 'fp-ts/lib/Option';
-import { findFirst } from 'fp-ts/lib/Array';
 import { pipe } from 'fp-ts/lib/function';
 import { capitalCase } from "capital-case";
-import { OperationResult, TypedDocumentNode, UseMutationResponse, UseMutationState } from 'urql';
+import { UseMutationResponse } from 'urql';
 import { Exact } from '../graphql/generated';
 
 export const FormButtons:React.FC = () => (

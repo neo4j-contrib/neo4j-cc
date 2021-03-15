@@ -1,10 +1,10 @@
-import React from 'react';
+// import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
+import { Snozzle } from '@neo4j-cc/components';
 import {CcSidebar } from './components/CcSidebar';
 import {CcWorkspace } from './components/CcWorkspace';
 import { ArticlesPage } from './pages/ArticlesPage';
@@ -29,6 +29,10 @@ function App() {
         <CcSidebar />
         <CcWorkspace>
           <Switch>
+            <Route path="/">
+              <p>Hi</p>
+              <Snozzle />
+            </Route>
             <Route path="/people">
               <PeoplePage />
             </Route>

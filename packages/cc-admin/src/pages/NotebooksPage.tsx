@@ -1,7 +1,6 @@
 import { pipe, unsafeCoerce } from 'fp-ts/lib/function';
 import { fold } from 'fp-ts/lib/Either';
 import { IntrospectionSchema } from 'graphql';
-import React, { Fragment } from 'react';
 import { CcDataForm } from '../components/CcDataForm';
 import { QueryResultTable } from '../components/QueryResultTable';
 import { SummaryPanel } from '../components/SummaryPanel';

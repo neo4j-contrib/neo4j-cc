@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { QueryResultTable } from '../components/QueryResultTable';
 import { SummaryPanel } from '../components/SummaryPanel';
 import { CoursesQuery, useCreateCourseMutation, useCoursesQuery } from '../graphql/generated';
