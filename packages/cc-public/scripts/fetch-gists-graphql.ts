@@ -8,12 +8,6 @@ require("dotenv").config({
   path: `.env.development`,
 });
 
-function isDateTime(obj:any): obj is DateTime {
-  return obj instanceof DateTime;
-}
-
-const ghSearchBetween = (from:DateTime|string, to:DateTime|string) => `topic:neo4j created:${isDateTime(from) ? from.toISODate() : from}..${isDateTime(to) ? to.toISODate() : to}`
-
 const fetchFromGraphGistPortal = async () => {
 
   try {
@@ -24,10 +18,20 @@ const fetchFromGraphGistPortal = async () => {
           title
           url
           slug
+          summary
           author {
             name
             email
           }
+          industries {
+            name
+          }
+          categories {
+            name
+          }
+          use_cases {
+            name
+          }      
         }
       }
       `,

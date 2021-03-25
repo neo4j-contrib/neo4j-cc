@@ -7,9 +7,8 @@ const IndexPage = () => {
   return (
     <Layout>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <LinkCard title="People" detail="" to="/people"/>
-        <LinkCard title="Meetups" detail="" to="/meetups"/>
-        <LinkCard title="experiments" detail="" to="/experiments"/>
+        <LinkCard title="Data" detail="" to="/data"/>
+        <LinkCard title="Code" detail="" to="/code"/>
       </div>
     </Layout>
   )

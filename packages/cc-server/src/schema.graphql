@@ -13,7 +13,7 @@ type DataCatalog {
   """UUID"""
   id: ID!
   labels: [String!]
-  name: String!
+  name: String
 
   """A brief description of this Thing."""
   description: String
@@ -33,7 +33,7 @@ type Dataset {
   """UUID"""
   id: ID!
   labels: [String!]
-  name: String!
+  name: String
 
   """A brief description of this Thing."""
   description: String
@@ -52,13 +52,18 @@ type Dataset {
   URL to the direct data download. Distinct from the optional "url" field, which should lead to a page about the data.
   """
   distribution: String!
+
+  """
+  Media type typically expressed using a MIME format (see IANA site and MDN reference) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.).
+  """
+  encodingFormat: String!
 }
 
 type Person {
   """UUID"""
   id: ID!
   labels: [String!]
-  name: String!
+  name: String
 
   """A brief description of this Thing."""
   description: String
@@ -77,7 +82,7 @@ type SoftwareSourceCode {
   """UUID"""
   id: ID!
   labels: [String!]
-  name: String!
+  name: String
 
   """A brief description of this Thing."""
   description: String
@@ -110,7 +115,7 @@ type Notebook {
   """UUID"""
   id: ID!
   labels: [String!]
-  name: String!
+  name: String
 
   """A brief description of this Thing."""
   description: String
@@ -130,20 +135,25 @@ type Notebook {
   """
   codeRepository: String
 
-  """The computer programming language"""
+  """The computer programming language."""
   programmingLanguage: String
 
   """
-  Runtime platform or script interpreter dependencies. For example: GraphGist, Jupyter, ObservableHQ
+  Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).
   """
   runtimePlatform: String
+
+  """
+  The spoken language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard. See also availableLanguage. Supersedes language.
+  """
+  inLanguage: String
 }
 
 type Organization {
   """UUID"""
   id: ID!
   labels: [String!]
-  name: String!
+  name: String
 
   """A brief description of this Thing."""
   description: String
@@ -157,7 +167,7 @@ type SoftwareApplication {
   """UUID"""
   id: ID!
   labels: [String!]
-  name: String!
+  name: String
 
   """A brief description of this Thing."""
   description: String
@@ -194,7 +204,7 @@ type Event {
   """UUID"""
   id: ID!
   labels: [String!]
-  name: String!
+  name: String
 
   """A brief description of this Thing."""
   description: String
@@ -221,7 +231,7 @@ type Course {
   """UUID"""
   id: ID!
   labels: [String!]
-  name: String!
+  name: String
 
   """A brief description of this Thing."""
   description: String
@@ -259,7 +269,7 @@ type Book {
   """UUID"""
   id: ID!
   labels: [String!]
-  name: String!
+  name: String
 
   """A brief description of this Thing."""
   description: String
@@ -282,7 +292,7 @@ type Article {
   """UUID"""
   id: ID!
   labels: [String!]
-  name: String!
+  name: String
 
   """A brief description of this Thing."""
   description: String
@@ -302,7 +312,7 @@ type Comment {
   """UUID"""
   id: ID!
   labels: [String!]
-  name: String!
+  name: String
 
   """A brief description of this Thing."""
   description: String
@@ -327,6 +337,23 @@ type Comment {
   The number of downvotes this question, answer or comment has received from the community.
   """
   downvoteCount: Int!
+}
+
+type IncludedInDataCatalog {
+  """UUID"""
+  id: ID!
+  labels: [String!]
+  name: String
+
+  """A brief description of this Thing."""
+  description: String
+  url: String
+
+  """from entity UUID"""
+  from: Dataset!
+
+  """to entity UUID"""
+  to: Dataset!
 }
 
 type Query {
@@ -356,6 +383,8 @@ type Query {
   article(id: ID!): Article!
   comments: [Comment!]!
   comment(id: ID!): Comment!
+  includedInDataCatalogs: [IncludedInDataCatalog!]!
+  includedInDataCatalog(id: ID!): IncludedInDataCatalog!
 }
 
 type Mutation {
@@ -398,6 +427,9 @@ type Mutation {
   createComment(createCommentInput: CreateCommentInput!): Comment!
   updateComment(updateCommentInput: UpdateCommentInput!, id: ID!): Comment!
   removeComment(id: ID!): Boolean!
+  createIncludedInDataCatalog(createIncludedInDataCatalogInput: CreateIncludedInDataCatalogInput = {labels: []}, to: ID!, from: ID!): IncludedInDataCatalog!
+  updateIncludedInDataCatalog(updateIncludedInDataCatalogInput: UpdateIncludedInDataCatalogInput!, id: ID!): IncludedInDataCatalog!
+  removeIncludedInDataCatalog(id: ID!): IncludedInDataCatalog!
 }
 
 input CreateUserInput {
@@ -415,7 +447,7 @@ input UpdateUserInput {
 
 input CreateDataCatalogInput {
   labels: [String!] = []
-  name: String!
+  name: String
 
   """A brief description of this Thing."""
   description: String
@@ -451,7 +483,7 @@ input UpdateDataCatalogInput {
 
 input CreateDatasetInput {
   labels: [String!] = []
-  name: String!
+  name: String
 
   """A brief description of this Thing."""
   description: String
@@ -470,6 +502,11 @@ input CreateDatasetInput {
   URL to the direct data download. Distinct from the optional "url" field, which should lead to a page about the data.
   """
   distribution: String!
+
+  """
+  Media type typically expressed using a MIME format (see IANA site and MDN reference) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.).
+  """
+  encodingFormat: String!
 }
 
 input UpdateDatasetInput {
@@ -493,11 +530,16 @@ input UpdateDatasetInput {
   URL to the direct data download. Distinct from the optional "url" field, which should lead to a page about the data.
   """
   distribution: String
+
+  """
+  Media type typically expressed using a MIME format (see IANA site and MDN reference) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.).
+  """
+  encodingFormat: String
 }
 
 input CreatePersonInput {
   labels: [String!] = []
-  name: String!
+  name: String
 
   """A brief description of this Thing."""
   description: String
@@ -531,7 +573,7 @@ input UpdatePersonInput {
 
 input CreateNotebookInput {
   labels: [String!] = []
-  name: String!
+  name: String
 
   """A brief description of this Thing."""
   description: String
@@ -558,6 +600,11 @@ input CreateNotebookInput {
   Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).
   """
   runtimePlatform: String
+
+  """
+  The spoken language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard. See also availableLanguage. Supersedes language.
+  """
+  inLanguage: String
 }
 
 input UpdateNotebookInput {
@@ -589,11 +636,16 @@ input UpdateNotebookInput {
   Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).
   """
   runtimePlatform: String
+
+  """
+  The spoken language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard. See also availableLanguage. Supersedes language.
+  """
+  inLanguage: String
 }
 
 input CreateOrganizationInput {
   labels: [String!] = []
-  name: String!
+  name: String
 
   """A brief description of this Thing."""
   description: String
@@ -617,7 +669,7 @@ input UpdateOrganizationInput {
 
 input CreateSoftwareApplicationInput {
   labels: [String!] = []
-  name: String!
+  name: String
 
   """A brief description of this Thing."""
   description: String
@@ -687,7 +739,7 @@ input UpdateSoftwareApplicationInput {
 
 input CreateSoftwareSourceCodeInput {
   labels: [String!] = []
-  name: String!
+  name: String
 
   """A brief description of this Thing."""
   description: String
@@ -749,7 +801,7 @@ input UpdateSoftwareSourceCodeInput {
 
 input CreateEventInput {
   labels: [String!] = []
-  name: String!
+  name: String
 
   """A brief description of this Thing."""
   description: String
@@ -799,7 +851,7 @@ input UpdateEventInput {
 
 input CreateCourseInput {
   labels: [String!] = []
-  name: String!
+  name: String
 
   """A brief description of this Thing."""
   description: String
@@ -871,7 +923,7 @@ input UpdateCourseInput {
 
 input CreateBookInput {
   labels: [String!] = []
-  name: String!
+  name: String
 
   """A brief description of this Thing."""
   description: String
@@ -913,7 +965,7 @@ input UpdateBookInput {
 
 input CreateArticleInput {
   labels: [String!] = []
-  name: String!
+  name: String
 
   """A brief description of this Thing."""
   description: String
@@ -949,7 +1001,7 @@ input UpdateArticleInput {
 
 input CreateCommentInput {
   labels: [String!] = []
-  name: String!
+  name: String
 
   """A brief description of this Thing."""
   description: String
@@ -1003,4 +1055,23 @@ input UpdateCommentInput {
   The number of downvotes this question, answer or comment has received from the community.
   """
   downvoteCount: Int
+}
+
+input CreateIncludedInDataCatalogInput {
+  labels: [String!] = []
+  name: String
+
+  """A brief description of this Thing."""
+  description: String
+  url: String
+}
+
+input UpdateIncludedInDataCatalogInput {
+  labels: [String!] = []
+  name: String
+
+  """A brief description of this Thing."""
+  description: String
+  url: String
+  id: Int!
 }

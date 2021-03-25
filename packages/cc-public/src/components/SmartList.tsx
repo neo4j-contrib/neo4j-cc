@@ -4,12 +4,35 @@ import {useTable} from "react-table";
 
 import {DebugCell} from './smart-cells';
 
+import {pipe} from 'fp-ts/lib/function';
+import { map, reduce } from 'fp-ts/lib/Array';
+import { filter } from 'fp-ts/lib/ReadonlyRecord';
+
+const union = <T,>(a:Set<T>, b:Set<T>) => {
+  const _union = new Set(a);
+  for (let e of b) {
+    _union.add(e)
+  }
+  return _union;
+}
+
+export type OccurrenceMap = Record<string,number>
+
+export interface TypicalItem {
+  id?: string,
+  name?: string,
+  title?: string,
+  url?: string
+  description?: string,
+  labels?: string[]
+}
+
 export interface SmartListProps {
   /**
    * Renderer for each list item. 
    */
   renderItem?: React.FC<any>,
-  items: any[],
+  items: Array<TypicalItem>,
   debug?: boolean
 }
 
@@ -27,9 +50,27 @@ export const SmartList:React.FC<SmartListProps> = (props) => {
     () => props.items.map(d => ({item:d })),
      []
    )
+
+  const labels:OccurrenceMap = React.useMemo(
+    () => pipe(
+      props.items,
+      map(item => item.labels),
+      reduce({} as OccurrenceMap, (acc, labels) => {
+        if (labels !== undefined) labels.forEach((label:string) => {
+          const normalizedLabel = label.toLocaleLowerCase();
+          acc[normalizedLabel] = (acc[normalizedLabel] !== undefined) ? acc[normalizedLabel] + 1 : 1;
+        });
+        return acc;
+      }),
+      filter((freq) => (freq > 1))
+    ),
+    []
+  )
   const tableInstance = useTable({columns, data})
 
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow, } = tableInstance;
+
+  console.log('labels', labels);
 
   return (
  

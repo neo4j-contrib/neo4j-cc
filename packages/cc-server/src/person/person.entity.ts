@@ -1,6 +1,6 @@
 import { ObjectType, Field, Int } from '@nestjs/graphql';
 import { Person as PersonDTS } from 'schema-dts';
-import { Thing } from 'src/abstract-entity/base-entities';
+import { Thing } from 'src/base-entity/entities';
 import { Column, Entity } from 'typeorm';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

@@ -32,6 +32,8 @@ import { Article } from './article/article.entity';
 import { Book } from './book/book.entity';
 import { Course } from './course/course.entity';
 import { Comment } from './comment/comment.entity';
+import { IncludedInDataCatalogModule } from './included-in-data-catalog/included-in-data-catalog.module';
+import { IncludedInDataCatalog } from './included-in-data-catalog/included-in-data-catalog.entity';
 
 @Module({
   imports: [
@@ -58,6 +60,7 @@ import { Comment } from './comment/comment.entity';
         Book,
         Course,
         Comment,
+        IncludedInDataCatalog,
       ],
     }),
     UserModule,
@@ -73,6 +76,7 @@ import { Comment } from './comment/comment.entity';
     BookModule,
     ArticleModule,
     CommentModule,
+    IncludedInDataCatalogModule,
   ],
   controllers: [AppController],
   providers: [AppService],

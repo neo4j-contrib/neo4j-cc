@@ -8,32 +8,37 @@ import { SmartListItem } from "components/SmartListItem";
 import { reportUnhandledExceptionOnInvocation } from "xstate/lib/utils";
 
 
-const GithubRepoListPage:React.FC<{data:any}> = ({data}) => {
-  const items =  data.allProjectsJson.edges.map ( (repo:any) => ({
-    id: repo.node.id,
-    url: repo.node.url,
-    title: repo.node.nameWithOwner,
-    description: repo.node.description
+const PublishedDatasets:React.FC<{data:any}> = ({data}) => {
+  const items =  data.allDatasetsYaml.edges.map ( (edge:any) => ({
+    id: edge.node.id,
+    url: edge.node.homepage,
+    title: edge.node.title,
+    description: edge.node.description,
+    keywords: edge.node.keywords,
+    category: edge.node.category
   }))
   return (
-    <Layout title="projects">
+    <Layout title="datasets">
       <SmartList items={items} renderItem={SmartListItem} />
     </Layout>
   )
 }
 
-export default GithubRepoListPage
+export default PublishedDatasets
 
 
 export const query = graphql`
 query {
-  allProjectsJson(filter: {}, limit: 100) {
+  allDatasetsYaml(limit:100) {
     edges {
       node {
         id
-        url
-        nameWithOwner
+        homepage
         description
+        keywords
+        category
+        license
+        title
       }
     }
   }

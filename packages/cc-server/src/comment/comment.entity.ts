@@ -1,7 +1,7 @@
 import { ObjectType, Field, Int } from '@nestjs/graphql';
 
 import { Comment as CommentDTS } from 'schema-dts';
-import { CreativeWork, Thing } from 'src/abstract-entity/base-entities';
+import { CreativeWork, Thing } from 'src/base-entity/entities';
 import { Column, Entity } from 'typeorm';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

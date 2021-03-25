@@ -1,5 +1,5 @@
 import { ObjectType, Field, Int } from '@nestjs/graphql';
-import { CreativeWork } from 'src/abstract-entity/base-entities';
+import { CreativeWork } from 'src/base-entity/entities';
 import { SoftwareSourceCode as SoftwareSourceCodeDTS } from 'schema-dts';
 import { Column, Entity } from 'typeorm';
 

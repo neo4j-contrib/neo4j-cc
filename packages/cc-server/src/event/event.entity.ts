@@ -3,7 +3,7 @@ import {
   ISODateTime,
   ISODuration,
   Thing,
-} from 'src/abstract-entity/base-entities';
+} from 'src/base-entity/entities';
 import { Entity } from 'typeorm';
 import { Event as EventDTS } from 'schema-dts';
 

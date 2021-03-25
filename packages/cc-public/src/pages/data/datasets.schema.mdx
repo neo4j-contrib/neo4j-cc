@@ -1,0 +1,28 @@
+# Datasets (entity)
+
+"A body of structured information describing some topic(s) of interest."
+
+
+```TypeScript
+export class Dataset extends CreativeWork {
+  // 'URL to the direct data download. Distinct from the optional "url" field, which should lead to a page about the data.'
+  distribution: string;
+
+  // 'Media type typically expressed using a MIME format (see IANA site and MDN reference) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.).'
+  encodingFormat: string;
+}
+
+```
+
+## Related by
+
+- [IncludedInDataCatalog](./included-in-data-catalog.schema) to [DataCatalog](./catalogs.schema)
+
+---
+
+## Reference
+
+Definitions:
+
+- [DataCatalog](https://schema.org/DataCatalog)
+- [Dataset](https://schema.org/Dataset)

@@ -1,9 +1,6 @@
 const path = require('path');
 
-require("dotenv").config({
-  // path: `.env.${process.env.NODE_ENV}`,
-  path: `.env.development`,
-});
+require("dotenv").config();
 
 module.exports = {
   plugins: [
@@ -40,6 +37,7 @@ module.exports = {
       __key: "pages",
     },
     `gatsby-transformer-json`,
+    `gatsby-transformer-yaml`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -55,7 +53,7 @@ module.exports = {
         // HTTP headers
         headers: {
           // Learn about environment variables: https://gatsby.dev/env-vars
-          Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+          Authorization: `Bearer ${process.env.GATSBY_GITHUB_TOKEN}`,
         },
         // Additional options to pass to node-fetch
         fetchOptions: {},
@@ -84,7 +82,8 @@ module.exports = {
         'components': path.join(__dirname, 'src/components'),
         'pages': path.join(__dirname, 'src/pages')
       }
-    }
+    },
+    `gatsby-plugin-catch-links`,
   ],
   siteMetadata: {
     title: `Neo4j Community Center`,

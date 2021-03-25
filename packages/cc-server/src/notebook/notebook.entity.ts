@@ -2,7 +2,7 @@ import { ObjectType, Field, Int } from '@nestjs/graphql';
 
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 import { CreativeWork as CreativeWorkDTS } from 'schema-dts';
-import { CreativeWork } from 'src/abstract-entity/base-entities';
+import { CreativeWork } from 'src/base-entity/entities';
 import { SoftwareSourceCode } from 'src/software-source-code/software-source-code.entity';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -38,6 +38,7 @@ const asPrototype: Notebook = {
   dateCreated: '2020-01-01',
   dateModified: '2020-02-18',
   labels: ['Alcohol'], // `keywords` in schema.org DTS
+  inLanguage: 'en-US',
 };
 
 @Entity()
@@ -46,15 +47,8 @@ export class Notebook extends SoftwareSourceCode {
   @Column({ nullable: true })
   @Field(() => String, {
     nullable: true,
-    description: 'The computer programming language',
-  })
-  programmingLanguage?: string;
-
-  @Column({ nullable: true })
-  @Field(() => String, {
-    nullable: true,
     description:
-      'Runtime platform or script interpreter dependencies. For example: GraphGist, Jupyter, ObservableHQ',
+      'The spoken language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard. See also availableLanguage. Supersedes language.',
   })
-  runtimePlatform?: string;
+  inLanguage?: string;
 }

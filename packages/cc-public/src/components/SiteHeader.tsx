@@ -127,7 +127,7 @@ export const SiteHeader: React.FC<SiteHeaderProps> = (props) => {
           <div className="hidden sm:ml-6 sm:block">
             <div className="flex items-center">
               <Notifications />
-              <ProfileWidget {... props} />
+              {/* <ProfileWidget {... props} /> */}
             </div>
           </div>
           <div className="-mr-2 flex sm:hidden">

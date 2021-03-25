@@ -1,7 +1,7 @@
 import { ObjectType, Field, Int } from '@nestjs/graphql';
 
 import { Course as CourseDTS } from 'schema-dts';
-import { LearningResource } from 'src/abstract-entity/base-entities';
+import { LearningResource } from 'src/base-entity/entities';
 import { Entity } from 'typeorm';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

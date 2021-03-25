@@ -1,0 +1,22 @@
+# Data (category)
+
+Data is structured information.
+
+Entities:
+  - [Datasets](./data/datasets.schema) - A body of structured information describing some topic(s) of interest.
+  - [DataCatalog](./data/catalogs.schema) - a collection of Datasets
+
+Relationships:
+  - [IncludedInDataCatalog](./data/included-in-data-catalog.schema) `(Dataset)-[:INCLUDED_IN_DATA_CATALOG]->(:DataCatalog)`
+
+Paths:
+  - ...
+
+
+---
+## References
+
+See:
+
+- [DataCatalog](https://webschemas.org/DataCatalog)
+- [Dataset](https://webschemas.org/Dataset)

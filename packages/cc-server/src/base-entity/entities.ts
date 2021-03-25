@@ -3,7 +3,7 @@ import {
   DataCatalog as CreativeWorkDTS,
   Course as LearningResourceDTS,
 } from 'schema-dts';
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
 
 export type ISODateTime = string;
 export type ISODuration = string;
@@ -23,9 +23,9 @@ export abstract class Thing {
   @Field(() => [String], { nullable: true, defaultValue: [] })
   labels?: string[];
 
-  @Column()
-  @Field(() => String)
-  name!: string;
+  @Column({ nullable: true })
+  @Field(() => String, { nullable: true })
+  name?: string;
 
   @Column({ nullable: true })
   @Field(() => String, {
@@ -120,4 +120,20 @@ export abstract class LearningResource
       'Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity in order to do something such as earn an Educational Occupational Credential or understand a LearningResource.',
   })
   competencyRequired?: string[];
+}
+
+@ObjectType()
+export abstract class Relationship<
+  From extends Thing,
+  To extends Thing
+> extends Thing {
+  @OneToOne(() => Thing)
+  @JoinColumn()
+  @Field(() => ID, { description: 'from entity UUID' })
+  from: From;
+
+  @OneToOne(() => Thing)
+  @JoinColumn()
+  @Field(() => ID, { description: 'to entity UUID' })
+  to: To;
 }

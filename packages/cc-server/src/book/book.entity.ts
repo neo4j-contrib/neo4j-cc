@@ -1,6 +1,6 @@
 import { ObjectType, Field, Int } from '@nestjs/graphql';
 import { Book as BookDTS } from 'schema-dts';
-import { CreativeWork } from 'src/abstract-entity/base-entities';
+import { CreativeWork } from 'src/base-entity/entities';
 import { Entity } from 'typeorm';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

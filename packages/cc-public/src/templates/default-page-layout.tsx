@@ -1,9 +1,13 @@
 import React from "react"
 
-export default function DefaultPageLayout({ children }) {
+import Layout from "components/SiteLayout";
+
+export default function DefaultPageLayout({ children }:any) {
   return (
-    <div className="inset-0 container">
+    <Layout>
+      <div className="prose p-8 bg-white rounded max-w-none">
       {children}
-    </div>
+      </div>
+    </Layout>
   )
 }

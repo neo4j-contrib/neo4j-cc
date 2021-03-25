@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { EntityService } from 'src/abstract-entity/entity.service';
+import { EntityService } from 'src/base-entity/entity.service';
 import { Repository } from 'typeorm';
 
 import { CreateSoftwareApplicationInput } from './dto/create-software-application.input';
