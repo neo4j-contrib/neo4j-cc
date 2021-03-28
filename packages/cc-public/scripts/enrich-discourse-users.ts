@@ -7,6 +7,9 @@ const readline = require('readline');
 const process = require('process');
 const slugify = require('@sindresorhus/slugify');
 
+require("dotenv").config({
+  path: `.env.development`,
+});
 
 // const discourseListUrl = "https://community.neo4j.com/directory_items.json";
 const discourseUserUrl = "https://community.neo4j.com/users/";
@@ -36,8 +39,8 @@ const enrichPeople = async (people:any[]) => {
 	const fullPeople = await people.map( async (person:any) => {
 		const fullPerson = axios.get(`${discourseUserUrl}${slugify(person.username)}`, {
 			"headers": {
-				"Api-Key": "b5a4d12699fe240f8b1559416a1f58c31488752905dc6da4e1bef1826648ef2f",
-				"Api-Username": "abk"
+				"Api-Key": process.env.DISCOURSE_API_TOKEN,
+				"Api-Username": process.env.DISCOURSE_API_USER
 			}
 		});
 		return fullPerson;
