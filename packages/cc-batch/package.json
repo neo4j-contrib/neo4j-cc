@@ -1,0 +1,71 @@
+{
+  "name": "cc-batch",
+  "author": "Andreas Kollegger",
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/cc-batch.esm.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why",
+    "fetch": "run-s fetch:*",
+    "fetch:gh": "ts-node scripts/fetch-gh-repos.ts > data/projects.json",
+    "fetch:gists": "ts-node scripts/fetch-gists-graphql.ts > data/gists.json",
+    "fetch:people": "ts-node scripts/fetch-discourse-users.ts > data/people.json",
+    "fetch:meetups": "ts-node scripts/fetch-meetups-groups.ts > data/meetups.json",
+    "fetch:awesome": "echo 'Fetch from https://github.com/neueda/awesome-neo4j/blob/master/README.md'",
+    "fetch:free": "ts-node scripts/fetch-free-dev.ts > data/free-dev.json"
+  },
+  "peerDependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "size-limit": [
+    {
+      "path": "dist/cc-batch.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/cc-batch.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^4.10.1",
+    "@types/luxon": "^1.26.2",
+    "husky": "^5.2.0",
+    "size-limit": "^4.10.1",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.1.0",
+    "typescript": "^4.2.3"
+  },
+  "dependencies": {
+    "@urql/core": "^2.0.0",
+    "dotenv": "^8.2.0",
+    "graphql": "^15.5.0",
+    "luxon": "^1.26.0",
+    "urql": "^2.0.1",
+    "yargs": "^16.2.0"
+  }
+}

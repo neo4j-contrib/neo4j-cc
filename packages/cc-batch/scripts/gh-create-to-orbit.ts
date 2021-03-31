@@ -10,7 +10,7 @@ const sleep = promisify(setTimeout)
 let rateLimitingSleepInterval = 1000;
 
 require("dotenv").config({
-  path: `.env`,
+  path: `../../.env`,
 });
 
 const axiosLimited = rateLimit(axios.create(), { maxRequests: 2, perMilliseconds: 1000, maxRPS: 2 })
@@ -29,8 +29,8 @@ const ghSearchBetween = (from:DateTime|string, to:DateTime|string) => `topic:neo
 const ingestFromGithub = async () => {
   let cursor = null;
   let hasNextPage = true;
-  let from = DateTime.fromISO("2012-01-01");
-  let to = from.plus({years:8});
+  let from = DateTime.fromISO("2021-03-01");
+  let to = from.plus({months:1});
   let today = DateTime.local();
   let yearlyResultCount = 0;
   let totalResultCounts = 0;
@@ -40,11 +40,12 @@ const ingestFromGithub = async () => {
     debug("[");
     do {
       do {
-        
+        let gh_search = `query:"${ghSearchBetween(from, to)}", type:REPOSITORY, first: 100, ${cursor ? "after: $cursor" : ""}`
+        console.error("searching github using: ", gh_search);
         let { search }:any = await graphql<{search:any}>(
           `
             query neo4jRelatedRepositories${cursor ? "($cursor: String!)" : ""} {
-              search(query:"${ghSearchBetween(from, to)}", type:REPOSITORY, first: 100, ${cursor ? "after: $cursor" : ""}) {
+              search(${gh_search}) {
                 pageInfo {
                   startCursor
                   hasNextPage
