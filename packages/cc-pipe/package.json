@@ -1,5 +1,5 @@
 {
-  "name": "cc-batch",
+  "name": "@neo4j-cc/cc-pipe",
   "author": "Andreas Kollegger",
   "version": "0.1.0",
   "license": "MIT",
@@ -17,6 +17,7 @@
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test",
+    "test:watch": "tsdx test --watch",
     "lint": "tsdx lint",
     "prepare": "tsdx build",
     "size": "size-limit",
@@ -27,9 +28,12 @@
     "fetch:people": "ts-node scripts/fetch-discourse-users.ts > data/people.json",
     "fetch:meetups": "ts-node scripts/fetch-meetups-groups.ts > data/meetups.json",
     "fetch:awesome": "echo 'Fetch from https://github.com/neueda/awesome-neo4j/blob/master/README.md'",
-    "fetch:free": "ts-node scripts/fetch-free-dev.ts > data/free-dev.json"
+    "fetch:free": "ts-node scripts/fetch-free-dev.ts > data/free-dev.json",
+    "fetch:devto": "ts-node scripts/devto-to-orbit.ts"
   },
-  "peerDependencies": {},
+  "jest": {
+    "setupFilesAfterEnv": ["@relmify/jest-fp-ts"]
+  },
   "husky": {
     "hooks": {
       "pre-commit": "tsdx lint"
@@ -52,20 +56,31 @@
     }
   ],
   "devDependencies": {
-    "@size-limit/preset-small-lib": "^4.10.1",
-    "@types/luxon": "^1.26.2",
-    "husky": "^5.2.0",
-    "size-limit": "^4.10.1",
+    "@relmify/jest-fp-ts": "^1.1.1",
+    "@size-limit/preset-small-lib": "^4.10.2",
+    "@types/luxon": "^1.26.3",
+    "husky": "^6.0.0",
+    "size-limit": "^4.10.2",
     "tsdx": "^0.14.1",
-    "tslib": "^2.1.0",
-    "typescript": "^4.2.3"
+    "tslib": "^2.2.0",
+    "typescript": "^4.2.4"
   },
   "dependencies": {
+    "@effect-ts/core": "",
+    "@effect-ts/jest": "",
+    "@effect-ts/morphic": "",
+    "@effect-ts/node": "",
+    "@effect-ts/query": "",
     "@urql/core": "^2.0.0",
+    "axios": "^0.21.1",
+    "axios-rate-limit": "^1.3.0",
     "dotenv": "^8.2.0",
+    "fp-ts": "^2.10.2",
+    "fp-ts-rxjs": "^0.6.13",
     "graphql": "^15.5.0",
     "luxon": "^1.26.0",
-    "urql": "^2.0.1",
+    "rxjs": "^6.6.7",
+    "urql": "^2.0.2",
     "yargs": "^16.2.0"
   }
 }

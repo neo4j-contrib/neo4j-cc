@@ -1,0 +1,2585 @@
+{
+  "success": true,
+  "payload": {
+    "activeTab": "archive",
+    "tag": {
+      "slug": "neo4j",
+      "name": "Neo4j",
+      "postCount": 985,
+      "metadata": {
+        "postCount": 985,
+        "coverImage": {
+          "id": "1*ymxq_lqn1KFWwhbzsT4k8w.png",
+          "originalWidth": 905,
+          "originalHeight": 649,
+          "isFeatured": true
+        }
+      },
+      "type": "Tag"
+    },
+    "hasTopWriters": false,
+    "relatedTags": [
+      {
+        "slug": "graph-database",
+        "name": "Graph Database",
+        "postCount": 632,
+        "metadata": {
+          "postCount": 632,
+          "coverImage": {
+            "id": "1*inTUrcJu3Wo9yJ2lShKuAg.png",
+            "originalWidth": 922,
+            "originalHeight": 220,
+            "isFeatured": true
+          }
+        },
+        "type": "Tag"
+      },
+      {
+        "slug": "graph",
+        "name": "Graph",
+        "postCount": 1692,
+        "metadata": {
+          "postCount": 1692,
+          "coverImage": {
+            "id": "1*ymxq_lqn1KFWwhbzsT4k8w.png",
+            "originalWidth": 905,
+            "originalHeight": 649,
+            "isFeatured": true
+          }
+        },
+        "type": "Tag"
+      },
+      {
+        "slug": "database",
+        "name": "Database",
+        "postCount": 15549,
+        "metadata": {
+          "postCount": 15549,
+          "coverImage": {
+            "id": "1*sQfQAlJKYNeAa4nS4iT-mw.png",
+            "originalWidth": 1159,
+            "originalHeight": 484,
+            "isFeatured": true
+          }
+        },
+        "type": "Tag"
+      },
+      {
+        "slug": "data-science",
+        "name": "Data Science",
+        "postCount": 122696,
+        "metadata": {
+          "postCount": 122696,
+          "coverImage": {
+            "id": "1*3KusnXdNmkratxYtE7OTEA.jpeg",
+            "originalWidth": 6000,
+            "originalHeight": 4000,
+            "isFeatured": true,
+            "alt": "Scientist"
+          }
+        },
+        "type": "Tag"
+      },
+      {
+        "slug": "cypher",
+        "name": "Cypher",
+        "postCount": 189,
+        "metadata": {
+          "postCount": 189,
+          "coverImage": {
+            "id": "1*8MIiPpfpYIEA4d1bWmgzHA.jpeg",
+            "originalWidth": 500,
+            "originalHeight": 500,
+            "isFeatured": true
+          }
+        },
+        "type": "Tag"
+      },
+      {
+        "slug": "graphql",
+        "name": "GraphQL",
+        "postCount": 6391,
+        "metadata": {
+          "postCount": 6391,
+          "coverImage": {
+            "id": "1*a49eP7pVNT21dD-qV3Shgw.png",
+            "originalWidth": 2014,
+            "originalHeight": 1104,
+            "isFeatured": true
+          }
+        },
+        "type": "Tag"
+      },
+      {
+        "slug": "nosql",
+        "name": "NoSQL",
+        "postCount": 2636,
+        "metadata": {
+          "postCount": 2636,
+          "coverImage": {
+            "id": "1*QtqQSljK0yr773B1Pd8U8g.jpeg",
+            "originalWidth": 4094,
+            "originalHeight": 2730,
+            "isFeatured": true
+          }
+        },
+        "type": "Tag"
+      },
+      {
+        "slug": "python",
+        "name": "Python",
+        "postCount": 79839,
+        "metadata": {
+          "postCount": 79839,
+          "coverImage": {
+            "id": "1*3KusnXdNmkratxYtE7OTEA.jpeg",
+            "originalWidth": 6000,
+            "originalHeight": 4000,
+            "isFeatured": true,
+            "alt": "Scientist"
+          }
+        },
+        "type": "Tag"
+      },
+      {
+        "slug": "neo4j-graph-database",
+        "name": "Neo4j Graph Database",
+        "postCount": 60,
+        "metadata": {
+          "postCount": 60,
+          "coverImage": {
+            "id": "0*OMnh5_MNia20Q_5U",
+            "originalWidth": 3888,
+            "originalHeight": 2592,
+            "isFeatured": true,
+            "unsplashPhotoId": "xMObPS6V_gY"
+          }
+        },
+        "type": "Tag"
+      }
+    ],
+    "parentTags": [],
+    "showCdcBanner": false,
+    "archiveIndex": {
+      "timeBucket": {
+        "year": "2020",
+        "month": "01",
+        "day": "01",
+        "hasStories": false
+      },
+      "yearlyBuckets": [
+        {
+          "year": "2012",
+          "month": "",
+          "day": "",
+          "hasStories": true
+        },
+        {
+          "year": "2013",
+          "month": "",
+          "day": "",
+          "hasStories": true
+        },
+        {
+          "year": "2014",
+          "month": "",
+          "day": "",
+          "hasStories": true
+        },
+        {
+          "year": "2015",
+          "month": "",
+          "day": "",
+          "hasStories": true
+        },
+        {
+          "year": "2016",
+          "month": "",
+          "day": "",
+          "hasStories": true
+        },
+        {
+          "year": "2017",
+          "month": "",
+          "day": "",
+          "hasStories": true
+        },
+        {
+          "year": "2018",
+          "month": "",
+          "day": "",
+          "hasStories": true
+        },
+        {
+          "year": "2019",
+          "month": "",
+          "day": "",
+          "hasStories": true
+        },
+        {
+          "year": "2020",
+          "month": "",
+          "day": "",
+          "hasStories": true
+        },
+        {
+          "year": "2021",
+          "month": "",
+          "day": "",
+          "hasStories": true
+        }
+      ],
+      "monthlyBuckets": [
+        {
+          "year": "2020",
+          "month": "01",
+          "day": "",
+          "hasStories": true
+        },
+        {
+          "year": "2020",
+          "month": "02",
+          "day": "",
+          "hasStories": true
+        },
+        {
+          "year": "2020",
+          "month": "03",
+          "day": "",
+          "hasStories": true
+        },
+        {
+          "year": "2020",
+          "month": "04",
+          "day": "",
+          "hasStories": true
+        },
+        {
+          "year": "2020",
+          "month": "05",
+          "day": "",
+          "hasStories": true
+        },
+        {
+          "year": "2020",
+          "month": "06",
+          "day": "",
+          "hasStories": true
+        },
+        {
+          "year": "2020",
+          "month": "07",
+          "day": "",
+          "hasStories": true
+        },
+        {
+          "year": "2020",
+          "month": "08",
+          "day": "",
+          "hasStories": true
+        },
+        {
+          "year": "2020",
+          "month": "09",
+          "day": "",
+          "hasStories": true
+        },
+        {
+          "year": "2020",
+          "month": "10",
+          "day": "",
+          "hasStories": true
+        },
+        {
+          "year": "2020",
+          "month": "11",
+          "day": "",
+          "hasStories": true
+        },
+        {
+          "year": "2020",
+          "month": "12",
+          "day": "",
+          "hasStories": true
+        }
+      ],
+      "dailyBuckets": [
+        {
+          "year": "2020",
+          "month": "01",
+          "day": "01",
+          "hasStories": true
+        },
+        {
+          "year": "2020",
+          "month": "01",
+          "day": "02",
+          "hasStories": false
+        },
+        {
+          "year": "2020",
+          "month": "01",
+          "day": "03",
+          "hasStories": false
+        },
+        {
+          "year": "2020",
+          "month": "01",
+          "day": "04",
+          "hasStories": false
+        },
+        {
+          "year": "2020",
+          "month": "01",
+          "day": "05",
+          "hasStories": true
+        },
+        {
+          "year": "2020",
+          "month": "01",
+          "day": "06",
+          "hasStories": false
+        },
+        {
+          "year": "2020",
+          "month": "01",
+          "day": "07",
+          "hasStories": false
+        },
+        {
+          "year": "2020",
+          "month": "01",
+          "day": "08",
+          "hasStories": false
+        },
+        {
+          "year": "2020",
+          "month": "01",
+          "day": "09",
+          "hasStories": true
+        },
+        {
+          "year": "2020",
+          "month": "01",
+          "day": "10",
+          "hasStories": false
+        },
+        {
+          "year": "2020",
+          "month": "01",
+          "day": "11",
+          "hasStories": false
+        },
+        {
+          "year": "2020",
+          "month": "01",
+          "day": "12",
+          "hasStories": false
+        },
+        {
+          "year": "2020",
+          "month": "01",
+          "day": "13",
+          "hasStories": true
+        },
+        {
+          "year": "2020",
+          "month": "01",
+          "day": "14",
+          "hasStories": true
+        },
+        {
+          "year": "2020",
+          "month": "01",
+          "day": "15",
+          "hasStories": true
+        },
+        {
+          "year": "2020",
+          "month": "01",
+          "day": "16",
+          "hasStories": false
+        },
+        {
+          "year": "2020",
+          "month": "01",
+          "day": "17",
+          "hasStories": false
+        },
+        {
+          "year": "2020",
+          "month": "01",
+          "day": "18",
+          "hasStories": false
+        },
+        {
+          "year": "2020",
+          "month": "01",
+          "day": "19",
+          "hasStories": false
+        },
+        {
+          "year": "2020",
+          "month": "01",
+          "day": "20",
+          "hasStories": true
+        },
+        {
+          "year": "2020",
+          "month": "01",
+          "day": "21",
+          "hasStories": false
+        },
+        {
+          "year": "2020",
+          "month": "01",
+          "day": "22",
+          "hasStories": true
+        },
+        {
+          "year": "2020",
+          "month": "01",
+          "day": "23",
+          "hasStories": false
+        },
+        {
+          "year": "2020",
+          "month": "01",
+          "day": "24",
+          "hasStories": false
+        },
+        {
+          "year": "2020",
+          "month": "01",
+          "day": "25",
+          "hasStories": false
+        },
+        {
+          "year": "2020",
+          "month": "01",
+          "day": "26",
+          "hasStories": false
+        },
+        {
+          "year": "2020",
+          "month": "01",
+          "day": "27",
+          "hasStories": true
+        },
+        {
+          "year": "2020",
+          "month": "01",
+          "day": "28",
+          "hasStories": false
+        },
+        {
+          "year": "2020",
+          "month": "01",
+          "day": "29",
+          "hasStories": false
+        },
+        {
+          "year": "2020",
+          "month": "01",
+          "day": "30",
+          "hasStories": true
+        },
+        {
+          "year": "2020",
+          "month": "01",
+          "day": "31",
+          "hasStories": true
+        }
+      ],
+      "nextBucket": {
+        "year": "2020",
+        "month": "01",
+        "day": "05",
+        "hasStories": true
+      }
+    },
+    "streamItems": [
+      {
+        "createdAt": 1617624591545,
+        "postPreview": {
+          "postId": "a5258d545daf"
+        },
+        "randomId": "ec4b05d7069b",
+        "itemType": "postPreview",
+        "type": "StreamItem"
+      },
+      {
+        "createdAt": 1617624591545,
+        "postPreview": {
+          "postId": "f86c891f6879"
+        },
+        "randomId": "b281197548d",
+        "itemType": "postPreview",
+        "type": "StreamItem"
+      },
+      {
+        "createdAt": 1617624591545,
+        "postPreview": {
+          "postId": "145c5daefcc5"
+        },
+        "randomId": "b24220cf9c28",
+        "itemType": "postPreview",
+        "type": "StreamItem"
+      }
+    ],
+    "references": {
+      "Collection": {
+        "c0e10f7c3cc0": {
+          "id": "c0e10f7c3cc0",
+          "name": "Neo4j Developer Blog",
+          "slug": "neo4j",
+          "tags": [
+            "DATABASE",
+            "GRAPH DATABASE",
+            "DATA SCIENCE",
+            "SOFTWARE DEVELOPMENT",
+            "GRAPHQL"
+          ],
+          "creatorId": "26bec2028463",
+          "description": "Developer Content around Graph Databases, Neo4j, Cypher, Data Science, Graph Analytics, GraphQL and more.",
+          "shortDescription": "Developer Content around Graph Databases, Neo4j, Cypher…",
+          "image": {
+            "imageId": "1*kDtqhvHY-ANL4yq4XetGOw.png",
+            "filter": "",
+            "backgroundSize": "",
+            "originalWidth": 250,
+            "originalHeight": 250,
+            "strategy": "resample",
+            "height": 0,
+            "width": 0
+          },
+          "metadata": {
+            "followerCount": 10375,
+            "activeAt": 1617131117871
+          },
+          "virtuals": {
+            "permissions": {
+              "canPublish": false,
+              "canPublishAll": false,
+              "canRepublish": false,
+              "canRemove": false,
+              "canManageAll": false,
+              "canSubmit": false,
+              "canEditPosts": false,
+              "canAddWriters": false,
+              "canViewStats": false,
+              "canSendNewsletter": false,
+              "canViewLockedPosts": false,
+              "canViewCloaked": false,
+              "canEditOwnPosts": false,
+              "canBeAssignedAuthor": false,
+              "canEnrollInHightower": false,
+              "canLockPostsForMediumMembers": false,
+              "canLockOwnPostsForMediumMembers": false,
+              "canViewNewsletterV2Stats": false,
+              "canCreateNewsletterV3": false
+            },
+            "isSubscribed": false,
+            "isEnrolledInHightower": false,
+            "isEligibleForHightower": false,
+            "isSubscribedToCollectionEmails": false,
+            "isMuted": false,
+            "canToggleEmail": false
+          },
+          "logo": {
+            "imageId": "1*VcXxX-LCX9H7Qpt8uL6Kfw.png",
+            "filter": "",
+            "backgroundSize": "",
+            "originalWidth": 1024,
+            "originalHeight": 410,
+            "strategy": "resample",
+            "height": 0,
+            "width": 0
+          },
+          "twitterUsername": "neo4j",
+          "facebookPageName": "neo4j.graph.database",
+          "publicEmail": "devrel@neo4j.com",
+          "sections": [
+            {
+              "type": 2,
+              "collectionHeaderMetadata": {
+                "backgroundImage": {
+                  "id": "1*MullSWgORhNc0uiXaR7w6w.jpeg",
+                  "originalWidth": 1280,
+                  "originalHeight": 427
+                },
+                "logoImage": {
+                  "id": "1*KpAhQD-7U6myyXhtU7s_8w@2x.png",
+                  "originalWidth": 800,
+                  "originalHeight": 300,
+                  "alt": "Neo4j Developer Blog"
+                },
+                "alignment": 2,
+                "layout": 6
+              }
+            },
+            {
+              "type": 1,
+              "postListMetadata": {
+                "source": 1,
+                "layout": 5,
+                "number": 5,
+                "postIds": []
+              }
+            },
+            {
+              "type": 1,
+              "postListMetadata": {
+                "source": 3,
+                "layout": 4,
+                "number": 7,
+                "postIds": [
+                  "c14a9c296713",
+                  "eed6daa7c6f7",
+                  "73c7f693c8cc",
+                  "a2ecaaa7c379",
+                  "a8d05c415bbd",
+                  "3d99cb324546",
+                  "79bbaf2a062d"
+                ],
+                "sectionHeader": "Highlights"
+              }
+            },
+            {
+              "type": 1,
+              "postListMetadata": {
+                "source": 2,
+                "layout": 4,
+                "number": 6,
+                "postIds": [],
+                "sectionHeader": "Popular"
+              }
+            },
+            {
+              "type": 1,
+              "postListMetadata": {
+                "source": 1,
+                "layout": 4,
+                "number": 24,
+                "postIds": []
+              }
+            },
+            {
+              "type": 1,
+              "postListMetadata": {
+                "source": 1,
+                "layout": 4,
+                "number": 24,
+                "postIds": []
+              }
+            },
+            {
+              "type": 1,
+              "postListMetadata": {
+                "source": 1,
+                "layout": 4,
+                "number": 24,
+                "postIds": []
+              }
+            },
+            {
+              "type": 1,
+              "postListMetadata": {
+                "source": 1,
+                "layout": 4,
+                "number": 24,
+                "postIds": []
+              }
+            }
+          ],
+          "favicon": {
+            "imageId": "",
+            "filter": "",
+            "backgroundSize": "",
+            "originalWidth": 0,
+            "originalHeight": 0,
+            "strategy": "resample",
+            "height": 0,
+            "width": 0
+          },
+          "colorPalette": {
+            "defaultBackgroundSpectrum": {
+              "colorPoints": [
+                {
+                  "color": "#FF1A8917",
+                  "point": 0
+                },
+                {
+                  "color": "#FF11800E",
+                  "point": 0.1
+                },
+                {
+                  "color": "#FF0F730C",
+                  "point": 0.2
+                },
+                {
+                  "color": "#FF095407",
+                  "point": 1
+                }
+              ],
+              "backgroundColor": "#FFFFFFFF"
+            },
+            "highlightSpectrum": {
+              "colorPoints": [
+                {
+                  "color": "#FFFFFFFF",
+                  "point": 0
+                },
+                {
+                  "color": "#FFE8F3E8",
+                  "point": 0.1
+                },
+                {
+                  "color": "#FFE8F3E8",
+                  "point": 0.2
+                },
+                {
+                  "color": "#FFD1E7D1",
+                  "point": 0.6
+                },
+                {
+                  "color": "#FFA3D0A2",
+                  "point": 1
+                }
+              ],
+              "backgroundColor": "#FFFFFFFF"
+            },
+            "darkBackgroundSpectrum": {
+              "colorPoints": [
+                {
+                  "color": "#FF095407",
+                  "point": 0
+                },
+                {
+                  "color": "#FF0F730C",
+                  "point": 0.1
+                },
+                {
+                  "color": "#FF11800E",
+                  "point": 0.2
+                },
+                {
+                  "color": "#FF1A8917",
+                  "point": 1
+                }
+              ],
+              "backgroundColor": "#FF000000"
+            }
+          },
+          "navItems": [
+            {
+              "type": 1,
+              "title": "Analytics",
+              "tagSlug": "data-science",
+              "url": "https://medium.com/neo4j/tagged/data-science",
+              "source": "tagSlug"
+            },
+            {
+              "type": 1,
+              "title": "Cloud",
+              "tagSlug": "cloud-computing",
+              "url": "https://medium.com/neo4j/tagged/cloud-computing",
+              "source": "tagSlug"
+            },
+            {
+              "type": 1,
+              "title": "Visualization",
+              "tagSlug": "data-visualization",
+              "url": "https://medium.com/neo4j/tagged/data-visualization",
+              "source": "tagSlug"
+            },
+            {
+              "type": 1,
+              "title": "How-To",
+              "tagSlug": "how-to",
+              "url": "https://medium.com/neo4j/tagged/how-to",
+              "source": "tagSlug"
+            },
+            {
+              "type": 1,
+              "title": "Import/Export",
+              "tagSlug": "data",
+              "url": "https://medium.com/neo4j/tagged/data",
+              "source": "tagSlug"
+            },
+            {
+              "type": 1,
+              "title": "Announcements",
+              "tagSlug": "announcements",
+              "url": "https://medium.com/neo4j/tagged/announcements",
+              "source": "tagSlug"
+            },
+            {
+              "type": 2,
+              "title": "Discussions",
+              "postId": "79bbaf2a062d",
+              "url": "https://medium.com/neo4j/new-neo4j-community-site-forum-79bbaf2a062d",
+              "source": "postId"
+            },
+            {
+              "type": 3,
+              "title": "Developer Guides",
+              "url": "http://neo4j.com/developer/get-started"
+            }
+          ],
+          "colorBehavior": 1,
+          "acceleratedMobilePagesState": 0,
+          "ampLogo": {
+            "imageId": "",
+            "filter": "",
+            "backgroundSize": "",
+            "originalWidth": 0,
+            "originalHeight": 0,
+            "strategy": "resample",
+            "height": 0,
+            "width": 0
+          },
+          "header": {
+            "backgroundImage": {
+              "id": "1*MullSWgORhNc0uiXaR7w6w.jpeg",
+              "originalWidth": 1280,
+              "originalHeight": 427
+            },
+            "logoImage": {
+              "id": "1*KpAhQD-7U6myyXhtU7s_8w@2x.png",
+              "originalWidth": 800,
+              "originalHeight": 300,
+              "alt": "Neo4j Developer Blog"
+            },
+            "alignment": 2,
+            "layout": 6
+          },
+          "subscriberCount": 10375,
+          "tagline": "Developer Content around Graph Databases, Neo4j, Cypher…",
+          "isOptedIntoAurora": false,
+          "isCurationAllowedByDefault": false,
+          "polarisCoverImage": {
+            "imageId": "",
+            "filter": "",
+            "backgroundSize": "",
+            "originalWidth": 0,
+            "originalHeight": 0,
+            "strategy": "resample",
+            "height": 0,
+            "width": 0
+          },
+          "type": "Collection"
+        },
+        "7f60cf5620c9": {
+          "id": "7f60cf5620c9",
+          "name": "Towards Data Science",
+          "slug": "towards-data-science",
+          "tags": [
+            "DATA SCIENCE",
+            "MACHINE LEARNING",
+            "PROGRAMMING",
+            "DATA VISUALIZATION",
+            "ARTIFICIAL INTELLIGENCE"
+          ],
+          "creatorId": "7e12c71dfa81",
+          "description": "Your home for data science. A Medium publication sharing concepts, ideas and codes.",
+          "shortDescription": "Your home for data science.",
+          "image": {
+            "imageId": "1*eLxNtw6hQ4-3HrHda5BCCw.png",
+            "filter": "",
+            "backgroundSize": "",
+            "originalWidth": 1173,
+            "originalHeight": 1172,
+            "strategy": "resample",
+            "height": 0,
+            "width": 0
+          },
+          "metadata": {
+            "followerCount": 576245,
+            "activeAt": 1617624264448
+          },
+          "virtuals": {
+            "permissions": {
+              "canPublish": false,
+              "canPublishAll": false,
+              "canRepublish": false,
+              "canRemove": false,
+              "canManageAll": false,
+              "canSubmit": false,
+              "canEditPosts": false,
+              "canAddWriters": false,
+              "canViewStats": false,
+              "canSendNewsletter": false,
+              "canViewLockedPosts": false,
+              "canViewCloaked": false,
+              "canEditOwnPosts": false,
+              "canBeAssignedAuthor": false,
+              "canEnrollInHightower": false,
+              "canLockPostsForMediumMembers": false,
+              "canLockOwnPostsForMediumMembers": false,
+              "canViewNewsletterV2Stats": false,
+              "canCreateNewsletterV3": false
+            },
+            "isSubscribed": false,
+            "isEnrolledInHightower": false,
+            "isEligibleForHightower": false,
+            "isSubscribedToCollectionEmails": false,
+            "isMuted": false,
+            "canToggleEmail": true
+          },
+          "logo": {
+            "imageId": "1*mG6i4Bh_LgixUYXJgQpYsg@2x.png",
+            "filter": "",
+            "backgroundSize": "",
+            "originalWidth": 337,
+            "originalHeight": 122,
+            "strategy": "resample",
+            "height": 0,
+            "width": 0
+          },
+          "twitterUsername": "TDataScience",
+          "facebookPageName": "towardsdatascience",
+          "collectionMastheadId": "8b6aceffde6",
+          "domain": "towardsdatascience.com",
+          "sections": [
+            {
+              "type": 2,
+              "collectionHeaderMetadata": {
+                "backgroundImage": {},
+                "logoImage": {
+                  "id": "1*W3ebXM4V58VGsE1EflMJ7w@2x.png",
+                  "originalWidth": 1483,
+                  "originalHeight": 437,
+                  "alt": "Towards Data Science"
+                },
+                "alignment": 2,
+                "layout": 5
+              }
+            },
+            {
+              "type": 1,
+              "postListMetadata": {
+                "source": 3,
+                "layout": 4,
+                "number": 2,
+                "postIds": [
+                  "3f9947272fce",
+                  "94a6ab9595de"
+                ]
+              }
+            },
+            {
+              "type": 1,
+              "postListMetadata": {
+                "source": 3,
+                "layout": 4,
+                "number": 3,
+                "postIds": [
+                  "ad9eeabdb7a1",
+                  "3d120201db7e",
+                  "3d87ddfa5346"
+                ],
+                "sectionHeader": "Featured "
+              }
+            },
+            {
+              "type": 1,
+              "postListMetadata": {
+                "source": 1,
+                "layout": 4,
+                "number": 6,
+                "postIds": [],
+                "sectionHeader": "Latest"
+              }
+            },
+            {
+              "type": 1,
+              "postListMetadata": {
+                "source": 3,
+                "layout": 4,
+                "number": 2,
+                "postIds": [
+                  "3bf37f75a345",
+                  "52245bc91451"
+                ],
+                "sectionHeader": "Our Guides"
+              }
+            },
+            {
+              "type": 1,
+              "postListMetadata": {
+                "source": 3,
+                "layout": 4,
+                "number": 6,
+                "postIds": [
+                  "495c26463868",
+                  "55c52aaee52a",
+                  "99a25eeb677d",
+                  "17ee4651c6db",
+                  "25601c3ba9fc",
+                  "b3b6d2de6938"
+                ],
+                "sectionHeader": "Trending"
+              }
+            },
+            {
+              "type": 1,
+              "postListMetadata": {
+                "source": 4,
+                "layout": 4,
+                "number": 3,
+                "postIds": [],
+                "tagSlug": "TDS Event Talks",
+                "sectionHeader": "Event Talks"
+              }
+            },
+            {
+              "type": 1,
+              "postListMetadata": {
+                "source": 4,
+                "layout": 4,
+                "number": 3,
+                "postIds": [],
+                "tagSlug": "Video Tutorial",
+                "sectionHeader": "Video Tutorials"
+              }
+            },
+            {
+              "type": 1,
+              "postListMetadata": {
+                "source": 4,
+                "layout": 4,
+                "number": 3,
+                "postIds": [],
+                "tagSlug": "TDS Narrated",
+                "sectionHeader": "Narrated Articles"
+              }
+            },
+            {
+              "type": 1,
+              "postListMetadata": {
+                "source": 4,
+                "layout": 4,
+                "number": 2,
+                "postIds": [],
+                "tagSlug": "Monthly Edition",
+                "sectionHeader": "Our Monthly Editions"
+              }
+            },
+            {
+              "type": 3,
+              "promoMetadata": {
+                "sectionHeader": "",
+                "promoId": "d38b026ac80a"
+              }
+            },
+            {
+              "type": 1,
+              "postListMetadata": {
+                "source": 4,
+                "layout": 4,
+                "number": 9,
+                "postIds": [],
+                "tagSlug": "Editors Pick",
+                "sectionHeader": "Articles We Enjoyed"
+              }
+            },
+            {
+              "type": 1,
+              "postListMetadata": {
+                "source": 4,
+                "layout": 4,
+                "number": 3,
+                "postIds": [],
+                "tagSlug": "TDS podcast",
+                "sectionHeader": "Our Podcast "
+              }
+            },
+            {
+              "type": 1,
+              "postListMetadata": {
+                "source": 3,
+                "layout": 2,
+                "number": 1,
+                "postIds": [
+                  "96667b06af5"
+                ],
+                "sectionHeader": "Contribute"
+              }
+            },
+            {
+              "type": 1,
+              "postListMetadata": {
+                "source": 4,
+                "layout": 4,
+                "number": 6,
+                "postIds": [],
+                "tagSlug": "Editors Pick",
+                "sectionHeader": "Last Chance To Read"
+              }
+            },
+            {
+              "type": 1,
+              "postListMetadata": {
+                "source": 3,
+                "layout": 5,
+                "number": 3,
+                "postIds": [
+                  "d691af11cc2f",
+                  "83c96b92f285",
+                  "b5d780a700a4"
+                ],
+                "sectionHeader": "About"
+              }
+            }
+          ],
+          "tintColor": "#FF355876",
+          "lightText": true,
+          "favicon": {
+            "imageId": "1*ChFMdf--f5jbm-AYv6VdYA@2x.png",
+            "filter": "",
+            "backgroundSize": "",
+            "originalWidth": 77,
+            "originalHeight": 77,
+            "strategy": "resample",
+            "height": 0,
+            "width": 0
+          },
+          "colorPalette": {
+            "defaultBackgroundSpectrum": {
+              "colorPoints": [
+                {
+                  "color": "#FF668AAA",
+                  "point": 0
+                },
+                {
+                  "color": "#FF61809D",
+                  "point": 0.1
+                },
+                {
+                  "color": "#FF5A7690",
+                  "point": 0.2
+                },
+                {
+                  "color": "#FF546C83",
+                  "point": 0.3
+                },
+                {
+                  "color": "#FF4D6275",
+                  "point": 0.4
+                },
+                {
+                  "color": "#FF455768",
+                  "point": 0.5
+                },
+                {
+                  "color": "#FF3D4C5A",
+                  "point": 0.6
+                },
+                {
+                  "color": "#FF34414C",
+                  "point": 0.7
+                },
+                {
+                  "color": "#FF2B353E",
+                  "point": 0.8
+                },
+                {
+                  "color": "#FF21282F",
+                  "point": 0.9
+                },
+                {
+                  "color": "#FF161B1F",
+                  "point": 1
+                }
+              ],
+              "backgroundColor": "#FFFFFFFF"
+            },
+            "tintBackgroundSpectrum": {
+              "colorPoints": [
+                {
+                  "color": "#FF355876",
+                  "point": 0
+                },
+                {
+                  "color": "#FF4D6C88",
+                  "point": 0.1
+                },
+                {
+                  "color": "#FF637F99",
+                  "point": 0.2
+                },
+                {
+                  "color": "#FF7791A8",
+                  "point": 0.3
+                },
+                {
+                  "color": "#FF8CA2B7",
+                  "point": 0.4
+                },
+                {
+                  "color": "#FF9FB3C6",
+                  "point": 0.5
+                },
+                {
+                  "color": "#FFB2C3D4",
+                  "point": 0.6
+                },
+                {
+                  "color": "#FFC5D2E1",
+                  "point": 0.7
+                },
+                {
+                  "color": "#FFD7E2EE",
+                  "point": 0.8
+                },
+                {
+                  "color": "#FFE9F1FA",
+                  "point": 0.9
+                },
+                {
+                  "color": "#FFFBFFFF",
+                  "point": 1
+                }
+              ],
+              "backgroundColor": "#FF355876"
+            },
+            "highlightSpectrum": {
+              "colorPoints": [
+                {
+                  "color": "#FFEDF4FC",
+                  "point": 0
+                },
+                {
+                  "color": "#FFE9F2FD",
+                  "point": 0.1
+                },
+                {
+                  "color": "#FFE6F1FD",
+                  "point": 0.2
+                },
+                {
+                  "color": "#FFE2EFFD",
+                  "point": 0.3
+                },
+                {
+                  "color": "#FFDFEEFD",
+                  "point": 0.4
+                },
+                {
+                  "color": "#FFDBECFE",
+                  "point": 0.5
+                },
+                {
+                  "color": "#FFD7EBFE",
+                  "point": 0.6
+                },
+                {
+                  "color": "#FFD4E9FE",
+                  "point": 0.7
+                },
+                {
+                  "color": "#FFD0E7FF",
+                  "point": 0.8
+                },
+                {
+                  "color": "#FFCCE6FF",
+                  "point": 0.9
+                },
+                {
+                  "color": "#FFC8E4FF",
+                  "point": 1
+                }
+              ],
+              "backgroundColor": "#FFFFFFFF"
+            },
+            "darkBackgroundSpectrum": {
+              "colorPoints": [
+                {
+                  "color": "#FF7EA2C3",
+                  "point": 0
+                },
+                {
+                  "color": "#FF8AAAC9",
+                  "point": 0.1
+                },
+                {
+                  "color": "#FF95B2CE",
+                  "point": 0.2
+                },
+                {
+                  "color": "#FFA0BAD3",
+                  "point": 0.3
+                },
+                {
+                  "color": "#FFABC2D9",
+                  "point": 0.4
+                },
+                {
+                  "color": "#FFB6CADE",
+                  "point": 0.5
+                },
+                {
+                  "color": "#FFC1D2E3",
+                  "point": 0.6
+                },
+                {
+                  "color": "#FFCBD9E8",
+                  "point": 0.7
+                },
+                {
+                  "color": "#FFD6E1EC",
+                  "point": 0.8
+                },
+                {
+                  "color": "#FFE0E8F1",
+                  "point": 0.9
+                },
+                {
+                  "color": "#FFEAEFF6",
+                  "point": 1
+                }
+              ],
+              "backgroundColor": "#FF000000"
+            }
+          },
+          "navItems": [
+            {
+              "type": 4,
+              "title": "Data Science",
+              "url": "https://towardsdatascience.com/data-science/home",
+              "topicId": "cf416843aadc",
+              "source": "topicId"
+            },
+            {
+              "type": 4,
+              "title": "Machine Learning",
+              "url": "https://towardsdatascience.com/machine-learning/home",
+              "topicId": "a5c9b2f1cb6b",
+              "source": "topicId"
+            },
+            {
+              "type": 4,
+              "title": "Programming",
+              "url": "https://towardsdatascience.com/programming/home",
+              "topicId": "41533a1dc73c",
+              "source": "topicId"
+            },
+            {
+              "type": 4,
+              "title": "Visualization",
+              "url": "https://towardsdatascience.com/data-visualization/home",
+              "topicId": "825e6cb8b9ce",
+              "source": "topicId"
+            },
+            {
+              "type": 4,
+              "title": "Video",
+              "url": "https://towardsdatascience.com/video/home",
+              "topicId": "325bad010237",
+              "source": "topicId"
+            },
+            {
+              "type": 4,
+              "title": "★",
+              "url": "https://towardsdatascience.com/editors-picks/home",
+              "topicId": "20b4f3e27fbe",
+              "source": "topicId"
+            },
+            {
+              "type": 4,
+              "title": "About",
+              "url": "https://towardsdatascience.com/about-us/home",
+              "topicId": "e4bc46bb3ab0",
+              "source": "topicId"
+            },
+            {
+              "type": 3,
+              "title": "Contribute",
+              "url": "https://towardsdatascience.com/contribute/home"
+            }
+          ],
+          "colorBehavior": 2,
+          "acceleratedMobilePagesState": 0,
+          "collectionFeatures": [
+            29,
+            30,
+            27,
+            25
+          ],
+          "ampLogo": {
+            "imageId": "",
+            "filter": "",
+            "backgroundSize": "",
+            "originalWidth": 0,
+            "originalHeight": 0,
+            "strategy": "resample",
+            "height": 0,
+            "width": 0
+          },
+          "header": {
+            "backgroundImage": {},
+            "logoImage": {
+              "id": "1*W3ebXM4V58VGsE1EflMJ7w@2x.png",
+              "originalWidth": 1483,
+              "originalHeight": 437,
+              "alt": "Towards Data Science"
+            },
+            "alignment": 2,
+            "layout": 5
+          },
+          "paidForDomainAt": 1509037374118,
+          "subscriberCount": 576245,
+          "tagline": "A Medium publication sharing concepts, ideas and codes.",
+          "instagramUsername": "towardsdatascience",
+          "isOptedIntoAurora": true,
+          "newsletterV3": {
+            "newsletterV3Id": "d6fe9076899",
+            "type": 1,
+            "name": "The Variable",
+            "description": "Every Thursday, the Variable delivers the very best of Towards Data Science: from hands-on tutorials and cutting-edge research to original features you don't want to miss.",
+            "collectionId": "7f60cf5620c9",
+            "newsletterSlug": "the-variable",
+            "isSubscribed": false,
+            "showPromo": true,
+            "avatarImageId": "",
+            "creatorId": "895063a310f4",
+            "showNewsletterPostsInCollectionHome": true,
+            "exportableSubscribersCount": 8330,
+            "subscribersCount": 189012
+          },
+          "isCurationAllowedByDefault": false,
+          "polarisCoverImage": {
+            "imageId": "",
+            "filter": "",
+            "backgroundSize": "",
+            "originalWidth": 0,
+            "originalHeight": 0,
+            "strategy": "resample",
+            "height": 0,
+            "width": 0
+          },
+          "type": "Collection"
+        }
+      },
+      "User": {
+        "af7398b2c7b3": {
+          "userId": "af7398b2c7b3",
+          "name": "Nathan Smith",
+          "username": "nsmith_piano",
+          "createdAt": 1467837137154,
+          "imageId": "1*5mQn_zJvZF-6F00BIVx3yw.jpeg",
+          "backgroundImageId": "",
+          "bio": "Senior Data Scientist at Lovevery. Organizer of the Kansas City Graph Databases Meetup.",
+          "twitterScreenName": "nsmith_piano",
+          "allowNotes": 1,
+          "mediumMemberAt": 1578368052000,
+          "isWriterProgramEnrolled": true,
+          "isSuspended": false,
+          "firstOpenedIosApp": 1572432991823,
+          "isMembershipTrialEligible": true,
+          "optInToIceland": false,
+          "hasCompletedProfile": false,
+          "userDismissableFlags": [
+            2,
+            1
+          ],
+          "hasSeenIcelandOnboarding": false,
+          "type": "User"
+        },
+        "937d2ce2cfe6": {
+          "userId": "937d2ce2cfe6",
+          "name": "Daniel Wilms",
+          "username": "danielwilms",
+          "createdAt": 1458828924931,
+          "imageId": "2*bo4DFv6Cz52WJTlHgbTVQg.jpeg",
+          "backgroundImageId": "",
+          "bio": "living in tel aviv. parent of 2 kids. husband. enthusiastic about my family, bike-swim-run, photography. traveller. optimist. passionate triathlete.",
+          "twitterScreenName": "",
+          "allowNotes": 1,
+          "mediumMemberAt": 0,
+          "isWriterProgramEnrolled": true,
+          "isSuspended": false,
+          "isMembershipTrialEligible": true,
+          "optInToIceland": false,
+          "hasCompletedProfile": false,
+          "isCreatorPartnerProgramEnrolled": true,
+          "userDismissableFlags": [
+            2
+          ],
+          "hasSeenIcelandOnboarding": false,
+          "type": "User"
+        }
+      },
+      "Post": {
+        "a5258d545daf": {
+          "id": "a5258d545daf",
+          "versionId": "167543c7f301",
+          "creatorId": "af7398b2c7b3",
+          "homeCollectionId": "c0e10f7c3cc0",
+          "title": "Solving Sudoku with Neo4j",
+          "detectedLanguage": "en",
+          "latestVersion": "167543c7f301",
+          "latestPublishedVersion": "167543c7f301",
+          "hasUnpublishedEdits": false,
+          "latestRev": 665,
+          "createdAt": 1577892375295,
+          "updatedAt": 1578318120255,
+          "acceptedAt": 0,
+          "firstPublishedAt": 1577919021434,
+          "latestPublishedAt": 1578318120049,
+          "vote": false,
+          "experimentalCss": "",
+          "displayAuthor": "",
+          "content": {
+            "subtitle": "Graphs are everywhere, including the puzzle section of your in-flight magazine.",
+            "postDisplay": {
+              "coverless": true
+            }
+          },
+          "virtuals": {
+            "statusForCollection": "APPROVED",
+            "allowNotes": true,
+            "previewImage": {
+              "imageId": "1*x8gciCNKnrpj0q1hKPcTtQ.png",
+              "filter": "",
+              "backgroundSize": "",
+              "originalWidth": 361,
+              "originalHeight": 361,
+              "strategy": "resample",
+              "height": 0,
+              "width": 0
+            },
+            "wordCount": 1640,
+            "imageCount": 1,
+            "readingTime": 6.3886792452830194,
+            "subtitle": "Graphs are everywhere, including the puzzle section of your in-flight magazine.",
+            "publishedInCount": 1,
+            "usersBySocialRecommends": [],
+            "noIndex": false,
+            "recommends": 15,
+            "isBookmarked": false,
+            "tags": [
+              {
+                "slug": "programming",
+                "name": "Programming",
+                "postCount": 185700,
+                "metadata": {
+                  "postCount": 185700,
+                  "coverImage": {
+                    "id": "0*FlKGsYiglE1OCFI8",
+                    "originalWidth": 6000,
+                    "originalHeight": 4000,
+                    "isFeatured": true,
+                    "alt": "Image of spilled ice cream",
+                    "unsplashPhotoId": "52jRtc2S_VE"
+                  }
+                },
+                "type": "Tag"
+              },
+              {
+                "slug": "neo4j",
+                "name": "Neo4j",
+                "postCount": 985,
+                "metadata": {
+                  "postCount": 985,
+                  "coverImage": {
+                    "id": "1*ymxq_lqn1KFWwhbzsT4k8w.png",
+                    "originalWidth": 905,
+                    "originalHeight": 649,
+                    "isFeatured": true
+                  }
+                },
+                "type": "Tag"
+              },
+              {
+                "slug": "python",
+                "name": "Python",
+                "postCount": 79839,
+                "metadata": {
+                  "postCount": 79839,
+                  "coverImage": {
+                    "id": "1*3KusnXdNmkratxYtE7OTEA.jpeg",
+                    "originalWidth": 6000,
+                    "originalHeight": 4000,
+                    "isFeatured": true,
+                    "alt": "Scientist"
+                  }
+                },
+                "type": "Tag"
+              },
+              {
+                "slug": "sudoku",
+                "name": "Sudoku",
+                "postCount": 214,
+                "metadata": {
+                  "postCount": 214,
+                  "coverImage": {
+                    "id": "0*exrkp1Vi0GK8JyQF.png",
+                    "originalWidth": 1200,
+                    "originalHeight": 600,
+                    "isFeatured": true
+                  }
+                },
+                "type": "Tag"
+              },
+              {
+                "slug": "algorithms",
+                "name": "Algorithms",
+                "postCount": 21098,
+                "metadata": {
+                  "postCount": 21098,
+                  "coverImage": {
+                    "id": "1*pDKNaOO9dG34gXE1VlZyHg.png",
+                    "originalWidth": 3840,
+                    "originalHeight": 2160,
+                    "isFeatured": true
+                  }
+                },
+                "type": "Tag"
+              }
+            ],
+            "socialRecommendsCount": 0,
+            "responsesCreatedCount": 3,
+            "links": {
+              "entries": [
+                {
+                  "url": "https://neo4j.com/docs/graph-algorithms/current/algorithms/k1coloring/",
+                  "alts": [],
+                  "httpStatus": 200
+                },
+                {
+                  "url": "https://en.wikipedia.org/wiki/Sudoku_solving_algorithms",
+                  "alts": [],
+                  "httpStatus": 200
+                },
+                {
+                  "url": "https://en.wikipedia.org/wiki/Knuth%27s_Algorithm_X",
+                  "alts": [],
+                  "httpStatus": 200
+                },
+                {
+                  "url": "https://en.wikipedia.org/wiki/Exact_cover#Sudoku",
+                  "alts": [],
+                  "httpStatus": 200
+                },
+                {
+                  "url": "https://neo4j.com/developer/neo4j-browser/#browser-tips",
+                  "alts": [],
+                  "httpStatus": 200
+                },
+                {
+                  "url": "https://github.com/smithna/neo4j-sudoku/blob/master/Sudoku.ipynb",
+                  "alts": [],
+                  "httpStatus": 200
+                },
+                {
+                  "url": "https://medium.com/@nsmith_piano/coloring-a-sudoku-graph-with-neo4j-f86c891f6879?source=friends_link&sk=d5adc04cda62a6fba907d7d52fa1e33e",
+                  "alts": [
+                    {
+                      "type": 3,
+                      "url": "medium://p/f86c891f6879"
+                    },
+                    {
+                      "type": 2,
+                      "url": "medium://p/f86c891f6879"
+                    }
+                  ],
+                  "httpStatus": 200
+                }
+              ],
+              "version": "0.3",
+              "generatedAt": 1578318121136
+            },
+            "isLockedPreviewOnly": false,
+            "metaDescription": "",
+            "totalClapCount": 54,
+            "sectionCount": 1,
+            "readingList": 0,
+            "topics": [
+              {
+                "topicId": "decb52b64abf",
+                "slug": "programming",
+                "createdAt": 1493934116328,
+                "deletedAt": 0,
+                "image": {
+                  "id": "1*iPa136b1cGEO7lvoXg6uHQ@2x.jpeg",
+                  "originalWidth": 6016,
+                  "originalHeight": 4016
+                },
+                "name": "Programming",
+                "description": "The good, the bad, the buggy.",
+                "relatedTopics": [],
+                "visibility": 1,
+                "relatedTags": [],
+                "relatedTopicIds": [],
+                "seoTitle": "Programming News and Articles — Medium",
+                "type": "Topic"
+              }
+            ]
+          },
+          "coverless": true,
+          "slug": "solving-sudoku-with-neo4j",
+          "translationSourcePostId": "",
+          "translationSourceCreatorId": "",
+          "isApprovedTranslation": false,
+          "inResponseToPostId": "",
+          "inResponseToRemovedAt": 0,
+          "isTitleSynthesized": false,
+          "allowResponses": true,
+          "importedUrl": "",
+          "importedPublishedAt": 0,
+          "visibility": 0,
+          "uniqueSlug": "solving-sudoku-with-neo4j-a5258d545daf",
+          "previewContent": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "name": "previewImage",
+                  "type": 4,
+                  "text": "",
+                  "layout": 10,
+                  "metadata": {
+                    "id": "1*x8gciCNKnrpj0q1hKPcTtQ.png",
+                    "originalWidth": 361,
+                    "originalHeight": 361,
+                    "isFeatured": true
+                  }
+                },
+                {
+                  "name": "previewTitle",
+                  "type": 3,
+                  "text": "Solving Sudoku with Neo4j",
+                  "alignment": 1
+                },
+                {
+                  "name": "previewSubtitle",
+                  "type": 13,
+                  "text": "Graphs are everywhere, including the puzzle section of your in-flight…",
+                  "alignment": 1
+                }
+              ],
+              "sections": [
+                {
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": false,
+            "subtitle": "Graphs are everywhere, including the puzzle section of your in-flight magazine."
+          },
+          "license": 0,
+          "inResponseToMediaResourceId": "",
+          "canonicalUrl": "",
+          "approvedHomeCollectionId": "c0e10f7c3cc0",
+          "isNewsletter": false,
+          "newsletterId": "",
+          "webCanonicalUrl": "",
+          "mediumUrl": "",
+          "migrationId": "",
+          "notifyFollowers": true,
+          "notifyTwitter": false,
+          "notifyFacebook": false,
+          "responseHiddenOnParentPostAt": 0,
+          "isSeries": false,
+          "isSubscriptionLocked": false,
+          "seriesLastAppendedAt": 0,
+          "audioVersionDurationSec": 0,
+          "sequenceId": "",
+          "isEligibleForRevenue": false,
+          "isBlockedFromHightower": false,
+          "deletedAt": 0,
+          "lockedPostSource": 0,
+          "hightowerMinimumGuaranteeStartsAt": 0,
+          "hightowerMinimumGuaranteeEndsAt": 0,
+          "featureLockRequestAcceptedAt": 0,
+          "mongerRequestType": 1,
+          "layerCake": 0,
+          "socialTitle": "",
+          "socialDek": "",
+          "editorialPreviewTitle": "",
+          "editorialPreviewDek": "",
+          "curationEligibleAt": 1577919020093,
+          "isProxyPost": false,
+          "proxyPostFaviconUrl": "",
+          "proxyPostProviderName": "",
+          "proxyPostType": 0,
+          "isSuspended": false,
+          "isLimitedState": false,
+          "seoTitle": "",
+          "previewContent2": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "name": "fdbf",
+                  "type": 3,
+                  "text": "Solving Sudoku with Neo4j",
+                  "markups": []
+                },
+                {
+                  "name": "dddf",
+                  "type": 1,
+                  "text": "In my last blog post, we looked at a Sudoku graph as a way to explore the recently release K1 Coloring algorithm for Neo4j. Playing with a Sudoku grid could give us a good feel for graph coloring, but the K1 Coloring algorithm doesn’t always converge to the optimum solution…",
+                  "markups": [
+                    {
+                      "type": 3,
+                      "start": 3,
+                      "end": 20,
+                      "href": "https://medium.com/@nsmith_piano/coloring-a-sudoku-graph-with-neo4j-f86c891f6879?source=friends_link&sk=d5adc04cda62a6fba907d7d52fa1e33e",
+                      "title": "",
+                      "rel": "",
+                      "anchorType": 0
+                    },
+                    {
+                      "type": 3,
+                      "start": 205,
+                      "end": 227,
+                      "href": "https://neo4j.com/docs/graph-algorithms/current/algorithms/k1coloring/",
+                      "title": "",
+                      "rel": "",
+                      "anchorType": 0
+                    }
+                  ]
+                }
+              ],
+              "sections": [
+                {
+                  "name": "4bba",
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": false,
+            "subtitle": "Graphs are everywhere, including the puzzle section of your in-flight magazine."
+          },
+          "cardType": 0,
+          "isDistributionAlertDismissed": false,
+          "isShortform": false,
+          "shortformType": 0,
+          "responsesLocked": false,
+          "isLockedResponse": false,
+          "isPublishToEmail": false,
+          "responseDistribution": 0,
+          "isMarkedPaywallOnly": false,
+          "type": "Post"
+        },
+        "f86c891f6879": {
+          "id": "f86c891f6879",
+          "versionId": "ad776d4a6534",
+          "creatorId": "af7398b2c7b3",
+          "homeCollectionId": "c0e10f7c3cc0",
+          "title": "Coloring a Sudoku graph with Neo4j",
+          "detectedLanguage": "en",
+          "latestVersion": "ad776d4a6534",
+          "latestPublishedVersion": "ad776d4a6534",
+          "hasUnpublishedEdits": false,
+          "latestRev": 397,
+          "createdAt": 1577883676777,
+          "updatedAt": 1577970890513,
+          "acceptedAt": 0,
+          "firstPublishedAt": 1577918296264,
+          "latestPublishedAt": 1577970890374,
+          "vote": false,
+          "experimentalCss": "",
+          "displayAuthor": "",
+          "content": {
+            "subtitle": "Experiment with the new K1-Coloring algorithm from the Neo4j graph algorithms library",
+            "postDisplay": {
+              "coverless": true
+            }
+          },
+          "virtuals": {
+            "statusForCollection": "APPROVED",
+            "allowNotes": true,
+            "previewImage": {
+              "imageId": "1*DdkBg8BULdQRjtRquo1g9w.png",
+              "filter": "",
+              "backgroundSize": "",
+              "originalWidth": 450,
+              "originalHeight": 450,
+              "strategy": "resample",
+              "height": 0,
+              "width": 0
+            },
+            "wordCount": 635,
+            "imageCount": 3,
+            "readingTime": 2.9462264150943396,
+            "subtitle": "Experiment with the new K1-Coloring algorithm from the Neo4j graph algorithms library",
+            "publishedInCount": 1,
+            "usersBySocialRecommends": [],
+            "noIndex": false,
+            "recommends": 16,
+            "isBookmarked": false,
+            "tags": [
+              {
+                "slug": "neo4j",
+                "name": "Neo4j",
+                "postCount": 985,
+                "metadata": {
+                  "postCount": 985,
+                  "coverImage": {
+                    "id": "1*ymxq_lqn1KFWwhbzsT4k8w.png",
+                    "originalWidth": 905,
+                    "originalHeight": 649,
+                    "isFeatured": true
+                  }
+                },
+                "type": "Tag"
+              },
+              {
+                "slug": "sudoku",
+                "name": "Sudoku",
+                "postCount": 214,
+                "metadata": {
+                  "postCount": 214,
+                  "coverImage": {
+                    "id": "0*exrkp1Vi0GK8JyQF.png",
+                    "originalWidth": 1200,
+                    "originalHeight": 600,
+                    "isFeatured": true
+                  }
+                },
+                "type": "Tag"
+              },
+              {
+                "slug": "data-science",
+                "name": "Data Science",
+                "postCount": 122696,
+                "metadata": {
+                  "postCount": 122696,
+                  "coverImage": {
+                    "id": "1*3KusnXdNmkratxYtE7OTEA.jpeg",
+                    "originalWidth": 6000,
+                    "originalHeight": 4000,
+                    "isFeatured": true,
+                    "alt": "Scientist"
+                  }
+                },
+                "type": "Tag"
+              },
+              {
+                "slug": "machine-learning",
+                "name": "Machine Learning",
+                "postCount": 150115,
+                "metadata": {
+                  "postCount": 150115,
+                  "coverImage": {
+                    "id": "1*3KusnXdNmkratxYtE7OTEA.jpeg",
+                    "originalWidth": 6000,
+                    "originalHeight": 4000,
+                    "isFeatured": true,
+                    "alt": "Scientist"
+                  }
+                },
+                "type": "Tag"
+              },
+              {
+                "slug": "clustering-algorithm",
+                "name": "Clustering Algorithm",
+                "postCount": 123,
+                "metadata": {
+                  "postCount": 123,
+                  "coverImage": {
+                    "id": "1*qlPCAvK172ubFWg7bdXh5w.png",
+                    "originalWidth": 1007,
+                    "originalHeight": 515,
+                    "isFeatured": true
+                  }
+                },
+                "type": "Tag"
+              }
+            ],
+            "socialRecommendsCount": 0,
+            "responsesCreatedCount": 0,
+            "links": {
+              "entries": [
+                {
+                  "url": "https://neo4j.com/docs/graph-algorithms/current/algorithms/k1coloring/",
+                  "alts": [],
+                  "httpStatus": 200
+                },
+                {
+                  "url": "https://commons.wikimedia.org/wiki/File:4x4_Sudoku_graph.svg",
+                  "alts": [],
+                  "httpStatus": 200
+                },
+                {
+                  "url": "https://en.wikipedia.org/wiki/NP-completeness",
+                  "alts": [],
+                  "httpStatus": 200
+                },
+                {
+                  "url": "https://en.wikipedia.org/wiki/Sudoku",
+                  "alts": [],
+                  "httpStatus": 200
+                },
+                {
+                  "url": "https://neo4j.com/developer/neo4j-desktop/",
+                  "alts": [],
+                  "httpStatus": 200
+                },
+                {
+                  "url": "https://medium.com/@nsmith_piano/solving-sudoku-with-neo4j-a5258d545daf?source=friends_link&sk=1212fd41e1daa17910ac67f22d719ca7",
+                  "alts": [
+                    {
+                      "type": 3,
+                      "url": "medium://p/a5258d545daf"
+                    },
+                    {
+                      "type": 2,
+                      "url": "medium://p/a5258d545daf"
+                    }
+                  ],
+                  "httpStatus": 200
+                }
+              ],
+              "version": "0.3",
+              "generatedAt": 1577970891667
+            },
+            "isLockedPreviewOnly": false,
+            "metaDescription": "",
+            "totalClapCount": 79,
+            "sectionCount": 1,
+            "readingList": 0,
+            "topics": []
+          },
+          "coverless": true,
+          "slug": "coloring-a-sudoku-graph-with-neo4j",
+          "translationSourcePostId": "",
+          "translationSourceCreatorId": "",
+          "isApprovedTranslation": false,
+          "inResponseToPostId": "",
+          "inResponseToRemovedAt": 0,
+          "isTitleSynthesized": false,
+          "allowResponses": true,
+          "importedUrl": "",
+          "importedPublishedAt": 0,
+          "visibility": 0,
+          "uniqueSlug": "coloring-a-sudoku-graph-with-neo4j-f86c891f6879",
+          "previewContent": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "name": "previewImage",
+                  "type": 4,
+                  "text": "",
+                  "layout": 10,
+                  "metadata": {
+                    "id": "1*DdkBg8BULdQRjtRquo1g9w.png",
+                    "originalWidth": 450,
+                    "originalHeight": 450,
+                    "isFeatured": true
+                  }
+                },
+                {
+                  "name": "previewTitle",
+                  "type": 3,
+                  "text": "Coloring a Sudoku graph with Neo4j",
+                  "alignment": 1
+                },
+                {
+                  "name": "previewSubtitle",
+                  "type": 13,
+                  "text": "Experiment with the new K1-Coloring algorithm from the Neo4j graph…",
+                  "alignment": 1
+                }
+              ],
+              "sections": [
+                {
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": false,
+            "subtitle": "Experiment with the new K1-Coloring algorithm from the Neo4j graph algorithms library"
+          },
+          "license": 0,
+          "inResponseToMediaResourceId": "",
+          "canonicalUrl": "",
+          "approvedHomeCollectionId": "c0e10f7c3cc0",
+          "isNewsletter": false,
+          "newsletterId": "",
+          "webCanonicalUrl": "",
+          "mediumUrl": "",
+          "migrationId": "",
+          "notifyFollowers": true,
+          "notifyTwitter": false,
+          "notifyFacebook": false,
+          "responseHiddenOnParentPostAt": 0,
+          "isSeries": false,
+          "isSubscriptionLocked": false,
+          "seriesLastAppendedAt": 0,
+          "audioVersionDurationSec": 0,
+          "sequenceId": "",
+          "isEligibleForRevenue": false,
+          "isBlockedFromHightower": false,
+          "deletedAt": 0,
+          "lockedPostSource": 0,
+          "hightowerMinimumGuaranteeStartsAt": 0,
+          "hightowerMinimumGuaranteeEndsAt": 0,
+          "featureLockRequestAcceptedAt": 0,
+          "mongerRequestType": 1,
+          "layerCake": 0,
+          "socialTitle": "",
+          "socialDek": "",
+          "editorialPreviewTitle": "",
+          "editorialPreviewDek": "",
+          "curationEligibleAt": 0,
+          "isProxyPost": false,
+          "proxyPostFaviconUrl": "",
+          "proxyPostProviderName": "",
+          "proxyPostType": 0,
+          "isSuspended": false,
+          "isLimitedState": false,
+          "seoTitle": "",
+          "previewContent2": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "name": "96d7",
+                  "type": 3,
+                  "text": "Coloring a Sudoku graph with Neo4j",
+                  "markups": []
+                },
+                {
+                  "name": "1ee6",
+                  "type": 1,
+                  "text": "I was happy to see that a recent release of the Neo4j graph algorithms contains the K-1 Coloring algorithm. This algorithm tries to assign colors to the nodes of a graph in such a way that adjacent nodes are different colors.",
+                  "markups": [
+                    {
+                      "type": 3,
+                      "start": 84,
+                      "end": 106,
+                      "href": "https://neo4j.com/docs/graph-algorithms/current/algorithms/k1coloring/",
+                      "title": "",
+                      "rel": "",
+                      "anchorType": 0
+                    }
+                  ]
+                },
+                {
+                  "name": "e0a9",
+                  "type": 4,
+                  "text": "",
+                  "markups": [],
+                  "layout": 1,
+                  "metadata": {
+                    "id": "1*JzvQQPzK_qa5BzsLDQSs9g.png",
+                    "originalWidth": 364,
+                    "originalHeight": 282
+                  }
+                },
+                {
+                  "name": "609b",
+                  "type": 1,
+                  "text": "One of my favorite puzzles, Sudoku, can be…",
+                  "markups": [
+                    {
+                      "type": 3,
+                      "start": 28,
+                      "end": 34,
+                      "href": "https://en.wikipedia.org/wiki/Sudoku",
+                      "title": "",
+                      "rel": "",
+                      "anchorType": 0
+                    }
+                  ]
+                }
+              ],
+              "sections": [
+                {
+                  "name": "3ed2",
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": false,
+            "subtitle": "Experiment with the new K1-Coloring algorithm from the Neo4j graph algorithms library"
+          },
+          "cardType": 0,
+          "isDistributionAlertDismissed": false,
+          "isShortform": false,
+          "shortformType": 0,
+          "responsesLocked": false,
+          "isLockedResponse": false,
+          "isPublishToEmail": false,
+          "responseDistribution": 0,
+          "isMarkedPaywallOnly": false,
+          "type": "Post"
+        },
+        "145c5daefcc5": {
+          "id": "145c5daefcc5",
+          "versionId": "6872e3e170a1",
+          "creatorId": "937d2ce2cfe6",
+          "homeCollectionId": "7f60cf5620c9",
+          "title": "TriGraph: How to use graphs to analyse triathlon events",
+          "detectedLanguage": "en",
+          "latestVersion": "6872e3e170a1",
+          "latestPublishedVersion": "6872e3e170a1",
+          "hasUnpublishedEdits": false,
+          "latestRev": 1050,
+          "createdAt": 1577529661092,
+          "updatedAt": 1577909662055,
+          "acceptedAt": 0,
+          "firstPublishedAt": 1577909361577,
+          "latestPublishedAt": 1577909361577,
+          "vote": false,
+          "experimentalCss": "",
+          "displayAuthor": "",
+          "content": {
+            "subtitle": "Once you have a well-defined data model in place, graphs allow to achieve nice results with easy & understandable queries. Here we show…",
+            "postDisplay": {
+              "coverless": true
+            }
+          },
+          "virtuals": {
+            "statusForCollection": "APPROVED",
+            "allowNotes": true,
+            "previewImage": {
+              "imageId": "1*IexCftzTGOS6ovwiOD5CiQ.jpeg",
+              "filter": "",
+              "backgroundSize": "",
+              "originalWidth": 2892,
+              "originalHeight": 1037,
+              "strategy": "resample",
+              "height": 0,
+              "width": 0
+            },
+            "wordCount": 770,
+            "imageCount": 5,
+            "readingTime": 3.738993710691824,
+            "subtitle": "Once you have a well-defined data model in place, graphs allow to achieve nice results with easy & understandable queries. Here we show…",
+            "publishedInCount": 1,
+            "usersBySocialRecommends": [],
+            "noIndex": false,
+            "recommends": 7,
+            "isBookmarked": false,
+            "tags": [
+              {
+                "slug": "neo4j",
+                "name": "Neo4j",
+                "postCount": 985,
+                "metadata": {
+                  "postCount": 985,
+                  "coverImage": {
+                    "id": "1*ymxq_lqn1KFWwhbzsT4k8w.png",
+                    "originalWidth": 905,
+                    "originalHeight": 649,
+                    "isFeatured": true
+                  }
+                },
+                "type": "Tag"
+              },
+              {
+                "slug": "triathlon",
+                "name": "Triathlon",
+                "postCount": 2500,
+                "metadata": {
+                  "postCount": 2500,
+                  "coverImage": {
+                    "id": "1*vNITXe_P7ZEnIo8cT8mRew.jpeg",
+                    "originalWidth": 1832,
+                    "originalHeight": 828,
+                    "isFeatured": true
+                  }
+                },
+                "type": "Tag"
+              },
+              {
+                "slug": "graph",
+                "name": "Graph",
+                "postCount": 1692,
+                "metadata": {
+                  "postCount": 1692,
+                  "coverImage": {
+                    "id": "1*ymxq_lqn1KFWwhbzsT4k8w.png",
+                    "originalWidth": 905,
+                    "originalHeight": 649,
+                    "isFeatured": true
+                  }
+                },
+                "type": "Tag"
+              }
+            ],
+            "socialRecommendsCount": 0,
+            "responsesCreatedCount": 0,
+            "links": {
+              "entries": [
+                {
+                  "url": "https://jupyter.org",
+                  "alts": [],
+                  "httpStatus": 200
+                },
+                {
+                  "url": "https://neo4j.com/docs/cypher-manual/current/introduction/#cypher-introduction",
+                  "alts": [],
+                  "httpStatus": 200
+                },
+                {
+                  "url": "https://neo4j.com/docs/cypher-manual/current/syntax/temporal/",
+                  "alts": [],
+                  "httpStatus": 200
+                },
+                {
+                  "url": "https://neo4j.com",
+                  "alts": [],
+                  "httpStatus": 200
+                },
+                {
+                  "url": "https://graphql.org/learn/thinking-in-graphs/",
+                  "alts": [],
+                  "httpStatus": 200
+                },
+                {
+                  "url": "https://dzone.com/articles/the-power-of-graphs-and-how-to-use-them",
+                  "alts": [],
+                  "httpStatus": 200
+                },
+                {
+                  "url": "https://www.ontotext.com/knowledgehub/fundamentals/dikw-pyramid/",
+                  "alts": [],
+                  "httpStatus": 403
+                },
+                {
+                  "url": "https://track.rtrt.me/e/IRM-WORLDCHAMPIONSHIP-2019",
+                  "alts": [
+                    {
+                      "type": 2,
+                      "url": "rtrtme://IRM-WORLDCHAMPIONSHIP-2019/tracker"
+                    },
+                    {
+                      "type": 3,
+                      "url": "rtrtme://IRM-WORLDCHAMPIONSHIP-2019/tracker"
+                    }
+                  ],
+                  "httpStatus": 200
+                },
+                {
+                  "url": "https://py2neo.org/v4/",
+                  "alts": [],
+                  "httpStatus": 200
+                },
+                {
+                  "url": "https://neo4j.com/use-cases/",
+                  "alts": [],
+                  "httpStatus": 200
+                }
+              ],
+              "version": "0.3",
+              "generatedAt": 1577909362316
+            },
+            "isLockedPreviewOnly": false,
+            "metaDescription": "",
+            "totalClapCount": 45,
+            "sectionCount": 1,
+            "readingList": 0,
+            "topics": [
+              {
+                "topicId": "ae5d4995e225",
+                "slug": "data-science",
+                "createdAt": 1493923906289,
+                "deletedAt": 0,
+                "image": {
+                  "id": "1*NHWOEki_ncCX-xzbKtkEWw@2x.jpeg",
+                  "originalWidth": 5760,
+                  "originalHeight": 3840
+                },
+                "name": "Data Science",
+                "description": "Query this.",
+                "relatedTopics": [],
+                "visibility": 1,
+                "relatedTags": [],
+                "relatedTopicIds": [],
+                "seoTitle": "Data Science News and Articles — Medium",
+                "type": "Topic"
+              }
+            ]
+          },
+          "coverless": true,
+          "slug": "trigraph-how-to-use-graphs-to-analyse-triathlon-events",
+          "translationSourcePostId": "",
+          "translationSourceCreatorId": "",
+          "isApprovedTranslation": false,
+          "inResponseToPostId": "",
+          "inResponseToRemovedAt": 0,
+          "isTitleSynthesized": false,
+          "allowResponses": true,
+          "importedUrl": "",
+          "importedPublishedAt": 0,
+          "visibility": 2,
+          "uniqueSlug": "trigraph-how-to-use-graphs-to-analyse-triathlon-events-145c5daefcc5",
+          "previewContent": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "name": "previewImage",
+                  "type": 4,
+                  "text": "",
+                  "layout": 10,
+                  "metadata": {
+                    "id": "1*IexCftzTGOS6ovwiOD5CiQ.jpeg",
+                    "originalWidth": 2892,
+                    "originalHeight": 1037,
+                    "isFeatured": true
+                  }
+                },
+                {
+                  "name": "dd0b",
+                  "type": 3,
+                  "text": "TriGraph: How to use graphs to analyse triathlon events",
+                  "markups": [],
+                  "alignment": 1
+                }
+              ],
+              "sections": [
+                {
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": false,
+            "subtitle": "Once you have a well-defined data model in place, graphs allow to achieve nice results with easy & understandable queries. Here we show…"
+          },
+          "license": 0,
+          "inResponseToMediaResourceId": "",
+          "canonicalUrl": "",
+          "approvedHomeCollectionId": "7f60cf5620c9",
+          "isNewsletter": false,
+          "newsletterId": "",
+          "webCanonicalUrl": "",
+          "mediumUrl": "",
+          "migrationId": "",
+          "notifyFollowers": true,
+          "notifyTwitter": false,
+          "notifyFacebook": false,
+          "responseHiddenOnParentPostAt": 0,
+          "isSeries": false,
+          "isSubscriptionLocked": true,
+          "seriesLastAppendedAt": 0,
+          "audioVersionDurationSec": 0,
+          "sequenceId": "",
+          "isEligibleForRevenue": true,
+          "isBlockedFromHightower": false,
+          "deletedAt": 0,
+          "lockedPostSource": 1,
+          "hightowerMinimumGuaranteeStartsAt": 0,
+          "hightowerMinimumGuaranteeEndsAt": 0,
+          "featureLockRequestAcceptedAt": 0,
+          "mongerRequestType": 1,
+          "layerCake": 3,
+          "socialTitle": "",
+          "socialDek": "",
+          "editorialPreviewTitle": "",
+          "editorialPreviewDek": "",
+          "curationEligibleAt": 1577908192122,
+          "primaryTopicId": "ae5d4995e225",
+          "isProxyPost": false,
+          "proxyPostFaviconUrl": "",
+          "proxyPostProviderName": "",
+          "proxyPostType": 0,
+          "isSuspended": false,
+          "isLimitedState": false,
+          "seoTitle": "",
+          "previewContent2": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "name": "dd0b",
+                  "type": 3,
+                  "text": "TriGraph: How to use graphs to analyse triathlon events",
+                  "markups": []
+                },
+                {
+                  "name": "6e36",
+                  "type": 4,
+                  "text": "ID 21137693 © Patrimonio Designs Limited | Dreamstime.com",
+                  "markups": [],
+                  "layout": 1,
+                  "metadata": {
+                    "id": "1*IexCftzTGOS6ovwiOD5CiQ.jpeg",
+                    "originalWidth": 2892,
+                    "originalHeight": 1037,
+                    "isFeatured": true
+                  }
+                },
+                {
+                  "name": "aaf9",
+                  "type": 1,
+                  "text": "Graphs are intuitive. Graphs are powerful. And graphs can be used in a wide range of applications. The goal of the article is to show how graphs can ease the data-analysis on top of a well-defined data model, in our example especially for triathlon events. To achieve this, we’re using…",
+                  "markups": [
+                    {
+                      "type": 3,
+                      "start": 11,
+                      "end": 20,
+                      "href": "https://graphql.org/learn/thinking-in-graphs/",
+                      "title": "",
+                      "rel": "",
+                      "anchorType": 0
+                    },
+                    {
+                      "type": 3,
+                      "start": 33,
+                      "end": 41,
+                      "href": "https://dzone.com/articles/the-power-of-graphs-and-how-to-use-them",
+                      "title": "",
+                      "rel": "",
+                      "anchorType": 0
+                    },
+                    {
+                      "type": 3,
+                      "start": 71,
+                      "end": 97,
+                      "href": "https://neo4j.com/use-cases/",
+                      "title": "",
+                      "rel": "",
+                      "anchorType": 0
+                    },
+                    {
+                      "type": 3,
+                      "start": 286,
+                      "end": 291,
+                      "href": "https://neo4j.com",
+                      "title": "",
+                      "rel": "",
+                      "anchorType": 0
+                    },
+                    {
+                      "type": 3,
+                      "start": 333,
+                      "end": 370,
+                      "href": "https://track.rtrt.me/e/IRM-WORLDCHAMPIONSHIP-2019",
+                      "title": "",
+                      "rel": "",
+                      "anchorType": 0
+                    }
+                  ]
+                }
+              ],
+              "sections": [
+                {
+                  "name": "4245",
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": false,
+            "subtitle": "Once you have a well-defined data model in place, graphs allow to achieve nice results with easy & understandable queries. Here we show…"
+          },
+          "cardType": 0,
+          "isDistributionAlertDismissed": false,
+          "isShortform": false,
+          "shortformType": 0,
+          "responsesLocked": false,
+          "isLockedResponse": false,
+          "isPublishToEmail": false,
+          "responseDistribution": 0,
+          "isMarkedPaywallOnly": false,
+          "type": "Post"
+        }
+      }
+    },
+    "paging": {}
+  },
+  "v": 3,
+  "b": "20210402-2214-root"
+}

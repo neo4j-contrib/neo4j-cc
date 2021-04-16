@@ -52,9 +52,7 @@ const fetchFromGithub = async () => {
                     repositoryTopics(first:10) {nodes {topic {name}}}
                     languages(first:10) {nodes {name}}
                     forks(first:10) {
-                      nodes {
-                        owner { login }
-                      }
+                      totalCount
                     }
                   }
                 }
