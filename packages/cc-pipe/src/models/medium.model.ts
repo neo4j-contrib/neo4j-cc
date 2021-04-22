@@ -1,4 +1,10 @@
+import { pipe } from "@effect-ts/core";
+import { tuple } from "@effect-ts/core/Function";
 import { AType, EType, make, opaque } from "@effect-ts/morphic"
+import * as L from "@effect-ts/monocle/Lens";
+import * as Sync from "@effect-ts/core/Sync";
+import * as Dict from "@effect-ts/core/Collections/Immutable/Dictionary";
+import * as A from "@effect-ts/core/Collections/Immutable/Array";
 
 const MediumPost_ = make((F) =>
   F.interface({
@@ -91,3 +97,25 @@ export interface MediumResponse extends AType<typeof MediumResponse_> {}
 export interface MediumResponseRaw extends EType<typeof MediumResponse_> {}
 export const MediumResponse = opaque<MediumResponseRaw, MediumResponse>()(MediumResponse_)
 
+export const userLens = pipe(MediumResponse.lens, 
+  L.prop("payload"), L.prop("references"), L.prop("User"),
+  L.get
+)
+export const postLens = pipe(MediumResponse.lens, 
+  L.prop("payload"), L.prop("references"), L.prop("Post"),
+  L.get
+)
+
+export const pairPostsWithAuthors = (mr:MediumResponse) => pipe(
+  Sync.do,
+  Sync.bind("users", () => Sync.succeed(userLens(mr)) ),
+  Sync.bind("posts", () => Sync.succeed(postLens(mr)) ),
+  Sync.bind("postsWithAuthors", ({users, posts}) => Sync.succeed(
+    pipe(posts, 
+      Dict.values, 
+      A.map(p => tuple(p,users[p.creatorId]))
+    )
+  )),
+  Sync.map( ({postsWithAuthors}) => postsWithAuthors), 
+  Sync.run
+)

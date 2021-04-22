@@ -1,25 +1,12 @@
-/**
- * The Effect Data Types: Effect
- * 
- * Testified examples from https://dev.to/matechs/the-effect-data-types-effect-1e3f
- */
- import { pipe } from "@effect-ts/core";
- import { tuple } from "@effect-ts/core/Function";
- import * as D from "@effect-ts/core/Collections/Immutable/Dictionary";
- import * as A from "@effect-ts/core/Collections/Immutable/Array";
- import * as E from "@effect-ts/core/Either";
- import * as T from "@effect-ts/core/Effect";
- import * as X from "@effect-ts/core/XPure";
- import * as Sync from "@effect-ts/core/Sync";
+import '@relmify/jest-fp-ts';
 
- import * as L from "@effect-ts/monocle/Lens";
- import { decode, decoder, report } from "@effect-ts/morphic/Decoder";
+import { pipe } from "@effect-ts/core";
+import * as E from "@effect-ts/core/Either";
+import * as X from "@effect-ts/core/XPure";
+import * as Sync from "@effect-ts/core/Sync";
 
-//  import * as M from "@effect-ts/core/Effect/Managed"
-//  import * as Ref from "@effect-ts/core/Effect/Ref"
-//  import * as Array from "@effect-ts/core/Collections/Immutable/Array";
-//  import * as Map from "@effect-ts/core/Collections/Immutable/Map"
-//  import type { NoSuchElementException } from "@effect-ts/system/GlobalExceptions"
+import * as L from "@effect-ts/monocle/Lens";
+import { decode, decoder, report } from "@effect-ts/morphic/Decoder";
 
 import * as fc from "fast-check"
 import {arbitrary} from "@effect-ts/morphic/FastCheck";
@@ -147,30 +134,7 @@ describe("FastCheck MediumResponse", () => {
       L.prop("payload"), L.prop("references"), L.prop("Post"),
       L.get
     )
-    // const userIds = pipe(
-    //   decoder(MediumResponse).decode(actualSample),
-    //   T.map(userLens),
-    //   T.map(s => Object.keys(s)),
-    // )
-    
-    const program = pipe(
-      T.do,
-      T.bind("mr", () => decoder(MediumResponse).decode(mediumSample) ),
-      T.bind("users", ({mr}) => T.succeed(userLens(mr)) ),
-      T.bind("posts", ({mr}) => T.succeed(postLens(mr)) ),
-      T.bind("postsWithAuthors", ({users, posts}) => T.succeed(
-        pipe(posts, 
-          D.values, 
-          A.map(p => tuple(p,users[p.creatorId]))
-        )
-      )),
-      T.map( ({postsWithAuthors}) => postsWithAuthors)
-    )
-
-    pipe(program, T.chain((result) => 
-          T.effectTotal(() => {
-            console.log(result)
-          })
-    ), T.run)
+    expect(userLens(smallExample)).toBeDefined();
+    expect(postLens(smallExample)).toBeDefined();
   })
 })

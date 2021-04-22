@@ -35,7 +35,7 @@ export const BrokerConnection = tag<BrokerConnection>()
 export const DbLive = pipe(
   Ref.makeRef<Map.Map<string, string>>(Map.empty),
   T.chain((ref) =>
-    T.effectTotal(
+    T.succeedWith(
       (): DbConnection => ({
         get: (k) => pipe(ref.get, T.map(Map.lookup(k)), T.chain(T.getOrFail)),
         put: (k, v) => pipe(ref, Ref.update(Map.insert(k, v))),
@@ -51,17 +51,17 @@ export const DbLive = pipe(
 export const BrokerLive = pipe(
   Ref.makeRef<Array.Array<string>>(Array.empty),
   T.chain((ref) =>
-    T.effectTotal(
+    T.succeedWith(
       (): BrokerConnection => ({
         send: (message) =>
           pipe(ref, Ref.update<Array.Array<string>>(Array.snoc(message))),
         clear: pipe(
           ref.get,
           T.chain((messages) =>
-            T.effectTotal(() => {
-              console.log(`Flush:`)
-              messages.forEach((message) => {
-                console.log("- " + message)
+            T.succeedWith(() => {
+              // console.log(`Flush:`)
+              messages.forEach((_) => {
+                // console.log("- " + message)
               })
             })
           )
@@ -109,8 +109,8 @@ test("matechs program as a service", async () => {
   const result = await pipe(
     main,
     T.chain((s) =>
-      T.effectTotal(() => {
-        console.log(`Done: ${s}`)
+      T.succeedWith(() => {
+        // console.log(`Done: ${s}`)
         return s;
       })
     ),

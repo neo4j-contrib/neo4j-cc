@@ -22,8 +22,8 @@ const program1 = pipe(
     : T.succeed(x / y))        // succeed() to effect success
   ),
   T.chain((result) =>
-    T.effectTotal(() => { // effectTotal() to succeed() which may have a side-effect
-      console.log(`Final result: ${result}`)
+    T.succeedWith(() => { // succeedWith() to succeed() which may have a side-effect
+      // console.log(`Final result: ${result}`)
       return result;
     })
   )
@@ -60,8 +60,8 @@ const program2 = pipe(
     n === 10 ? T.fail<ErrorB>({_tag: "ErrorB", value: "n === 10" }) : T.succeed(n)
   ),
   T.chain( (n) =>
-    T.effectTotal( () => {
-      console.log(`Result ${n}`);
+    T.succeedWith( () => {
+      // console.log(`Result ${n}`);
       return n;
     }),
   )
@@ -77,8 +77,8 @@ const program2AfterErrorHandling = pipe(
   T.catchAll((error) => {
     switch (error._tag) {
       case "ErrorA": {
-        return T.effectTotal(() => {
-          console.log(`handling ErrorA: ${error.value}`)
+        return T.succeedWith(() => {
+          // console.log(`handling ErrorA: ${error.value}`)
           return error;
         })
       }
@@ -103,8 +103,8 @@ const program2AfterErrorHandlingWithMatchTag = pipe(
     matchTag(
       {
         ErrorA: (error) => 
-          T.effectTotal( () => {
-            console.log(`handling ErrorA: ${error.value}`)
+          T.succeedWith( () => {
+            // console.log(`handling ErrorA: ${error.value}`)
             return error;
           })
       },
@@ -130,9 +130,9 @@ const program3 = pipe(
   ),
   T.chain((n) => T.access((_: InputB) => _.y + n)),
   T.chain((n) => (n === 10 ? T.die("something very wrong happened") : T.succeed(n))),
-  T.chain((n) =>
-    T.effectTotal(() => {
-      console.log(n)
+  T.chain((_n) =>
+    T.succeedWith(() => {
+      // console.log(n)
     })
   )
 )
@@ -144,14 +144,15 @@ const program3AfterErrorHandling = pipe(
     matchTag(
       {
         ErrorA: ({ value }) =>
-          T.effectTotal(() => {
-            console.log(`handling ErrorA: ${value}`)
+          T.succeedWith(() => {
+            // console.log(`handling ErrorA: ${value}`)
+            return value;
           })
       },
       (e) =>
         pipe(
-          T.effectTotal(() => {
-            console.log(`Default Handler`)
+          T.succeedWith(() => {
+            // console.log(`Default Handler`)
           }),
           T.andThen(T.fail(e))
         )
@@ -166,8 +167,8 @@ const handleFullCause = pipe(
     const defects = Cause.defects(cause)
 
     if (A.isNonEmpty(defects)) {
-      return T.effectTotal(() => {
-        console.log("Handle:", ...defects)
+      return T.succeedWith(() => {
+        // console.log("Handle:", ...defects)
         return defects;
       })
     }
@@ -218,8 +219,8 @@ test("matechs handling multiple failures", async () => {
   const error = await pipe(
     program4,
     T.catchAll((error) =>
-      T.effectTotal(() => {
-        console.log(`Process error: ${error.message}`)
+      T.succeedWith(() => {
+        // console.log(`Process error: ${error.message}`)
         return error.message;
       })
     ),

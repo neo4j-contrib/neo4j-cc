@@ -162,7 +162,7 @@ describe("FastCheck MediumResponse", () => {
   //   )
 
   //   pipe(program, T.chain((result) => 
-  //         T.effectTotal(() => {
+  //         T.succeedWith(() => {
   //           console.log(result)
   //         })
   //   ), T.run)
