@@ -1,11 +1,12 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { GraphQLModule } from '@nestjs/graphql';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { join } from 'path';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { GraphQLModule } from '@nestjs/graphql';
-import { join } from 'path';
 import { UserModule } from './user/user.module';
 import { User } from './user/user.entity';
 import { DataCatalogModule } from './data-catalog/data-catalog.module';
@@ -37,6 +38,9 @@ import { IncludedInDataCatalog } from './included-in-data-catalog/included-in-da
 
 @Module({
   imports: [
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', '..', 'cc-admin', 'build'),
+    }),
     ConfigModule.forRoot(),
     GraphQLModule.forRoot({
       autoSchemaFile: join(process.cwd(), 'src/schema.graphql'),
