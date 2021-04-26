@@ -1,0 +1,3504 @@
+{
+  "swagger": "2.0",
+  "basePath": "/api/v1",
+  "info": {
+    "title": "Orbit API",
+    "version": "v1",
+    "description": "Please see the complete Orbit API documentation at [https://docs.orbit.love/reference](https://docs.orbit.love/reference)."
+  },
+  "securityDefinitions": {
+    "bearer": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header",
+      "description": "Provide a Authorization header with format 'Bearer <api_key>'. This is the recommended approach. Make sure to include the 'Bearer' part in the text box here."
+    },
+    "api_key": {
+      "type": "apiKey",
+      "name": "api_key",
+      "in": "query",
+      "description": "Provide the API key in a query param called api_key. This is the least secure method, please use only for testing."
+    }
+  },
+  "tags": [
+    {
+      "name": "Activity Types"
+    },
+    {
+      "name": "Activities"
+    },
+    {
+      "name": "Members"
+    },
+    {
+      "name": "Notes"
+    },
+    {
+      "name": "Reports"
+    },
+    {
+      "name": "Users"
+    },
+    {
+      "name": "Workspaces"
+    }
+  ],
+  "definitions": {
+    "activity": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "A description of the activity; displayed in the timeline"
+        },
+        "link": {
+          "type": "string",
+          "description": "A URL for the activity; displayed in the timeline"
+        },
+        "link_text": {
+          "type": "string",
+          "description": "The text for the timeline link"
+        },
+        "title": {
+          "type": "string",
+          "description": "A title for the activity; displayed in the timeline"
+        },
+        "weight": {
+          "type": "string",
+          "description": "A custom weight to be used in filters and reports; defaults to 1."
+        },
+        "activity_type": {
+          "type": "string",
+          "description": "The type of activity - what action was done by the member"
+        },
+        "key": {
+          "type": "string",
+          "description": "Supply a key that must be unique or leave blank to have one generated."
+        },
+        "occurred_at": {
+          "type": "string",
+          "description": "The date and time the activity occurred; defaults to now"
+        },
+        "tags": {
+          "type": "array",
+          "description": "[EXPERIMENTAL] Capture facets of the activity to group by later e.g. locations or channels; replaces existing value",
+          "items": {
+            "type": "string"
+          }
+        },
+        "type": {
+          "type": "string",
+          "description": "An activity type, now only `custom` and `post` are supported"
+        },
+        "member": {
+          "$ref": "#/definitions/member"
+        }
+      },
+      "required": [
+        "title"
+      ]
+    },
+    "member": {
+      "type": "object",
+      "properties": {
+        "bio": {
+          "type": "string"
+        },
+        "birthday": {
+          "type": "string"
+        },
+        "company": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "pronouns": {
+          "type": "string"
+        },
+        "shipping_address": {
+          "type": "string"
+        },
+        "slug": {
+          "type": "string"
+        },
+        "tags_to_add": {
+          "type": "string",
+          "description": "Adds tags to member; comma-separated string or array"
+        },
+        "tags": {
+          "type": "string",
+          "description": "Replaces all tags for the member; comma-separated string or array"
+        },
+        "tag_list": {
+          "type": "string",
+          "description": "Deprecated: Please use the tags attribute instead"
+        },
+        "tshirt": {
+          "type": "string"
+        },
+        "teammate": {
+          "type": "boolean"
+        },
+        "url": {
+          "type": "string"
+        },
+        "github": {
+          "type": "string",
+          "description": "The member's GitHub username"
+        },
+        "twitter": {
+          "type": "string",
+          "description": "The member's Twitter username"
+        },
+        "email": {
+          "type": "string",
+          "description": "The member's email"
+        },
+        "linkedin": {
+          "type": "string",
+          "description": "The member's LinkedIn username, without the in/ or pub/"
+        },
+        "devto": {
+          "type": "string",
+          "description": "The member's dev.to username"
+        }
+      }
+    },
+    "identity": {
+      "type": "object",
+      "description": "Represents an email address, a profile on networks like github and twitter, or a record in another system.",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the person in the source system"
+        },
+        "source": {
+          "type": "string",
+          "description": "The type of source: known values include github, twitter, discourse, email, linkedin, devto. Custom values can also be used"
+        },
+        "source_host": {
+          "type": "string",
+          "description": "Specifies the location of the source, such as the host of a Discourse instance"
+        },
+        "username": {
+          "type": "string",
+          "description": "The username of the person in the source system"
+        },
+        "uid": {
+          "type": "string",
+          "description": "The uid of the person in the source system"
+        },
+        "email": {
+          "type": "string",
+          "description": "The email of the person in the source system"
+        },
+        "url": {
+          "type": "string",
+          "description": "For custom identities, an optional link to the profile on the source system"
+        }
+      },
+      "required": [
+        "source"
+      ]
+    },
+    "member_and_identity": {
+      "type": "object",
+      "properties": {
+        "member": {
+          "$ref": "#/definitions/member"
+        },
+        "identity": {
+          "$ref": "#/definitions/identity"
+        }
+      }
+    },
+    "activity_and_identity": {
+      "type": "object",
+      "properties": {
+        "activity": {
+          "$ref": "#/definitions/activity"
+        },
+        "identity": {
+          "$ref": "#/definitions/identity"
+        }
+      }
+    },
+    "note": {
+      "type": "object",
+      "properties": {
+        "body": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "body"
+      ]
+    }
+  },
+  "paths": {
+    "/activity_types": {
+      "get": {
+        "summary": "Get all activity types",
+        "tags": [
+          "Activity Types"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "examples": {
+              "application/json": {
+                "data": [
+                  {
+                    "id": "16",
+                    "type": "activity_type",
+                    "attributes": {
+                      "name": "Sent a message in Discord",
+                      "short_name": "Discord message",
+                      "key": "discord:message:sent",
+                      "category": "discord",
+                      "weight": "0.5"
+                    }
+                  },
+                  {
+                    "id": "17",
+                    "type": "activity_type",
+                    "attributes": {
+                      "name": "Replied to a message in Discord",
+                      "short_name": "Discord message reply",
+                      "key": "discord:message:replied",
+                      "category": "discord",
+                      "weight": "0.5"
+                    }
+                  },
+                  {
+                    "id": "18",
+                    "type": "activity_type",
+                    "attributes": {
+                      "name": "Joined a server in Discord",
+                      "short_name": "Discord server join",
+                      "key": "discord:server:joined",
+                      "category": "discord",
+                      "weight": "0.5"
+                    }
+                  },
+                  {
+                    "id": "11",
+                    "type": "activity_type",
+                    "attributes": {
+                      "name": "Created a Discourse post",
+                      "short_name": "Discourse post",
+                      "key": "discourse:post:created",
+                      "category": "discourse",
+                      "weight": "1.0"
+                    }
+                  },
+                  {
+                    "id": "12",
+                    "type": "activity_type",
+                    "attributes": {
+                      "name": "Created a Discourse topic",
+                      "short_name": "Discourse topic",
+                      "key": "discourse:topic:created",
+                      "category": "discourse",
+                      "weight": "1.0"
+                    }
+                  },
+                  {
+                    "id": "4",
+                    "type": "activity_type",
+                    "attributes": {
+                      "name": "Starred a repository",
+                      "short_name": "GitHub star",
+                      "key": "star:created",
+                      "category": "github",
+                      "weight": "0.5"
+                    }
+                  },
+                  {
+                    "id": "5",
+                    "type": "activity_type",
+                    "attributes": {
+                      "name": "Commented on an issue",
+                      "short_name": "Issue comment",
+                      "key": "issue_comment:created",
+                      "category": "github",
+                      "weight": "1.0"
+                    }
+                  },
+                  {
+                    "id": "1",
+                    "type": "activity_type",
+                    "attributes": {
+                      "name": "Opened an issue",
+                      "short_name": "Issue opened",
+                      "key": "issues:opened",
+                      "category": "github",
+                      "weight": "1.0"
+                    }
+                  },
+                  {
+                    "id": "3",
+                    "type": "activity_type",
+                    "attributes": {
+                      "name": "Had a pull request merged",
+                      "short_name": "Merged pull request",
+                      "key": "pull_requests:merged",
+                      "category": "github",
+                      "weight": "2.0"
+                    }
+                  },
+                  {
+                    "id": "2",
+                    "type": "activity_type",
+                    "attributes": {
+                      "name": "Opened a pull request",
+                      "short_name": "Opened pull request",
+                      "key": "pull_requests:opened",
+                      "category": "github",
+                      "weight": "2.0"
+                    }
+                  },
+                  {
+                    "id": "14",
+                    "type": "activity_type",
+                    "attributes": {
+                      "name": "Joined a channel in Slack",
+                      "short_name": "Slack channel join",
+                      "key": "slack:channel:joined",
+                      "category": "slack",
+                      "weight": "0.5"
+                    }
+                  },
+                  {
+                    "id": "13",
+                    "type": "activity_type",
+                    "attributes": {
+                      "name": "Sent a message in Slack",
+                      "short_name": "Slack message",
+                      "key": "slack:message:sent",
+                      "category": "slack",
+                      "weight": "0.5"
+                    }
+                  },
+                  {
+                    "id": "15",
+                    "type": "activity_type",
+                    "attributes": {
+                      "name": "Replied to a thread in Slack",
+                      "short_name": "Slack thread reply",
+                      "key": "slack:thread:replied",
+                      "category": "slack",
+                      "weight": "0.5"
+                    }
+                  },
+                  {
+                    "id": "10",
+                    "type": "activity_type",
+                    "attributes": {
+                      "name": "Followed on twitter",
+                      "short_name": "Twitter follow",
+                      "key": "twitter:followed",
+                      "category": "twitter",
+                      "weight": "0.5"
+                    }
+                  },
+                  {
+                    "id": "9",
+                    "type": "activity_type",
+                    "attributes": {
+                      "name": "Tweeted",
+                      "short_name": "Twitter mention",
+                      "key": "tweet:sent",
+                      "category": "twitter",
+                      "weight": "1.0"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/user": {
+      "get": {
+        "summary": "Get info about the current user",
+        "tags": [
+          "Users"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "id": "10",
+                  "type": "user",
+                  "attributes": {
+                    "name": "TrinityLebsackJr",
+                    "updated_at": "2021-04-06T22:11:38.750Z",
+                    "created_at": "2021-04-06T22:11:38.750Z",
+                    "email": "ginger@hand.info"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{workspace_id}/activities": {
+      "get": {
+        "summary": "List activities for a workspace",
+        "tags": [
+          "Activities"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "workspace_id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "activity_tags",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "affiliation",
+            "in": "query",
+            "type": "string",
+            "enum": [
+              "member",
+              "teammate"
+            ]
+          },
+          {
+            "name": "member_tags",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "orbit_level",
+            "in": "query",
+            "type": "string",
+            "enum": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "n"
+            ]
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "type": "string",
+            "enum": [
+              "issues:opened",
+              "pull_requests:opened",
+              "pull_requests:merged",
+              "star:created",
+              "issue_comment:created",
+              "note:created",
+              "post:created",
+              "custom:happened",
+              "tweet:sent",
+              "twitter:followed",
+              "discord:message:sent",
+              "discord:message:replied",
+              "discord:server:joined",
+              "discourse:post:created",
+              "discourse:topic:created",
+              "slack:message:sent",
+              "slack:channel:joined",
+              "slack:thread:replied"
+            ]
+          },
+          {
+            "name": "weight",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "identity",
+            "in": "query",
+            "type": "string",
+            "enum": [
+              "github",
+              "twitter",
+              "email",
+              "discourse",
+              "linkedin",
+              "devto",
+              "slack",
+              "discord"
+            ]
+          },
+          {
+            "name": "location",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "start_date",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "end_date",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "direction",
+            "in": "query",
+            "type": "string",
+            "enum": [
+              "ASC",
+              "DESC"
+            ]
+          },
+          {
+            "name": "items",
+            "in": "query",
+            "type": "string",
+            "enum": [
+              "10",
+              "50",
+              "100"
+            ]
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "type": "string",
+            "enum": [
+              "occurred_at",
+              "member"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "examples": {
+              "application/json": {
+                "data": [
+                  {
+                    "id": "6",
+                    "type": "spec_activity",
+                    "attributes": {
+                      "action": "spec_action",
+                      "created_at": "2021-04-06T22:11:39.430Z",
+                      "key": "spec_activity_key#1",
+                      "occurred_at": "2021-04-06T22:11:39.429Z",
+                      "updated_at": "2021-04-06T22:11:39.430Z",
+                      "type": "SpecActivity",
+                      "tags": [
+                        "spec-tag-1",
+                        "spec-tag-2"
+                      ],
+                      "orbit_url": "http://localhost:3000/mrbradmetz/activities/6",
+                      "weight": "1.0"
+                    },
+                    "relationships": {
+                      "activity_type": {
+                        "data": {
+                          "id": "23",
+                          "type": "activity_type"
+                        }
+                      },
+                      "member": {
+                        "data": {
+                          "id": "3",
+                          "type": "member"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "id": "5",
+                    "type": "spec_activity",
+                    "attributes": {
+                      "action": "spec_action",
+                      "created_at": "2021-04-06T22:11:39.402Z",
+                      "key": "clé",
+                      "occurred_at": "2021-04-06T22:11:39.400Z",
+                      "updated_at": "2021-04-06T22:11:39.402Z",
+                      "type": "SpecActivity",
+                      "tags": [
+                        "spec-tag-1",
+                        "spec-tag-2"
+                      ],
+                      "orbit_url": "http://localhost:3000/mrbradmetz/activities/5",
+                      "weight": "1.0"
+                    },
+                    "relationships": {
+                      "activity_type": {
+                        "data": {
+                          "id": "22",
+                          "type": "activity_type"
+                        }
+                      },
+                      "member": {
+                        "data": {
+                          "id": "3",
+                          "type": "member"
+                        }
+                      },
+                      "repository": {
+                        "data": {
+                          "id": "5",
+                          "type": "repository"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "included": [
+                  {
+                    "id": "23",
+                    "type": "activity_type",
+                    "attributes": {
+                      "name": "Did spec activity",
+                      "short_name": "Spec Activity",
+                      "key": "new:type",
+                      "category": "spec_category",
+                      "weight": "1.0"
+                    }
+                  },
+                  {
+                    "id": "3",
+                    "type": "member",
+                    "attributes": {
+                      "activities_count": 2,
+                      "avatar_url": "http://github.com/avatar.png",
+                      "bio": null,
+                      "birthday": null,
+                      "company": null,
+                      "created_at": "2021-04-06T22:11:39.344Z",
+                      "deleted_at": null,
+                      "first_activity_occurred_at": "2021-04-06T22:11:39.400Z",
+                      "id": 3,
+                      "last_activity_occurred_at": "2021-04-06T22:11:39.429Z",
+                      "location": null,
+                      "name": "JospehGreenMD",
+                      "orbit_level": 2,
+                      "pronouns": null,
+                      "reach": 0,
+                      "shipping_address": null,
+                      "slug": "jospehgreenmd",
+                      "source": "installation",
+                      "tag_list": [
+                        "ruby"
+                      ],
+                      "tags": [
+                        "ruby"
+                      ],
+                      "teammate": false,
+                      "tshirt": null,
+                      "updated_at": "2021-04-06T22:11:39.443Z",
+                      "merged_at": null,
+                      "url": null,
+                      "orbit_url": "http://localhost:3000/mrbradmetz/members/jospehgreenmd",
+                      "created": false,
+                      "love": 1.2,
+                      "twitter": null,
+                      "github": null,
+                      "discourse": null,
+                      "email": null,
+                      "devto": null,
+                      "linkedin": null,
+                      "github_followers": null,
+                      "twitter_followers": null,
+                      "topics": null,
+                      "languages": null
+                    },
+                    "relationships": {
+                      "identities": {
+                        "data": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "22",
+                    "type": "activity_type",
+                    "attributes": {
+                      "name": "Did spec activity",
+                      "short_name": "Spec Activity",
+                      "key": "spec_activity_type_key",
+                      "category": "spec_category",
+                      "weight": "1.0"
+                    }
+                  },
+                  {
+                    "id": "5",
+                    "type": "repository",
+                    "attributes": {
+                      "owner": "vito",
+                      "name": "ricardorath",
+                      "full_name": "orbit-love/orbit-model",
+                      "updated_at": "2021-04-06T22:11:39.372Z",
+                      "created_at": "2021-04-06T22:11:39.372Z"
+                    }
+                  }
+                ],
+                "links": {
+                  "first": "http://localhost:3000/api/v1/mrbradmetz/activities?activity_tags=&affiliation=&company=&direction=DESC&end_date=&filters=true&identity=&items=10&location=&member_tags=&page=1&sort=occurred_at&start_date=&type=spec_activity_type_key%2Cnew%3Atype&weight=",
+                  "prev": null,
+                  "next": null
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create an activity for a new or existing member",
+        "tags": [
+          "Activities"
+        ],
+        "description": "Use this method when you know an identity of the member (github, email, twitter, etc.) but not their Orbit ID. Pass fields in the member object to update the member in addition to creating the activity.",
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "workspace_id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "root",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/activity_and_identity"
+            }
+          }
+        ],
+        "responses": {
+          "422": {
+            "description": "unprocessible",
+            "examples": {
+              "application/json": {
+                "errors": {
+                  "base": [
+                    "Either identity or member name, email, GitHub, Twitter or Discourse is required"
+                  ],
+                  "email": [
+                    "is invalid"
+                  ],
+                  "name": [
+                    "is too long (maximum is 250 characters)"
+                  ],
+                  "workspace": [
+                    "has blocked this identity"
+                  ]
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "success",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "id": "11",
+                  "type": "custom_activity",
+                  "attributes": {
+                    "action": "happened",
+                    "created_at": "2021-04-06T22:11:40.362Z",
+                    "key": "thing-123",
+                    "occurred_at": "2021-04-06T22:11:40.350Z",
+                    "updated_at": "2021-04-06T22:11:40.362Z",
+                    "type": "CustomActivity",
+                    "tags": [
+                      "product",
+                      "enterprise",
+                      "channel:custom",
+                      "custom_type:custom-type",
+                      "custom_title:did-a-thing"
+                    ],
+                    "orbit_url": "http://localhost:3000/normapricedds/activities/11",
+                    "weight": "0.2",
+                    "custom_description": "More info about the thing",
+                    "custom_link": "http://link.com/",
+                    "custom_link_text": "See the thing",
+                    "custom_title": "Did a thing",
+                    "custom_type": "custom-type"
+                  },
+                  "relationships": {
+                    "activity_type": {
+                      "data": {
+                        "id": "8",
+                        "type": "activity_type"
+                      }
+                    },
+                    "member": {
+                      "data": {
+                        "id": "8",
+                        "type": "member"
+                      }
+                    },
+                    "user": {
+                      "data": {
+                        "id": "38",
+                        "type": "user"
+                      }
+                    }
+                  }
+                },
+                "included": [
+                  {
+                    "id": "8",
+                    "type": "activity_type",
+                    "attributes": {
+                      "name": "Something happened",
+                      "short_name": "Custom",
+                      "key": "custom:happened",
+                      "category": "custom",
+                      "weight": "1.0"
+                    }
+                  },
+                  {
+                    "id": "7",
+                    "type": "email_identity",
+                    "attributes": {
+                      "uid": "josh@orbit.love",
+                      "email": "josh@orbit.love",
+                      "username": null,
+                      "name": "josh",
+                      "source": "email",
+                      "source_host": "email.host"
+                    }
+                  },
+                  {
+                    "id": "8",
+                    "type": "twitter_identity",
+                    "attributes": {
+                      "uid": "45297280",
+                      "email": null,
+                      "username": "dzello",
+                      "name": "Josh Dzielak",
+                      "source": "twitter",
+                      "source_host": "twitter.com"
+                    }
+                  },
+                  {
+                    "id": "9",
+                    "type": "github_identity",
+                    "attributes": {
+                      "uid": null,
+                      "email": null,
+                      "username": "dzello",
+                      "name": null,
+                      "source": "github",
+                      "source_host": "github.com"
+                    }
+                  },
+                  {
+                    "id": "10",
+                    "type": "linkedin_identity",
+                    "attributes": {
+                      "uid": null,
+                      "email": null,
+                      "username": "dzello",
+                      "name": null,
+                      "source": "linkedin",
+                      "source_host": "linkedin.com"
+                    }
+                  },
+                  {
+                    "id": "8",
+                    "type": "member",
+                    "attributes": {
+                      "activities_count": 1,
+                      "avatar_url": "https://d1ts43dypk8bqh.cloudfront.net/v1/avatars/6ea4f872-04b6-4752-8a90-db508525135a",
+                      "bio": "Co-founder & CTO @OrbitModel - we're hiring! · advocate for dev advocates 🥑 · Rails · JAMstack · DevRel · he/him · #BlackLivesMatter",
+                      "birthday": null,
+                      "company": "Orbit",
+                      "created_at": "2021-04-06T22:11:40.315Z",
+                      "deleted_at": null,
+                      "first_activity_occurred_at": "2021-04-06T22:11:40.350Z",
+                      "id": 8,
+                      "last_activity_occurred_at": "2021-04-06T22:11:40.350Z",
+                      "location": "Paris, Île-de-France, FR",
+                      "name": "Josh Dzielak",
+                      "orbit_level": 3,
+                      "pronouns": null,
+                      "reach": 8,
+                      "shipping_address": null,
+                      "slug": "dzello",
+                      "source": "api",
+                      "tag_list": [
+                        "one",
+                        "two"
+                      ],
+                      "tags": [
+                        "one",
+                        "two"
+                      ],
+                      "teammate": false,
+                      "tshirt": null,
+                      "updated_at": "2021-04-06T22:11:40.373Z",
+                      "merged_at": null,
+                      "url": "https://orbit.love/",
+                      "orbit_url": "http://localhost:3000/normapricedds/members/dzello",
+                      "created": true,
+                      "love": 1.0,
+                      "twitter": "dzello",
+                      "github": "dzello",
+                      "discourse": null,
+                      "email": "josh@orbit.love",
+                      "devto": null,
+                      "linkedin": "dzello",
+                      "github_followers": null,
+                      "twitter_followers": 4598,
+                      "topics": null,
+                      "languages": null
+                    },
+                    "relationships": {
+                      "identities": {
+                        "data": [
+                          {
+                            "id": "7",
+                            "type": "email_identity"
+                          },
+                          {
+                            "id": "8",
+                            "type": "twitter_identity"
+                          },
+                          {
+                            "id": "9",
+                            "type": "github_identity"
+                          },
+                          {
+                            "id": "10",
+                            "type": "linkedin_identity"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "id": "38",
+                    "type": "user",
+                    "attributes": {
+                      "name": "BobBoehm",
+                      "updated_at": "2021-04-06T22:11:40.222Z",
+                      "created_at": "2021-04-06T22:11:40.218Z"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{workspace_id}/activities/{id}": {
+      "get": {
+        "summary": "Get an activity in the workspace",
+        "tags": [
+          "Activities"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "workspace_id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "id": "7",
+                  "type": "spec_activity",
+                  "attributes": {
+                    "action": "spec_action",
+                    "created_at": "2021-04-06T22:11:39.528Z",
+                    "key": "clé",
+                    "occurred_at": "2021-04-06T22:11:39.520Z",
+                    "updated_at": "2021-04-06T22:11:39.528Z",
+                    "type": "SpecActivity",
+                    "tags": [
+                      "spec-tag-1",
+                      "spec-tag-2"
+                    ],
+                    "orbit_url": "http://localhost:3000/mafaldabecker/activities/7",
+                    "weight": "1.0"
+                  },
+                  "relationships": {
+                    "activity_type": {
+                      "data": {
+                        "id": "24",
+                        "type": "activity_type"
+                      }
+                    },
+                    "member": {
+                      "data": {
+                        "id": "4",
+                        "type": "member"
+                      }
+                    },
+                    "repository": {
+                      "data": {
+                        "id": "6",
+                        "type": "repository"
+                      }
+                    },
+                    "user": {
+                      "data": {
+                        "id": "26",
+                        "type": "user"
+                      }
+                    }
+                  }
+                },
+                "included": [
+                  {
+                    "id": "24",
+                    "type": "activity_type",
+                    "attributes": {
+                      "name": "Did spec activity",
+                      "short_name": "Spec Activity",
+                      "key": "spec:happened#2",
+                      "category": "spec_category",
+                      "weight": "1.0"
+                    }
+                  },
+                  {
+                    "id": "4",
+                    "type": "member",
+                    "attributes": {
+                      "activities_count": 1,
+                      "avatar_url": "http://github.com/avatar.png",
+                      "bio": null,
+                      "birthday": null,
+                      "company": null,
+                      "created_at": "2021-04-06T22:11:39.526Z",
+                      "deleted_at": null,
+                      "first_activity_occurred_at": "2021-04-06T22:11:39.520Z",
+                      "id": 4,
+                      "last_activity_occurred_at": "2021-04-06T22:11:39.520Z",
+                      "location": null,
+                      "name": "TerrenceCorwin",
+                      "orbit_level": 3,
+                      "pronouns": null,
+                      "reach": 0,
+                      "shipping_address": null,
+                      "slug": "terrencecorwin",
+                      "source": "installation",
+                      "tag_list": [],
+                      "tags": [],
+                      "teammate": false,
+                      "tshirt": null,
+                      "updated_at": "2021-04-06T22:11:39.538Z",
+                      "merged_at": null,
+                      "url": null,
+                      "orbit_url": "http://localhost:3000/mafaldabecker/members/terrencecorwin",
+                      "created": false,
+                      "love": 1.0,
+                      "twitter": null,
+                      "github": null,
+                      "discourse": null,
+                      "email": null,
+                      "devto": null,
+                      "linkedin": null,
+                      "github_followers": null,
+                      "twitter_followers": null,
+                      "topics": null,
+                      "languages": null
+                    },
+                    "relationships": {
+                      "identities": {
+                        "data": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "6",
+                    "type": "repository",
+                    "attributes": {
+                      "owner": "clevelandabshire",
+                      "name": "lela",
+                      "full_name": "clevelandabshire/lela",
+                      "updated_at": "2021-04-06T22:11:39.504Z",
+                      "created_at": "2021-04-06T22:11:39.504Z"
+                    }
+                  },
+                  {
+                    "id": "26",
+                    "type": "user",
+                    "attributes": {
+                      "name": "ElvieReilly",
+                      "updated_at": "2021-04-06T22:11:39.492Z",
+                      "created_at": "2021-04-06T22:11:39.492Z"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{workspace_id}/members/{member_id}/activities": {
+      "get": {
+        "summary": "List activities for a member",
+        "tags": [
+          "Activities"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "workspace_id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "member_id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "direction",
+            "in": "query",
+            "type": "string",
+            "enum": [
+              "ASC",
+              "DESC"
+            ]
+          },
+          {
+            "name": "items",
+            "in": "query",
+            "type": "string",
+            "enum": [
+              "10",
+              "50",
+              "100"
+            ]
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "type": "string",
+            "enum": [
+              "occurred_at",
+              "member"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "examples": {
+              "application/json": {
+                "data": [
+                  {
+                    "id": "12",
+                    "type": "spec_activity",
+                    "attributes": {
+                      "action": "spec_action",
+                      "created_at": "2021-04-06T22:11:40.414Z",
+                      "key": "clé",
+                      "occurred_at": "2021-04-06T22:11:40.413Z",
+                      "updated_at": "2021-04-06T22:11:40.414Z",
+                      "type": "SpecActivity",
+                      "tags": [
+                        "spec-tag-1",
+                        "spec-tag-2"
+                      ],
+                      "orbit_url": "http://localhost:3000/alexlegros/activities/12",
+                      "weight": "1.0"
+                    },
+                    "relationships": {
+                      "activity_type": {
+                        "data": {
+                          "id": "25",
+                          "type": "activity_type"
+                        }
+                      },
+                      "member": {
+                        "data": {
+                          "id": "9",
+                          "type": "member"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "included": [
+                  {
+                    "id": "25",
+                    "type": "activity_type",
+                    "attributes": {
+                      "name": "Did spec activity",
+                      "short_name": "Spec Activity",
+                      "key": "spec:happened#3",
+                      "category": "spec_category",
+                      "weight": "1.0"
+                    }
+                  },
+                  {
+                    "id": "9",
+                    "type": "member",
+                    "attributes": {
+                      "activities_count": 1,
+                      "avatar_url": "http://github.com/avatar.png",
+                      "bio": null,
+                      "birthday": null,
+                      "company": null,
+                      "created_at": "2021-04-06T22:11:40.397Z",
+                      "deleted_at": null,
+                      "first_activity_occurred_at": "2021-04-06T22:11:40.413Z",
+                      "id": 9,
+                      "last_activity_occurred_at": "2021-04-06T22:11:40.413Z",
+                      "location": null,
+                      "name": "RheaHerzog",
+                      "orbit_level": 3,
+                      "pronouns": null,
+                      "reach": 0,
+                      "shipping_address": null,
+                      "slug": "rheaherzog",
+                      "source": "installation",
+                      "tag_list": [],
+                      "tags": [],
+                      "teammate": false,
+                      "tshirt": null,
+                      "updated_at": "2021-04-06T22:11:40.427Z",
+                      "merged_at": null,
+                      "url": null,
+                      "orbit_url": "http://localhost:3000/alexlegros/members/rheaherzog",
+                      "created": false,
+                      "love": 1.0,
+                      "twitter": null,
+                      "github": null,
+                      "discourse": null,
+                      "email": null,
+                      "devto": null,
+                      "linkedin": null,
+                      "github_followers": null,
+                      "twitter_followers": null,
+                      "topics": null,
+                      "languages": null
+                    },
+                    "relationships": {
+                      "identities": {
+                        "data": []
+                      }
+                    }
+                  }
+                ],
+                "links": {
+                  "first": "/alexlegros/members/rheaherzog/activities?page=1&direction=DESC&items=10&sort=occurred_at",
+                  "last": "/alexlegros/members/rheaherzog/activities?page=1&direction=DESC&items=10&sort=occurred_at",
+                  "prev": null,
+                  "next": null
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a post activity for a member",
+        "tags": [
+          "Activities"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "workspace_id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "member_id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "activity",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/activity"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "success",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "id": "14",
+                  "type": "post_activity",
+                  "attributes": {
+                    "action": "created",
+                    "created_at": "2021-04-06T22:11:40.737Z",
+                    "key": "https://www.justinweiss.com/",
+                    "occurred_at": "2020-05-10T16:34:28.001Z",
+                    "updated_at": "2021-04-06T22:11:40.784Z",
+                    "type": "PostActivity",
+                    "tags": [],
+                    "orbit_url": "http://localhost:3000/williamfeil/activities/14",
+                    "weight": "1.0",
+                    "custom_description": "More info about the thing",
+                    "custom_link": "http://link.com/",
+                    "custom_link_text": "See the thing",
+                    "custom_title": "Did a thing",
+                    "custom_type": "custom-type",
+                    "activity_link": "https://www.justinweiss.com/",
+                    "url": "https://www.justinweiss.com/"
+                  },
+                  "relationships": {
+                    "activity_type": {
+                      "data": {
+                        "id": "7",
+                        "type": "activity_type"
+                      }
+                    },
+                    "member": {
+                      "data": {
+                        "id": "12",
+                        "type": "member"
+                      }
+                    },
+                    "user": {
+                      "data": {
+                        "id": "43",
+                        "type": "user"
+                      }
+                    }
+                  }
+                },
+                "included": [
+                  {
+                    "id": "7",
+                    "type": "activity_type",
+                    "attributes": {
+                      "name": "Created content",
+                      "short_name": "Content created",
+                      "key": "post:created",
+                      "category": "orbit",
+                      "weight": "1.0"
+                    }
+                  },
+                  {
+                    "id": "12",
+                    "type": "member",
+                    "attributes": {
+                      "activities_count": 0,
+                      "avatar_url": "http://github.com/avatar.png",
+                      "bio": null,
+                      "birthday": null,
+                      "company": null,
+                      "created_at": "2021-04-06T22:11:40.667Z",
+                      "deleted_at": null,
+                      "first_activity_occurred_at": null,
+                      "id": 12,
+                      "last_activity_occurred_at": null,
+                      "location": null,
+                      "name": "DungStehr",
+                      "orbit_level": null,
+                      "pronouns": null,
+                      "reach": 0,
+                      "shipping_address": null,
+                      "slug": "dungstehr",
+                      "source": "installation",
+                      "tag_list": [],
+                      "tags": [],
+                      "teammate": false,
+                      "tshirt": null,
+                      "updated_at": "2021-04-06T22:11:40.667Z",
+                      "merged_at": null,
+                      "url": null,
+                      "orbit_url": "http://localhost:3000/williamfeil/members/dungstehr",
+                      "created": false,
+                      "love": 0.0,
+                      "twitter": null,
+                      "github": null,
+                      "discourse": null,
+                      "email": null,
+                      "devto": null,
+                      "linkedin": null,
+                      "github_followers": null,
+                      "twitter_followers": null,
+                      "topics": null,
+                      "languages": null
+                    },
+                    "relationships": {
+                      "identities": {
+                        "data": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "43",
+                    "type": "user",
+                    "attributes": {
+                      "name": "AsleyWisozk",
+                      "updated_at": "2021-04-06T22:11:40.658Z",
+                      "created_at": "2021-04-06T22:11:40.650Z"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "422": {
+            "description": "unprocessable entity",
+            "examples": {
+              "application/json": {
+                "errors": {
+                  "custom_title": [
+                    "can't be blank"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{workspace_id}/members/{member_id}/activities/{id}": {
+      "delete": {
+        "summary": "Delete a post activity",
+        "tags": [
+          "Activities"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "workspace_id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "member_id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "activity deleted"
+          }
+        }
+      },
+      "put": {
+        "summary": "Update a custom activity for a member",
+        "tags": [
+          "Activities"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "workspace_id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "member_id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "activity",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/activity"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "activity updated"
+          },
+          "422": {
+            "description": "unprocessable entity"
+          }
+        }
+      }
+    },
+    "/{workspace_id}/members/{member_id}/identities": {
+      "post": {
+        "summary": "Add identity to a member",
+        "tags": [
+          "Members"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "workspace_id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "member_id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "identity",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/identity"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "success",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "id": "12",
+                  "type": "other_identity",
+                  "attributes": {
+                    "uid": "12345",
+                    "email": "josh@orbit.love",
+                    "username": "dzello1",
+                    "name": "Josh",
+                    "source": "twitch",
+                    "source_host": "twitch.tv"
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "identity is invalid",
+            "examples": {
+              "application/json": {
+                "errors": {
+                  "identity_id": [
+                    "has already been taken"
+                  ],
+                  "source": [
+                    "can't be blank"
+                  ],
+                  "username_or_email": [
+                    "must be present"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Remove identity from a member",
+        "tags": [
+          "Members"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "workspace_id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "member_id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "identity",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/identity"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "success; no content"
+          },
+          "422": {
+            "description": "identity is invalid or not attached to member",
+            "examples": {
+              "application/json": {
+                "errors": {
+                  "identity": [
+                    "is not attached to this member"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{workspace_id}/members/{member_id}/notes": {
+      "post": {
+        "summary": "Create a note",
+        "tags": [
+          "Notes"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "workspace_id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "member_id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "note",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/note"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "note created",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "id": "1",
+                  "type": "note",
+                  "attributes": {
+                    "created_at": "2021-04-06T22:11:41.380Z",
+                    "body": "heyo",
+                    "updated_at": "2021-04-06T22:11:41.380Z"
+                  },
+                  "relationships": {
+                    "member": {
+                      "data": {
+                        "id": "22",
+                        "type": "member"
+                      }
+                    },
+                    "user": {
+                      "data": {
+                        "id": "57",
+                        "type": "user"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "Get the member's notes",
+        "tags": [
+          "Notes"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "workspace_id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "member_id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "examples": {
+              "application/json": {
+                "data": [
+                  {
+                    "id": "2",
+                    "type": "note",
+                    "attributes": {
+                      "created_at": "2021-04-06T22:11:41.424Z",
+                      "body": "heyo",
+                      "updated_at": "2021-04-06T22:11:41.424Z"
+                    },
+                    "relationships": {
+                      "member": {
+                        "data": {
+                          "id": "23",
+                          "type": "member"
+                        }
+                      },
+                      "user": {
+                        "data": {
+                          "id": "59",
+                          "type": "user"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "included": [
+                  {
+                    "id": "23",
+                    "type": "member",
+                    "attributes": {
+                      "activities_count": 0,
+                      "avatar_url": "http://github.com/avatar.png",
+                      "bio": null,
+                      "birthday": null,
+                      "company": null,
+                      "created_at": "2021-04-06T22:11:41.416Z",
+                      "deleted_at": null,
+                      "first_activity_occurred_at": null,
+                      "id": 23,
+                      "last_activity_occurred_at": null,
+                      "location": null,
+                      "name": "CyrilDickensSr",
+                      "orbit_level": null,
+                      "pronouns": null,
+                      "reach": 0,
+                      "shipping_address": null,
+                      "slug": "cyrildickenssr",
+                      "source": "installation",
+                      "tag_list": [],
+                      "tags": [],
+                      "teammate": false,
+                      "tshirt": null,
+                      "updated_at": "2021-04-06T22:11:41.416Z",
+                      "merged_at": null,
+                      "url": null,
+                      "orbit_url": "http://localhost:3000/susanntrompv/members/cyrildickenssr",
+                      "created": false,
+                      "love": 0.0,
+                      "twitter": null,
+                      "github": null,
+                      "discourse": null,
+                      "email": null,
+                      "devto": null,
+                      "linkedin": null,
+                      "github_followers": null,
+                      "twitter_followers": null,
+                      "topics": null,
+                      "languages": null
+                    },
+                    "relationships": {
+                      "identities": {
+                        "data": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "59",
+                    "type": "user",
+                    "attributes": {
+                      "name": "MrsShalonDuBuque",
+                      "updated_at": "2021-04-06T22:11:41.422Z",
+                      "created_at": "2021-04-06T22:11:41.422Z"
+                    }
+                  }
+                ],
+                "links": {
+                  "first": "/susanntrompv/members/cyrildickenssr/notes?page=1",
+                  "last": "/susanntrompv/members/cyrildickenssr/notes?page=1",
+                  "prev": null,
+                  "next": null
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{workspace_id}/members/{member_id}/notes/{id}": {
+      "put": {
+        "summary": "Update a note",
+        "tags": [
+          "Notes"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "workspace_id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "member_id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "note",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/note"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "note updated"
+          }
+        }
+      }
+    },
+    "/{workspace_id}/members": {
+      "get": {
+        "summary": "List members in a workspace",
+        "tags": [
+          "Members"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "workspace_id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "activity_tags",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "affiliation",
+            "in": "query",
+            "type": "string",
+            "enum": [
+              "member",
+              "teammate"
+            ]
+          },
+          {
+            "name": "member_tags",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "orbit_level",
+            "in": "query",
+            "type": "string",
+            "enum": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "n"
+            ]
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "type": "string",
+            "enum": [
+              "issues:opened",
+              "pull_requests:opened",
+              "pull_requests:merged",
+              "star:created",
+              "issue_comment:created",
+              "note:created",
+              "post:created",
+              "custom:happened",
+              "tweet:sent",
+              "twitter:followed",
+              "discord:message:sent",
+              "discord:message:replied",
+              "discord:server:joined",
+              "discourse:post:created",
+              "discourse:topic:created",
+              "slack:message:sent",
+              "slack:channel:joined",
+              "slack:thread:replied"
+            ]
+          },
+          {
+            "name": "weight",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "identity",
+            "in": "query",
+            "type": "string",
+            "enum": [
+              "github",
+              "twitter",
+              "email",
+              "discourse",
+              "linkedin",
+              "devto",
+              "slack",
+              "discord"
+            ]
+          },
+          {
+            "name": "location",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "start_date",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "end_date",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "direction",
+            "in": "query",
+            "type": "string",
+            "enum": [
+              "ASC",
+              "DESC"
+            ]
+          },
+          {
+            "name": "items",
+            "in": "query",
+            "type": "string",
+            "enum": [
+              "10",
+              "50",
+              "100"
+            ]
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "type": "string",
+            "enum": [
+              "activities_count",
+              "company",
+              "created_at",
+              "first_activity",
+              "github_followers",
+              "id",
+              "last_activity",
+              "location",
+              "love",
+              "name",
+              "orbit",
+              "reach",
+              "title",
+              "twitter_followers",
+              "updated_at"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "examples": {
+              "application/json": {
+                "data": [
+                  {
+                    "id": "25",
+                    "type": "member",
+                    "attributes": {
+                      "activities_count": 1,
+                      "avatar_url": "http://github.com/avatar.png",
+                      "bio": null,
+                      "birthday": null,
+                      "company": null,
+                      "created_at": "2021-04-06T22:11:41.542Z",
+                      "deleted_at": null,
+                      "first_activity_occurred_at": "2021-04-06T22:11:41.570Z",
+                      "id": 25,
+                      "last_activity_occurred_at": "2021-04-06T22:11:41.570Z",
+                      "location": null,
+                      "name": "Josh",
+                      "orbit_level": 3,
+                      "pronouns": null,
+                      "reach": 0,
+                      "shipping_address": null,
+                      "slug": "josh",
+                      "source": "installation",
+                      "tag_list": [
+                        "ruby"
+                      ],
+                      "tags": [
+                        "ruby"
+                      ],
+                      "teammate": false,
+                      "tshirt": null,
+                      "updated_at": "2021-04-06T22:11:41.583Z",
+                      "merged_at": null,
+                      "url": null,
+                      "orbit_url": "http://localhost:3000/rudolphschneider/members/josh",
+                      "created": false,
+                      "love": 1.0,
+                      "twitter": null,
+                      "github": null,
+                      "discourse": null,
+                      "email": null,
+                      "devto": null,
+                      "linkedin": null,
+                      "github_followers": null,
+                      "twitter_followers": null,
+                      "topics": null,
+                      "languages": null
+                    },
+                    "relationships": {
+                      "identities": {
+                        "data": [
+                          {
+                            "id": "15",
+                            "type": "spec_identity"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "id": "26",
+                    "type": "member",
+                    "attributes": {
+                      "activities_count": 1,
+                      "avatar_url": "http://github.com/avatar.png",
+                      "bio": null,
+                      "birthday": null,
+                      "company": null,
+                      "created_at": "2021-04-06T22:11:41.552Z",
+                      "deleted_at": null,
+                      "first_activity_occurred_at": "2021-04-06T22:11:41.598Z",
+                      "id": 26,
+                      "last_activity_occurred_at": "2021-04-06T22:11:41.598Z",
+                      "location": null,
+                      "name": "Sally",
+                      "orbit_level": 3,
+                      "pronouns": null,
+                      "reach": 0,
+                      "shipping_address": null,
+                      "slug": "sally",
+                      "source": "installation",
+                      "tag_list": [
+                        "ruby"
+                      ],
+                      "tags": [
+                        "ruby"
+                      ],
+                      "teammate": false,
+                      "tshirt": null,
+                      "updated_at": "2021-04-06T22:11:41.609Z",
+                      "merged_at": null,
+                      "url": null,
+                      "orbit_url": "http://localhost:3000/rudolphschneider/members/sally",
+                      "created": false,
+                      "love": 1.0,
+                      "twitter": null,
+                      "github": null,
+                      "discourse": null,
+                      "email": null,
+                      "devto": null,
+                      "linkedin": null,
+                      "github_followers": null,
+                      "twitter_followers": null,
+                      "topics": null,
+                      "languages": null
+                    },
+                    "relationships": {
+                      "identities": {
+                        "data": [
+                          {
+                            "id": "16",
+                            "type": "spec_identity"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ],
+                "included": [
+                  {
+                    "id": "15",
+                    "type": "spec_identity"
+                  },
+                  {
+                    "id": "16",
+                    "type": "spec_identity"
+                  }
+                ],
+                "links": {
+                  "first": "http://localhost:3000/api/v1/rudolphschneider/members?activity_tags=crystal%2C-php%7C-javascript&affiliation=&company=&direction=DESC&end_date=&identity=&items=10&location=&member_tags=ruby%7Crails%2C-go&page=1&query=&sort=date&start_date=&type=spec%3Aactivity%2Ctype%3Anew&weight=",
+                  "prev": null,
+                  "next": null
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create or update a member",
+        "tags": [
+          "Members"
+        ],
+        "description": "This method is useful when you know a member's identity in another system and want to create or update the corresponding Orbit member. Identities can be specified in the identity object or member attributes like member.github. If no member exists, a new member will be created and linked to any provided identities.",
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "workspace_id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "root",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/member_and_identity"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "created",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "id": "45",
+                  "type": "member",
+                  "attributes": {
+                    "activities_count": 0,
+                    "avatar_url": "https://avatars2.githubusercontent.com/u/174777?u=79e423dd07c19122115f52a1c97727ca193e6253&v=4",
+                    "bio": "Co-founder & CTO @orbit-love · Developer Advocate · formerly @algolia and @keen",
+                    "birthday": null,
+                    "company": "@orbit-love",
+                    "created_at": "2021-04-06T22:11:43.592Z",
+                    "deleted_at": null,
+                    "first_activity_occurred_at": null,
+                    "id": 45,
+                    "last_activity_occurred_at": null,
+                    "location": "Paris",
+                    "name": "Josh Dzielak",
+                    "orbit_level": null,
+                    "pronouns": null,
+                    "reach": 8,
+                    "shipping_address": null,
+                    "slug": "dzello",
+                    "source": "api",
+                    "tag_list": [],
+                    "tags": [],
+                    "teammate": false,
+                    "tshirt": null,
+                    "updated_at": "2021-04-06T22:11:43.618Z",
+                    "merged_at": null,
+                    "url": "https://dzello.com/",
+                    "orbit_url": "http://localhost:3000/billkuphal/members/dzello",
+                    "created": true,
+                    "love": 0.0,
+                    "twitter": "dzello",
+                    "github": "dzello",
+                    "discourse": null,
+                    "email": "josh@orbit.love",
+                    "devto": null,
+                    "linkedin": null,
+                    "github_followers": 171,
+                    "twitter_followers": null,
+                    "topics": null,
+                    "languages": null
+                  },
+                  "relationships": {
+                    "identities": {
+                      "data": [
+                        {
+                          "id": "45",
+                          "type": "github_identity"
+                        },
+                        {
+                          "id": "46",
+                          "type": "twitter_identity"
+                        },
+                        {
+                          "id": "47",
+                          "type": "email_identity"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "included": [
+                  {
+                    "id": "45",
+                    "type": "github_identity",
+                    "attributes": {
+                      "uid": "174777",
+                      "email": null,
+                      "username": "dzello",
+                      "name": "Josh Dzielak",
+                      "source": "github",
+                      "source_host": "github.com"
+                    }
+                  },
+                  {
+                    "id": "46",
+                    "type": "twitter_identity",
+                    "attributes": {
+                      "uid": null,
+                      "email": null,
+                      "username": "dzello",
+                      "name": null,
+                      "source": "twitter",
+                      "source_host": "twitter.com"
+                    }
+                  },
+                  {
+                    "id": "47",
+                    "type": "email_identity",
+                    "attributes": {
+                      "uid": "josh@orbit.love",
+                      "email": "josh@orbit.love",
+                      "username": null,
+                      "name": "josh",
+                      "source": "email",
+                      "source_host": "email.host"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "200": {
+            "description": "success",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "id": "36",
+                  "type": "member",
+                  "attributes": {
+                    "activities_count": 0,
+                    "avatar_url": "http://github.com/avatar.png",
+                    "bio": "Co-founder & CTO @orbit-love · Developer Advocate · formerly @algolia and @keen",
+                    "birthday": null,
+                    "company": "@orbit-love",
+                    "created_at": "2021-04-06T22:11:42.664Z",
+                    "deleted_at": null,
+                    "first_activity_occurred_at": null,
+                    "id": 36,
+                    "last_activity_occurred_at": null,
+                    "location": "Paris",
+                    "name": "DonnyKris",
+                    "orbit_level": null,
+                    "pronouns": null,
+                    "reach": 8,
+                    "shipping_address": null,
+                    "slug": "donnykris",
+                    "source": "api",
+                    "tag_list": [
+                      "one",
+                      "two"
+                    ],
+                    "tags": [
+                      "one",
+                      "two"
+                    ],
+                    "teammate": false,
+                    "tshirt": null,
+                    "updated_at": "2021-04-06T22:11:42.744Z",
+                    "merged_at": null,
+                    "url": "https://dzello.com/",
+                    "orbit_url": "http://localhost:3000/msedwinlowe/members/donnykris",
+                    "created": false,
+                    "love": 0.0,
+                    "twitter": "dzello",
+                    "github": "dzello",
+                    "discourse": null,
+                    "email": null,
+                    "devto": null,
+                    "linkedin": null,
+                    "github_followers": 171,
+                    "twitter_followers": null,
+                    "topics": null,
+                    "languages": null
+                  },
+                  "relationships": {
+                    "identities": {
+                      "data": [
+                        {
+                          "id": "24",
+                          "type": "twitter_identity"
+                        },
+                        {
+                          "id": "26",
+                          "type": "github_identity"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "included": [
+                  {
+                    "id": "24",
+                    "type": "twitter_identity",
+                    "attributes": {
+                      "uid": "uid-10",
+                      "email": null,
+                      "username": "dzello",
+                      "name": null,
+                      "source": "twitter",
+                      "source_host": "twitter.com"
+                    }
+                  },
+                  {
+                    "id": "26",
+                    "type": "github_identity",
+                    "attributes": {
+                      "uid": "174777",
+                      "email": null,
+                      "username": "dzello",
+                      "name": "Josh Dzielak",
+                      "source": "github",
+                      "source_host": "github.com"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "422": {
+            "description": "unprocessable",
+            "examples": {
+              "application/json": {
+                "errors": {
+                  "email": [
+                    "is invalid"
+                  ],
+                  "name": [
+                    "can't be blank"
+                  ],
+                  "workspace": [
+                    "has blocked this identity"
+                  ],
+                  "base": [
+                    "Either identity or member name, email, GitHub, Twitter or Discourse is required"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{workspace_id}/members/{id}": {
+      "get": {
+        "summary": "Get a member",
+        "tags": [
+          "Members"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "workspace_id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "id": "27",
+                  "type": "member",
+                  "attributes": {
+                    "activities_count": 0,
+                    "avatar_url": "http://github.com/avatar.png",
+                    "bio": null,
+                    "birthday": null,
+                    "company": null,
+                    "created_at": "2021-04-06T22:11:41.670Z",
+                    "deleted_at": null,
+                    "first_activity_occurred_at": null,
+                    "id": 27,
+                    "last_activity_occurred_at": null,
+                    "location": null,
+                    "name": "Josh",
+                    "orbit_level": null,
+                    "pronouns": null,
+                    "reach": 0,
+                    "shipping_address": null,
+                    "slug": "josh",
+                    "source": "installation",
+                    "tag_list": [],
+                    "tags": [],
+                    "teammate": false,
+                    "tshirt": null,
+                    "updated_at": "2021-04-06T22:11:41.670Z",
+                    "merged_at": null,
+                    "url": null,
+                    "orbit_url": "http://localhost:3000/thaddeuslowe/members/josh",
+                    "created": false,
+                    "love": 0.0,
+                    "twitter": null,
+                    "github": null,
+                    "discourse": null,
+                    "email": null,
+                    "devto": null,
+                    "linkedin": null,
+                    "github_followers": null,
+                    "twitter_followers": null,
+                    "topics": null,
+                    "languages": null
+                  },
+                  "relationships": {
+                    "identities": {
+                      "data": [
+                        {
+                          "id": "17",
+                          "type": "spec_identity"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "included": [
+                  {
+                    "id": "17",
+                    "type": "spec_identity"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Update a member",
+        "tags": [
+          "Members"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "workspace_id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "member",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/member"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "member updated"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a member",
+        "tags": [
+          "Members"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "workspace_id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "member deleted"
+          }
+        }
+      }
+    },
+    "/{workspace_id}/members/find": {
+      "get": {
+        "summary": "Find a member by an identity",
+        "tags": [
+          "Members"
+        ],
+        "description": "Provide a source and one of username/uid/email params to return a member with that identity, if one exists. Common values for source include github, twitter, and email.",
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "workspace_id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "source",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "source_host",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "uid",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "github",
+            "in": "query",
+            "type": "string",
+            "description": "Deprecated, please use source=github and username=<username> instead"
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "Not found",
+            "examples": {
+              "application/json": {
+                "errors": "No member matching this identity was found"
+              }
+            }
+          },
+          "200": {
+            "description": "success",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "id": "47",
+                  "type": "member",
+                  "attributes": {
+                    "activities_count": 0,
+                    "avatar_url": "http://github.com/avatar.png",
+                    "bio": null,
+                    "birthday": null,
+                    "company": null,
+                    "created_at": "2021-04-06T22:11:43.815Z",
+                    "deleted_at": null,
+                    "first_activity_occurred_at": null,
+                    "id": 47,
+                    "last_activity_occurred_at": null,
+                    "location": null,
+                    "name": "EliseoOConnell",
+                    "orbit_level": null,
+                    "pronouns": null,
+                    "reach": 0,
+                    "shipping_address": null,
+                    "slug": "eliseooconnell",
+                    "source": "installation",
+                    "tag_list": [],
+                    "tags": [],
+                    "teammate": false,
+                    "tshirt": null,
+                    "updated_at": "2021-04-06T22:11:43.815Z",
+                    "merged_at": null,
+                    "url": null,
+                    "orbit_url": "http://localhost:3000/delcieblanda/members/eliseooconnell",
+                    "created": false,
+                    "love": 0.0,
+                    "twitter": null,
+                    "github": "dzello",
+                    "discourse": null,
+                    "email": null,
+                    "devto": null,
+                    "linkedin": null,
+                    "github_followers": null,
+                    "twitter_followers": null,
+                    "topics": null,
+                    "languages": null
+                  },
+                  "relationships": {
+                    "identities": {
+                      "data": [
+                        {
+                          "id": "50",
+                          "type": "github_identity"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "included": [
+                  {
+                    "id": "50",
+                    "type": "github_identity",
+                    "attributes": {
+                      "uid": "uid-14",
+                      "email": null,
+                      "username": "dzello",
+                      "name": null,
+                      "source": "github",
+                      "source_host": "github.com"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{workspace_id}/reports": {
+      "get": {
+        "summary": "Get a workspace stats",
+        "tags": [
+          "Reports"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "workspace_id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "start_date",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "end_date",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "group",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "id": "81",
+                  "type": "statistics",
+                  "attributes": {
+                    "workspace_id": 81,
+                    "timeframe": {
+                      "start_date": "2021-03-06",
+                      "end_date": "2021-04-07",
+                      "start_date_last": "2021-02-02",
+                      "end_date_last": "2021-03-06"
+                    },
+                    "overview": {
+                      "total_members_count": 1,
+                      "members_on_orbit_level_1_count": 0,
+                      "members_on_orbit_level_2_count": 0,
+                      "members_on_orbit_level_3_count": 1,
+                      "members_on_orbit_level_4_count": 0,
+                      "members_on_orbit_level_none_count": 0
+                    },
+                    "members": {
+                      "active_count": 1,
+                      "active_delta": 1,
+                      "new_count": 1,
+                      "new_delta": 1,
+                      "returning_count": 0,
+                      "returning_delta": 0
+                    },
+                    "activities": {
+                      "total_count": 1,
+                      "total_delta": 1,
+                      "issues:opened": {
+                        "category": "github",
+                        "count": 0,
+                        "delta": 0,
+                        "members": {
+                          "active_count": 0,
+                          "active_delta": 0,
+                          "new_count": 0,
+                          "new_delta": 0,
+                          "returning_count": 0,
+                          "returning_delta": 0
+                        }
+                      },
+                      "pull_requests:opened": {
+                        "category": "github",
+                        "count": 0,
+                        "delta": 0,
+                        "members": {
+                          "active_count": 0,
+                          "active_delta": 0,
+                          "new_count": 0,
+                          "new_delta": 0,
+                          "returning_count": 0,
+                          "returning_delta": 0
+                        }
+                      },
+                      "pull_requests:merged": {
+                        "category": "github",
+                        "count": 0,
+                        "delta": 0,
+                        "members": {
+                          "active_count": 0,
+                          "active_delta": 0,
+                          "new_count": 0,
+                          "new_delta": 0,
+                          "returning_count": 0,
+                          "returning_delta": 0
+                        }
+                      },
+                      "star:created": {
+                        "category": "github",
+                        "count": 0,
+                        "delta": 0,
+                        "members": {
+                          "active_count": 0,
+                          "active_delta": 0,
+                          "new_count": 0,
+                          "new_delta": 0,
+                          "returning_count": 0,
+                          "returning_delta": 0
+                        }
+                      },
+                      "issue_comment:created": {
+                        "category": "github",
+                        "count": 0,
+                        "delta": 0,
+                        "members": {
+                          "active_count": 0,
+                          "active_delta": 0,
+                          "new_count": 0,
+                          "new_delta": 0,
+                          "returning_count": 0,
+                          "returning_delta": 0
+                        }
+                      },
+                      "note:created": {
+                        "category": "orbit",
+                        "count": 0,
+                        "delta": 0,
+                        "members": {
+                          "active_count": 0,
+                          "active_delta": 0,
+                          "new_count": 0,
+                          "new_delta": 0,
+                          "returning_count": 0,
+                          "returning_delta": 0
+                        }
+                      },
+                      "post:created": {
+                        "category": "orbit",
+                        "count": 0,
+                        "delta": 0,
+                        "members": {
+                          "active_count": 0,
+                          "active_delta": 0,
+                          "new_count": 0,
+                          "new_delta": 0,
+                          "returning_count": 0,
+                          "returning_delta": 0
+                        }
+                      },
+                      "custom:happened": {
+                        "category": "custom",
+                        "count": 0,
+                        "delta": 0,
+                        "members": {
+                          "active_count": 0,
+                          "active_delta": 0,
+                          "new_count": 0,
+                          "new_delta": 0,
+                          "returning_count": 0,
+                          "returning_delta": 0
+                        }
+                      },
+                      "tweet:sent": {
+                        "category": "twitter",
+                        "count": 0,
+                        "delta": 0,
+                        "members": {
+                          "active_count": 0,
+                          "active_delta": 0,
+                          "new_count": 0,
+                          "new_delta": 0,
+                          "returning_count": 0,
+                          "returning_delta": 0
+                        }
+                      },
+                      "twitter:followed": {
+                        "category": "twitter",
+                        "count": 0,
+                        "delta": 0,
+                        "members": {
+                          "active_count": 0,
+                          "active_delta": 0,
+                          "new_count": 0,
+                          "new_delta": 0,
+                          "returning_count": 0,
+                          "returning_delta": 0
+                        }
+                      },
+                      "discourse:post:created": {
+                        "category": "discourse",
+                        "count": 0,
+                        "delta": 0,
+                        "members": {
+                          "active_count": 0,
+                          "active_delta": 0,
+                          "new_count": 0,
+                          "new_delta": 0,
+                          "returning_count": 0,
+                          "returning_delta": 0
+                        }
+                      },
+                      "discourse:topic:created": {
+                        "category": "discourse",
+                        "count": 0,
+                        "delta": 0,
+                        "members": {
+                          "active_count": 0,
+                          "active_delta": 0,
+                          "new_count": 0,
+                          "new_delta": 0,
+                          "returning_count": 0,
+                          "returning_delta": 0
+                        }
+                      },
+                      "slack:message:sent": {
+                        "category": "slack",
+                        "count": 0,
+                        "delta": 0,
+                        "members": {
+                          "active_count": 0,
+                          "active_delta": 0,
+                          "new_count": 0,
+                          "new_delta": 0,
+                          "returning_count": 0,
+                          "returning_delta": 0
+                        }
+                      },
+                      "slack:channel:joined": {
+                        "category": "slack",
+                        "count": 0,
+                        "delta": 0,
+                        "members": {
+                          "active_count": 0,
+                          "active_delta": 0,
+                          "new_count": 0,
+                          "new_delta": 0,
+                          "returning_count": 0,
+                          "returning_delta": 0
+                        }
+                      },
+                      "slack:thread:replied": {
+                        "category": "slack",
+                        "count": 0,
+                        "delta": 0,
+                        "members": {
+                          "active_count": 0,
+                          "active_delta": 0,
+                          "new_count": 0,
+                          "new_delta": 0,
+                          "returning_count": 0,
+                          "returning_delta": 0
+                        }
+                      },
+                      "discord:message:sent": {
+                        "category": "discord",
+                        "count": 0,
+                        "delta": 0,
+                        "members": {
+                          "active_count": 0,
+                          "active_delta": 0,
+                          "new_count": 0,
+                          "new_delta": 0,
+                          "returning_count": 0,
+                          "returning_delta": 0
+                        }
+                      },
+                      "discord:message:replied": {
+                        "category": "discord",
+                        "count": 0,
+                        "delta": 0,
+                        "members": {
+                          "active_count": 0,
+                          "active_delta": 0,
+                          "new_count": 0,
+                          "new_delta": 0,
+                          "returning_count": 0,
+                          "returning_delta": 0
+                        }
+                      },
+                      "discord:server:joined": {
+                        "category": "discord",
+                        "count": 0,
+                        "delta": 0,
+                        "members": {
+                          "active_count": 0,
+                          "active_delta": 0,
+                          "new_count": 0,
+                          "new_delta": 0,
+                          "returning_count": 0,
+                          "returning_delta": 0
+                        }
+                      },
+                      "spec:happened#6": {
+                        "category": "spec_category",
+                        "count": 1,
+                        "delta": 1,
+                        "members": {
+                          "active_count": 1,
+                          "active_delta": 1,
+                          "new_count": 1,
+                          "new_delta": 1,
+                          "returning_count": 0,
+                          "returning_delta": 0
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/workspaces": {
+      "get": {
+        "summary": "Get all workspaces for the current user",
+        "tags": [
+          "Workspaces"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "examples": {
+              "application/json": {
+                "data": [
+                  {
+                    "id": "83",
+                    "type": "workspace",
+                    "attributes": {
+                      "name": "Fake Workspace",
+                      "slug": "fake-workspace",
+                      "updated_at": "2021-04-06T22:11:43.974Z",
+                      "created_at": "2021-04-06T22:11:43.966Z"
+                    },
+                    "relationships": {
+                      "repositories": {
+                        "data": []
+                      }
+                    }
+                  }
+                ],
+                "included": []
+              }
+            }
+          }
+        }
+      }
+    },
+    "/workspaces/{workspace_id}": {
+      "get": {
+        "summary": "Get a workspace",
+        "tags": [
+          "Workspaces"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "workspace_id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "id": "84",
+                  "type": "workspace",
+                  "attributes": {
+                    "name": "Fake Workspace",
+                    "slug": "fake-workspace",
+                    "updated_at": "2021-04-06T22:11:44.063Z",
+                    "created_at": "2021-04-06T22:11:44.002Z",
+                    "members_count": 1,
+                    "activities_count": 1,
+                    "tags": {}
+                  },
+                  "relationships": {
+                    "repositories": {
+                      "data": []
+                    },
+                    "last_member": {
+                      "data": {
+                        "id": "49",
+                        "type": "member"
+                      }
+                    },
+                    "last_activity": {
+                      "data": {
+                        "id": "24",
+                        "type": "activity"
+                      }
+                    }
+                  }
+                },
+                "included": [
+                  {
+                    "id": "49",
+                    "type": "member",
+                    "attributes": {
+                      "activities_count": 1,
+                      "avatar_url": "http://github.com/avatar.png",
+                      "bio": null,
+                      "birthday": null,
+                      "company": null,
+                      "created_at": "2021-04-06T22:11:44.052Z",
+                      "deleted_at": null,
+                      "first_activity_occurred_at": "2021-04-06T22:11:44.046Z",
+                      "id": 49,
+                      "last_activity_occurred_at": "2021-04-06T22:11:44.046Z",
+                      "location": null,
+                      "name": "EdwardoSchiller",
+                      "orbit_level": 2,
+                      "pronouns": null,
+                      "reach": 0,
+                      "shipping_address": null,
+                      "slug": "edwardoschiller",
+                      "source": "installation",
+                      "tag_list": [],
+                      "tags": [],
+                      "teammate": false,
+                      "tshirt": null,
+                      "updated_at": "2021-04-06T22:11:44.062Z",
+                      "merged_at": null,
+                      "url": null,
+                      "orbit_url": "http://localhost:3000/fake-workspace/members/edwardoschiller",
+                      "created": false,
+                      "love": 1.2,
+                      "twitter": null,
+                      "github": null,
+                      "discourse": null,
+                      "email": null,
+                      "devto": null,
+                      "linkedin": null,
+                      "github_followers": null,
+                      "twitter_followers": null,
+                      "topics": null,
+                      "languages": null
+                    },
+                    "relationships": {
+                      "identities": {
+                        "data": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "24",
+                    "type": "activity",
+                    "attributes": {
+                      "action": "opened",
+                      "created_at": "2021-04-06T22:11:44.053Z",
+                      "key": "wava/ashlee#97",
+                      "occurred_at": "2021-04-06T22:11:44.046Z",
+                      "updated_at": "2021-04-06T22:11:44.053Z",
+                      "type": "PullRequestActivity",
+                      "tags": [
+                        "channel:github",
+                        "github_organization:wava",
+                        "github_repository:wava/ashlee",
+                        "github_pull_request:wava/ashlee/#97"
+                      ],
+                      "orbit_url": "http://localhost:3000/fake-workspace/activities/24",
+                      "weight": "2.0",
+                      "activity_link": "https://github.com/"
+                    },
+                    "relationships": {
+                      "activity_type": {
+                        "data": {
+                          "id": "2",
+                          "type": "activity_type"
+                        }
+                      },
+                      "member": {
+                        "data": {
+                          "id": "49",
+                          "type": "member"
+                        }
+                      },
+                      "repository": {
+                        "data": {
+                          "id": "7",
+                          "type": "repository"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "host": "app.orbit.love",
+  "schemes": [
+    "https"
+  ]
+}

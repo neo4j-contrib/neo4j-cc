@@ -1,11 +1,17 @@
-#!/usr/bin/env node
-
-import { graphql } from "@octokit/graphql";
-
+import { createClient } from '@urql/core';
 import { DateTime } from "luxon";
 
 require("dotenv").config({
-  path: `.env.development`,
+  path: `../../.env`,
+});
+
+const client = createClient({
+  url: 'https://api.github.com/graphql',
+  fetchOptions: {
+    headers: {
+      authorization: `token ${process.env.GITHUB_TOKEN}`,
+    },
+  }
 });
 
 function isDateTime(obj:any): obj is DateTime {
@@ -14,10 +20,10 @@ function isDateTime(obj:any): obj is DateTime {
 
 const ghSearchBetween = (from:DateTime|string, to:DateTime|string) => `topic:neo4j created:${isDateTime(from) ? from.toISODate() : from}..${isDateTime(to) ? to.toISODate() : to}`
 
-const fetchFromGithub = async () => {
+export const fetchFromGithub = async () => {
   let cursor = null;
   let hasNextPage = true;
-  let from = DateTime.fromISO("2010-01-01");
+  let from = DateTime.fromISO("2021-01-01");
   let to = from.plus({years:1});
   let today = DateTime.local();
   let yearlyResultCount = 0;
@@ -28,7 +34,7 @@ const fetchFromGithub = async () => {
     console.log("[");
     do {
       do {
-        let { search }:any = await graphql<{search:any}>(
+        let { search }:any = await client.query(
           `
             query neo4jRelatedRepositories${cursor ? "($cursor: String!)" : ""} {
               search(query:"${ghSearchBetween(from, to)}", type:REPOSITORY, first: 100, ${cursor ? "after: $cursor" : ""}) {
@@ -63,11 +69,8 @@ const fetchFromGithub = async () => {
           `,
           {
             cursor,
-            headers: {
-              authorization: `token ${process.env.GITHUB_TOKEN}`,
-            },
           }
-        );
+        ).toPromise();
 
         cursor = search.pageInfo.endCursor;
         hasNextPage = search.pageInfo.hasNextPage;
@@ -101,5 +104,4 @@ const fetchFromGithub = async () => {
 
 }
 
-fetchFromGithub();
 

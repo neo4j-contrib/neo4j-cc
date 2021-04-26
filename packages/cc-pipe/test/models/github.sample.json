@@ -1,0 +1,74 @@
+[
+  {
+    "__typename": "Repository",
+    "id": "MDEwOlJlcG9zaXRvcnkxMDc2MDU5",
+    "url": "https://github.com/maxdemarzi/neography",
+    "name": "neography",
+    "nameWithOwner": "maxdemarzi/neography",
+    "stargazers": {
+      "totalCount": 607
+    },
+    "owner": {
+      "__typename": "User",
+      "id": "MDQ6VXNlcjgyMzM0",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/82334?v=4",
+      "login": "maxdemarzi",
+      "url": "https://github.com/maxdemarzi"
+    },
+    "description": "A thin Ruby wrapper to the Neo4j Rest API",
+    "createdAt": "2010-11-12T22:50:45Z",
+    "updatedAt": "2021-03-24T16:12:37Z",
+    "collaborators": null,
+    "repositoryTopics": {
+      "nodes": [
+        {
+          "topic": {
+            "__typename": "Topic",
+            "name": "neo4j"
+          }
+        },
+        {
+          "topic": {
+            "__typename": "Topic",
+            "name": "neography"
+          }
+        },
+        {
+          "topic": {
+            "__typename": "Topic",
+            "name": "ruby"
+          }
+        },
+        {
+          "topic": {
+            "__typename": "Topic",
+            "name": "neo4j-driver"
+          }
+        },
+        {
+          "topic": {
+            "__typename": "Topic",
+            "name": "graphs"
+          }
+        },
+        {
+          "topic": {
+            "__typename": "Topic",
+            "name": "graph-database"
+          }
+        }
+      ]
+    },
+    "languages": {
+      "nodes": [
+        {
+          "__typename": "Language",
+          "name": "Ruby"
+        }
+      ]
+    },
+    "forks": {
+      "totalCount": 130
+    }
+  }
+]

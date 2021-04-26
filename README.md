@@ -22,17 +22,6 @@ Inspiration:
 - Kaggle as a community based on data
 - Github as a community based around code
 
-User Goals:
-
-1. Advocates (Affiliates)
-  - promotion: projects, products, services, 
-2. Contributors
-  - ??? ABKTODO
-3. Participants
-  - 
-4. Observers
-  - discovery
-
 ## Model
 
 - adopt&adapt [schema.org](https://schema.org)'s SEO-friendly ontology of Things
