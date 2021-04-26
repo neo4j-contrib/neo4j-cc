@@ -1,4 +1,4 @@
-# Neo4j Community Center server
+# Neo4j Common Code server
 
 
 ## How-to

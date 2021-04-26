@@ -1,6 +1,6 @@
 import yargs, {Options} from 'yargs'
 
-import {fetchFromGithub} from './fetch-gh-repos';
+import {fetchFromGithub} from './pipe/fetch-gh-repos';
 
 interface FetchCommandOptions  {
   file: string;

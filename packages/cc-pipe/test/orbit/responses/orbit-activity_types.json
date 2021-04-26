@@ -1,0 +1,180 @@
+{
+  "data": [
+    {
+      "id": "23",
+      "type": "activity_type",
+      "attributes": {
+        "name": "Sent a message in Discord",
+        "short_name": "Discord message",
+        "key": "discord:message:sent",
+        "category": "discord",
+        "weight": "0.5"
+      }
+    },
+    {
+      "id": "24",
+      "type": "activity_type",
+      "attributes": {
+        "name": "Replied to a message in Discord",
+        "short_name": "Discord message reply",
+        "key": "discord:message:replied",
+        "category": "discord",
+        "weight": "0.5"
+      }
+    },
+    {
+      "id": "25",
+      "type": "activity_type",
+      "attributes": {
+        "name": "Joined a server in Discord",
+        "short_name": "Discord server join",
+        "key": "discord:server:joined",
+        "category": "discord",
+        "weight": "0.5"
+      }
+    },
+    {
+      "id": "18",
+      "type": "activity_type",
+      "attributes": {
+        "name": "Created a Discourse post",
+        "short_name": "Discourse post",
+        "key": "discourse:post:created",
+        "category": "discourse",
+        "weight": "1.0"
+      }
+    },
+    {
+      "id": "19",
+      "type": "activity_type",
+      "attributes": {
+        "name": "Created a Discourse topic",
+        "short_name": "Discourse topic",
+        "key": "discourse:topic:created",
+        "category": "discourse",
+        "weight": "1.0"
+      }
+    },
+    {
+      "id": "3",
+      "type": "activity_type",
+      "attributes": {
+        "name": "Starred a repository",
+        "short_name": "GitHub star",
+        "key": "star:created",
+        "category": "github",
+        "weight": "0.5"
+      }
+    },
+    {
+      "id": "9",
+      "type": "activity_type",
+      "attributes": {
+        "name": "Commented on an issue",
+        "short_name": "Issue comment",
+        "key": "issue_comment:created",
+        "category": "github",
+        "weight": "1.0"
+      }
+    },
+    {
+      "id": "2",
+      "type": "activity_type",
+      "attributes": {
+        "name": "Opened an issue",
+        "short_name": "Issue opened",
+        "key": "issues:opened",
+        "category": "github",
+        "weight": "1.0"
+      }
+    },
+    {
+      "id": "4",
+      "type": "activity_type",
+      "attributes": {
+        "name": "Had a pull request merged",
+        "short_name": "Merged pull request",
+        "key": "pull_requests:merged",
+        "category": "github",
+        "weight": "2.0"
+      }
+    },
+    {
+      "id": "1",
+      "type": "activity_type",
+      "attributes": {
+        "name": "Opened a pull request",
+        "short_name": "Opened pull request",
+        "key": "pull_requests:opened",
+        "category": "github",
+        "weight": "2.0"
+      }
+    },
+    {
+      "id": "12",
+      "type": "activity_type",
+      "attributes": {
+        "name": "Created content",
+        "short_name": "Content created",
+        "key": "post:created",
+        "category": "orbit",
+        "weight": "1.0"
+      }
+    },
+    {
+      "id": "21",
+      "type": "activity_type",
+      "attributes": {
+        "name": "Joined a channel in Slack",
+        "short_name": "Slack channel join",
+        "key": "slack:channel:joined",
+        "category": "slack",
+        "weight": "0.5"
+      }
+    },
+    {
+      "id": "20",
+      "type": "activity_type",
+      "attributes": {
+        "name": "Sent a message in Slack",
+        "short_name": "Slack message",
+        "key": "slack:message:sent",
+        "category": "slack",
+        "weight": "0.5"
+      }
+    },
+    {
+      "id": "22",
+      "type": "activity_type",
+      "attributes": {
+        "name": "Replied to a thread in Slack",
+        "short_name": "Slack thread reply",
+        "key": "slack:thread:replied",
+        "category": "slack",
+        "weight": "0.5"
+      }
+    },
+    {
+      "id": "17",
+      "type": "activity_type",
+      "attributes": {
+        "name": "Followed on twitter",
+        "short_name": "Twitter follow",
+        "key": "twitter:followed",
+        "category": "twitter",
+        "weight": "0.5"
+      }
+    },
+    {
+      "id": "16",
+      "type": "activity_type",
+      "attributes": {
+        "name": "Tweeted",
+        "short_name": "Twitter mention",
+        "key": "tweet:sent",
+        "category": "twitter",
+        "weight": "1.0"
+      }
+    }
+  ]
+}

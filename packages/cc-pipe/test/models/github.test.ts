@@ -84,7 +84,7 @@ const smallExample = GithubRepository.build(
   }
 )
 
-describe("FastCheck MediumResponse", () => {
+describe("FastCheck GithubRepository", () => {
   it("Generate and Guard", () => {
     fc.assert(
       fc.property(
