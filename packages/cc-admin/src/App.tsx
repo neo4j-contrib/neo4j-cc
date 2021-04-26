@@ -29,10 +29,6 @@ function App() {
         <CcSidebar />
         <CcWorkspace>
           <Switch>
-            <Route path="/">
-              <p>Hi</p>
-              <Snozzle />
-            </Route>
             <Route path="/people">
               <PeoplePage />
             </Route>
@@ -65,6 +61,10 @@ function App() {
             </Route>
             <Route path="/courses">
               <CoursesPage />
+            </Route>
+            <Route path="/">
+              <p>Hi</p>
+              <Snozzle />
             </Route>
           </Switch>
 
