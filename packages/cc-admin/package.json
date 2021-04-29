@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@auth0/auth0-react": "^1.4.0",
     "@neo4j-cc/components": "*",
     "@tailwindcss/forms": "^0.2.1",
     "@testing-library/jest-dom": "^5.11.9",

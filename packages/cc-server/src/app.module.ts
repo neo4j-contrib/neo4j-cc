@@ -35,13 +35,17 @@ import { Course } from './course/course.entity';
 import { Comment } from './comment/comment.entity';
 import { IncludedInDataCatalogModule } from './included-in-data-catalog/included-in-data-catalog.module';
 import { IncludedInDataCatalog } from './included-in-data-catalog/included-in-data-catalog.entity';
+import { AuthzModule } from './authz/authz.module';
 
 @Module({
   imports: [
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', '..', 'cc-admin', 'build'),
     }),
-    ConfigModule.forRoot(),
+    ConfigModule.forRoot({
+      envFilePath: join(__dirname,'..','.env'),
+      isGlobal: true,
+    }),
     GraphQLModule.forRoot({
       autoSchemaFile: join(process.cwd(), 'src/schema.graphql'),
     }),
@@ -81,6 +85,7 @@ import { IncludedInDataCatalog } from './included-in-data-catalog/included-in-da
     ArticleModule,
     CommentModule,
     IncludedInDataCatalogModule,
+    AuthzModule,
   ],
   controllers: [AppController],
   providers: [AppService],

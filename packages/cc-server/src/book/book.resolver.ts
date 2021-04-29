@@ -3,12 +3,15 @@ import { BookService } from './book.service';
 import { Book } from './book.entity';
 import { CreateBookInput } from './dto/create-book.input';
 import { UpdateBookInput } from './dto/update-book.input';
+import { GraphQLAuthGuard } from 'src/authz/graphql-auth.guard';
+import { UseGuards } from '@nestjs/common';
 
 @Resolver(() => Book)
 export class BookResolver {
   constructor(private readonly bookService: BookService) {}
 
   @Mutation(() => Book)
+  @UseGuards(GraphQLAuthGuard)
   createBook(@Args('createBookInput') createBookInput: CreateBookInput) {
     return this.bookService.create(createBookInput);
   }

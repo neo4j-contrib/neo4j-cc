@@ -1,20 +1,19 @@
 // import React from 'react';
 import {
-  BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
-import { Snozzle } from '@neo4j-cc/components';
-import {CcSidebar } from './components/CcSidebar';
-import {CcWorkspace } from './components/CcWorkspace';
+import { ProtectedRoute } from "./auth/protected-route";
+import { CcSidebar } from './components/CcSidebar';
+import { CcWorkspace } from './components/CcWorkspace';
 import { ArticlesPage } from './pages/ArticlesPage';
 import { BooksPage } from './pages/BooksPage';
 import { CoursesPage } from './pages/CoursesPage';
 
-
 import {DataCatalogsPage} from './pages/DataCatalogsPage';
 import {DatasetsPage} from './pages/DatasetsPage';
 import { EventsPage } from './pages/EventsPage';
+import { HomePage } from "./pages/HomePage";
 import { NotebooksPage } from './pages/NotebooksPage';
 import { OrganizationsPage } from './pages/OrganizationsPage';
 import {PeoplePage} from './pages/PeoplePage';
@@ -22,16 +21,13 @@ import { SoftwareApplicationsPage } from './pages/SoftwareApplicationsPage';
 import { SoftwareSourceCodesPage } from './pages/SoftwareSourceCodesPage';
 
 function App() {
-  return (
 
-    <Router>
+  return (
       <div className="App h-screen flex overflow-hidden bg-white">
         <CcSidebar />
         <CcWorkspace>
           <Switch>
-            <Route path="/people">
-              <PeoplePage />
-            </Route>
+            <ProtectedRoute path="/people" component={PeoplePage} />
             <Route path="/organizations">
               <OrganizationsPage />
             </Route>
@@ -63,14 +59,12 @@ function App() {
               <CoursesPage />
             </Route>
             <Route path="/">
-              <p>Hi</p>
-              <Snozzle />
+              <HomePage />
             </Route>
           </Switch>
 
         </CcWorkspace>
       </div>
-    </Router>
   );
 }
 

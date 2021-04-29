@@ -2,7 +2,7 @@
   "name": "neo4j-cc",
   "private": true,
   "scripts": {
-    "postinstall": "lerna bootstrap --hoist",
+    "postinstall": "lerna bootstrap",
     "clean": "lerna run clean",
     "build": "lerna run build",
     "pub": "lerna publish",
