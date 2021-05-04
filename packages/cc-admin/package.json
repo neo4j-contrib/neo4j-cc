@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@auth0/auth0-react": "^1.4.0",
+    "@heroicons/react": "^1.0.1",
     "@neo4j-cc/components": "*",
     "@tailwindcss/forms": "^0.2.1",
     "@testing-library/jest-dom": "^5.11.9",
@@ -17,6 +18,7 @@
     "formik": "^2.2.6",
     "fp-ts": "^2.9.5",
     "graphql": "^15.5.0",
+    "immutability-helper": "^3.1.1",
     "io-ts": "^2.2.16",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",

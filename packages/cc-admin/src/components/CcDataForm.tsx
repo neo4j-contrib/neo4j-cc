@@ -35,6 +35,7 @@ const kindOf = (type:IntrospectionInputTypeRef):string => {
   switch (type.kind) {
     case 'SCALAR': return type.name;
     case 'NON_NULL': return kindOf(type.ofType);
+    case 'LIST': return type.kind;
     default: return 'unknown';
   }
 }

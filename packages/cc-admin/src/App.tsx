@@ -14,9 +14,11 @@ import {DataCatalogsPage} from './pages/DataCatalogsPage';
 import {DatasetsPage} from './pages/DatasetsPage';
 import { EventsPage } from './pages/EventsPage';
 import { HomePage } from "./pages/HomePage";
+import { ProfilePage } from "./pages/ProfilePage";
+import { ExperimentalPage } from "./pages/ExperimentalPage";
 import { NotebooksPage } from './pages/NotebooksPage';
 import { OrganizationsPage } from './pages/OrganizationsPage';
-import {PeoplePage} from './pages/PeoplePage';
+import { PeoplePage } from './pages/PeoplePage';
 import { SoftwareApplicationsPage } from './pages/SoftwareApplicationsPage';
 import { SoftwareSourceCodesPage } from './pages/SoftwareSourceCodesPage';
 
@@ -57,6 +59,12 @@ function App() {
             </Route>
             <Route path="/courses">
               <CoursesPage />
+            </Route>
+            <Route path="/profile">
+              <ProfilePage />
+            </Route>
+            <Route path="/x">
+              <ExperimentalPage />
             </Route>
             <Route path="/">
               <HomePage />
