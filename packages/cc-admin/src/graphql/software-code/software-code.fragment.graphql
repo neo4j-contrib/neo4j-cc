@@ -8,7 +8,6 @@ fragment softwareSourceCodeFields on SoftwareSourceCode {
     dateCreated
     dateModified
     license
-    about
     publisher
     codeRepository
     programmingLanguage

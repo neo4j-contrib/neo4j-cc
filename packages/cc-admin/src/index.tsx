@@ -2,10 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {
+  BrowserRouter as Router,
+} from "react-router-dom";
 
 import './tailwind.css';
 
 import { createClient, Provider } from 'urql';
+import Auth0ProviderWithHistory from './auth/auth0-provider-with-history';
 const client = createClient({
   url: 'http://localhost:5000/graphql',
 });
@@ -14,7 +18,11 @@ const client = createClient({
 ReactDOM.render(
   <React.StrictMode>
     <Provider value={client}>
-      <App />
+      <Router>
+        <Auth0ProviderWithHistory>
+          <App />
+        </Auth0ProviderWithHistory>
+      </Router>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

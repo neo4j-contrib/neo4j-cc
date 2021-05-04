@@ -7,7 +7,7 @@ import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from 'ty
 
 export type ISODateTime = string;
 export type ISODuration = string;
-export type GuidOrURL = string;
+export type Guid = string;
 
 @Entity()
 @ObjectType()
@@ -50,28 +50,28 @@ const creativeWorkExample: CreativeWorkDTS = {
 export abstract class CreativeWork
   extends Thing
   implements Partial<CreativeWorkDTS> {
-  // @Column('varchar', { array: true })
-  // @Field(() => [String], {
-  //   nullable: true,
-  //   defaultValue: [],
-  //   description:
-  //     'The subject matter of the content. Inverse property: subjectOf.',
-  // })
-  // about?: [GuidOrURL];
+  @Column('varchar', { array: true })
+  @Field(() => [String], {
+    nullable: true,
+    defaultValue: [],
+    description:
+      'The subject matter of the content. Inverse property: subjectOf.',
+  })
+  about?: [string];
 
   @Column({ nullable: true })
   @Field(() => ID, {
     nullable: true,
     description: 'Reference to Person who created the work.',
   })
-  creator?: GuidOrURL;
+  creator?: Guid;
 
   @Column({ nullable: true })
   @Field(() => ID, {
     nullable: true,
     description: 'Reference to Person who published the work.',
   })
-  publisher?: GuidOrURL;
+  publisher?: Guid;
 
   @Column({ nullable: true })
   @Field(() => String, { nullable: true })

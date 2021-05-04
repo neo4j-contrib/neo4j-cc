@@ -19,6 +19,9 @@ type DataCatalog {
   description: String
   url: String
 
+  """The subject matter of the content. Inverse property: subjectOf."""
+  about: [String!]
+
   """Reference to Person who created the work."""
   creator: ID
 
@@ -38,6 +41,9 @@ type Dataset {
   """A brief description of this Thing."""
   description: String
   url: String
+
+  """The subject matter of the content. Inverse property: subjectOf."""
+  about: [String!]
 
   """Reference to Person who created the work."""
   creator: ID
@@ -88,6 +94,9 @@ type SoftwareSourceCode {
   description: String
   url: String
 
+  """The subject matter of the content. Inverse property: subjectOf."""
+  about: [String!]
+
   """Reference to Person who created the work."""
   creator: ID
 
@@ -120,6 +129,9 @@ type Notebook {
   """A brief description of this Thing."""
   description: String
   url: String
+
+  """The subject matter of the content. Inverse property: subjectOf."""
+  about: [String!]
 
   """Reference to Person who created the work."""
   creator: ID
@@ -172,6 +184,9 @@ type SoftwareApplication {
   """A brief description of this Thing."""
   description: String
   url: String
+
+  """The subject matter of the content. Inverse property: subjectOf."""
+  about: [String!]
 
   """Reference to Person who created the work."""
   creator: ID
@@ -237,6 +252,9 @@ type Course {
   description: String
   url: String
 
+  """The subject matter of the content. Inverse property: subjectOf."""
+  about: [String!]
+
   """Reference to Person who created the work."""
   creator: ID
 
@@ -275,6 +293,9 @@ type Book {
   description: String
   url: String
 
+  """The subject matter of the content. Inverse property: subjectOf."""
+  about: [String!]
+
   """Reference to Person who created the work."""
   creator: ID
 
@@ -298,6 +319,9 @@ type Article {
   description: String
   url: String
 
+  """The subject matter of the content. Inverse property: subjectOf."""
+  about: [String!]
+
   """Reference to Person who created the work."""
   creator: ID
 
@@ -317,6 +341,9 @@ type Comment {
   """A brief description of this Thing."""
   description: String
   url: String
+
+  """The subject matter of the content. Inverse property: subjectOf."""
+  about: [String!]
 
   """Reference to Person who created the work."""
   creator: ID
@@ -453,6 +480,9 @@ input CreateDataCatalogInput {
   description: String
   url: String
 
+  """The subject matter of the content. Inverse property: subjectOf."""
+  about: [String!] = []
+
   """Reference to Person who created the work."""
   creator: ID
 
@@ -471,6 +501,9 @@ input UpdateDataCatalogInput {
   description: String
   url: String
 
+  """The subject matter of the content. Inverse property: subjectOf."""
+  about: [String!] = []
+
   """Reference to Person who created the work."""
   creator: ID
 
@@ -488,6 +521,9 @@ input CreateDatasetInput {
   """A brief description of this Thing."""
   description: String
   url: String
+
+  """The subject matter of the content. Inverse property: subjectOf."""
+  about: [String!] = []
 
   """Reference to Person who created the work."""
   creator: ID
@@ -516,6 +552,9 @@ input UpdateDatasetInput {
   """A brief description of this Thing."""
   description: String
   url: String
+
+  """The subject matter of the content. Inverse property: subjectOf."""
+  about: [String!] = []
 
   """Reference to Person who created the work."""
   creator: ID
@@ -579,6 +618,9 @@ input CreateNotebookInput {
   description: String
   url: String
 
+  """The subject matter of the content. Inverse property: subjectOf."""
+  about: [String!] = []
+
   """Reference to Person who created the work."""
   creator: ID
 
@@ -614,6 +656,9 @@ input UpdateNotebookInput {
   """A brief description of this Thing."""
   description: String
   url: String
+
+  """The subject matter of the content. Inverse property: subjectOf."""
+  about: [String!] = []
 
   """Reference to Person who created the work."""
   creator: ID
@@ -675,6 +720,9 @@ input CreateSoftwareApplicationInput {
   description: String
   url: String
 
+  """The subject matter of the content. Inverse property: subjectOf."""
+  about: [String!] = []
+
   """Reference to Person who created the work."""
   creator: ID
 
@@ -709,6 +757,9 @@ input UpdateSoftwareApplicationInput {
   """A brief description of this Thing."""
   description: String
   url: String
+
+  """The subject matter of the content. Inverse property: subjectOf."""
+  about: [String!] = []
 
   """Reference to Person who created the work."""
   creator: ID
@@ -745,6 +796,9 @@ input CreateSoftwareSourceCodeInput {
   description: String
   url: String
 
+  """The subject matter of the content. Inverse property: subjectOf."""
+  about: [String!] = []
+
   """Reference to Person who created the work."""
   creator: ID
 
@@ -775,6 +829,9 @@ input UpdateSoftwareSourceCodeInput {
   """A brief description of this Thing."""
   description: String
   url: String
+
+  """The subject matter of the content. Inverse property: subjectOf."""
+  about: [String!] = []
 
   """Reference to Person who created the work."""
   creator: ID
@@ -857,6 +914,9 @@ input CreateCourseInput {
   description: String
   url: String
 
+  """The subject matter of the content. Inverse property: subjectOf."""
+  about: [String!] = []
+
   """Reference to Person who created the work."""
   creator: ID
 
@@ -892,6 +952,9 @@ input UpdateCourseInput {
   """A brief description of this Thing."""
   description: String
   url: String
+
+  """The subject matter of the content. Inverse property: subjectOf."""
+  about: [String!] = []
 
   """Reference to Person who created the work."""
   creator: ID
@@ -929,6 +992,9 @@ input CreateBookInput {
   description: String
   url: String
 
+  """The subject matter of the content. Inverse property: subjectOf."""
+  about: [String!] = []
+
   """Reference to Person who created the work."""
   creator: ID
 
@@ -949,6 +1015,9 @@ input UpdateBookInput {
   """A brief description of this Thing."""
   description: String
   url: String
+
+  """The subject matter of the content. Inverse property: subjectOf."""
+  about: [String!] = []
 
   """Reference to Person who created the work."""
   creator: ID
@@ -971,6 +1040,9 @@ input CreateArticleInput {
   description: String
   url: String
 
+  """The subject matter of the content. Inverse property: subjectOf."""
+  about: [String!] = []
+
   """Reference to Person who created the work."""
   creator: ID
 
@@ -989,6 +1061,9 @@ input UpdateArticleInput {
   description: String
   url: String
 
+  """The subject matter of the content. Inverse property: subjectOf."""
+  about: [String!] = []
+
   """Reference to Person who created the work."""
   creator: ID
 
@@ -1006,6 +1081,9 @@ input CreateCommentInput {
   """A brief description of this Thing."""
   description: String
   url: String
+
+  """The subject matter of the content. Inverse property: subjectOf."""
+  about: [String!] = []
 
   """Reference to Person who created the work."""
   creator: ID
@@ -1035,6 +1113,9 @@ input UpdateCommentInput {
   """A brief description of this Thing."""
   description: String
   url: String
+
+  """The subject matter of the content. Inverse property: subjectOf."""
+  about: [String!] = []
 
   """Reference to Person who created the work."""
   creator: ID

@@ -1,5 +1,6 @@
 import React, { InputHTMLAttributes } from 'react';
-import { useField } from 'formik';
+import { useField, Field } from 'formik';
+import { useFieldArray } from './useFieldArray.hook';
 
 interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
   label:string;
@@ -53,4 +54,38 @@ export const CcCheckbox:React.FC<TextInputProps> = ({label, description,...props
     </div>
   </div>
   )
+}
+
+export const CCTextList:React.FC<InputHTMLAttributes<HTMLInputElement>> = (props:any) => {
+  const [field, , { remove, insert, push }] = useFieldArray(props);
+  const items = field.value;
+
+  return (
+    <div>
+      {items && items.length > 0 ? (
+        items.map((_item, index) => (
+          <div key={index}>
+            <Field name={`items.${index}`} />
+            <button
+              type="button"
+              onClick={() => remove(index)} // remove a friend from the list
+            >
+              -
+            </button>
+            <button
+              type="button"
+              onClick={() => insert(index + 1, "")} // insert an empty string at a position
+            >
+              +
+            </button>
+          </div>
+        ))
+      ) : (
+        <button type="button" onClick={() => push("")}>
+          {/* show this when user has removed all friends from the list */}
+          Add a friend
+        </button>
+      )}
+    </div>
+  );
 }

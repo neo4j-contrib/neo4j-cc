@@ -27,7 +27,7 @@ export type DataCatalog = {
   /** UUID */
   id: Scalars['ID'];
   labels?: Maybe<Array<Scalars['String']>>;
-  name: Scalars['String'];
+  name?: Maybe<Scalars['String']>;
   /** A brief description of this Thing. */
   description?: Maybe<Scalars['String']>;
   url?: Maybe<Scalars['String']>;
@@ -35,13 +35,11 @@ export type DataCatalog = {
   about?: Maybe<Array<Scalars['String']>>;
   /** Reference to Person who created the work. */
   creator?: Maybe<Scalars['ID']>;
-  /** Reference to Person who publushed the work. */
+  /** Reference to Person who published the work. */
   publisher?: Maybe<Scalars['ID']>;
   dateCreated?: Maybe<Scalars['String']>;
   dateModified?: Maybe<Scalars['String']>;
   license?: Maybe<Scalars['String']>;
-  /** An award won by or for this CreativeWork. */
-  award?: Maybe<Scalars['String']>;
 };
 
 export type Dataset = {
@@ -49,7 +47,7 @@ export type Dataset = {
   /** UUID */
   id: Scalars['ID'];
   labels?: Maybe<Array<Scalars['String']>>;
-  name: Scalars['String'];
+  name?: Maybe<Scalars['String']>;
   /** A brief description of this Thing. */
   description?: Maybe<Scalars['String']>;
   url?: Maybe<Scalars['String']>;
@@ -57,15 +55,15 @@ export type Dataset = {
   about?: Maybe<Array<Scalars['String']>>;
   /** Reference to Person who created the work. */
   creator?: Maybe<Scalars['ID']>;
-  /** Reference to Person who publushed the work. */
+  /** Reference to Person who published the work. */
   publisher?: Maybe<Scalars['ID']>;
   dateCreated?: Maybe<Scalars['String']>;
   dateModified?: Maybe<Scalars['String']>;
   license?: Maybe<Scalars['String']>;
-  /** An award won by or for this CreativeWork. */
-  award?: Maybe<Scalars['String']>;
   /** URL to the direct data download. Distinct from the optional "url" field, which should lead to a page about the data. */
   distribution: Scalars['String'];
+  /** Media type typically expressed using a MIME format (see IANA site and MDN reference) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.). */
+  encodingFormat: Scalars['String'];
 };
 
 export type Person = {
@@ -73,7 +71,7 @@ export type Person = {
   /** UUID */
   id: Scalars['ID'];
   labels?: Maybe<Array<Scalars['String']>>;
-  name: Scalars['String'];
+  name?: Maybe<Scalars['String']>;
   /** A brief description of this Thing. */
   description?: Maybe<Scalars['String']>;
   url?: Maybe<Scalars['String']>;
@@ -88,7 +86,7 @@ export type SoftwareSourceCode = {
   /** UUID */
   id: Scalars['ID'];
   labels?: Maybe<Array<Scalars['String']>>;
-  name: Scalars['String'];
+  name?: Maybe<Scalars['String']>;
   /** A brief description of this Thing. */
   description?: Maybe<Scalars['String']>;
   url?: Maybe<Scalars['String']>;
@@ -96,13 +94,11 @@ export type SoftwareSourceCode = {
   about?: Maybe<Array<Scalars['String']>>;
   /** Reference to Person who created the work. */
   creator?: Maybe<Scalars['ID']>;
-  /** Reference to Person who publushed the work. */
+  /** Reference to Person who published the work. */
   publisher?: Maybe<Scalars['ID']>;
   dateCreated?: Maybe<Scalars['String']>;
   dateModified?: Maybe<Scalars['String']>;
   license?: Maybe<Scalars['String']>;
-  /** An award won by or for this CreativeWork. */
-  award?: Maybe<Scalars['String']>;
   /** Link to the repository where the un-compiled, human readable code and related code is located (SVN, github, CodePlex). */
   codeRepository?: Maybe<Scalars['String']>;
   /** The computer programming language. */
@@ -116,7 +112,7 @@ export type Notebook = {
   /** UUID */
   id: Scalars['ID'];
   labels?: Maybe<Array<Scalars['String']>>;
-  name: Scalars['String'];
+  name?: Maybe<Scalars['String']>;
   /** A brief description of this Thing. */
   description?: Maybe<Scalars['String']>;
   url?: Maybe<Scalars['String']>;
@@ -124,19 +120,19 @@ export type Notebook = {
   about?: Maybe<Array<Scalars['String']>>;
   /** Reference to Person who created the work. */
   creator?: Maybe<Scalars['ID']>;
-  /** Reference to Person who publushed the work. */
+  /** Reference to Person who published the work. */
   publisher?: Maybe<Scalars['ID']>;
   dateCreated?: Maybe<Scalars['String']>;
   dateModified?: Maybe<Scalars['String']>;
   license?: Maybe<Scalars['String']>;
-  /** An award won by or for this CreativeWork. */
-  award?: Maybe<Scalars['String']>;
   /** Link to the repository where the un-compiled, human readable code and related code is located (SVN, github, CodePlex). */
   codeRepository?: Maybe<Scalars['String']>;
-  /** The computer programming language */
+  /** The computer programming language. */
   programmingLanguage?: Maybe<Scalars['String']>;
-  /** Runtime platform or script interpreter dependencies. For example: GraphGist, Jupyter, ObservableHQ */
+  /** Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0). */
   runtimePlatform?: Maybe<Scalars['String']>;
+  /** The spoken language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard. See also availableLanguage. Supersedes language. */
+  inLanguage?: Maybe<Scalars['String']>;
 };
 
 export type Organization = {
@@ -144,7 +140,7 @@ export type Organization = {
   /** UUID */
   id: Scalars['ID'];
   labels?: Maybe<Array<Scalars['String']>>;
-  name: Scalars['String'];
+  name?: Maybe<Scalars['String']>;
   /** A brief description of this Thing. */
   description?: Maybe<Scalars['String']>;
   url?: Maybe<Scalars['String']>;
@@ -157,7 +153,7 @@ export type SoftwareApplication = {
   /** UUID */
   id: Scalars['ID'];
   labels?: Maybe<Array<Scalars['String']>>;
-  name: Scalars['String'];
+  name?: Maybe<Scalars['String']>;
   /** A brief description of this Thing. */
   description?: Maybe<Scalars['String']>;
   url?: Maybe<Scalars['String']>;
@@ -165,13 +161,11 @@ export type SoftwareApplication = {
   about?: Maybe<Array<Scalars['String']>>;
   /** Reference to Person who created the work. */
   creator?: Maybe<Scalars['ID']>;
-  /** Reference to Person who publushed the work. */
+  /** Reference to Person who published the work. */
   publisher?: Maybe<Scalars['ID']>;
   dateCreated?: Maybe<Scalars['String']>;
   dateModified?: Maybe<Scalars['String']>;
   license?: Maybe<Scalars['String']>;
-  /** An award won by or for this CreativeWork. */
-  award?: Maybe<Scalars['String']>;
   /** Semantic version of the software instance. */
   softwareVersion?: Maybe<Scalars['String']>;
   /** Type of software application, e.g. "Game, Multimedia". */
@@ -189,7 +183,7 @@ export type Event = {
   /** UUID */
   id: Scalars['ID'];
   labels?: Maybe<Array<Scalars['String']>>;
-  name: Scalars['String'];
+  name?: Maybe<Scalars['String']>;
   /** A brief description of this Thing. */
   description?: Maybe<Scalars['String']>;
   url?: Maybe<Scalars['String']>;
@@ -208,7 +202,7 @@ export type Course = {
   /** UUID */
   id: Scalars['ID'];
   labels?: Maybe<Array<Scalars['String']>>;
-  name: Scalars['String'];
+  name?: Maybe<Scalars['String']>;
   /** A brief description of this Thing. */
   description?: Maybe<Scalars['String']>;
   url?: Maybe<Scalars['String']>;
@@ -216,7 +210,7 @@ export type Course = {
   about?: Maybe<Array<Scalars['String']>>;
   /** Reference to Person who created the work. */
   creator?: Maybe<Scalars['ID']>;
-  /** Reference to Person who publushed the work. */
+  /** Reference to Person who published the work. */
   publisher?: Maybe<Scalars['ID']>;
   dateCreated?: Maybe<Scalars['String']>;
   dateModified?: Maybe<Scalars['String']>;
@@ -236,7 +230,7 @@ export type Book = {
   /** UUID */
   id: Scalars['ID'];
   labels?: Maybe<Array<Scalars['String']>>;
-  name: Scalars['String'];
+  name?: Maybe<Scalars['String']>;
   /** A brief description of this Thing. */
   description?: Maybe<Scalars['String']>;
   url?: Maybe<Scalars['String']>;
@@ -244,13 +238,11 @@ export type Book = {
   about?: Maybe<Array<Scalars['String']>>;
   /** Reference to Person who created the work. */
   creator?: Maybe<Scalars['ID']>;
-  /** Reference to Person who publushed the work. */
+  /** Reference to Person who published the work. */
   publisher?: Maybe<Scalars['ID']>;
   dateCreated?: Maybe<Scalars['String']>;
   dateModified?: Maybe<Scalars['String']>;
   license?: Maybe<Scalars['String']>;
-  /** An award won by or for this CreativeWork. */
-  award?: Maybe<Scalars['String']>;
   /** The ISBN of the book */
   isbn: Scalars['String'];
 };
@@ -260,7 +252,7 @@ export type Article = {
   /** UUID */
   id: Scalars['ID'];
   labels?: Maybe<Array<Scalars['String']>>;
-  name: Scalars['String'];
+  name?: Maybe<Scalars['String']>;
   /** A brief description of this Thing. */
   description?: Maybe<Scalars['String']>;
   url?: Maybe<Scalars['String']>;
@@ -268,19 +260,51 @@ export type Article = {
   about?: Maybe<Array<Scalars['String']>>;
   /** Reference to Person who created the work. */
   creator?: Maybe<Scalars['ID']>;
-  /** Reference to Person who publushed the work. */
+  /** Reference to Person who published the work. */
   publisher?: Maybe<Scalars['ID']>;
   dateCreated?: Maybe<Scalars['String']>;
   dateModified?: Maybe<Scalars['String']>;
   license?: Maybe<Scalars['String']>;
-  /** An award won by or for this CreativeWork. */
-  award?: Maybe<Scalars['String']>;
 };
 
 export type Comment = {
   __typename?: 'Comment';
-  /** Example field (placeholder) */
-  exampleField: Scalars['Int'];
+  /** UUID */
+  id: Scalars['ID'];
+  labels?: Maybe<Array<Scalars['String']>>;
+  name?: Maybe<Scalars['String']>;
+  /** A brief description of this Thing. */
+  description?: Maybe<Scalars['String']>;
+  url?: Maybe<Scalars['String']>;
+  /** The subject matter of the content. Inverse property: subjectOf. */
+  about?: Maybe<Array<Scalars['String']>>;
+  /** Reference to Person who created the work. */
+  creator?: Maybe<Scalars['ID']>;
+  /** Reference to Person who published the work. */
+  publisher?: Maybe<Scalars['ID']>;
+  dateCreated?: Maybe<Scalars['String']>;
+  dateModified?: Maybe<Scalars['String']>;
+  license?: Maybe<Scalars['String']>;
+  text?: Maybe<Scalars['String']>;
+  /** The number of upvotes this question, answer or comment has received from the community. */
+  upvoteCount: Scalars['Int'];
+  /** The number of downvotes this question, answer or comment has received from the community. */
+  downvoteCount: Scalars['Int'];
+};
+
+export type IncludedInDataCatalog = {
+  __typename?: 'IncludedInDataCatalog';
+  /** UUID */
+  id: Scalars['ID'];
+  labels?: Maybe<Array<Scalars['String']>>;
+  name?: Maybe<Scalars['String']>;
+  /** A brief description of this Thing. */
+  description?: Maybe<Scalars['String']>;
+  url?: Maybe<Scalars['String']>;
+  /** from entity UUID */
+  from: Dataset;
+  /** to entity UUID */
+  to: Dataset;
 };
 
 export type Query = {
@@ -309,7 +333,10 @@ export type Query = {
   book: Book;
   articles: Array<Article>;
   article: Article;
+  comments: Array<Comment>;
   comment: Comment;
+  includedInDataCatalogs: Array<IncludedInDataCatalog>;
+  includedInDataCatalog: IncludedInDataCatalog;
 };
 
 
@@ -374,7 +401,12 @@ export type QueryArticleArgs = {
 
 
 export type QueryCommentArgs = {
-  id: Scalars['Int'];
+  id: Scalars['ID'];
+};
+
+
+export type QueryIncludedInDataCatalogArgs = {
+  id: Scalars['ID'];
 };
 
 export type Mutation = {
@@ -417,7 +449,10 @@ export type Mutation = {
   removeArticle: Scalars['Boolean'];
   createComment: Comment;
   updateComment: Comment;
-  removeComment: Comment;
+  removeComment: Scalars['Boolean'];
+  createIncludedInDataCatalog: IncludedInDataCatalog;
+  updateIncludedInDataCatalog: IncludedInDataCatalog;
+  removeIncludedInDataCatalog: IncludedInDataCatalog;
 };
 
 
@@ -619,11 +654,30 @@ export type MutationCreateCommentArgs = {
 
 export type MutationUpdateCommentArgs = {
   updateCommentInput: UpdateCommentInput;
+  id: Scalars['ID'];
 };
 
 
 export type MutationRemoveCommentArgs = {
-  id: Scalars['Int'];
+  id: Scalars['ID'];
+};
+
+
+export type MutationCreateIncludedInDataCatalogArgs = {
+  createIncludedInDataCatalogInput?: Maybe<CreateIncludedInDataCatalogInput>;
+  to: Scalars['ID'];
+  from: Scalars['ID'];
+};
+
+
+export type MutationUpdateIncludedInDataCatalogArgs = {
+  updateIncludedInDataCatalogInput: UpdateIncludedInDataCatalogInput;
+  id: Scalars['ID'];
+};
+
+
+export type MutationRemoveIncludedInDataCatalogArgs = {
+  id: Scalars['ID'];
 };
 
 export type CreateUserInput = {
@@ -641,7 +695,7 @@ export type UpdateUserInput = {
 
 export type CreateDataCatalogInput = {
   labels?: Maybe<Array<Scalars['String']>>;
-  name: Scalars['String'];
+  name?: Maybe<Scalars['String']>;
   /** A brief description of this Thing. */
   description?: Maybe<Scalars['String']>;
   url?: Maybe<Scalars['String']>;
@@ -649,13 +703,11 @@ export type CreateDataCatalogInput = {
   about?: Maybe<Array<Scalars['String']>>;
   /** Reference to Person who created the work. */
   creator?: Maybe<Scalars['ID']>;
-  /** Reference to Person who publushed the work. */
+  /** Reference to Person who published the work. */
   publisher?: Maybe<Scalars['ID']>;
   dateCreated?: Maybe<Scalars['String']>;
   dateModified?: Maybe<Scalars['String']>;
   license?: Maybe<Scalars['String']>;
-  /** An award won by or for this CreativeWork. */
-  award?: Maybe<Scalars['String']>;
 };
 
 export type UpdateDataCatalogInput = {
@@ -668,18 +720,16 @@ export type UpdateDataCatalogInput = {
   about?: Maybe<Array<Scalars['String']>>;
   /** Reference to Person who created the work. */
   creator?: Maybe<Scalars['ID']>;
-  /** Reference to Person who publushed the work. */
+  /** Reference to Person who published the work. */
   publisher?: Maybe<Scalars['ID']>;
   dateCreated?: Maybe<Scalars['String']>;
   dateModified?: Maybe<Scalars['String']>;
   license?: Maybe<Scalars['String']>;
-  /** An award won by or for this CreativeWork. */
-  award?: Maybe<Scalars['String']>;
 };
 
 export type CreateDatasetInput = {
   labels?: Maybe<Array<Scalars['String']>>;
-  name: Scalars['String'];
+  name?: Maybe<Scalars['String']>;
   /** A brief description of this Thing. */
   description?: Maybe<Scalars['String']>;
   url?: Maybe<Scalars['String']>;
@@ -687,15 +737,15 @@ export type CreateDatasetInput = {
   about?: Maybe<Array<Scalars['String']>>;
   /** Reference to Person who created the work. */
   creator?: Maybe<Scalars['ID']>;
-  /** Reference to Person who publushed the work. */
+  /** Reference to Person who published the work. */
   publisher?: Maybe<Scalars['ID']>;
   dateCreated?: Maybe<Scalars['String']>;
   dateModified?: Maybe<Scalars['String']>;
   license?: Maybe<Scalars['String']>;
-  /** An award won by or for this CreativeWork. */
-  award?: Maybe<Scalars['String']>;
   /** URL to the direct data download. Distinct from the optional "url" field, which should lead to a page about the data. */
   distribution: Scalars['String'];
+  /** Media type typically expressed using a MIME format (see IANA site and MDN reference) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.). */
+  encodingFormat: Scalars['String'];
 };
 
 export type UpdateDatasetInput = {
@@ -708,20 +758,20 @@ export type UpdateDatasetInput = {
   about?: Maybe<Array<Scalars['String']>>;
   /** Reference to Person who created the work. */
   creator?: Maybe<Scalars['ID']>;
-  /** Reference to Person who publushed the work. */
+  /** Reference to Person who published the work. */
   publisher?: Maybe<Scalars['ID']>;
   dateCreated?: Maybe<Scalars['String']>;
   dateModified?: Maybe<Scalars['String']>;
   license?: Maybe<Scalars['String']>;
-  /** An award won by or for this CreativeWork. */
-  award?: Maybe<Scalars['String']>;
   /** URL to the direct data download. Distinct from the optional "url" field, which should lead to a page about the data. */
   distribution?: Maybe<Scalars['String']>;
+  /** Media type typically expressed using a MIME format (see IANA site and MDN reference) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.). */
+  encodingFormat?: Maybe<Scalars['String']>;
 };
 
 export type CreatePersonInput = {
   labels?: Maybe<Array<Scalars['String']>>;
-  name: Scalars['String'];
+  name?: Maybe<Scalars['String']>;
   /** A brief description of this Thing. */
   description?: Maybe<Scalars['String']>;
   url?: Maybe<Scalars['String']>;
@@ -745,7 +795,7 @@ export type UpdatePersonInput = {
 
 export type CreateNotebookInput = {
   labels?: Maybe<Array<Scalars['String']>>;
-  name: Scalars['String'];
+  name?: Maybe<Scalars['String']>;
   /** A brief description of this Thing. */
   description?: Maybe<Scalars['String']>;
   url?: Maybe<Scalars['String']>;
@@ -753,19 +803,19 @@ export type CreateNotebookInput = {
   about?: Maybe<Array<Scalars['String']>>;
   /** Reference to Person who created the work. */
   creator?: Maybe<Scalars['ID']>;
-  /** Reference to Person who publushed the work. */
+  /** Reference to Person who published the work. */
   publisher?: Maybe<Scalars['ID']>;
   dateCreated?: Maybe<Scalars['String']>;
   dateModified?: Maybe<Scalars['String']>;
   license?: Maybe<Scalars['String']>;
-  /** An award won by or for this CreativeWork. */
-  award?: Maybe<Scalars['String']>;
   /** Link to the repository where the un-compiled, human readable code and related code is located (SVN, github, CodePlex). */
   codeRepository?: Maybe<Scalars['String']>;
   /** The computer programming language. */
   programmingLanguage?: Maybe<Scalars['String']>;
   /** Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0). */
   runtimePlatform?: Maybe<Scalars['String']>;
+  /** The spoken language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard. See also availableLanguage. Supersedes language. */
+  inLanguage?: Maybe<Scalars['String']>;
 };
 
 export type UpdateNotebookInput = {
@@ -778,24 +828,24 @@ export type UpdateNotebookInput = {
   about?: Maybe<Array<Scalars['String']>>;
   /** Reference to Person who created the work. */
   creator?: Maybe<Scalars['ID']>;
-  /** Reference to Person who publushed the work. */
+  /** Reference to Person who published the work. */
   publisher?: Maybe<Scalars['ID']>;
   dateCreated?: Maybe<Scalars['String']>;
   dateModified?: Maybe<Scalars['String']>;
   license?: Maybe<Scalars['String']>;
-  /** An award won by or for this CreativeWork. */
-  award?: Maybe<Scalars['String']>;
   /** Link to the repository where the un-compiled, human readable code and related code is located (SVN, github, CodePlex). */
   codeRepository?: Maybe<Scalars['String']>;
   /** The computer programming language. */
   programmingLanguage?: Maybe<Scalars['String']>;
   /** Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0). */
   runtimePlatform?: Maybe<Scalars['String']>;
+  /** The spoken language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard. See also availableLanguage. Supersedes language. */
+  inLanguage?: Maybe<Scalars['String']>;
 };
 
 export type CreateOrganizationInput = {
   labels?: Maybe<Array<Scalars['String']>>;
-  name: Scalars['String'];
+  name?: Maybe<Scalars['String']>;
   /** A brief description of this Thing. */
   description?: Maybe<Scalars['String']>;
   url?: Maybe<Scalars['String']>;
@@ -815,7 +865,7 @@ export type UpdateOrganizationInput = {
 
 export type CreateSoftwareApplicationInput = {
   labels?: Maybe<Array<Scalars['String']>>;
-  name: Scalars['String'];
+  name?: Maybe<Scalars['String']>;
   /** A brief description of this Thing. */
   description?: Maybe<Scalars['String']>;
   url?: Maybe<Scalars['String']>;
@@ -823,13 +873,11 @@ export type CreateSoftwareApplicationInput = {
   about?: Maybe<Array<Scalars['String']>>;
   /** Reference to Person who created the work. */
   creator?: Maybe<Scalars['ID']>;
-  /** Reference to Person who publushed the work. */
+  /** Reference to Person who published the work. */
   publisher?: Maybe<Scalars['ID']>;
   dateCreated?: Maybe<Scalars['String']>;
   dateModified?: Maybe<Scalars['String']>;
   license?: Maybe<Scalars['String']>;
-  /** An award won by or for this CreativeWork. */
-  award?: Maybe<Scalars['String']>;
   /** Semantic version of the software instance. */
   softwareVersion?: Maybe<Scalars['String']>;
   /** Type of software application, e.g. "Game, Multimedia". */
@@ -852,13 +900,11 @@ export type UpdateSoftwareApplicationInput = {
   about?: Maybe<Array<Scalars['String']>>;
   /** Reference to Person who created the work. */
   creator?: Maybe<Scalars['ID']>;
-  /** Reference to Person who publushed the work. */
+  /** Reference to Person who published the work. */
   publisher?: Maybe<Scalars['ID']>;
   dateCreated?: Maybe<Scalars['String']>;
   dateModified?: Maybe<Scalars['String']>;
   license?: Maybe<Scalars['String']>;
-  /** An award won by or for this CreativeWork. */
-  award?: Maybe<Scalars['String']>;
   /** Semantic version of the software instance. */
   softwareVersion?: Maybe<Scalars['String']>;
   /** Type of software application, e.g. "Game, Multimedia". */
@@ -873,7 +919,7 @@ export type UpdateSoftwareApplicationInput = {
 
 export type CreateSoftwareSourceCodeInput = {
   labels?: Maybe<Array<Scalars['String']>>;
-  name: Scalars['String'];
+  name?: Maybe<Scalars['String']>;
   /** A brief description of this Thing. */
   description?: Maybe<Scalars['String']>;
   url?: Maybe<Scalars['String']>;
@@ -881,13 +927,11 @@ export type CreateSoftwareSourceCodeInput = {
   about?: Maybe<Array<Scalars['String']>>;
   /** Reference to Person who created the work. */
   creator?: Maybe<Scalars['ID']>;
-  /** Reference to Person who publushed the work. */
+  /** Reference to Person who published the work. */
   publisher?: Maybe<Scalars['ID']>;
   dateCreated?: Maybe<Scalars['String']>;
   dateModified?: Maybe<Scalars['String']>;
   license?: Maybe<Scalars['String']>;
-  /** An award won by or for this CreativeWork. */
-  award?: Maybe<Scalars['String']>;
   /** Link to the repository where the un-compiled, human readable code and related code is located (SVN, github, CodePlex). */
   codeRepository?: Maybe<Scalars['String']>;
   /** The computer programming language. */
@@ -906,13 +950,11 @@ export type UpdateSoftwareSourceCodeInput = {
   about?: Maybe<Array<Scalars['String']>>;
   /** Reference to Person who created the work. */
   creator?: Maybe<Scalars['ID']>;
-  /** Reference to Person who publushed the work. */
+  /** Reference to Person who published the work. */
   publisher?: Maybe<Scalars['ID']>;
   dateCreated?: Maybe<Scalars['String']>;
   dateModified?: Maybe<Scalars['String']>;
   license?: Maybe<Scalars['String']>;
-  /** An award won by or for this CreativeWork. */
-  award?: Maybe<Scalars['String']>;
   /** Link to the repository where the un-compiled, human readable code and related code is located (SVN, github, CodePlex). */
   codeRepository?: Maybe<Scalars['String']>;
   /** The computer programming language. */
@@ -923,7 +965,7 @@ export type UpdateSoftwareSourceCodeInput = {
 
 export type CreateEventInput = {
   labels?: Maybe<Array<Scalars['String']>>;
-  name: Scalars['String'];
+  name?: Maybe<Scalars['String']>;
   /** A brief description of this Thing. */
   description?: Maybe<Scalars['String']>;
   url?: Maybe<Scalars['String']>;
@@ -955,7 +997,7 @@ export type UpdateEventInput = {
 
 export type CreateCourseInput = {
   labels?: Maybe<Array<Scalars['String']>>;
-  name: Scalars['String'];
+  name?: Maybe<Scalars['String']>;
   /** A brief description of this Thing. */
   description?: Maybe<Scalars['String']>;
   url?: Maybe<Scalars['String']>;
@@ -963,12 +1005,12 @@ export type CreateCourseInput = {
   about?: Maybe<Array<Scalars['String']>>;
   /** Reference to Person who created the work. */
   creator?: Maybe<Scalars['ID']>;
-  /** Reference to Person who publushed the work. */
+  /** Reference to Person who published the work. */
   publisher?: Maybe<Scalars['ID']>;
   dateCreated?: Maybe<Scalars['String']>;
   dateModified?: Maybe<Scalars['String']>;
   license?: Maybe<Scalars['String']>;
-  /** An award won by or for this CreativeWork. */
+  /** An award won by or for this LearningResource. */
   award?: Maybe<Scalars['String']>;
   /** The LearningResource being described is intended to help a person learn the competency or learning outcome defined by the referenced term. */
   teaches?: Maybe<Scalars['String']>;
@@ -988,12 +1030,12 @@ export type UpdateCourseInput = {
   about?: Maybe<Array<Scalars['String']>>;
   /** Reference to Person who created the work. */
   creator?: Maybe<Scalars['ID']>;
-  /** Reference to Person who publushed the work. */
+  /** Reference to Person who published the work. */
   publisher?: Maybe<Scalars['ID']>;
   dateCreated?: Maybe<Scalars['String']>;
   dateModified?: Maybe<Scalars['String']>;
   license?: Maybe<Scalars['String']>;
-  /** An award won by or for this CreativeWork. */
+  /** An award won by or for this LearningResource. */
   award?: Maybe<Scalars['String']>;
   /** The LearningResource being described is intended to help a person learn the competency or learning outcome defined by the referenced term. */
   teaches?: Maybe<Scalars['String']>;
@@ -1005,7 +1047,7 @@ export type UpdateCourseInput = {
 
 export type CreateBookInput = {
   labels?: Maybe<Array<Scalars['String']>>;
-  name: Scalars['String'];
+  name?: Maybe<Scalars['String']>;
   /** A brief description of this Thing. */
   description?: Maybe<Scalars['String']>;
   url?: Maybe<Scalars['String']>;
@@ -1013,13 +1055,11 @@ export type CreateBookInput = {
   about?: Maybe<Array<Scalars['String']>>;
   /** Reference to Person who created the work. */
   creator?: Maybe<Scalars['ID']>;
-  /** Reference to Person who publushed the work. */
+  /** Reference to Person who published the work. */
   publisher?: Maybe<Scalars['ID']>;
   dateCreated?: Maybe<Scalars['String']>;
   dateModified?: Maybe<Scalars['String']>;
   license?: Maybe<Scalars['String']>;
-  /** An award won by or for this CreativeWork. */
-  award?: Maybe<Scalars['String']>;
   /** The ISBN of the book */
   isbn: Scalars['String'];
 };
@@ -1034,20 +1074,18 @@ export type UpdateBookInput = {
   about?: Maybe<Array<Scalars['String']>>;
   /** Reference to Person who created the work. */
   creator?: Maybe<Scalars['ID']>;
-  /** Reference to Person who publushed the work. */
+  /** Reference to Person who published the work. */
   publisher?: Maybe<Scalars['ID']>;
   dateCreated?: Maybe<Scalars['String']>;
   dateModified?: Maybe<Scalars['String']>;
   license?: Maybe<Scalars['String']>;
-  /** An award won by or for this CreativeWork. */
-  award?: Maybe<Scalars['String']>;
   /** The ISBN of the book */
   isbn?: Maybe<Scalars['String']>;
 };
 
 export type CreateArticleInput = {
   labels?: Maybe<Array<Scalars['String']>>;
-  name: Scalars['String'];
+  name?: Maybe<Scalars['String']>;
   /** A brief description of this Thing. */
   description?: Maybe<Scalars['String']>;
   url?: Maybe<Scalars['String']>;
@@ -1055,13 +1093,11 @@ export type CreateArticleInput = {
   about?: Maybe<Array<Scalars['String']>>;
   /** Reference to Person who created the work. */
   creator?: Maybe<Scalars['ID']>;
-  /** Reference to Person who publushed the work. */
+  /** Reference to Person who published the work. */
   publisher?: Maybe<Scalars['ID']>;
   dateCreated?: Maybe<Scalars['String']>;
   dateModified?: Maybe<Scalars['String']>;
   license?: Maybe<Scalars['String']>;
-  /** An award won by or for this CreativeWork. */
-  award?: Maybe<Scalars['String']>;
 };
 
 export type UpdateArticleInput = {
@@ -1074,29 +1110,77 @@ export type UpdateArticleInput = {
   about?: Maybe<Array<Scalars['String']>>;
   /** Reference to Person who created the work. */
   creator?: Maybe<Scalars['ID']>;
-  /** Reference to Person who publushed the work. */
+  /** Reference to Person who published the work. */
   publisher?: Maybe<Scalars['ID']>;
   dateCreated?: Maybe<Scalars['String']>;
   dateModified?: Maybe<Scalars['String']>;
   license?: Maybe<Scalars['String']>;
-  /** An award won by or for this CreativeWork. */
-  award?: Maybe<Scalars['String']>;
 };
 
 export type CreateCommentInput = {
-  /** Example field (placeholder) */
-  exampleField: Scalars['Int'];
+  labels?: Maybe<Array<Scalars['String']>>;
+  name?: Maybe<Scalars['String']>;
+  /** A brief description of this Thing. */
+  description?: Maybe<Scalars['String']>;
+  url?: Maybe<Scalars['String']>;
+  /** The subject matter of the content. Inverse property: subjectOf. */
+  about?: Maybe<Array<Scalars['String']>>;
+  /** Reference to Person who created the work. */
+  creator?: Maybe<Scalars['ID']>;
+  /** Reference to Person who published the work. */
+  publisher?: Maybe<Scalars['ID']>;
+  dateCreated?: Maybe<Scalars['String']>;
+  dateModified?: Maybe<Scalars['String']>;
+  license?: Maybe<Scalars['String']>;
+  text?: Maybe<Scalars['String']>;
+  /** The number of upvotes this question, answer or comment has received from the community. */
+  upvoteCount: Scalars['Int'];
+  /** The number of downvotes this question, answer or comment has received from the community. */
+  downvoteCount: Scalars['Int'];
 };
 
 export type UpdateCommentInput = {
-  /** Example field (placeholder) */
-  exampleField?: Maybe<Scalars['Int']>;
+  labels?: Maybe<Array<Scalars['String']>>;
+  name?: Maybe<Scalars['String']>;
+  /** A brief description of this Thing. */
+  description?: Maybe<Scalars['String']>;
+  url?: Maybe<Scalars['String']>;
+  /** The subject matter of the content. Inverse property: subjectOf. */
+  about?: Maybe<Array<Scalars['String']>>;
+  /** Reference to Person who created the work. */
+  creator?: Maybe<Scalars['ID']>;
+  /** Reference to Person who published the work. */
+  publisher?: Maybe<Scalars['ID']>;
+  dateCreated?: Maybe<Scalars['String']>;
+  dateModified?: Maybe<Scalars['String']>;
+  license?: Maybe<Scalars['String']>;
+  text?: Maybe<Scalars['String']>;
+  /** The number of upvotes this question, answer or comment has received from the community. */
+  upvoteCount?: Maybe<Scalars['Int']>;
+  /** The number of downvotes this question, answer or comment has received from the community. */
+  downvoteCount?: Maybe<Scalars['Int']>;
+};
+
+export type CreateIncludedInDataCatalogInput = {
+  labels?: Maybe<Array<Scalars['String']>>;
+  name?: Maybe<Scalars['String']>;
+  /** A brief description of this Thing. */
+  description?: Maybe<Scalars['String']>;
+  url?: Maybe<Scalars['String']>;
+};
+
+export type UpdateIncludedInDataCatalogInput = {
+  labels?: Maybe<Array<Scalars['String']>>;
+  name?: Maybe<Scalars['String']>;
+  /** A brief description of this Thing. */
+  description?: Maybe<Scalars['String']>;
+  url?: Maybe<Scalars['String']>;
   id: Scalars['Int'];
 };
 
 export type ArticleFieldsFragment = (
   { __typename?: 'Article' }
-  & Pick<Article, 'id' | 'labels' | 'name' | 'url' | 'description' | 'about' | 'creator' | 'publisher' | 'dateCreated' | 'dateModified' | 'license'>
+  & Pick<Article, 'id' | 'labels' | 'name' | 'url' | 'description' | 'creator' | 'publisher' | 'dateCreated' | 'dateModified' | 'license'>
 );
 
 export type CreateArticleMutationVariables = Exact<{
@@ -1754,7 +1838,7 @@ export type CreateSoftwareSourceCodeMutation = (
 
 export type SoftwareSourceCodeFieldsFragment = (
   { __typename?: 'SoftwareSourceCode' }
-  & Pick<SoftwareSourceCode, 'id' | 'labels' | 'name' | 'url' | 'description' | 'creator' | 'dateCreated' | 'dateModified' | 'license' | 'about' | 'publisher' | 'codeRepository' | 'programmingLanguage' | 'runtimePlatform'>
+  & Pick<SoftwareSourceCode, 'id' | 'labels' | 'name' | 'url' | 'description' | 'creator' | 'dateCreated' | 'dateModified' | 'license' | 'publisher' | 'codeRepository' | 'programmingLanguage' | 'runtimePlatform'>
 );
 
 export type SoftwareSourceCodeQueryVariables = Exact<{
@@ -1812,7 +1896,6 @@ export const ArticleFieldsFragmentDoc = gql`
   name
   url
   description
-  about
   creator
   publisher
   dateCreated
@@ -1924,7 +2007,6 @@ export const SoftwareSourceCodeFieldsFragmentDoc = gql`
   dateCreated
   dateModified
   license
-  about
   publisher
   codeRepository
   programmingLanguage
