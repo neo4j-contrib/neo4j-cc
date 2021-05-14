@@ -51,7 +51,7 @@ export const fetchMe = () => axios(
 )
 
 
-export const fetchWorkspaceActivities = axios({
+export const fetchWorkspaceActivities = () => axios({
 	"method": "GET",
 	"url": "https://app.orbit.love/api/v1/neo4j-community/activities",
 	"params": {
@@ -74,7 +74,7 @@ export const fetchWorkspaceActivities = axios({
 	}
 })
 
-axios({
+export const postIntegrationActivity = () => axios({
 	"method": "POST",
 	"url": "https://app.orbit.love/api/v1/neo4j-community/activities",
 	"headers": {
@@ -108,7 +108,7 @@ axios({
 	}
 })
 
-axios({
+export const fetchActivities = () => axios({
 	"method": "GET",
 	"url": "https://app.orbit.love/api/v1/neo4j-community/activities/",
 	"headers": {
