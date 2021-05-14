@@ -1,22 +1,12 @@
 import '@relmify/jest-fp-ts';
 import { pipe } from "@effect-ts/core";
-//  import { tuple } from "@effect-ts/core/Function";
-//  import * as D from "@effect-ts/core/Collections/Immutable/Dictionary";
-//  import * as A from "@effect-ts/core/Collections/Immutable/Array";
-//  import * as O from "@effect-ts/core/Option";
  import * as E from "@effect-ts/core/Either";
-//  import * as T from "@effect-ts/core/Effect";
  import * as X from "@effect-ts/core/XPure";
  import * as Sync from "@effect-ts/core/Sync";
 
  import * as L from "@effect-ts/monocle/Lens";
  import { decode, decoder, report } from "@effect-ts/morphic/Decoder";
 
-//  import * as M from "@effect-ts/core/Effect/Managed"
-//  import * as Ref from "@effect-ts/core/Effect/Ref"
-//  import * as Array from "@effect-ts/core/Collections/Immutable/Array";
-//  import * as Map from "@effect-ts/core/Collections/Immutable/Map"
-//  import type { NoSuchElementException } from "@effect-ts/system/GlobalExceptions"
 
 import * as fc from "fast-check"
 import {arbitrary} from "@effect-ts/morphic/FastCheck";

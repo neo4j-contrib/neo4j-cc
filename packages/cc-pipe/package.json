@@ -60,8 +60,9 @@
   "devDependencies": {
     "@relmify/jest-fp-ts": "^1.1.1",
     "@size-limit/preset-small-lib": "^4.10.2",
-    "@stoplight/prism-cli": "^4.1.3",
-    "@types/luxon": "^1.26.4",
+    "@types/jest": "^26.0.23",
+    "@types/luxon": "^1.26.5",
+    "@types/node": "^15.0.3",
     "fast-check": "^2.14.0",
     "husky": "^6.0.0",
     "size-limit": "^4.10.2",
@@ -70,22 +71,22 @@
     "typescript": "^4.2.4"
   },
   "dependencies": {
-    "@effect-ts/core": "^0.36.3",
-    "@effect-ts/morphic": "^0.33.0",
-    "@effect-ts/node": "^0.22.0",
-    "@effect-ts/query": "^0.17.2",
-    "@effect-ts/schema": "^0.3.0",
-    "@urql/core": "^2.0.0",
+    "@effect-ts/core": "^0.38.1",
+    "@effect-ts/morphic": "^0.35.0",
+    "@effect-ts/node": "^0.24.0",
+    "@effect-ts/query": "^0.19.0",
+    "@effect-ts/schema": "^0.5.5",
+    "@urql/core": "^2.1.1",
     "axios": "^0.21.1",
     "axios-rate-limit": "^1.3.0",
     "cross-fetch": "^3.1.4",
-    "dotenv": "^8.2.0",
-    "fp-ts": "^2.10.4",
-    "fp-ts-rxjs": "^0.6.13",
+    "dotenv": "^9.0.2",
+    "fp-ts": "^2.10.5",
     "graphql": "^15.5.0",
     "luxon": "^1.26.0",
-    "rxjs": "^6.6.7",
-    "urql": "^2.0.2",
-    "yargs": "^16.2.0"
+    "rxjs": "^7.0.1",
+    "schema-dts": "^0.8.2",
+    "urql": "^2.0.3",
+    "yargs": "^17.0.1"
   }
 }
