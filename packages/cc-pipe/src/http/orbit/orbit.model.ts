@@ -1,5 +1,13 @@
-import { AType, EType, make, opaque } from "@effect-ts/morphic"
+import * as S from "@effect-ts/schema";
+import * as Arbitrary from "@effect-ts/schema/Arbitrary";
+import * as Parser from "@effect-ts/schema/Parser";
+import { Model } from "@effect-ts/schema";
 
+class OrbitRelationship extends Model<OrbitRelationship>("OrbitRelationship")(
+  S.props(
+    data: 
+  )
+)
 const OrbitRelationship_ = make((F) =>
   F.interface({
     data: F.interface({

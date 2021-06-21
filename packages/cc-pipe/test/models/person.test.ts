@@ -32,24 +32,20 @@ type Name = S.NonEmptyString & NameBrand
 const Name = S.nonEmptyString["|>"](S.brand<Name>())
 
 class Address extends Model<Address>()(
-  pipe(
-    S.required({
-      street: S.string,
-      city: S.string
-    })
-  )
+  S.props({
+    street: S.prop(S.string),
+    city: S.prop(S.string)
+  })
 ) {}
 
 const createAddress = Address.Constructor["|>"](S.condemnFail)
 
 class Person extends Model<Person>()(
-  pipe(
-    S.required({
-      id: Id,
-      name: Name,
-      addresses: S.chunk(Address),
-    }),
-  )
+  S.props({
+    id: S.prop(Id),
+    name: S.prop(Name),
+    addresses: S.prop(S.chunk(Address)),
+  }),
 ) {}
 
 

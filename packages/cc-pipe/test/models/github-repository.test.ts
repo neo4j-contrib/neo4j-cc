@@ -9,7 +9,7 @@ import * as S from "@effect-ts/schema";
 
 import * as FC from "fast-check"
 
-import { GitHubRepository, parseJsonGitHubRepository, parseLiteralGitHubRepository } from "../../src/models/github.schema";
+import { GitHubRepository, parseJsonGitHubRepository, parseLiteralGitHubRepository } from "../../src/models/github/github-repository.model";
 
 const acceptableValues = {
   "__typename": "Repository",
@@ -156,10 +156,9 @@ describe("GitHubRepository", () => {
     expect(result).toBeLeft();
     if (E.isLeft(result)) {
       expect(result.left).toEqual(new S.CondemnException({
-        message: "1 error(s) found while processing an intersection\n"
-              +  "└─ 1 error(s) found while processing member 0\n"
-              +  "   └─ 1 error(s) found while checking keys\n"
-              +  "      └─ missing required key \"id\""
+        message: "1 error(s) found while processing GitHubRepository\n"
+              +  "└─ 1 error(s) found while checking keys\n"
+              +  "   └─ missing required key \"id\""
       }))
     }
   })
@@ -180,11 +179,10 @@ describe("GitHubRepository", () => {
     expect(result).toBeLeft();
     if (E.isLeft(result)) {
       expect(result.left).toEqual(new S.CondemnException({
-        message: "1 error(s) found while processing an intersection\n"
-              +  "└─ 1 error(s) found while processing member 1\n"
-              +  "   └─ 1 error(s) found while processing a struct\n"
-              +  "      └─ 1 error(s) found while processing optional key \"stargazers\"\n"
-              +  "         └─ cannot process true, expected a record"
+        message: "1 error(s) found while processing GitHubRepository\n"
+              +  "└─ 1 error(s) found while processing a struct\n"
+              +  "   └─ 1 error(s) found while processing optional key \"stargazers\"\n"
+              +  "      └─ cannot process true, expected a record"
       }))
     }
   })

@@ -1,64 +1,57 @@
 import { pipe } from "@effect-ts/core";
 import { tuple } from "@effect-ts/core/Function";
-import { AType, EType, make, opaque } from "@effect-ts/morphic"
 import * as L from "@effect-ts/monocle/Lens";
 import * as Sync from "@effect-ts/core/Sync";
 import * as Dict from "@effect-ts/core/Collections/Immutable/Dictionary";
 import * as A from "@effect-ts/core/Collections/Immutable/Array";
+import * as S from "@effect-ts/schema";
+import { Model } from "@effect-ts/schema";
 
-const MediumPost_ = make((F) =>
-  F.interface({
-      type: F.string(), //  "Post"
-      id: F.string(), // "a5258d545daf",
-      versionId: F.string(), // "167543c7f301",
-      creatorId: F.string(), // "af7398b2c7b3",
-      title: F.string(), // "Solving Sudoku with Neo4j",
-      createdAt: F.number(), // 1577892375295,
-      updatedAt: F.number(), // 1578318120255,
-      firstPublishedAt: F.number(), // 1577919021434,
-      latestPublishedAt: F.number(), // 1578318120049,
-      slug: F.string(), //  "solving-sudoku-with-neo4j",
-      uniqueSlug: F.string(), // "solving-sudoku-with-neo4j-a5258d545daf",
-      canonicalUrl: F.string(), //  "",
-      webCanonicalUrl: F.string(), // "",
-      mediumUrl: F.string() // "",
+export class MediumPost extends Model<MediumPost>("MediumPost")(
+  S.props({
+    type: S.prop(S.literal("Post")),  //  "Post"
+    id: S.prop(S.string),             // "a5258d545daf",
+    versionId: S.prop(S.string),      // "167543c7f301",
+    creatorId: S.prop(S.string),      // "af7398b2c7b3",
+    title: S.prop(S.string),          // "Solving Sudoku with Neo4j",
+    createdAt: S.prop(S.dateMs),      // 1577892375295,
+    updatedAt: S.prop(S.dateMs),        // 1578318120255,
+    firstPublishedAt: S.prop(S.dateMs), // 1577919021434,
+    latestPublishedAt: S.prop(S.dateMs), // 1578318120049,
+    slug: S.prop(S.string),           //  "solving-sudoku-with-neo4j",
+    uniqueSlug: S.prop(S.string),     // "solving-sudoku-with-neo4j-a5258d545daf",
+    canonicalUrl: S.prop(S.string).opt(), //  "",
+    webCanonicalUrl: S.prop(S.string).opt(), // "",
+    mediumUrl: S.prop(S.string) // "",
   })
-)
-export interface MediumPost extends AType<typeof MediumPost_> {}
-export interface MediumPostRaw extends EType<typeof MediumPost_> {}
-export const MediumPost = opaque<MediumPostRaw, MediumPost>()(MediumPost_)
+) {}
 
-const MediumUser_ = make((F) =>
-  F.interface({
-    type: F.string(), // "User"
-    userId: F.string(), // "af7398b2c7b3",
-    name: F.string(), // "Nathan Smith",
-    username: F.string(), // "nsmith_piano",
-    createdAt: F.number(), // 1467837137154,
-    bio: F.string(), // "Senior Data Scientist at Lovevery. Organizer of the Kansas City Graph Databases Meetup.",
-    twitterScreenName: F.string(), // "nsmith_piano",
-    mediumMemberAt: F.number(), // 1578368052000
+
+export class MediumUser extends Model<MediumUser>("MediumUser")(
+  S.props({
+    type: S.prop(S.literal("User")),   // "User"
+    userId: S.prop(S.string),       // "af7398b2c7b3",
+    name: S.prop(S.string),         // "Nathan Smith",
+    username: S.prop(S.string),     // "nsmith_piano",
+    createdAt: S.prop(S.dateMs),    // 1467837137154,
+    bio: S.prop(S.string),          // "Senior Data Scientist at Lovevery. Organizer of the Kansas City Graph Databases Meetup.",
+    twitterScreenName: S.prop(S.string), // "nsmith_piano",
+    mediumMemberAt: S.prop(S.dateMs), // 1578368052000
   })
-)
-export interface MediumUser extends AType<typeof MediumUser_> {}
-export interface MediumUserRaw extends EType<typeof MediumUser_> {}
-export const MediumUser = opaque<MediumUserRaw, MediumUser>()(MediumUser_)
+) {}
 
-const MediumStreamItem_ = make((F) =>
-  F.interface(
+export class MediumStreamItem extends Model<MediumStreamItem>("MediumStreamItem")(
+  S.props(
     {
-      type: F.string(),
-      createdAt: F.number(),
-      itemType: F.string(),
-      postPreview: F.interface({
-        postId: F.string()
-      }),
+      type: S.prop(S.literal("???")),
+      createdAt: S.prop(S.dateMs),
+      itemType: S.prop(S.string),
+      postPreview: S.prop(S.props({
+        postId: S.prop(S.string)
+      })),
     }
   )
-)
-export interface MediumStreamItem extends AType<typeof MediumStreamItem_> {}
-export interface MediumStreamItemRaw extends EType<typeof MediumStreamItem_> {}
-export const MediumStreamItem = opaque<MediumStreamItemRaw, MediumStreamItem>()(MediumStreamItem_)
+) {}
 
 // interface StringToFoo { type:"StringToFoo", [key: string]: Foo|string; }
 //
@@ -78,24 +71,20 @@ export const MediumStreamItem = opaque<MediumStreamItemRaw, MediumStreamItem>()(
 // ... used as ..
 // F.record(Foo(F))
 
-const MediumResponse_ = make((F) =>
-  F.interface(
+export class MediumResponse extends Model<MediumResponse>("MediumResponse")(
+  S.props(
     {
-      success: F.boolean(),
-      payload: F.interface({
-        streamItems: F.array(MediumStreamItem(F)),
-        references: F.interface({
-          User: F.record(MediumUser(F)),
-          Post: F.record(MediumPost(F))
-        })
-      })
+      success: S.prop(S.bool),
+      payload: S.prop(S.props({
+        streamItems: S.prop(S.array(MediumStreamItem)),
+        references: S.prop(S.props({
+          User: S.prop(S.props<{[key:string]:S.prop(MediumUser)}>({foo:S.prop(MediumUser)})), // F.record(MediumUser(F)),
+          Post: S.prop(S.object)  // F.record(MediumPost(F))
+        }))
+      }))
     }
   )
-)
-
-export interface MediumResponse extends AType<typeof MediumResponse_> {}
-export interface MediumResponseRaw extends EType<typeof MediumResponse_> {}
-export const MediumResponse = opaque<MediumResponseRaw, MediumResponse>()(MediumResponse_)
+) {}
 
 export const userLens = pipe(MediumResponse.lens, 
   L.prop("payload"), L.prop("references"), L.prop("User"),

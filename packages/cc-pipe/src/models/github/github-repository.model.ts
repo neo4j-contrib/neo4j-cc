@@ -1,5 +1,5 @@
 
-import {pipe} from "@effect-ts/core/Function"
+// import {pipe} from "@effect-ts/core/Function"
 
 import * as S from "@effect-ts/schema";
 import { Model } from "@effect-ts/schema";
@@ -7,48 +7,40 @@ import * as Parser from "@effect-ts/schema/Parser";
 import { Identifier, UrlString } from "../value";
 import { GithubRepositoryOwner } from "./github-owner.model";
 
-export class GitHubRepositoryTopic extends Model<GitHubRepositoryTopic>()(
-  pipe(
-    S.required({
-      topic: S.required({
-        name: S.string
-      })
-    })
-  )
+export class GitHubRepositoryTopic extends Model<GitHubRepositoryTopic>("GitHubRepositoryTopic")(
+  S.props({
+    topic: S.prop(S.props({
+      name: S.prop(S.string)
+    }))
+  })
 ) {}
  
-export class GitHubRepository extends Model<GitHubRepository>()(
-  pipe(
-    S.struct({
-      required:{
-        id: Identifier,
-        url: UrlString,
-        owner: GithubRepositoryOwner,
-        name: S.string,
-      },
-      optional: {
-        nameWithOwner: S.string,
-        description: S.string,
-        updatedAt: S.date,
-        createdAt: S.date,
-        repositoryTopics: S.required({
-          nodes: S.array(GitHubRepositoryTopic)
-        }),
-        languages: S.required({
-          nodes: S.array(S.required({
-            name: S.string
-          }))
-        }),
-        forks: S.required({
-          totalCount: S.int
-        }),
-        stargazers: S.required({
-          totalCount: S.int
-        })
-      }
-    }),
-    S.withTag("__typename", "Repository")
-  )
+export class GitHubRepository extends Model<GitHubRepository>("GitHubRepository")(
+  S.props({
+    __typename: S.prop(S.literal("Repository")),
+    id: S.prop(Identifier),
+    url: S.prop(UrlString),
+    owner: S.prop(GithubRepositoryOwner),
+    name: S.prop(S.string),
+    nameWithOwner: S.prop(S.string).opt(),
+    description: S.prop(S.string).opt(),
+    updatedAt: S.prop(S.date).opt(),
+    createdAt: S.prop(S.date).opt(),
+    repositoryTopics: S.prop(S.props({
+      nodes: S.prop(S.array(GitHubRepositoryTopic))
+    })).opt(),
+    languages: S.prop(S.props({
+      nodes: S.prop(S.array(S.props({
+        name: S.prop(S.string)
+      })))
+    })).opt(),
+    forks: S.prop(S.props({
+      totalCount: S.prop(S.int)
+    })).opt(),
+    stargazers: S.prop(S.props({
+      totalCount: S.prop(S.int)
+    })).opt()
+  })
 ) {}
 
 /**

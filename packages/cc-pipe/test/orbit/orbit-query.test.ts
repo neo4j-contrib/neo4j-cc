@@ -44,7 +44,7 @@ describe("Orbit API requests", () => {
     //   T.runPromiseExit
     // )
     // expect(Exit.succeeded(result)).toBeTruthy();
-    expect.assertions(1);
+    // expect.assertions(1);
     return Orbit.fetchMe().then(({data}) => {
       console.log(data);
       expect(data).toBeDefined();

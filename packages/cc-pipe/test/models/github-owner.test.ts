@@ -7,8 +7,8 @@ import * as S from "@effect-ts/schema";
 
 import * as FC from "fast-check"
 
-import { GitHubUser, GitHubOrganization, parseJsonGithubRepositoryOwner, parseLiteralGithubRepositoryOwner, createGitHubUser, Username, createGitHubOrganization } from "../../src/models/github/github-owner.model";
-import { Identifier } from "./value"
+import { GitHubUser, GitHubOrganization, parseJsonGithubRepositoryOwner, parseLiteralGithubRepositoryOwner, createGitHubUser, createGitHubOrganization } from "../../src/models/github/github-owner.model";
+import { Identifier, Username } from "../../src/models/value"
 
 const acceptableValues = {
   id: "0xc001caf3",
@@ -74,10 +74,9 @@ describe("GithubUser", () => {
       expect(result.left).toEqual(new S.CondemnException({
         message: "1 error(s) found while processing a union\n"
                + "└─ 1 error(s) found while processing member \"User\"\n"
-               + "   └─ 1 error(s) found while processing an intersection\n"
-               + "      └─ 1 error(s) found while processing member 0\n"
-               + "         └─ 1 error(s) found while checking keys\n"
-               + "            └─ missing required key \"id\""
+               + "   └─ 1 error(s) found while processing User\n"
+               + "      └─ 1 error(s) found while checking keys\n"
+               + "         └─ missing required key \"id\""
       }))
     }
   })
@@ -98,12 +97,11 @@ describe("GithubUser", () => {
       expect(result.left).toEqual(new S.CondemnException({
         message: "1 error(s) found while processing a union\n"
                + "└─ 1 error(s) found while processing member \"User\"\n"
-               + "   └─ 1 error(s) found while processing an intersection\n"
-               + "      └─ 1 error(s) found while processing member 1\n"
-               + "         └─ 1 error(s) found while processing a struct\n"
-               + "            └─ 1 error(s) found while processing optional key \"url\"\n"
-               + "               └─ 1 error(s) found while processing a refinement\n"
-               + "                  └─ cannot process 42, expected an string"
+               + "   └─ 1 error(s) found while processing User\n"
+               + "      └─ 1 error(s) found while processing a struct\n"
+               + "         └─ 1 error(s) found while processing optional key \"url\"\n"
+               + "            └─ 1 error(s) found while processing a refinement\n"
+               + "               └─ cannot process 42, expected an string"
       }))
     }
   })
@@ -132,7 +130,7 @@ describe("GithubUser", () => {
     expect(result).toBeLeft();
     if (E.isLeft(result)) {
       expect(result.left).toEqual(new S.CondemnException({
-        message: "cannot extract key __typename from {\"id\":\"0xc001caf3\",\"login\":\"akollegger\"}, expected one of User, Organization"
+        message: "cannot extract key __typename from {\"id\":\"0xc001caf3\",\"login\":\"akollegger\"}, expected one of Organization, User"
       }))
     }
   })
