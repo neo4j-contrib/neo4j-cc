@@ -21,7 +21,8 @@
     "fetch:people": "ts-node scripts/fetch-discourse-users.ts > data/people.json",
     "fetch:meetups": "ts-node scripts/fetch-meetups-groups.ts > data/meetups.json",
     "fetch:awesome": "echo 'Fetch from https://github.com/neueda/awesome-neo4j/blob/master/README.md'",
-    "fetch:free": "ts-node scripts/fetch-free-dev.ts > data/free-dev.json"
+    "fetch:free": "ts-node scripts/fetch-free-dev.ts > data/free-dev.json",
+    "update:orbit": "ts-node scripts/gh-to-orbit.ts"
   },
   "license": "cc-by-sa-4.0",
   "dependencies": {

@@ -29,9 +29,9 @@ const ghSearchBetween = (from:DateTime|string, to:DateTime|string) => `topic:neo
 const ingestFromGithub = async () => {
   let cursor = null;
   let hasNextPage = true;
-  let from = DateTime.fromISO("2021-03-01");
-  let to = from.plus({months:1});
   let today = DateTime.local();
+  let from = DateTime.fromISO("2021-03-01");
+  let to = today; // from.plus({months:1});
   let yearlyResultCount = 0;
   let totalResultCounts = 0;
   let prependComma = false;
@@ -42,6 +42,7 @@ const ingestFromGithub = async () => {
       do {
         let gh_search = `query:"${ghSearchBetween(from, to)}", type:REPOSITORY, first: 100, ${cursor ? "after: $cursor" : ""}`
         console.error("searching github using: ", gh_search);
+        console.error(`github token: token ${process.env.GITHUB_TOKEN}`)
         let { search }:any = await graphql<{search:any}>(
           `
             query neo4jRelatedRepositories${cursor ? "($cursor: String!)" : ""} {
@@ -70,7 +71,7 @@ const ingestFromGithub = async () => {
           {
             cursor,
             headers: {
-              authorization: `token ${process.env.GATSBY_GITHUB_TOKEN}`,
+              authorization: `token ${process.env.GITHUB_TOKEN}`,
             },
           }
         );
