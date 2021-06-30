@@ -2,14 +2,14 @@ import * as React from "react";
 
 import { graphql } from "gatsby";
 
-import Layout from "../components/layout/SidebarLayout";
-import { Twin4jArticles } from "../components/sections/Twin4jArticles";
-import { Twin4jPeople } from "../components/sections/Twin4jPeople";
-import { PopularBlogSection } from "../components/sections/PopularBlogs";
-import { PopularProjects } from "../components/sections/PopularProjects";
+import Layout from "../../components/layout/SidebarLayout";
+import { Twin4jArticles } from "../../components/sections/Twin4jArticles";
+import { Twin4jPeople } from "../../components/sections/Twin4jPeople";
+import { PopularBlogSection } from "../../components/sections/PopularBlogs";
+import { PopularProjects } from "../../components/sections/PopularProjects";
 
 
-const IndexPage: React.FC<{ data: any }> = ({ data }) => {
+const Twin4jSidebarPage: React.FC<{ data: any }> = ({ data }) => {
     const twin4j = data.cg.thisWeekInNeo4j;
     const topItems = twin4j.topItems;
     const developers = data.cg.topNewCertifiedDevelopers.map((d:any) => d.developer);
@@ -24,7 +24,7 @@ const IndexPage: React.FC<{ data: any }> = ({ data }) => {
             </section>
             <Twin4jPeople twin4j={twin4j} developers={developers}/>
 
-            <section id="projects" className="overflow-hidden dark:text-white dark:bg-gray-darkest">
+            <section id="projects" className="overflow-hidden dark:text-white dark:bg-gray-800">
                 <div className="px-4 py-5 sm:p-6">
 
                     <div className="grid grid-cols-1 md:grid-cols-2">
@@ -43,26 +43,12 @@ const IndexPage: React.FC<{ data: any }> = ({ data }) => {
     );
 };
 
-export default IndexPage;
+export default Twin4jSidebarPage;
 
 export const query = graphql`
-  fragment ThisWeekInNeo4j on CommunityGraph {
-    thisWeekInNeo4j {
-            topItems {
-            tag
-            url
-            }
-            featuredCommunityMember{
-                image
-            }
-            date
-            url
-            text
-        }
-  }
-  query HomePageQuery {
+  query Twin4jSidebarQuery {
     cg {
-        ...ThisWeekInNeo4j              
+        ...ThisWeekInNeo4j                       
         topNewCertifiedDevelopers(first:5) {
             developer {
                 name

@@ -2,26 +2,24 @@ import * as React from "react";
 
 import { graphql } from "gatsby";
 
-import Layout from "../components/app/EmeddableLayout";
-import { CommunityNavigation } from "../components/sections/CommunityNavigation";
-import { Twin4jArticles } from "../components/sections/Twin4jArticles";
-import { Twin4jPeople } from "../components/sections/Twin4jPeople";
-import { PopularBlogSection } from "../components/sections/PopularBlogs";
-import { PopularProjects } from "../components/sections/PopularProjects";
+import Layout from "../../components/layout/EmeddableLayout";
+import { CommunityNavigation } from "../../components/sections/CommunityNavigation";
+import { Twin4jArticles } from "../../components/sections/Twin4jArticles";
+import { Twin4jPeople } from "../../components/sections/Twin4jPeople";
+import { PopularBlogSection } from "../../components/sections/PopularBlogs";
+import { PopularProjects } from "../../components/sections/PopularProjects";
 
 
-const Twin4jPage: React.FC<{ data: any }> = ({ data }) => {
+const Twin4jEmbedPage: React.FC<{ data: any }> = ({ data }) => {
     const twin4j = data.cg.thisWeekInNeo4j;
     const topItems = twin4j.topItems;
-    const developers = data.cg.topNewCertifiedDevelopers.map(d => d.developer);
+    const developers = data.cg.topNewCertifiedDevelopers.map((d:any) => d.developer);
     const blogs = data.cg.topCommunityBlogsAndContent;
     const projects = data.cg.topCommunityOpenSourceProjects;
 
     return (
         <Layout>
             <div id="twin4j-header">
-
-                <CommunityNavigation />
 
                 <div id="twin4j-features" >
                     <section className="bg-neo4j-blue">
@@ -51,23 +49,12 @@ const Twin4jPage: React.FC<{ data: any }> = ({ data }) => {
     );
 };
 
-export default Twin4jPage;
+export default Twin4jEmbedPage;
 
 export const query = graphql`
-  query Twin4jQuery {
+  query Twin4jEmbeddedQuery {
     cg {
-        thisWeekInNeo4j {
-            topItems {
-            tag
-            url
-            }
-            featuredCommunityMember{
-                image
-            }
-            date
-            url
-            text
-        }
+        ...ThisWeekInNeo4j
                        
         topNewCertifiedDevelopers(first:5) {
             developer {

@@ -1,8 +1,8 @@
 import React, {FC} from "react"
 
-import useSiteMetadata from '../hooks/use-site-metadata';
+import useSiteMetadata from '../../hooks/use-site-metadata';
 
-import Layout from "../components/app/SidebarLayout";
+import Layout from "../../components/layout/SidebarLayout";
 const colors = require('tailwindcss/colors')
 
 const ColorSwatch:FC<{colorName:string, colorValue:string}> = ({colorName, colorValue}) => {

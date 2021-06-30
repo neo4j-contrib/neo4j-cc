@@ -23,7 +23,7 @@ export const Twin4jArticles: React.FC<{ topItems: any }> = ({ topItems }) => {
 
             <div className="weekly box grid grid-cols-2 md:grid-cols-5 items-center font-serif leading-16 text-l">
                 {
-                    topItems.map((topItem,i) => (<Twin4jArticleTile key={i} article={topItem} />))
+                    topItems.map((topItem:any,i:number) => (<Twin4jArticleTile key={i} article={topItem} />))
                 }
             </div>
         </div>
@@ -31,7 +31,7 @@ export const Twin4jArticles: React.FC<{ topItems: any }> = ({ topItems }) => {
         <div className="text-right" id="twin4j-button">
             <a href="https://neo4j.com/tag/twin4j/"
                 className="inline-block p-2 m-2 text-xs rounded-full text-neo4j-darkBlue hover:text-white hover:bg-neo4j-darkBlue dark:hover:bg-blue-900 bg-opacity-10 hover:bg-opacity-60"
-                target="_blank"><i className="fa fa-commenting d-icon d-icon-commenting"></i>See Previous Newsletters
+                target="_blank">See Previous Newsletters
                 <code>--&gt;</code></a>
         </div>
     </section>

@@ -35,7 +35,11 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      ringWidth: ['hover'],
+      backgroundOpacity: ['hover'],
+    },
+    typography: ["dark"],
   },
   plugins: [
     require('@tailwindcss/typography'),

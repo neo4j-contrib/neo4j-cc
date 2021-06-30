@@ -4,7 +4,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@neo4j-cc/*": ["packages/*/src"]
+      "@neo4j-cc/components": ["packages/cc-components/src"]
     },
     "jsx": "react",
     "esModuleInterop": true,

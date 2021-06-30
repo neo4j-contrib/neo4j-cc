@@ -1,14 +1,14 @@
 import * as React from "react";
-import { CommunityAvatar } from "../items/CommunityAvatar";
+import { CommunityAvatar } from "../elements/CommunityAvatar";
 
 
 export const DevList: React.FC<{ devs: any[] }> = ({ devs = [] }) => {
 
     return (
         <div id='devList' className="grid gap-2 grid-cols-3 grid-rows-2">
-            {devs.map(user => {
+            {devs.map((user, i) => {
                 return (
-                    <div className="text-center p-2 self-center dark:hover:bg-gray-900 hover:shadow">
+                    <div key={i} className="text-center p-2 self-center dark:hover:bg-gray-900 hover:shadow">
                         <CommunityAvatar user={user} size='L' named/>
                     </div>
                 )
@@ -27,7 +27,7 @@ export const Twin4jPeople: React.FC<{ twin4j: any, developers:any[] }> = ({ twin
     const featuredMember = twin4j.featuredCommunityMember;
 
     return (
-        <section id="people" className="overflow-hidden shadow bg-white dark:text-white dark:bg-gray-darkest">
+        <section id="people" className="overflow-hidden dark:text-white dark:bg-gray-darkest">
             <div className="px-4 py-5 sm:p-6">
 
                 <div className="grid gap-2 grid-cols-1 md:grid-cols-2">

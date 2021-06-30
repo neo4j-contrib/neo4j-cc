@@ -1,5 +1,5 @@
 import * as React from "react";
-import { CommunityAvatar } from "../items/CommunityAvatar";
+import { CommunityAvatar } from "../elements/CommunityAvatar";
 
 import { ExternalLink } from "./Twin4jArticles";
 
@@ -7,9 +7,9 @@ export const PopularBlogList: React.FC<{ blogs: any[] }> = ({ blogs = [] }) => {
 
     return (
         <div id="communityBlogs" className="feature-list grid grid-cols-1 gap-4 mb-4">
-            {blogs.map(blog => {
+            {blogs.map((blog, i) => {
                 return (
-                    <div className="p-2 mr-4 flex flex-row dark:hover:bg-gray-900 hover:shadow">
+                    <div key={i} className="p-2 mr-4 flex flex-row dark:hover:bg-gray-900 hover:shadow">
                         <div className="flex-initial ml-2">
                         {/* <DevAvatar user={blog.author} extraClasses="h-12 w-auto mr-2 shadow" /> */}
                         <CommunityAvatar user={blog.author} />
