@@ -1,0 +1,18 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "src",
+  "projects": {
+    "cc-orbit": {
+      "type": "library",
+      "root": "libs/cc-orbit",
+      "entryFile": "index",
+      "sourceRoot": "libs/cc-orbit/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/cc-orbit/tsconfig.lib.json"
+      }
+    }
+  },
+  "compilerOptions": {
+    "webpack": true
+  }
+}

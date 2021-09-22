@@ -1,0 +1,14 @@
+{
+  "name": "neo4j-cc",
+  "private": true,
+  "scripts": {
+    "postinstall": "lerna bootstrap",
+    "clean": "lerna run clean",
+    "build": "lerna run build",
+    "pub": "lerna publish",
+    "test": "lerna run test"
+  },
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  }
+}
