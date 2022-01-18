@@ -1,0 +1,27 @@
+"""Base of all domain entities."""
+interface Thing {
+  """UUID within the domain"""
+  id: ID!
+  """Labels associate groups of Things"""
+  labels: [String!]
+  """The common name of this Thing."""
+  name: String
+  """The location of this Thing within the domain"""
+  url: String
+}
+
+"""A person (alive, dead, undead, or fictional)."""
+type Person implements Thing {
+  """UUID within the domain"""
+  id: ID!
+  """Labels associate groups of Things"""
+  labels: [String!]
+  """The common name of this Thing."""
+  name: String
+  """The location of this Thing within the domain"""
+  url: String
+  """A callsign, as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles. Typically correlates with username, when available."""
+  callSign: String @upper(foo: "bar")
+  """Primary email address"""
+  email: String @relationship(from: "a", to: "b")
+}

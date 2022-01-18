@@ -1,3 +1,1 @@
-export interface Todo {
-  title: string;
-}
+export * from './base-entity/entities';

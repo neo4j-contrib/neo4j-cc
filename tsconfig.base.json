@@ -14,8 +14,17 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
+    "resolveJsonModule": true,
     "paths": {
+      "@neo4j-cc/data-access/hooks": ["libs/data-access/hooks/src/index.ts"],
+      "@neo4j-cc/data-access/person": ["libs/data-access/person/src/index.ts"],
+      "@neo4j-cc/feature/ninja-leaderboard": [
+        "libs/feature/ninja-leaderboard/src/index.ts"
+      ],
+      "@neo4j-cc/feature/person": ["libs/feature/person/src/index.ts"],
+      "@neo4j-cc/feature/twin4j": ["libs/feature/twin4j/src/index.ts"],
       "@neo4j-cc/model": ["libs/model/src/index.ts"],
+      "@neo4j-cc/nest/neo4j-dbms": ["libs/nest/neo4j-dbms/src/index.ts"],
       "@neo4j-cc/ui": ["libs/ui/src/index.ts"]
     }
   },

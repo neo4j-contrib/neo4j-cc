@@ -1,6 +1,9 @@
 const path = require('path')
 
 module.exports = {
+  core: {
+    builder: "webpack5",
+  },
   stories: [],
   addons: ['@storybook/addon-essentials'],
   // uncomment the property below if you want to apply some webpack config globally

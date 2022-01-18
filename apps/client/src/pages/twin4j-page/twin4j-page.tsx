@@ -1,13 +1,12 @@
 import './twin4j-page.module.scss';
 
+import {FeatureTwin4j} from '@neo4j-cc/feature/twin4j';
+
 /* eslint-disable-next-line */
 export interface Twin4jPageProps {}
 
 export function Twin4jPage(props: Twin4jPageProps) {
-  return (
-    <div>
-      <h1>Welcome to Twin4jPage!</h1>
-    </div>
+  return (<FeatureTwin4j communityGraph={{}}/>
   );
 }
 

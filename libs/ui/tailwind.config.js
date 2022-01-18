@@ -3,11 +3,11 @@ const { join } = require('path');
 
 module.exports = {
   presets: [require('../../tailwind-workspace-preset.js')],
-  purge: [
-    join(__dirname, '../src/**/*.{js,ts,jsx,tsx}'),
+  content: [
+    join(__dirname,'../**/src/lib/**/*.{js,ts,jsx,tsx}'),
     ...createGlobPatternsForDependencies(__dirname),
   ],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'media', // or 'media' or 'class'
   theme: {
     extend: {},
   },

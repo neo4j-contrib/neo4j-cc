@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import Twin4jPage from '../pages/twin4j-page/twin4j-page';
 import TodosPage from '../pages/todos-page/todos-page';
+import LegoPage from '../pages/lego-page/lego-page';
 
 const App = () => {
 
@@ -18,9 +19,12 @@ const App = () => {
         <Route path="/todos">
           <TodosPage />
         </Route>
+        <Route path="/lego">
+          <LegoPage />
+        </Route>
         <Route path="/">
           <div className='home-page'>
-            <p>Home</p>
+            <p className="text-white">Home</p>
           </div>
         </Route>
       </Switch>

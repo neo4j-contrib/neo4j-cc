@@ -20,7 +20,8 @@
           "test",
           "e2e",
           "build-storybook"
-        ]
+        ],
+        "parallel": 1
       }
     }
   },
@@ -32,26 +33,24 @@
       }
     ]
   },
-  "projects": {
-    "api": {
-      "tags": []
-    },
-    "client": {
-      "tags": []
-    },
-    "client-e2e": {
-      "tags": [],
-      "implicitDependencies": ["client"]
-    },
-    "model": {
-      "tags": []
-    },
-    "ui": {
-      "tags": []
-    },
-    "ui-e2e": {
-      "tags": [],
-      "implicitDependencies": ["ui"]
+  "cli": {
+    "defaultCollection": "@nrwl/react"
+  },
+  "generators": {
+    "@nrwl/react": {
+      "application": {
+        "style": "scss",
+        "linter": "eslint",
+        "babel": true
+      },
+      "component": {
+        "style": "scss"
+      },
+      "library": {
+        "style": "scss",
+        "linter": "eslint"
+      }
     }
-  }
+  },
+  "defaultProject": "client"
 }
