@@ -71,5 +71,3 @@ export function ItemDropdown({items, onSelected}: ItemDropdownProps) {
     </Menu>
   );
 }
-
-export default ItemDropdown;

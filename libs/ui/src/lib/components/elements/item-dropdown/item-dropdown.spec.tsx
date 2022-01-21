@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import ItemDropdown from './item-dropdown';
+import {ItemDropdown} from './item-dropdown';
 
 describe('ItemSelector', () => {
   it('should render successfully', () => {

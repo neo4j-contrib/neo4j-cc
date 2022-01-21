@@ -8,7 +8,7 @@ import './item-tab-nav.module.scss';
 export interface ItemTabNavProps {
   items: ViewableItem[]
   onSelected?: (item:ViewableItem) => unknown
-  children: React.ReactNode
+  children?: React.ReactNode
 }
 
 export function ItemTabNav({items, onSelected, children}: ItemTabNavProps) {
