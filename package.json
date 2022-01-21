@@ -29,6 +29,7 @@
     "@nestjs/platform-express": "^8.0.0",
     "@nestjs/typeorm": "^8.0.2",
     "@relate/common": "^1.0.4-alpha.4",
+    "announcekit-react": "^2.1.7",
     "apollo-server-core": "^3.6.1",
     "apollo-server-express": "^3.6.1",
     "autoprefixer": "^10.4.2",

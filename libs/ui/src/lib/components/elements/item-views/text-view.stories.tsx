@@ -1,6 +1,6 @@
-import { ItemViewsProps } from '@neo4j-cc/ui';
+
 import { Story, Meta } from '@storybook/react';
-import { ItemTextView } from './item-views';
+import { ItemTextView, ItemViewsProps } from './item-views';
 
 export default {
   component: ItemTextView,
@@ -11,5 +11,5 @@ const Template: Story<ItemViewsProps> = (args:ItemViewsProps) => <ItemTextView {
 
 export const Primary = Template.bind({});
 Primary.args = {
-  value:"some text"
+  item:"some text"
 };

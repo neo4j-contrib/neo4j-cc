@@ -9,4 +9,4 @@ export default {
 const Template: Story<ItemViewsProps> = (args) => <DebugItemView {...args} />;
 
 export const Primary = Template.bind({});
-Primary.args = {value:"hello"};
+Primary.args = {item:"hello"};

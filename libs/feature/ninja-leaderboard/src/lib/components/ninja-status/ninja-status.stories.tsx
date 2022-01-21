@@ -6,7 +6,7 @@ export default {
   title: 'components/NinjaStatus',
 } as Meta;
 
-const Template: Story<NinjaStatusProps> = (args) => <div className="bg-yellow-200 p-4">
+const Template: Story<NinjaStatusProps> = (args) => <div className="border border-2 p-4">
     <NinjaStatus {...args} />
   </div>;
 
