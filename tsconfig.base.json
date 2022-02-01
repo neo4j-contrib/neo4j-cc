@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "resolveJsonModule": true,
     "paths": {
+      "@neo4j-cc/data-access-neo4j": ["libs/data-access/neo4j/src/index.ts"],
       "@neo4j-cc/data-access/hooks": ["libs/data-access/hooks/src/index.ts"],
       "@neo4j-cc/data-access/person": ["libs/data-access/person/src/index.ts"],
       "@neo4j-cc/feature/ninja-leaderboard": [

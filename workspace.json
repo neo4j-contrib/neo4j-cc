@@ -8,9 +8,7 @@
       "targets": {
         "build": {
           "executor": "@nrwl/web:webpack",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "defaultConfiguration": "production",
           "options": {
             "outputPath": "dist/apps/admin",
@@ -19,13 +17,8 @@
             "main": "apps/admin/src/main.tsx",
             "polyfills": "apps/admin/src/polyfills.ts",
             "tsConfig": "apps/admin/tsconfig.app.json",
-            "assets": [
-              "apps/admin/src/favicon.ico",
-              "apps/admin/src/assets"
-            ],
-            "styles": [
-              "apps/admin/src/styles.scss"
-            ],
+            "assets": ["apps/admin/src/favicon.ico", "apps/admin/src/assets"],
+            "styles": ["apps/admin/src/styles.scss"],
             "scripts": [],
             "webpackConfig": "@nrwl/react/plugins/webpack"
           },
@@ -62,20 +55,14 @@
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "apps/admin/**/*.{ts,tsx,js,jsx}"
-            ]
+            "lintFilePatterns": ["apps/admin/**/*.{ts,tsx,js,jsx}"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/admin"
-          ],
+          "outputs": ["coverage/apps/admin"],
           "options": {
             "jestConfig": "apps/admin/jest.config.js",
             "passWithNoTests": true
@@ -103,20 +90,14 @@
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "apps/admin-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/admin-e2e/**/*.{js,ts}"]
           }
         }
       },
       "tags": [],
-      "implicitDependencies": [
-        "admin"
-      ]
+      "implicitDependencies": ["admin"]
     },
     "api": {
       "root": "apps/api",
@@ -125,16 +106,12 @@
       "targets": {
         "build": {
           "executor": "@nrwl/node:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/api",
             "main": "apps/api/src/main.ts",
             "tsConfig": "apps/api/tsconfig.app.json",
-            "assets": [
-              "apps/api/src/assets"
-            ]
+            "assets": ["apps/api/src/assets"]
           },
           "configurations": {
             "production": {
@@ -158,20 +135,14 @@
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "apps/api/**/*.ts"
-            ]
+            "lintFilePatterns": ["apps/api/**/*.ts"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/api"
-          ],
+          "outputs": ["coverage/apps/api"],
           "options": {
             "jestConfig": "apps/api/jest.config.js",
             "passWithNoTests": true
@@ -187,22 +158,15 @@
       "targets": {
         "build": {
           "executor": "@nrwl/web:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/client",
             "index": "apps/client/src/index.html",
             "main": "apps/client/src/main.tsx",
             "polyfills": "apps/client/src/polyfills.ts",
             "tsConfig": "apps/client/tsconfig.app.json",
-            "assets": [
-              "apps/client/src/favicon.ico",
-              "apps/client/src/assets"
-            ],
-            "styles": [
-              "apps/client/src/styles.scss"
-            ],
+            "assets": ["apps/client/src/favicon.ico", "apps/client/src/assets"],
+            "styles": ["apps/client/src/styles.scss"],
             "scripts": [],
             "webpackConfig": "@nrwl/react/plugins/webpack"
           },
@@ -247,20 +211,14 @@
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "apps/client/**/*.{ts,tsx,js,jsx}"
-            ]
+            "lintFilePatterns": ["apps/client/**/*.{ts,tsx,js,jsx}"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/client"
-          ],
+          "outputs": ["coverage/apps/client"],
           "options": {
             "jestConfig": "apps/client/jest.config.js",
             "passWithNoTests": true
@@ -288,20 +246,14 @@
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "apps/client-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/client-e2e/**/*.{js,ts}"]
           }
         }
       },
       "tags": [],
-      "implicitDependencies": [
-        "client"
-      ]
+      "implicitDependencies": ["client"]
     },
     "data-access-hooks": {
       "root": "libs/data-access/hooks",
@@ -311,26 +263,43 @@
       "targets": {
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "libs/data-access/hooks/**/*.{ts,tsx,js,jsx}"
-            ]
+            "lintFilePatterns": ["libs/data-access/hooks/**/*.{ts,tsx,js,jsx}"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/data-access/hooks"
-          ],
+          "outputs": ["coverage/libs/data-access/hooks"],
           "options": {
             "jestConfig": "libs/data-access/hooks/jest.config.js",
             "passWithNoTests": true
           }
         }
       }
+    },
+    "data-access-neo4j": {
+      "root": "libs/data-access/neo4j",
+      "sourceRoot": "libs/data-access/neo4j/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/data-access/neo4j/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/data-access/neo4j"],
+          "options": {
+            "jestConfig": "libs/data-access/neo4j/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
     },
     "data-access-person": {
       "root": "libs/data-access/person",
@@ -340,20 +309,14 @@
       "targets": {
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "libs/data-access/person/**/*.{ts,tsx,js,jsx}"
-            ]
+            "lintFilePatterns": ["libs/data-access/person/**/*.{ts,tsx,js,jsx}"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/data-access/person"
-          ],
+          "outputs": ["coverage/libs/data-access/person"],
           "options": {
             "jestConfig": "libs/data-access/person/jest.config.js",
             "passWithNoTests": true
@@ -390,20 +353,14 @@
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "apps/e2e/twin4j-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/e2e/twin4j-e2e/**/*.{js,ts}"]
           }
         }
       },
       "tags": [],
-      "implicitDependencies": [
-        "feature-twin4j"
-      ]
+      "implicitDependencies": ["feature-twin4j"]
     },
     "feature-ninja-leaderboard": {
       "root": "libs/feature/ninja-leaderboard",
@@ -413,9 +370,7 @@
       "targets": {
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
             "lintFilePatterns": [
               "libs/feature/ninja-leaderboard/**/*.{ts,tsx,js,jsx}"
@@ -424,9 +379,7 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/feature/ninja-leaderboard"
-          ],
+          "outputs": ["coverage/libs/feature/ninja-leaderboard"],
           "options": {
             "jestConfig": "libs/feature/ninja-leaderboard/jest.config.js",
             "passWithNoTests": true
@@ -449,9 +402,7 @@
         },
         "build-storybook": {
           "executor": "@nrwl/storybook:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "uiFramework": "@storybook/react",
             "outputPath": "dist/storybook/feature-ninja-leaderboard",
@@ -475,20 +426,14 @@
       "targets": {
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "libs/feature/person/**/*.{ts,tsx,js,jsx}"
-            ]
+            "lintFilePatterns": ["libs/feature/person/**/*.{ts,tsx,js,jsx}"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/feature/person"
-          ],
+          "outputs": ["coverage/libs/feature/person"],
           "options": {
             "jestConfig": "libs/feature/person/jest.config.js",
             "passWithNoTests": true
@@ -511,9 +456,7 @@
         },
         "build-storybook": {
           "executor": "@nrwl/storybook:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "uiFramework": "@storybook/react",
             "outputPath": "dist/storybook/feature-person",
@@ -537,9 +480,7 @@
       "targets": {
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
             "lintFilePatterns": [
               "libs/feature/release-notes/**/*.{ts,tsx,js,jsx}"
@@ -548,9 +489,7 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/feature/release-notes"
-          ],
+          "outputs": ["coverage/libs/feature/release-notes"],
           "options": {
             "jestConfig": "libs/feature/release-notes/jest.config.js",
             "passWithNoTests": true
@@ -573,9 +512,7 @@
         },
         "build-storybook": {
           "executor": "@nrwl/storybook:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "uiFramework": "@storybook/react",
             "outputPath": "dist/storybook/feature-release-notes",
@@ -598,20 +535,14 @@
       "targets": {
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "libs/feature/twin4j/**/*.{ts,tsx,js,jsx}"
-            ]
+            "lintFilePatterns": ["libs/feature/twin4j/**/*.{ts,tsx,js,jsx}"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/feature/twin4j"
-          ],
+          "outputs": ["coverage/libs/feature/twin4j"],
           "options": {
             "jestConfig": "libs/feature/twin4j/jest.config.js",
             "passWithNoTests": true
@@ -634,9 +565,7 @@
         },
         "build-storybook": {
           "executor": "@nrwl/storybook:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "uiFramework": "@storybook/react",
             "outputPath": "dist/storybook/feature-twin4j",
@@ -660,20 +589,14 @@
       "targets": {
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "libs/model/**/*.ts"
-            ]
+            "lintFilePatterns": ["libs/model/**/*.ts"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/model"
-          ],
+          "outputs": ["coverage/libs/model"],
           "options": {
             "jestConfig": "libs/model/jest.config.js",
             "passWithNoTests": true
@@ -689,9 +612,7 @@
       "targets": {
         "build": {
           "executor": "@nrwl/web:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/neo4j-profile",
             "index": "apps/neo4j-profile/src/index.html",
@@ -702,9 +623,7 @@
               "apps/neo4j-profile/src/favicon.ico",
               "apps/neo4j-profile/src/assets"
             ],
-            "styles": [
-              "apps/neo4j-profile/src/styles.scss"
-            ],
+            "styles": ["apps/neo4j-profile/src/styles.scss"],
             "scripts": [],
             "webpackConfig": "@nrwl/react/plugins/webpack"
           },
@@ -748,20 +667,14 @@
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "apps/neo4j-profile/**/*.{ts,tsx,js,jsx}"
-            ]
+            "lintFilePatterns": ["apps/neo4j-profile/**/*.{ts,tsx,js,jsx}"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/neo4j-profile"
-          ],
+          "outputs": ["coverage/apps/neo4j-profile"],
           "options": {
             "jestConfig": "apps/neo4j-profile/jest.config.js",
             "passWithNoTests": true
@@ -789,20 +702,14 @@
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "apps/neo4j-profile-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/neo4j-profile-e2e/**/*.{js,ts}"]
           }
         }
       },
       "tags": [],
-      "implicitDependencies": [
-        "neo4j-profile"
-      ]
+      "implicitDependencies": ["neo4j-profile"]
     },
     "nest-neo4j-dbms": {
       "root": "libs/nest/neo4j-dbms",
@@ -811,20 +718,14 @@
       "targets": {
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "libs/nest/neo4j-dbms/**/*.ts"
-            ]
+            "lintFilePatterns": ["libs/nest/neo4j-dbms/**/*.ts"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/nest/neo4j-dbms"
-          ],
+          "outputs": ["coverage/libs/nest/neo4j-dbms"],
           "options": {
             "jestConfig": "libs/nest/neo4j-dbms/jest.config.js",
             "passWithNoTests": true
@@ -840,20 +741,14 @@
       "targets": {
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "libs/ui/**/*.{ts,tsx,js,jsx}"
-            ]
+            "lintFilePatterns": ["libs/ui/**/*.{ts,tsx,js,jsx}"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/ui"
-          ],
+          "outputs": ["coverage/libs/ui"],
           "options": {
             "jestConfig": "libs/ui/jest.config.js",
             "passWithNoTests": true
@@ -876,9 +771,7 @@
         },
         "build-storybook": {
           "executor": "@nrwl/storybook:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "uiFramework": "@storybook/react",
             "outputPath": "dist/storybook/ui",
@@ -914,20 +807,14 @@
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "apps/ui-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/ui-e2e/**/*.{js,ts}"]
           }
         }
       },
       "tags": [],
-      "implicitDependencies": [
-        "ui"
-      ]
+      "implicitDependencies": ["ui"]
     }
   }
 }

@@ -8,14 +8,13 @@ Universal client and server side access to services.
 
 
 ```
-nx generate @nrwl/react:library --directory=data-access --style css --name={data-access-library-name} --dryRun
+nx generate @nrwl/workspace:library --directory=data-access --publishable --name={library-name} --dryRun
 ```
 
 For example:
 
 ```
-nx generate @nrwl/react:library --directory=data-access --style css --name=twin4j --dryRun
+nx generate @nrwl/react:library --directory=data-access --publishable --name=community-graph --dryRun
 ```
 
-Note: Scaffolded as a React library. Revise
 
