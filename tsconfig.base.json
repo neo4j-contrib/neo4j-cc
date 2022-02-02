@@ -16,6 +16,8 @@
     "baseUrl": ".",
     "resolveJsonModule": true,
     "paths": {
+      "@c-c/data-access-discourse": ["libs/data-access/discourse/src/index.ts"],
+      "@c-c/data-access-neo4": ["libs/data-access/discourse/src/index.ts"],
       "@neo4j-cc/data-access-neo4j": ["libs/data-access/neo4j/src/index.ts"],
       "@neo4j-cc/data-access/hooks": ["libs/data-access/hooks/src/index.ts"],
       "@neo4j-cc/data-access/person": ["libs/data-access/person/src/index.ts"],

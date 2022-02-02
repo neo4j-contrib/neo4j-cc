@@ -255,6 +255,29 @@
       "tags": [],
       "implicitDependencies": ["client"]
     },
+    "data-access-discourse": {
+      "root": "libs/data-access/discourse",
+      "sourceRoot": "libs/data-access/discourse/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/data-access/discourse/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/data-access/discourse"],
+          "options": {
+            "jestConfig": "libs/data-access/discourse/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
     "data-access-hooks": {
       "root": "libs/data-access/hooks",
       "sourceRoot": "libs/data-access/hooks/src",
