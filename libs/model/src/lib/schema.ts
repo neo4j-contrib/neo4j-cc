@@ -1,6 +1,6 @@
-import { Thing } from './base-entity/entities';
-import { Person } from './person/person.entity';
+import { ThingEntity } from './base-entity/entities';
+import { Person } from './person/person';
 
 export const domain = {
-    entityTypes:[Thing, Person]
+    entityTypes:[ThingEntity, Person]
 }
