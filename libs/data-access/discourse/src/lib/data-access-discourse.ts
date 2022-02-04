@@ -1,4 +1,4 @@
-import { paths as DiscoursePaths, operations } from './discourse-schema';
+import { paths as DiscoursePaths, operations } from './discourse-openapi';
 import { Fetcher } from 'openapi-typescript-fetch';
 
 export interface DiscourseConnection {
@@ -30,9 +30,11 @@ export const discourseAPI = ({baseUrl, apiKey, apiUsername}:DiscourseConnection)
     listGroups: discourse.path("/groups.json").method('get').create(),
     listTags: discourse.path("/tags.json").method('get').create(),
     listUsers: discourse.path("/admin/users/list/{flag}.json").method('get').create(),
+    listUsersPublic: discourse.path("/directory_items.json").method('get').create(),
     listBadges: discourse.path("/admin/badges.json").method('get').create(),
     getTopic: discourse.path("/t/{id}.json").method('get').create(),
     getPost: discourse.path("/posts/{id}.json").method('get').create(),
+    getUser: discourse.path("/u/{username}.json").method('get').create(),
   };  
 }
 

@@ -4,91 +4,59 @@ import * as Parser from "@effect-ts/schema/Parser"
 import * as Guard from "@effect-ts/schema/Guard"
 import * as Encoder from "@effect-ts/schema/Encoder"
 
-import { Person as PersonDTS } from 'schema-dts';
 import { ThingShaped, fieldDescription } from '../base-entity/entities';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const asDTS: PersonDTS = {
-  '@type': 'Person',
-  name: 'Ragnar Lothbrook',
-  image: 'https://gravatar.com/ragnar',
-  callSign: 'ragnar',
-  email: ['me@here', 'me@there'],
-};
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const fromDiscourse = {
-  id: 72,
-  username: 'akollegger',
-  name: 'Andrew Bowman',
-  avatar_template:
-    '/user_avatar/community.neo4j.com/andrew.bowman/{size}/73_2.png',
-  active: true,
-  admin: false,
-  moderator: false,
-  last_seen_at: '2021-02-25T22:29:58.061Z',
-  last_emailed_at: '2021-02-22T02:07:25.757Z',
-  created_at: '2018-08-21T15:59:46.508Z',
-  last_seen_age: 30.209788196,
-  last_emailed_age: 332582.513511366,
-  created_at_age: 79425041.7628427,
-  trust_level: 3,
-  manual_locked_trust_level: null,
-  flag_level: 0,
-  title: 'Neo4j Staff',
-  time_read: 653180,
-  staged: false,
-  days_visited: 679,
-  posts_read_count: 11141,
-  topics_entered: 2557,
-  post_count: 1563,
-  akismet_state: null,
-};
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-// const prototypical: Person & Record<string,unknown> = {
-//   id: 'a guid',
-//   name: 'ABK',
-//   labels: ['Neo4j Staff'],
-//   url: 'https://neo4j.com/staff/abk',
-//   callSign: 'abk',
-//   email: 'abk@abk.com',
-// };
-
 /**
- * A person (alive, dead, undead, or fictional).
+ * Common properties for Person models
  */
-// export class PersonEntity extends Thing implements Partial<typeof asDTS> {
-//   @Directive('@upper(foo:"bar")')
-//   @Field(() => String, {
-//     nullable: true,
-//     description:
-//       'A callsign, as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles. Typically correlates with username, when available.',
-//   })
-//   callSign?: string;
-
-//   @Directive('@relationship(from:"a", to:"b")')
-//   @Field(() => String, {
-//     nullable: true,
-//     description: 'Primary email address',
-//   })
-//   email?: string;
-// }
+export const PersonShaped = MO.props({
+  callSign: MO.prop(MO.nullable(MO.string))
+    .annotate(fieldDescription, "A callsign, as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles. Typically correlates with username, when available."),
+  email: MO.prop(MO.nullable(MO.string))
+    .annotate(fieldDescription, "Primary email address")
+})
 
 /**
  * A person (alive, dead, undead, or fictional).
+ * 
+ * @see https://schema.org/Person
  */
 export class Person extends Model<Person>()(
   MO.props({
-    _tag: MO.prop(MO.literal("Person")),
+    '@type': MO.prop(MO.literal("Person")),
     ...ThingShaped.props,
-    callSign: MO.prop(MO.nullable(MO.string))
-      .annotate(fieldDescription, "A callsign, as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles. Typically correlates with username, when available."),
-    email: MO.prop(MO.nullable(MO.string))
-      .annotate(fieldDescription, "Primary email address")
+    ...PersonShaped.props
   })
 ) {}
 
-export const parsePerson = MO.jsonString[">>>"](Person)["|>"](Parser.for)["|>"](MO.condemnFail)
+/**
+ * Parses a JSON formatted string into a Person.
+ */
+export const parseJSON = MO.jsonString[">>>"](Person)["|>"](Parser.for)["|>"](MO.condemnFail)
 
+/**
+ * Encodes a Person as regular JSON.
+ */
+export const toJSON = MO.jsonString[">>>"](Person)["|>"](Encoder.for)
+
+/**
+ * Refines type as a Person.
+ */
 export const isPerson = Guard.for(Person)
+
+/**
+ * A patient is any person recipient of health care services.
+ * 
+ * @see https://schema.org/Patient
+ */
+export class Patient extends Model<Patient>()(
+  MO.props({
+    '@type': MO.prop(MO.literal("Person")),
+    ...ThingShaped.props,
+    ...PersonShaped.props
+  })
+) {}
+
+export const PersonOrPatient = MO.union({Person, Patient})
+
+export const refinePersonOrPatient = Parser.for(PersonOrPatient)["|>"](MO.condemnFail)

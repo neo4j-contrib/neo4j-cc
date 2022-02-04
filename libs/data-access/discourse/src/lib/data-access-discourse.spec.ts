@@ -83,6 +83,22 @@ describe('dataAccessDiscourse', () => {
       expect(xs).toContain('Michael Hunger');
     })
     
+    it.skip('listUsersPublic', async () => {
+      const {data} = await discourse.listUsersPublic({period:'all', order: 'post_count', page: 0})
+      const xs = pipe(
+        data.directory_items,
+        A.map( user => user.user.username)
+      )
+      // console.log(xs)
+      expect(xs).toContain('abk');
+    })
+
+    it.skip('getUser', async () => {
+      const {data} = await discourse.getUser({username:'abk'})
+      console.log(JSON.stringify(data))
+      expect(data.user.username).toEqual('abk');
+    })
+
     it.skip('getSite', async () => {
       const {data} = await discourse.getSite({})
       // console.log(data.post_types)  // `post_types` is reverse map for name-->post_type_id
@@ -123,7 +139,7 @@ describe('dataAccessDiscourse', () => {
     })
 
 
-    it('getTopic', async () => {
+    it.skip('getTopic', async () => {
       const posts = pipe(
         L.id<GetTopicContent>(),
         L.prop("post_stream"),
@@ -148,7 +164,7 @@ describe('dataAccessDiscourse', () => {
     })
 
 
-    it('getPost', async () => {
+    it.skip('getPost', async () => {
       const {data} = await discourse.getPost({id:"77777"})
       // console.log(data)
       expect(data.id).toEqual(77777);

@@ -27,7 +27,7 @@ export const ThingShaped =
     name: MO.prop(MO.string)
       .annotate(fieldDescription, "The common name of this Thing."),
   
-    url: MO.prop(MO.string)
+    url: MO.prop(MO.nullable(MO.string))
       .annotate(fieldDescription, "The location of this Thing within the domain")
   })
 
