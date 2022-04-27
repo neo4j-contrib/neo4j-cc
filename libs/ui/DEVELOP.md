@@ -2,9 +2,10 @@
 
 This library was generated with [Nx](https://nx.dev).
 
-## Running unit tests
+## Running
 
-Run `nx test ui` to execute the unit tests via [Jest](https://jestjs.io).
+- `nx test ui` to execute the unit tests via [Jest](https://jestjs.io).
+- `nx run ui:storybook` to run a storybook of the entire library
 
 ## Scaffolding
 
@@ -24,8 +25,3 @@ Where the kind of component is one of: `elements`, `sections`, `layout`:
    - flexible size: full, half, narrow
    - flexible orientation: tall or wide
 
-Add storybook story for the component by re-running the storybook:
-
-```sh
-nx g @nrwl/react:stories --generateCypressSpecs=false --project=ui
-```

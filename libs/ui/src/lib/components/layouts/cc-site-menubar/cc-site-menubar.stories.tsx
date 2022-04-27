@@ -3,7 +3,7 @@ import {CcSiteMenubar} from './cc-site-menubar';
 
 export default {
   component: CcSiteMenubar,
-  title: 'layout/CcSiteMenubar',
+  title: 'layouts/CcSiteMenubar',
 } as Meta;
 
 const Template: Story<{className:string}> = ({className}) => (

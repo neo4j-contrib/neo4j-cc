@@ -1,15 +1,17 @@
 
 import { join } from 'path';
 
-import { Module } from '@nestjs/common';
+import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
 import { TypeOrmModule } from '@nestjs/typeorm';
 
-import { Person } from '../person/person.entity';
-import { PersonModule } from '../person/person.module';
+import { TodosModule } from '../todos/todos.module';
+import { Todo } from '../todos/entities/todo.entity';
+import { AuthzModule } from '../authz/authz.module';
+import { HttpLoggerMiddleware } from '../common/http-logger.middleware';
 
 @Module({
   imports: [
@@ -17,13 +19,18 @@ import { PersonModule } from '../person/person.module';
       type: 'sqlite',
       database: 'cc.db',
       entities: [
-        Person
+        Todo
       ],
       synchronize: true,
     }),
-    PersonModule
+    AuthzModule,
+    TodosModule
   ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule implements NestModule {
+  configure(consumer: MiddlewareConsumer): void {
+    consumer.apply(HttpLoggerMiddleware).forRoutes('*');
+  }
+}

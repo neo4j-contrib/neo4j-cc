@@ -1,3 +1,7 @@
+export * from './lib/components/elements/cc-nav-icon/cc-nav-icon';
+export * from './lib/components/elements/cc-navigation/cc-navigation';
+export * from './lib/components/elements/cc-profile-item/cc-profile-item';
+export * from './lib/components/layouts/cc-workspace/cc-workspace';
 export * from './lib/components/elements/item-tab-nav/item-tab-nav';
 export * from './lib/components/elements/item-dropdown/item-dropdown';
 export * from './lib/components/layouts/cc-app-layout/cc-app-layout';
