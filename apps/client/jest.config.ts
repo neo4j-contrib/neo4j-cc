@@ -1,10 +1,11 @@
 module.exports = {
-  displayName: 'admin',
-  preset: '../../jest.preset.js',
+  displayName: 'site',
+
   transform: {
     '^(?!.*\\.(js|jsx|ts|tsx|css|json)$)': '@nrwl/react/plugins/jest',
     '^.+\\.[tj]sx?$': 'babel-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../coverage/apps/admin',
+  coverageDirectory: '../../coverage/apps/site',
+  preset: '../../jest.preset.ts',
 };

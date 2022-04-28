@@ -1,9 +1,10 @@
 module.exports = {
   displayName: 'feature-person',
-  preset: '../../../jest.preset.js',
+
   transform: {
     '^.+\\.[tj]sx?$': 'babel-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   coverageDirectory: '../../../coverage/libs/feature/person',
+  preset: '../../../jest.preset.ts',
 };
