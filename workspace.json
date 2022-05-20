@@ -352,6 +352,29 @@
       },
       "tags": []
     },
+    "data-access-github": {
+      "root": "libs/data-access/github",
+      "sourceRoot": "libs/data-access/github/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/data-access/github/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/data-access/github"],
+          "options": {
+            "jestConfig": "libs/data-access/github/jest.config.ts",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
     "data-access-hooks": {
       "root": "libs/data-access/hooks",
       "sourceRoot": "libs/data-access/hooks/src",

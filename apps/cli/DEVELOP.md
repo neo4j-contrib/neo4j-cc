@@ -31,6 +31,8 @@ Add the new command module to `app.module.ts`.
 ### Run it!
 
 Arguments are passed as a plain string using the `--args` flag to nx.
+
 ```
+nx run cli:exec --args="--help"
 nx run cli:exec --args="hello"
 ```
