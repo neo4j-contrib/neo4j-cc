@@ -10,7 +10,7 @@ export class GithubRunner implements CommandRunner {
     flags: '-w, --whoami',
     description: 'show login name used for access'
   })
-  parseWhoami(val:string)
+  parseWhoami(val:string) { return val}
 
   async run(
     inputs: string[],

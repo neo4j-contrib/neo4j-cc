@@ -13,3 +13,7 @@ export class EchoRunner implements CommandRunner {
   }
 }
 
+export const echoCommand = {
+  name: 'echo',
+  alias: 'e',
+}
