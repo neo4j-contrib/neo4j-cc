@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   displayName: 'data-access-person',
 
   transform: {
@@ -6,5 +6,5 @@ module.exports = {
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   coverageDirectory: '../../../coverage/libs/data-access/person',
-  preset: '../../../jest.preset.ts',
+  preset: '../../../jest.preset.js',
 };

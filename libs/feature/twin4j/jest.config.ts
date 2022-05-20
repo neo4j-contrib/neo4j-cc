@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   displayName: 'feature-twin4j',
 
   transform: {
@@ -6,5 +6,5 @@ module.exports = {
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   coverageDirectory: '../../../coverage/libs/feature/twin4j',
-  preset: '../../../jest.preset.ts',
+  preset: '../../../jest.preset.js',
 };

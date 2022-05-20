@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   displayName: 'data-access-neo4j',
 
   globals: {
@@ -11,5 +11,5 @@ module.exports = {
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   coverageDirectory: '../../../coverage/libs/data-access/neo4j',
-  preset: '../../../jest.preset.ts',
+  preset: '../../../jest.preset.js',
 };
