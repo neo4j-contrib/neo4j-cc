@@ -172,8 +172,7 @@
           "options": {
             "outputPath": "dist/apps/cli",
             "main": "apps/cli/src/main.ts",
-            "tsConfig": "apps/cli/tsconfig.app.json",
-            "assets": ["apps/cli/src/assets"]
+            "tsConfig": "apps/cli/tsconfig.app.json"
           },
           "configurations": {
             "production": {

@@ -1,19 +1,10 @@
-import {Command, CommandRunner} from 'nest-commander';
 
-@Command({
-  name: 'echo',
-  options: { isDefault: false }
-})
-export class EchoRunner implements CommandRunner {
-  async run(
-    inputs: string[],
-    options: Record<string, any>
-  ): Promise<void> {
-    console.log("echo, echo, echo!")
-  }
+const run = async () => {
+  console.log('echo')
 }
 
-export const echoCommand = {
+export const EchoCommand = {
   name: 'echo',
   alias: 'e',
+  run
 }

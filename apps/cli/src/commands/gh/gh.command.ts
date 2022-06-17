@@ -1,23 +1,46 @@
-import {Command, Option, CommandRunner} from 'nest-commander';
-import {whoami} from '@c--c/data-access-github'
-@Command({
-  name: 'gh',
-  options: { isDefault: false }
-})
-export class GithubRunner implements CommandRunner {
 
-  @Option({
-    flags: '-w, --whoami',
-    description: 'show login name used for access'
-  })
-  parseWhoami(val:string) { return val}
+import { pipe } from "@effect-ts/core/Function"
+import * as T from "@effect-ts/core/Effect";
 
-  async run(
-    inputs: string[],
-    options: Record<string, any>
-  ): Promise<void> {
-    const login = await whoami();
-    console.log(`octokitty is go! ${login}`)
+import { GithubRequirements, whoami } from '@c--c/data-access-github'
+import { GluegunCommand } from "gluegun";
+import { Toolbox } from "gluegun/build/types/domain/toolbox";
+
+const run = async (toolbox:Toolbox) => {
+  const { prompt } = toolbox
+
+  async function getLogin(): Promise<string | null> {
+    const result = await prompt.ask({
+      type: 'input',
+      name: 'key',
+      message: 'API Key>',
+    })
+
+    if (result.key) {
+      return whoami({ auth: result.key })
+    }
   }
+
+  const login = await getLogin()
+  console.log(`octokitty is go, go, go! ${login}`)
 }
 
+export const askForKey = pipe(
+  T.environment<Toolbox>(),
+  T.chain( 
+    ({prompt}) => {
+      return T.tryPromise(() => {
+        return prompt.ask({
+          type: 'input',
+          name: 'key',
+          message: 'API Key>'
+        })
+      })
+    }
+  )
+)
+
+export const GithubCommand:GluegunCommand<Toolbox> = {
+  name: 'gh',
+  run
+}
