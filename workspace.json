@@ -2,6 +2,7 @@
   "version": 2,
   "projects": {
     "admin": {
+      "$schema": "../../node_modules/nx/schemas/project-schema.json",
       "root": "apps/admin",
       "sourceRoot": "apps/admin/src",
       "projectType": "application",
@@ -82,6 +83,7 @@
       "tags": []
     },
     "admin-e2e": {
+      "$schema": "../../node_modules/nx/schemas/project-schema.json",
       "root": "apps/admin-e2e",
       "sourceRoot": "apps/admin-e2e/src",
       "projectType": "application",
@@ -110,6 +112,7 @@
       "implicitDependencies": ["admin"]
     },
     "api": {
+      "$schema": "../../node_modules/nx/schemas/project-schema.json",
       "root": "apps/api",
       "sourceRoot": "apps/api/src",
       "projectType": "application",
@@ -162,6 +165,7 @@
       "tags": []
     },
     "client": {
+      "$schema": "../../node_modules/nx/schemas/project-schema.json",
       "root": "apps/client",
       "sourceRoot": "apps/client/src",
       "projectType": "application",
@@ -249,6 +253,7 @@
       "tags": []
     },
     "client-e2e": {
+      "$schema": "../../node_modules/nx/schemas/project-schema.json",
       "root": "apps/client-e2e",
       "sourceRoot": "apps/client-e2e/src",
       "projectType": "application",
@@ -277,6 +282,7 @@
       "implicitDependencies": ["client"]
     },
     "data-access-discourse": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/data-access/discourse",
       "sourceRoot": "libs/data-access/discourse/src",
       "projectType": "library",
@@ -300,6 +306,7 @@
       "tags": []
     },
     "data-access-hooks": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/data-access/hooks",
       "sourceRoot": "libs/data-access/hooks/src",
       "projectType": "library",
@@ -323,6 +330,7 @@
       }
     },
     "data-access-neo4j": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/data-access/neo4j",
       "sourceRoot": "libs/data-access/neo4j/src",
       "projectType": "library",
@@ -346,6 +354,7 @@
       "tags": []
     },
     "data-access-person": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/data-access/person",
       "sourceRoot": "libs/data-access/person/src",
       "projectType": "library",
@@ -379,6 +388,7 @@
       }
     },
     "e2e-twin4j-e2e": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "apps/e2e/twin4j-e2e",
       "sourceRoot": "apps/e2e/twin4j-e2e/src",
       "projectType": "application",
@@ -407,6 +417,7 @@
       "implicitDependencies": ["feature-twin4j"]
     },
     "feature-ninja-leaderboard": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/feature/ninja-leaderboard",
       "sourceRoot": "libs/feature/ninja-leaderboard/src",
       "projectType": "library",
@@ -463,6 +474,7 @@
       }
     },
     "feature-person": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/feature/person",
       "sourceRoot": "libs/feature/person/src",
       "projectType": "library",
@@ -517,6 +529,7 @@
       }
     },
     "feature-release-notes": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/feature/release-notes",
       "sourceRoot": "libs/feature/release-notes/src",
       "projectType": "library",
@@ -573,6 +586,7 @@
       }
     },
     "feature-twin4j": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/feature/twin4j",
       "sourceRoot": "libs/feature/twin4j/src",
       "projectType": "library",
@@ -627,6 +641,7 @@
       "tags": []
     },
     "model": {
+      "$schema": "../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/model",
       "sourceRoot": "libs/model/src",
       "projectType": "library",
@@ -650,6 +665,7 @@
       "tags": []
     },
     "neo4j-profile": {
+      "$schema": "../../node_modules/nx/schemas/project-schema.json",
       "root": "apps/neo4j-profile",
       "sourceRoot": "apps/neo4j-profile/src",
       "projectType": "application",
@@ -739,6 +755,7 @@
       "tags": []
     },
     "neo4j-profile-e2e": {
+      "$schema": "../../node_modules/nx/schemas/project-schema.json",
       "root": "apps/neo4j-profile-e2e",
       "sourceRoot": "apps/neo4j-profile-e2e/src",
       "projectType": "application",
@@ -767,6 +784,7 @@
       "implicitDependencies": ["neo4j-profile"]
     },
     "nest-neo4j-dbms": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/nest/neo4j-dbms",
       "sourceRoot": "libs/nest/neo4j-dbms/src",
       "projectType": "library",
@@ -790,6 +808,7 @@
       "tags": []
     },
     "ui": {
+      "$schema": "../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/ui",
       "sourceRoot": "libs/ui/src",
       "projectType": "library",
@@ -844,6 +863,7 @@
       "tags": []
     },
     "ui-e2e": {
+      "$schema": "../../node_modules/nx/schemas/project-schema.json",
       "root": "apps/ui-e2e",
       "sourceRoot": "apps/ui-e2e/src",
       "projectType": "application",
@@ -871,5 +891,6 @@
       "tags": [],
       "implicitDependencies": ["ui"]
     }
-  }
+  },
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json"
 }
