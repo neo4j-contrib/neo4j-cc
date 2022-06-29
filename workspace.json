@@ -640,6 +640,58 @@
       },
       "tags": []
     },
+    "greta-bot": {
+      "root": "apps/greta-bot",
+      "sourceRoot": "apps/greta-bot/src",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/node:webpack",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/greta-bot",
+            "main": "apps/greta-bot/src/main.ts",
+            "tsConfig": "apps/greta-bot/tsconfig.app.json",
+            "assets": ["apps/greta-bot/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/greta-bot/src/environments/environment.ts",
+                  "with": "apps/greta-bot/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/node:node",
+          "options": {
+            "buildTarget": "greta-bot:build"
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/greta-bot/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/greta-bot"],
+          "options": {
+            "jestConfig": "apps/greta-bot/jest.config.ts",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
     "model": {
       "$schema": "../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/model",
