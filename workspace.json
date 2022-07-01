@@ -333,6 +333,117 @@
       "tags": [],
       "implicitDependencies": ["client"]
     },
+    "daisy-prototype": {
+      "root": "apps/daisy-prototype",
+      "sourceRoot": "apps/daisy-prototype/src",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/web:webpack",
+          "outputs": ["{options.outputPath}"],
+          "defaultConfiguration": "production",
+          "options": {
+            "compiler": "babel",
+            "outputPath": "dist/apps/daisy-prototype",
+            "index": "apps/daisy-prototype/src/index.html",
+            "baseHref": "/",
+            "main": "apps/daisy-prototype/src/main.tsx",
+            "polyfills": "apps/daisy-prototype/src/polyfills.ts",
+            "tsConfig": "apps/daisy-prototype/tsconfig.app.json",
+            "assets": [
+              "apps/daisy-prototype/src/favicon.ico",
+              "apps/daisy-prototype/src/assets"
+            ],
+            "styles": ["apps/daisy-prototype/src/styles.scss"],
+            "scripts": [],
+            "webpackConfig": "@nrwl/react/plugins/webpack"
+          },
+          "configurations": {
+            "development": {
+              "extractLicenses": false,
+              "optimization": false,
+              "sourceMap": true,
+              "vendorChunk": true
+            },
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/daisy-prototype/src/environments/environment.ts",
+                  "with": "apps/daisy-prototype/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/web:dev-server",
+          "defaultConfiguration": "development",
+          "options": {
+            "buildTarget": "daisy-prototype:build",
+            "hmr": true
+          },
+          "configurations": {
+            "development": {
+              "buildTarget": "daisy-prototype:build:development"
+            },
+            "production": {
+              "buildTarget": "daisy-prototype:build:production",
+              "hmr": false
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/daisy-prototype/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/daisy-prototype"],
+          "options": {
+            "jestConfig": "apps/daisy-prototype/jest.config.ts",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "daisy-prototype-e2e": {
+      "root": "apps/daisy-prototype-e2e",
+      "sourceRoot": "apps/daisy-prototype-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/daisy-prototype-e2e/cypress.json",
+            "devServerTarget": "daisy-prototype:serve:development"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "daisy-prototype:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/daisy-prototype-e2e/**/*.{js,ts}"]
+          }
+        }
+      },
+      "tags": [],
+      "implicitDependencies": ["daisy-prototype"]
+    },
     "data-access-discourse": {
       "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/data-access/discourse",
