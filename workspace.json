@@ -404,6 +404,29 @@
         }
       }
     },
+    "data-access-khoros": {
+      "root": "libs/data-access/khoros",
+      "sourceRoot": "libs/data-access/khoros/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/data-access/khoros/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/data-access/khoros"],
+          "options": {
+            "jestConfig": "libs/data-access/khoros/jest.config.ts",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
     "data-access-neo4j": {
       "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/data-access/neo4j",
