@@ -1,0 +1,54 @@
+import * as Effect from '@effect/core/io/Effect'
+import { pipe } from '@tsplus/stdlib/data/Function'
+
+import { format as formatDate } from 'date-fns'
+
+import * as Http from './http'
+import { KhorosEventRecord } from './khoros-bulkapi-types'
+
+// Request (GET https://api.lithium.com/lsi-data/v2/data/export/community/neo4j.prod?fromDate=202206280000&toDate=202206290000)
+// fetch("https://api.lithium.com/lsi-data/v2/data/export/community/neo4j.prod?fromDate=202206280000&toDate=202206290000", {
+//       "method": "GET",
+//       "headers": {
+//             "client-id": "wffG+1nXkmnehWtAmtLdfskWqbYYhLLaVJuJyE/Ot60=",
+//             "Authorization": "Basic N2RiMzliOTJlYzljMzU0ZDM0NTU0ZTNlODYzNTZmNjg5YjA0ZWI3MDo=",
+//             "Accept": "application/json"
+//       }
+// })
+
+
+export type KhorosBulkResponse = {
+  records: Partial<KhorosEventRecord>[]
+}
+
+export interface KhorosBulkApiRequestConfig {
+  baseURL: string
+  communityID: string
+  clientID: string
+  apiToken: string
+  fromDate: Date
+  toDate: Date
+}
+
+const requestDateAsString = (d:Date) => formatDate(d, 'yyyyMMdd')
+
+// "https://api.lithium.com/lsi-data/v2/data/export/community/neo4j.prod?fromDate=202206280000&toDate=202206290000", 
+const khorosBulkAPIRequestURL = (request:KhorosBulkApiRequestConfig) => 
+  `${request.baseURL}/${request.communityID}?fromDate=${requestDateAsString(request.fromDate)}&toDate=${requestDateAsString(request.toDate)}`
+
+
+export const fetchBulkAPI = (request:KhorosBulkApiRequestConfig) =>  
+pipe(
+    Http.request(
+      khorosBulkAPIRequestURL(request),
+      {
+        "method": "GET",
+        "headers": {
+              "client-id": "wffG+1nXkmnehWtAmtLdfskWqbYYhLLaVJuJyE/Ot60=",
+              "Authorization": "Basic N2RiMzliOTJlYzljMzU0ZDM0NTU0ZTNlODYzNTZmNjg5YjA0ZWI3MDo=",
+              "Accept": "application/json"
+        }
+      }
+    ),
+    Effect.flatMap(Http.jsonBody<KhorosBulkResponse>)
+  )
