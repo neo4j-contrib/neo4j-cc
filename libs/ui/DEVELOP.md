@@ -12,7 +12,7 @@ This library was generated with [Nx](https://nx.dev).
 ### Add a component
 
 ```sh
-nx g @nrwl/react:component --project=ui --directory=lib/components/{kind} --export=true --name={component-name} --dryRun
+nx g @nrwl/react:component --project=ui --directory=lib/components/{kind} --export=true --style=css --globalCss --name={component-name} --dryRun
 ```
 
 Where the kind of component is one of: `elements`, `sections`, `layout`:
