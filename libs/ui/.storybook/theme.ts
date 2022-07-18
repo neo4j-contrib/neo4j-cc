@@ -1,17 +1,17 @@
 import { create } from '@storybook/theming'
 
 const baseTheme = {
-  base: 'dark' as const,
+  base: 'light' as const,
   brandTitle: 'neo4j-cc',
   brandUrl: 'https://github.com/neo4j-contrib/neo4j-cc',
   brandImage:
-    'https://raw.githubusercontent.com/saadeghi/files/main/daisyui/logo-4.svg',
+    'https://dist.neo4j.com/wp-content/uploads/20210423072428/neo4j-logo-2020-1.svg',
 
-  colorPrimary: '#3ABFF8',
-  colorSecondary: '#6419E6',
+  colorPrimary: '#018BFF',
+  colorSecondary: '#018BFF',
 
   // UI
-  appBg: '#222630',
+  appBg: '#E6F8FF',
   appContentBg: '#191D24',
   appBorderColor: '#323945',
 
@@ -21,7 +21,7 @@ const baseTheme = {
   // Toolbar default and active colors
   barTextColor: '#A6ADBA',
   barSelectedColor: '#C3D0EA',
-  barBg: '#191D24',
+  barBg: '#044092',
 }
 
 export const docsTheme = {

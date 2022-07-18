@@ -17,6 +17,8 @@ nx g @nrwl/react:component --project=ui --directory=lib/components/{kind} --expo
 
 Where the kind of component is one of: `elements`, `sections`, `layout`:
 
+- `tokens` are component attributes, formalized into functions
+  - colors, typography, spacing
 - `elements` are small, single-purpose and generic
   - fixed height + width
 - `activities` combine elements with a common purpose

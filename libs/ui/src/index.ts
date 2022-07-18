@@ -1,4 +1,6 @@
-export * from './lib/components/elements/cc-dropdown/cc-dropdown';
+export * from './lib/components/tokens/cc-colors/cc-colors';
+export * from './lib/components/elements/cc-placeholder/cc-placeholder';
+export * from './lib/components/elements/cc-card/cc-card';
 export * from './lib/components/elements/cc-dropdown/cc-dropdown';
 export * from './lib/components/elements/cc-alert/cc-alert';
 export * from './lib/components/elements/cc-button/cc-button';

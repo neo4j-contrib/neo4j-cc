@@ -11,7 +11,11 @@ module.exports = {
   ],
   safelist: [
     {
-      pattern: /(btn|alert|dropdown).*/,
+      pattern: /(alert|btn|card|dropdown).*/,
+      variants: ['sm', 'md', 'lg', 'xl', '2xl'],
     },
+    {
+      pattern: /(primary|secondary|accent|neutral|base|info|success|warning|error).*/,
+    }
   ],
 };
