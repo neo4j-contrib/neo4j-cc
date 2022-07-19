@@ -534,6 +534,12 @@
             "jestConfig": "libs/data-access/khoros/jest.config.ts",
             "passWithNoTests": true
           }
+        },
+        "quicktype": {
+          "executor": "nx:run-commands",
+          "options": {
+            "command": "quicktype -s postman -o libs/data-access/khoros/src/lib/generated/khoros-v2-api.ts libs/data-access/khoros/assets/khoros-v2-API.postman_collection.json"
+          }
         }
       },
       "tags": []

@@ -151,6 +151,7 @@
     "jest": "28.1.2",
     "jest-environment-jsdom": "^28.1.2",
     "prettier": "2.7.1",
+    "quicktype": "^15.0.261",
     "react-test-renderer": "18.2.0",
     "storybook-addon-themes": "^6.1.0",
     "ts-jest": "28.0.5",
