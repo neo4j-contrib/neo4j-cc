@@ -16,7 +16,7 @@ const baseTheme = {
   appBorderColor: '#323945',
 
   // Text Colors
-  textColor: '#A6ADBA',
+  textColor: '#044092',
 
   // Toolbar default and active colors
   barTextColor: '#A6ADBA',

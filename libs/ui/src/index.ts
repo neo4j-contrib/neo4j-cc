@@ -1,3 +1,6 @@
+export * from './lib/components/elements/cc-avatar/cc-avatar';
+export * from './lib/components/elements/cc-swap/cc-swap';
+export * from './lib/components/elements/cc-modal/cc-modal';
 export * from './lib/components/tokens/cc-colors/cc-colors';
 export * from './lib/components/elements/cc-placeholder/cc-placeholder';
 export * from './lib/components/elements/cc-card/cc-card';
