@@ -150,6 +150,8 @@
     "html-webpack-plugin": "^5.5.0",
     "jest": "28.1.2",
     "jest-environment-jsdom": "^28.1.2",
+    "openapi-typescript-codegen": "^0.23.0",
+    "postman-to-openapi": "^2.4.0",
     "prettier": "2.7.1",
     "quicktype": "^15.0.261",
     "react-test-renderer": "18.2.0",

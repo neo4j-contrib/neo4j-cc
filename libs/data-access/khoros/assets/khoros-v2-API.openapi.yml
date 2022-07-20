@@ -1,0 +1,2445 @@
+openapi: 3.0.0
+info:
+  title: Khoros v2 API
+  description: Khoros v2 API requests
+  version: 1.0.0
+servers:
+  - url: http://{{khoros_v2_endpoint}}
+paths:
+  /search:
+    get:
+      tags:
+        - default
+      summary: Query a single collection
+      description: Search a single collection with a LiQL-based query
+      parameters:
+        - name: q
+          in: query
+          schema:
+            type: string
+          description: encoded LIQL statement
+          example: '{{LIQL}}'
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json;charset=UTF-8
+            Transfer-Encoding:
+              schema:
+                type: string
+                example: chunked
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Date:
+              schema:
+                type: string
+                example: Tue, 19 Jul 2022 19:28:21 GMT
+            Set-Cookie:
+              schema:
+                type: string
+                example: >-
+                  LithiumVisitor=~2YweG9kU84G89isbC~88MqIfgSMxJHQqUT-DtJq7PNI9vHuIcYKeh67sFRuWZzKU6-udbY0aWdto767FsKlVbci9tNbiNEP7T0xUfahg..;
+                  Path=/; HttpOnly; Max-Age=315360000; Secure; SameSite=None
+            Server:
+              schema:
+                type: string
+                example: Apache
+            X-Frame-Options:
+              schema:
+                type: string
+                example: SAMEORIGIN
+            Vary:
+              schema:
+                type: string
+                example: >-
+                  Origin,Access-Control-Request-Headers,Access-Control-Request-Method,Access-Control-Allow-Credentials,Access-Control-Max-Age,Accept-Encoding
+            Content-Encoding:
+              schema:
+                type: string
+                example: gzip
+            X-Cache:
+              schema:
+                type: string
+                example: Miss from cloudfront
+            Via:
+              schema:
+                type: number
+                example: >-
+                  1.1 4ded1750dc7e0bef188a5520fb9fef28.cloudfront.net
+                  (CloudFront)
+            X-Amz-Cf-Pop:
+              schema:
+                type: string
+                example: ARN56-P1
+            X-Amz-Cf-Id:
+              schema:
+                type: string
+                example: _FJG65amMKRIKqUfXHDGrfT0KEX2nQvdYD9xXp-qO0UtuUi-hDl7ug==
+          content:
+            application/json:
+              schema:
+                type: object
+              examples:
+                example-0:
+                  summary: Query messages LIMIT 10
+                  value:
+                    status: success
+                    message: ''
+                    http_code: 200
+                    data:
+                      type: messages
+                      list_item_type: message
+                      size: 10
+                      items:
+                        - type: message
+                          id: '657'
+                          href: /messages/657
+                          view_href: >-
+                            https://vbeyi74497.stage.lithium.com/t5/experimental-forum/second-post/m-p/657#M5
+                          author:
+                            type: user
+                            id: '82'
+                            href: /users/82
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/user/viewprofilepage/user-id/82
+                            login: yolandep
+                          subject: 'Re: Second Post'
+                          search_snippet: |-
+                            Yo this is ABK as Yolande. 
+                             &nbsp;
+                          body: |-
+                            <P>Yo this is ABK as Yolande.</P>
+                            <P>&nbsp;</P>
+                          teaser: ''
+                          board:
+                            type: board
+                            id: experimental-forum
+                            href: /boards/experimental-forum
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/experimental-forum/bd-p/experimental-forum
+                          conversation:
+                            type: conversation
+                            id: '653'
+                            href: /conversations/653
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/experimental-forum/second-post/td-p/653
+                            style: forum
+                            thread_style: forum
+                            messages_count: 4
+                            solved: true
+                            last_post_time: '2022-07-19T04:00:17.237-07:00'
+                            last_post_time_friendly: 07-19-2022
+                          topic:
+                            type: message
+                            id: '653'
+                            href: /messages/653
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/experimental-forum/second-post/m-p/653#M2
+                          parent:
+                            type: message
+                            id: '653'
+                            href: /messages/653
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/experimental-forum/second-post/m-p/653#M2
+                          post_time: '2022-07-19T04:00:17.237-07:00'
+                          post_time_friendly: 07-19-2022
+                          depth: 1
+                          read_only: false
+                          edit_frozen: false
+                          language: EN
+                          can_accept_solution: false
+                          placeholder: false
+                          is_solution: false
+                          solution_data: {}
+                          metrics:
+                            type: message_metrics
+                            views: 1
+                          current_revision:
+                            type: revision
+                            id: '657_1'
+                            last_edit_author:
+                              type: user
+                              id: '82'
+                              href: /users/82
+                              view_href: >-
+                                https://vbeyi74497.stage.lithium.com/t5/user/viewprofilepage/user-id/82
+                              login: yolandep
+                            last_edit_time: '2022-07-19T04:00:17.237-07:00'
+                          kudos:
+                            query: SELECT * FROM kudos WHERE message.id = '657'
+                          tags:
+                            query: SELECT * FROM tags WHERE messages.id = '657'
+                          labels:
+                            query: SELECT * FROM labels WHERE messages.id = '657'
+                          images:
+                            query: SELECT * FROM images WHERE messages.id = '657'
+                          videos:
+                            query: SELECT * FROM videos WHERE messages.id = '657'
+                          attachments:
+                            query: SELECT * FROM attachments WHERE message.id = '657'
+                          replies:
+                            query: SELECT * FROM messages WHERE parent.id = '657'
+                          ratings:
+                            query: SELECT * FROM ratings WHERE message.id = '657'
+                          custom_tags:
+                            query: >-
+                              SELECT * FROM custom_tags WHERE messages.id =
+                              '657'
+                          moderation_status: approved
+                          user_context:
+                            type: user_context
+                            kudo: false
+                            read: false
+                            can_reply: false
+                            can_kudo: false
+                            can_delete: false
+                          device_id: firefox_102_0
+                          popularity: -8.467698888888888
+                          excluded_from_kudos_leaderboards: false
+                          is_promoted: false
+                        - type: message
+                          id: '656'
+                          href: /messages/656
+                          view_href: >-
+                            https://vbeyi74497.stage.lithium.com/t5/experimental-forum/second-post/m-p/656#M4
+                          author:
+                            type: user
+                            id: '80'
+                            href: /users/80
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/user/viewprofilepage/user-id/80
+                            login: abk
+                          subject: 'Re: Second Post'
+                          search_snippet: |-
+                            Can this topic be solved? Let's do that too. 
+                             &nbsp;
+                          body: |-
+                            <P>Can this topic be solved? Let's do that too.</P>
+                            <P>&nbsp;</P>
+                          teaser: ''
+                          board:
+                            type: board
+                            id: experimental-forum
+                            href: /boards/experimental-forum
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/experimental-forum/bd-p/experimental-forum
+                          conversation:
+                            type: conversation
+                            id: '653'
+                            href: /conversations/653
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/experimental-forum/second-post/td-p/653
+                            style: forum
+                            thread_style: forum
+                            messages_count: 4
+                            solved: true
+                            last_post_time: '2022-07-19T04:00:17.237-07:00'
+                            last_post_time_friendly: 07-19-2022
+                          topic:
+                            type: message
+                            id: '653'
+                            href: /messages/653
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/experimental-forum/second-post/m-p/653#M2
+                          parent:
+                            type: message
+                            id: '653'
+                            href: /messages/653
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/experimental-forum/second-post/m-p/653#M2
+                          post_time: '2022-07-19T03:50:27.742-07:00'
+                          post_time_friendly: 07-19-2022
+                          depth: 1
+                          read_only: false
+                          edit_frozen: false
+                          language: EN
+                          can_accept_solution: false
+                          placeholder: false
+                          is_solution: true
+                          solution_data:
+                            type: solution_data
+                            message_id: '656'
+                            accepter:
+                              type: user
+                              id: '80'
+                              href: /users/80
+                              view_href: >-
+                                https://vbeyi74497.stage.lithium.com/t5/user/viewprofilepage/user-id/80
+                              login: abk
+                            time: '2022-07-19T03:50:32.000-07:00'
+                          metrics:
+                            type: message_metrics
+                            views: 4
+                          current_revision:
+                            type: revision
+                            id: '656_1'
+                            last_edit_author:
+                              type: user
+                              id: '80'
+                              href: /users/80
+                              view_href: >-
+                                https://vbeyi74497.stage.lithium.com/t5/user/viewprofilepage/user-id/80
+                              login: abk
+                            last_edit_time: '2022-07-19T03:50:27.742-07:00'
+                          kudos:
+                            query: SELECT * FROM kudos WHERE message.id = '656'
+                          tags:
+                            query: SELECT * FROM tags WHERE messages.id = '656'
+                          labels:
+                            query: SELECT * FROM labels WHERE messages.id = '656'
+                          images:
+                            query: SELECT * FROM images WHERE messages.id = '656'
+                          videos:
+                            query: SELECT * FROM videos WHERE messages.id = '656'
+                          attachments:
+                            query: SELECT * FROM attachments WHERE message.id = '656'
+                          replies:
+                            query: SELECT * FROM messages WHERE parent.id = '656'
+                          ratings:
+                            query: SELECT * FROM ratings WHERE message.id = '656'
+                          custom_tags:
+                            query: >-
+                              SELECT * FROM custom_tags WHERE messages.id =
+                              '656'
+                          moderation_status: approved
+                          user_context:
+                            type: user_context
+                            kudo: false
+                            read: false
+                            can_reply: false
+                            can_kudo: false
+                            can_delete: false
+                          device_id: firefox_102_0
+                          popularity: -8.631453333333333
+                          excluded_from_kudos_leaderboards: false
+                          is_promoted: false
+                        - type: message
+                          id: '655'
+                          href: /messages/655
+                          view_href: >-
+                            https://vbeyi74497.stage.lithium.com/t5/experimental-forum/second-post/m-p/655#M3
+                          author:
+                            type: user
+                            id: '80'
+                            href: /users/80
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/user/viewprofilepage/user-id/80
+                            login: abk
+                          subject: 'Re: Second Post'
+                          search_snippet: |-
+                            Without a reply a post is an isolated node, oh no! 
+                             &nbsp;
+                          body: >-
+                            <P>Without a reply a post is an isolated node, oh
+                            no!</P>
+
+                            <P>&nbsp;</P>
+                          teaser: ''
+                          board:
+                            type: board
+                            id: experimental-forum
+                            href: /boards/experimental-forum
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/experimental-forum/bd-p/experimental-forum
+                          conversation:
+                            type: conversation
+                            id: '653'
+                            href: /conversations/653
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/experimental-forum/second-post/td-p/653
+                            style: forum
+                            thread_style: forum
+                            messages_count: 4
+                            solved: true
+                            last_post_time: '2022-07-19T04:00:17.237-07:00'
+                            last_post_time_friendly: 07-19-2022
+                          topic:
+                            type: message
+                            id: '653'
+                            href: /messages/653
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/experimental-forum/second-post/m-p/653#M2
+                          parent:
+                            type: message
+                            id: '653'
+                            href: /messages/653
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/experimental-forum/second-post/m-p/653#M2
+                          post_time: '2022-07-19T03:49:30.750-07:00'
+                          post_time_friendly: 07-19-2022
+                          depth: 1
+                          read_only: false
+                          edit_frozen: false
+                          language: EN
+                          can_accept_solution: false
+                          placeholder: false
+                          is_solution: false
+                          solution_data: {}
+                          metrics:
+                            type: message_metrics
+                            views: 4
+                          current_revision:
+                            type: revision
+                            id: '655_1'
+                            last_edit_author:
+                              type: user
+                              id: '80'
+                              href: /users/80
+                              view_href: >-
+                                https://vbeyi74497.stage.lithium.com/t5/user/viewprofilepage/user-id/80
+                              login: abk
+                            last_edit_time: '2022-07-19T03:49:30.750-07:00'
+                          kudos:
+                            query: SELECT * FROM kudos WHERE message.id = '655'
+                          tags:
+                            query: SELECT * FROM tags WHERE messages.id = '655'
+                          labels:
+                            query: SELECT * FROM labels WHERE messages.id = '655'
+                          images:
+                            query: SELECT * FROM images WHERE messages.id = '655'
+                          videos:
+                            query: SELECT * FROM videos WHERE messages.id = '655'
+                          attachments:
+                            query: SELECT * FROM attachments WHERE message.id = '655'
+                          replies:
+                            query: SELECT * FROM messages WHERE parent.id = '655'
+                          ratings:
+                            query: SELECT * FROM ratings WHERE message.id = '655'
+                          custom_tags:
+                            query: >-
+                              SELECT * FROM custom_tags WHERE messages.id =
+                              '655'
+                          moderation_status: approved
+                          user_context:
+                            type: user_context
+                            kudo: false
+                            read: false
+                            can_reply: false
+                            can_kudo: false
+                            can_delete: false
+                          device_id: firefox_102_0
+                          popularity: -8.647288611111112
+                          excluded_from_kudos_leaderboards: false
+                          is_promoted: false
+                        - type: message
+                          id: '653'
+                          href: /messages/653
+                          view_href: >-
+                            https://vbeyi74497.stage.lithium.com/t5/experimental-forum/second-post/td-p/653
+                          author:
+                            type: user
+                            id: '80'
+                            href: /users/80
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/user/viewprofilepage/user-id/80
+                            login: abk
+                          subject: Second Post
+                          search_snippet: >-
+                            Zero to one is a huge step forward. What's next? The
+                            next step! 
+                             - "at tag" to the first post First Post&nbsp; 
+                             - oh, right. markdown does not work  <span class="lia-unicode-emoji" title=":face_with_tongue:">😛</span>  
+                             - "hashtag to a product" GraphQL&nbsp; 
+                             -...
+                          body: >-
+                            <P>Zero to one is a huge step forward. What's next?
+                            The next step!</P>
+
+                            <P>- "at tag" to the first post <a
+                            href="https://vbeyi74497.stage.lithium.com/t5/experimental-forum/first-post/m-p/652#U652"
+                            class="lia-mention-container-editor-message
+                            lia-img-icon-forum-thread lia-fa-icon lia-fa-forum
+                            lia-fa-thread lia-fa">First Post</a>&nbsp;</P>
+
+                            <P>- oh, right. markdown does not work <span
+                            class="lia-unicode-emoji"
+                            title=":face_with_tongue:">😛</span></P>
+
+                            <P>- "hashtag to a product" <a
+                            href="https://vbeyi74497.stage.lithium.com/t5/c-vbeyi74497/GraphQL/pd-p/neo4j-graphql"
+                            class="lia-product-mention"
+                            data-product="8-1">GraphQL</a>&nbsp;</P>
+
+                            <P>- "hashtag to nowhere"
+                            #nosuchproduct-whynotbecomearegulartag</P>
+
+                            <P>&nbsp;</P>
+                          teaser: ''
+                          seo_title: ABK Experimental Message
+                          seo_description: >-
+                            A message posted to Khoros with all the possible
+                            bells and whistles, to assist in deriving typed
+                            client-side APIs.
+                          board:
+                            type: board
+                            id: experimental-forum
+                            href: /boards/experimental-forum
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/experimental-forum/bd-p/experimental-forum
+                          conversation:
+                            type: conversation
+                            id: '653'
+                            href: /conversations/653
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/experimental-forum/second-post/td-p/653
+                            style: forum
+                            thread_style: forum
+                            messages_count: 4
+                            solved: true
+                            last_post_time: '2022-07-19T04:00:17.237-07:00'
+                            last_post_time_friendly: 07-19-2022
+                          topic:
+                            type: message
+                            id: '653'
+                            href: /messages/653
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/experimental-forum/second-post/m-p/653#M2
+                          post_time: '2022-07-18T05:02:27.352-07:00'
+                          post_time_friendly: 07-18-2022
+                          depth: 0
+                          read_only: false
+                          edit_frozen: false
+                          language: EN
+                          can_accept_solution: false
+                          placeholder: false
+                          is_solution: false
+                          solution_data: {}
+                          metrics:
+                            type: message_metrics
+                            views: 11
+                          current_revision:
+                            type: revision
+                            id: '653_3'
+                            last_edit_author:
+                              type: user
+                              id: '80'
+                              href: /users/80
+                              view_href: >-
+                                https://vbeyi74497.stage.lithium.com/t5/user/viewprofilepage/user-id/80
+                              login: abk
+                            last_edit_time: '2022-07-19T00:12:48.105-07:00'
+                          kudos:
+                            query: SELECT * FROM kudos WHERE message.id = '653'
+                          tags:
+                            query: SELECT * FROM tags WHERE messages.id = '653'
+                          me_toos:
+                            query: SELECT * FROM me_toos WHERE message.id = '653'
+                          labels:
+                            query: SELECT * FROM labels WHERE messages.id = '653'
+                          images:
+                            query: SELECT * FROM images WHERE messages.id = '653'
+                          videos:
+                            query: SELECT * FROM videos WHERE messages.id = '653'
+                          attachments:
+                            query: SELECT * FROM attachments WHERE message.id = '653'
+                          replies:
+                            query: SELECT * FROM messages WHERE parent.id = '653'
+                          ratings:
+                            query: SELECT * FROM ratings WHERE message.id = '653'
+                          custom_tags:
+                            query: >-
+                              SELECT * FROM custom_tags WHERE messages.id =
+                              '653'
+                          moderation_status: approved
+                          user_context:
+                            type: user_context
+                            kudo: false
+                            me_too: false
+                            read: false
+                            can_reply: false
+                            can_kudo: false
+                            can_delete: false
+                          device_id: firefox_102_0
+                          popularity: 0.005173265865683025
+                          excluded_from_kudos_leaderboards: false
+                          is_promoted: false
+                        - type: message
+                          id: '652'
+                          href: /messages/652
+                          view_href: >-
+                            https://vbeyi74497.stage.lithium.com/t5/experimental-forum/first-post/td-p/652
+                          author:
+                            type: user
+                            id: '80'
+                            href: /users/80
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/user/viewprofilepage/user-id/80
+                            login: abk
+                          subject: First Post
+                          search_snippet: >-
+                            First experimental post, in the Experimental Forum,
+                            within the Experiments category. 
+                             "at mention" --Neo4j Fundamentals&nbsp; 
+                             "hashtag product mention" -- Spring Data Neo4j&nbsp; 
+                             "plain hashtag"...
+                          body: >-
+                            <P>First experimental post, in the Experimental
+                            Forum, within the Experiments category.</P>
+
+                            <P>"at mention" --<a
+                            href="https://vbeyi74497.stage.lithium.com/t5/courses-certifications/neo4j-fundamentals/m-p/642#U642"
+                            class="lia-mention-container-editor-message
+                            lia-img-icon-tkb-thread lia-fa-icon lia-fa-tkb
+                            lia-fa-thread lia-fa">Neo4j
+                            Fundamentals</a>&nbsp;</P>
+
+                            <P>"hashtag product mention" -- <a
+                            href="https://vbeyi74497.stage.lithium.com/t5/c-vbeyi74497/Spring+Data+Neo4j/pd-p/sdn"
+                            class="lia-product-mention"
+                            data-product="10-1">Spring Data Neo4j</a>&nbsp;</P>
+
+                            <P>"plain hashtag" -- #crowd</P>
+
+                            <P>&nbsp;</P>
+                          teaser: ''
+                          board:
+                            type: board
+                            id: experimental-forum
+                            href: /boards/experimental-forum
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/experimental-forum/bd-p/experimental-forum
+                          conversation:
+                            type: conversation
+                            id: '652'
+                            href: /conversations/652
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/experimental-forum/first-post/td-p/652
+                            style: forum
+                            thread_style: forum
+                            messages_count: 1
+                            solved: false
+                            last_post_time: '2022-07-18T04:48:29.629-07:00'
+                            last_post_time_friendly: 07-18-2022
+                          topic:
+                            type: message
+                            id: '652'
+                            href: /messages/652
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/experimental-forum/first-post/m-p/652#M1
+                          post_time: '2022-07-18T04:48:29.629-07:00'
+                          post_time_friendly: 07-18-2022
+                          depth: 0
+                          read_only: false
+                          edit_frozen: false
+                          language: EN
+                          can_accept_solution: false
+                          placeholder: false
+                          is_solution: false
+                          solution_data: {}
+                          metrics:
+                            type: message_metrics
+                            views: 4
+                          current_revision:
+                            type: revision
+                            id: '652_3'
+                            last_edit_author:
+                              type: user
+                              id: '80'
+                              href: /users/80
+                              view_href: >-
+                                https://vbeyi74497.stage.lithium.com/t5/user/viewprofilepage/user-id/80
+                              login: abk
+                            last_edit_time: '2022-07-18T04:51:53.666-07:00'
+                          kudos:
+                            query: SELECT * FROM kudos WHERE message.id = '652'
+                          tags:
+                            query: SELECT * FROM tags WHERE messages.id = '652'
+                          me_toos:
+                            query: SELECT * FROM me_toos WHERE message.id = '652'
+                          labels:
+                            query: SELECT * FROM labels WHERE messages.id = '652'
+                          images:
+                            query: SELECT * FROM images WHERE messages.id = '652'
+                          videos:
+                            query: SELECT * FROM videos WHERE messages.id = '652'
+                          attachments:
+                            query: SELECT * FROM attachments WHERE message.id = '652'
+                          replies:
+                            query: SELECT * FROM messages WHERE parent.id = '652'
+                          ratings:
+                            query: SELECT * FROM ratings WHERE message.id = '652'
+                          custom_tags:
+                            query: >-
+                              SELECT * FROM custom_tags WHERE messages.id =
+                              '652'
+                          moderation_status: approved
+                          user_context:
+                            type: user_context
+                            kudo: false
+                            me_too: false
+                            read: false
+                            can_reply: false
+                            can_kudo: false
+                            can_delete: false
+                          device_id: firefox_102_0
+                          popularity: -31.664278888888887
+                          excluded_from_kudos_leaderboards: false
+                          is_promoted: false
+                        - type: message
+                          id: '651'
+                          href: /messages/651
+                          view_href: >-
+                            https://vbeyi74497.stage.lithium.com/t5/general-discussions/when-you-re-in-the-thick-of-working-on-your-graph-project/m-p/651#M2
+                          author:
+                            type: user
+                            id: '109'
+                            href: /users/109
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/user/viewprofilepage/user-id/109
+                            login: shinyzhu
+                          subject: >-
+                            Re: When you're in the thick of working on your
+                            graph project ...
+                          search_snippet: >-
+                            Is this created by&nbsp;@jason?&nbsp; <span
+                            class="lia-unicode-emoji"
+                            title=":beaming_face_with_smiling_eyes:">😁</span>
+                          body: >-
+                            <P>Is this created by&nbsp;@jason?&nbsp;<span
+                            class="lia-unicode-emoji"
+                            title=":beaming_face_with_smiling_eyes:">😁</span></P>
+                          teaser: ''
+                          board:
+                            type: board
+                            id: general_discussions
+                            href: /boards/general_discussions
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/general-discussions/bd-p/general_discussions
+                          conversation:
+                            type: conversation
+                            id: '649'
+                            href: /conversations/649
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/general-discussions/when-you-re-in-the-thick-of-working-on-your-graph-project/td-p/649
+                            style: forum
+                            thread_style: forum
+                            messages_count: 2
+                            solved: true
+                            last_post_time: '2022-05-19T05:11:21.060-07:00'
+                            last_post_time_friendly: 05-19-2022
+                          topic:
+                            type: message
+                            id: '649'
+                            href: /messages/649
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/general-discussions/when-you-re-in-the-thick-of-working-on-your-graph-project/m-p/649#M1
+                          parent:
+                            type: message
+                            id: '649'
+                            href: /messages/649
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/general-discussions/when-you-re-in-the-thick-of-working-on-your-graph-project/m-p/649#M1
+                          post_time: '2022-05-19T05:11:21.060-07:00'
+                          post_time_friendly: 05-19-2022
+                          depth: 1
+                          read_only: false
+                          edit_frozen: false
+                          language: EN
+                          can_accept_solution: false
+                          placeholder: false
+                          is_solution: true
+                          solution_data:
+                            type: solution_data
+                            message_id: '651'
+                            accepter:
+                              type: user
+                              id: '106'
+                              href: /users/106
+                              view_href: >-
+                                https://vbeyi74497.stage.lithium.com/t5/user/viewprofilepage/user-id/106
+                              login: Trevor_S
+                            time: '2022-05-31T11:31:21.000-07:00'
+                          metrics:
+                            type: message_metrics
+                            views: 11
+                          current_revision:
+                            type: revision
+                            id: '651_1'
+                            last_edit_author:
+                              type: user
+                              id: '109'
+                              href: /users/109
+                              view_href: >-
+                                https://vbeyi74497.stage.lithium.com/t5/user/viewprofilepage/user-id/109
+                              login: shinyzhu
+                            last_edit_time: '2022-05-19T05:11:21.060-07:00'
+                          kudos:
+                            query: SELECT * FROM kudos WHERE message.id = '651'
+                          tags:
+                            query: SELECT * FROM tags WHERE messages.id = '651'
+                          labels:
+                            query: SELECT * FROM labels WHERE messages.id = '651'
+                          images:
+                            query: SELECT * FROM images WHERE messages.id = '651'
+                          videos:
+                            query: SELECT * FROM videos WHERE messages.id = '651'
+                          attachments:
+                            query: SELECT * FROM attachments WHERE message.id = '651'
+                          replies:
+                            query: SELECT * FROM messages WHERE parent.id = '651'
+                          ratings:
+                            query: SELECT * FROM ratings WHERE message.id = '651'
+                          custom_tags:
+                            query: >-
+                              SELECT * FROM custom_tags WHERE messages.id =
+                              '651'
+                          moderation_status: approved
+                          user_context:
+                            type: user_context
+                            kudo: false
+                            read: false
+                            can_reply: false
+                            can_kudo: false
+                            can_delete: false
+                          device_id: google_chrome_101
+                          popularity: -1471.2833327777778
+                          excluded_from_kudos_leaderboards: false
+                          is_promoted: false
+                        - type: message
+                          id: '650'
+                          href: /messages/650
+                          view_href: >-
+                            https://vbeyi74497.stage.lithium.com/t5/introduce-yourself/hi-neo4j-friends/td-p/650
+                          author:
+                            type: user
+                            id: '109'
+                            href: /users/109
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/user/viewprofilepage/user-id/109
+                            login: shinyzhu
+                          subject: Hi Neo4j friends
+                          search_snippet: This is Shiny. I'm happy to see you here.
+                          body: <P>This is Shiny. I'm happy to see you here.</P>
+                          teaser: ''
+                          board:
+                            type: board
+                            id: hello
+                            href: /boards/hello
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/introduce-yourself/bd-p/hello
+                          conversation:
+                            type: conversation
+                            id: '650'
+                            href: /conversations/650
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/introduce-yourself/hi-neo4j-friends/td-p/650
+                            style: forum
+                            thread_style: forum
+                            messages_count: 1
+                            solved: false
+                            last_post_time: '2022-05-19T05:08:08.026-07:00'
+                            last_post_time_friendly: 05-19-2022
+                          topic:
+                            type: message
+                            id: '650'
+                            href: /messages/650
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/introduce-yourself/hi-neo4j-friends/m-p/650#M1
+                          post_time: '2022-05-19T05:08:08.026-07:00'
+                          post_time_friendly: 05-19-2022
+                          depth: 0
+                          read_only: false
+                          edit_frozen: false
+                          language: EN
+                          can_accept_solution: false
+                          placeholder: false
+                          is_solution: false
+                          solution_data: {}
+                          metrics:
+                            type: message_metrics
+                            views: 5
+                          current_revision:
+                            type: revision
+                            id: '650_1'
+                            last_edit_author:
+                              type: user
+                              id: '109'
+                              href: /users/109
+                              view_href: >-
+                                https://vbeyi74497.stage.lithium.com/t5/user/viewprofilepage/user-id/109
+                              login: shinyzhu
+                            last_edit_time: '2022-05-19T05:08:08.026-07:00'
+                          kudos:
+                            query: SELECT * FROM kudos WHERE message.id = '650'
+                          tags:
+                            query: SELECT * FROM tags WHERE messages.id = '650'
+                          me_toos:
+                            query: SELECT * FROM me_toos WHERE message.id = '650'
+                          labels:
+                            query: SELECT * FROM labels WHERE messages.id = '650'
+                          images:
+                            query: SELECT * FROM images WHERE messages.id = '650'
+                          videos:
+                            query: SELECT * FROM videos WHERE messages.id = '650'
+                          attachments:
+                            query: SELECT * FROM attachments WHERE message.id = '650'
+                          replies:
+                            query: SELECT * FROM messages WHERE parent.id = '650'
+                          ratings:
+                            query: SELECT * FROM ratings WHERE message.id = '650'
+                          custom_tags:
+                            query: >-
+                              SELECT * FROM custom_tags WHERE messages.id =
+                              '650'
+                          moderation_status: approved
+                          user_context:
+                            type: user_context
+                            kudo: false
+                            me_too: false
+                            read: false
+                            can_reply: false
+                            can_kudo: false
+                            can_delete: false
+                          device_id: google_chrome_101
+                          popularity: 0.000017682630650691392
+                          excluded_from_kudos_leaderboards: false
+                          is_promoted: false
+                        - type: message
+                          id: '649'
+                          href: /messages/649
+                          view_href: >-
+                            https://vbeyi74497.stage.lithium.com/t5/general-discussions/when-you-re-in-the-thick-of-working-on-your-graph-project/td-p/649
+                          author:
+                            type: user
+                            id: '107'
+                            href: /users/107
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/user/viewprofilepage/user-id/107
+                            login: mdavidallen
+                          subject: >-
+                            When you're in the thick of working on your graph
+                            project ...
+                          search_snippet: '&nbsp;'
+                          body: >-
+                            <P><span class="lia-inline-image-display-wrapper
+                            lia-image-align-inline"
+                            image-alt="mdavidallen_0-1652888194357.png"
+                            style="width: 400px;"><img
+                            src="https://vbeyi74497.stage.lithium.com/t5/image/serverpage/image-id/121i82229C3075AAB486/image-size/medium/is-moderation-mode/true?v=v2&amp;px=400"
+                            role="button"
+                            title="mdavidallen_0-1652888194357.png"
+                            alt="mdavidallen_0-1652888194357.png"
+                            /></span></P><P>&nbsp;</P>
+                          teaser: ''
+                          board:
+                            type: board
+                            id: general_discussions
+                            href: /boards/general_discussions
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/general-discussions/bd-p/general_discussions
+                          conversation:
+                            type: conversation
+                            id: '649'
+                            href: /conversations/649
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/general-discussions/when-you-re-in-the-thick-of-working-on-your-graph-project/td-p/649
+                            style: forum
+                            thread_style: forum
+                            messages_count: 2
+                            solved: true
+                            last_post_time: '2022-05-19T05:11:21.060-07:00'
+                            last_post_time_friendly: 05-19-2022
+                          topic:
+                            type: message
+                            id: '649'
+                            href: /messages/649
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/general-discussions/when-you-re-in-the-thick-of-working-on-your-graph-project/m-p/649#M1
+                          post_time: '2022-05-18T08:36:46.872-07:00'
+                          post_time_friendly: 05-18-2022
+                          depth: 0
+                          read_only: false
+                          edit_frozen: false
+                          language: EN
+                          can_accept_solution: false
+                          placeholder: false
+                          is_solution: false
+                          solution_data: {}
+                          metrics:
+                            type: message_metrics
+                            views: 16
+                          current_revision:
+                            type: revision
+                            id: '649_1'
+                            last_edit_author:
+                              type: user
+                              id: '107'
+                              href: /users/107
+                              view_href: >-
+                                https://vbeyi74497.stage.lithium.com/t5/user/viewprofilepage/user-id/107
+                              login: mdavidallen
+                            last_edit_time: '2022-05-18T08:36:46.872-07:00'
+                          kudos:
+                            query: SELECT * FROM kudos WHERE message.id = '649'
+                          tags:
+                            query: SELECT * FROM tags WHERE messages.id = '649'
+                          me_toos:
+                            query: SELECT * FROM me_toos WHERE message.id = '649'
+                          labels:
+                            query: SELECT * FROM labels WHERE messages.id = '649'
+                          images:
+                            query: SELECT * FROM images WHERE messages.id = '649'
+                          videos:
+                            query: SELECT * FROM videos WHERE messages.id = '649'
+                          attachments:
+                            query: SELECT * FROM attachments WHERE message.id = '649'
+                          replies:
+                            query: SELECT * FROM messages WHERE parent.id = '649'
+                          ratings:
+                            query: SELECT * FROM ratings WHERE message.id = '649'
+                          custom_tags:
+                            query: >-
+                              SELECT * FROM custom_tags WHERE messages.id =
+                              '649'
+                          moderation_status: approved
+                          user_context:
+                            type: user_context
+                            kudo: false
+                            me_too: false
+                            read: false
+                            can_reply: false
+                            can_kudo: false
+                            can_delete: false
+                          device_id: google_chrome_101
+                          popularity: 0.00001731950071868288
+                          excluded_from_kudos_leaderboards: false
+                          is_promoted: false
+                        - type: message
+                          id: '647'
+                          href: /messages/647
+                          view_href: >-
+                            https://vbeyi74497.stage.lithium.com/t5/neo4j-graph-platform/test-post/td-p/647
+                          author:
+                            type: user
+                            id: '106'
+                            href: /users/106
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/user/viewprofilepage/user-id/106
+                            login: Trevor_S
+                          subject: test post
+                          search_snippet: test&nbsp;
+                          body: <P>test&nbsp;</P>
+                          teaser: ''
+                          board:
+                            type: board
+                            id: graph_platform
+                            href: /boards/graph_platform
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/neo4j-graph-platform/bd-p/graph_platform
+                          conversation:
+                            type: conversation
+                            id: '647'
+                            href: /conversations/647
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/neo4j-graph-platform/test-post/td-p/647
+                            style: forum
+                            thread_style: forum
+                            messages_count: 1
+                            solved: false
+                            last_post_time: '2022-05-18T08:08:54.587-07:00'
+                            last_post_time_friendly: 05-18-2022
+                          topic:
+                            type: message
+                            id: '647'
+                            href: /messages/647
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/neo4j-graph-platform/test-post/m-p/647#M14
+                          post_time: '2022-05-18T08:08:54.587-07:00'
+                          post_time_friendly: 05-18-2022
+                          depth: 0
+                          read_only: false
+                          edit_frozen: false
+                          language: EN
+                          can_accept_solution: false
+                          placeholder: false
+                          is_solution: false
+                          solution_data: {}
+                          metrics:
+                            type: message_metrics
+                            views: 3
+                          current_revision:
+                            type: revision
+                            id: '647_1'
+                            last_edit_author:
+                              type: user
+                              id: '106'
+                              href: /users/106
+                              view_href: >-
+                                https://vbeyi74497.stage.lithium.com/t5/user/viewprofilepage/user-id/106
+                              login: Trevor_S
+                            last_edit_time: '2022-05-18T08:08:54.587-07:00'
+                          kudos:
+                            query: SELECT * FROM kudos WHERE message.id = '647'
+                          tags:
+                            query: SELECT * FROM tags WHERE messages.id = '647'
+                          me_toos:
+                            query: SELECT * FROM me_toos WHERE message.id = '647'
+                          labels:
+                            query: SELECT * FROM labels WHERE messages.id = '647'
+                          images:
+                            query: SELECT * FROM images WHERE messages.id = '647'
+                          videos:
+                            query: SELECT * FROM videos WHERE messages.id = '647'
+                          attachments:
+                            query: SELECT * FROM attachments WHERE message.id = '647'
+                          replies:
+                            query: SELECT * FROM messages WHERE parent.id = '647'
+                          ratings:
+                            query: SELECT * FROM ratings WHERE message.id = '647'
+                          custom_tags:
+                            query: >-
+                              SELECT * FROM custom_tags WHERE messages.id =
+                              '647'
+                          moderation_status: approved
+                          user_context:
+                            type: user_context
+                            kudo: false
+                            me_too: false
+                            read: false
+                            can_reply: false
+                            can_kudo: false
+                            can_delete: false
+                          device_id: google_chrome_99
+                          popularity: -1492.3240316666668
+                          excluded_from_kudos_leaderboards: false
+                          is_promoted: false
+                        - type: message
+                          id: '642'
+                          href: /messages/642
+                          view_href: >-
+                            https://vbeyi74497.stage.lithium.com/t5/courses-certifications/neo4j-fundamentals/ta-p/642
+                          author:
+                            type: user
+                            id: '82'
+                            href: /users/82
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/user/viewprofilepage/user-id/82
+                            login: yolandep
+                          subject: Neo4j Fundamentals
+                          search_snippet: |-
+                            Course Description 
+                             Welcome to the Neo4j Fundamentals course. This course has been designed to set you on your way to becoming a Neo4j expert. In this course you will learn about the underlying prin...
+                          body: >-
+                            <DIV class="lia-message-template-content-zone">
+
+                            <H2 id="toc-hId--671772844">Course Description</H2>
+
+                            <P>Welcome to the Neo4j Fundamentals course. This
+                            course has been designed to set you on your way to
+                            becoming a Neo4j expert. In this course you will
+                            learn about the underlying principles that underpin
+                            Neo4j.</P>
+
+                            <P>We will take you on a journey from 1736 Prussia
+                            for a brief history of graph theory, discuss the
+                            types of graphs you may see in the wild, and walk
+                            through an example dataset that we will revisit
+                            throughout your journey with GraphAcademy.</P>
+
+                            <DIV class="section   ">
+
+                            <H3 id="_prerequisites"
+                            id="toc-hId-216654358">Prerequisites</H3>
+
+                            <P>You need not have any programming experience to
+                            take this course.</P>
+
+                            </DIV>
+
+                            <DIV class="section   ">
+
+                            <H3 id="_duration"
+                            id="toc-hId-217577879">Duration</H3>
+
+                            <P>1 hour</P>
+
+                            </DIV>
+
+                            <H3 id="toc-hId-218501400">What you will learn</H3>
+
+                            <DIV class="ulist">
+
+                            <UL>
+
+                            <LI>
+
+                            <P>Basic graph theory and the elements that make a
+                            graph</P>
+
+                            </LI>
+
+                            <LI>
+
+                            <P>Graph structures</P>
+
+                            </LI>
+
+                            <LI>
+
+                            <P>Common graph use cases</P>
+
+                            </LI>
+
+                            <LI>
+
+                            <P>Elements of a Neo4j graph database</P>
+
+                            </LI>
+
+                            <LI>
+
+                            <P>How Neo4j implements index-free-adjacency</P>
+
+                            </LI>
+
+                            <LI>
+
+                            <P>The Movie graph’s data model and data</P>
+
+                            </LI>
+
+                            </UL>
+
+                            <H3 id="toc-hId-219424921">Start the course <A
+                            href="https://graphacademy.neo4j.com/courses/neo4j-fundamentals/"
+                            target="_self" rel="nofollow noopener
+                            noreferrer">here</A>&nbsp;</H3>
+
+                            <P>&nbsp;</P>
+
+                            </DIV>
+
+                            </DIV>
+                          teaser: >-
+                            <P><SPAN>Learn the basics of Neo4j and the property
+                            graph model</SPAN></P>
+                          seo_title: Neo4j Fundamentals
+                          seo_description: >-
+                            Learn the basics of Neo4j and the property graph
+                            model
+                          board:
+                            type: board
+                            id: courses_certification
+                            href: /boards/courses_certification
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/courses-certifications/tkb-p/courses_certification
+                          conversation:
+                            type: conversation
+                            id: '642'
+                            href: /conversations/642
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/courses-certifications/neo4j-fundamentals/ta-p/642
+                            style: tkb
+                            thread_style: tkb
+                            messages_count: 1
+                            solved: false
+                            last_post_time: '2022-05-13T16:30:02.084-07:00'
+                            last_post_time_friendly: 05-13-2022
+                          topic:
+                            type: message
+                            id: '642'
+                            href: /messages/642
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/courses-certifications/neo4j-fundamentals/ta-p/642
+                          post_time: '2022-05-13T16:30:02.084-07:00'
+                          post_time_friendly: 05-13-2022
+                          depth: 0
+                          read_only: false
+                          edit_frozen: false
+                          language: EN
+                          can_accept_solution: false
+                          placeholder: false
+                          is_solution: false
+                          solution_data: {}
+                          metrics:
+                            type: message_metrics
+                            views: 25
+                          current_revision:
+                            type: revision
+                            id: '642_5'
+                            last_edit_author:
+                              type: user
+                              id: '103'
+                              href: /users/103
+                              view_href: >-
+                                https://vbeyi74497.stage.lithium.com/t5/user/viewprofilepage/user-id/103
+                              login: JulieH
+                            last_edit_time: '2022-05-15T08:38:24.167-07:00'
+                          kudos:
+                            query: SELECT * FROM kudos WHERE message.id = '642'
+                          tags:
+                            query: SELECT * FROM tags WHERE messages.id = '642'
+                          labels:
+                            query: SELECT * FROM labels WHERE messages.id = '642'
+                          images:
+                            query: SELECT * FROM images WHERE messages.id = '642'
+                          videos:
+                            query: SELECT * FROM videos WHERE messages.id = '642'
+                          attachments:
+                            query: SELECT * FROM attachments WHERE message.id = '642'
+                          replies:
+                            query: SELECT * FROM messages WHERE parent.id = '642'
+                          ratings:
+                            query: SELECT * FROM ratings WHERE message.id = '642'
+                          custom_tags:
+                            query: >-
+                              SELECT * FROM custom_tags WHERE messages.id =
+                              '642'
+                          moderation_status: approved
+                          user_context:
+                            type: user_context
+                            kudo: false
+                            read: false
+                            can_reply: false
+                            can_kudo: false
+                            can_delete: false
+                          device_id: google_chrome_101
+                          contributors:
+                            query: >-
+                              SELECT * FROM users WHERE messages_contributed.id
+                              = '642'
+                          helpfulness_allowed: false
+                          popularity: -1603.971962777778
+                          excluded_from_kudos_leaderboards: false
+                          latest_version: '4'
+                          content_workflow:
+                            type: content_workflow
+                            state: publish
+                            message_draft_history:
+                              query: >-
+                                SELECT * FROM message_draft_history WHERE
+                                message.id = '642'
+                            user_context:
+                              type: message_workflow_context
+                              can_edit: false
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/tkb/workflowpage/tkb-id/courses_certification/article-id/13
+                          is_promoted: false
+                      next_cursor: MjIuNHwyLjB8aXwxMHw0MTowLDE1OjB8aW50LDY1Nyw2NDI
+                    metadata: {}
+                example-1:
+                  summary: Query message kudos
+                  value:
+                    status: success
+                    message: ''
+                    http_code: 200
+                    data:
+                      type: kudos
+                      list_item_type: kudo
+                      size: 1
+                      items:
+                        - type: kudo
+                          id: '98'
+                          href: /kudos/98
+                          user:
+                            type: user
+                            id: '82'
+                            href: /users/82
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/user/viewprofilepage/user-id/82
+                            login: yolandep
+                          message:
+                            type: message
+                            id: '653'
+                            href: /messages/653
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/experimental-forum/second-post/m-p/653#M2
+                          time: '2022-07-19T03:43:00.000-07:00'
+                          weight: 1
+                    metadata: {}
+                example-2:
+                  summary: Query message tags
+                  value:
+                    status: success
+                    message: ''
+                    http_code: 200
+                    data:
+                      type: tags
+                      list_item_type: tag
+                      size: 1
+                      items:
+                        - type: tag
+                          id: '41'
+                          href: /tags/41
+                          text: experiment
+                          messages:
+                            query: >-
+                              SELECT * FROM messages WHERE tags.text =
+                              'experiment'
+                    metadata: {}
+                example-3:
+                  summary: Query message images
+                  value:
+                    status: success
+                    message: ''
+                    http_code: 200
+                    data:
+                      type: images
+                      list_item_type: image
+                      size: 1
+                      items:
+                        - type: image
+                          id: 122iA38EEBB7A3092FFA
+                          href: /images/122iA38EEBB7A3092FFA
+                          view_href: >-
+                            https://vbeyi74497.stage.lithium.com/t5/media/gallerypage/image-id/122iA38EEBB7A3092FFA
+                          title: double donut.png
+                          description: ''
+                          tiny_href: >-
+                            https://vbeyi74497.stage.lithium.com/t5/image/serverpage/image-id/122iA38EEBB7A3092FFA/image-size/tiny?v=v2&px=100
+                          thumb_href: >-
+                            https://vbeyi74497.stage.lithium.com/t5/image/serverpage/image-id/122iA38EEBB7A3092FFA/image-size/thumb?v=v2&px=150
+                          small_href: >-
+                            https://vbeyi74497.stage.lithium.com/t5/image/serverpage/image-id/122iA38EEBB7A3092FFA/image-size/small?v=v2&px=200
+                          medium_href: >-
+                            https://vbeyi74497.stage.lithium.com/t5/image/serverpage/image-id/122iA38EEBB7A3092FFA/image-size/medium?v=v2&px=400
+                          large_href: >-
+                            https://vbeyi74497.stage.lithium.com/t5/image/serverpage/image-id/122iA38EEBB7A3092FFA/image-size/large?v=v2&px=999
+                          original_href: >-
+                            https://vbeyi74497.stage.lithium.com/t5/image/serverpage/image-id/122iA38EEBB7A3092FFA/image-size/original?v=v2&px=-1
+                          width: 1954
+                          height: 1978
+                          owner:
+                            type: user
+                            id: '80'
+                            href: /users/80
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/user/viewprofilepage/user-id/80
+                            login: abk
+                          upload_time: '2022-07-19T00:12:48.105-07:00'
+                          upload_time_friendly: 12 hours ago
+                          messages:
+                            query: >-
+                              SELECT * FROM messages WHERE images.id =
+                              '122iA38EEBB7A3092FFA'
+                          comments:
+                            query: >-
+                              SELECT * FROM messages WHERE images.id =
+                              '122iA38EEBB7A3092FFA' AND is_image_comment = true
+                          kudos:
+                            query: >-
+                              SELECT * FROM kudos WHERE image.id =
+                              '122iA38EEBB7A3092FFA'
+                          visibility: public
+                          moderation_status: approved
+                    metadata: {}
+                example-4:
+                  summary: Query message videos
+                  value:
+                    status: success
+                    message: ''
+                    http_code: 200
+                    data:
+                      type: videos
+                      list_item_type: video
+                      size: 0
+                      items: []
+                    metadata: {}
+                example-5:
+                  summary: Query message attachments
+                  value:
+                    status: success
+                    message: ''
+                    http_code: 200
+                    data:
+                      type: attachments
+                      list_item_type: attachment
+                      size: 1
+                      items:
+                        - type: attachment
+                          id: '1'
+                          href: /messages/653/attachments/1
+                          filename: neo4j-community-logo-white.png
+                          filesize: 216885
+                          url: >-
+                            https://vbeyi74497.stage.lithium.com/vbeyi74497/attachments/vbeyi74497/experimental-forum/2/1/neo4j-community-logo-white.png
+                          content_type: image/png
+                          message:
+                            type: message
+                            id: '653'
+                            href: /messages/653
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/experimental-forum/second-post/m-p/653#M2
+                          position: 1
+                    metadata: {}
+                example-6:
+                  summary: Query message replies
+                  value:
+                    status: success
+                    message: ''
+                    http_code: 200
+                    data:
+                      type: messages
+                      list_item_type: message
+                      size: 3
+                      items:
+                        - type: message
+                          id: '657'
+                          href: /messages/657
+                          view_href: >-
+                            https://vbeyi74497.stage.lithium.com/t5/experimental-forum/second-post/m-p/657#M5
+                          author:
+                            type: user
+                            id: '82'
+                            href: /users/82
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/user/viewprofilepage/user-id/82
+                            login: yolandep
+                          subject: 'Re: Second Post'
+                          search_snippet: |-
+                            Yo this is ABK as Yolande. 
+                             &nbsp;
+                          body: |-
+                            <P>Yo this is ABK as Yolande.</P>
+                            <P>&nbsp;</P>
+                          teaser: ''
+                          board:
+                            type: board
+                            id: experimental-forum
+                            href: /boards/experimental-forum
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/experimental-forum/bd-p/experimental-forum
+                          conversation:
+                            type: conversation
+                            id: '653'
+                            href: /conversations/653
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/experimental-forum/second-post/td-p/653
+                            style: forum
+                            thread_style: forum
+                            messages_count: 4
+                            solved: true
+                            last_post_time: '2022-07-19T04:00:17.237-07:00'
+                            last_post_time_friendly: 07-19-2022
+                          topic:
+                            type: message
+                            id: '653'
+                            href: /messages/653
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/experimental-forum/second-post/m-p/653#M2
+                          parent:
+                            type: message
+                            id: '653'
+                            href: /messages/653
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/experimental-forum/second-post/m-p/653#M2
+                          post_time: '2022-07-19T04:00:17.237-07:00'
+                          post_time_friendly: 07-19-2022
+                          depth: 1
+                          read_only: false
+                          edit_frozen: false
+                          language: EN
+                          can_accept_solution: false
+                          placeholder: false
+                          is_solution: false
+                          solution_data: {}
+                          metrics:
+                            type: message_metrics
+                            views: 1
+                          current_revision:
+                            type: revision
+                            id: '657_1'
+                            last_edit_author:
+                              type: user
+                              id: '82'
+                              href: /users/82
+                              view_href: >-
+                                https://vbeyi74497.stage.lithium.com/t5/user/viewprofilepage/user-id/82
+                              login: yolandep
+                            last_edit_time: '2022-07-19T04:00:17.237-07:00'
+                          kudos:
+                            query: SELECT * FROM kudos WHERE message.id = '657'
+                          tags:
+                            query: SELECT * FROM tags WHERE messages.id = '657'
+                          labels:
+                            query: SELECT * FROM labels WHERE messages.id = '657'
+                          images:
+                            query: SELECT * FROM images WHERE messages.id = '657'
+                          videos:
+                            query: SELECT * FROM videos WHERE messages.id = '657'
+                          attachments:
+                            query: SELECT * FROM attachments WHERE message.id = '657'
+                          replies:
+                            query: SELECT * FROM messages WHERE parent.id = '657'
+                          ratings:
+                            query: SELECT * FROM ratings WHERE message.id = '657'
+                          custom_tags:
+                            query: >-
+                              SELECT * FROM custom_tags WHERE messages.id =
+                              '657'
+                          moderation_status: approved
+                          user_context:
+                            type: user_context
+                            kudo: false
+                            read: false
+                            can_reply: false
+                            can_kudo: false
+                            can_delete: false
+                          device_id: firefox_102_0
+                          popularity: -8.697037222222223
+                          excluded_from_kudos_leaderboards: false
+                          is_promoted: false
+                        - type: message
+                          id: '656'
+                          href: /messages/656
+                          view_href: >-
+                            https://vbeyi74497.stage.lithium.com/t5/experimental-forum/second-post/m-p/656#M4
+                          author:
+                            type: user
+                            id: '80'
+                            href: /users/80
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/user/viewprofilepage/user-id/80
+                            login: abk
+                          subject: 'Re: Second Post'
+                          search_snippet: |-
+                            Can this topic be solved? Let's do that too. 
+                             &nbsp;
+                          body: |-
+                            <P>Can this topic be solved? Let's do that too.</P>
+                            <P>&nbsp;</P>
+                          teaser: ''
+                          board:
+                            type: board
+                            id: experimental-forum
+                            href: /boards/experimental-forum
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/experimental-forum/bd-p/experimental-forum
+                          conversation:
+                            type: conversation
+                            id: '653'
+                            href: /conversations/653
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/experimental-forum/second-post/td-p/653
+                            style: forum
+                            thread_style: forum
+                            messages_count: 4
+                            solved: true
+                            last_post_time: '2022-07-19T04:00:17.237-07:00'
+                            last_post_time_friendly: 07-19-2022
+                          topic:
+                            type: message
+                            id: '653'
+                            href: /messages/653
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/experimental-forum/second-post/m-p/653#M2
+                          parent:
+                            type: message
+                            id: '653'
+                            href: /messages/653
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/experimental-forum/second-post/m-p/653#M2
+                          post_time: '2022-07-19T03:50:27.742-07:00'
+                          post_time_friendly: 07-19-2022
+                          depth: 1
+                          read_only: false
+                          edit_frozen: false
+                          language: EN
+                          can_accept_solution: false
+                          placeholder: false
+                          is_solution: true
+                          solution_data:
+                            type: solution_data
+                            message_id: '656'
+                            accepter:
+                              type: user
+                              id: '80'
+                              href: /users/80
+                              view_href: >-
+                                https://vbeyi74497.stage.lithium.com/t5/user/viewprofilepage/user-id/80
+                              login: abk
+                            time: '2022-07-19T03:50:32.000-07:00'
+                          metrics:
+                            type: message_metrics
+                            views: 4
+                          current_revision:
+                            type: revision
+                            id: '656_1'
+                            last_edit_author:
+                              type: user
+                              id: '80'
+                              href: /users/80
+                              view_href: >-
+                                https://vbeyi74497.stage.lithium.com/t5/user/viewprofilepage/user-id/80
+                              login: abk
+                            last_edit_time: '2022-07-19T03:50:27.742-07:00'
+                          kudos:
+                            query: SELECT * FROM kudos WHERE message.id = '656'
+                          tags:
+                            query: SELECT * FROM tags WHERE messages.id = '656'
+                          labels:
+                            query: SELECT * FROM labels WHERE messages.id = '656'
+                          images:
+                            query: SELECT * FROM images WHERE messages.id = '656'
+                          videos:
+                            query: SELECT * FROM videos WHERE messages.id = '656'
+                          attachments:
+                            query: SELECT * FROM attachments WHERE message.id = '656'
+                          replies:
+                            query: SELECT * FROM messages WHERE parent.id = '656'
+                          ratings:
+                            query: SELECT * FROM ratings WHERE message.id = '656'
+                          custom_tags:
+                            query: >-
+                              SELECT * FROM custom_tags WHERE messages.id =
+                              '656'
+                          moderation_status: approved
+                          user_context:
+                            type: user_context
+                            kudo: false
+                            read: false
+                            can_reply: false
+                            can_kudo: false
+                            can_delete: false
+                          device_id: firefox_102_0
+                          popularity: -8.860790555555555
+                          excluded_from_kudos_leaderboards: false
+                          is_promoted: false
+                        - type: message
+                          id: '655'
+                          href: /messages/655
+                          view_href: >-
+                            https://vbeyi74497.stage.lithium.com/t5/experimental-forum/second-post/m-p/655#M3
+                          author:
+                            type: user
+                            id: '80'
+                            href: /users/80
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/user/viewprofilepage/user-id/80
+                            login: abk
+                          subject: 'Re: Second Post'
+                          search_snippet: |-
+                            Without a reply a post is an isolated node, oh no! 
+                             &nbsp;
+                          body: >-
+                            <P>Without a reply a post is an isolated node, oh
+                            no!</P>
+
+                            <P>&nbsp;</P>
+                          teaser: ''
+                          board:
+                            type: board
+                            id: experimental-forum
+                            href: /boards/experimental-forum
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/experimental-forum/bd-p/experimental-forum
+                          conversation:
+                            type: conversation
+                            id: '653'
+                            href: /conversations/653
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/experimental-forum/second-post/td-p/653
+                            style: forum
+                            thread_style: forum
+                            messages_count: 4
+                            solved: true
+                            last_post_time: '2022-07-19T04:00:17.237-07:00'
+                            last_post_time_friendly: 07-19-2022
+                          topic:
+                            type: message
+                            id: '653'
+                            href: /messages/653
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/experimental-forum/second-post/m-p/653#M2
+                          parent:
+                            type: message
+                            id: '653'
+                            href: /messages/653
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/experimental-forum/second-post/m-p/653#M2
+                          post_time: '2022-07-19T03:49:30.750-07:00'
+                          post_time_friendly: 07-19-2022
+                          depth: 1
+                          read_only: false
+                          edit_frozen: false
+                          language: EN
+                          can_accept_solution: false
+                          placeholder: false
+                          is_solution: false
+                          solution_data: {}
+                          metrics:
+                            type: message_metrics
+                            views: 4
+                          current_revision:
+                            type: revision
+                            id: '655_1'
+                            last_edit_author:
+                              type: user
+                              id: '80'
+                              href: /users/80
+                              view_href: >-
+                                https://vbeyi74497.stage.lithium.com/t5/user/viewprofilepage/user-id/80
+                              login: abk
+                            last_edit_time: '2022-07-19T03:49:30.750-07:00'
+                          kudos:
+                            query: SELECT * FROM kudos WHERE message.id = '655'
+                          tags:
+                            query: SELECT * FROM tags WHERE messages.id = '655'
+                          labels:
+                            query: SELECT * FROM labels WHERE messages.id = '655'
+                          images:
+                            query: SELECT * FROM images WHERE messages.id = '655'
+                          videos:
+                            query: SELECT * FROM videos WHERE messages.id = '655'
+                          attachments:
+                            query: SELECT * FROM attachments WHERE message.id = '655'
+                          replies:
+                            query: SELECT * FROM messages WHERE parent.id = '655'
+                          ratings:
+                            query: SELECT * FROM ratings WHERE message.id = '655'
+                          custom_tags:
+                            query: >-
+                              SELECT * FROM custom_tags WHERE messages.id =
+                              '655'
+                          moderation_status: approved
+                          user_context:
+                            type: user_context
+                            kudo: false
+                            read: false
+                            can_reply: false
+                            can_kudo: false
+                            can_delete: false
+                          device_id: firefox_102_0
+                          popularity: -8.876625555555556
+                          excluded_from_kudos_leaderboards: false
+                          is_promoted: false
+                    metadata: {}
+                example-7:
+                  summary: Query message ratings
+                  value:
+                    status: success
+                    message: ''
+                    http_code: 200
+                    data:
+                      type: ratings
+                      list_item_type: rating
+                      size: 1
+                      items:
+                        - type: rating
+                          id: '2'
+                          value: 3
+                          message:
+                            type: message
+                            id: '653'
+                            href: /messages/653
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/experimental-forum/second-post/m-p/653#M2
+                          time: '2022-07-19T12:43:57.065-07:00'
+                          user:
+                            type: user
+                            id: '82'
+                            href: /users/82
+                            view_href: >-
+                              https://vbeyi74497.stage.lithium.com/t5/user/viewprofilepage/user-id/82
+                            login: yolandep
+                    metadata: {}
+  /messages/{message-id}:
+    get:
+      tags:
+        - default
+      summary: Get Message
+      description: Get a message object by ID
+      parameters:
+        - name: message-id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json;charset=UTF-8
+            Transfer-Encoding:
+              schema:
+                type: string
+                example: chunked
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Date:
+              schema:
+                type: string
+                example: Tue, 19 Jul 2022 19:45:59 GMT
+            Set-Cookie:
+              schema:
+                type: string
+                example: >-
+                  LithiumVisitor=~2kR99E7dmQFndvvxR~l8LDYGs6l9_4kHjMUK9B1IiwH0sphCPUZFX8BOJcSjpaOPiGdUxC5fSXtBfNiPB4biDTojpkZNdtjtqKnKnJtw..;
+                  Path=/; HttpOnly; Max-Age=315360000; Secure; SameSite=None
+            Server:
+              schema:
+                type: string
+                example: Apache
+            X-Frame-Options:
+              schema:
+                type: string
+                example: SAMEORIGIN
+            Vary:
+              schema:
+                type: string
+                example: >-
+                  Origin,Access-Control-Request-Headers,Access-Control-Request-Method,Access-Control-Allow-Credentials,Access-Control-Max-Age,Accept-Encoding
+            Content-Encoding:
+              schema:
+                type: string
+                example: gzip
+            X-Cache:
+              schema:
+                type: string
+                example: Miss from cloudfront
+            Via:
+              schema:
+                type: number
+                example: >-
+                  1.1 3a4d5aad46ae3a82da414d69565389aa.cloudfront.net
+                  (CloudFront)
+            X-Amz-Cf-Pop:
+              schema:
+                type: string
+                example: ARN54-C1
+            X-Amz-Cf-Id:
+              schema:
+                type: string
+                example: ppx2VyO3QctcDPwmv8rQjg4UJOLjYEHJWwFMFDdj2SXjWZ-ESBoNyQ==
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: success
+                message: ''
+                http_code: 200
+                data:
+                  type: message
+                  id: '653'
+                  href: /messages/653
+                  view_href: >-
+                    https://vbeyi74497.stage.lithium.com/t5/experimental-forum/second-post/td-p/653
+                  author:
+                    type: user
+                    id: '80'
+                    href: /users/80
+                    view_href: >-
+                      https://vbeyi74497.stage.lithium.com/t5/user/viewprofilepage/user-id/80
+                    login: abk
+                  subject: Second Post
+                  body: >-
+                    <P>Zero to one is a huge step forward. What's next? The next
+                    step!</P>
+
+                    <P>- "at tag" to the first post <a
+                    href="https://vbeyi74497.stage.lithium.com/t5/experimental-forum/first-post/m-p/652#U652"
+                    class="lia-mention-container-editor-message
+                    lia-img-icon-forum-thread lia-fa-icon lia-fa-forum
+                    lia-fa-thread lia-fa">First Post</a>&nbsp;</P>
+
+                    <P>- oh, right. markdown does not work <span
+                    class="lia-unicode-emoji"
+                    title=":face_with_tongue:">😛</span></P>
+
+                    <P>- "hashtag to a product" <a
+                    href="https://vbeyi74497.stage.lithium.com/t5/c-vbeyi74497/GraphQL/pd-p/neo4j-graphql"
+                    class="lia-product-mention"
+                    data-product="8-1">GraphQL</a>&nbsp;</P>
+
+                    <P>- "hashtag to nowhere"
+                    #nosuchproduct-whynotbecomearegulartag</P>
+
+                    <P>&nbsp;</P>
+                  teaser: ''
+                  seo_title: ABK Experimental Message
+                  seo_description: >-
+                    A message posted to Khoros with all the possible bells and
+                    whistles, to assist in deriving typed client-side APIs.
+                  board:
+                    type: board
+                    id: experimental-forum
+                    href: /boards/experimental-forum
+                    view_href: >-
+                      https://vbeyi74497.stage.lithium.com/t5/experimental-forum/bd-p/experimental-forum
+                  conversation:
+                    type: conversation
+                    id: '653'
+                    href: /conversations/653
+                    view_href: >-
+                      https://vbeyi74497.stage.lithium.com/t5/experimental-forum/second-post/td-p/653
+                    style: forum
+                    thread_style: forum
+                    messages_count: 4
+                    solved: true
+                    last_post_time: '2022-07-19T04:00:17.237-07:00'
+                    last_post_time_friendly: 07-19-2022
+                  topic:
+                    type: message
+                    id: '653'
+                    href: /messages/653
+                    view_href: >-
+                      https://vbeyi74497.stage.lithium.com/t5/experimental-forum/second-post/m-p/653#M2
+                  post_time: '2022-07-18T05:02:27.352-07:00'
+                  post_time_friendly: 07-18-2022
+                  depth: 0
+                  read_only: false
+                  edit_frozen: false
+                  language: EN
+                  can_accept_solution: false
+                  placeholder: false
+                  is_solution: false
+                  solution_data: {}
+                  metrics:
+                    type: message_metrics
+                    views: 13
+                  current_revision:
+                    type: revision
+                    id: '653_3'
+                    last_edit_author:
+                      type: user
+                      id: '80'
+                      href: /users/80
+                      view_href: >-
+                        https://vbeyi74497.stage.lithium.com/t5/user/viewprofilepage/user-id/80
+                      login: abk
+                    last_edit_time: '2022-07-19T00:12:48.105-07:00'
+                  kudos:
+                    query: SELECT * FROM kudos WHERE message.id = '653'
+                  tags:
+                    query: SELECT * FROM tags WHERE messages.id = '653'
+                  me_toos:
+                    query: SELECT * FROM me_toos WHERE message.id = '653'
+                  labels:
+                    query: SELECT * FROM labels WHERE messages.id = '653'
+                  images:
+                    query: SELECT * FROM images WHERE messages.id = '653'
+                  videos:
+                    query: SELECT * FROM videos WHERE messages.id = '653'
+                  attachments:
+                    query: SELECT * FROM attachments WHERE message.id = '653'
+                  replies:
+                    query: SELECT * FROM messages WHERE parent.id = '653'
+                  ratings:
+                    query: SELECT * FROM ratings WHERE message.id = '653'
+                  custom_tags:
+                    query: SELECT * FROM custom_tags WHERE messages.id = '653'
+                  moderation_status: approved
+                  user_context:
+                    type: user_context
+                    kudo: false
+                    me_too: false
+                    read: false
+                    can_reply: false
+                    can_kudo: false
+                    can_delete: false
+                  device_id: firefox_102_0
+                  popularity: 0.0051057523800853225
+                  excluded_from_kudos_leaderboards: false
+                  is_promoted: false
+                metadata: {}
+  /messages/{message-id}/attachments/{attachment-id}:
+    get:
+      tags:
+        - default
+      summary: Get message attachment
+      description: Retrieve a specified attachment on a message
+      parameters:
+        - name: message-id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: attachment-id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json;charset=UTF-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '282'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Date:
+              schema:
+                type: string
+                example: Tue, 19 Jul 2022 19:46:45 GMT
+            Set-Cookie:
+              schema:
+                type: string
+                example: >-
+                  LithiumVisitor=~2DqQXskdhKrGvETmu~rTSwDjdvXZJNQj35zTx0zi1R13p3CaNUYDjzhv_-6PP8tavAVCvcFwZEfNXcPrxWI9StQo2HkmowXZehylz-qg..;
+                  Path=/; HttpOnly; Max-Age=315360000; Secure; SameSite=None
+            Server:
+              schema:
+                type: string
+                example: Apache
+            X-Frame-Options:
+              schema:
+                type: string
+                example: SAMEORIGIN
+            Vary:
+              schema:
+                type: string
+                example: >-
+                  Origin,Access-Control-Request-Headers,Access-Control-Request-Method,Access-Control-Allow-Credentials,Access-Control-Max-Age,Accept-Encoding
+            Content-Encoding:
+              schema:
+                type: string
+                example: gzip
+            X-Cache:
+              schema:
+                type: string
+                example: Miss from cloudfront
+            Via:
+              schema:
+                type: number
+                example: >-
+                  1.1 3a4d5aad46ae3a82da414d69565389aa.cloudfront.net
+                  (CloudFront)
+            X-Amz-Cf-Pop:
+              schema:
+                type: string
+                example: ARN54-C1
+            X-Amz-Cf-Id:
+              schema:
+                type: string
+                example: t5l76Tkt0G1_KtbSzgnxMqZnO2S72ZQOnLKycHOOVJXxbWRpmstxeg==
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: success
+                message: ''
+                http_code: 200
+                data:
+                  type: attachment
+                  id: '1'
+                  href: /messages/653/attachments/1
+                  filename: neo4j-community-logo-white.png
+                  filesize: 216885
+                  url: >-
+                    https://vbeyi74497.stage.lithium.com/vbeyi74497/attachments/vbeyi74497/experimental-forum/2/1/neo4j-community-logo-white.png
+                  content_type: image/png
+                  message:
+                    type: message
+                    id: '653'
+                    href: /messages/653
+                    view_href: >-
+                      https://vbeyi74497.stage.lithium.com/t5/experimental-forum/second-post/m-p/653#M2
+                  position: 1
+                metadata: {}
+  /messages/{message-id}/labels/{label-text}:
+    get:
+      tags:
+        - default
+      summary: Get message label
+      description: Retrieve a specified label applied to a message
+      parameters:
+        - name: message-id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: label-text
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json;charset=UTF-8
+            Transfer-Encoding:
+              schema:
+                type: string
+                example: chunked
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Date:
+              schema:
+                type: string
+                example: Tue, 19 Jul 2022 19:47:09 GMT
+            Set-Cookie:
+              schema:
+                type: string
+                example: >-
+                  LithiumVisitor=~2mDerVSOgiIDp6GBb~7Jl4TPaOJJRopi6FRNJropMB5C23vv1PGVQBcjKiqWVZPOOlnJ8mne4cbgvaOzPPNQuGx7gUblSSmfhlcOGvYg..;
+                  Path=/; HttpOnly; Max-Age=315360000; Secure; SameSite=None
+            Server:
+              schema:
+                type: string
+                example: Apache
+            X-Frame-Options:
+              schema:
+                type: string
+                example: SAMEORIGIN
+            Vary:
+              schema:
+                type: string
+                example: >-
+                  Origin,Access-Control-Request-Headers,Access-Control-Request-Method,Access-Control-Allow-Credentials,Access-Control-Max-Age,Accept-Encoding
+            Content-Encoding:
+              schema:
+                type: string
+                example: gzip
+            X-Cache:
+              schema:
+                type: string
+                example: Miss from cloudfront
+            Via:
+              schema:
+                type: number
+                example: >-
+                  1.1 3a4d5aad46ae3a82da414d69565389aa.cloudfront.net
+                  (CloudFront)
+            X-Amz-Cf-Pop:
+              schema:
+                type: string
+                example: ARN54-C1
+            X-Amz-Cf-Id:
+              schema:
+                type: string
+                example: qRHfVaAq-dlWlUFKdP8_nI8NUJYRf3fOXaQTrcEfEwC-lNbtrO0ETw==
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: success
+                message: ''
+                http_code: 200
+                data:
+                  type: label
+                  id: abk
+                  href: /labels/abk
+                  text: ABK
+                  messages:
+                    query: SELECT * FROM messages WHERE labels.text = 'ABK'
+                  time: '2022-07-18T05:02:27.352-07:00'
+                metadata: {}
+  /messages/{message-id}/products/{product-id}:
+    get:
+      tags:
+        - default
+      summary: Get product associated with message
+      description: Get a single product associated on a message with a product association
+      parameters:
+        - name: message-id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: product-id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json;charset=UTF-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '404'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Date:
+              schema:
+                type: string
+                example: Tue, 19 Jul 2022 19:47:33 GMT
+            Set-Cookie:
+              schema:
+                type: string
+                example: >-
+                  LithiumVisitor=~25pPPcRs6dJt01Kep~a77sR3SU27hL2m1BPpARkKPKSsYe75RtqgwuOaCA2DC_HSQ_d_HUsn6N-DPj0ELwJHWHW1TmoT6as4peZozFeA..;
+                  Path=/; HttpOnly; Max-Age=315360000; Secure; SameSite=None
+            Server:
+              schema:
+                type: string
+                example: Apache
+            X-Frame-Options:
+              schema:
+                type: string
+                example: SAMEORIGIN
+            Vary:
+              schema:
+                type: string
+                example: >-
+                  Origin,Access-Control-Request-Headers,Access-Control-Request-Method,Access-Control-Allow-Credentials,Access-Control-Max-Age,Accept-Encoding
+            Content-Encoding:
+              schema:
+                type: string
+                example: gzip
+            X-Cache:
+              schema:
+                type: string
+                example: Miss from cloudfront
+            Via:
+              schema:
+                type: number
+                example: >-
+                  1.1 3a4d5aad46ae3a82da414d69565389aa.cloudfront.net
+                  (CloudFront)
+            X-Amz-Cf-Pop:
+              schema:
+                type: string
+                example: ARN54-C1
+            X-Amz-Cf-Id:
+              schema:
+                type: string
+                example: i9xEhhnztHC43JmK-BWnFLfmNBZGonZIa7CFHJUQ9uYmjA5A-tT8cg==
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: success
+                message: ''
+                http_code: 200
+                data:
+                  type: product
+                  id: neo4j-graphql
+                  title: GraphQL
+                  description: >-
+                    An extensible, low-code, open source library designed for
+                    building API-driven, intelligent applications faster with a
+                    Neo4j graph database.
+                  status: active
+                  product_url: https://neo4j.com/product/graphql-library/
+                  image_url: >-
+                    https://devrel-images.s3.amazonaws.com/community-site/neo4j-graphql-node.png
+                  product_categories:
+                    query: >-
+                      SELECT * FROM product_categories WHERE products.id =
+                      'neo4j-graphql'
+                  manufacturer: Neo4j
+                  price:
+                    type: price
+                    currency: USD
+                  availability: '1'
+                metadata: {}
+  /messages/{message-id}/tags/{tag-text}:
+    get:
+      tags:
+        - default
+      summary: Get message tag
+      description: Retrieve an individual tag from a message
+      parameters:
+        - name: message-id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: tag-text
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json;charset=UTF-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '170'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Date:
+              schema:
+                type: string
+                example: Tue, 19 Jul 2022 19:48:23 GMT
+            Set-Cookie:
+              schema:
+                type: string
+                example: >-
+                  LithiumVisitor=~2a96uusnU8khyzKOt~iClza_yLP5n99uBeoT89s6AJGoigXR3SsRV_8kCH4SpgQGmBlGBbQ3msVwC2njzl0OmmGokRxlSE7Q4h5xagfw..;
+                  Path=/; HttpOnly; Max-Age=315360000; Secure; SameSite=None
+            Server:
+              schema:
+                type: string
+                example: Apache
+            X-Frame-Options:
+              schema:
+                type: string
+                example: SAMEORIGIN
+            Vary:
+              schema:
+                type: string
+                example: >-
+                  Origin,Access-Control-Request-Headers,Access-Control-Request-Method,Access-Control-Allow-Credentials,Access-Control-Max-Age,Accept-Encoding
+            Content-Encoding:
+              schema:
+                type: string
+                example: gzip
+            X-Cache:
+              schema:
+                type: string
+                example: Miss from cloudfront
+            Via:
+              schema:
+                type: number
+                example: >-
+                  1.1 3a4d5aad46ae3a82da414d69565389aa.cloudfront.net
+                  (CloudFront)
+            X-Amz-Cf-Pop:
+              schema:
+                type: string
+                example: ARN54-C1
+            X-Amz-Cf-Id:
+              schema:
+                type: string
+                example: LECGcmNPjcB0iHGYxRckFn0z1yBCy--9ly9mMld_F6S9cjamTGPGDA==
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: success
+                message: ''
+                http_code: 200
+                data:
+                  type: tag
+                  id: '41'
+                  href: /tags/41
+                  text: experiment
+                  messages:
+                    query: SELECT * FROM messages WHERE tags.text = 'experiment'
+                metadata: {}
