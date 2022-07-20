@@ -12,11 +12,13 @@ This library was generated with [Nx](https://nx.dev).
 ### Add a component
 
 ```sh
-nx g @nrwl/react:component --project=ui --directory=lib/components/{kind} --export=true --name={component-name} --dryRun
+nx g @nrwl/react:component --project=ui --directory=lib/components/{kind} --export=true --style=css --globalCss --name={component-name} --dryRun
 ```
 
 Where the kind of component is one of: `elements`, `sections`, `layout`:
 
+- `tokens` are component attributes, formalized into functions
+  - colors, typography, spacing
 - `elements` are small, single-purpose and generic
   - fixed height + width
 - `activities` combine elements with a common purpose

@@ -34,7 +34,7 @@ yarn-error.log
 testem.log
 /typings
 migrations.json
-.parcel-cache
+.parcel-cache/
 
 # System Files
 .DS_Store

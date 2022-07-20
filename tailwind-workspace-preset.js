@@ -22,5 +22,28 @@ module.exports = {
   plugins: [
     require('@tailwindcss/typography'),
     require('@tailwindcss/forms'),
+    require("daisyui")
   ],
+  daisyui: {
+    themes: [
+      {
+        neo4j: {
+          "primary": "#018BFF",
+          "secondary": "#FFDE63",
+          "accent": "#3DD4C5",
+          "neutral": "#B2B7BD",
+          "base-100": "#FFFFFF",
+          "base-200": "#333333",
+          "info": "#7AD1FF",
+          "success": "#44D4A4",
+          "warning": "#D9B54A",
+          "error": "#ED1252",
+        },
+      },
+      "light", "dark", "cupcake", "bumblebee", "emerald", "corporate", "synthwave", "retro", "cyberpunk", "valentine", "halloween", "garden", "forest", "aqua", "lofi", "pastel", "fantasy", "wireframe", "black", "luxury", "dracula", "cmyk", "autumn", "business", "acid", "lemonade", "night", "coffee", "winter"
+
+    ],
+    // prefix: "cc",
+  }
+  
 }

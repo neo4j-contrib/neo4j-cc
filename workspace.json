@@ -164,6 +164,58 @@
       },
       "tags": []
     },
+    "cli": {
+      "root": "apps/cli",
+      "sourceRoot": "apps/cli/src",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/node:webpack",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/cli",
+            "main": "apps/cli/src/main.ts",
+            "tsConfig": "apps/cli/tsconfig.app.json"
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/cli/src/environments/environment.ts",
+                  "with": "apps/cli/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "exec": {
+          "executor": "@nrwl/node:node",
+          "options": {
+            "buildTarget": "cli:build",
+            "watch": false
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/cli/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/cli"],
+          "options": {
+            "jestConfig": "apps/cli/jest.config.ts",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
     "client": {
       "$schema": "../../node_modules/nx/schemas/project-schema.json",
       "root": "apps/client",
@@ -281,6 +333,117 @@
       "tags": [],
       "implicitDependencies": ["client"]
     },
+    "daisy-prototype": {
+      "root": "apps/daisy-prototype",
+      "sourceRoot": "apps/daisy-prototype/src",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/web:webpack",
+          "outputs": ["{options.outputPath}"],
+          "defaultConfiguration": "production",
+          "options": {
+            "compiler": "babel",
+            "outputPath": "dist/apps/daisy-prototype",
+            "index": "apps/daisy-prototype/src/index.html",
+            "baseHref": "/",
+            "main": "apps/daisy-prototype/src/main.tsx",
+            "polyfills": "apps/daisy-prototype/src/polyfills.ts",
+            "tsConfig": "apps/daisy-prototype/tsconfig.app.json",
+            "assets": [
+              "apps/daisy-prototype/src/favicon.ico",
+              "apps/daisy-prototype/src/assets"
+            ],
+            "styles": ["apps/daisy-prototype/src/styles.scss"],
+            "scripts": [],
+            "webpackConfig": "@nrwl/react/plugins/webpack"
+          },
+          "configurations": {
+            "development": {
+              "extractLicenses": false,
+              "optimization": false,
+              "sourceMap": true,
+              "vendorChunk": true
+            },
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/daisy-prototype/src/environments/environment.ts",
+                  "with": "apps/daisy-prototype/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/web:dev-server",
+          "defaultConfiguration": "development",
+          "options": {
+            "buildTarget": "daisy-prototype:build",
+            "hmr": true
+          },
+          "configurations": {
+            "development": {
+              "buildTarget": "daisy-prototype:build:development"
+            },
+            "production": {
+              "buildTarget": "daisy-prototype:build:production",
+              "hmr": false
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/daisy-prototype/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/daisy-prototype"],
+          "options": {
+            "jestConfig": "apps/daisy-prototype/jest.config.ts",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "daisy-prototype-e2e": {
+      "root": "apps/daisy-prototype-e2e",
+      "sourceRoot": "apps/daisy-prototype-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/daisy-prototype-e2e/cypress.json",
+            "devServerTarget": "daisy-prototype:serve:development"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "daisy-prototype:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/daisy-prototype-e2e/**/*.{js,ts}"]
+          }
+        }
+      },
+      "tags": [],
+      "implicitDependencies": ["daisy-prototype"]
+    },
     "data-access-discourse": {
       "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/data-access/discourse",
@@ -299,6 +462,29 @@
           "outputs": ["coverage/libs/data-access/discourse"],
           "options": {
             "jestConfig": "libs/data-access/discourse/jest.config.ts",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "data-access-github": {
+      "root": "libs/data-access/github",
+      "sourceRoot": "libs/data-access/github/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/data-access/github/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/data-access/github"],
+          "options": {
+            "jestConfig": "libs/data-access/github/jest.config.ts",
             "passWithNoTests": true
           }
         }
@@ -328,6 +514,49 @@
           }
         }
       }
+    },
+    "data-access-khoros": {
+      "root": "libs/data-access/khoros",
+      "sourceRoot": "libs/data-access/khoros/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/data-access/khoros/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/data-access/khoros"],
+          "options": {
+            "jestConfig": "libs/data-access/khoros/jest.config.ts",
+            "passWithNoTests": true
+          }
+        },
+        "postman": {
+          "executor": "nx:run-commands",
+          "options": {
+            "command": "p2o ./libs/data-access/khoros/assets/khoros-v2-API.postman_collection.json -f ./libs/data-access/khoros/assets/khoros-v2-API.openapi.yml"
+          }
+        },
+        "openapi": {
+          "executor": "nx:run-commands",
+          "dependsOn": ["postman"],
+          "options": {
+            "command": "openapi -i libs/data-access/khoros/assets/khoros-v2-API.openapi.yml -o libs/data-access/khoros/src/lib/generated/ --name KhorosV2 --useOptions"
+          }
+        },
+        "quicktype": {
+          "executor": "nx:run-commands",
+          "dependsOn": ["openapi"],
+          "options": {
+            "command": "quicktype -s postman -o libs/data-access/khoros/src/lib/generated/models/quicktypes.ts libs/data-access/khoros/assets/khoros-v2-API.postman_collection.json"
+          }
+        }
+      },
+      "tags": []
     },
     "data-access-neo4j": {
       "$schema": "../../../node_modules/nx/schemas/project-schema.json",
@@ -1001,6 +1230,29 @@
       },
       "tags": [],
       "implicitDependencies": ["ui"]
+    },
+    "util-arbitrary": {
+      "root": "libs/util/arbitrary",
+      "sourceRoot": "libs/util/arbitrary/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/util/arbitrary/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/util/arbitrary"],
+          "options": {
+            "jestConfig": "libs/util/arbitrary/jest.config.ts",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
     }
   },
   "$schema": "./node_modules/nx/schemas/workspace-schema.json"

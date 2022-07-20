@@ -1,11 +1,12 @@
-import * as faker from 'faker';
+// import * as faker from 'faker';
+import { uuid, word, sentence, adjective, noun, emailAddress, httpUrl } from '@neo4j-cc/util-arbitrary'
 
 export const mockPerson = ():Record<string, unknown> => ({
-    identifier: faker.datatype.uuid(),
-    name: `${faker.name.firstName()} ${faker.name.lastName()}`,
-    description: faker.lorem.sentence(5),
-    email: faker.internet.email(),
-    image: faker.image.imageUrl(),
-    callSign: faker.internet.userName()
+    identifier: uuid(),
+    name: `${word()} ${word()}`,
+    description: sentence(),
+    email: emailAddress(),
+    image: httpUrl(),
+    callSign: `${adjective()} ${noun()}`
   })
 

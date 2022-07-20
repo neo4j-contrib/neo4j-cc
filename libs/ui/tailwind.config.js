@@ -4,15 +4,18 @@ const { join } = require('path');
 module.exports = {
   presets: [require('../../tailwind-workspace-preset.js')],
   content: [
-    join(__dirname,'../**/src/lib/**/*.{js,ts,jsx,tsx}'),
+    join(__dirname, './src/lib/**/*.{js,ts,jsx,tsx}'),
+    join(__dirname, '/.storybook/*.tsx'),
+    // join(__dirname, "../../node_modules/daisyui/dist/**/*.js"),
     ...createGlobPatternsForDependencies(__dirname),
   ],
-  darkMode: 'media', // or 'media' or 'class'
-  theme: {
-    extend: {},
-  },
-  variants: {
-    extend: {},
-  },
-  plugins: [],
+  safelist: [
+    {
+      pattern: /(alert|btn|card|dropdown).*/,
+      variants: ['sm', 'md', 'lg', 'xl', '2xl'],
+    },
+    {
+      pattern: /(primary|secondary|accent|neutral|base|info|success|warning|error).*/,
+    }
+  ],
 };
