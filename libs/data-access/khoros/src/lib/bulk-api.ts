@@ -43,6 +43,9 @@ export interface BulkApiRepo
 
 export const bulkApiRepo = Tag<BulkApiRepo>();
 
+/**
+ * TODO: take a look at Effect.Do() notation instead of Effect.gen
+ */
 export const makeBulkApiLive = Effect.gen(function* ($) {
   const Http = yield* $(httpService);
   const bulkApiConfig = yield* $(BulkApiConfig)
