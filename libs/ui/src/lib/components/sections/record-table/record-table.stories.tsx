@@ -3,7 +3,7 @@ import { RecordTable, RecordTableProps } from './record-table';
 
 export default {
   component: RecordTable,
-  title: 'RecordTable',
+  title: 'sections/RecordTable',
 } as Meta;
 
 const Template: Story<RecordTableProps> = (args) => <RecordTable {...args} />;
