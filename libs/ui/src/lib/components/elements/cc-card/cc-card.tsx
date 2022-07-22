@@ -1,18 +1,14 @@
-import * as React from 'react'
 
 import { Card, CardProps } from 'react-daisyui'
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface CcCardProps extends CardProps {}
 
-export class CcCard extends React.Component<CcCardProps> {
+export const CcCard = (props:CcCardProps) => (
+  <Card {...props} />
+)
 
-  static Title = Card.Title
-  static Actions = Card.Actions
-  static Image = Card.Image
-  static Body = Card.Body
-
-  render() {
-    return (<Card {...this.props} />);
-  }
-}
+CcCard.Title = Card.Title
+CcCard.Actions = Card.Actions
+CcCard.Image = Card.Image
+CcCard.Body = Card.Body

@@ -2,7 +2,9 @@ import './app.scss';
 
 import { Route, Routes, Link } from 'react-router-dom';
 
-import { Theme, Button } from 'react-daisyui'
+import { Theme } from 'react-daisyui'
+
+import { CcButton } from '@neo4j-cc/ui'
 
 export function App() {
   return (
@@ -20,7 +22,7 @@ export function App() {
             <Link to="/page-2">Page 2</Link>
           </li>
         </ul>
-        <Button color="primary">Click me at Home!</Button>
+        <CcButton color="primary">Click me at Home!</CcButton>
       </div>
       <Routes>
         <Route

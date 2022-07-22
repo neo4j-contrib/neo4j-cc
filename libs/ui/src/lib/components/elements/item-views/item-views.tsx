@@ -41,7 +41,7 @@ export interface ItemViewsProps {
 }
 
 export const ItemTextView = ({item}:ItemViewsProps) => (
-  <p className="bg-blue-200 h-full overflow-hidden p-1">{item}</p>
+  <p className="bg-blue-200 h-full overflow-hidden p-1">{JSON.stringify(item)}</p>
 )
 
 

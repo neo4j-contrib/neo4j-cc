@@ -6,11 +6,8 @@ import { Rating, RatingProps } from 'react-daisyui'
 /* eslint-disable-next-line */
 export interface CcRatingProps extends RatingProps {}
 
-export class CcRating extends React.Component<CcRatingProps> {
+export const CcRating = (props:CcRatingProps) => (
+  <Rating {...props} />
+)
 
-  static Item = Rating.Item
-
-  render() {
-    return (<Rating {...this.props} />);
-  }
-}
+CcRating.Item = Rating.Item

@@ -1,20 +1,14 @@
 import './cc-dropdown.css';
 
-import * as React from 'react'
-
 import { Dropdown, DropdownProps } from 'react-daisyui'
 
 /* eslint-disable-next-line */
 export interface CcDropdownProps extends DropdownProps {}
 
-export class CcDropdown extends React.Component<CcDropdownProps> {
+export const CcDropdown =(props:CcDropdownProps) => (
+  <Dropdown {...props} />
+);
 
-  static Toggle = Dropdown.Toggle
-  static Menu = Dropdown.Menu
-  static Item = Dropdown.Item
-
-  render() {
-    return (<Dropdown {...this.props} />);
-  }
-}
-
+CcDropdown.Toggle = Dropdown.Toggle
+CcDropdown.Menu = Dropdown.Menu
+CcDropdown.Item = Dropdown.Item

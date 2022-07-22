@@ -6,8 +6,8 @@ import { Dropdown, DropdownProps } from 'react-daisyui';
 import { CcDropdown, CcDropdownProps } from './cc-dropdown'
 
 export default {
-  component: Dropdown,
-  title: 'elements/Dropdown',
+  component: CcDropdown,
+  title: 'elements/CcDropdown',
 } as Meta;
 
 export const DaisyDropdown: Story<DropdownProps> = (args) => 

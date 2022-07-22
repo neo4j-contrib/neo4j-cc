@@ -1,11 +1,12 @@
 import './cc-site-layout.module.scss';
 
-import React, { Fragment } from 'react'
+import React, { Fragment, ReactNode } from 'react'
 import { CcSiteMenubar } from '../cc-site-menubar/cc-site-menubar';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface CcSiteLayoutProps {
   title?: string
+  children: ReactNode
 }
 
 const CcPageHeader:React.FC<{title?:string}> = ({title}) => {

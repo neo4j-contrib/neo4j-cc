@@ -19,10 +19,10 @@ export interface ItemListProps<ItemData extends Record<string, unknown>> {
 }
 
 export const ItemList = <ItemData extends Record<string, unknown>,>(props:ItemListProps<ItemData>) => {
-  const columns:Column<RowData<ItemData>>[] = React.useMemo(
-    ():Column<RowData<ItemData>>[] => [
+  const columns:Column<ItemData>[] = React.useMemo(
+    ():Column<ItemData>[] => [
       {
-        accessor: (originalRow, rowIndex) => {return originalRow.item}, // extracts the row value
+        accessor: (originalRow, rowIndex) => {return originalRow['item']}, // extracts the row value
         id: 'item',
         Cell: props.renderItem, // renders the extracted row value
         
@@ -30,8 +30,8 @@ export const ItemList = <ItemData extends Record<string, unknown>,>(props:ItemLi
     ],
     [props.renderItem]
   )
-  const data:RowData<ItemData>[] = React.useMemo(
-    () => props.items.map(d => ({item:d })),
+  const data:ItemData[] = React.useMemo(
+    () => props.items, //.map(d => ({item:d })),
      [props.items]
    )
 

@@ -6,11 +6,7 @@ import { Avatar, AvatarProps } from 'react-daisyui'
 /* eslint-disable-next-line */
 export interface CcAvatarProps extends AvatarProps {}
 
-export class CcAvatar extends React.Component<CcAvatarProps> {
+export const CcAvatar = (props:CcAvatarProps) => (<Avatar {...props} />)
 
-  static Group = Avatar.Group
+CcAvatar.Group = Avatar.Group
 
-  render() {
-    return (<Avatar {...this.props} />);
-  }
-}
