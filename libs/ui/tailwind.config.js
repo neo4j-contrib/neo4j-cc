@@ -13,7 +13,7 @@ module.exports = {
   safelist: process.env.NODE_ENV === "development" 
     ? [
         {
-          pattern: /(alert|avatar|badge|btn|card|carousel|checkbox|countdown|dropdown|form|kbd|label|modal|progress|radial-progress|range|stat|stats|swap|tooltip).*/,
+          pattern: /(alert|avatar|badge|btn|card|carousel|checkbox|countdown|dropdown|form|kbd|label|modal|progress|radial-progress|range|rating|select|stat|stats|swap|textarea|toggle|tooltip).*/,
           variants: ['sm', 'md', 'lg'],
         },
         {
