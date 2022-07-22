@@ -3,6 +3,7 @@ export const STORAGE_KEY = 'sb-react-cc-preview-theme'
 
 export const THEME_PICKER_LIST = [
   { name: 'neo4j', class: 'neo4j', color: '#018BFF' },
+  { name: 'nodes', class: 'nodes', color: '#0B297D' },
   { name: 'light', class: 'light', color: '#570df8' },
   { name: 'dark', class: 'dark', color: '#793ef9' },
   { name: 'cupcake', class: 'cupcake', color: '#65c3c8' },
