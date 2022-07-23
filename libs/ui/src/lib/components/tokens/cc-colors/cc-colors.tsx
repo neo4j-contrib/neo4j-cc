@@ -1,6 +1,7 @@
 import React, { forwardRef } from 'react'
 import { ButtonProps } from 'react-daisyui';
 import clsx from 'clsx'
+import { componentColors } from './constants';
 
 /* eslint-disable-next-line */
 export interface CcColorsProps {}
@@ -13,12 +14,12 @@ export function CcColors(props: CcColorsProps) {
   );
 }
 
-export const ColorNames =  ['primary'] as const
+export type CcColorName = typeof componentColors[number]
 
 export type CcColorSwatchProps =
   Omit<React.HTMLAttributes<HTMLDivElement>, 'color'> &
   {
-    color: typeof ColorNames[number]
+    color: CcColorName
   }
 
 export const CcColorSwatch = forwardRef<HTMLDivElement, CcColorSwatchProps>(

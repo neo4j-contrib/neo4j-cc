@@ -10,8 +10,9 @@ module.exports = {
     ...createGlobPatternsForDependencies(__dirname),
   ],
 
-  safelist: process.env.NODE_ENV === "development" 
-    ? [
+  safelist: 
+    // process.env.NODE_ENV === "development" ? 
+    [
         {
           pattern: /(alert|avatar|badge|btn|card|carousel|checkbox|countdown|dropdown|form|kbd|label|modal|progress|radial-progress|range|rating|select|stat|stats|swap|textarea|toggle|tooltip).*/,
           variants: ['sm', 'md', 'lg'],
@@ -20,12 +21,12 @@ module.exports = {
           pattern: /(primary|secondary|accent|neutral|ghost|base|info|success|warning|error).*/,
         },
         { 
-          pattern: /(ring|h|grid).*/,
+          pattern: /(ring|h|grid|bg).*/,
         },
         {
           pattern: /(w|left|right|top|bottom|gap)-(1\/2|4|5)/,
         }
       ]
-    : [ ] // nothing is safe in production... mwahahaha
+    // : [ ] // nothing is safe in production... mwahahaha
 };
 

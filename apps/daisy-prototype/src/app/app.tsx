@@ -5,45 +5,26 @@ import { Route, Routes, Link } from 'react-router-dom';
 import { Theme } from 'react-daisyui'
 
 import { CcButton } from '@neo4j-cc/ui'
+import {ProfilePage} from '../pages/profile-page/profile-page';
+import {HomePage} from '../pages/home-page/home-page';
 
 export function App() {
   return (
-    <Theme dataTheme="neo4j">
-
-      {/* START: routes */}
-      {/* These routes and navigation have been generated for you */}
-      {/* Feel free to move and update them to fit your needs */}
-      <div role="navigation">
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/page-2">Page 2</Link>
-          </li>
-        </ul>
-        <CcButton color="primary">Click me at Home!</CcButton>
+    <Theme dataTheme="light">
+      <div className="flex flex-row gap-4 p-2">
+        <Link to="/"><CcButton>Home</CcButton></Link>
+        <Link to="/profile"><CcButton>Profile</CcButton></Link>
       </div>
       <Routes>
         <Route
           path="/"
-          element={
-            <div>
-              This is the generated root route.{' '}
-              <Link to="/page-2">Click here for page 2.</Link>
-            </div>
-          }
+          element={<HomePage />}
         />
         <Route
-          path="/page-2"
-          element={
-            <div>
-              <Link to="/">Click here to go back to root page.</Link>
-            </div>
-          }
+          path="/profile"
+          element={<ProfilePage />}
         />
       </Routes>
-      {/* END: routes */}
     </Theme>
   );
 }
