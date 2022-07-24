@@ -13,7 +13,7 @@ export const StoryLayout = ({ children }) => {
   }, [globalTheme])
 
   return (
-    <Theme dataTheme={globalTheme} className="w-full h-screen p-8 bg-base-100">
+    <Theme dataTheme={globalTheme} className="w-full h-1/2 p-8 bg-base-100">
 
         <div className='block sm:hidden'>
           {children}

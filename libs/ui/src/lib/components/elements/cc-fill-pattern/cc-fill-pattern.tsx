@@ -5,28 +5,61 @@ import clsx from 'clsx'
 import { twMerge } from 'tailwind-merge'
 import { CcColorName } from '../../tokens/cc-colors/cc-colors';
 
+export const patternNames = [
+  'checkerboard',
+  'diagonal-checkerboard', 
+  'anchors',
+  'diagonal-stripes',
+  'honeycomb',
+  'stripes',
+  'vertical-stripes',
+  'zigzag',
+  'fishes',
+  'triangles',
+  'arrows',
+  'weave',
+  'marrakesh',
+  'carbon',
+  'carbonfiber',
+  'hearts',
+  'argyle',
+  'steps',
+  'waves',
+  'cross',
+  'yinyang',
+  'stars',
+  'bradybunch',
+  'shippo',
+  'bricks',
+  'seigaiha',
+  'qbert',
+  'polkadot',
+  'houndstooth',
+  'tartan',
+  'madras',
+  'blueprint',
+  'tablecloth',
+  'cicada',
+  'basket',
+  'circles-and-squares',
+  'tic-tac-toe',
+  'squares-in-squares' ,
+  'moroccan',
+  'pills',
+  'rounded-cross',
+  'dominos',
+  'hexagons',
+  'graph-paper',
+  'jupiter',
+  'jigsaw'
+] as const
+
+
+export type CcPatternName = typeof patternNames[number]
 
 export type CcFillPatternProps = Omit<React.BaseHTMLAttributes<HTMLDivElement>, 'color'> & {
   color?: CcColorName
-  pattern: 'checkerboard' | 
-    'diagonal-checkerboard' | 
-    'anchors' | 
-    'diagonal-stripes' | 
-    'honeycomb' | 
-    'stripes' | 
-    'vertical-stripes' |
-    'zigzag' |
-    'fishes' |
-    'triangles' |
-    'arrows' |
-    'weave' |
-    'marrakesh' |
-    'carbon' |
-    'carbonfiber' |
-    'hearts' |
-    'argyle' |
-    'steps' |
-    'waves'
+  pattern: CcPatternName
   children: ReactNode
 }
 

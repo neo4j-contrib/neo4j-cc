@@ -1,5 +1,5 @@
+export * from './lib/components/sections/cc-list/cc-list';
 export * from './lib/components/elements/cc-fill-pattern/cc-fill-pattern';
-
 export * from './lib/components/layouts/cc-panel/cc-panel';
 export * from './lib/components/layouts/cc-page/cc-page';
 export * from './lib/components/elements/cc-text-area/cc-text-area';

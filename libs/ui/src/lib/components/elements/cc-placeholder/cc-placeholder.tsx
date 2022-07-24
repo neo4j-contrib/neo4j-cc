@@ -2,7 +2,6 @@ import React, { forwardRef } from 'react'
 
 import { AlertProps, ButtonProps } from 'react-daisyui';
 
-/* eslint-disable-next-line */
 export type CcPlaceholderProps = 
   Omit<React.HTMLAttributes<HTMLDivElement>, 'color'> &
   Omit<AlertProps, 'icon' | 'status'> & 
