@@ -1,7 +1,7 @@
 {
   "npmScope": "neo4j-cc",
   "affected": {
-    "defaultBase": "master"
+    "defaultBase": "main"
   },
   "implicitDependencies": {
     "package.json": {
@@ -41,7 +41,7 @@
       }
     }
   },
-  "defaultProject": "client",
+  "defaultProject": "daisy-prototype",
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "targetDefaults": {
     "build": {

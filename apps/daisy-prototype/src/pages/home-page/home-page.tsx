@@ -7,7 +7,7 @@ export interface HomePageProps {}
 export function HomePage(props: HomePageProps) {
   return (
     <div className="w-full bg-base-100">
-      <h1 className="text-base-content">Welcome to HomePage!</h1>
+      <h1 className="text-base-content bg-primary">Welcome to HomePage!</h1>
       <p>Isn't it lovely</p>
       <CcCard>
         <CcCard.Title>User Profile</CcCard.Title>

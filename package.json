@@ -5,7 +5,9 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "predeploy": "NX_BASE_HREF=/neo4j-cc/ npm run build -- --prod --baseHref=/neo4j-cc/",
+    "deploy": "gh-pages -d dist/apps/daisy-prototype"
   },
   "private": true,
   "dependencies": {
@@ -149,6 +151,7 @@
     "eslint-plugin-jsx-a11y": "6.6.0",
     "eslint-plugin-react": "7.30.1",
     "eslint-plugin-react-hooks": "4.6.0",
+    "gh-pages": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
     "jest": "28.1.2",
     "jest-environment-jsdom": "^28.1.2",

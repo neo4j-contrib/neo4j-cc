@@ -9,7 +9,8 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={process.env['NX_BASE_HREF'] || '/'}>
+
       <App />
     </BrowserRouter>
   </StrictMode>

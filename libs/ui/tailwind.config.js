@@ -6,7 +6,7 @@ module.exports = {
   content: [
     join(__dirname, './src/lib/**/*.{js,ts,jsx,tsx}'),
     join(__dirname, './.storybook/*.tsx'),
-    // join(__dirname, "../../node_modules/daisyui/dist/**/*.js"),
+    join(__dirname, '../../node_modules/react-daisyui/dist/**/*.{js,ts,jsx,tsx}'),
     ...createGlobPatternsForDependencies(__dirname),
   ],
 
