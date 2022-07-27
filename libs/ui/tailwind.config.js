@@ -14,7 +14,7 @@ module.exports = {
     // process.env.NODE_ENV === "development" ? 
     [
         {
-          pattern: /(alert|avatar|badge|btn|card|carousel|checkbox|countdown|dropdown|form|kbd|label|modal|progress|radial-progress|range|rating|select|stat|stats|swap|textarea|toggle|tooltip).*/,
+          pattern: /(alert|avatar|badge|btn|card|carousel|checkbox|countdown|dropdown|form|kbd|label|menu|modal|navbar|progress|radial-progress|range|rating|select|stat|stats|swap|textarea|toggle|tooltip).*/,
           variants: ['sm', 'md', 'lg'],
         },
         {
