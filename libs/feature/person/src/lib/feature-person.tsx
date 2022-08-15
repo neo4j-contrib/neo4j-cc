@@ -1,12 +1,10 @@
 import './feature-person.module.css';
 
-import ReactJson from 'react-json-view';
-
 import { usePersonsQuery } from '@neo4j-cc/data-access/person'
 
 import { PersonList} from './components/person-list/person-list';
 
-export const Debug = ({src}:{src:object}) => <ReactJson src={src}/>
+export const Debug = ({src}:{src:object}) => <pre>{JSON.stringify(src)}</pre>
 
 /* eslint-disable-next-line */
 export interface FeaturePersonProps {}
