@@ -7,7 +7,9 @@
     "build": "nx build",
     "test": "nx test",
     "predeploy": "NX_BASE_HREF=/neo4j-cc/ npm run build -- --prod --baseHref=/neo4j-cc/",
-    "deploy": "gh-pages -d dist/apps/daisy-prototype"
+    "deploy": "gh-pages -d dist/apps/daisy-prototype",
+    "build-storybook": "nx run ui:build-storybook",
+    "deploy-storybook": "chromatic --build-script-name=build-storybook"
   },
   "private": true,
   "dependencies": {
@@ -142,6 +144,7 @@
     "@typescript-eslint/parser": "5.30.5",
     "babel-jest": "28.1.2",
     "babel-loader": "8.2.5",
+    "chromatic": "^6.7.1",
     "color-string": "^1.9.1",
     "cypress": "^9.7.0",
     "eslint": "8.19.0",

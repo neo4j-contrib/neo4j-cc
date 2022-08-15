@@ -35,6 +35,7 @@ testem.log
 /typings
 migrations.json
 .parcel-cache/
+build-storybook.log
 
 # System Files
 .DS_Store
