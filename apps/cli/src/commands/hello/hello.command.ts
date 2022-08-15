@@ -5,6 +5,5 @@ const run = async () => {
 
 export const HelloCommand = {
   name: 'hello',
-  alias: 'h',
   run
 }

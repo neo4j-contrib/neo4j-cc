@@ -1,0 +1,1196 @@
+{
+  "status" : "success",
+  "message" : "",
+  "http_code" : 200,
+  "data" : {
+    "type" : "messages",
+    "list_item_type" : "message",
+    "size" : 10,
+    "items" : [ 
+      {
+      "type" : "message",
+      "id" : "691",
+      "href" : "/messages/691",
+      "view_href" : "/t5/neo4j-forum/test-post/m-p/691#M18",
+      "author" : {
+        "type" : "user",
+        "id" : "80",
+        "href" : "/users/80",
+        "view_href" : "/t5/user/viewprofilepage/user-id/80",
+        "login" : "abk"
+      },
+      "subject" : "Re: test post",
+      "search_snippet" : "There is something attached to this message. \n &nbsp;",
+      "body" : "<P>There is something attached to this message.</P>\n<P>&nbsp;</P>",
+      "teaser" : "",
+      "board" : {
+        "type" : "board",
+        "id" : "graph_platform",
+        "href" : "/boards/graph_platform",
+        "view_href" : "/t5/neo4j-forum/bd-p/graph_platform"
+      },
+      "conversation" : {
+        "type" : "conversation",
+        "id" : "647",
+        "href" : "/conversations/647",
+        "view_href" : "/t5/neo4j-forum/test-post/td-p/647",
+        "style" : "forum",
+        "thread_style" : "forum",
+        "messages_count" : 4,
+        "solved" : false,
+        "last_post_time" : "2022-07-28T12:14:38.841-07:00",
+        "last_post_time_friendly" : "07-28-2022"
+      },
+      "topic" : {
+        "type" : "message",
+        "id" : "647",
+        "href" : "/messages/647",
+        "view_href" : "/t5/neo4j-forum/test-post/m-p/647#M14"
+      },
+      "parent" : {
+        "type" : "message",
+        "id" : "647",
+        "href" : "/messages/647",
+        "view_href" : "/t5/neo4j-forum/test-post/m-p/647#M14"
+      },
+      "post_time" : "2022-07-28T12:14:38.841-07:00",
+      "post_time_friendly" : "07-28-2022",
+      "depth" : 1,
+      "read_only" : false,
+      "edit_frozen" : false,
+      "language" : "EN",
+      "can_accept_solution" : true,
+      "placeholder" : false,
+      "is_solution" : false,
+      "solution_data" : { },
+      "metrics" : {
+        "type" : "message_metrics",
+        "views" : 0
+      },
+      "current_revision" : {
+        "type" : "revision",
+        "id" : "691_1",
+        "last_edit_author" : {
+          "type" : "user",
+          "id" : "80",
+          "href" : "/users/80",
+          "view_href" : "/t5/user/viewprofilepage/user-id/80",
+          "login" : "abk"
+        },
+        "last_edit_time" : "2022-07-28T12:14:38.841-07:00"
+      },
+      "kudos" : {
+        "query" : "SELECT * FROM kudos WHERE message.id = '691'"
+      },
+      "tags" : {
+        "query" : "SELECT * FROM tags WHERE messages.id = '691'"
+      },
+      "labels" : {
+        "query" : "SELECT * FROM labels WHERE messages.id = '691'"
+      },
+      "images" : {
+        "query" : "SELECT * FROM images WHERE messages.id = '691'"
+      },
+      "videos" : {
+        "query" : "SELECT * FROM videos WHERE messages.id = '691'"
+      },
+      "attachments" : {
+        "query" : "SELECT * FROM attachments WHERE message.id = '691'"
+      },
+      "replies" : {
+        "query" : "SELECT * FROM messages WHERE parent.id = '691'"
+      },
+      "ratings" : {
+        "query" : "SELECT * FROM ratings WHERE message.id = '691'"
+      },
+      "custom_tags" : {
+        "query" : "SELECT * FROM custom_tags WHERE messages.id = '691'"
+      },
+      "moderation_status" : "approved",
+      "user_context" : {
+        "type" : "user_context",
+        "kudo" : false,
+        "read" : false,
+        "can_reply" : true,
+        "can_kudo" : false,
+        "can_delete" : true
+      },
+      "device_id" : "firefox_101_0",
+      "popularity" : -0.9678063888888889,
+      "excluded_from_kudos_leaderboards" : false,
+      "is_promoted" : false
+    }, {
+      "type" : "message",
+      "id" : "690",
+      "href" : "/messages/690",
+      "view_href" : "/t5/neo4j-forum/test-post/m-p/690#M17",
+      "author" : {
+        "type" : "user",
+        "id" : "80",
+        "href" : "/users/80",
+        "view_href" : "/t5/user/viewprofilepage/user-id/80",
+        "login" : "abk"
+      },
+      "subject" : "Re: test post",
+      "search_snippet" : "Nesting a reply to myself. \n &nbsp;",
+      "body" : "<P>Nesting a reply to myself.</P>\n<P>&nbsp;</P>",
+      "teaser" : "",
+      "board" : {
+        "type" : "board",
+        "id" : "graph_platform",
+        "href" : "/boards/graph_platform",
+        "view_href" : "/t5/neo4j-forum/bd-p/graph_platform"
+      },
+      "conversation" : {
+        "type" : "conversation",
+        "id" : "647",
+        "href" : "/conversations/647",
+        "view_href" : "/t5/neo4j-forum/test-post/td-p/647",
+        "style" : "forum",
+        "thread_style" : "forum",
+        "messages_count" : 4,
+        "solved" : false,
+        "last_post_time" : "2022-07-28T12:14:38.841-07:00",
+        "last_post_time_friendly" : "07-28-2022"
+      },
+      "topic" : {
+        "type" : "message",
+        "id" : "647",
+        "href" : "/messages/647",
+        "view_href" : "/t5/neo4j-forum/test-post/m-p/647#M14"
+      },
+      "parent" : {
+        "type" : "message",
+        "id" : "688",
+        "href" : "/messages/688",
+        "view_href" : "/t5/neo4j-forum/test-post/m-p/688#M15"
+      },
+      "post_time" : "2022-07-28T04:53:35.046-07:00",
+      "post_time_friendly" : "07-28-2022",
+      "depth" : 2,
+      "read_only" : false,
+      "edit_frozen" : false,
+      "language" : "EN",
+      "can_accept_solution" : true,
+      "placeholder" : false,
+      "is_solution" : false,
+      "solution_data" : { },
+      "metrics" : {
+        "type" : "message_metrics",
+        "views" : 3
+      },
+      "current_revision" : {
+        "type" : "revision",
+        "id" : "690_1",
+        "last_edit_author" : {
+          "type" : "user",
+          "id" : "80",
+          "href" : "/users/80",
+          "view_href" : "/t5/user/viewprofilepage/user-id/80",
+          "login" : "abk"
+        },
+        "last_edit_time" : "2022-07-28T04:53:35.046-07:00"
+      },
+      "kudos" : {
+        "query" : "SELECT * FROM kudos WHERE message.id = '690'"
+      },
+      "tags" : {
+        "query" : "SELECT * FROM tags WHERE messages.id = '690'"
+      },
+      "labels" : {
+        "query" : "SELECT * FROM labels WHERE messages.id = '690'"
+      },
+      "images" : {
+        "query" : "SELECT * FROM images WHERE messages.id = '690'"
+      },
+      "videos" : {
+        "query" : "SELECT * FROM videos WHERE messages.id = '690'"
+      },
+      "attachments" : {
+        "query" : "SELECT * FROM attachments WHERE message.id = '690'"
+      },
+      "replies" : {
+        "query" : "SELECT * FROM messages WHERE parent.id = '690'"
+      },
+      "ratings" : {
+        "query" : "SELECT * FROM ratings WHERE message.id = '690'"
+      },
+      "custom_tags" : {
+        "query" : "SELECT * FROM custom_tags WHERE messages.id = '690'"
+      },
+      "moderation_status" : "approved",
+      "user_context" : {
+        "type" : "user_context",
+        "kudo" : false,
+        "read" : true,
+        "can_reply" : true,
+        "can_kudo" : false,
+        "can_delete" : true
+      },
+      "device_id" : "firefox_101_0",
+      "popularity" : -8.318868333333333,
+      "excluded_from_kudos_leaderboards" : false,
+      "is_promoted" : false
+    }, {
+      "type" : "message",
+      "id" : "689",
+      "href" : "/messages/689",
+      "view_href" : "/t5/neo4j-forum/personalized-profiles-drive-600-more-web-traffic/m-p/689#M16",
+      "author" : {
+        "type" : "user",
+        "id" : "80",
+        "href" : "/users/80",
+        "view_href" : "/t5/user/viewprofilepage/user-id/80",
+        "login" : "abk"
+      },
+      "subject" : "Re: Personalized Profiles Drive 600% More Web Traffic",
+      "search_snippet" : "Interesting. \n &nbsp; \n -ABK",
+      "body" : "<P>Interesting.</P>\n<P>&nbsp;</P>\n<P>-ABK</P>",
+      "teaser" : "",
+      "board" : {
+        "type" : "board",
+        "id" : "graph_platform",
+        "href" : "/boards/graph_platform",
+        "view_href" : "/t5/neo4j-forum/bd-p/graph_platform"
+      },
+      "conversation" : {
+        "type" : "conversation",
+        "id" : "406",
+        "href" : "/conversations/406",
+        "view_href" : "/t5/neo4j-forum/personalized-profiles-drive-600-more-web-traffic/td-p/406",
+        "style" : "forum",
+        "thread_style" : "forum",
+        "messages_count" : 2,
+        "solved" : false,
+        "last_post_time" : "2022-07-28T04:41:51.706-07:00",
+        "last_post_time_friendly" : "07-28-2022"
+      },
+      "topic" : {
+        "type" : "message",
+        "id" : "406",
+        "href" : "/messages/406",
+        "view_href" : "/t5/neo4j-forum/personalized-profiles-drive-600-more-web-traffic/m-p/406#M6"
+      },
+      "parent" : {
+        "type" : "message",
+        "id" : "406",
+        "href" : "/messages/406",
+        "view_href" : "/t5/neo4j-forum/personalized-profiles-drive-600-more-web-traffic/m-p/406#M6"
+      },
+      "post_time" : "2022-07-28T04:41:51.706-07:00",
+      "post_time_friendly" : "07-28-2022",
+      "depth" : 1,
+      "read_only" : false,
+      "edit_frozen" : false,
+      "language" : "EN",
+      "can_accept_solution" : true,
+      "placeholder" : false,
+      "is_solution" : false,
+      "solution_data" : { },
+      "metrics" : {
+        "type" : "message_metrics",
+        "views" : 1
+      },
+      "current_revision" : {
+        "type" : "revision",
+        "id" : "689_1",
+        "last_edit_author" : {
+          "type" : "user",
+          "id" : "80",
+          "href" : "/users/80",
+          "view_href" : "/t5/user/viewprofilepage/user-id/80",
+          "login" : "abk"
+        },
+        "last_edit_time" : "2022-07-28T04:41:51.706-07:00"
+      },
+      "kudos" : {
+        "query" : "SELECT * FROM kudos WHERE message.id = '689'"
+      },
+      "tags" : {
+        "query" : "SELECT * FROM tags WHERE messages.id = '689'"
+      },
+      "labels" : {
+        "query" : "SELECT * FROM labels WHERE messages.id = '689'"
+      },
+      "images" : {
+        "query" : "SELECT * FROM images WHERE messages.id = '689'"
+      },
+      "videos" : {
+        "query" : "SELECT * FROM videos WHERE messages.id = '689'"
+      },
+      "attachments" : {
+        "query" : "SELECT * FROM attachments WHERE message.id = '689'"
+      },
+      "replies" : {
+        "query" : "SELECT * FROM messages WHERE parent.id = '689'"
+      },
+      "ratings" : {
+        "query" : "SELECT * FROM ratings WHERE message.id = '689'"
+      },
+      "custom_tags" : {
+        "query" : "SELECT * FROM custom_tags WHERE messages.id = '689'"
+      },
+      "moderation_status" : "approved",
+      "user_context" : {
+        "type" : "user_context",
+        "kudo" : false,
+        "read" : true,
+        "can_reply" : true,
+        "can_kudo" : false,
+        "can_delete" : true
+      },
+      "device_id" : "firefox_101_0",
+      "popularity" : -8.5142475,
+      "excluded_from_kudos_leaderboards" : false,
+      "is_promoted" : false
+    }, {
+      "type" : "message",
+      "id" : "688",
+      "href" : "/messages/688",
+      "view_href" : "/t5/neo4j-forum/test-post/m-p/688#M15",
+      "author" : {
+        "type" : "user",
+        "id" : "80",
+        "href" : "/users/80",
+        "view_href" : "/t5/user/viewprofilepage/user-id/80",
+        "login" : "abk"
+      },
+      "subject" : "Re: test post",
+      "search_snippet" : "Replying to Trevor. This message is not a topic. Does it have a parent? \n -ABK",
+      "body" : "<P>Replying to Trevor. This message is not a topic. Does it have a parent?</P>\n<P>-ABK</P>",
+      "teaser" : "",
+      "board" : {
+        "type" : "board",
+        "id" : "graph_platform",
+        "href" : "/boards/graph_platform",
+        "view_href" : "/t5/neo4j-forum/bd-p/graph_platform"
+      },
+      "conversation" : {
+        "type" : "conversation",
+        "id" : "647",
+        "href" : "/conversations/647",
+        "view_href" : "/t5/neo4j-forum/test-post/td-p/647",
+        "style" : "forum",
+        "thread_style" : "forum",
+        "messages_count" : 4,
+        "solved" : false,
+        "last_post_time" : "2022-07-28T12:14:38.841-07:00",
+        "last_post_time_friendly" : "07-28-2022"
+      },
+      "topic" : {
+        "type" : "message",
+        "id" : "647",
+        "href" : "/messages/647",
+        "view_href" : "/t5/neo4j-forum/test-post/m-p/647#M14"
+      },
+      "parent" : {
+        "type" : "message",
+        "id" : "647",
+        "href" : "/messages/647",
+        "view_href" : "/t5/neo4j-forum/test-post/m-p/647#M14"
+      },
+      "post_time" : "2022-07-28T04:39:10.745-07:00",
+      "post_time_friendly" : "07-28-2022",
+      "depth" : 1,
+      "read_only" : false,
+      "edit_frozen" : false,
+      "language" : "EN",
+      "can_accept_solution" : true,
+      "placeholder" : false,
+      "is_solution" : false,
+      "solution_data" : { },
+      "metrics" : {
+        "type" : "message_metrics",
+        "views" : 4
+      },
+      "current_revision" : {
+        "type" : "revision",
+        "id" : "688_1",
+        "last_edit_author" : {
+          "type" : "user",
+          "id" : "80",
+          "href" : "/users/80",
+          "view_href" : "/t5/user/viewprofilepage/user-id/80",
+          "login" : "abk"
+        },
+        "last_edit_time" : "2022-07-28T04:39:10.745-07:00"
+      },
+      "kudos" : {
+        "query" : "SELECT * FROM kudos WHERE message.id = '688'"
+      },
+      "tags" : {
+        "query" : "SELECT * FROM tags WHERE messages.id = '688'"
+      },
+      "labels" : {
+        "query" : "SELECT * FROM labels WHERE messages.id = '688'"
+      },
+      "images" : {
+        "query" : "SELECT * FROM images WHERE messages.id = '688'"
+      },
+      "videos" : {
+        "query" : "SELECT * FROM videos WHERE messages.id = '688'"
+      },
+      "attachments" : {
+        "query" : "SELECT * FROM attachments WHERE message.id = '688'"
+      },
+      "replies" : {
+        "query" : "SELECT * FROM messages WHERE parent.id = '688'"
+      },
+      "ratings" : {
+        "query" : "SELECT * FROM ratings WHERE message.id = '688'"
+      },
+      "custom_tags" : {
+        "query" : "SELECT * FROM custom_tags WHERE messages.id = '688'"
+      },
+      "moderation_status" : "approved",
+      "user_context" : {
+        "type" : "user_context",
+        "kudo" : false,
+        "read" : true,
+        "can_reply" : true,
+        "can_kudo" : false,
+        "can_delete" : true
+      },
+      "device_id" : "firefox_101_0",
+      "popularity" : -8.558963333333333,
+      "excluded_from_kudos_leaderboards" : false,
+      "is_promoted" : false
+    }, {
+      "type" : "message",
+      "id" : "686",
+      "href" : "/messages/686",
+      "view_href" : "/t5/community-blog/recipe-build-a-name-generation-app-with-wordnet-nestjs-graphql/ba-p/686",
+      "author" : {
+        "type" : "user",
+        "id" : "80",
+        "href" : "/users/80",
+        "view_href" : "/t5/user/viewprofilepage/user-id/80",
+        "login" : "abk"
+      },
+      "subject" : "Recipe: Build a name generation app with WordNet, Nestjs, GraphQL, Bloom",
+      "search_snippet" : "What we'll build \n We'll pull WordNet into Neo4j, wrap it in a nice GraphQL interface, then place a simple web front-end on it to generate names based on some seed words. \n References: \n \n neo4j/grap...",
+      "body" : "<H2 id=\"toc-hId--671772716\">What we'll build</H2>\n<P>We'll pull WordNet into Neo4j, wrap it in a nice GraphQL interface, then place a simple web front-end on it to generate names based on some seed words.</P>\n<H3 id=\"toc-hId-216654486\">References:</H3>\n<UL>\n<LI><a href=\"https://vbeyi74497.stage.lithium.com/t5/code-catalog/neo4j-graphql/m-p/684#U684\" class=\"lia-mention-container-editor-message lia-img-icon-tkb-thread lia-fa-icon lia-fa-tkb lia-fa-thread lia-fa\">neo4j/graphql</a>&nbsp;</LI>\n<LI><a href=\"https://vbeyi74497.stage.lithium.com/t5/code-catalog/nestjs/m-p/687#U687\" class=\"lia-mention-container-editor-message lia-img-icon-tkb-thread lia-fa-icon lia-fa-tkb lia-fa-thread lia-fa\">NestJS</a>&nbsp;</LI>\n<LI><a href=\"https://vbeyi74497.stage.lithium.com/t5/data-catalog/wordnet/m-p/676#U676\" class=\"lia-mention-container-editor-message lia-img-icon-tkb-thread lia-fa-icon lia-fa-tkb lia-fa-thread lia-fa\">WordNet</a>&nbsp;</LI>\n<LI>&nbsp;<a href=\"https://vbeyi74497.stage.lithium.com/t5/c-vbeyi74497/Bloom/pd-p/neo4j-bloom\" class=\"lia-product-mention\" data-product=\"5-1\">Bloom</a>&nbsp;</LI>\n</UL>\n<P>&nbsp;</P>",
+      "teaser" : "<P><STRONG>TL;DR</STRONG> We'll pull WordNet into Neo4j, wrap it in a nice GraphQL interface, then place a simple web front-end on it to generate names based on some seed words.</P>",
+      "board" : {
+        "type" : "board",
+        "id" : "community-blog",
+        "href" : "/boards/community-blog",
+        "view_href" : "/t5/community-blog/bg-p/community-blog"
+      },
+      "conversation" : {
+        "type" : "conversation",
+        "id" : "686",
+        "href" : "/conversations/686",
+        "view_href" : "/t5/community-blog/recipe-build-a-name-generation-app-with-wordnet-nestjs-graphql/ba-p/686",
+        "style" : "blog",
+        "thread_style" : "blog",
+        "messages_count" : 1,
+        "solved" : false,
+        "last_post_time" : "2022-07-27T04:25:10.138-07:00",
+        "last_post_time_friendly" : "07-27-2022"
+      },
+      "topic" : {
+        "type" : "message",
+        "id" : "686",
+        "href" : "/messages/686",
+        "view_href" : "/t5/community-blog/recipe-build-a-name-generation-app-with-wordnet-nestjs-graphql/ba-p/686"
+      },
+      "post_time" : "2022-07-27T04:25:10.138-07:00",
+      "post_time_friendly" : "07-27-2022",
+      "depth" : 0,
+      "read_only" : false,
+      "edit_frozen" : false,
+      "language" : "EN",
+      "can_accept_solution" : false,
+      "placeholder" : false,
+      "is_solution" : false,
+      "solution_data" : { },
+      "metrics" : {
+        "type" : "message_metrics",
+        "views" : 7
+      },
+      "current_revision" : {
+        "type" : "revision",
+        "id" : "686_4",
+        "last_edit_author" : {
+          "type" : "user",
+          "id" : "80",
+          "href" : "/users/80",
+          "view_href" : "/t5/user/viewprofilepage/user-id/80",
+          "login" : "abk"
+        },
+        "last_edit_time" : "2022-07-27T04:27:46.322-07:00"
+      },
+      "kudos" : {
+        "query" : "SELECT * FROM kudos WHERE message.id = '686'"
+      },
+      "tags" : {
+        "query" : "SELECT * FROM tags WHERE messages.id = '686'"
+      },
+      "labels" : {
+        "query" : "SELECT * FROM labels WHERE messages.id = '686'"
+      },
+      "images" : {
+        "query" : "SELECT * FROM images WHERE messages.id = '686'"
+      },
+      "videos" : {
+        "query" : "SELECT * FROM videos WHERE messages.id = '686'"
+      },
+      "attachments" : {
+        "query" : "SELECT * FROM attachments WHERE message.id = '686'"
+      },
+      "replies" : {
+        "query" : "SELECT * FROM messages WHERE parent.id = '686'"
+      },
+      "ratings" : {
+        "query" : "SELECT * FROM ratings WHERE message.id = '686'"
+      },
+      "custom_tags" : {
+        "query" : "SELECT * FROM custom_tags WHERE messages.id = '686'"
+      },
+      "moderation_status" : "approved",
+      "user_context" : {
+        "type" : "user_context",
+        "kudo" : false,
+        "read" : true,
+        "can_reply" : false,
+        "can_kudo" : false,
+        "can_delete" : true
+      },
+      "device_id" : "firefox_101_0",
+      "popularity" : -32.79249472222222,
+      "excluded_from_kudos_leaderboards" : false,
+      "latest_version" : "2",
+      "content_workflow" : {
+        "type" : "content_workflow",
+        "state" : "publish",
+        "message_draft_history" : {
+          "query" : "SELECT * FROM message_draft_history WHERE message.id = '686'"
+        },
+        "user_context" : {
+          "type" : "message_workflow_context",
+          "can_edit" : true
+        },
+        "view_href" : "https://vbeyi74497.stage.lithium.com/t5/blogs/blogworkflowpage/blog-id/community-blog/article-id/1"
+      },
+      "is_promoted" : false
+    }, {
+      "type" : "message",
+      "id" : "687",
+      "href" : "/messages/687",
+      "view_href" : "/t5/code-catalog/nestjs/ta-p/687",
+      "author" : {
+        "type" : "user",
+        "id" : "80",
+        "href" : "/users/80",
+        "view_href" : "/t5/user/viewprofilepage/user-id/80",
+        "login" : "abk"
+      },
+      "subject" : "NestJS",
+      "search_snippet" : "A progressive Node.js framework for building efficient, scalable, and enterprise-grade server-side applications on top of TypeScript &amp; JavaScript (ES6, ES7, ES8)  <span class=\"lia-unicode-emoji\" title=\":rocket:\">🚀</span>  \n &nbsp; \n References \n \n Ho...",
+      "body" : "<P class=\"f4 my-3\" style=\"box-sizing: border-box; margin-top: 16px !important; margin-bottom: 16px !important; font-size: 16px !important;\">A progressive Node.js framework for building efficient, scalable, and enterprise-grade server-side applications on top of TypeScript &amp; JavaScript (ES6, ES7, ES8) <span class=\"lia-unicode-emoji\" title=\":rocket:\">🚀</span></P>\n<DIV class=\"my-3 d-flex flex-items-center\" style=\"box-sizing: border-box; align-items: center !important; margin-top: 16px !important; margin-bottom: 16px !important; display: flex !important;\">&nbsp;</DIV>\n<H3 id=\"toc-hId-215730966\">References</H3>\n<UL>\n<LI>Homepage: <A href=\"https://nestjs.com\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">https://nestjs.com</A></LI>\n<LI>Repository: <A href=\"https://github.com/nestjs/nest\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">https://github.com/nestjs/nest</A></LI>\n</UL>",
+      "teaser" : "",
+      "board" : {
+        "type" : "board",
+        "id" : "code-catalog",
+        "href" : "/boards/code-catalog",
+        "view_href" : "/t5/code-catalog/tkb-p/code-catalog"
+      },
+      "conversation" : {
+        "type" : "conversation",
+        "id" : "687",
+        "href" : "/conversations/687",
+        "view_href" : "/t5/code-catalog/nestjs/ta-p/687",
+        "style" : "tkb",
+        "thread_style" : "tkb",
+        "messages_count" : 1,
+        "solved" : false,
+        "last_post_time" : "2022-07-27T04:20:46.298-07:00",
+        "last_post_time_friendly" : "07-27-2022"
+      },
+      "topic" : {
+        "type" : "message",
+        "id" : "687",
+        "href" : "/messages/687",
+        "view_href" : "/t5/code-catalog/nestjs/ta-p/687"
+      },
+      "post_time" : "2022-07-27T04:20:46.298-07:00",
+      "post_time_friendly" : "07-27-2022",
+      "depth" : 0,
+      "read_only" : false,
+      "edit_frozen" : false,
+      "language" : "EN",
+      "can_accept_solution" : false,
+      "placeholder" : false,
+      "is_solution" : false,
+      "solution_data" : { },
+      "metrics" : {
+        "type" : "message_metrics",
+        "views" : 2
+      },
+      "current_revision" : {
+        "type" : "revision",
+        "id" : "687_1",
+        "last_edit_author" : {
+          "type" : "user",
+          "id" : "80",
+          "href" : "/users/80",
+          "view_href" : "/t5/user/viewprofilepage/user-id/80",
+          "login" : "abk"
+        },
+        "last_edit_time" : "2022-07-27T04:20:46.298-07:00"
+      },
+      "kudos" : {
+        "query" : "SELECT * FROM kudos WHERE message.id = '687'"
+      },
+      "tags" : {
+        "query" : "SELECT * FROM tags WHERE messages.id = '687'"
+      },
+      "labels" : {
+        "query" : "SELECT * FROM labels WHERE messages.id = '687'"
+      },
+      "images" : {
+        "query" : "SELECT * FROM images WHERE messages.id = '687'"
+      },
+      "videos" : {
+        "query" : "SELECT * FROM videos WHERE messages.id = '687'"
+      },
+      "attachments" : {
+        "query" : "SELECT * FROM attachments WHERE message.id = '687'"
+      },
+      "replies" : {
+        "query" : "SELECT * FROM messages WHERE parent.id = '687'"
+      },
+      "ratings" : {
+        "query" : "SELECT * FROM ratings WHERE message.id = '687'"
+      },
+      "custom_tags" : {
+        "query" : "SELECT * FROM custom_tags WHERE messages.id = '687'"
+      },
+      "moderation_status" : "approved",
+      "user_context" : {
+        "type" : "user_context",
+        "kudo" : false,
+        "read" : true,
+        "can_reply" : true,
+        "can_kudo" : false,
+        "can_delete" : true
+      },
+      "device_id" : "firefox_101_0",
+      "contributors" : {
+        "query" : "SELECT * FROM users WHERE messages_contributed.id = '687'"
+      },
+      "helpfulness_allowed" : false,
+      "popularity" : -32.86579777777778,
+      "excluded_from_kudos_leaderboards" : false,
+      "latest_version" : "1",
+      "content_workflow" : {
+        "type" : "content_workflow",
+        "state" : "publish",
+        "message_draft_history" : {
+          "query" : "SELECT * FROM message_draft_history WHERE message.id = '687'"
+        },
+        "user_context" : {
+          "type" : "message_workflow_context",
+          "can_edit" : true
+        },
+        "view_href" : "https://vbeyi74497.stage.lithium.com/t5/tkb/workflowpage/tkb-id/code-catalog/article-id/14"
+      },
+      "is_promoted" : false
+    }, {
+      "type" : "message",
+      "id" : "685",
+      "href" : "/messages/685",
+      "view_href" : "/t5/code-catalog/neo4j-graphql/ta-p/685",
+      "author" : {
+        "type" : "user",
+        "id" : "80",
+        "href" : "/users/80",
+        "view_href" : "/t5/user/viewprofilepage/user-id/80",
+        "login" : "abk"
+      },
+      "subject" : "@neo4j/graphql",
+      "search_snippet" : "A GraphQL to Cypher query execution layer for Neo4j and JavaScript GraphQL implementations. \n &nbsp; \n Install \n  npm install @neo4j/graphql  \n &nbsp; \n References: \n \n Repository: https://github.com...",
+      "body" : "<P style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 16px;\">A GraphQL to Cypher query execution layer for Neo4j and JavaScript GraphQL implementations.</P>\n<H3 style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 16px;\" id=\"toc-hId-215730964\">&nbsp;</H3>\n<H3 style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 16px;\" id=\"toc-hId-216654485\">Install</H3>\n<PRE class=\"notranslate\" style=\"box-sizing: border-box; font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; font-size: 13.600000381469727px; margin-top: 0px; margin-bottom: 16px; word-wrap: normal; padding: 16px; overflow: auto; line-height: 1.45; background-color: var(--color-canvas-subtle); border-radius: 6px; caret-color: #24292f; color: #24292f; font-style: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; text-decoration: none;\"><CODE style=\"box-sizing: border-box; font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; font-size: 13.600000381469727px; padding: 0px; margin: 0px; background-color: transparent; border-radius: 6px; word-break: normal; white-space: pre; border: 0px; display: inline; overflow: visible; line-height: inherit; word-wrap: normal;\">npm install @neo4j/graphql</CODE></PRE>\n<H3 style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 16px;\" id=\"toc-hId-217578006\">&nbsp;</H3>\n<H3 style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 16px;\" id=\"toc-hId-218501527\">References:</H3>\n<UL>\n<LI style=\"box-sizing: border-box;\">Repository: <A href=\"https://github.com/neo4j/graphql/\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">https://github.com/neo4j/graphql/</A></LI>\n<LI style=\"box-sizing: border-box;\">Package: <A href=\"https://www.npmjs.com/package/@neo4j/graphql\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">https://www.npmjs.com/package/@neo4j/graphql</A></LI>\n</UL>",
+      "teaser" : "",
+      "board" : {
+        "type" : "board",
+        "id" : "code-catalog",
+        "href" : "/boards/code-catalog",
+        "view_href" : "/t5/code-catalog/tkb-p/code-catalog"
+      },
+      "conversation" : {
+        "type" : "conversation",
+        "id" : "685",
+        "href" : "/conversations/685",
+        "view_href" : "/t5/code-catalog/neo4j-graphql/ta-p/685",
+        "style" : "tkb",
+        "thread_style" : "tkb",
+        "messages_count" : 1,
+        "solved" : false,
+        "last_post_time" : "2022-07-27T04:08:32.855-07:00",
+        "last_post_time_friendly" : "07-27-2022"
+      },
+      "topic" : {
+        "type" : "message",
+        "id" : "685",
+        "href" : "/messages/685",
+        "view_href" : "/t5/code-catalog/neo4j-graphql/ta-p/685"
+      },
+      "post_time" : "2022-07-27T04:08:32.855-07:00",
+      "post_time_friendly" : "07-27-2022",
+      "depth" : 0,
+      "read_only" : false,
+      "edit_frozen" : false,
+      "language" : "EN",
+      "can_accept_solution" : false,
+      "placeholder" : false,
+      "is_solution" : false,
+      "solution_data" : { },
+      "metrics" : {
+        "type" : "message_metrics",
+        "views" : 2
+      },
+      "current_revision" : {
+        "type" : "revision",
+        "id" : "685_2",
+        "last_edit_author" : {
+          "type" : "user",
+          "id" : "80",
+          "href" : "/users/80",
+          "view_href" : "/t5/user/viewprofilepage/user-id/80",
+          "login" : "abk"
+        },
+        "last_edit_time" : "2022-07-27T04:11:44.857-07:00"
+      },
+      "kudos" : {
+        "query" : "SELECT * FROM kudos WHERE message.id = '685'"
+      },
+      "tags" : {
+        "query" : "SELECT * FROM tags WHERE messages.id = '685'"
+      },
+      "labels" : {
+        "query" : "SELECT * FROM labels WHERE messages.id = '685'"
+      },
+      "images" : {
+        "query" : "SELECT * FROM images WHERE messages.id = '685'"
+      },
+      "videos" : {
+        "query" : "SELECT * FROM videos WHERE messages.id = '685'"
+      },
+      "attachments" : {
+        "query" : "SELECT * FROM attachments WHERE message.id = '685'"
+      },
+      "replies" : {
+        "query" : "SELECT * FROM messages WHERE parent.id = '685'"
+      },
+      "ratings" : {
+        "query" : "SELECT * FROM ratings WHERE message.id = '685'"
+      },
+      "custom_tags" : {
+        "query" : "SELECT * FROM custom_tags WHERE messages.id = '685'"
+      },
+      "moderation_status" : "approved",
+      "user_context" : {
+        "type" : "user_context",
+        "kudo" : false,
+        "read" : true,
+        "can_reply" : true,
+        "can_kudo" : false,
+        "can_delete" : true
+      },
+      "device_id" : "firefox_101_0",
+      "contributors" : {
+        "query" : "SELECT * FROM users WHERE messages_contributed.id = '685'"
+      },
+      "helpfulness_allowed" : false,
+      "popularity" : -33.06954972222222,
+      "excluded_from_kudos_leaderboards" : false,
+      "latest_version" : "2",
+      "content_workflow" : {
+        "type" : "content_workflow",
+        "state" : "publish",
+        "message_draft_history" : {
+          "query" : "SELECT * FROM message_draft_history WHERE message.id = '685'"
+        },
+        "user_context" : {
+          "type" : "message_workflow_context",
+          "can_edit" : true
+        },
+        "view_href" : "https://vbeyi74497.stage.lithium.com/t5/tkb/workflowpage/tkb-id/code-catalog/article-id/13"
+      },
+      "is_promoted" : false
+    }, {
+      "type" : "message",
+      "id" : "684",
+      "href" : "/messages/684",
+      "view_href" : "/t5/code-catalog/neo4j-graphql/ta-p/684",
+      "author" : {
+        "type" : "user",
+        "id" : "80",
+        "href" : "/users/80",
+        "view_href" : "/t5/user/viewprofilepage/user-id/80",
+        "login" : "abk"
+      },
+      "subject" : "neo4j/graphql",
+      "search_snippet" : "The Neo4j GraphQL Library is a highly flexible, low-code, open source JavaScript library that enables rapid API development for cross-platform and mobile applications by tapping into the power of con...",
+      "body" : "<DIV class=\"paragraph\" style=\"box-sizing: inherit; margin: 0px 0px 1.5rem;\">\n<P style=\"box-sizing: inherit; margin: 0px;\">The Neo4j GraphQL Library is a highly flexible, low-code, open source JavaScript library that enables rapid API development for cross-platform and mobile applications by tapping into the power of connected data.</P>\n</DIV>\n<DIV class=\"paragraph\" style=\"box-sizing: inherit; margin: 0px 0px 1.5rem;\">\n<P style=\"box-sizing: inherit; margin: 0px;\">With Neo4j as the graph database, the GraphQL Library makes it simple for applications to have application data treated as a graph natively from the front-end all the way to storage, avoiding duplicate schema work and ensuring flawless integration between front-end and backend developers.</P>\n</DIV>\n<DIV class=\"paragraph\" style=\"box-sizing: inherit; margin: 0px 0px 1.5rem;\">\n<P style=\"box-sizing: inherit; margin: 0px;\">Written in TypeScript, the library’s schema-first paradigm lets developers focus on the application data they need, while taking care of the heavy lifting involved in building the API.</P>\n<P style=\"box-sizing: inherit; margin: 0px;\">&nbsp;</P>\n</DIV>\n<H3 id=\"toc-hId-215730963\">References:</H3>\n<UL>\n<LI>Repository: <A href=\"https://github.com/neo4j/graphql\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">https://github.com/neo4j/graphql</A></LI>\n<LI>Docs: <A href=\"https://neo4j.com/docs/graphql-manual/current/\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">https://neo4j.com/docs/graphql-manual/current/</A></LI>\n</UL>",
+      "teaser" : "",
+      "board" : {
+        "type" : "board",
+        "id" : "code-catalog",
+        "href" : "/boards/code-catalog",
+        "view_href" : "/t5/code-catalog/tkb-p/code-catalog"
+      },
+      "conversation" : {
+        "type" : "conversation",
+        "id" : "684",
+        "href" : "/conversations/684",
+        "view_href" : "/t5/code-catalog/neo4j-graphql/ta-p/684",
+        "style" : "tkb",
+        "thread_style" : "tkb",
+        "messages_count" : 1,
+        "solved" : false,
+        "last_post_time" : "2022-07-27T04:07:26.918-07:00",
+        "last_post_time_friendly" : "07-27-2022"
+      },
+      "topic" : {
+        "type" : "message",
+        "id" : "684",
+        "href" : "/messages/684",
+        "view_href" : "/t5/code-catalog/neo4j-graphql/ta-p/684"
+      },
+      "post_time" : "2022-07-27T04:07:26.918-07:00",
+      "post_time_friendly" : "07-27-2022",
+      "depth" : 0,
+      "read_only" : false,
+      "edit_frozen" : false,
+      "language" : "EN",
+      "can_accept_solution" : false,
+      "placeholder" : false,
+      "is_solution" : false,
+      "solution_data" : { },
+      "metrics" : {
+        "type" : "message_metrics",
+        "views" : 4
+      },
+      "current_revision" : {
+        "type" : "revision",
+        "id" : "684_1",
+        "last_edit_author" : {
+          "type" : "user",
+          "id" : "80",
+          "href" : "/users/80",
+          "view_href" : "/t5/user/viewprofilepage/user-id/80",
+          "login" : "abk"
+        },
+        "last_edit_time" : "2022-07-27T04:07:26.918-07:00"
+      },
+      "kudos" : {
+        "query" : "SELECT * FROM kudos WHERE message.id = '684'"
+      },
+      "tags" : {
+        "query" : "SELECT * FROM tags WHERE messages.id = '684'"
+      },
+      "labels" : {
+        "query" : "SELECT * FROM labels WHERE messages.id = '684'"
+      },
+      "images" : {
+        "query" : "SELECT * FROM images WHERE messages.id = '684'"
+      },
+      "videos" : {
+        "query" : "SELECT * FROM videos WHERE messages.id = '684'"
+      },
+      "attachments" : {
+        "query" : "SELECT * FROM attachments WHERE message.id = '684'"
+      },
+      "replies" : {
+        "query" : "SELECT * FROM messages WHERE parent.id = '684'"
+      },
+      "ratings" : {
+        "query" : "SELECT * FROM ratings WHERE message.id = '684'"
+      },
+      "custom_tags" : {
+        "query" : "SELECT * FROM custom_tags WHERE messages.id = '684'"
+      },
+      "moderation_status" : "approved",
+      "user_context" : {
+        "type" : "user_context",
+        "kudo" : false,
+        "read" : true,
+        "can_reply" : true,
+        "can_kudo" : false,
+        "can_delete" : true
+      },
+      "device_id" : "firefox_101_0",
+      "contributors" : {
+        "query" : "SELECT * FROM users WHERE messages_contributed.id = '684'"
+      },
+      "helpfulness_allowed" : false,
+      "popularity" : -33.087878333333336,
+      "excluded_from_kudos_leaderboards" : false,
+      "latest_version" : "1",
+      "content_workflow" : {
+        "type" : "content_workflow",
+        "state" : "publish",
+        "message_draft_history" : {
+          "query" : "SELECT * FROM message_draft_history WHERE message.id = '684'"
+        },
+        "user_context" : {
+          "type" : "message_workflow_context",
+          "can_edit" : true
+        },
+        "view_href" : "https://vbeyi74497.stage.lithium.com/t5/tkb/workflowpage/tkb-id/code-catalog/article-id/12"
+      },
+      "is_promoted" : false
+    }, {
+      "type" : "message",
+      "id" : "683",
+      "href" : "/messages/683",
+      "view_href" : "/t5/code-catalog/neo4jrb-activegraph/ta-p/683",
+      "author" : {
+        "type" : "user",
+        "id" : "80",
+        "href" : "/users/80",
+        "view_href" : "/t5/user/viewprofilepage/user-id/80",
+        "login" : "abk"
+      },
+      "subject" : "neo4jrb/activegraph",
+      "search_snippet" : "The Neo4j.rb project is made up of the follow Ruby gems: \n \n activegraph A Object-Graph-Mapper (OGM) for the Neo4j graph database. It tries to follow API conventions established by ActiveRecord and f...",
+      "body" : "<P>The Neo4j.rb project is made up of the follow <A href=\"https://www.ruby-lang.org/en/\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">Ruby</A> gems:</P>\n<UL>\n<LI><A href=\"https://github.com/neo4jrb/activegraph\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">activegraph</A> A Object-Graph-Mapper (OGM) for the <A href=\"http://neo4j.com\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">Neo4j</A> graph database. It tries to follow API conventions established by <A href=\"http://guides.rubyonrails.org/active_record_basics.html\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">ActiveRecord</A> and familiar to most Ruby developers but with a Neo4j flavor.</LI>\n<LI><A href=\"https://github.com/neo4jrb/neo4j-ruby-driver\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">neo4j-ruby-driver</A> A low level driver for connecting to Neo4j. Used by the <CODE>activegraph</CODE> gem.</LI>\n<LI><A href=\"https://github.com/neo4jrb/neo4j-rake_tasks\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">neo4j-rake_tasks</A>) A set of rake tasks for installing and managing a Neo4j database within your project.</LI>\n</UL>\n<P>&nbsp;</P>\n<DL class=\"dl-horizontal\">\n<DT>Ruby</DT>\n<DD>\n<P>(<EM>software</EM>) A dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write.</P>\n</DD>\n<DT>Graph<BR />Database</DT>\n<DD>\n<P>(<EM>computer science</EM>) A graph database stores data in a graph, the most generic of data structures, capable of elegantly representing any kind of data in a highly accessible way.</P>\n</DD>\n<DT>Neo4j</DT>\n<DD>\n<P>(<EM>databases</EM>) The world's leading graph database</P>\n</DD>\n</DL>\n<P>If you're already familiar with ActiveRecord, DataMapper, or Mongoid, you'll find the Object Model features you've come to expect from an O*M:</P>\n<UL>\n<LI>Properties</LI>\n<LI>Indexes / Constraints</LI>\n<LI>Callbacks</LI>\n<LI>Validation</LI>\n<LI>Assocations</LI>\n</UL>\n<P>Because relationships are first-class citizens in Neo4j, models can be created for both nodes and relationships.</P>\n<P>&nbsp;</P>\n<P>&nbsp;</P>\n<H4 id=\"toc-hId-1103234643\">Additional features include</H4>\n<UL>\n<LI>A chainable <A href=\"https://github.com/rails/arel\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">arel</A>-inspired query builder</LI>\n<LI>Transactions</LI>\n<LI>Migration framework</LI>\n</UL>\n<P>&nbsp;</P>\n<P>&nbsp;</P>\n<H4 id=\"toc-hId-1104158164\">Requirements</H4>\n<UL>\n<LI>Ruby 2.5+ (tested in MRI and JRuby)</LI>\n<LI>Neo4j 3.4+</LI>\n</UL>\n<P>References:</P>\n<UL>\n<LI>Home: <A href=\"http://neo4jrb.io/\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">http://neo4jrb.io/</A></LI>\n<LI>Package: <A href=\"https://rubygems.org/gems/activegraph\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">https://rubygems.org/gems/activegraph</A></LI>\n<LI>Repository: <A href=\"https://github.com/neo4jrb/activegraph\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">https://github.com/neo4jrb/activegraph</A></LI>\n</UL>",
+      "teaser" : "",
+      "board" : {
+        "type" : "board",
+        "id" : "code-catalog",
+        "href" : "/boards/code-catalog",
+        "view_href" : "/t5/code-catalog/tkb-p/code-catalog"
+      },
+      "conversation" : {
+        "type" : "conversation",
+        "id" : "683",
+        "href" : "/conversations/683",
+        "view_href" : "/t5/code-catalog/neo4jrb-activegraph/ta-p/683",
+        "style" : "tkb",
+        "thread_style" : "tkb",
+        "messages_count" : 1,
+        "solved" : false,
+        "last_post_time" : "2022-07-27T02:37:52.167-07:00",
+        "last_post_time_friendly" : "07-27-2022"
+      },
+      "topic" : {
+        "type" : "message",
+        "id" : "683",
+        "href" : "/messages/683",
+        "view_href" : "/t5/code-catalog/neo4jrb-activegraph/ta-p/683"
+      },
+      "post_time" : "2022-07-27T02:37:52.167-07:00",
+      "post_time_friendly" : "07-27-2022",
+      "depth" : 0,
+      "read_only" : false,
+      "edit_frozen" : false,
+      "language" : "EN",
+      "can_accept_solution" : false,
+      "placeholder" : false,
+      "is_solution" : false,
+      "solution_data" : { },
+      "metrics" : {
+        "type" : "message_metrics",
+        "views" : 1
+      },
+      "current_revision" : {
+        "type" : "revision",
+        "id" : "683_1",
+        "last_edit_author" : {
+          "type" : "user",
+          "id" : "80",
+          "href" : "/users/80",
+          "view_href" : "/t5/user/viewprofilepage/user-id/80",
+          "login" : "abk"
+        },
+        "last_edit_time" : "2022-07-27T02:37:52.167-07:00"
+      },
+      "kudos" : {
+        "query" : "SELECT * FROM kudos WHERE message.id = '683'"
+      },
+      "tags" : {
+        "query" : "SELECT * FROM tags WHERE messages.id = '683'"
+      },
+      "labels" : {
+        "query" : "SELECT * FROM labels WHERE messages.id = '683'"
+      },
+      "images" : {
+        "query" : "SELECT * FROM images WHERE messages.id = '683'"
+      },
+      "videos" : {
+        "query" : "SELECT * FROM videos WHERE messages.id = '683'"
+      },
+      "attachments" : {
+        "query" : "SELECT * FROM attachments WHERE message.id = '683'"
+      },
+      "replies" : {
+        "query" : "SELECT * FROM messages WHERE parent.id = '683'"
+      },
+      "ratings" : {
+        "query" : "SELECT * FROM ratings WHERE message.id = '683'"
+      },
+      "custom_tags" : {
+        "query" : "SELECT * FROM custom_tags WHERE messages.id = '683'"
+      },
+      "moderation_status" : "approved",
+      "user_context" : {
+        "type" : "user_context",
+        "kudo" : false,
+        "read" : true,
+        "can_reply" : true,
+        "can_kudo" : false,
+        "can_delete" : true
+      },
+      "device_id" : "firefox_101_0",
+      "contributors" : {
+        "query" : "SELECT * FROM users WHERE messages_contributed.id = '683'"
+      },
+      "helpfulness_allowed" : false,
+      "popularity" : -34.58087972222222,
+      "excluded_from_kudos_leaderboards" : false,
+      "latest_version" : "1",
+      "content_workflow" : {
+        "type" : "content_workflow",
+        "state" : "publish",
+        "message_draft_history" : {
+          "query" : "SELECT * FROM message_draft_history WHERE message.id = '683'"
+        },
+        "user_context" : {
+          "type" : "message_workflow_context",
+          "can_edit" : true
+        },
+        "view_href" : "https://vbeyi74497.stage.lithium.com/t5/tkb/workflowpage/tkb-id/code-catalog/article-id/11"
+      },
+      "is_promoted" : false
+    }, {
+      "type" : "message",
+      "id" : "682",
+      "href" : "/messages/682",
+      "view_href" : "/t5/tools-catalog/lyft-cartography/ta-p/682",
+      "author" : {
+        "type" : "user",
+        "id" : "80",
+        "href" : "/users/80",
+        "view_href" : "/t5/user/viewprofilepage/user-id/80",
+        "login" : "abk"
+      },
+      "subject" : "lyft/cartography",
+      "search_snippet" : "What is Cartography?¶ \n Cartography is a Python tool that consolidates infrastructure assets and the relationships between them in an intuitive graph view powered by a Neo4j database. \n Why Cartograp...",
+      "body" : "<H2 id=\"index--page-root\" id=\"toc-hId--671772720\">What is Cartography?<A class=\"headerlink\" title=\"Permalink to this headline\" href=\"https://lyft.github.io/cartography/index.html#index--page-root\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">¶</A></H2>\n<P>Cartography is a Python tool that consolidates infrastructure assets and the relationships between them in an intuitive graph view powered by a <A class=\"reference external\" href=\"https://www.neo4j.com\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">Neo4j</A> database.</P>\n<H2 id=\"why-cartography\" id=\"toc-hId--670849199\">Why Cartography?<A class=\"headerlink\" title=\"Permalink to this headline\" href=\"https://lyft.github.io/cartography/info.html#why-cartography\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">¶</A></H2>\n<P>Cartography aims to enable a broad set of exploration and automation scenarios. It is particularly good at exposing otherwise hidden dependency relationships between your service’s assets so that you may validate assumptions about security risks.</P>\n<P>Service owners can generate asset reports, Red Teamers can discover attack paths, and Blue Teamers can identify areas for security improvement. All can benefit from using the graph for manual exploration through a web frontend interface, or in an automated fashion by calling the APIs.</P>\n<P>Cartography is not the only <A class=\"reference external\" href=\"https://github.com/dowjones/hammer\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">security</A> <A class=\"reference external\" href=\"https://github.com/BloodHoundAD/BloodHound\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">graph</A> <A class=\"reference external\" href=\"https://github.com/Netflix/security_monkey\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">tool</A> <A class=\"reference external\" href=\"https://github.com/vysecurity/ANGRYPUPPY\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">out</A> <A class=\"reference external\" href=\"https://github.com/duo-labs/cloudmapper\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">there</A>, but it differentiates itself by being fully-featured yet generic and <A class=\"reference external\" href=\"https://lyft.github.io/cartography/dev/writing-analysis-jobs.html\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">extensible</A> enough to help make anyone better understand their risk exposure, regardless of what platforms they use. Rather than being focused on one core scenario or attack vector like the other linked tools, Cartography focuses on flexibility and exploration.</P>\n<H3 id=\"toc-hId-217578003\">References:</H3>\n<UL>\n<LI>Homepage: <A href=\"https://lyft.github.io/cartography/index.html\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">https://lyft.github.io/cartography/</A></LI>\n<LI>Repository: <A href=\"https://github.com/lyft/cartography\" target=\"_blank\" rel=\"noopener nofollow noreferrer\">https://github.com/lyft/cartography</A></LI>\n</UL>",
+      "teaser" : "",
+      "board" : {
+        "type" : "board",
+        "id" : "tools-catalog",
+        "href" : "/boards/tools-catalog",
+        "view_href" : "/t5/tools-catalog/tkb-p/tools-catalog"
+      },
+      "conversation" : {
+        "type" : "conversation",
+        "id" : "682",
+        "href" : "/conversations/682",
+        "view_href" : "/t5/tools-catalog/lyft-cartography/ta-p/682",
+        "style" : "tkb",
+        "thread_style" : "tkb",
+        "messages_count" : 1,
+        "solved" : false,
+        "last_post_time" : "2022-07-27T02:20:09.547-07:00",
+        "last_post_time_friendly" : "07-27-2022"
+      },
+      "topic" : {
+        "type" : "message",
+        "id" : "682",
+        "href" : "/messages/682",
+        "view_href" : "/t5/tools-catalog/lyft-cartography/ta-p/682"
+      },
+      "post_time" : "2022-07-27T02:20:09.547-07:00",
+      "post_time_friendly" : "07-27-2022",
+      "depth" : 0,
+      "read_only" : false,
+      "edit_frozen" : false,
+      "language" : "EN",
+      "can_accept_solution" : false,
+      "placeholder" : false,
+      "is_solution" : false,
+      "solution_data" : { },
+      "metrics" : {
+        "type" : "message_metrics",
+        "views" : 6
+      },
+      "current_revision" : {
+        "type" : "revision",
+        "id" : "682_2",
+        "last_edit_author" : {
+          "type" : "user",
+          "id" : "80",
+          "href" : "/users/80",
+          "view_href" : "/t5/user/viewprofilepage/user-id/80",
+          "login" : "abk"
+        },
+        "last_edit_time" : "2022-07-27T02:25:59.029-07:00"
+      },
+      "kudos" : {
+        "query" : "SELECT * FROM kudos WHERE message.id = '682'"
+      },
+      "tags" : {
+        "query" : "SELECT * FROM tags WHERE messages.id = '682'"
+      },
+      "labels" : {
+        "query" : "SELECT * FROM labels WHERE messages.id = '682'"
+      },
+      "images" : {
+        "query" : "SELECT * FROM images WHERE messages.id = '682'"
+      },
+      "videos" : {
+        "query" : "SELECT * FROM videos WHERE messages.id = '682'"
+      },
+      "attachments" : {
+        "query" : "SELECT * FROM attachments WHERE message.id = '682'"
+      },
+      "replies" : {
+        "query" : "SELECT * FROM messages WHERE parent.id = '682'"
+      },
+      "ratings" : {
+        "query" : "SELECT * FROM ratings WHERE message.id = '682'"
+      },
+      "custom_tags" : {
+        "query" : "SELECT * FROM custom_tags WHERE messages.id = '682'"
+      },
+      "moderation_status" : "approved",
+      "user_context" : {
+        "type" : "user_context",
+        "kudo" : false,
+        "read" : true,
+        "can_reply" : true,
+        "can_kudo" : false,
+        "can_delete" : true
+      },
+      "device_id" : "firefox_101_0",
+      "contributors" : {
+        "query" : "SELECT * FROM users WHERE messages_contributed.id = '682'"
+      },
+      "helpfulness_allowed" : false,
+      "popularity" : -34.87606916666667,
+      "excluded_from_kudos_leaderboards" : false,
+      "latest_version" : "2",
+      "content_workflow" : {
+        "type" : "content_workflow",
+        "state" : "publish",
+        "message_draft_history" : {
+          "query" : "SELECT * FROM message_draft_history WHERE message.id = '682'"
+        },
+        "user_context" : {
+          "type" : "message_workflow_context",
+          "can_edit" : true
+        },
+        "view_href" : "https://vbeyi74497.stage.lithium.com/t5/tkb/workflowpage/tkb-id/tools-catalog/article-id/8"
+      },
+      "is_promoted" : false
+    } ],
+    "next_cursor" : "MjIuNHwyLjB8aXwxMHw0MTowLDE1OjB8aW50LDY5MSw2ODI"
+  },
+  "metadata" : { }
+}
