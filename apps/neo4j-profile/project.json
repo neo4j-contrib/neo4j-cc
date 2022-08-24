@@ -1,0 +1,90 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/neo4j-profile/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/neo4j-profile",
+        "index": "apps/neo4j-profile/src/index.html",
+        "main": "apps/neo4j-profile/src/main.tsx",
+        "polyfills": "apps/neo4j-profile/src/polyfills.ts",
+        "tsConfig": "apps/neo4j-profile/tsconfig.app.json",
+        "assets": [
+          "apps/neo4j-profile/src/favicon.ico",
+          "apps/neo4j-profile/src/assets"
+        ],
+        "styles": ["apps/neo4j-profile/src/styles.scss"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/neo4j-profile/src/environments/environment.ts",
+              "with": "apps/neo4j-profile/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "extractCss": true,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false,
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            }
+          ]
+        },
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "neo4j-profile:build",
+        "hmr": true,
+        "proxyConfig": "apps/neo4j-profile/proxy.conf.json"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "neo4j-profile:build:production",
+          "hmr": false
+        },
+        "development": {
+          "buildTarget": "neo4j-profile:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/neo4j-profile/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/neo4j-profile"],
+      "options": {
+        "jestConfig": "apps/neo4j-profile/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

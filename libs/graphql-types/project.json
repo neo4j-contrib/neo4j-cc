@@ -1,0 +1,33 @@
+{
+  "sourceRoot": "libs/graphql-types/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/graphql-types",
+        "tsConfig": "libs/graphql-types/tsconfig.lib.json",
+        "packageJson": "libs/graphql-types/package.json",
+        "main": "libs/graphql-types/src/index.ts",
+        "assets": ["libs/graphql-types/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/graphql-types/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/graphql-types"],
+      "options": {
+        "jestConfig": "libs/graphql-types/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

@@ -1,0 +1,42 @@
+{
+  "sourceRoot": "libs/data-access/khoros/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/data-access/khoros/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/data-access/khoros"],
+      "options": {
+        "jestConfig": "libs/data-access/khoros/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "postman": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "p2o ./libs/data-access/khoros/assets/khoros-v2-API.postman_collection.json -f ./libs/data-access/khoros/assets/khoros-v2-API.openapi.yml"
+      }
+    },
+    "openapi": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["postman"],
+      "options": {
+        "command": "openapi -i libs/data-access/khoros/assets/khoros-v2-API.openapi.yml -o libs/data-access/khoros/src/lib/generated/ --name KhorosV2 --useOptions"
+      }
+    },
+    "quicktype": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["openapi"],
+      "options": {
+        "command": "quicktype -s postman -o libs/data-access/khoros/src/lib/generated/models/quicktypes.ts libs/data-access/khoros/assets/khoros-v2-API.postman_collection.json"
+      }
+    }
+  },
+  "tags": []
+}
