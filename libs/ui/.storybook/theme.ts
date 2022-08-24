@@ -12,7 +12,7 @@ const baseTheme = {
 
   // UI
   appBg: '#E6F8FF',
-  appContentBg: '#191D24',
+  appContentBg: '#F5F7FA',
   appBorderColor: '#323945',
 
   // Text Colors
