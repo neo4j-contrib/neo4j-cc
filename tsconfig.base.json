@@ -34,11 +34,11 @@
         "libs/feature/release-notes/src/index.ts"
       ],
       "@neo4j-cc/feature/twin4j": ["libs/feature/twin4j/src/index.ts"],
+      "@neo4j-cc/graphql-types": ["libs/graphql-types/src/index.ts"],
       "@neo4j-cc/model": ["libs/model/src/index.ts"],
       "@neo4j-cc/nest/neo4j-dbms": ["libs/nest/neo4j-dbms/src/index.ts"],
       "@neo4j-cc/ui": ["libs/ui/src/index.ts"],
-      "@neo4j-cc/util-arbitrary": ["libs/util/arbitrary/src/index.ts"],
-      "@neo4j-cc/graphql-types": ["libs/graphql-types/src/index.ts"]
+      "@neo4j-cc/util-arbitrary": ["libs/util/arbitrary/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,4 +1,4 @@
-import { ActorTypeDef, MovieTypeDef } from '@neo4j-cc/graphql-types';
+import { PersonProfilesTypeDef, PersonTypeDef, ProfileTypeDef } from '@neo4j-cc/graphql-types';
 import { Neo4jGraphQL } from '@neo4j/graphql'
 import { ApolloServer } from 'apollo-server'
 import neo4j from 'neo4j-driver'
@@ -10,13 +10,14 @@ const driver = neo4j.driver(
 
 const neo4jSchema = new Neo4jGraphQL({ 
   typeDefs:[
-    ActorTypeDef,
-    MovieTypeDef
+    PersonTypeDef,
+    ProfileTypeDef,
+    PersonProfilesTypeDef
   ], 
   driver,
   config: {
     driverConfig: {
-        database: "graphql-types",
+        database: "graphql-api",
     }
 },
  });

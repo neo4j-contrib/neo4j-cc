@@ -82,6 +82,7 @@
     "sqlite3": "^5.0.11",
     "tailwind-merge": "^1.5.1",
     "tailwindcss": "3.1.8",
+    "theme-change": "^2.2.0",
     "tslib": "^2.4.0",
     "typeorm": "^0.3.7",
     "universal-base64": "^2.1.0"

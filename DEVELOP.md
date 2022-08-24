@@ -7,7 +7,7 @@ This project was generated using [Nx](https://nx.dev).
 
 ## Generate an application
 
-Run `nx g @nrwl/react:app my-app` to generate an application.
+Run `nx g @nrwl/react:app --standaloneConfig --routing --name=my-app --dryRun` to generate an application with routing.
 
 > You can use any of the plugins above to generate applications as well.
 
