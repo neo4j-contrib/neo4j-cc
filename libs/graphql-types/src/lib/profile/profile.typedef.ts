@@ -1,11 +1,11 @@
-import { gql } from 'apollo-server'
+import gql from 'graphql-tag';
 
 /**
- * 
+ *
  * Inspired from many sources:
- * 
+ *
  * @see https://auth0.com/docs/manage-users/user-accounts/user-profiles/user-profile-structure
- * 
+ *
  */
 export const ProfileTypeDef = gql`
   """
@@ -39,7 +39,7 @@ export const ProfileTypeDef = gql`
 
     """
     A short, single term name for referring to this person. Often this is a username or handle
-    which is used in '@'-style mentions. 
+    which is used in '@'-style mentions.
     """
     nickname: String
 
@@ -58,4 +58,4 @@ export const ProfileTypeDef = gql`
     """
     phoneNumber: String
   }
-`
+`;

@@ -4,7 +4,6 @@ import { MockedProvider } from '@apollo/client/testing'; // Use for Apollo Versi
 import { range, map } from "fp-ts/NonEmptyArray"
 import { pipe } from "fp-ts/function"
 
-import { PersonsDocument, mockPerson } from '@neo4j-cc/data-access/person'
 
 export const parameters = {
   apolloClient: {

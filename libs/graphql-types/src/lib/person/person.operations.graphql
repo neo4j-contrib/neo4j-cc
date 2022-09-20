@@ -1,0 +1,38 @@
+fragment personFields on Person {
+  id
+  name
+}
+
+query person($id: ID!) {
+  persons(where: { id: $id }) {
+    ...personFields
+  }
+}
+
+query persons {
+  persons {
+    ...personFields
+  }
+}
+
+mutation createPerson($input: PersonCreateInput!) {
+  createPersons(input: [$input]) {
+    persons {
+      id
+    }
+  }
+}
+
+mutation removePerson($id: ID!) {
+  deletePersons(where: { id: $id }) {
+    nodesDeleted
+  }
+}
+
+mutation updatePerson($id: ID!, $update: PersonUpdateInput) {
+  updatePersons(where: { id: $id }, update: $update) {
+    persons {
+      ...personFields
+    }
+  }
+}

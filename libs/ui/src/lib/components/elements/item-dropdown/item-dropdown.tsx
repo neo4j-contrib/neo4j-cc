@@ -1,5 +1,5 @@
 import { Menu, Transition } from '@headlessui/react';
-import { ChevronDownIcon } from '@heroicons/react/outline';
+import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import { Fragment, useState } from 'react';
 import { keyForItem, showItem, ViewableItem } from '../item-views/item-views';
 import './item-dropdown.module.scss';

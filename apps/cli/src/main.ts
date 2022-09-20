@@ -5,7 +5,7 @@ import { HelloCommand } from './commands/hello/hello.command';
 import { GithubCommand } from './commands/gh/gh.command';
 import { EchoCommand } from './commands/echo/echo.command';
 import { KhorosCommand } from './commands/khoros/khoros.command';
-import { HttpCommand } from './commands/http/http.command';
+// import { HttpCommand } from './commands/http/http.command';
 
 const ccCLI = build('neo4j-cc')
   .src(`${__dirname}/`)
@@ -16,7 +16,7 @@ const ccCLI = build('neo4j-cc')
   .command(GithubCommand)
   .command(HelloCommand)
   .command(KhorosCommand)
-  .command(HttpCommand)
+  // .command(HttpCommand)
   .defaultCommand()
   .create()
 

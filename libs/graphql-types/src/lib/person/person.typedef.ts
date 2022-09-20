@@ -1,17 +1,18 @@
-import { gql } from 'apollo-server'
+import gql from 'graphql-tag';
 
-export const PersonTypeDef = gql`
+export const PersonDefinition = gql`
   """
   A Person is a root entity representing an individual human.
   """
-  type Person {
-    """UUID"""
+  type Person @node(plural: "persons") {
+    """
+    UUID
+    """
     id: ID! @id
 
-    """Full name"""
+    """
+    Full birth name
+    """
     name: String
-
-    """Verified, primary email address"""
-    email: String
   }
-`
+`;

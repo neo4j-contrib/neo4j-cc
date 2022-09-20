@@ -1,0 +1,33 @@
+fragment graphNodeFields on GraphNode {
+  _id
+  _labels
+  _properties
+}
+
+mutation createGraphNode($input: GraphNodeCreateInput!) {
+  createGraphNodes(input: [$input]) {
+    graphNodes {
+      ...graphNodeFields
+    }
+  }
+}
+
+query graphNode($id: ID!) {
+  graphNodes(where: { id: $id }) {
+    ...graphNodeFields
+  }
+}
+
+mutation updateGraphNode($id: ID!, $update: GraphNodeUpdateInput) {
+  updateGraphNodes(where: { id: $id }, update: $update) {
+    graphNodes {
+      ...graphNodeFields
+    }
+  }
+}
+
+mutation deleteGraphNode($id: ID!) {
+  deleteGraphNodes(where: { id: $id }) {
+    nodesDeleted
+  }
+}

@@ -1,10 +1,10 @@
 
-import { ReactNode, useEffect } from 'react'
+import { useEffect } from 'react'
 import { themeChange } from 'theme-change'
 
 import { Route, Routes, Link } from 'react-router-dom';
 
-import { CcButton, CcSelect } from '@neo4j-cc/ui'
+import { CcNavbar, CcButton, CcSelect } from '@neo4j-cc/ui'
 
 import './cc-super-layout.css';
 
@@ -14,7 +14,7 @@ import './cc-super-layout.css';
 export interface CcRoutableDestination {
   path: string
   title: string
-  Element: () => JSX.Element
+  Element: (props:any) => JSX.Element
 }
 
 export interface CcSuperLayoutProps {
@@ -25,6 +25,10 @@ export interface CcSuperLayoutProps {
 
 export function CcSuperLayout({title, items, themes}: CcSuperLayoutProps) {
   const themeNames = themes || ["light", "dark"]
+  
+  useEffect( () => {
+    themeChange(false)
+  }, [])
 
   return (
     <>

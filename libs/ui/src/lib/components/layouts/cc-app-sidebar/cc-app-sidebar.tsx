@@ -7,10 +7,10 @@ import {
   FolderIcon,
   HomeIcon,
   InboxIcon,
-  MenuIcon,
+  Bars3Icon,
   UsersIcon,
-  XIcon,
-} from '@heroicons/react/outline'
+  XMarkIcon,
+} from '@heroicons/react/24/outline'
 import { classNames } from '../../../utils';
 
 const navigation = [
@@ -71,7 +71,7 @@ export function CcAppSidebar(props: CcAppSidebarProps) {
                       onClick={() => setSidebarOpen(false)}
                     >
                       <span className="sr-only">Close sidebar</span>
-                      <XIcon className="h-6 w-6 text-white" aria-hidden="true" />
+                      <XMarkIcon className="h-6 w-6 text-white" aria-hidden="true" />
                     </button>
                   </div>
                 </Transition.Child>
@@ -191,7 +191,7 @@ export function CcAppSidebar(props: CcAppSidebarProps) {
               onClick={() => setSidebarOpen(true)}
             >
               <span className="sr-only">Open sidebar</span>
-              <MenuIcon className="h-6 w-6" aria-hidden="true" />
+              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
     </div>

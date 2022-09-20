@@ -43,6 +43,7 @@ export interface BulkApiRepo
 
 export const bulkApiRepo = Tag<BulkApiRepo>();
 
+
 /**
  * TODO: take a look at Effect.Do() notation instead of Effect.gen
  */
@@ -90,7 +91,7 @@ export const makeBulkApiLive = Effect.gen(function* ($) {
 
   const fetchEventsBetween = (fromDate: Date, toDate: Date) =>
     Effect.forEach(
-      () => datesBetween(fromDate, toDate), // Chunk.range(from, to),
+      datesBetween(fromDate, toDate), // Chunk.range(from, to),
       (day) => fetchEventsOfDay(day)
     );
 

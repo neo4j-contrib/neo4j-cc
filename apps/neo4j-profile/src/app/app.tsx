@@ -1,44 +1,44 @@
 
-import { useEffect } from 'react'
-import { themeChange } from 'theme-change'
-
-import { Route, Routes, Link } from 'react-router-dom';
-
-import { Button, Navbar, Select } from 'react-daisyui';
-
 import { HomePage } from '../pages/home-page/home-page'
 import { ProfilePage } from '../pages/profile-page/profile-page'
 import { BlankPage } from '../pages/blank-page/blank-page'
+import { CcSuperLayout } from '../layouts/cc-super-layout/cc-super-layout';
+
+
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+
+const queryClient = new QueryClient()
 
 export function App() {
   const pageLinks = [
     {
       title:"Home",
-      url:"/",
-      element: HomePage
+      path:"/",
+      Element: HomePage
     },
     {
       title:"Profile",
-      url:"/profile",
-      element: ProfilePage
+      path:"/profile",
+      Element: ProfilePage
     },
     {
       title:"Blank",
-      url:"/blank",
-      element: BlankPage
+      path:"/blank",
+      Element: BlankPage
     }
   ]
   const themeNames = [
     "neo4j", "nodes", "light", "dark", "cupcake", "bumblebee", "emerald", "corporate", "synthwave", "retro", "cyberpunk", "valentine", "halloween", "garden", "forest", "aqua", "lofi", "pastel", "fantasy", "wireframe", "black", "luxury", "dracula", "cmyk", "autumn", "business", "acid", "lemonade", "night", "coffee", "winter"
   ]
-  useEffect( () => {
-    themeChange(false)
-  }, [])
-
   return (
-    <>
 
-    </>
+    <QueryClientProvider client={queryClient}>
+    <CcSuperLayout 
+      title="Neo4j Profile PoC"
+      items={pageLinks}
+      themes={themeNames}
+    />
+    </QueryClientProvider>
   );
 }
 

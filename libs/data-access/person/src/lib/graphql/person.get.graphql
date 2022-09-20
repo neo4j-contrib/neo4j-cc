@@ -1,5 +1,0 @@
-query person($id:ID!) {
-  person(id:$id) {
-    ...personFields
-  }
-}

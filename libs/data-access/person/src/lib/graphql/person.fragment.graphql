@@ -1,9 +1,0 @@
-fragment personFields on Person {
-    id
-    url
-    labels
-    name
-    description
-    callSign
-    email
-}

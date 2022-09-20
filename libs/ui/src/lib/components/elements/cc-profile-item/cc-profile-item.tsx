@@ -4,7 +4,7 @@ import React from 'react';
 import { User } from "@auth0/auth0-react";
 import * as O from 'fp-ts/lib/Option';
 import { pipe } from 'fp-ts/lib/function';
-import { LoginIcon } from '@heroicons/react/outline';
+import { UserCircleIcon } from '@heroicons/react/24/outline';
 
 const SomeUser:React.FC<User> = ({name, picture, nickname}) => (
   <div className="flex items-center">
@@ -25,7 +25,7 @@ const SomeUser:React.FC<User> = ({name, picture, nickname}) => (
 const NoUser:React.FC<Record<string,never>> = () => (
   <div className="flex items-center">
   <div>
-    <LoginIcon className="inline-block text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6"/>
+    <UserCircleIcon className="inline-block text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6"/>
   </div>
   <div className="ml-3">
     <p className="text-sm font-medium text-gray-700 group-hover:text-gray-900">
