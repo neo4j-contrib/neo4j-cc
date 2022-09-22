@@ -4,12 +4,14 @@
   "projectType": "application",
   "targets": {
     "build": {
-      "executor": "@nrwl/node:webpack",
+      "executor": "@nrwl/webpack:webpack",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/cc-cli",
         "main": "apps/cc-cli/src/main.ts",
-        "tsConfig": "apps/cc-cli/tsconfig.app.json"
+        "tsConfig": "apps/cc-cli/tsconfig.app.json",
+        "target": "node",
+        "compiler": "tsc"
       },
       "configurations": {
         "production": {

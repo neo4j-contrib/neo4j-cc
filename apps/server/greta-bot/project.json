@@ -4,13 +4,15 @@
   "projectType": "application",
   "targets": {
     "build": {
-      "executor": "@nrwl/node:webpack",
+      "executor": "@nrwl/webpack:webpack",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/server/greta-bot",
         "main": "apps/server/greta-bot/src/main.ts",
         "tsConfig": "apps/server/greta-bot/tsconfig.app.json",
-        "assets": ["apps/server/greta-bot/src/assets"]
+        "assets": ["apps/server/greta-bot/src/assets"],
+        "target": "node",
+        "compiler": "tsc"
       },
       "configurations": {
         "production": {
