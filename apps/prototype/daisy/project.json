@@ -1,0 +1,83 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/prototype/daisy/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/prototype/daisy",
+        "index": "apps/prototype/daisy/src/index.html",
+        "baseHref": "/",
+        "main": "apps/prototype/daisy/src/main.tsx",
+        "polyfills": "apps/prototype/daisy/src/polyfills.ts",
+        "tsConfig": "apps/prototype/daisy/tsconfig.app.json",
+        "assets": [
+          "apps/prototype/daisy/src/favicon.ico",
+          "apps/prototype/daisy/src/assets"
+        ],
+        "styles": ["apps/prototype/daisy/src/styles.scss"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/prototype/daisy/src/environments/environment.ts",
+              "with": "apps/prototype/daisy/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "prototype-daisy:build",
+        "hmr": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "prototype-daisy:build:development"
+        },
+        "production": {
+          "buildTarget": "prototype-daisy:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/prototype/daisy/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/prototype/daisy"],
+      "options": {
+        "jestConfig": "apps/prototype/daisy/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

@@ -17,12 +17,12 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "paths": {
+      "@neo4j-cc/data-access-cc": ["libs/data-access/cc/src/index.ts"],
       "@neo4j-cc/data-access-discourse": [
         "libs/data-access/discourse/src/index.ts"
       ],
       "@neo4j-cc/data-access-github": ["libs/data-access/github/src/index.ts"],
       "@neo4j-cc/data-access-khoros": ["libs/data-access/khoros/src/index.ts"],
-      "@neo4j-cc/data-access-neo4": ["libs/data-access/discourse/src/index.ts"],
       "@neo4j-cc/data-access-neo4j": ["libs/data-access/neo4j/src/index.ts"],
       "@neo4j-cc/feature/ninja-leaderboard": [
         "libs/feature/ninja-leaderboard/src/index.ts"

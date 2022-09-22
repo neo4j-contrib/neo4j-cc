@@ -1,6 +1,6 @@
 import './feature-person.module.css';
 
-import { usePersonsQuery } from "@neo4j-cc/data-access-cc"
+import { usePersonsQuery } from "@neo4j-cc/data-access/cc"
 
 import { PersonList} from './components/person-list/person-list';
 

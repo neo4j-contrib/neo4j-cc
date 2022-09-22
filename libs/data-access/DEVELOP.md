@@ -23,6 +23,6 @@ nx generate @nrwl/workspace:library --directory=data-access --publishable --impo
 For example:
 
 ```
-nx generate @nrwl/workspace:library --directory=data-access --publishable --importPath @neo4j-cc/data-access-cc --name=cc-api --dryRun
+nx generate @nrwl/workspace:library --directory=data-access --publishable --importPath @neo4j-cc/data-access/cc --name=cc-api --dryRun
 ```
 

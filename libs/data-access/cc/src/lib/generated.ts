@@ -44,15 +44,14 @@ export type DeleteInfo = {
 
 export type GraphNode = {
   __typename?: 'GraphNode';
+  _id?: Maybe<Scalars['Int']>;
   _labels: Array<Scalars['String']>;
   _properties: Scalars['JSONObject'];
-  id: Scalars['ID'];
 };
 
 export type GraphNodeAggregateSelection = {
   __typename?: 'GraphNodeAggregateSelection';
   count: Scalars['Int'];
-  id: IdAggregateSelectionNonNullable;
 };
 
 export type GraphNodeCreateInput = {
@@ -75,7 +74,7 @@ export type GraphNodeOptions = {
 
 /** Fields to sort GraphNodes by. The order in which sorts are applied is not guaranteed when specifying many fields in one GraphNodeSort object. */
 export type GraphNodeSort = {
-  id?: InputMaybe<SortDirection>;
+  _id?: InputMaybe<SortDirection>;
 };
 
 export type GraphNodeUpdateInput = {
@@ -86,16 +85,6 @@ export type GraphNodeUpdateInput = {
 export type GraphNodeWhere = {
   AND?: InputMaybe<Array<GraphNodeWhere>>;
   OR?: InputMaybe<Array<GraphNodeWhere>>;
-  id?: InputMaybe<Scalars['ID']>;
-  id_CONTAINS?: InputMaybe<Scalars['ID']>;
-  id_ENDS_WITH?: InputMaybe<Scalars['ID']>;
-  id_IN?: InputMaybe<Array<Scalars['ID']>>;
-  id_NOT?: InputMaybe<Scalars['ID']>;
-  id_NOT_CONTAINS?: InputMaybe<Scalars['ID']>;
-  id_NOT_ENDS_WITH?: InputMaybe<Scalars['ID']>;
-  id_NOT_IN?: InputMaybe<Array<Scalars['ID']>>;
-  id_NOT_STARTS_WITH?: InputMaybe<Scalars['ID']>;
-  id_STARTS_WITH?: InputMaybe<Scalars['ID']>;
 };
 
 export type GraphNodesConnection = {
@@ -246,10 +235,12 @@ export type PersonsConnection = {
 
 export type Query = {
   __typename?: 'Query';
-  allNodes?: Maybe<Array<Maybe<GraphNode>>>;
+  /** Matches and retrieves all graph nodes regardless of label (even un-labeled nodes). */
+  allGraphNodes?: Maybe<Array<Maybe<GraphNode>>>;
   graphNodes: Array<GraphNode>;
   graphNodesAggregate: GraphNodeAggregateSelection;
   graphNodesConnection: GraphNodesConnection;
+  oneGraphNode?: Maybe<GraphNode>;
   persons: Array<Person>;
   personsAggregate: PersonAggregateSelection;
   personsConnection: PersonsConnection;
@@ -272,6 +263,11 @@ export type QueryGraphNodesConnectionArgs = {
   first?: InputMaybe<Scalars['Int']>;
   sort?: InputMaybe<Array<InputMaybe<GraphNodeSort>>>;
   where?: InputMaybe<GraphNodeWhere>;
+};
+
+
+export type QueryOneGraphNodeArgs = {
+  id: Scalars['Int'];
 };
 
 
@@ -327,36 +323,21 @@ export type UpdatePersonsMutationResponse = {
   persons: Array<Person>;
 };
 
-export type GraphNodeFieldsFragment = { __typename?: 'GraphNode', id: string, _labels: Array<string>, _properties: any };
+export type GraphNodeFieldsFragment = { __typename?: 'GraphNode', _id?: number | null, _labels: Array<string>, _properties: any };
 
 export type CreateGraphNodeMutationVariables = Exact<{
   input: GraphNodeCreateInput;
 }>;
 
 
-export type CreateGraphNodeMutation = { __typename?: 'Mutation', createGraphNodes: { __typename?: 'CreateGraphNodesMutationResponse', graphNodes: Array<{ __typename?: 'GraphNode', id: string, _labels: Array<string>, _properties: any }> } };
+export type CreateGraphNodeMutation = { __typename?: 'Mutation', createGraphNodes: { __typename?: 'CreateGraphNodesMutationResponse', graphNodes: Array<{ __typename?: 'GraphNode', _id?: number | null, _labels: Array<string>, _properties: any }> } };
 
-export type GraphNodeQueryVariables = Exact<{
-  id: Scalars['ID'];
+export type GetGraphNodeQueryVariables = Exact<{
+  id: Scalars['Int'];
 }>;
 
 
-export type GraphNodeQuery = { __typename?: 'Query', graphNodes: Array<{ __typename?: 'GraphNode', id: string, _labels: Array<string>, _properties: any }> };
-
-export type UpdateGraphNodeMutationVariables = Exact<{
-  id: Scalars['ID'];
-  update?: InputMaybe<GraphNodeUpdateInput>;
-}>;
-
-
-export type UpdateGraphNodeMutation = { __typename?: 'Mutation', updateGraphNodes: { __typename?: 'UpdateGraphNodesMutationResponse', graphNodes: Array<{ __typename?: 'GraphNode', id: string, _labels: Array<string>, _properties: any }> } };
-
-export type RemoveGraphNodeMutationVariables = Exact<{
-  id: Scalars['ID'];
-}>;
-
-
-export type RemoveGraphNodeMutation = { __typename?: 'Mutation', deleteGraphNodes: { __typename?: 'DeleteInfo', nodesDeleted: number } };
+export type GetGraphNodeQuery = { __typename?: 'Query', oneGraphNode?: { __typename?: 'GraphNode', _id?: number | null, _labels: Array<string>, _properties: any } | null };
 
 export type PersonFieldsFragment = { __typename?: 'Person', id: string, name?: string | null };
 
@@ -396,7 +377,7 @@ export type UpdatePersonMutation = { __typename?: 'Mutation', updatePersons: { _
 
 export const GraphNodeFieldsFragmentDoc = gql`
     fragment graphNodeFields on GraphNode {
-  id
+  _id
   _labels
   _properties
 }
@@ -442,110 +423,41 @@ export function useCreateGraphNodeMutation(baseOptions?: Apollo.MutationHookOpti
 export type CreateGraphNodeMutationHookResult = ReturnType<typeof useCreateGraphNodeMutation>;
 export type CreateGraphNodeMutationResult = Apollo.MutationResult<CreateGraphNodeMutation>;
 export type CreateGraphNodeMutationOptions = Apollo.BaseMutationOptions<CreateGraphNodeMutation, CreateGraphNodeMutationVariables>;
-export const GraphNodeDocument = gql`
-    query graphNode($id: ID!) {
-  graphNodes(where: {id: $id}) {
+export const GetGraphNodeDocument = gql`
+    query getGraphNode($id: Int!) {
+  oneGraphNode(id: $id) {
     ...graphNodeFields
   }
 }
     ${GraphNodeFieldsFragmentDoc}`;
 
 /**
- * __useGraphNodeQuery__
+ * __useGetGraphNodeQuery__
  *
- * To run a query within a React component, call `useGraphNodeQuery` and pass it any options that fit your needs.
- * When your component renders, `useGraphNodeQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * To run a query within a React component, call `useGetGraphNodeQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetGraphNodeQuery` returns an object from Apollo Client that contains loading, error, and data properties
  * you can use to render your UI.
  *
  * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
  *
  * @example
- * const { data, loading, error } = useGraphNodeQuery({
+ * const { data, loading, error } = useGetGraphNodeQuery({
  *   variables: {
  *      id: // value for 'id'
  *   },
  * });
  */
-export function useGraphNodeQuery(baseOptions: Apollo.QueryHookOptions<GraphNodeQuery, GraphNodeQueryVariables>) {
+export function useGetGraphNodeQuery(baseOptions: Apollo.QueryHookOptions<GetGraphNodeQuery, GetGraphNodeQueryVariables>) {
         const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GraphNodeQuery, GraphNodeQueryVariables>(GraphNodeDocument, options);
+        return Apollo.useQuery<GetGraphNodeQuery, GetGraphNodeQueryVariables>(GetGraphNodeDocument, options);
       }
-export function useGraphNodeLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GraphNodeQuery, GraphNodeQueryVariables>) {
+export function useGetGraphNodeLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetGraphNodeQuery, GetGraphNodeQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GraphNodeQuery, GraphNodeQueryVariables>(GraphNodeDocument, options);
+          return Apollo.useLazyQuery<GetGraphNodeQuery, GetGraphNodeQueryVariables>(GetGraphNodeDocument, options);
         }
-export type GraphNodeQueryHookResult = ReturnType<typeof useGraphNodeQuery>;
-export type GraphNodeLazyQueryHookResult = ReturnType<typeof useGraphNodeLazyQuery>;
-export type GraphNodeQueryResult = Apollo.QueryResult<GraphNodeQuery, GraphNodeQueryVariables>;
-export const UpdateGraphNodeDocument = gql`
-    mutation updateGraphNode($id: ID!, $update: GraphNodeUpdateInput) {
-  updateGraphNodes(where: {id: $id}, update: $update) {
-    graphNodes {
-      ...graphNodeFields
-    }
-  }
-}
-    ${GraphNodeFieldsFragmentDoc}`;
-export type UpdateGraphNodeMutationFn = Apollo.MutationFunction<UpdateGraphNodeMutation, UpdateGraphNodeMutationVariables>;
-
-/**
- * __useUpdateGraphNodeMutation__
- *
- * To run a mutation, you first call `useUpdateGraphNodeMutation` within a React component and pass it any options that fit your needs.
- * When your component renders, `useUpdateGraphNodeMutation` returns a tuple that includes:
- * - A mutate function that you can call at any time to execute the mutation
- * - An object with fields that represent the current status of the mutation's execution
- *
- * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
- *
- * @example
- * const [updateGraphNodeMutation, { data, loading, error }] = useUpdateGraphNodeMutation({
- *   variables: {
- *      id: // value for 'id'
- *      update: // value for 'update'
- *   },
- * });
- */
-export function useUpdateGraphNodeMutation(baseOptions?: Apollo.MutationHookOptions<UpdateGraphNodeMutation, UpdateGraphNodeMutationVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useMutation<UpdateGraphNodeMutation, UpdateGraphNodeMutationVariables>(UpdateGraphNodeDocument, options);
-      }
-export type UpdateGraphNodeMutationHookResult = ReturnType<typeof useUpdateGraphNodeMutation>;
-export type UpdateGraphNodeMutationResult = Apollo.MutationResult<UpdateGraphNodeMutation>;
-export type UpdateGraphNodeMutationOptions = Apollo.BaseMutationOptions<UpdateGraphNodeMutation, UpdateGraphNodeMutationVariables>;
-export const RemoveGraphNodeDocument = gql`
-    mutation removeGraphNode($id: ID!) {
-  deleteGraphNodes(where: {id: $id}) {
-    nodesDeleted
-  }
-}
-    `;
-export type RemoveGraphNodeMutationFn = Apollo.MutationFunction<RemoveGraphNodeMutation, RemoveGraphNodeMutationVariables>;
-
-/**
- * __useRemoveGraphNodeMutation__
- *
- * To run a mutation, you first call `useRemoveGraphNodeMutation` within a React component and pass it any options that fit your needs.
- * When your component renders, `useRemoveGraphNodeMutation` returns a tuple that includes:
- * - A mutate function that you can call at any time to execute the mutation
- * - An object with fields that represent the current status of the mutation's execution
- *
- * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
- *
- * @example
- * const [removeGraphNodeMutation, { data, loading, error }] = useRemoveGraphNodeMutation({
- *   variables: {
- *      id: // value for 'id'
- *   },
- * });
- */
-export function useRemoveGraphNodeMutation(baseOptions?: Apollo.MutationHookOptions<RemoveGraphNodeMutation, RemoveGraphNodeMutationVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useMutation<RemoveGraphNodeMutation, RemoveGraphNodeMutationVariables>(RemoveGraphNodeDocument, options);
-      }
-export type RemoveGraphNodeMutationHookResult = ReturnType<typeof useRemoveGraphNodeMutation>;
-export type RemoveGraphNodeMutationResult = Apollo.MutationResult<RemoveGraphNodeMutation>;
-export type RemoveGraphNodeMutationOptions = Apollo.BaseMutationOptions<RemoveGraphNodeMutation, RemoveGraphNodeMutationVariables>;
+export type GetGraphNodeQueryHookResult = ReturnType<typeof useGetGraphNodeQuery>;
+export type GetGraphNodeLazyQueryHookResult = ReturnType<typeof useGetGraphNodeLazyQuery>;
+export type GetGraphNodeQueryResult = Apollo.QueryResult<GetGraphNodeQuery, GetGraphNodeQueryVariables>;
 export const PersonDocument = gql`
     query person($id: ID!) {
   persons(where: {id: $id}) {

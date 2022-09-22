@@ -1,0 +1,83 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/prototype/khoros/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "swc",
+        "outputPath": "dist/apps/prototype/khoros",
+        "index": "apps/prototype/khoros/src/index.html",
+        "baseHref": "/",
+        "main": "apps/prototype/khoros/src/main.tsx",
+        "polyfills": "apps/prototype/khoros/src/polyfills.ts",
+        "tsConfig": "apps/prototype/khoros/tsconfig.app.json",
+        "assets": [
+          "apps/prototype/khoros/src/favicon.ico",
+          "apps/prototype/khoros/src/assets"
+        ],
+        "styles": ["apps/prototype/khoros/src/styles.scss"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/prototype/khoros/src/environments/environment.ts",
+              "with": "apps/prototype/khoros/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "prototype-khoros:build",
+        "hmr": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "prototype-khoros:build:development"
+        },
+        "production": {
+          "buildTarget": "prototype-khoros:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/prototype/khoros/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/prototype/khoros"],
+      "options": {
+        "jestConfig": "apps/prototype/khoros/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

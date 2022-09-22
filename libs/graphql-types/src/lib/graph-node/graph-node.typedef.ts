@@ -12,12 +12,22 @@ export const GraphNodeDefinition = gql`
   }
 
   type Query {
-    allNodes: [GraphNode]
+
+    """
+    Matches and retrieves all graph nodes regardless of label (even un-labeled nodes).
+    """
+    allGraphNodes: [GraphNode]
       @cypher(
         statement: """
         MATCH (n) RETURN n
         """
       )
+    oneGraphNode(id:Int!): GraphNode
+        @cypher(
+          statement:"""
+          MATCH (n) WHERE id(n) = $id RETURN n
+          """
+        )
   }
 
   type Mutation {

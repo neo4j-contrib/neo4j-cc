@@ -1,0 +1,9 @@
+# prototype-daisy: Developer Notes
+
+## Scaffolding
+
+Generate a new component:
+
+```
+nx g @nrwl/react:component --project=daisy-prototype --directory=pages --style=css --globalCss --export=true profile-page --dryRun
+```

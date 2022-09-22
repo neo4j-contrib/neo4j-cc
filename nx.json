@@ -41,7 +41,7 @@
       }
     }
   },
-  "defaultProject": "daisy-prototype",
+  "defaultProject": "prototype-daisy",
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "targetDefaults": {
     "build": {

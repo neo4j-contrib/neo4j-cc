@@ -1,0 +1,52 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/cc-cli/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/cc-cli",
+        "main": "apps/cc-cli/src/main.ts",
+        "tsConfig": "apps/cc-cli/tsconfig.app.json"
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "apps/cc-cli/src/environments/environment.ts",
+              "with": "apps/cc-cli/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "exec": {
+      "executor": "@nrwl/node:node",
+      "options": {
+        "buildTarget": "cc-cli:build",
+        "watch": false
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/cc-cli/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/cc-cli"],
+      "options": {
+        "jestConfig": "apps/cc-cli/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

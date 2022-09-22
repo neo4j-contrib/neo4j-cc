@@ -12,22 +12,22 @@ mutation createGraphNode($input: GraphNodeCreateInput!) {
   }
 }
 
-query graphNode($id: ID!) {
-  graphNodes(where: { id: $id }) {
+query getGraphNode($id: Int!) {
+  oneGraphNode(id: $id ) {
     ...graphNodeFields
   }
 }
 
-mutation updateGraphNode($id: ID!, $update: GraphNodeUpdateInput) {
-  updateGraphNodes(where: { id: $id }, update: $update) {
-    graphNodes {
-      ...graphNodeFields
-    }
-  }
-}
+# mutation updateGraphNode($id: ID!, $update: GraphNodeUpdateInput) {
+#   updateGraphNodes(where: { id: $id }, update: $update) {
+#     graphNodes {
+#       ...graphNodeFields
+#     }
+#   }
+# }
 
-mutation deleteGraphNode($id: ID!) {
-  deleteGraphNodes(where: { id: $id }) {
-    nodesDeleted
-  }
-}
+# mutation deleteGraphNode($id: ID!) {
+#   deleteGraphNodes(where: { id: $id }) {
+#     nodesDeleted
+#   }
+# }
