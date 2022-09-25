@@ -8,7 +8,7 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "compiler": "swc",
+        "compiler": "babel",
         "outputPath": "dist/apps/prototype/khoros",
         "index": "apps/prototype/khoros/src/index.html",
         "baseHref": "/",

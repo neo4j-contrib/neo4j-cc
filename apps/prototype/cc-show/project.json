@@ -1,0 +1,63 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/prototype/cc-show",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/next:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "root": "apps/prototype/cc-show",
+        "outputPath": "dist/apps/prototype/cc-show"
+      },
+      "configurations": {
+        "development": {
+          "outputPath": "apps/prototype/cc-show"
+        },
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/next:server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "prototype-cc-show:build",
+        "dev": true,
+        "proxyConfig": "apps/prototype/cc-show/proxy.conf.json"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "prototype-cc-show:build:development",
+          "dev": true
+        },
+        "production": {
+          "buildTarget": "prototype-cc-show:build:production",
+          "dev": false
+        }
+      }
+    },
+    "export": {
+      "executor": "@nrwl/next:export",
+      "options": {
+        "buildTarget": "prototype-cc-show:build:production"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/prototype/cc-show"],
+      "options": {
+        "jestConfig": "apps/prototype/cc-show/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/prototype/cc-show/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  },
+  "tags": []
+}
