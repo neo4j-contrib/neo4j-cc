@@ -17,7 +17,7 @@ async function bootstrap() {
 
   const config = new DocumentBuilder()
   .setTitle('Neo4j-CC')
-  .setDescription('The Neo4j Common  API description')
+  .setDescription('The Neo4j Common Collection API')
   .setVersion('1.0')
   .addTag('graph')
   .addTag('domain')
