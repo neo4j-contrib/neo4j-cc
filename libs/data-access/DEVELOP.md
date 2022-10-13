@@ -17,12 +17,12 @@ Universal client and server side access to services.
 
 
 ```
-nx generate @nrwl/workspace:library --directory=data-access --publishable --importPath @neo4j-cc/data-access-{library-name} --name={library-name} --dryRun
+nx generate @nrwl/js:library --directory=data-access --publishable --importPath @neo4j-cc/data-access-{library-name} --name={library-name} --dryRun
 ```
 
 For example:
 
 ```
-nx generate @nrwl/workspace:library --directory=data-access --publishable --importPath @neo4j-cc/data-access/cc --name=cc-api --dryRun
+nx generate @nrwl/js:library --directory=data-access --publishable --importPath @neo4j-cc/data-access/csv --name=csv --dryRun
 ```
 

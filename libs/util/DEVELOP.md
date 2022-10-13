@@ -8,13 +8,13 @@ Universal client and server side libraries.
 
 
 ```
-nx generate @nrwl/workspace:library --directory=util --publishable --importPath @neo4j-cc/data-access-{library-name} --name={library-name} --dryRun
+nx generate @nrwl/js:library --directory=util --publishable --importPath @neo4j-cc/data-access-{library-name} --name={library-name} --dryRun
 ```
 
 For example:
 
 ```
-nx generate @nrwl/workspace:library --directory=util --publishable --importPath @neo4j-cc/data-access-discourse --name=arbitrary --dryRun
+nx generate @nrwl/js:library --directory=util --publishable --importPath @neo4j-cc/data-access-discourse --name=arbitrary --dryRun
 ```
 
 

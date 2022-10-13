@@ -11,3 +11,8 @@ export const whoami = async (requirements:GithubRequirements) => {
   } = await octokit.rest.users.getAuthenticated();
   return login;
 }
+
+export const runMain = async () => {
+  console.log("runMain")
+  return "ran main"
+}

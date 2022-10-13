@@ -1,7 +1,7 @@
 import { pipe } from '@effect-ts/core/Function';
 import * as T from '@effect-ts/core/Effect';
 
-import { GithubRequirements, whoami } from '@c--c/data-access-github';
+import { runMain, whoami } from '@neo4j-cc/data-access-github';
 import { GluegunCommand } from 'gluegun';
 import { Toolbox } from 'gluegun/build/types/domain/toolbox';
 

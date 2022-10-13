@@ -3,6 +3,7 @@
   "projects": {
     "cc-cli": "apps/cc-cli",
     "data-access-cc": "libs/data-access/cc",
+    "data-access-csv": "libs/data-access/csv",
     "data-access-discourse": "libs/data-access/discourse",
     "data-access-github": "libs/data-access/github",
     "data-access-khoros": "libs/data-access/khoros",
@@ -14,6 +15,7 @@
     "graphql-types": "libs/graphql-types",
     "model": "libs/model",
     "nest-neo4j-dbms": "libs/nest/neo4j-dbms",
+    "prelude": "libs/prelude",
     "prototype-cc-show": "apps/prototype/cc-show",
     "prototype-cc-show-e2e": "apps/prototype/cc-show-e2e",
     "prototype-daisy": "apps/prototype/daisy",

@@ -12,13 +12,28 @@ function isDateTime(obj:any): obj is DateTime {
   return obj instanceof DateTime;
 }
 
-const ghSearchBetween = (from:DateTime|string, to:DateTime|string) => `topic:neo4j created:${isDateTime(from) ? from.toISODate() : from}..${isDateTime(to) ? to.toISODate() : to}`
+const ghSearchFor = {
+  neo4j: `topic:neo4j`,
+  mongodb: `topic:mongodb`,
+  redis: `topics:redis`,
+  jupytyer: `jupyter in:topics OR jupyter-notebook in:topics OR ipython in:topics OR ipthon-notebook in:topics`,
+}
+const ghSearchBetween = (from:DateTime|string, to:DateTime|string) => `${ghSearchFor.jupytyer} created:${isDateTime(from) ? from.toISODate() : from}..${isDateTime(to) ? to.toISODate() : to}`
+
+const nextInterval = {days:14}
+
+function sleep(ms:number) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+}
+
 
 const fetchFromGithub = async () => {
   let cursor = null;
   let hasNextPage = true;
   let from = DateTime.fromISO("2010-01-01");
-  let to = from.plus({years:1});
+  let to = from.plus(nextInterval).minus({days:1});
   let today = DateTime.local();
   let yearlyResultCount = 0;
   let totalResultCounts = 0;
@@ -28,6 +43,8 @@ const fetchFromGithub = async () => {
     console.log("[");
     do {
       do {
+
+
         let { search }:any = await graphql<{search:any}>(
           `
             query neo4jRelatedRepositories${cursor ? "($cursor: String!)" : ""} {
@@ -64,6 +81,9 @@ const fetchFromGithub = async () => {
             headers: {
               authorization: `token ${process.env.GITHUB_TOKEN}`,
             },
+            request: {
+              
+            }
           }
         );
 
@@ -81,14 +101,16 @@ const fetchFromGithub = async () => {
 
         yearlyResultCount += search.nodes.length;
 
+        await sleep(1000)
+
       } while (hasNextPage)
 
       console.error(ghSearchBetween(from,to), yearlyResultCount);
       totalResultCounts += yearlyResultCount;
       cursor = null;
       yearlyResultCount = 0;
-      from = to;
-      to = to.plus({years:1})
+      from = to.plus({days:1});
+      to = to.plus(nextInterval).minus({days:1})
       prependComma = (from < today)
     } while (from < today)
     console.log("]")
