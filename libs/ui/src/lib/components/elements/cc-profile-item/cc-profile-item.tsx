@@ -3,7 +3,7 @@ import styles from './cc-profile-item.module.scss';
 import React from 'react';
 import { User } from "@auth0/auth0-react";
 import * as O from 'fp-ts/lib/Option';
-import { pipe } from 'fp-ts/lib/function';
+import { pipe } from '@neo4j-cc/prelude';
 import { UserCircleIcon } from '@heroicons/react/24/outline';
 
 const SomeUser:React.FC<User> = ({name, picture, nickname}) => (

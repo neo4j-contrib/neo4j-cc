@@ -20,8 +20,9 @@
     "@effect-ts/system": "^0.57.4",
     "@effect-ts/tracing-utils": "^0.5.2",
     "@effect/core": "^0.0.15",
+    "@fp-ts/core": "^0.0.2",
     "@headlessui/react": "^1.7.3",
-    "@heroicons/react": "^2.0.11",
+    "@heroicons/react": "^2.0.12",
     "@neo4j/graphql": "^3.8.0",
     "@nestjs/apollo": "^10.1.0",
     "@nestjs/common": "9.1.2",
@@ -184,4 +185,3 @@
     "webpack": "^5.74.0"
   }
 }
-

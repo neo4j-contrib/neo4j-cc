@@ -3,12 +3,12 @@ import './month-selector.module.scss';
 
 import { subMonths } from 'date-fns'
 import { makeBy as makeArrayBy } from 'fp-ts/NonEmptyArray'
-import { pipe } from 'fp-ts/function'
+import { pipe } from '@neo4j-cc/prelude'
 
 import { Fragment, useState } from 'react';
 
 import { Menu, Transition } from '@headlessui/react'
-import { ChevronDownIcon } from '@heroicons/react/solid'
+import { ChevronDownIcon } from '@heroicons/react/24/solid'
 
 import { formatHumanMonth, formatISODate } from '../../utils/dates';
 
