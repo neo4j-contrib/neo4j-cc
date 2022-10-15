@@ -1,4 +1,4 @@
-# Neo4j Community Center (cc)
+# Neo4j Connected Collections (cc)
 
 
 
