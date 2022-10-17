@@ -72,7 +72,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/prototype/daisy"],
+      "outputs": ["{workspaceRoot}/coverage/apps/prototype/daisy"],
       "options": {
         "jestConfig": "apps/prototype/daisy/jest.config.ts",
         "passWithNoTests": true

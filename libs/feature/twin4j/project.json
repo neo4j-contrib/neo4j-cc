@@ -12,7 +12,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/feature/twin4j"],
+      "outputs": ["{workspaceRoot}/coverage/libs/feature/twin4j"],
       "options": {
         "jestConfig": "libs/feature/twin4j/jest.config.ts",
         "passWithNoTests": true

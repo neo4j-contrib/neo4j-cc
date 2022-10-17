@@ -81,7 +81,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/prototype/neo4j-profile"],
+      "outputs": ["{workspaceRoot}/coverage/apps/prototype/neo4j-profile"],
       "options": {
         "jestConfig": "apps/prototype/neo4j-profile/jest.config.ts",
         "passWithNoTests": true

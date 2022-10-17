@@ -12,7 +12,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/nest/neo4j-dbms"],
+      "outputs": ["{workspaceRoot}/coverage/libs/nest/neo4j-dbms"],
       "options": {
         "jestConfig": "libs/nest/neo4j-dbms/jest.config.ts",
         "passWithNoTests": true

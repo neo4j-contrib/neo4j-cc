@@ -23,7 +23,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/graphql-types"],
+      "outputs": ["{workspaceRoot}/coverage/libs/graphql-types"],
       "options": {
         "jestConfig": "libs/graphql-types/jest.config.ts",
         "passWithNoTests": true

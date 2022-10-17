@@ -43,7 +43,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/server/greta-bot"],
+      "outputs": ["{workspaceRoot}/coverage/apps/server/greta-bot"],
       "options": {
         "jestConfig": "apps/server/greta-bot/jest.config.ts",
         "passWithNoTests": true

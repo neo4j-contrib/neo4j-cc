@@ -11,7 +11,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/data-access/github"],
+      "outputs": ["{workspaceRoot}/coverage/libs/data-access/github"],
       "options": {
         "jestConfig": "libs/data-access/github/jest.config.ts",
         "passWithNoTests": true

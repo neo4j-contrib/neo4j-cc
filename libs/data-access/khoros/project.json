@@ -11,7 +11,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/data-access/khoros"],
+      "outputs": ["{workspaceRoot}/coverage/libs/data-access/khoros"],
       "options": {
         "jestConfig": "libs/data-access/khoros/jest.config.ts",
         "passWithNoTests": true

@@ -45,7 +45,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/prototype/cc-show"],
+      "outputs": ["{workspaceRoot}/coverage/apps/prototype/cc-show"],
       "options": {
         "jestConfig": "apps/prototype/cc-show/jest.config.ts",
         "passWithNoTests": true

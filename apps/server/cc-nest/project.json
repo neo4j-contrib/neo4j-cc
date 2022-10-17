@@ -48,7 +48,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/server/cc-nest"],
+      "outputs": ["{workspaceRoot}/coverage/apps/server/cc-nest"],
       "options": {
         "jestConfig": "apps/server/cc-nest/jest.config.ts",
         "passWithNoTests": true

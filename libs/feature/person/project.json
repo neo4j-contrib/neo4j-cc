@@ -13,7 +13,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/feature/person"],
+      "outputs": ["{workspaceRoot}/coverage/libs/feature/person"],
       "options": {
         "jestConfig": "libs/feature/person/jest.config.ts",
         "passWithNoTests": true

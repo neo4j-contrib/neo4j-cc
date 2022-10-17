@@ -12,7 +12,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/data-access/discourse"],
+      "outputs": ["{workspaceRoot}/coverage/libs/data-access/discourse"],
       "options": {
         "jestConfig": "libs/data-access/discourse/jest.config.ts",
         "passWithNoTests": true
