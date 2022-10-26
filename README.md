@@ -1,4 +1,4 @@
-# Neo4j Connected Collections (cc)
+# Neo4j Connected Catalog (cc)
 
 
 
