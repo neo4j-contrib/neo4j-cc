@@ -1,7 +1,5 @@
-import { pipe } from '@effect-ts/core/Function';
-import * as T from '@effect-ts/core/Effect';
 
-import { runMain, whoami } from '@neo4j-cc/data-access-github';
+import { whoami } from '@neo4j-cc/data-access-github';
 import { GluegunCommand } from 'gluegun';
 import { Toolbox } from 'gluegun/build/types/domain/toolbox';
 
@@ -24,18 +22,6 @@ const run = async (toolbox: Toolbox) => {
   console.log(`octokitty is go, go, go! ${login}`);
 };
 
-export const askForKey = pipe(
-  T.environment<Toolbox>(),
-  T.chain(({ prompt }) => {
-    return T.tryPromise(() => {
-      return prompt.ask({
-        type: 'input',
-        name: 'key',
-        message: 'API Key>',
-      });
-    });
-  })
-);
 
 export const GithubCommand: GluegunCommand<Toolbox> = {
   name: 'gh',

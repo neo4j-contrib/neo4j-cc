@@ -1,12 +1,12 @@
 import { paths as DiscoursePaths, operations } from './discourse-openapi';
 import { Fetcher } from 'openapi-typescript-fetch';
 
-export interface DiscourseConnection {
+export interface DiscourseApiConfiguration {
   baseUrl: string
   apiKey: string
   apiUsername: string
 }
-export const discourseAPI = ({baseUrl, apiKey, apiUsername}:DiscourseConnection) => {
+export const discourseAPI = ({baseUrl, apiKey, apiUsername}:DiscourseApiConfiguration) => {
 
   const discourse = Fetcher.for<DiscoursePaths>()
 

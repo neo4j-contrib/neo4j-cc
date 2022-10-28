@@ -2,7 +2,7 @@ import styles from './cc-profile-item.module.scss';
 
 import React from 'react';
 import { User } from "@auth0/auth0-react";
-import * as O from 'fp-ts/lib/Option';
+import * as O from '@fp-ts/data/Option';
 import { pipe } from '@neo4j-cc/prelude';
 import { UserCircleIcon } from '@heroicons/react/24/outline';
 
@@ -45,7 +45,10 @@ export const CcProfileItem:React.FC<CcProfileItemProps> = ({user}) => {
 
   const profile = pipe (
     O.fromNullable(user),
-    O.fold(() => (<NoUser/>), (props) => (<SomeUser {...props}/>))
+    O.match(
+      () => (<NoUser/>), // if user is null
+      (user) => (<SomeUser {...user}/>) // if there is a user
+    )
   )
 
   return (

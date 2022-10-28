@@ -7,9 +7,8 @@ Universal client and server side access to services.
 - `cc-api` - GraphQL client for accessing `apps/api` with React hooks
 - `discourse` - minimal client API for accesing (Discourse)[https://discourse.gg]
 - `github` - minimal client API for accessing (GitHub)[https://github.com]
-- `hooks` DELETE THIS
 - `neo4j` - experimental effect-query based client for querying Neo4j
-- `person` - DELETE THIS
+- `http` - an effectful http fetch
 
 ## Scaffolding
 
@@ -23,6 +22,6 @@ nx generate @nrwl/js:library --directory=data-access --publishable --importPath 
 For example:
 
 ```
-nx generate @nrwl/js:library --directory=data-access --publishable --importPath @neo4j-cc/data-access/csv --name=csv --dryRun
+nx generate @nrwl/js:library --directory=data-access --publishable --importPath @neo4j-cc/data-access-csv --name=csv --dryRun
 ```
 

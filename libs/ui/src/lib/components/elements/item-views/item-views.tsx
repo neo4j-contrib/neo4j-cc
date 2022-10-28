@@ -1,4 +1,3 @@
-import { Any } from '@effect-ts/core/Prelude';
 import { pipe } from '@neo4j-cc/prelude';
 import { has } from 'fp-ts/lib/ReadonlyRecord';
 import './item-views.module.scss';

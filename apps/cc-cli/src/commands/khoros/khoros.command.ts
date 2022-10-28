@@ -1,6 +1,6 @@
-import * as Effect from '@effect/core/io/Effect';
-import * as Layer from '@effect/core/io/Layer';
-import { pipe } from '@tsplus/stdlib/data/Function';
+import { pipe, E, L, Exit, Cause, Tag } from '@neo4j-cc/prelude';
+
+import { consoleLoggerLayer } from '@effect/core/io/Logger';
 
 import { sub as subTime } from 'date-fns';
 
@@ -12,20 +12,15 @@ import {
   KhorosBulkResponse,
 } from '@neo4j-cc/data-access-khoros';
 import { httpServiceContext } from '@neo4j-cc/data-access-khoros';
-import {
-  loggerService,
-  LoggerService,
-  loggerServiceContext,
-} from '@neo4j-cc/data-access-khoros';
 
 export const defaultConfig: BulkApiConfig = {
   baseURL: 'https://api.lithium.com/lsi-data/v2/data/export/community',
   communityID: 'neo4j.prod',
-  clientID: 'wffG+1nXkmnehWtAmtLdfskWqbYYhLLaVJuJyE/Ot60=',
-  apiToken: '7db39b92ec9c354d34554e3e86356f689b04eb70',
+  clientID: '<MISSING CLIENT ID>',
+  apiToken: '<MISSING API TOKEN>',
 };
 
-const program = Effect.gen(function* ($) {
+const program = E.gen(function* ($) {
   const { fetchEventsOfDay } = yield* $(bulkApiRepo);
   // const { log } = yield* $(loggerService);
   const events = yield* $(fetchEventsOfDay(subTime(new Date(), { days: 1 })));
@@ -38,9 +33,9 @@ const program = Effect.gen(function* ($) {
 
 const context = pipe(
   configureBulkApiLayer(defaultConfig),
-  Layer.provideTo(httpServiceContext),
-  Layer.provideTo(bulkApiContext),
-  Layer.provideToAndMerge(loggerServiceContext)
+  L.provideToAndMerge(httpServiceContext),
+  L.provideToAndMerge(bulkApiContext),
+  L.provideToAndMerge(consoleLoggerLayer)
 );
 
 const run = async (toolbox) => {
@@ -53,7 +48,7 @@ const run = async (toolbox) => {
   //   Effect.unsafeRunPromise
   // )
   // print.info(eventRecords[0])
-  await pipe(program, Effect.provideLayer(context), Effect.unsafeRunPromise);
+  await pipe(program, E.provideLayer(context), E.unsafeRunPromise);
 };
 
 export const KhorosCommand = {

@@ -1,7 +1,7 @@
 import './tailwind-imports.css';
 
 import { MockedProvider } from '@apollo/client/testing'; // Use for Apollo Version 3+
-import { range, map } from "fp-ts/NonEmptyArray"
+import { range, map } from "@fp-ts/data/NonEmptyReadonlyArray"
 import { pipe } from "@neo4j-cc/prelude"
 
 

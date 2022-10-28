@@ -10,7 +10,7 @@ import { format as formatDate } from 'date-fns'
 import { eachDayOfInterval, startOfDay, endOfDay, add as addTime, sub as subTime } from 'date-fns'
 import { encode as encodeAsBase64 } from "universal-base64";
 
-import { httpService, JsonBodyError } from "./http";
+import { httpService, JsonBodyError } from "../../../http/src/lib/advanced-http";
 
 export class BulkApiResponse {
   readonly _tag = "BulkApiResponse";
