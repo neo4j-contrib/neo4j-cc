@@ -1,0 +1,31 @@
+#!/usr/bin/env node
+
+const path = require('path')
+const tsConfigAppLocation = path.join(__dirname, '..', 'apps', 'cc-cli', 'tsconfig.app.json')
+const tsConfigBaseLocation = path.join(__dirname, '..', 'tsconfig.base.json')
+const tsConfig = require(tsConfigBaseLocation)
+
+const tsConfigPaths = require('tsconfig-paths');
+
+console.log('Using:', tsConfig)
+const baseUrl = __dirname;
+
+
+const tsNode = require('ts-node')
+
+const cleanup = tsConfigPaths.register({
+  baseUrl,
+  paths: tsConfig.compilerOptions.paths
+})
+
+tsNode.register({project: tsConfigAppLocation})
+
+// In dev mode -> use ts-node 
+process.env.NODE_ENV = 'development'
+
+// ABK NOTE: this is broken. must figure out how to configure tsconfig-paths
+// properly to load imports like `@neo4j-cc/data-access-github`
+//
+// For now, compile then use `./bin/run` :(
+
+require('../apps/cc-cli/src/main.ts')

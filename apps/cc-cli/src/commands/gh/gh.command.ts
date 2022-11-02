@@ -2,6 +2,7 @@
 import { whoami } from '@neo4j-cc/data-access-github';
 import { GluegunCommand } from 'gluegun';
 import { Toolbox } from 'gluegun/build/types/domain/toolbox';
+import { CommandModule } from 'yargs';
 
 const run = async (toolbox: Toolbox) => {
   const { prompt } = toolbox;
@@ -27,3 +28,10 @@ export const GithubCommand: GluegunCommand<Toolbox> = {
   name: 'gh',
   run,
 };
+
+export const GithubYargsCommand:CommandModule = {
+  command: 'github',
+  describe: 'calls to GitHub GraphQL API',
+  builder: (yargs) => { return yargs},
+  handler: (args) => { console.log('git the hub') }
+}
