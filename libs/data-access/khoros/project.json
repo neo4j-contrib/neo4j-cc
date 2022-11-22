@@ -38,5 +38,6 @@
       }
     }
   },
-  "tags": []
+  "tags": [],
+  "name": "data-access-khoros"
 }

@@ -25,5 +25,6 @@
     }
   },
   "tags": [],
-  "implicitDependencies": ["prototype-cc-show"]
+  "implicitDependencies": ["prototype-cc-show"],
+  "name": "prototype-cc-show-e2e"
 }

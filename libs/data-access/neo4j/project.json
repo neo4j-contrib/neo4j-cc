@@ -19,5 +19,6 @@
       }
     }
   },
-  "tags": []
+  "tags": [],
+  "name": "data-access-neo4j"
 }

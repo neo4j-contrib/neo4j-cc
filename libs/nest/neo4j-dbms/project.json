@@ -19,5 +19,6 @@
       }
     }
   },
-  "tags": []
+  "tags": [],
+  "name": "nest-neo4j-dbms"
 }

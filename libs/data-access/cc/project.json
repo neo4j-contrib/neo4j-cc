@@ -30,5 +30,6 @@
     }
   },
   "implicitDependencies": ["graphql-types"],
-  "tags": []
+  "tags": [],
+  "name": "data-access-cc"
 }

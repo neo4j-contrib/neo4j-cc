@@ -88,5 +88,6 @@
       }
     }
   },
-  "tags": []
+  "tags": [],
+  "name": "prototype-neo4j-profile"
 }
