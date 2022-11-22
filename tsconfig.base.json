@@ -18,6 +18,7 @@
     "esModuleInterop": true,
     "paths": {
       "@neo4j-cc/data-access-cc": ["libs/data-access/cc/src/index.ts"],
+      "@neo4j-cc/data-access-csv": ["libs/data-access/csv/src/index.ts"],
       "@neo4j-cc/data-access-discourse": [
         "libs/data-access/discourse/src/index.ts"
       ],
@@ -25,7 +26,6 @@
       "@neo4j-cc/data-access-http": ["libs/data-access/http/src/index.ts"],
       "@neo4j-cc/data-access-khoros": ["libs/data-access/khoros/src/index.ts"],
       "@neo4j-cc/data-access-neo4j": ["libs/data-access/neo4j/src/index.ts"],
-      "@neo4j-cc/data-access-csv": ["libs/data-access/csv/src/index.ts"],
       "@neo4j-cc/example/effect-service": [
         "libs/example/effect-service/src/index.ts"
       ],

@@ -21,6 +21,7 @@
     "prototype-cc-show": "apps/prototype/cc-show",
     "prototype-cc-show-e2e": "apps/prototype/cc-show-e2e",
     "prototype-daisy": "apps/prototype/daisy",
+    "prototype-editors": "apps/prototype/editors",
     "prototype-khoros": "apps/prototype/khoros",
     "prototype-neo4j-profile": "apps/prototype/neo4j-profile",
     "server-cc-api": "apps/server/cc-api",
