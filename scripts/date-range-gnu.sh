@@ -1,7 +1,7 @@
-#!/usr/bin/bash
+#!/bin/bash
 
-start_date="2022-06-01"
-end_date="2022-07-01"
+start_date=$1
+end_date=$2
 
 # with "until"
 d=$start_date

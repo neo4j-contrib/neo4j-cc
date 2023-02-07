@@ -49,6 +49,7 @@ Thumbs.db
 
 # secrets
 .env
+.env.*
 
 # Next.js
 .next
