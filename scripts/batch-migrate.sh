@@ -13,10 +13,9 @@ for DAY in $( $DATE_RANGE ) ; do
   RET=$?;
   # echo $RET;
   if [ $RET -ne 0 ]; then 
-    say "Error, error!";
-    echo "Failed $DAY";
+    echo "\n Failed $DAY";
     break; 
   fi
 done 
 
-say "Done"
+echo "\n*** Done with batch from $START_ISO_DATE to $END_ISO_DATE"
