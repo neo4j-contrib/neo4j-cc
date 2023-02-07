@@ -1,0 +1,1470 @@
+[
+  {
+    "type": "board",
+    "hidden": false,
+    "require_thread_root_label": true,
+    "friendly_date_enabled": false,
+    "nested": false,
+    "c_exclude_tiled_nav": false,
+    "id": "graph_platform",
+    "href": "/boards/graph_platform",
+    "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/bd-p/graph_platform",
+    "conversation_style": "forum",
+    "title": "Neo4j Graph Platform",
+    "short_title": "Neo4j Graph Platform",
+    "description": "",
+    "language": "en",
+    "views": 36893843,
+    "allowed_labels": "predefined-only",
+    "date_pattern": "MM-dd-yyyy",
+    "friendly_date_max_age": 31,
+    "announcements": "<div style=\"background-color: pink;border: 2px solid red;padding: 1em;\">\r\n<b>Head's Up!</b> \r\n<p>\r\n<a href=\"https://community.neo4j.com/t5/general-discussions/migration-back-to-discourse/td-p/64509\">Site migration</a> is underway.\r\n</p>\r\n<ol style=\"list-style: decimal;margin-left: 1em;\">\r\n  <li style=\"text-decoration: line-through\">replicate users.</li>\r\n  <li><i>pause, resolving how to handle anonymous content</i></li>\r\n</ol>\r\n<div>",
+    "rating": "kudos",
+    "skin": "neo4j",
+    "depth": 2,
+    "position": 0,
+    "image_privacy": "private",
+    "creation_date": "2022-05-10T11:57:04.974-07:00",
+    "ancestor_categories": {
+      "query": "SELECT * FROM categories WHERE descendant_categories.id = 'graph_platform'"
+    },
+    "messages": {
+      "query": "SELECT * FROM messages WHERE board.id = 'graph_platform'"
+    },
+    "topics": {
+      "query": "SELECT * FROM messages WHERE board.id = 'graph_platform' AND depth = 0"
+    },
+    "parent_category": {
+      "type": "category",
+      "id": "product_discussions",
+      "href": "/categories/product_discussions",
+      "view_href": "https://community.neo4j.com/t5/technical-discussions/ct-p/product_discussions"
+    },
+    "root_category": {
+      "type": "category",
+      "id": "product_discussions",
+      "href": "/categories/product_discussions",
+      "view_href": "https://community.neo4j.com/t5/technical-discussions/ct-p/product_discussions"
+    },
+    "available_statuses": {
+      "type": "message_statuses",
+      "list_item_type": "message_status",
+      "size": 0,
+      "items": []
+    },
+    "user_context": {
+      "type": "node_user_context",
+      "sort_order": "DESC",
+      "sort_field": "post_time"
+    }
+  },
+  {
+    "type": "board",
+    "hidden": false,
+    "require_thread_root_label": true,
+    "friendly_date_enabled": false,
+    "nested": false,
+    "c_exclude_tiled_nav": false,
+    "id": "drivers_stacks",
+    "href": "/boards/drivers_stacks",
+    "view_href": "https://community.neo4j.com/t5/drivers-stacks/bd-p/drivers_stacks",
+    "conversation_style": "forum",
+    "title": "Drivers & Stacks",
+    "short_title": "Drivers & Stacks",
+    "description": "",
+    "language": "en",
+    "views": 4205534,
+    "allowed_labels": "predefined-only",
+    "date_pattern": "MM-dd-yyyy",
+    "friendly_date_max_age": 31,
+    "announcements": "<div style=\"background-color: pink;border: 2px solid red;padding: 1em;\">\r\n<b>Head's Up!</b> \r\n<p>\r\n<a href=\"https://community.neo4j.com/t5/general-discussions/migration-back-to-discourse/td-p/64509\">Site migration</a> is underway.\r\n</p>\r\n<ol style=\"list-style: decimal;margin-left: 1em;\">\r\n  <li style=\"text-decoration: line-through\">replicate users.</li>\r\n  <li><i>pause, resolving how to handle anonymous content</i></li>\r\n</ol>\r\n<div>",
+    "rating": "kudos",
+    "skin": "neo4j",
+    "depth": 2,
+    "position": 1,
+    "image_privacy": "private",
+    "creation_date": "2022-05-10T11:57:05.428-07:00",
+    "ancestor_categories": {
+      "query": "SELECT * FROM categories WHERE descendant_categories.id = 'drivers_stacks'"
+    },
+    "messages": {
+      "query": "SELECT * FROM messages WHERE board.id = 'drivers_stacks'"
+    },
+    "topics": {
+      "query": "SELECT * FROM messages WHERE board.id = 'drivers_stacks' AND depth = 0"
+    },
+    "parent_category": {
+      "type": "category",
+      "id": "product_discussions",
+      "href": "/categories/product_discussions",
+      "view_href": "https://community.neo4j.com/t5/technical-discussions/ct-p/product_discussions"
+    },
+    "root_category": {
+      "type": "category",
+      "id": "product_discussions",
+      "href": "/categories/product_discussions",
+      "view_href": "https://community.neo4j.com/t5/technical-discussions/ct-p/product_discussions"
+    },
+    "available_statuses": {
+      "type": "message_statuses",
+      "list_item_type": "message_status",
+      "size": 0,
+      "items": []
+    },
+    "user_context": {
+      "type": "node_user_context",
+      "sort_order": "DESC",
+      "sort_field": "post_time"
+    }
+  },
+  {
+    "type": "board",
+    "hidden": false,
+    "require_thread_root_label": true,
+    "friendly_date_enabled": false,
+    "nested": false,
+    "c_exclude_tiled_nav": false,
+    "id": "integrations",
+    "href": "/boards/integrations",
+    "view_href": "https://community.neo4j.com/t5/integrations/bd-p/integrations",
+    "conversation_style": "forum",
+    "title": "Integrations",
+    "short_title": "Integrations",
+    "description": "",
+    "language": "en",
+    "views": 1248188,
+    "allowed_labels": "predefined-only",
+    "date_pattern": "MM-dd-yyyy",
+    "friendly_date_max_age": 31,
+    "announcements": "<div style=\"background-color: pink;border: 2px solid red;padding: 1em;\">\r\n<b>Head's Up!</b> \r\n<p>\r\n<a href=\"https://community.neo4j.com/t5/general-discussions/migration-back-to-discourse/td-p/64509\">Site migration</a> is underway.\r\n</p>\r\n<ol style=\"list-style: decimal;margin-left: 1em;\">\r\n  <li style=\"text-decoration: line-through\">replicate users.</li>\r\n  <li><i>pause, resolving how to handle anonymous content</i></li>\r\n</ol>\r\n<div>",
+    "rating": "kudos",
+    "skin": "neo4j",
+    "depth": 2,
+    "position": 2,
+    "image_privacy": "private",
+    "creation_date": "2022-05-10T11:57:05.911-07:00",
+    "ancestor_categories": {
+      "query": "SELECT * FROM categories WHERE descendant_categories.id = 'integrations'"
+    },
+    "messages": {
+      "query": "SELECT * FROM messages WHERE board.id = 'integrations'"
+    },
+    "topics": {
+      "query": "SELECT * FROM messages WHERE board.id = 'integrations' AND depth = 0"
+    },
+    "parent_category": {
+      "type": "category",
+      "id": "product_discussions",
+      "href": "/categories/product_discussions",
+      "view_href": "https://community.neo4j.com/t5/technical-discussions/ct-p/product_discussions"
+    },
+    "root_category": {
+      "type": "category",
+      "id": "product_discussions",
+      "href": "/categories/product_discussions",
+      "view_href": "https://community.neo4j.com/t5/technical-discussions/ct-p/product_discussions"
+    },
+    "available_statuses": {
+      "type": "message_statuses",
+      "list_item_type": "message_status",
+      "size": 0,
+      "items": []
+    },
+    "user_context": {
+      "type": "node_user_context",
+      "sort_order": "DESC",
+      "sort_field": "post_time"
+    }
+  },
+  {
+    "type": "board",
+    "hidden": false,
+    "require_thread_root_label": false,
+    "friendly_date_enabled": false,
+    "nested": false,
+    "c_exclude_tiled_nav": false,
+    "id": "projects_collaboration",
+    "href": "/boards/projects_collaboration",
+    "view_href": "https://community.neo4j.com/t5/projects-collaboration/bd-p/projects_collaboration",
+    "conversation_style": "forum",
+    "title": "Projects & Collaboration",
+    "short_title": "Projects & Collaboration",
+    "description": "",
+    "language": "en",
+    "views": 700911,
+    "allowed_labels": "freeform-only",
+    "date_pattern": "MM-dd-yyyy",
+    "friendly_date_max_age": 31,
+    "announcements": "<div style=\"background-color: pink;border: 2px solid red;padding: 1em;\">\r\n<b>Head's Up!</b> \r\n<p>\r\n<a href=\"https://community.neo4j.com/t5/general-discussions/migration-back-to-discourse/td-p/64509\">Site migration</a> is underway.\r\n</p>\r\n<ol style=\"list-style: decimal;margin-left: 1em;\">\r\n  <li style=\"text-decoration: line-through\">replicate users.</li>\r\n  <li><i>pause, resolving how to handle anonymous content</i></li>\r\n</ol>\r\n<div>",
+    "rating": "kudos",
+    "skin": "neo4j",
+    "depth": 2,
+    "position": 2,
+    "image_privacy": "private",
+    "creation_date": "2022-05-10T11:57:07.982-07:00",
+    "ancestor_categories": {
+      "query": "SELECT * FROM categories WHERE descendant_categories.id = 'projects_collaboration'"
+    },
+    "messages": {
+      "query": "SELECT * FROM messages WHERE board.id = 'projects_collaboration'"
+    },
+    "topics": {
+      "query": "SELECT * FROM messages WHERE board.id = 'projects_collaboration' AND depth = 0"
+    },
+    "parent_category": {
+      "type": "category",
+      "id": "events_programs",
+      "href": "/categories/events_programs",
+      "view_href": "https://community.neo4j.com/t5/events-programs/ct-p/events_programs"
+    },
+    "root_category": {
+      "type": "category",
+      "id": "events_programs",
+      "href": "/categories/events_programs",
+      "view_href": "https://community.neo4j.com/t5/events-programs/ct-p/events_programs"
+    },
+    "available_statuses": {
+      "type": "message_statuses",
+      "list_item_type": "message_status",
+      "size": 0,
+      "items": []
+    },
+    "user_context": {
+      "type": "node_user_context",
+      "sort_order": "DESC",
+      "sort_field": "post_time"
+    }
+  },
+  {
+    "type": "board",
+    "hidden": false,
+    "require_thread_root_label": false,
+    "friendly_date_enabled": false,
+    "nested": false,
+    "c_exclude_tiled_nav": false,
+    "comments_enabled": true,
+    "id": "courses_certification",
+    "href": "/boards/courses_certification",
+    "view_href": "https://community.neo4j.com/t5/courses-certifications/tkb-p/courses_certification",
+    "conversation_style": "tkb",
+    "title": "Courses & Certifications",
+    "short_title": "Courses & Certifications",
+    "description": "",
+    "language": "en",
+    "views": 6184,
+    "allowed_labels": "freeform-only",
+    "date_pattern": "MM-dd-yyyy",
+    "friendly_date_max_age": 31,
+    "announcements": "<div style=\"background-color: pink;border: 2px solid red;padding: 1em;\">\r\n<b>Head's Up!</b> \r\n<p>\r\n<a href=\"https://community.neo4j.com/t5/general-discussions/migration-back-to-discourse/td-p/64509\">Site migration</a> is underway.\r\n</p>\r\n<ol style=\"list-style: decimal;margin-left: 1em;\">\r\n  <li style=\"text-decoration: line-through\">replicate users.</li>\r\n  <li><i>pause, resolving how to handle anonymous content</i></li>\r\n</ol>\r\n<div>",
+    "rating": "kudos",
+    "skin": "neo4j",
+    "depth": 2,
+    "position": 0,
+    "image_privacy": "private",
+    "creation_date": "2022-05-10T11:57:08.916-07:00",
+    "ancestor_categories": {
+      "query": "SELECT * FROM categories WHERE descendant_categories.id = 'courses_certification'"
+    },
+    "messages": {
+      "query": "SELECT * FROM messages WHERE board.id = 'courses_certification'"
+    },
+    "topics": {
+      "query": "SELECT * FROM messages WHERE board.id = 'courses_certification' AND depth = 0"
+    },
+    "parent_category": {
+      "type": "category",
+      "id": "graphacademy",
+      "href": "/categories/graphacademy",
+      "view_href": "https://community.neo4j.com/t5/graphacademy/ct-p/graphacademy"
+    },
+    "root_category": {
+      "type": "category",
+      "id": "graphacademy",
+      "href": "/categories/graphacademy",
+      "view_href": "https://community.neo4j.com/t5/graphacademy/ct-p/graphacademy"
+    },
+    "available_statuses": {
+      "type": "message_statuses",
+      "list_item_type": "message_status",
+      "size": 0,
+      "items": []
+    },
+    "user_context": {
+      "type": "node_user_context",
+      "sort_order": "DESC",
+      "sort_field": "post_time"
+    }
+  },
+  {
+    "type": "board",
+    "hidden": false,
+    "require_thread_root_label": false,
+    "friendly_date_enabled": false,
+    "nested": false,
+    "c_exclude_tiled_nav": false,
+    "id": "graphacademy_discussions",
+    "href": "/boards/graphacademy_discussions",
+    "view_href": "https://community.neo4j.com/t5/graphacademy-discussions/bd-p/graphacademy_discussions",
+    "conversation_style": "forum",
+    "title": "GraphAcademy Discussions",
+    "short_title": "GraphAcademy Discussions",
+    "description": "",
+    "language": "en",
+    "views": 1979188,
+    "allowed_labels": "freeform-only",
+    "date_pattern": "MM-dd-yyyy",
+    "friendly_date_max_age": 31,
+    "announcements": "<div style=\"background-color: pink;border: 2px solid red;padding: 1em;\">\r\n<b>Head's Up!</b> \r\n<p>\r\n<a href=\"https://community.neo4j.com/t5/general-discussions/migration-back-to-discourse/td-p/64509\">Site migration</a> is underway.\r\n</p>\r\n<ol style=\"list-style: decimal;margin-left: 1em;\">\r\n  <li style=\"text-decoration: line-through\">replicate users.</li>\r\n  <li><i>pause, resolving how to handle anonymous content</i></li>\r\n</ol>\r\n<div>",
+    "rating": "kudos",
+    "skin": "neo4j",
+    "depth": 2,
+    "position": 1,
+    "image_privacy": "private",
+    "creation_date": "2022-05-10T11:57:09.433-07:00",
+    "ancestor_categories": {
+      "query": "SELECT * FROM categories WHERE descendant_categories.id = 'graphacademy_discussions'"
+    },
+    "messages": {
+      "query": "SELECT * FROM messages WHERE board.id = 'graphacademy_discussions'"
+    },
+    "topics": {
+      "query": "SELECT * FROM messages WHERE board.id = 'graphacademy_discussions' AND depth = 0"
+    },
+    "parent_category": {
+      "type": "category",
+      "id": "graphacademy",
+      "href": "/categories/graphacademy",
+      "view_href": "https://community.neo4j.com/t5/graphacademy/ct-p/graphacademy"
+    },
+    "root_category": {
+      "type": "category",
+      "id": "graphacademy",
+      "href": "/categories/graphacademy",
+      "view_href": "https://community.neo4j.com/t5/graphacademy/ct-p/graphacademy"
+    },
+    "available_statuses": {
+      "type": "message_statuses",
+      "list_item_type": "message_status",
+      "size": 0,
+      "items": []
+    },
+    "user_context": {
+      "type": "node_user_context",
+      "sort_order": "DESC",
+      "sort_field": "post_time"
+    }
+  },
+  {
+    "type": "board",
+    "hidden": false,
+    "require_thread_root_label": true,
+    "friendly_date_enabled": false,
+    "nested": false,
+    "c_exclude_tiled_nav": false,
+    "comments_enabled": true,
+    "id": "news",
+    "href": "/boards/news",
+    "view_href": "https://community.neo4j.com/t5/community-news/bg-p/news",
+    "conversation_style": "blog",
+    "title": "Community News",
+    "short_title": "Community News",
+    "description": "",
+    "language": "en",
+    "views": 32215,
+    "allowed_labels": "freeform-and-predefined",
+    "date_pattern": "MM-dd-yyyy",
+    "friendly_date_max_age": 31,
+    "announcements": "<div style=\"background-color: pink;border: 2px solid red;padding: 1em;\">\r\n<b>Head's Up!</b> \r\n<p>\r\n<a href=\"https://community.neo4j.com/t5/general-discussions/migration-back-to-discourse/td-p/64509\">Site migration</a> is underway.\r\n</p>\r\n<ol style=\"list-style: decimal;margin-left: 1em;\">\r\n  <li style=\"text-decoration: line-through\">replicate users.</li>\r\n  <li><i>pause, resolving how to handle anonymous content</i></li>\r\n</ol>\r\n<div>",
+    "rating": "kudos",
+    "skin": "neo4j",
+    "depth": 2,
+    "position": 1,
+    "image_privacy": "private",
+    "creation_date": "2022-05-10T11:57:10.041-07:00",
+    "ancestor_categories": {
+      "query": "SELECT * FROM categories WHERE descendant_categories.id = 'news'"
+    },
+    "messages": {
+      "query": "SELECT * FROM messages WHERE board.id = 'news'"
+    },
+    "topics": {
+      "query": "SELECT * FROM messages WHERE board.id = 'news' AND depth = 0"
+    },
+    "parent_category": {
+      "type": "category",
+      "id": "community_corner",
+      "href": "/categories/community_corner",
+      "view_href": "https://community.neo4j.com/t5/community-corner/ct-p/community_corner"
+    },
+    "root_category": {
+      "type": "category",
+      "id": "community_corner",
+      "href": "/categories/community_corner",
+      "view_href": "https://community.neo4j.com/t5/community-corner/ct-p/community_corner"
+    },
+    "available_statuses": {
+      "type": "message_statuses",
+      "list_item_type": "message_status",
+      "size": 0,
+      "items": []
+    },
+    "user_context": {
+      "type": "node_user_context",
+      "sort_order": "DESC",
+      "sort_field": "post_time"
+    }
+  },
+  {
+    "type": "board",
+    "hidden": false,
+    "require_thread_root_label": false,
+    "friendly_date_enabled": false,
+    "nested": false,
+    "c_exclude_tiled_nav": false,
+    "comments_enabled": true,
+    "id": "about",
+    "href": "/boards/about",
+    "view_href": "https://community.neo4j.com/t5/about-the-community/tkb-p/about",
+    "conversation_style": "tkb",
+    "title": "About the Community",
+    "short_title": "About the Community",
+    "description": "",
+    "language": "en",
+    "views": 603105,
+    "allowed_labels": "freeform-only",
+    "date_pattern": "MM-dd-yyyy",
+    "friendly_date_max_age": 31,
+    "announcements": "<div style=\"background-color: pink;border: 2px solid red;padding: 1em;\">\r\n<b>Head's Up!</b> \r\n<p>\r\n<a href=\"https://community.neo4j.com/t5/general-discussions/migration-back-to-discourse/td-p/64509\">Site migration</a> is underway.\r\n</p>\r\n<ol style=\"list-style: decimal;margin-left: 1em;\">\r\n  <li style=\"text-decoration: line-through\">replicate users.</li>\r\n  <li><i>pause, resolving how to handle anonymous content</i></li>\r\n</ol>\r\n<div>",
+    "rating": "kudos",
+    "skin": "neo4j",
+    "depth": 2,
+    "position": 6,
+    "image_privacy": "private",
+    "creation_date": "2022-05-10T11:57:10.455-07:00",
+    "ancestor_categories": {
+      "query": "SELECT * FROM categories WHERE descendant_categories.id = 'about'"
+    },
+    "messages": {
+      "query": "SELECT * FROM messages WHERE board.id = 'about'"
+    },
+    "topics": {
+      "query": "SELECT * FROM messages WHERE board.id = 'about' AND depth = 0"
+    },
+    "parent_category": {
+      "type": "category",
+      "id": "community_corner",
+      "href": "/categories/community_corner",
+      "view_href": "https://community.neo4j.com/t5/community-corner/ct-p/community_corner"
+    },
+    "root_category": {
+      "type": "category",
+      "id": "community_corner",
+      "href": "/categories/community_corner",
+      "view_href": "https://community.neo4j.com/t5/community-corner/ct-p/community_corner"
+    },
+    "available_statuses": {
+      "type": "message_statuses",
+      "list_item_type": "message_status",
+      "size": 0,
+      "items": []
+    },
+    "user_context": {
+      "type": "node_user_context",
+      "sort_order": "DESC",
+      "sort_field": "post_time"
+    }
+  },
+  {
+    "type": "board",
+    "hidden": false,
+    "require_thread_root_label": false,
+    "friendly_date_enabled": false,
+    "nested": false,
+    "c_exclude_tiled_nav": false,
+    "id": "hello",
+    "href": "/boards/hello",
+    "view_href": "https://community.neo4j.com/t5/introduce-yourself/bd-p/hello",
+    "conversation_style": "forum",
+    "title": "Introduce Yourself",
+    "short_title": "Introduce Yourself",
+    "description": "",
+    "language": "en",
+    "views": 966379,
+    "allowed_labels": "freeform-only",
+    "date_pattern": "MM-dd-yyyy",
+    "friendly_date_max_age": 31,
+    "announcements": "<div style=\"background-color: pink;border: 2px solid red;padding: 1em;\">\r\n<b>Head's Up!</b> \r\n<p>\r\n<a href=\"https://community.neo4j.com/t5/general-discussions/migration-back-to-discourse/td-p/64509\">Site migration</a> is underway.\r\n</p>\r\n<ol style=\"list-style: decimal;margin-left: 1em;\">\r\n  <li style=\"text-decoration: line-through\">replicate users.</li>\r\n  <li><i>pause, resolving how to handle anonymous content</i></li>\r\n</ol>\r\n<div>",
+    "rating": "kudos",
+    "skin": "neo4j",
+    "depth": 2,
+    "position": 0,
+    "image_privacy": "private",
+    "creation_date": "2022-05-10T11:57:10.902-07:00",
+    "ancestor_categories": {
+      "query": "SELECT * FROM categories WHERE descendant_categories.id = 'hello'"
+    },
+    "messages": {
+      "query": "SELECT * FROM messages WHERE board.id = 'hello'"
+    },
+    "topics": {
+      "query": "SELECT * FROM messages WHERE board.id = 'hello' AND depth = 0"
+    },
+    "parent_category": {
+      "type": "category",
+      "id": "community_corner",
+      "href": "/categories/community_corner",
+      "view_href": "https://community.neo4j.com/t5/community-corner/ct-p/community_corner"
+    },
+    "root_category": {
+      "type": "category",
+      "id": "community_corner",
+      "href": "/categories/community_corner",
+      "view_href": "https://community.neo4j.com/t5/community-corner/ct-p/community_corner"
+    },
+    "available_statuses": {
+      "type": "message_statuses",
+      "list_item_type": "message_status",
+      "size": 0,
+      "items": []
+    },
+    "user_context": {
+      "type": "node_user_context",
+      "sort_order": "DESC",
+      "sort_field": "post_time"
+    }
+  },
+  {
+    "type": "board",
+    "hidden": false,
+    "require_thread_root_label": false,
+    "friendly_date_enabled": false,
+    "nested": false,
+    "c_exclude_tiled_nav": false,
+    "comments_enabled": false,
+    "id": "community_suggestions",
+    "href": "/boards/community_suggestions",
+    "view_href": "https://community.neo4j.com/t5/community-suggestions/idb-p/community_suggestions",
+    "conversation_style": "idea",
+    "title": "Community Suggestions",
+    "short_title": "Community Suggestions",
+    "description": "",
+    "language": "en",
+    "views": 311762,
+    "allowed_labels": "predefined-only",
+    "date_pattern": "MM-dd-yyyy",
+    "friendly_date_max_age": 31,
+    "announcements": "<div style=\"background-color: pink;border: 2px solid red;padding: 1em;\">\r\n<b>Head's Up!</b> \r\n<p>\r\n<a href=\"https://community.neo4j.com/t5/general-discussions/migration-back-to-discourse/td-p/64509\">Site migration</a> is underway.\r\n</p>\r\n<ol style=\"list-style: decimal;margin-left: 1em;\">\r\n  <li style=\"text-decoration: line-through\">replicate users.</li>\r\n  <li><i>pause, resolving how to handle anonymous content</i></li>\r\n</ol>\r\n<div>",
+    "rating": "kudos",
+    "skin": "neo4j",
+    "depth": 2,
+    "position": 2,
+    "image_privacy": "private",
+    "creation_date": "2022-05-10T11:57:11.240-07:00",
+    "ancestor_categories": {
+      "query": "SELECT * FROM categories WHERE descendant_categories.id = 'community_suggestions'"
+    },
+    "messages": {
+      "query": "SELECT * FROM messages WHERE board.id = 'community_suggestions'"
+    },
+    "topics": {
+      "query": "SELECT * FROM messages WHERE board.id = 'community_suggestions' AND depth = 0"
+    },
+    "parent_category": {
+      "type": "category",
+      "id": "community_corner",
+      "href": "/categories/community_corner",
+      "view_href": "https://community.neo4j.com/t5/community-corner/ct-p/community_corner"
+    },
+    "root_category": {
+      "type": "category",
+      "id": "community_corner",
+      "href": "/categories/community_corner",
+      "view_href": "https://community.neo4j.com/t5/community-corner/ct-p/community_corner"
+    },
+    "available_statuses": {
+      "type": "message_statuses",
+      "list_item_type": "message_status",
+      "size": 6,
+      "items": [
+        {
+          "type": "message_status",
+          "key": "new",
+          "type_key": "idea",
+          "name": "New",
+          "completed": false
+        },
+        {
+          "type": "message_status",
+          "key": "needs_info",
+          "type_key": "idea",
+          "name": "Needs Info",
+          "completed": false
+        },
+        {
+          "type": "message_status",
+          "key": "investigating",
+          "type_key": "idea",
+          "name": "Investigating",
+          "completed": false
+        },
+        {
+          "type": "message_status",
+          "key": "accepted",
+          "type_key": "idea",
+          "name": "Accepted",
+          "completed": false
+        },
+        {
+          "type": "message_status",
+          "key": "declined",
+          "type_key": "idea",
+          "name": "Declined",
+          "completed": false
+        },
+        {
+          "type": "message_status",
+          "key": "delivered",
+          "type_key": "idea",
+          "name": "Delivered",
+          "completed": true
+        }
+      ]
+    },
+    "user_context": {
+      "type": "node_user_context",
+      "sort_order": "DESC",
+      "sort_field": "post_time"
+    }
+  },
+  {
+    "type": "board",
+    "hidden": false,
+    "require_thread_root_label": true,
+    "friendly_date_enabled": false,
+    "nested": false,
+    "c_exclude_tiled_nav": false,
+    "id": "general_discussions",
+    "href": "/boards/general_discussions",
+    "view_href": "https://community.neo4j.com/t5/general-discussions/bd-p/general_discussions",
+    "conversation_style": "forum",
+    "title": "General Discussions",
+    "short_title": "General Discussions",
+    "description": "",
+    "language": "en",
+    "views": 2556544,
+    "allowed_labels": "predefined-only",
+    "date_pattern": "MM-dd-yyyy",
+    "friendly_date_max_age": 31,
+    "announcements": "<div style=\"background-color: pink;border: 2px solid red;padding: 1em;\">\r\n<b>Head's Up!</b> \r\n<p>\r\n<a href=\"https://community.neo4j.com/t5/general-discussions/migration-back-to-discourse/td-p/64509\">Site migration</a> is underway.\r\n</p>\r\n<ol style=\"list-style: decimal;margin-left: 1em;\">\r\n  <li style=\"text-decoration: line-through\">replicate users.</li>\r\n  <li><i>pause, resolving how to handle anonymous content</i></li>\r\n</ol>\r\n<div>",
+    "rating": "kudos",
+    "skin": "neo4j",
+    "depth": 2,
+    "position": 3,
+    "image_privacy": "private",
+    "creation_date": "2022-05-10T11:57:11.636-07:00",
+    "ancestor_categories": {
+      "query": "SELECT * FROM categories WHERE descendant_categories.id = 'general_discussions'"
+    },
+    "messages": {
+      "query": "SELECT * FROM messages WHERE board.id = 'general_discussions'"
+    },
+    "topics": {
+      "query": "SELECT * FROM messages WHERE board.id = 'general_discussions' AND depth = 0"
+    },
+    "parent_category": {
+      "type": "category",
+      "id": "community_corner",
+      "href": "/categories/community_corner",
+      "view_href": "https://community.neo4j.com/t5/community-corner/ct-p/community_corner"
+    },
+    "root_category": {
+      "type": "category",
+      "id": "community_corner",
+      "href": "/categories/community_corner",
+      "view_href": "https://community.neo4j.com/t5/community-corner/ct-p/community_corner"
+    },
+    "available_statuses": {
+      "type": "message_statuses",
+      "list_item_type": "message_status",
+      "size": 0,
+      "items": []
+    },
+    "user_context": {
+      "type": "node_user_context",
+      "sort_order": "DESC",
+      "sort_field": "post_time"
+    }
+  },
+  {
+    "type": "board",
+    "hidden": false,
+    "require_thread_root_label": false,
+    "friendly_date_enabled": false,
+    "nested": false,
+    "id": "Sporerside_674",
+    "href": "/boards/Sporerside_674",
+    "view_href": "https://community.neo4j.com/t5/this-is-a-forum-board-sporerside/bd-p/Sporerside_674",
+    "conversation_style": "forum",
+    "title": "This is a forum board Sporerside_674 for QA",
+    "short_title": "This is a forum board Sporerside_674 for QA",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Morbi leo urna molestie at elementum eu facilisis sed. Enim lobortis scelerisque fermentum dui faucibus in ornare quam. Lectus quam id leo in vitae turpis massa. Varius quam quisque id diam vel quam elementum pulvinar. Proin sagittis nisl rhoncus mattis rhoncus. Viverra nam libero justo laoreet sit amet. Posuere urna nec tincidunt praesent semper feugiat nibh sed. In aliquam sem fringilla ut morbi. Risus in hendrerit gravida rutrum. Suspendisse potenti nullam ac tortor. Aliquet enim tortor at auctor urna nunc id. Nibh mauris cursus mattis molestie a. Vulputate eu scelerisque felis imperdiet proin fermentum leo vel orci. Mauris pellentesque pulvinar pellentesque habitant morbi. Malesuada proin libero nunc consequat interdum varius sit. Ipsum nunc aliquet bibendum enim facilisis gravida. Velit egestas dui id ornare arcu odio ut. Eu augue ut lectus arcu. Nisl pretium fusce id velit. Eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada. Eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum. Sit amet consectetur adipiscing elit ut aliquam purus sit. Ut tortor pretium viverra suspendisse potenti nullam ac tortor. Amet facilisis magna etiam tempor orci eu lobortis elementum nibh. Sed lectus vestibulum mattis ullamcorper velit. Pellentesque habitant morbi tristique senectus et netus et malesuada. Vel orci porta non pulvinar neque laoreet suspendisse. Blandit cursus risus at ultrices mi tempus imperdiet. Mauris in aliquam sem fringilla. Leo integer malesuada nunc vel risus commodo. Viverra justo nec ultrices dui. A diam sollicitudin tempor id eu nisl nunc mi ipsum. Aliquam vestibulum morbi blandit cursus. Egestas maecenas pharetra convallis posuere morbi leo urna molestie. Sollicitudin nibh sit amet commodo nulla. Viverra aliquet eget sit amet tellus cras adipiscing enim eu. Ac turpis egestas sed tempus.Tempor orci dapibus ultrices in iaculis nunc sed augue. Lacus luctus accumsan tortor posuere. Elementum facilisis leo vel fringilla est ullamcorper eget. Aliquam sem et tortor consequat id porta. Faucibus pulvinar elementum integer enim neque. Sed nisi lacus sed viverra tellus. Placerat vestibulum lectus mauris ultrices eros in. Pharetra massa massa ultricies mi quis hendrerit dolor magna. Massa placerat duis ultricies lacus sed. Mauris vitae ultricies leo integer malesuada nunc vel risus commodo.788_Johnpaulberg",
+    "language": "en",
+    "views": 0,
+    "allowed_labels": "freeform-only",
+    "date_pattern": "MM-dd-yyyy",
+    "friendly_date_max_age": 31,
+    "announcements": "<div style=\"background-color: pink;border: 2px solid red;padding: 1em;\">\r\n<b>Head's Up!</b> \r\n<p>\r\n<a href=\"https://community.neo4j.com/t5/general-discussions/migration-back-to-discourse/td-p/64509\">Site migration</a> is underway.\r\n</p>\r\n<ol style=\"list-style: decimal;margin-left: 1em;\">\r\n  <li style=\"text-decoration: line-through\">replicate users.</li>\r\n  <li><i>pause, resolving how to handle anonymous content</i></li>\r\n</ol>\r\n<div>",
+    "rating": "kudos",
+    "skin": "neo4j",
+    "depth": 3,
+    "position": 0,
+    "image_privacy": "private",
+    "creation_date": "2022-05-10T11:57:24.634-07:00",
+    "ancestor_categories": {
+      "query": "SELECT * FROM categories WHERE descendant_categories.id = 'Sporerside_674'"
+    },
+    "messages": {
+      "query": "SELECT * FROM messages WHERE board.id = 'Sporerside_674'"
+    },
+    "topics": {
+      "query": "SELECT * FROM messages WHERE board.id = 'Sporerside_674' AND depth = 0"
+    },
+    "parent_category": {
+      "type": "category",
+      "id": "Port_Tonihaven_524",
+      "href": "/categories/Port_Tonihaven_524",
+      "view_href": "https://community.neo4j.com/t5/this-is-a-category-port/ct-p/Port_Tonihaven_524"
+    },
+    "root_category": {
+      "type": "category",
+      "id": "Wheaton_181",
+      "href": "/categories/Wheaton_181",
+      "view_href": "https://community.neo4j.com/t5/this-is-a-category-wheaton-181/ct-p/Wheaton_181"
+    },
+    "available_statuses": {
+      "type": "message_statuses",
+      "list_item_type": "message_status",
+      "size": 0,
+      "items": []
+    },
+    "user_context": {
+      "type": "node_user_context",
+      "sort_order": "DESC",
+      "sort_field": "post_time"
+    }
+  },
+  {
+    "type": "board",
+    "hidden": false,
+    "require_thread_root_label": false,
+    "friendly_date_enabled": false,
+    "nested": false,
+    "comments_enabled": true,
+    "id": "North_Stevie_621",
+    "href": "/boards/North_Stevie_621",
+    "view_href": "https://community.neo4j.com/t5/this-is-a-blog-board-north/bg-p/North_Stevie_621",
+    "conversation_style": "blog",
+    "title": "This is a blog board North_Stevie_621 for QA",
+    "short_title": "This is a blog board North_Stevie_621 for QA",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Morbi leo urna molestie at elementum eu facilisis sed. Enim lobortis scelerisque fermentum dui faucibus in ornare quam. Lectus quam id leo in vitae turpis massa. Varius quam quisque id diam vel quam elementum pulvinar. Proin sagittis nisl rhoncus mattis rhoncus. Viverra nam libero justo laoreet sit amet. Posuere urna nec tincidunt praesent semper feugiat nibh sed. In aliquam sem fringilla ut morbi. Risus in hendrerit gravida rutrum. Suspendisse potenti nullam ac tortor. Aliquet enim tortor at auctor urna nunc id. Nibh mauris cursus mattis molestie a. Vulputate eu scelerisque felis imperdiet proin fermentum leo vel orci. Mauris pellentesque pulvinar pellentesque habitant morbi. Malesuada proin libero nunc consequat interdum varius sit. Ipsum nunc aliquet bibendum enim facilisis gravida. Velit egestas dui id ornare arcu odio ut. Eu augue ut lectus arcu. Nisl pretium fusce id velit. Eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada. Eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum. Sit amet consectetur adipiscing elit ut aliquam purus sit. Ut tortor pretium viverra suspendisse potenti nullam ac tortor. Amet facilisis magna etiam tempor orci eu lobortis elementum nibh. Sed lectus vestibulum mattis ullamcorper velit. Pellentesque habitant morbi tristique senectus et netus et malesuada. Vel orci porta non pulvinar neque laoreet suspendisse. Blandit cursus risus at ultrices mi tempus imperdiet. Mauris in aliquam sem fringilla. Leo integer malesuada nunc vel risus commodo. Viverra justo nec ultrices dui. A diam sollicitudin tempor id eu nisl nunc mi ipsum. Aliquam vestibulum morbi blandit cursus. Egestas maecenas pharetra convallis posuere morbi leo urna molestie. Sollicitudin nibh sit amet commodo nulla. Viverra aliquet eget sit amet tellus cras adipiscing enim eu. Ac turpis egestas sed tempus.Tempor orci dapibus ultrices in iaculis nunc sed augue. Lacus luctus accumsan tortor posuere. Elementum facilisis leo vel fringilla est ullamcorper eget. Aliquam sem et tortor consequat id porta. Faucibus pulvinar elementum integer enim neque. Sed nisi lacus sed viverra tellus. Placerat vestibulum lectus mauris ultrices eros in. Pharetra massa massa ultricies mi quis hendrerit dolor magna. Massa placerat duis ultricies lacus sed. Mauris vitae ultricies leo integer malesuada nunc vel risus commodo.17_Torpmouth",
+    "language": "en",
+    "views": 0,
+    "allowed_labels": "freeform-only",
+    "date_pattern": "MM-dd-yyyy",
+    "friendly_date_max_age": 31,
+    "announcements": "<div style=\"background-color: pink;border: 2px solid red;padding: 1em;\">\r\n<b>Head's Up!</b> \r\n<p>\r\n<a href=\"https://community.neo4j.com/t5/general-discussions/migration-back-to-discourse/td-p/64509\">Site migration</a> is underway.\r\n</p>\r\n<ol style=\"list-style: decimal;margin-left: 1em;\">\r\n  <li style=\"text-decoration: line-through\">replicate users.</li>\r\n  <li><i>pause, resolving how to handle anonymous content</i></li>\r\n</ol>\r\n<div>",
+    "rating": "kudos",
+    "skin": "neo4j",
+    "depth": 3,
+    "position": 1,
+    "image_privacy": "private",
+    "creation_date": "2022-05-10T11:57:25.028-07:00",
+    "ancestor_categories": {
+      "query": "SELECT * FROM categories WHERE descendant_categories.id = 'North_Stevie_621'"
+    },
+    "messages": {
+      "query": "SELECT * FROM messages WHERE board.id = 'North_Stevie_621'"
+    },
+    "topics": {
+      "query": "SELECT * FROM messages WHERE board.id = 'North_Stevie_621' AND depth = 0"
+    },
+    "parent_category": {
+      "type": "category",
+      "id": "Port_Tonihaven_524",
+      "href": "/categories/Port_Tonihaven_524",
+      "view_href": "https://community.neo4j.com/t5/this-is-a-category-port/ct-p/Port_Tonihaven_524"
+    },
+    "root_category": {
+      "type": "category",
+      "id": "Wheaton_181",
+      "href": "/categories/Wheaton_181",
+      "view_href": "https://community.neo4j.com/t5/this-is-a-category-wheaton-181/ct-p/Wheaton_181"
+    },
+    "available_statuses": {
+      "type": "message_statuses",
+      "list_item_type": "message_status",
+      "size": 0,
+      "items": []
+    },
+    "user_context": {
+      "type": "node_user_context",
+      "sort_order": "DESC",
+      "sort_field": "post_time"
+    }
+  },
+  {
+    "type": "board",
+    "hidden": false,
+    "require_thread_root_label": false,
+    "friendly_date_enabled": false,
+    "nested": false,
+    "comments_enabled": true,
+    "id": "The_Woodlands_920",
+    "href": "/boards/The_Woodlands_920",
+    "view_href": "https://community.neo4j.com/t5/this-is-a-tkb-board-the/tkb-p/The_Woodlands_920",
+    "conversation_style": "tkb",
+    "title": "This is a TKB board The_Woodlands_920 for QA",
+    "short_title": "This is a TKB board The_Woodlands_920 for QA",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Morbi leo urna molestie at elementum eu facilisis sed. Enim lobortis scelerisque fermentum dui faucibus in ornare quam. Lectus quam id leo in vitae turpis massa. Varius quam quisque id diam vel quam elementum pulvinar. Proin sagittis nisl rhoncus mattis rhoncus. Viverra nam libero justo laoreet sit amet. Posuere urna nec tincidunt praesent semper feugiat nibh sed. In aliquam sem fringilla ut morbi. Risus in hendrerit gravida rutrum. Suspendisse potenti nullam ac tortor. Aliquet enim tortor at auctor urna nunc id. Nibh mauris cursus mattis molestie a. Vulputate eu scelerisque felis imperdiet proin fermentum leo vel orci. Mauris pellentesque pulvinar pellentesque habitant morbi. Malesuada proin libero nunc consequat interdum varius sit. Ipsum nunc aliquet bibendum enim facilisis gravida. Velit egestas dui id ornare arcu odio ut. Eu augue ut lectus arcu. Nisl pretium fusce id velit. Eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada. Eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum. Sit amet consectetur adipiscing elit ut aliquam purus sit. Ut tortor pretium viverra suspendisse potenti nullam ac tortor. Amet facilisis magna etiam tempor orci eu lobortis elementum nibh. Sed lectus vestibulum mattis ullamcorper velit. Pellentesque habitant morbi tristique senectus et netus et malesuada. Vel orci porta non pulvinar neque laoreet suspendisse. Blandit cursus risus at ultrices mi tempus imperdiet. Mauris in aliquam sem fringilla. Leo integer malesuada nunc vel risus commodo. Viverra justo nec ultrices dui. A diam sollicitudin tempor id eu nisl nunc mi ipsum. Aliquam vestibulum morbi blandit cursus. Egestas maecenas pharetra convallis posuere morbi leo urna molestie. Sollicitudin nibh sit amet commodo nulla. Viverra aliquet eget sit amet tellus cras adipiscing enim eu. Ac turpis egestas sed tempus.Tempor orci dapibus ultrices in iaculis nunc sed augue. Lacus luctus accumsan tortor posuere. Elementum facilisis leo vel fringilla est ullamcorper eget. Aliquam sem et tortor consequat id porta. Faucibus pulvinar elementum integer enim neque. Sed nisi lacus sed viverra tellus. Placerat vestibulum lectus mauris ultrices eros in. Pharetra massa massa ultricies mi quis hendrerit dolor magna. Massa placerat duis ultricies lacus sed. Mauris vitae ultricies leo integer malesuada nunc vel risus commodo.102_Laynetown",
+    "language": "en",
+    "views": 0,
+    "allowed_labels": "freeform-only",
+    "date_pattern": "MM-dd-yyyy",
+    "friendly_date_max_age": 31,
+    "announcements": "<div style=\"background-color: pink;border: 2px solid red;padding: 1em;\">\r\n<b>Head's Up!</b> \r\n<p>\r\n<a href=\"https://community.neo4j.com/t5/general-discussions/migration-back-to-discourse/td-p/64509\">Site migration</a> is underway.\r\n</p>\r\n<ol style=\"list-style: decimal;margin-left: 1em;\">\r\n  <li style=\"text-decoration: line-through\">replicate users.</li>\r\n  <li><i>pause, resolving how to handle anonymous content</i></li>\r\n</ol>\r\n<div>",
+    "rating": "kudos",
+    "skin": "neo4j",
+    "depth": 3,
+    "position": 2,
+    "image_privacy": "private",
+    "creation_date": "2022-05-10T11:57:25.396-07:00",
+    "ancestor_categories": {
+      "query": "SELECT * FROM categories WHERE descendant_categories.id = 'The_Woodlands_920'"
+    },
+    "messages": {
+      "query": "SELECT * FROM messages WHERE board.id = 'The_Woodlands_920'"
+    },
+    "topics": {
+      "query": "SELECT * FROM messages WHERE board.id = 'The_Woodlands_920' AND depth = 0"
+    },
+    "parent_category": {
+      "type": "category",
+      "id": "Port_Tonihaven_524",
+      "href": "/categories/Port_Tonihaven_524",
+      "view_href": "https://community.neo4j.com/t5/this-is-a-category-port/ct-p/Port_Tonihaven_524"
+    },
+    "root_category": {
+      "type": "category",
+      "id": "Wheaton_181",
+      "href": "/categories/Wheaton_181",
+      "view_href": "https://community.neo4j.com/t5/this-is-a-category-wheaton-181/ct-p/Wheaton_181"
+    },
+    "available_statuses": {
+      "type": "message_statuses",
+      "list_item_type": "message_status",
+      "size": 0,
+      "items": []
+    },
+    "user_context": {
+      "type": "node_user_context",
+      "sort_order": "DESC",
+      "sort_field": "post_time"
+    }
+  },
+  {
+    "type": "board",
+    "hidden": false,
+    "require_thread_root_label": false,
+    "friendly_date_enabled": false,
+    "nested": false,
+    "id": "groupHub_testforum-board",
+    "href": "/boards/groupHub_testforum-board",
+    "view_href": "https://community.neo4j.com/t5/grouphubtest/bd-p/groupHub_testforum-board",
+    "conversation_style": "forum",
+    "title": "GroupHubTest",
+    "short_title": "Forum",
+    "description": "",
+    "language": "en",
+    "views": 0,
+    "allowed_labels": "freeform-only",
+    "date_pattern": "MM-dd-yyyy",
+    "friendly_date_max_age": 31,
+    "announcements": "<div style=\"background-color: pink;border: 2px solid red;padding: 1em;\">\r\n<b>Head's Up!</b> \r\n<p>\r\n<a href=\"https://community.neo4j.com/t5/general-discussions/migration-back-to-discourse/td-p/64509\">Site migration</a> is underway.\r\n</p>\r\n<ol style=\"list-style: decimal;margin-left: 1em;\">\r\n  <li style=\"text-decoration: line-through\">replicate users.</li>\r\n  <li><i>pause, resolving how to handle anonymous content</i></li>\r\n</ol>\r\n<div>",
+    "rating": "kudos",
+    "skin": "neo4j",
+    "depth": 4,
+    "position": 0,
+    "image_privacy": "private",
+    "creation_date": "2022-05-10T11:56:55.081-07:00",
+    "ancestor_categories": {
+      "query": "SELECT * FROM categories WHERE descendant_categories.id = 'groupHub_testforum-board'"
+    },
+    "messages": {
+      "query": "SELECT * FROM messages WHERE board.id = 'groupHub_testforum-board'"
+    },
+    "topics": {
+      "query": "SELECT * FROM messages WHERE board.id = 'groupHub_testforum-board' AND depth = 0"
+    },
+    "parent_category": {},
+    "root_category": {
+      "type": "category",
+      "id": "Wheaton_181",
+      "href": "/categories/Wheaton_181",
+      "view_href": "https://community.neo4j.com/t5/this-is-a-category-wheaton-181/ct-p/Wheaton_181"
+    },
+    "available_statuses": {
+      "type": "message_statuses",
+      "list_item_type": "message_status",
+      "size": 0,
+      "items": []
+    },
+    "user_context": {
+      "type": "node_user_context",
+      "sort_order": "DESC",
+      "sort_field": "post_time"
+    }
+  },
+  {
+    "type": "board",
+    "hidden": false,
+    "require_thread_root_label": false,
+    "friendly_date_enabled": false,
+    "nested": false,
+    "comments_enabled": true,
+    "id": "groupHub_testblog-board",
+    "href": "/boards/groupHub_testblog-board",
+    "view_href": "https://community.neo4j.com/t5/grouphubtest/bg-p/groupHub_testblog-board",
+    "conversation_style": "blog",
+    "title": "GroupHubTest",
+    "short_title": "Blog",
+    "description": "",
+    "language": "en",
+    "views": 0,
+    "allowed_labels": "freeform-only",
+    "date_pattern": "MM-dd-yyyy",
+    "friendly_date_max_age": 31,
+    "announcements": "<div style=\"background-color: pink;border: 2px solid red;padding: 1em;\">\r\n<b>Head's Up!</b> \r\n<p>\r\n<a href=\"https://community.neo4j.com/t5/general-discussions/migration-back-to-discourse/td-p/64509\">Site migration</a> is underway.\r\n</p>\r\n<ol style=\"list-style: decimal;margin-left: 1em;\">\r\n  <li style=\"text-decoration: line-through\">replicate users.</li>\r\n  <li><i>pause, resolving how to handle anonymous content</i></li>\r\n</ol>\r\n<div>",
+    "rating": "kudos",
+    "skin": "neo4j",
+    "depth": 4,
+    "position": 1,
+    "image_privacy": "private",
+    "creation_date": "2022-05-10T11:56:55.081-07:00",
+    "ancestor_categories": {
+      "query": "SELECT * FROM categories WHERE descendant_categories.id = 'groupHub_testblog-board'"
+    },
+    "messages": {
+      "query": "SELECT * FROM messages WHERE board.id = 'groupHub_testblog-board'"
+    },
+    "topics": {
+      "query": "SELECT * FROM messages WHERE board.id = 'groupHub_testblog-board' AND depth = 0"
+    },
+    "parent_category": {},
+    "root_category": {
+      "type": "category",
+      "id": "Wheaton_181",
+      "href": "/categories/Wheaton_181",
+      "view_href": "https://community.neo4j.com/t5/this-is-a-category-wheaton-181/ct-p/Wheaton_181"
+    },
+    "available_statuses": {
+      "type": "message_statuses",
+      "list_item_type": "message_status",
+      "size": 0,
+      "items": []
+    },
+    "user_context": {
+      "type": "node_user_context",
+      "sort_order": "DESC",
+      "sort_field": "post_time"
+    }
+  },
+  {
+    "type": "board",
+    "hidden": false,
+    "require_thread_root_label": false,
+    "friendly_date_enabled": false,
+    "nested": false,
+    "comments_enabled": true,
+    "id": "groupHub_testtkb-board",
+    "href": "/boards/groupHub_testtkb-board",
+    "view_href": "https://community.neo4j.com/t5/grouphubtest/tkb-p/groupHub_testtkb-board",
+    "conversation_style": "tkb",
+    "title": "GroupHubTest",
+    "short_title": "Knowledge Base",
+    "description": "",
+    "language": "en",
+    "views": 0,
+    "allowed_labels": "freeform-only",
+    "date_pattern": "MM-dd-yyyy",
+    "friendly_date_max_age": 31,
+    "announcements": "<div style=\"background-color: pink;border: 2px solid red;padding: 1em;\">\r\n<b>Head's Up!</b> \r\n<p>\r\n<a href=\"https://community.neo4j.com/t5/general-discussions/migration-back-to-discourse/td-p/64509\">Site migration</a> is underway.\r\n</p>\r\n<ol style=\"list-style: decimal;margin-left: 1em;\">\r\n  <li style=\"text-decoration: line-through\">replicate users.</li>\r\n  <li><i>pause, resolving how to handle anonymous content</i></li>\r\n</ol>\r\n<div>",
+    "rating": "kudos",
+    "skin": "neo4j",
+    "depth": 4,
+    "position": 2,
+    "image_privacy": "private",
+    "creation_date": "2022-05-10T11:56:55.081-07:00",
+    "ancestor_categories": {
+      "query": "SELECT * FROM categories WHERE descendant_categories.id = 'groupHub_testtkb-board'"
+    },
+    "messages": {
+      "query": "SELECT * FROM messages WHERE board.id = 'groupHub_testtkb-board'"
+    },
+    "topics": {
+      "query": "SELECT * FROM messages WHERE board.id = 'groupHub_testtkb-board' AND depth = 0"
+    },
+    "parent_category": {},
+    "root_category": {
+      "type": "category",
+      "id": "Wheaton_181",
+      "href": "/categories/Wheaton_181",
+      "view_href": "https://community.neo4j.com/t5/this-is-a-category-wheaton-181/ct-p/Wheaton_181"
+    },
+    "available_statuses": {
+      "type": "message_statuses",
+      "list_item_type": "message_status",
+      "size": 0,
+      "items": []
+    },
+    "user_context": {
+      "type": "node_user_context",
+      "sort_order": "DESC",
+      "sort_field": "post_time"
+    }
+  },
+  {
+    "type": "board",
+    "hidden": false,
+    "require_thread_root_label": false,
+    "friendly_date_enabled": false,
+    "nested": false,
+    "comments_enabled": false,
+    "id": "groupHub_testidea-board",
+    "href": "/boards/groupHub_testidea-board",
+    "view_href": "https://community.neo4j.com/t5/grouphubtest/idb-p/groupHub_testidea-board",
+    "conversation_style": "idea",
+    "title": "GroupHubTest",
+    "short_title": "Idea Exchange",
+    "description": "",
+    "language": "en",
+    "views": 0,
+    "allowed_labels": "freeform-only",
+    "date_pattern": "MM-dd-yyyy",
+    "friendly_date_max_age": 31,
+    "announcements": "<div style=\"background-color: pink;border: 2px solid red;padding: 1em;\">\r\n<b>Head's Up!</b> \r\n<p>\r\n<a href=\"https://community.neo4j.com/t5/general-discussions/migration-back-to-discourse/td-p/64509\">Site migration</a> is underway.\r\n</p>\r\n<ol style=\"list-style: decimal;margin-left: 1em;\">\r\n  <li style=\"text-decoration: line-through\">replicate users.</li>\r\n  <li><i>pause, resolving how to handle anonymous content</i></li>\r\n</ol>\r\n<div>",
+    "rating": "kudos",
+    "skin": "neo4j",
+    "depth": 4,
+    "position": 3,
+    "image_privacy": "private",
+    "creation_date": "2022-05-10T11:56:55.081-07:00",
+    "ancestor_categories": {
+      "query": "SELECT * FROM categories WHERE descendant_categories.id = 'groupHub_testidea-board'"
+    },
+    "messages": {
+      "query": "SELECT * FROM messages WHERE board.id = 'groupHub_testidea-board'"
+    },
+    "topics": {
+      "query": "SELECT * FROM messages WHERE board.id = 'groupHub_testidea-board' AND depth = 0"
+    },
+    "parent_category": {},
+    "root_category": {
+      "type": "category",
+      "id": "Wheaton_181",
+      "href": "/categories/Wheaton_181",
+      "view_href": "https://community.neo4j.com/t5/this-is-a-category-wheaton-181/ct-p/Wheaton_181"
+    },
+    "available_statuses": {
+      "type": "message_statuses",
+      "list_item_type": "message_status",
+      "size": 6,
+      "items": [
+        {
+          "type": "message_status",
+          "key": "new",
+          "type_key": "idea",
+          "name": "New",
+          "completed": false
+        },
+        {
+          "type": "message_status",
+          "key": "needs_info",
+          "type_key": "idea",
+          "name": "Needs Info",
+          "completed": false
+        },
+        {
+          "type": "message_status",
+          "key": "investigating",
+          "type_key": "idea",
+          "name": "Investigating",
+          "completed": false
+        },
+        {
+          "type": "message_status",
+          "key": "accepted",
+          "type_key": "idea",
+          "name": "Accepted",
+          "completed": false
+        },
+        {
+          "type": "message_status",
+          "key": "declined",
+          "type_key": "idea",
+          "name": "Declined",
+          "completed": false
+        },
+        {
+          "type": "message_status",
+          "key": "delivered",
+          "type_key": "idea",
+          "name": "Delivered",
+          "completed": true
+        }
+      ]
+    },
+    "user_context": {
+      "type": "node_user_context",
+      "sort_order": "DESC",
+      "sort_field": "post_time"
+    }
+  },
+  {
+    "type": "board",
+    "hidden": false,
+    "require_thread_root_label": false,
+    "friendly_date_enabled": false,
+    "nested": false,
+    "comments_enabled": false,
+    "id": "Claudeville_756",
+    "href": "/boards/Claudeville_756",
+    "view_href": "https://community.neo4j.com/t5/this-is-an-idea-board/idb-p/Claudeville_756",
+    "conversation_style": "idea",
+    "title": "This is an idea board Claudeville_756 for QA",
+    "short_title": "This is an idea board Claudeville_756 for QA",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Morbi leo urna molestie at elementum eu facilisis sed. Enim lobortis scelerisque fermentum dui faucibus in ornare quam. Lectus quam id leo in vitae turpis massa. Varius quam quisque id diam vel quam elementum pulvinar. Proin sagittis nisl rhoncus mattis rhoncus. Viverra nam libero justo laoreet sit amet. Posuere urna nec tincidunt praesent semper feugiat nibh sed. In aliquam sem fringilla ut morbi. Risus in hendrerit gravida rutrum. Suspendisse potenti nullam ac tortor. Aliquet enim tortor at auctor urna nunc id. Nibh mauris cursus mattis molestie a. Vulputate eu scelerisque felis imperdiet proin fermentum leo vel orci. Mauris pellentesque pulvinar pellentesque habitant morbi. Malesuada proin libero nunc consequat interdum varius sit. Ipsum nunc aliquet bibendum enim facilisis gravida. Velit egestas dui id ornare arcu odio ut. Eu augue ut lectus arcu. Nisl pretium fusce id velit. Eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada. Eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum. Sit amet consectetur adipiscing elit ut aliquam purus sit. Ut tortor pretium viverra suspendisse potenti nullam ac tortor. Amet facilisis magna etiam tempor orci eu lobortis elementum nibh. Sed lectus vestibulum mattis ullamcorper velit. Pellentesque habitant morbi tristique senectus et netus et malesuada. Vel orci porta non pulvinar neque laoreet suspendisse. Blandit cursus risus at ultrices mi tempus imperdiet. Mauris in aliquam sem fringilla. Leo integer malesuada nunc vel risus commodo. Viverra justo nec ultrices dui. A diam sollicitudin tempor id eu nisl nunc mi ipsum. Aliquam vestibulum morbi blandit cursus. Egestas maecenas pharetra convallis posuere morbi leo urna molestie. Sollicitudin nibh sit amet commodo nulla. Viverra aliquet eget sit amet tellus cras adipiscing enim eu. Ac turpis egestas sed tempus.Tempor orci dapibus ultrices in iaculis nunc sed augue. Lacus luctus accumsan tortor posuere. Elementum facilisis leo vel fringilla est ullamcorper eget. Aliquam sem et tortor consequat id porta. Faucibus pulvinar elementum integer enim neque. Sed nisi lacus sed viverra tellus. Placerat vestibulum lectus mauris ultrices eros in. Pharetra massa massa ultricies mi quis hendrerit dolor magna. Massa placerat duis ultricies lacus sed. Mauris vitae ultricies leo integer malesuada nunc vel risus commodo.357_Hammond",
+    "language": "en",
+    "views": 0,
+    "allowed_labels": "freeform-only",
+    "date_pattern": "MM-dd-yyyy",
+    "friendly_date_max_age": 31,
+    "announcements": "<div style=\"background-color: pink;border: 2px solid red;padding: 1em;\">\r\n<b>Head's Up!</b> \r\n<p>\r\n<a href=\"https://community.neo4j.com/t5/general-discussions/migration-back-to-discourse/td-p/64509\">Site migration</a> is underway.\r\n</p>\r\n<ol style=\"list-style: decimal;margin-left: 1em;\">\r\n  <li style=\"text-decoration: line-through\">replicate users.</li>\r\n  <li><i>pause, resolving how to handle anonymous content</i></li>\r\n</ol>\r\n<div>",
+    "rating": "kudos",
+    "skin": "neo4j",
+    "depth": 3,
+    "position": 4,
+    "image_privacy": "private",
+    "creation_date": "2022-05-10T11:57:31.103-07:00",
+    "ancestor_categories": {
+      "query": "SELECT * FROM categories WHERE descendant_categories.id = 'Claudeville_756'"
+    },
+    "messages": {
+      "query": "SELECT * FROM messages WHERE board.id = 'Claudeville_756'"
+    },
+    "topics": {
+      "query": "SELECT * FROM messages WHERE board.id = 'Claudeville_756' AND depth = 0"
+    },
+    "parent_category": {
+      "type": "category",
+      "id": "Port_Tonihaven_524",
+      "href": "/categories/Port_Tonihaven_524",
+      "view_href": "https://community.neo4j.com/t5/this-is-a-category-port/ct-p/Port_Tonihaven_524"
+    },
+    "root_category": {
+      "type": "category",
+      "id": "Wheaton_181",
+      "href": "/categories/Wheaton_181",
+      "view_href": "https://community.neo4j.com/t5/this-is-a-category-wheaton-181/ct-p/Wheaton_181"
+    },
+    "available_statuses": {
+      "type": "message_statuses",
+      "list_item_type": "message_status",
+      "size": 6,
+      "items": [
+        {
+          "type": "message_status",
+          "key": "new",
+          "type_key": "idea",
+          "name": "New",
+          "completed": false
+        },
+        {
+          "type": "message_status",
+          "key": "needs_info",
+          "type_key": "idea",
+          "name": "Needs Info",
+          "completed": false
+        },
+        {
+          "type": "message_status",
+          "key": "investigating",
+          "type_key": "idea",
+          "name": "Investigating",
+          "completed": false
+        },
+        {
+          "type": "message_status",
+          "key": "accepted",
+          "type_key": "idea",
+          "name": "Accepted",
+          "completed": false
+        },
+        {
+          "type": "message_status",
+          "key": "declined",
+          "type_key": "idea",
+          "name": "Declined",
+          "completed": false
+        },
+        {
+          "type": "message_status",
+          "key": "delivered",
+          "type_key": "idea",
+          "name": "Delivered",
+          "completed": true
+        }
+      ]
+    },
+    "user_context": {
+      "type": "node_user_context",
+      "sort_order": "DESC",
+      "sort_field": "post_time"
+    }
+  },
+  {
+    "type": "board",
+    "hidden": false,
+    "require_thread_root_label": false,
+    "friendly_date_enabled": false,
+    "nested": false,
+    "c_exclude_tiled_nav": false,
+    "id": "events",
+    "href": "/boards/events",
+    "view_href": "https://community.neo4j.com/t5/events/bd-p/events",
+    "conversation_style": "forum",
+    "title": "Events",
+    "short_title": "Events",
+    "description": "",
+    "language": "en",
+    "views": 49977,
+    "allowed_labels": "freeform-only",
+    "date_pattern": "MM-dd-yyyy",
+    "friendly_date_max_age": 31,
+    "announcements": "<div style=\"background-color: pink;border: 2px solid red;padding: 1em;\">\r\n<b>Head's Up!</b> \r\n<p>\r\n<a href=\"https://community.neo4j.com/t5/general-discussions/migration-back-to-discourse/td-p/64509\">Site migration</a> is underway.\r\n</p>\r\n<ol style=\"list-style: decimal;margin-left: 1em;\">\r\n  <li style=\"text-decoration: line-through\">replicate users.</li>\r\n  <li><i>pause, resolving how to handle anonymous content</i></li>\r\n</ol>\r\n<div>",
+    "rating": "kudos",
+    "skin": "neo4j",
+    "depth": 2,
+    "position": 5,
+    "image_privacy": "private",
+    "creation_date": "2022-05-17T08:40:47.789-07:00",
+    "ancestor_categories": {
+      "query": "SELECT * FROM categories WHERE descendant_categories.id = 'events'"
+    },
+    "messages": {
+      "query": "SELECT * FROM messages WHERE board.id = 'events'"
+    },
+    "topics": {
+      "query": "SELECT * FROM messages WHERE board.id = 'events' AND depth = 0"
+    },
+    "parent_category": {
+      "type": "category",
+      "id": "events_programs",
+      "href": "/categories/events_programs",
+      "view_href": "https://community.neo4j.com/t5/events-programs/ct-p/events_programs"
+    },
+    "root_category": {
+      "type": "category",
+      "id": "events_programs",
+      "href": "/categories/events_programs",
+      "view_href": "https://community.neo4j.com/t5/events-programs/ct-p/events_programs"
+    },
+    "available_statuses": {
+      "type": "message_statuses",
+      "list_item_type": "message_status",
+      "size": 0,
+      "items": []
+    },
+    "user_context": {
+      "type": "node_user_context",
+      "sort_order": "DESC",
+      "sort_field": "post_time"
+    }
+  },
+  {
+    "type": "board",
+    "hidden": false,
+    "require_thread_root_label": false,
+    "friendly_date_enabled": false,
+    "nested": false,
+    "c_exclude_tiled_nav": false,
+    "id": "nodes",
+    "href": "/boards/nodes",
+    "view_href": "https://community.neo4j.com/t5/nodes/bd-p/nodes",
+    "conversation_style": "forum",
+    "title": "NODES",
+    "short_title": "NODES",
+    "description": "",
+    "language": "en",
+    "views": 31683,
+    "allowed_labels": "freeform-only",
+    "date_pattern": "MM-dd-yyyy",
+    "friendly_date_max_age": 31,
+    "announcements": "<div style=\"background-color: pink;border: 2px solid red;padding: 1em;\">\r\n<b>Head's Up!</b> \r\n<p>\r\n<a href=\"https://community.neo4j.com/t5/general-discussions/migration-back-to-discourse/td-p/64509\">Site migration</a> is underway.\r\n</p>\r\n<ol style=\"list-style: decimal;margin-left: 1em;\">\r\n  <li style=\"text-decoration: line-through\">replicate users.</li>\r\n  <li><i>pause, resolving how to handle anonymous content</i></li>\r\n</ol>\r\n<div>",
+    "rating": "kudos",
+    "skin": "neo4j",
+    "depth": 2,
+    "position": 7,
+    "image_privacy": "private",
+    "creation_date": "2022-07-05T10:49:46.061-07:00",
+    "ancestor_categories": {
+      "query": "SELECT * FROM categories WHERE descendant_categories.id = 'nodes'"
+    },
+    "messages": {
+      "query": "SELECT * FROM messages WHERE board.id = 'nodes'"
+    },
+    "topics": {
+      "query": "SELECT * FROM messages WHERE board.id = 'nodes' AND depth = 0"
+    },
+    "parent_category": {
+      "type": "category",
+      "id": "events_programs",
+      "href": "/categories/events_programs",
+      "view_href": "https://community.neo4j.com/t5/events-programs/ct-p/events_programs"
+    },
+    "root_category": {
+      "type": "category",
+      "id": "events_programs",
+      "href": "/categories/events_programs",
+      "view_href": "https://community.neo4j.com/t5/events-programs/ct-p/events_programs"
+    },
+    "available_statuses": {
+      "type": "message_statuses",
+      "list_item_type": "message_status",
+      "size": 0,
+      "items": []
+    },
+    "user_context": {
+      "type": "node_user_context",
+      "sort_order": "DESC",
+      "sort_field": "post_time"
+    }
+  },
+  {
+    "type": "board",
+    "hidden": false,
+    "require_thread_root_label": true,
+    "friendly_date_enabled": false,
+    "nested": false,
+    "c_exclude_tiled_nav": false,
+    "id": "release_notes",
+    "href": "/boards/release_notes",
+    "view_href": "https://community.neo4j.com/t5/releases/bd-p/release_notes",
+    "conversation_style": "forum",
+    "title": "Releases",
+    "short_title": "Releases",
+    "description": "",
+    "language": "en",
+    "views": 1298874,
+    "allowed_labels": "freeform-only",
+    "date_pattern": "MM-dd-yyyy",
+    "friendly_date_max_age": 31,
+    "announcements": "<div style=\"background-color: pink;border: 2px solid red;padding: 1em;\">\r\n<b>Head's Up!</b> \r\n<p>\r\n<a href=\"https://community.neo4j.com/t5/general-discussions/migration-back-to-discourse/td-p/64509\">Site migration</a> is underway.\r\n</p>\r\n<ol style=\"list-style: decimal;margin-left: 1em;\">\r\n  <li style=\"text-decoration: line-through\">replicate users.</li>\r\n  <li><i>pause, resolving how to handle anonymous content</i></li>\r\n</ol>\r\n<div>",
+    "rating": "kudos",
+    "skin": "neo4j",
+    "depth": 2,
+    "position": 5,
+    "image_privacy": "private",
+    "creation_date": "2022-07-07T09:44:41.681-07:00",
+    "ancestor_categories": {
+      "query": "SELECT * FROM categories WHERE descendant_categories.id = 'release_notes'"
+    },
+    "messages": {
+      "query": "SELECT * FROM messages WHERE board.id = 'release_notes'"
+    },
+    "topics": {
+      "query": "SELECT * FROM messages WHERE board.id = 'release_notes' AND depth = 0"
+    },
+    "parent_category": {
+      "type": "category",
+      "id": "product_discussions",
+      "href": "/categories/product_discussions",
+      "view_href": "https://community.neo4j.com/t5/technical-discussions/ct-p/product_discussions"
+    },
+    "root_category": {
+      "type": "category",
+      "id": "product_discussions",
+      "href": "/categories/product_discussions",
+      "view_href": "https://community.neo4j.com/t5/technical-discussions/ct-p/product_discussions"
+    },
+    "available_statuses": {
+      "type": "message_statuses",
+      "list_item_type": "message_status",
+      "size": 0,
+      "items": []
+    },
+    "user_context": {
+      "type": "node_user_context",
+      "sort_order": "DESC",
+      "sort_field": "post_time"
+    }
+  },
+  {
+    "type": "board",
+    "hidden": false,
+    "require_thread_root_label": false,
+    "friendly_date_enabled": false,
+    "nested": false,
+    "c_exclude_tiled_nav": false,
+    "id": "Weekly_Challenge",
+    "href": "/boards/Weekly_Challenge",
+    "view_href": "https://community.neo4j.com/t5/weekly-challenges/bd-p/Weekly_Challenge",
+    "conversation_style": "forum",
+    "title": "Weekly Challenges",
+    "short_title": "Weekly Challenges",
+    "description": "",
+    "language": "en",
+    "views": 30327,
+    "allowed_labels": "freeform-only",
+    "date_pattern": "MM-dd-yyyy",
+    "friendly_date_max_age": 31,
+    "announcements": "<div style=\"background-color: pink;border: 2px solid red;padding: 1em;\">\r\n<b>Head's Up!</b> \r\n<p>\r\n<a href=\"https://community.neo4j.com/t5/general-discussions/migration-back-to-discourse/td-p/64509\">Site migration</a> is underway.\r\n</p>\r\n<ol style=\"list-style: decimal;margin-left: 1em;\">\r\n  <li style=\"text-decoration: line-through\">replicate users.</li>\r\n  <li><i>pause, resolving how to handle anonymous content</i></li>\r\n</ol>\r\n<div>",
+    "rating": "kudos",
+    "skin": "neo4j",
+    "depth": 2,
+    "position": 2,
+    "image_privacy": "private",
+    "creation_date": "2022-07-13T06:54:06.093-07:00",
+    "ancestor_categories": {
+      "query": "SELECT * FROM categories WHERE descendant_categories.id = 'Weekly_Challenge'"
+    },
+    "messages": {
+      "query": "SELECT * FROM messages WHERE board.id = 'Weekly_Challenge'"
+    },
+    "topics": {
+      "query": "SELECT * FROM messages WHERE board.id = 'Weekly_Challenge' AND depth = 0"
+    },
+    "parent_category": {
+      "type": "category",
+      "id": "graphacademy",
+      "href": "/categories/graphacademy",
+      "view_href": "https://community.neo4j.com/t5/graphacademy/ct-p/graphacademy"
+    },
+    "root_category": {
+      "type": "category",
+      "id": "graphacademy",
+      "href": "/categories/graphacademy",
+      "view_href": "https://community.neo4j.com/t5/graphacademy/ct-p/graphacademy"
+    },
+    "available_statuses": {
+      "type": "message_statuses",
+      "list_item_type": "message_status",
+      "size": 0,
+      "items": []
+    },
+    "user_context": {
+      "type": "node_user_context",
+      "sort_order": "DESC",
+      "sort_field": "post_time"
+    }
+  }
+]

@@ -5,6 +5,6 @@
     "declaration": true,
     "types": []
   },
-  "include": ["**/*.ts", "src/lib/data-access-khoros.nots"],
+  "include": ["**/*.ts", "src/lib/data-access-khoros.ts"],
   "exclude": ["jest.config.ts", "**/*.spec.ts"]
 }

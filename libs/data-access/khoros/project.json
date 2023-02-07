@@ -1,7 +1,25 @@
 {
+  "name": "data-access-khoros",
   "sourceRoot": "libs/data-access/khoros/src",
   "projectType": "library",
   "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/data-access/khoros",
+        "main": "libs/data-access/khoros/src/index.ts",
+        "tsConfig": "libs/data-access/khoros/tsconfig.lib.json",
+        "assets": ["libs/data-access/khoros/*.md"]
+      }
+    },
+    "publish": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node tools/scripts/publish.mjs data-access-khoros {args.ver} {args.tag}"
+      },
+      "dependsOn": ["build"]
+    },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
@@ -10,10 +28,9 @@
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nrwl/vite:test",
       "outputs": ["{workspaceRoot}/coverage/libs/data-access/khoros"],
       "options": {
-        "jestConfig": "libs/data-access/khoros/jest.config.ts",
         "passWithNoTests": true
       }
     },
@@ -38,6 +55,5 @@
       }
     }
   },
-  "tags": [],
-  "name": "data-access-khoros"
+  "tags": []
 }

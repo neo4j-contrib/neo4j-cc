@@ -1,4 +1,5 @@
 {
+  "name": "cc-cli",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/cc-cli/src",
   "projectType": "application",
@@ -42,14 +43,19 @@
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nrwl/vite:test",
       "outputs": ["{workspaceRoot}/coverage/apps/cc-cli"],
       "options": {
-        "jestConfig": "apps/cc-cli/jest.config.ts",
         "passWithNoTests": true
+      }
+    },
+    "khoros-boards": {
+      "executor": "nx:run-commands",
+      "options": {
+        "buildTarget": "cc-cli:build",
+        "command": "echo boards --khorosURL=$NX_KHOROS_API_URL --khorosUser=$NX_KHOROS_LOGIN --khorosPassword=$NX_KHOROS_PASSWORD"
       }
     }
   },
-  "tags": [],
-  "name": "cc-cli"
+  "tags": []
 }

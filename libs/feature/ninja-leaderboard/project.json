@@ -1,4 +1,5 @@
 {
+  "name": "feature-ninja-leaderboard",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/feature/ninja-leaderboard/src",
   "projectType": "library",
@@ -26,9 +27,7 @@
       "options": {
         "uiFramework": "@storybook/react",
         "port": 4400,
-        "config": {
-          "configFolder": "libs/feature/ninja-leaderboard/.storybook"
-        }
+        "configDir": "libs/feature/ninja-leaderboard/.storybook"
       },
       "configurations": {
         "ci": {
@@ -38,13 +37,11 @@
     },
     "build-storybook": {
       "executor": "@nrwl/storybook:build",
-      "outputs": ["{options.outputPath}"],
+      "outputs": ["{options.outputDir}"],
       "options": {
         "uiFramework": "@storybook/react",
-        "outputPath": "dist/storybook/feature-ninja-leaderboard",
-        "config": {
-          "configFolder": "libs/feature/ninja-leaderboard/.storybook"
-        }
+        "configDir": "libs/feature/ninja-leaderboard/.storybook",
+        "outputDir": "dist/storybook/feature-ninja-leaderboard"
       },
       "configurations": {
         "ci": {
@@ -52,6 +49,5 @@
         }
       }
     }
-  },
-  "name": "feature-ninja-leaderboard"
+  }
 }

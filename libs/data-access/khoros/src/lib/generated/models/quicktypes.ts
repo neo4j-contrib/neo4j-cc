@@ -1,5 +1,8 @@
 /* eslint-disable no-prototype-builtins */
 // Khoros v2 API requests
+// *NOTE*: auto-generated and manually cleaned up to remove empty definitions
+
+import { LiQuery } from "../../v2-api-types";
 
 /**
  * Query a single collection
@@ -34,10 +37,10 @@ export interface Item {
     search_snippet?:                   string;
     body?:                             string;
     teaser?:                           string;
-    board?:                            Author;
+    board?:                            MinimalItem;
     conversation?:                     Conversation;
-    topic?:                            Author;
-    parent?:                           Author;
+    topic?:                            MinimalItem;
+    parent?:                           MinimalItem;
     post_time?:                        Date;
     post_time_friendly?:               string;
     depth?:                            number;
@@ -73,7 +76,7 @@ export interface Item {
     latest_version?:                   string;
     content_workflow?:                 ContentWorkflow;
     user?:                             Author;
-    message?:                          Author;
+    message?:                          MinimalItem;
     time?:                             Date;
     weight?:                           number;
     text?:                             string;
@@ -118,6 +121,21 @@ export enum AuthorType {
     Message = "message",
     User = "user",
 }
+
+export interface MinimalItem {
+    type:      MinimalItemType;
+    id:        string;
+    href:      string;
+    view_href: string;
+    login?:    string;
+}
+
+export enum MinimalItemType {
+    Board = "board",
+    Message = "message",
+    User = "user",
+}
+
 
 export interface ContentWorkflow {
     type:                  string;
@@ -462,7 +480,7 @@ function transform(val: any, typ: any, getProps: any, key: any = ''): any {
             const typ = typs[i];
             try {
                 return transform(val, typ, getProps);
-            } catch (_) {console.error(_)}
+            } catch (_) { console.error(`Unhandled error: ${_}`) }
         }
         return invalidValue(typs, val);
     }

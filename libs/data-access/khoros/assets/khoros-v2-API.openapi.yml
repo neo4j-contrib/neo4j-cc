@@ -68,7 +68,7 @@ paths:
                 example: Miss from cloudfront
             Via:
               schema:
-                type: number
+                type: string
                 example: >-
                   1.1 4ded1750dc7e0bef188a5520fb9fef28.cloudfront.net
                   (CloudFront)
@@ -1899,7 +1899,7 @@ paths:
                 example: Miss from cloudfront
             Via:
               schema:
-                type: number
+                type: string
                 example: >-
                   1.1 3a4d5aad46ae3a82da414d69565389aa.cloudfront.net
                   (CloudFront)
@@ -2109,7 +2109,7 @@ paths:
                 example: Miss from cloudfront
             Via:
               schema:
-                type: number
+                type: string
                 example: >-
                   1.1 3a4d5aad46ae3a82da414d69565389aa.cloudfront.net
                   (CloudFront)
@@ -2212,7 +2212,7 @@ paths:
                 example: Miss from cloudfront
             Via:
               schema:
-                type: number
+                type: string
                 example: >-
                   1.1 3a4d5aad46ae3a82da414d69565389aa.cloudfront.net
                   (CloudFront)
@@ -2307,7 +2307,7 @@ paths:
                 example: Miss from cloudfront
             Via:
               schema:
-                type: number
+                type: string
                 example: >-
                   1.1 3a4d5aad46ae3a82da414d69565389aa.cloudfront.net
                   (CloudFront)
@@ -2415,7 +2415,7 @@ paths:
                 example: Miss from cloudfront
             Via:
               schema:
-                type: number
+                type: string
                 example: >-
                   1.1 3a4d5aad46ae3a82da414d69565389aa.cloudfront.net
                   (CloudFront)

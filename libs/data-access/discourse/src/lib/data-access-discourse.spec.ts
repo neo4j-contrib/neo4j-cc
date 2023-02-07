@@ -1,35 +1,28 @@
 import 'cross-fetch/polyfill';
 
-import { pipe } from "@effect-ts/core"
-import * as Effect from "@effect-ts/core/Effect"
-import * as A from "@effect-ts/core/Collections/Immutable/Array"
-import * as O from "@effect-ts/core/Option"
-import * as L from "@effect-ts/monocle/Lens"
-import * as LO from "@effect-ts/monocle/Optional"
+import { pipe } from "@neo4j-cc/prelude"
+import * as A from "@fp-ts/data/ReadonlyArray"
 
 import { discourseAPI, GetTopicContent } from './data-access-discourse';
-
-import * as dotenv from "dotenv"
-
-dotenv.config()
-
 
 describe('dataAccessDiscourse', () => {
 
   describe('dotenv prerequisites', () => {
     it('dotenv', () => {
-      expect(process.env).toHaveProperty('DISCOURSE_API_TOKEN')
-      expect(process.env).toHaveProperty('DISCOURSE_API_USER')
-      expect(process.env).toHaveProperty('DISCOURSE_API_URL')
+      expect(process.env).toHaveProperty('NX_DISCOURSE_API_KEY')
+      expect(process.env).toHaveProperty('NX_DISCOURSE_API_USER')
+      expect(process.env).toHaveProperty('NX_DISCOURSE_API_URL')
+      expect(process.env).toHaveProperty('NX_DISCOURSE_CONNECT_SECRET')
     });
   })
 
   describe('discourseAPI', () => {
 
     const discourse = discourseAPI({
-      baseUrl: process.env.DISCOURSE_API_URL || 'Missing DISCOURSE_API_URL',
-      apiKey: process.env.DISCOURSE_API_TOKEN || 'Missing DISCOURSE_API_TOKEN',
-      apiUsername: process.env.DISCOURSE_API_USER || 'Missing DISCOURSE_API_USER'
+      baseUrl: process.env.NX_DISCOURSE_API_URL || 'Missing DISCOURSE_API_URL',
+      apiKey: process.env.NX_DISCOURSE_API_KEY || 'Missing NX_DISCOURSE_API_KEY',
+      apiUsername: process.env.NX_DISCOURSE_API_USER || 'Missing DISCOURSE_API_USER',
+      discourseConnectSecret: process.env.NX_DISCOURSE_CONNECT_SECRET || 'Missing NX_DISCOURSE_CONNECT_SECRET'
     })
 
     it.skip('listCategories', async () => {
@@ -39,12 +32,6 @@ describe('dataAccessDiscourse', () => {
         A.map( (category) => [
           category.slug, 
           category.id, 
-          // take a peek at sub-categories...
-          // pipe(category.subcategory_list,
-          //   O.fromNullable,
-          //   O.map( subs => pipe(subs, A.map(sub => `${sub.slug}/${sub.id}`))),
-          //   O.getOrElse(() => [])
-          // )
         ])
       )
       // console.log(xs)
@@ -64,10 +51,7 @@ describe('dataAccessDiscourse', () => {
     it.skip('listTags', async () => {
       const {data} = await discourse.listTags({})
       const xs = pipe(
-        data.tags,
-        O.fromNullable,
-        O.map( tags => pipe(tags, A.map( tag => tag.text))),
-        O.getOrElse(() => [])
+        data.tags
       )
       // console.log(xs)
       expect(xs).toContain('cypher');
@@ -138,36 +122,5 @@ describe('dataAccessDiscourse', () => {
       expect(xs).toContain('about-the-cypher-category')
     })
 
-
-    it.skip('getTopic', async () => {
-      const posts = pipe(
-        L.id<GetTopicContent>(),
-        L.prop("post_stream"),
-        L.asOptional,
-        LO.fromNullable,
-        LO.prop('posts'),
-        LO.fromNullable
-      )
-      
-      const {data} = await discourse.getTopic({id:"41054"})
-      const xs = pipe(
-        data,
-        posts.getOption,
-        O.map( posts => pipe(
-          posts,
-          A.map( post => post.id)
-        )),
-        O.getOrElse(() => [])
-      )
-      // console.log(xs)
-      expect(xs).toContain(77777);
-    })
-
-
-    it.skip('getPost', async () => {
-      const {data} = await discourse.getPost({id:"77777"})
-      // console.log(data)
-      expect(data.id).toEqual(77777);
-    })
   })
 });

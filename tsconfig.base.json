@@ -19,10 +19,13 @@
     "paths": {
       "@neo4j-cc/data-access-cc": ["libs/data-access/cc/src/index.ts"],
       "@neo4j-cc/data-access-csv": ["libs/data-access/csv/src/index.ts"],
+      "@neo4j-cc/data-access-cypher": ["libs/data-access/cypher/src/index.ts"],
       "@neo4j-cc/data-access-discourse": [
         "libs/data-access/discourse/src/index.ts"
       ],
+      "@neo4j-cc/data-access-fs": ["libs/data-access/fs/src/index.ts"],
       "@neo4j-cc/data-access-github": ["libs/data-access/github/src/index.ts"],
+      "@neo4j-cc/data-access-hopin": ["libs/data-access/hopin/src/index.ts"],
       "@neo4j-cc/data-access-http": ["libs/data-access/http/src/index.ts"],
       "@neo4j-cc/data-access-khoros": ["libs/data-access/khoros/src/index.ts"],
       "@neo4j-cc/data-access-neo4j": ["libs/data-access/neo4j/src/index.ts"],
@@ -40,6 +43,9 @@
       "@neo4j-cc/graphql-types": ["libs/graphql-types/src/index.ts"],
       "@neo4j-cc/model": ["libs/model/src/index.ts"],
       "@neo4j-cc/nest/neo4j-dbms": ["libs/nest/neo4j-dbms/src/index.ts"],
+      "@neo4j-cc/pipe-khoros-to-discourse": [
+        "libs/pipe/khoros-to-discourse/src/index.ts"
+      ],
       "@neo4j-cc/prelude": ["libs/prelude/src/index.ts"],
       "@neo4j-cc/ui": ["libs/ui/src/index.ts"],
       "@neo4j-cc/util-arbitrary": ["libs/util/arbitrary/src/index.ts"]

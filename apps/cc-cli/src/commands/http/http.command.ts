@@ -1,52 +1,50 @@
-import { pipe, E, L, Exit, Cause, Tag } from '@neo4j-cc/prelude';
+import { pipe, Effect, Layer, Exit, Cause, Context, Logger } from '@neo4j-cc/prelude';
 
 import { GluegunCommand } from 'gluegun';
 import { Toolbox } from 'gluegun/build/types/domain/toolbox';
 
 import * as Http from '@neo4j-cc/data-access-http';
-import { consoleLoggerLayer } from '@effect/core/io/Logger';
 
 
 export interface CliService {
   readonly toolbox: Toolbox
 }
 
-export const CliService = Tag<CliService>()
+export const CliService = Context.Tag<CliService>()
 
 export interface AnotherService {
   readonly dosomething: () => true;
 }
 
-export const AnotherService = Tag<AnotherService>()
+export const AnotherService = Context.Tag<AnotherService>()
 
 const command = (id: number) => pipe(
   Http.request(`https://jsonplaceholder.typicode.com/todos/${id}`),
-  E.flatMap(Http.jsonBody)
+  Effect.flatMap(Http.jsonBody)
 )
 
 
 const todo = pipe(
-  E.service(CliService),
-  E.tap( ({toolbox}) => command(1)),
-  E.tap( (todo) => E.succeed(console.log(`Todo: ${JSON.stringify(todo)}`)) ),
-  E.catchTag("FetchError", (error) => E.logError(`FetchError: ${JSON.stringify(error)}`)),
-  E.catchTag("JsonBodyError", (error) => E.logError(`JsonBodyError: ${JSON.stringify(error)}`))
-  , E.provideLayer(consoleLoggerLayer)
+  Effect.service(CliService),
+  Effect.tap( ({toolbox}) => command(1)),
+  Effect.tap( (todo) => Effect.succeed(console.log(`Todo: ${JSON.stringify(todo)}`)) ),
+  Effect.catchTag("FetchError", (error) => Effect.logError(`FetchError: ${JSON.stringify(error)}`)),
+  Effect.catchTag("JsonBodyError", (error) => Effect.logError(`JsonBodyError: ${JSON.stringify(error)}`))
 )
 
 const commandDo = (url: string) => pipe(
-  E.Do(),
-  E.bind("CliService", () => E.service(CliService)),
-  E.bind("another", () => E.service(AnotherService)),
-  E.tap( ({CliService}) => E.fail("awful") ),
-  E.tap( ({another}) => E.succeed(2)),
-  E.flatMap( () => E.succeed("done"))
+  Effect.Do(),
+  Effect.bind("CliService", () => Effect.service(CliService)),
+  Effect.bind("another", () => Effect.service(AnotherService)),
+  Effect.tap( ({CliService}) => Effect.fail("awful") ),
+  Effect.tap( ({another}) => Effect.succeed(2)),
+  Effect.flatMap( () => Effect.succeed("done"))
 )
 
 const todoDo = pipe(
-  E.Do(),
-  E.bind("toolbox", () => E.service(CliService)),
-  E.flatMap(({toolbox}) => E.succeed(1))
+  Effect.Do(),
+  Effect.bind("toolbox", () => Effect.service(CliService)),
+  Effect.flatMap(({toolbox}) => Effect.succeed(1))
 )
 
 const reportFailure = (exit:Exit.Exit<unknown, unknown>) => {
@@ -55,8 +53,8 @@ const reportFailure = (exit:Exit.Exit<unknown, unknown>) => {
   }
 }
 
-const makeCliServiceFromToolbox = (toolbox: Toolbox) => L.fromEffect(CliService)(
-  E.sync(() => ({
+const makeCliServiceFromToolbox = (toolbox: Toolbox) => Layer.effect(CliService,
+  Effect.sync(() => ({
     toolbox
   }))
 )
@@ -64,9 +62,10 @@ const makeCliServiceFromToolbox = (toolbox: Toolbox) => L.fromEffect(CliService)
 const run = async (toolbox: Toolbox) => {
   const preparedCommand = pipe(
     todo,
-    E.provideLayer(makeCliServiceFromToolbox(toolbox))
+    Effect.provideLayer(makeCliServiceFromToolbox(toolbox)),
+    Effect.unsafeRunPromise
   )
-  E.unsafeRunAsyncWith(preparedCommand, reportFailure)
+  return preparedCommand
 }
 
 export const HttpCommand: GluegunCommand<Toolbox> = {

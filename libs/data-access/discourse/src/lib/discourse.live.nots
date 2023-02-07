@@ -1,0 +1,68 @@
+import { Effect, Layer, Context, pipe } from "@neo4j-cc/prelude"
+import { FetchError } from "@neo4j-cc/data-access-http";
+import { ApiResponse, Fetcher } from 'openapi-typescript-fetch';
+
+import { DiscourseApiConfiguration } from './data-access-discourse'
+
+import { paths as DiscoursePaths, operations } from './discourse-openapi';
+import { GetSiteResponseContent } from './discourse.types'
+import { CreateFetch, FetchConfig, Middleware, OpenapiPaths } from "openapi-typescript-fetch/dist/cjs/types";
+import { DiscourseService } from "./discourse.service";
+
+
+const effectfulRequest = <ArgRecord, RequestResult>(fetch:(input: ArgRecord, init: RequestInit | undefined) => Promise<RequestResult>) => {
+  const go = (input:ArgRecord) => {
+    return Effect.tryCatchPromise(
+      () => fetch(input, undefined),
+      (error) => new FetchError(error)
+    )
+  }
+  return go
+}
+
+const requestFx = <ArgRecord, RequestResult>(fetch:(input: ArgRecord, init: RequestInit | undefined) => Promise<RequestResult>, input:ArgRecord) => {
+  return Effect.tryCatchPromise(
+    () => fetch(input, undefined),
+    (error) => new FetchError(error)
+  )
+}
+
+interface DiscourseFetcher<Paths extends OpenapiPaths<Paths>> {
+    configure: (config: FetchConfig) => void;
+    use: (mw: Middleware) => number;
+    path: <P extends keyof Paths>(path: P) => {
+        method: <M extends keyof Paths[P]>(method: M) => {
+            create: CreateFetch<M, Paths[P][M]>;
+        };
+};
+
+}
+
+export class LiveDiscourseService implements DiscourseService {
+
+  discourse: DiscourseFetcher<DiscoursePaths>;
+  
+  constructor({baseUrl, apiKey, apiUsername}: DiscourseApiConfiguration) {
+  
+    this.discourse = Fetcher.for<DiscoursePaths>()
+
+    this.discourse.configure({
+      baseUrl,
+      init: {
+        headers: {
+          "Api-Key": apiKey,
+          "Api-Username": apiUsername,
+          "Accept": "application/json"
+        },
+        redirect: 'error'
+      }
+    })
+  }
+  
+  getSite = () => requestFx(this.discourse.path("/site.json").method('get').create(), {})
+
+  listCategories = () => this.discourse.path("/categories.json").method('get').create()
+
+  listUsers = (userState: 'active'|'new'|'staff'|'suspended'|'blocked'|'suspect') => this.discourse.path("/admin/users/list/{flag}.json").method('get').create()
+}
+

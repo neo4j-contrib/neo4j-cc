@@ -1,0 +1,19 @@
+import 'cross-fetch/polyfill';
+
+import { Effect } from '@neo4j-cc/prelude';
+import { DiscourseApiConfiguration } from './data-access-discourse';
+import { LiveDiscourseService } from './discourse.live.nots'
+
+describe("LiveDiscourseService", () => {
+  it("getSite", async () => {
+    const config:DiscourseApiConfiguration = {
+      baseUrl: 'https://',
+      apiKey: '',
+      apiUsername: ''
+    }
+    const live = new LiveDiscourseService(config);
+    const site = await Effect.unsafeRunPromise(live.getSite())
+    console.log(site)
+    expect(true).toBeTruthy()
+  })
+})

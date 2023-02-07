@@ -1,0 +1,4108 @@
+[
+  {
+    "type": "message",
+    "id": "62793",
+    "href": "/messages/62793",
+    "view_href": "https://community.neo4j.com/t5/drivers-stacks/non-interactive-install-is-not-working-while-install-neo4j/td-p/62793",
+    "author": {
+      "type": "user",
+      "id": "15943",
+      "href": "/users/15943",
+      "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/15943",
+      "login": "Siddarth"
+    },
+    "subject": "Non Interactive install is not working while install neo4j enterprise edition",
+    "search_snippet": "I am trying to install neo4j enterprise edition 4.4.15 from rpm package. Non interactive install is not working. Have set the below env variable \n  export NEO4J_ACCEPT_LICENSE_AGREEMENT=yes  sudo rpm...",
+    "body": "<P>I am trying to install neo4j enterprise edition 4.4.15 from rpm package. Non interactive install is not working. Have set the below env variable</P>\n<P><SPAN>export NEO4J_ACCEPT_LICENSE_AGREEMENT=yes<BR />sudo rpm --install neo4j-enterprise-4.4.15-1.noarch.rpm</SPAN></P>\n<P><SPAN>It still asks for license agreement. Have tried with other versions as well still the same. Please help on this.</SPAN></P>",
+    "teaser": "",
+    "board": {
+      "type": "board",
+      "id": "drivers_stacks",
+      "href": "/boards/drivers_stacks",
+      "view_href": "https://community.neo4j.com/t5/drivers-stacks/bd-p/drivers_stacks"
+    },
+    "conversation": {
+      "type": "conversation",
+      "id": "62793",
+      "href": "/conversations/62793",
+      "view_href": "https://community.neo4j.com/t5/drivers-stacks/non-interactive-install-is-not-working-while-install-neo4j/td-p/62793",
+      "style": "forum",
+      "thread_style": "forum",
+      "messages_count": 2,
+      "solved": false,
+      "last_post_time": "2022-12-02T16:30:30.338-08:00",
+      "last_post_time_friendly": "12-02-2022"
+    },
+    "topic": {
+      "type": "message",
+      "id": "62793",
+      "href": "/messages/62793",
+      "view_href": "https://community.neo4j.com/t5/drivers-stacks/non-interactive-install-is-not-working-while-install-neo4j/m-p/62793#M5111"
+    },
+    "post_time": "2022-12-02T11:00:19.096-08:00",
+    "post_time_friendly": "12-02-2022",
+    "depth": 0,
+    "read_only": false,
+    "edit_frozen": false,
+    "language": "EN",
+    "can_accept_solution": false,
+    "placeholder": false,
+    "is_solution": false,
+    "solution_data": {},
+    "metrics": {
+      "type": "message_metrics",
+      "views": 175
+    },
+    "current_revision": {
+      "type": "revision",
+      "id": "62793_2",
+      "last_edit_author": {
+        "type": "user",
+        "id": "15943",
+        "href": "/users/15943",
+        "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/15943",
+        "login": "Siddarth"
+      },
+      "last_edit_time": "2022-12-02T11:07:49.345-08:00"
+    },
+    "kudos": {
+      "query": "SELECT * FROM kudos WHERE message.id = '62793'"
+    },
+    "tags": {
+      "query": "SELECT * FROM tags WHERE messages.id = '62793'"
+    },
+    "labels": {
+      "query": "SELECT * FROM labels WHERE messages.id = '62793'"
+    },
+    "images": {
+      "query": "SELECT * FROM images WHERE messages.id = '62793'"
+    },
+    "videos": {
+      "query": "SELECT * FROM videos WHERE messages.id = '62793'"
+    },
+    "attachments": {
+      "query": "SELECT * FROM attachments WHERE message.id = '62793'"
+    },
+    "replies": {
+      "query": "SELECT * FROM messages WHERE parent.id = '62793'"
+    },
+    "ratings": {
+      "query": "SELECT * FROM ratings WHERE message.id = '62793'"
+    },
+    "custom_tags": {
+      "query": "SELECT * FROM custom_tags WHERE messages.id = '62793'"
+    },
+    "moderation_status": "approved",
+    "visibility_scope": "public",
+    "user_context": {
+      "type": "user_context",
+      "kudo": false,
+      "read": false,
+      "can_reply": false,
+      "can_kudo": false,
+      "can_delete": false
+    },
+    "device_id": "google_chrome_107",
+    "popularity": -1433.6706530555555,
+    "excluded_from_kudos_leaderboards": false,
+    "is_promoted": false
+  },
+  {
+    "type": "message",
+    "id": "62788",
+    "href": "/messages/62788",
+    "view_href": "https://community.neo4j.com/t5/graphacademy-discussions/graph-academy-spelling-errors/td-p/62788",
+    "author": {
+      "type": "user",
+      "id": "16020",
+      "href": "/users/16020",
+      "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/16020",
+      "login": "ambiguousNori"
+    },
+    "subject": "Graph Academy Spelling Errors",
+    "search_snippet": "Loving Graph Academy so far; it's a fantastic resource! However, I've noticed quite a few spelling errors throughout the first 3 courses. I've not kept track of them all but the most recent I noticed...",
+    "body": "<P>Loving Graph Academy so far; it's a fantastic resource! However, I've noticed quite a few spelling errors throughout the first 3 courses. I've not kept track of them all but the most recent I noticed was \"<SPAN>Having this type of instance model will help <STRONG>use</STRONG> to test our use cases.\", which I assume should read \"us\", located at the end of <STRONG>Graph Data Modeling Fundamentals </STRONG>&gt; <STRONG>Purpose of the Model</STRONG>.</SPAN></P>\n<P>I don't mind going back through the courses I've already completed and collating a list of the mistakes I've seen so far and noting down any I see in future too if that would be helpful to the community. <span class=\"lia-unicode-emoji\" title=\":smiling_face_with_halo:\">😇</span></P>",
+    "teaser": "",
+    "board": {
+      "type": "board",
+      "id": "graphacademy_discussions",
+      "href": "/boards/graphacademy_discussions",
+      "view_href": "https://community.neo4j.com/t5/graphacademy-discussions/bd-p/graphacademy_discussions"
+    },
+    "conversation": {
+      "type": "conversation",
+      "id": "62788",
+      "href": "/conversations/62788",
+      "view_href": "https://community.neo4j.com/t5/graphacademy-discussions/graph-academy-spelling-errors/td-p/62788",
+      "style": "forum",
+      "thread_style": "forum",
+      "messages_count": 2,
+      "solved": false,
+      "last_post_time": "2022-12-05T05:09:41.458-08:00",
+      "last_post_time_friendly": "12-05-2022"
+    },
+    "topic": {
+      "type": "message",
+      "id": "62788",
+      "href": "/messages/62788",
+      "view_href": "https://community.neo4j.com/t5/graphacademy-discussions/graph-academy-spelling-errors/m-p/62788#M1683"
+    },
+    "post_time": "2022-12-02T10:04:30.326-08:00",
+    "post_time_friendly": "12-02-2022",
+    "depth": 0,
+    "read_only": false,
+    "edit_frozen": false,
+    "language": "EN",
+    "can_accept_solution": false,
+    "placeholder": false,
+    "is_solution": false,
+    "solution_data": {},
+    "metrics": {
+      "type": "message_metrics",
+      "views": 130
+    },
+    "current_revision": {
+      "type": "revision",
+      "id": "62788_1",
+      "last_edit_author": {
+        "type": "user",
+        "id": "16020",
+        "href": "/users/16020",
+        "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/16020",
+        "login": "ambiguousNori"
+      },
+      "last_edit_time": "2022-12-02T10:04:30.326-08:00"
+    },
+    "kudos": {
+      "query": "SELECT * FROM kudos WHERE message.id = '62788'"
+    },
+    "tags": {
+      "query": "SELECT * FROM tags WHERE messages.id = '62788'"
+    },
+    "labels": {
+      "query": "SELECT * FROM labels WHERE messages.id = '62788'"
+    },
+    "images": {
+      "query": "SELECT * FROM images WHERE messages.id = '62788'"
+    },
+    "videos": {
+      "query": "SELECT * FROM videos WHERE messages.id = '62788'"
+    },
+    "attachments": {
+      "query": "SELECT * FROM attachments WHERE message.id = '62788'"
+    },
+    "replies": {
+      "query": "SELECT * FROM messages WHERE parent.id = '62788'"
+    },
+    "ratings": {
+      "query": "SELECT * FROM ratings WHERE message.id = '62788'"
+    },
+    "custom_tags": {
+      "query": "SELECT * FROM custom_tags WHERE messages.id = '62788'"
+    },
+    "moderation_status": "approved",
+    "visibility_scope": "public",
+    "user_context": {
+      "type": "user_context",
+      "kudo": false,
+      "read": false,
+      "can_reply": false,
+      "can_kudo": false,
+      "can_delete": false
+    },
+    "device_id": "google_chrome_108",
+    "popularity": -1434.6008913888888,
+    "excluded_from_kudos_leaderboards": false,
+    "is_promoted": false
+  },
+  {
+    "type": "message",
+    "id": "62785",
+    "href": "/messages/62785",
+    "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/link-prediction-pipeline-for-protein-target-binding/td-p/62785",
+    "author": {
+      "type": "user",
+      "id": "9296",
+      "href": "/users/9296",
+      "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/9296",
+      "login": "Kevin6482"
+    },
+    "subject": "Link Prediction Pipeline for Protein Target Binding",
+    "search_snippet": "I'm trying to construct a pipeline for link prediction to find novel links between the entity nodes. My objective is to identify the future links between protein and target given positive and negativ...",
+    "body": "<P>I'm trying to construct a pipeline for link prediction to find novel links between the entity nodes. My objective is to identify the future links between protein and target given positive and negative links. I referred to the co-author link prediction tutorial, in that they considered all<SPAN> pair of nodes that don’t have a relationship as negative classes. But in my case, I have two csv files, one with the positive classes (i.e, proteins binding to a target) and other with the negative classes (i.e., proteins not binding to a target). I created the network as: (P:protein_id)-[:POSITIVE]--&gt;(T:target_id) and (P:protein_id)-[:NEGATIVE]--&gt;(T:target_id). Is that approach correct for the link prediction? </SPAN></P>\n<P><SPAN>I also want to include tested_species, scale, unit and value (will use this as a weight property), all of these being string values except the target_measure_value, would that improve the prediction if I add them as properties to the target_id node or should I add them as separate nodes. Can someone guide how to proceed with this, thanks in advance.</SPAN></P>\n<P> </P>\n<TABLE width=\"725\">\n<TBODY>\n<TR>\n<TD width=\"67\">protein_id</TD>\n<TD width=\"88\">target_id</TD>\n<TD width=\"116\">tested_species</TD>\n<TD width=\"138\">target_measure_scale</TD>\n<TD width=\"137\">target_measure_units</TD>\n<TD width=\"126\">target_measure_val</TD>\n<TD width=\"53\">target</TD>\n</TR>\n<TR>\n<TD>A0JP26</TD>\n<TD>mus musculus</TD>\n<TD>homo sapiens</TD>\n<TD>ic50</TD>\n<TD>ug/ml</TD>\n<TD>0.01</TD>\n<TD>POSITIVE</TD>\n</TR>\n<TR>\n<TD>A1L190</TD>\n<TD>hiv inhibition</TD>\n<TD>trypanosoma cruzi</TD>\n<TD>mc50</TD>\n<TD>um</TD>\n<TD>10</TD>\n<TD>POSITIVE</TD>\n</TR>\n</TBODY>\n</TABLE>\n<P> </P>\n<TABLE width=\"739\">\n<TBODY>\n<TR>\n<TD width=\"67\">protein_id</TD>\n<TD width=\"106\">target_id</TD>\n<TD width=\"108\">tested_species</TD>\n<TD width=\"138\">target_measure_scale</TD>\n<TD width=\"137\">target_measure_units</TD>\n<TD width=\"126\">target_measure_val</TD>\n<TD width=\"57\">target</TD>\n</TR>\n<TR>\n<TD>A2RUB6</TD>\n<TD>venom activity</TD>\n<TD>homo sapiens</TD>\n<TD>ic50</TD>\n<TD>um</TD>\n<TD>1000</TD>\n<TD>NEGATIVE</TD>\n</TR>\n<TR>\n<TD>A4D1B5</TD>\n<TD>signalling activity</TD>\n<TD>rattus norvegicus</TD>\n<TD>mc50</TD>\n<TD>ug/ml</TD>\n<TD>250</TD>\n<TD>NEGATIVE</TD>\n</TR>\n</TBODY>\n</TABLE>\n<P> </P>",
+    "teaser": "",
+    "board": {
+      "type": "board",
+      "id": "graph_platform",
+      "href": "/boards/graph_platform",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/bd-p/graph_platform"
+    },
+    "conversation": {
+      "type": "conversation",
+      "id": "62785",
+      "href": "/conversations/62785",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/link-prediction-pipeline-for-protein-target-binding/td-p/62785",
+      "style": "forum",
+      "thread_style": "forum",
+      "messages_count": 1,
+      "solved": false,
+      "last_post_time": "2022-12-02T08:47:41.138-08:00",
+      "last_post_time_friendly": "12-02-2022"
+    },
+    "topic": {
+      "type": "message",
+      "id": "62785",
+      "href": "/messages/62785",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/link-prediction-pipeline-for-protein-target-binding/m-p/62785#M37092"
+    },
+    "post_time": "2022-12-02T08:47:41.138-08:00",
+    "post_time_friendly": "12-02-2022",
+    "depth": 0,
+    "read_only": false,
+    "edit_frozen": false,
+    "language": "EN",
+    "can_accept_solution": false,
+    "placeholder": false,
+    "is_solution": false,
+    "solution_data": {},
+    "metrics": {
+      "type": "message_metrics",
+      "views": 105
+    },
+    "current_revision": {
+      "type": "revision",
+      "id": "62785_1",
+      "last_edit_author": {
+        "type": "user",
+        "id": "9296",
+        "href": "/users/9296",
+        "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/9296",
+        "login": "Kevin6482"
+      },
+      "last_edit_time": "2022-12-02T08:47:41.138-08:00"
+    },
+    "kudos": {
+      "query": "SELECT * FROM kudos WHERE message.id = '62785'"
+    },
+    "tags": {
+      "query": "SELECT * FROM tags WHERE messages.id = '62785'"
+    },
+    "labels": {
+      "query": "SELECT * FROM labels WHERE messages.id = '62785'"
+    },
+    "images": {
+      "query": "SELECT * FROM images WHERE messages.id = '62785'"
+    },
+    "videos": {
+      "query": "SELECT * FROM videos WHERE messages.id = '62785'"
+    },
+    "attachments": {
+      "query": "SELECT * FROM attachments WHERE message.id = '62785'"
+    },
+    "replies": {
+      "query": "SELECT * FROM messages WHERE parent.id = '62785'"
+    },
+    "ratings": {
+      "query": "SELECT * FROM ratings WHERE message.id = '62785'"
+    },
+    "custom_tags": {
+      "query": "SELECT * FROM custom_tags WHERE messages.id = '62785'"
+    },
+    "moderation_status": "approved",
+    "visibility_scope": "public",
+    "user_context": {
+      "type": "user_context",
+      "kudo": false,
+      "read": false,
+      "can_reply": false,
+      "can_kudo": false,
+      "can_delete": false
+    },
+    "device_id": "google_chrome_107",
+    "popularity": -1435.8812366666666,
+    "excluded_from_kudos_leaderboards": false,
+    "is_promoted": false
+  },
+  {
+    "type": "message",
+    "id": "62779",
+    "href": "/messages/62779",
+    "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/neo4j-bloom-does-not-set-different-colors-for-multi-labeled/td-p/62779",
+    "author": {
+      "type": "user",
+      "id": "15966",
+      "href": "/users/15966",
+      "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/15966",
+      "login": "TravSalesProb"
+    },
+    "subject": "Neo4j Bloom does not set different colors for multi-labeled nodes",
+    "search_snippet": "Hi everyone, \n I'm using Neo4j Bloom to visualize a graph, but whenever I do a query it shows my multi-labeled nodes with the same color, even though in the right panel it actually allows to set diff...",
+    "body": "<P>Hi everyone,</P>\n<P>I'm using Neo4j Bloom to visualize a graph, but whenever I do a query it shows my multi-labeled nodes with the same color, even though in the right panel it actually allows to set different ones, and in Neo4j Browser the coloring works. I already check the color settings using the command \":style\" and they are actually different. Any suggestion?</P>\n<P>Thanks</P>",
+    "teaser": "",
+    "board": {
+      "type": "board",
+      "id": "graph_platform",
+      "href": "/boards/graph_platform",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/bd-p/graph_platform"
+    },
+    "conversation": {
+      "type": "conversation",
+      "id": "62779",
+      "href": "/conversations/62779",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/neo4j-bloom-does-not-set-different-colors-for-multi-labeled/td-p/62779",
+      "style": "forum",
+      "thread_style": "forum",
+      "messages_count": 4,
+      "solved": false,
+      "last_post_time": "2022-12-21T06:28:31.839-08:00",
+      "last_post_time_friendly": "12-21-2022"
+    },
+    "topic": {
+      "type": "message",
+      "id": "62779",
+      "href": "/messages/62779",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/neo4j-bloom-does-not-set-different-colors-for-multi-labeled/m-p/62779#M37090"
+    },
+    "post_time": "2022-12-02T05:59:05.485-08:00",
+    "post_time_friendly": "12-02-2022",
+    "depth": 0,
+    "read_only": false,
+    "edit_frozen": false,
+    "language": "EN",
+    "can_accept_solution": false,
+    "placeholder": false,
+    "is_solution": false,
+    "solution_data": {},
+    "metrics": {
+      "type": "message_metrics",
+      "views": 257
+    },
+    "current_revision": {
+      "type": "revision",
+      "id": "62779_1",
+      "last_edit_author": {
+        "type": "user",
+        "id": "15966",
+        "href": "/users/15966",
+        "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/15966",
+        "login": "TravSalesProb"
+      },
+      "last_edit_time": "2022-12-02T05:59:05.485-08:00"
+    },
+    "kudos": {
+      "query": "SELECT * FROM kudos WHERE message.id = '62779'"
+    },
+    "tags": {
+      "query": "SELECT * FROM tags WHERE messages.id = '62779'"
+    },
+    "labels": {
+      "query": "SELECT * FROM labels WHERE messages.id = '62779'"
+    },
+    "images": {
+      "query": "SELECT * FROM images WHERE messages.id = '62779'"
+    },
+    "videos": {
+      "query": "SELECT * FROM videos WHERE messages.id = '62779'"
+    },
+    "attachments": {
+      "query": "SELECT * FROM attachments WHERE message.id = '62779'"
+    },
+    "replies": {
+      "query": "SELECT * FROM messages WHERE parent.id = '62779'"
+    },
+    "ratings": {
+      "query": "SELECT * FROM ratings WHERE message.id = '62779'"
+    },
+    "custom_tags": {
+      "query": "SELECT * FROM custom_tags WHERE messages.id = '62779'"
+    },
+    "moderation_status": "approved",
+    "visibility_scope": "public",
+    "user_context": {
+      "type": "user_context",
+      "kudo": false,
+      "read": false,
+      "can_reply": false,
+      "can_kudo": false,
+      "can_delete": false
+    },
+    "device_id": "google_chrome_107",
+    "popularity": -1438.6911708333334,
+    "excluded_from_kudos_leaderboards": false,
+    "is_promoted": false
+  },
+  {
+    "type": "message",
+    "id": "62773",
+    "href": "/messages/62773",
+    "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/neo-clienterror-statement-syntaxerror-expected-i-i-query/td-p/62773",
+    "author": {
+      "type": "user",
+      "id": "15375",
+      "href": "/users/15375",
+      "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/15375",
+      "login": "Reuben"
+    },
+    "subject": "Neo.ClientError.Statement.SyntaxError –– expected  'i/I' –– Query",
+    "search_snippet": "Hi, \n Please, I am getting an error with a query, an example illustrated below. My objective is to obtain the family_names based on the matches of first_name etc. Where the most suitable match comes ...",
+    "body": "<P>Hi,</P>\n<P>Please, I am getting an error with a query, an example illustrated below. My objective is to obtain the family_names based on the matches of first_name etc. Where the most suitable match comes on top, and then other matches with common first_name follow in ascending order, as displayed in the table.</P>\n<P>However, I am getting a Cypher syntax error. Please, how do you suggest I fix the issue?</P>\n<P>Thanks.</P>\n<P><span class=\"lia-inline-image-display-wrapper lia-image-align-inline\" image-alt=\"example.jpg\" style=\"width: 400px;\"><img src=\"https://community.neo4j.com/t5/image/serverpage/image-id/7683i593DAD4C05492858/image-size/medium/is-moderation-mode/true?v=v2&amp;px=400\" role=\"button\" title=\"example.jpg\" alt=\"example.jpg\" /></span></P>\n<DIV><SPAN>MATCH</SPAN><SPAN>(</SPAN><SPAN>n</SPAN><SPAN>:</SPAN><SPAN>name</SPAN><SPAN>{</SPAN><SPAN>first_name</SPAN><SPAN>:</SPAN><SPAN>'Jay'</SPAN><SPAN>})</SPAN></DIV>\n<DIV><SPAN>MATCH</SPAN><SPAN>(</SPAN><SPAN>h</SPAN><SPAN>:</SPAN><SPAN>hometown</SPAN><SPAN>{</SPAN><SPAN>hometown</SPAN><SPAN>:</SPAN><SPAN>'New Jersey'</SPAN><SPAN>})</SPAN></DIV>\n<DIV><SPAN>MATCH</SPAN><SPAN>(</SPAN><SPAN>r</SPAN><SPAN>:</SPAN><SPAN>race </SPAN><SPAN>{</SPAN><SPAN>race</SPAN><SPAN>:</SPAN><SPAN>'Black'</SPAN><SPAN>})</SPAN></DIV>\n<DIV><SPAN>MATCH</SPAN><SPAN>(</SPAN><SPAN>f</SPAN><SPAN>:</SPAN><SPAN>family_name</SPAN><SPAN>)</SPAN></DIV>\n<DIV><SPAN>WHERE</SPAN> <SPAN>(</SPAN><SPAN>f</SPAN><SPAN>)-[:</SPAN><SPAN>first_name</SPAN><SPAN>]-&gt;(</SPAN><SPAN>n</SPAN><SPAN>)</SPAN></DIV>\n<DIV><SPAN>AND</SPAN> <SPAN>(</SPAN><SPAN>f</SPAN><SPAN>)-[:</SPAN><SPAN>hometown</SPAN><SPAN>]-&gt;(</SPAN><SPAN>h</SPAN><SPAN>)</SPAN></DIV>\n<DIV><SPAN>AND</SPAN> <SPAN>(</SPAN><SPAN>f</SPAN><SPAN>)-[:</SPAN><SPAN>race</SPAN><SPAN>]-&gt;(</SPAN><SPAN>r</SPAN><SPAN>)</SPAN></DIV>\n<DIV><SPAN>WHERE</SPAN> <SPAN>f</SPAN><SPAN>.</SPAN><SPAN>first_name </SPAN><SPAN>contains</SPAN> <SPAN>'Jay'</SPAN></DIV>\n<DIV><SPAN>RETURN</SPAN> <SPAN>f</SPAN></DIV>\n<DIV><SPAN>ORDER</SPAN> <SPAN>BY</SPAN> <SPAN>f</SPAN> <SPAN>asc</SPAN></DIV>\n<DIV><SPAN>LIMIT</SPAN> <SPAN>10</SPAN><SPAN>;</SPAN></DIV>\n<DIV> </DIV>\n<DIV> </DIV>\n<DIV><SPAN>#Cypher #CSV #Neo4J #SyntaxError</SPAN></DIV>",
+    "teaser": "",
+    "board": {
+      "type": "board",
+      "id": "graph_platform",
+      "href": "/boards/graph_platform",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/bd-p/graph_platform"
+    },
+    "conversation": {
+      "type": "conversation",
+      "id": "62773",
+      "href": "/conversations/62773",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/neo-clienterror-statement-syntaxerror-expected-i-i-query/td-p/62773",
+      "style": "forum",
+      "thread_style": "forum",
+      "messages_count": 3,
+      "solved": true,
+      "last_post_time": "2022-12-02T05:21:10.082-08:00",
+      "last_post_time_friendly": "12-02-2022"
+    },
+    "topic": {
+      "type": "message",
+      "id": "62773",
+      "href": "/messages/62773",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/neo-clienterror-statement-syntaxerror-expected-i-i-query/m-p/62773#M37086"
+    },
+    "post_time": "2022-12-02T04:24:17.033-08:00",
+    "post_time_friendly": "12-02-2022",
+    "depth": 0,
+    "read_only": false,
+    "edit_frozen": false,
+    "language": "EN",
+    "can_accept_solution": false,
+    "placeholder": false,
+    "is_solution": false,
+    "solution_data": {},
+    "metrics": {
+      "type": "message_metrics",
+      "views": 228
+    },
+    "current_revision": {
+      "type": "revision",
+      "id": "62773_4",
+      "last_edit_author": {
+        "type": "user",
+        "id": "15375",
+        "href": "/users/15375",
+        "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/15375",
+        "login": "Reuben"
+      },
+      "last_edit_time": "2022-12-02T04:26:16.650-08:00"
+    },
+    "kudos": {
+      "query": "SELECT * FROM kudos WHERE message.id = '62773'"
+    },
+    "tags": {
+      "query": "SELECT * FROM tags WHERE messages.id = '62773'"
+    },
+    "labels": {
+      "query": "SELECT * FROM labels WHERE messages.id = '62773'"
+    },
+    "images": {
+      "query": "SELECT * FROM images WHERE messages.id = '62773'"
+    },
+    "videos": {
+      "query": "SELECT * FROM videos WHERE messages.id = '62773'"
+    },
+    "attachments": {
+      "query": "SELECT * FROM attachments WHERE message.id = '62773'"
+    },
+    "replies": {
+      "query": "SELECT * FROM messages WHERE parent.id = '62773'"
+    },
+    "ratings": {
+      "query": "SELECT * FROM ratings WHERE message.id = '62773'"
+    },
+    "custom_tags": {
+      "query": "SELECT * FROM custom_tags WHERE messages.id = '62773'"
+    },
+    "moderation_status": "approved",
+    "visibility_scope": "public",
+    "user_context": {
+      "type": "user_context",
+      "kudo": false,
+      "read": false,
+      "can_reply": false,
+      "can_kudo": false,
+      "can_delete": false
+    },
+    "device_id": "google_chrome_107",
+    "popularity": -1440.2713222222221,
+    "excluded_from_kudos_leaderboards": false,
+    "is_promoted": false
+  },
+  {
+    "type": "message",
+    "id": "62766",
+    "href": "/messages/62766",
+    "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/exact-match-for-string-with-contains/td-p/62766",
+    "author": {
+      "type": "user",
+      "id": "15527",
+      "href": "/users/15527",
+      "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/15527",
+      "login": "takhims"
+    },
+    "subject": "Exact match for string with CONTAINS",
+    "search_snippet": "Hi all, i have been stuck on an issue related to cypher matching.  \n So we have multiple nodes which contains a property 'x_matchKey' and we use this x_matchKey property to fetch the result with a CO...",
+    "body": "<P>Hi all, i have been stuck on an issue related to cypher matching. </P>\n<P>So we have multiple nodes which contains a property 'x_matchKey' and we use this x_matchKey property to fetch the result with a CONTAINS. </P>\n<P>the query goes like that that: <BR />MATCH (a:person)-&gt;[r:occupies]-&gt;(b:position) WHERE b.x_matchKey contains 'cto'  return a. This query is intended to fetch the person whose position is cto. Its was working fine from past few years.</P>\n<P>Now there's another node which contains 'director' in the x_matchKey property. </P>\n<P>So when i run this query now, it returns both persons as 'director' also contains 'cto'.</P>\n<P>Also, i can't use '=' operator as x_matchKey contains various terms for a person (Like 'cto, Chief Techniology Officer, EVP, Technical officer'). Basically there are more than two comma separated values for each x_matchKey.</P>\n<P>Is there any way that i can search if a property contains only a <STRONG>specific word</STRONG> rather than a <STRONG>substring</STRONG>?</P>\n<P>I hope i have explained it well, if not please feel free to reply on this thread. </P>\n<P>Thanks in advance for all the future suggestions.</P>",
+    "teaser": "",
+    "board": {
+      "type": "board",
+      "id": "graph_platform",
+      "href": "/boards/graph_platform",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/bd-p/graph_platform"
+    },
+    "conversation": {
+      "type": "conversation",
+      "id": "62766",
+      "href": "/conversations/62766",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/exact-match-for-string-with-contains/td-p/62766",
+      "style": "forum",
+      "thread_style": "forum",
+      "messages_count": 4,
+      "solved": false,
+      "last_post_time": "2022-12-05T12:40:50.100-08:00",
+      "last_post_time_friendly": "12-05-2022"
+    },
+    "topic": {
+      "type": "message",
+      "id": "62766",
+      "href": "/messages/62766",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/exact-match-for-string-with-contains/m-p/62766#M37084"
+    },
+    "post_time": "2022-12-02T00:47:51.411-08:00",
+    "post_time_friendly": "12-02-2022",
+    "depth": 0,
+    "read_only": false,
+    "edit_frozen": false,
+    "language": "EN",
+    "can_accept_solution": false,
+    "placeholder": false,
+    "is_solution": false,
+    "solution_data": {},
+    "metrics": {
+      "type": "message_metrics",
+      "views": 231
+    },
+    "current_revision": {
+      "type": "revision",
+      "id": "62766_1",
+      "last_edit_author": {
+        "type": "user",
+        "id": "15527",
+        "href": "/users/15527",
+        "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/15527",
+        "login": "takhims"
+      },
+      "last_edit_time": "2022-12-02T00:47:51.411-08:00"
+    },
+    "kudos": {
+      "query": "SELECT * FROM kudos WHERE message.id = '62766'"
+    },
+    "tags": {
+      "query": "SELECT * FROM tags WHERE messages.id = '62766'"
+    },
+    "labels": {
+      "query": "SELECT * FROM labels WHERE messages.id = '62766'"
+    },
+    "images": {
+      "query": "SELECT * FROM images WHERE messages.id = '62766'"
+    },
+    "videos": {
+      "query": "SELECT * FROM videos WHERE messages.id = '62766'"
+    },
+    "attachments": {
+      "query": "SELECT * FROM attachments WHERE message.id = '62766'"
+    },
+    "replies": {
+      "query": "SELECT * FROM messages WHERE parent.id = '62766'"
+    },
+    "ratings": {
+      "query": "SELECT * FROM ratings WHERE message.id = '62766'"
+    },
+    "custom_tags": {
+      "query": "SELECT * FROM custom_tags WHERE messages.id = '62766'"
+    },
+    "moderation_status": "approved",
+    "visibility_scope": "public",
+    "user_context": {
+      "type": "user_context",
+      "kudo": false,
+      "read": false,
+      "can_reply": false,
+      "can_kudo": false,
+      "can_delete": false
+    },
+    "device_id": "google_chrome_107",
+    "popularity": -1443.8784694444444,
+    "excluded_from_kudos_leaderboards": false,
+    "is_promoted": false
+  },
+  {
+    "type": "message",
+    "id": "62764",
+    "href": "/messages/62764",
+    "view_href": "https://community.neo4j.com/t5/general-discussions/calculating-quantiles-in-cypher/td-p/62764",
+    "author": {
+      "type": "user",
+      "id": "15788",
+      "href": "/users/15788",
+      "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/15788",
+      "login": "kashu94"
+    },
+    "subject": "Calculating Quantiles in cypher",
+    "search_snippet": "I wanted to calculate quantile values over a list of integers. In python, there is Numpy library which does that as follows: \n import numpy  list = [4, 6, 1, 3, 10, 5]  q3 = numpy.quantile(list, 0.75...",
+    "body": "<P>I wanted to calculate quantile values over a list of integers. In python, there is Numpy library which does that as follows:</P>\n<P>import numpy<BR />list = [4, 6, 1, 3, 10, 5]<BR />q3 = numpy.quantile(list, 0.75)   #5.75<BR />q2 = numpy.quantile(list, 0.50)   #4.5<BR />q1 = numpy.quantile(list, 0.25)   #3.25</P>\n<P>How would I be able to do this in cypher?</P>",
+    "teaser": "",
+    "board": {
+      "type": "board",
+      "id": "general_discussions",
+      "href": "/boards/general_discussions",
+      "view_href": "https://community.neo4j.com/t5/general-discussions/bd-p/general_discussions"
+    },
+    "conversation": {
+      "type": "conversation",
+      "id": "62764",
+      "href": "/conversations/62764",
+      "view_href": "https://community.neo4j.com/t5/general-discussions/calculating-quantiles-in-cypher/td-p/62764",
+      "style": "forum",
+      "thread_style": "forum",
+      "messages_count": 6,
+      "solved": true,
+      "last_post_time": "2022-12-02T04:56:35.386-08:00",
+      "last_post_time_friendly": "12-02-2022"
+    },
+    "topic": {
+      "type": "message",
+      "id": "62764",
+      "href": "/messages/62764",
+      "view_href": "https://community.neo4j.com/t5/general-discussions/calculating-quantiles-in-cypher/m-p/62764#M3851"
+    },
+    "post_time": "2022-12-01T23:42:59.971-08:00",
+    "post_time_friendly": "12-01-2022",
+    "depth": 0,
+    "read_only": false,
+    "edit_frozen": false,
+    "language": "EN",
+    "can_accept_solution": false,
+    "placeholder": false,
+    "is_solution": false,
+    "solution_data": {},
+    "metrics": {
+      "type": "message_metrics",
+      "views": 371
+    },
+    "current_revision": {
+      "type": "revision",
+      "id": "62764_1",
+      "last_edit_author": {
+        "type": "user",
+        "id": "15788",
+        "href": "/users/15788",
+        "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/15788",
+        "login": "kashu94"
+      },
+      "last_edit_time": "2022-12-01T23:42:59.971-08:00"
+    },
+    "kudos": {
+      "query": "SELECT * FROM kudos WHERE message.id = '62764'"
+    },
+    "tags": {
+      "query": "SELECT * FROM tags WHERE messages.id = '62764'"
+    },
+    "labels": {
+      "query": "SELECT * FROM labels WHERE messages.id = '62764'"
+    },
+    "images": {
+      "query": "SELECT * FROM images WHERE messages.id = '62764'"
+    },
+    "videos": {
+      "query": "SELECT * FROM videos WHERE messages.id = '62764'"
+    },
+    "attachments": {
+      "query": "SELECT * FROM attachments WHERE message.id = '62764'"
+    },
+    "replies": {
+      "query": "SELECT * FROM messages WHERE parent.id = '62764'"
+    },
+    "ratings": {
+      "query": "SELECT * FROM ratings WHERE message.id = '62764'"
+    },
+    "custom_tags": {
+      "query": "SELECT * FROM custom_tags WHERE messages.id = '62764'"
+    },
+    "moderation_status": "approved",
+    "visibility_scope": "public",
+    "user_context": {
+      "type": "user_context",
+      "kudo": false,
+      "read": false,
+      "can_reply": false,
+      "can_kudo": false,
+      "can_delete": false
+    },
+    "device_id": "google_chrome_107",
+    "popularity": -1444.9594333333334,
+    "excluded_from_kudos_leaderboards": false,
+    "is_promoted": false
+  },
+  {
+    "type": "message",
+    "id": "62791",
+    "href": "/messages/62791",
+    "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/storing-amp-querying-collection-of-graphs/m-p/62791#M37097",
+    "author": {
+      "type": "user",
+      "id": "9010",
+      "href": "/users/9010",
+      "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/9010",
+      "login": "glilienfield"
+    },
+    "subject": "Re: Storing & Querying Collection of Graphs",
+    "search_snippet": "Neo4j can hand those question very easily.  I have it very easy to learn and am now using for an app I am building.",
+    "body": "<P>Neo4j can hand those question very easily.  I have it very easy to learn and am now using for an app I am building.  </P>",
+    "teaser": "",
+    "board": {
+      "type": "board",
+      "id": "graph_platform",
+      "href": "/boards/graph_platform",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/bd-p/graph_platform"
+    },
+    "conversation": {
+      "type": "conversation",
+      "id": "61787",
+      "href": "/conversations/61787",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/storing-amp-querying-collection-of-graphs/td-p/61787",
+      "style": "forum",
+      "thread_style": "forum",
+      "messages_count": 3,
+      "solved": false,
+      "last_post_time": "2022-12-02T10:49:56.270-08:00",
+      "last_post_time_friendly": "12-02-2022"
+    },
+    "topic": {
+      "type": "message",
+      "id": "61787",
+      "href": "/messages/61787",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/storing-amp-querying-collection-of-graphs/m-p/61787#M36535"
+    },
+    "parent": {
+      "type": "message",
+      "id": "61787",
+      "href": "/messages/61787",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/storing-amp-querying-collection-of-graphs/m-p/61787#M36535"
+    },
+    "post_time": "2022-12-02T10:49:56.270-08:00",
+    "post_time_friendly": "12-02-2022",
+    "depth": 1,
+    "read_only": false,
+    "edit_frozen": false,
+    "language": "EN",
+    "can_accept_solution": false,
+    "placeholder": false,
+    "is_solution": false,
+    "solution_data": {},
+    "metrics": {
+      "type": "message_metrics",
+      "views": 114
+    },
+    "current_revision": {
+      "type": "revision",
+      "id": "62791_1",
+      "last_edit_author": {
+        "type": "user",
+        "id": "9010",
+        "href": "/users/9010",
+        "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/9010",
+        "login": "glilienfield"
+      },
+      "last_edit_time": "2022-12-02T10:49:56.270-08:00"
+    },
+    "kudos": {
+      "query": "SELECT * FROM kudos WHERE message.id = '62791'"
+    },
+    "tags": {
+      "query": "SELECT * FROM tags WHERE messages.id = '62791'"
+    },
+    "labels": {
+      "query": "SELECT * FROM labels WHERE messages.id = '62791'"
+    },
+    "images": {
+      "query": "SELECT * FROM images WHERE messages.id = '62791'"
+    },
+    "videos": {
+      "query": "SELECT * FROM videos WHERE messages.id = '62791'"
+    },
+    "attachments": {
+      "query": "SELECT * FROM attachments WHERE message.id = '62791'"
+    },
+    "replies": {
+      "query": "SELECT * FROM messages WHERE parent.id = '62791'"
+    },
+    "ratings": {
+      "query": "SELECT * FROM ratings WHERE message.id = '62791'"
+    },
+    "custom_tags": {
+      "query": "SELECT * FROM custom_tags WHERE messages.id = '62791'"
+    },
+    "moderation_status": "approved",
+    "visibility_scope": "public",
+    "user_context": {
+      "type": "user_context",
+      "kudo": false,
+      "read": false,
+      "can_reply": false,
+      "can_kudo": false,
+      "can_delete": false
+    },
+    "device_id": "apple_iphone_ver16_1",
+    "popularity": -1433.84367,
+    "excluded_from_kudos_leaderboards": false,
+    "is_promoted": false
+  },
+  {
+    "type": "message",
+    "id": "62786",
+    "href": "/messages/62786",
+    "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/storing-amp-querying-collection-of-graphs/m-p/62786#M37093",
+    "author": {
+      "type": "user",
+      "id": "15737",
+      "href": "/users/15737",
+      "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/15737",
+      "login": "JohnTortugo"
+    },
+    "subject": "Re: Storing & Querying Collection of Graphs",
+    "search_snippet": "Anyone?",
+    "body": "<P>Anyone?</P>",
+    "teaser": "",
+    "board": {
+      "type": "board",
+      "id": "graph_platform",
+      "href": "/boards/graph_platform",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/bd-p/graph_platform"
+    },
+    "conversation": {
+      "type": "conversation",
+      "id": "61787",
+      "href": "/conversations/61787",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/storing-amp-querying-collection-of-graphs/td-p/61787",
+      "style": "forum",
+      "thread_style": "forum",
+      "messages_count": 3,
+      "solved": false,
+      "last_post_time": "2022-12-02T10:49:56.270-08:00",
+      "last_post_time_friendly": "12-02-2022"
+    },
+    "topic": {
+      "type": "message",
+      "id": "61787",
+      "href": "/messages/61787",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/storing-amp-querying-collection-of-graphs/m-p/61787#M36535"
+    },
+    "parent": {
+      "type": "message",
+      "id": "61787",
+      "href": "/messages/61787",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/storing-amp-querying-collection-of-graphs/m-p/61787#M36535"
+    },
+    "post_time": "2022-12-02T09:11:35.159-08:00",
+    "post_time_friendly": "12-02-2022",
+    "depth": 1,
+    "read_only": false,
+    "edit_frozen": false,
+    "language": "EN",
+    "can_accept_solution": false,
+    "placeholder": false,
+    "is_solution": false,
+    "solution_data": {},
+    "metrics": {
+      "type": "message_metrics",
+      "views": 117
+    },
+    "current_revision": {
+      "type": "revision",
+      "id": "62786_1",
+      "last_edit_author": {
+        "type": "user",
+        "id": "15737",
+        "href": "/users/15737",
+        "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/15737",
+        "login": "JohnTortugo"
+      },
+      "last_edit_time": "2022-12-02T09:11:35.159-08:00"
+    },
+    "kudos": {
+      "query": "SELECT * FROM kudos WHERE message.id = '62786'"
+    },
+    "tags": {
+      "query": "SELECT * FROM tags WHERE messages.id = '62786'"
+    },
+    "labels": {
+      "query": "SELECT * FROM labels WHERE messages.id = '62786'"
+    },
+    "images": {
+      "query": "SELECT * FROM images WHERE messages.id = '62786'"
+    },
+    "videos": {
+      "query": "SELECT * FROM videos WHERE messages.id = '62786'"
+    },
+    "attachments": {
+      "query": "SELECT * FROM attachments WHERE message.id = '62786'"
+    },
+    "replies": {
+      "query": "SELECT * FROM messages WHERE parent.id = '62786'"
+    },
+    "ratings": {
+      "query": "SELECT * FROM ratings WHERE message.id = '62786'"
+    },
+    "custom_tags": {
+      "query": "SELECT * FROM custom_tags WHERE messages.id = '62786'"
+    },
+    "moderation_status": "approved",
+    "visibility_scope": "public",
+    "user_context": {
+      "type": "user_context",
+      "kudo": false,
+      "read": false,
+      "can_reply": false,
+      "can_kudo": false,
+      "can_delete": false
+    },
+    "device_id": "apple_iphone_ver16_1",
+    "popularity": -1435.4828927777778,
+    "excluded_from_kudos_leaderboards": false,
+    "is_promoted": false
+  },
+  {
+    "type": "message",
+    "id": "62784",
+    "href": "/messages/62784",
+    "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/on-debian-linux-with-neo4j-desktop-the-installation-of-neuler/m-p/62784#M37091",
+    "author": {
+      "type": "user",
+      "id": "11439",
+      "href": "/users/11439",
+      "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/11439",
+      "login": "andreas_kuczera"
+    },
+    "subject": "Re: On Debian Linux with neo4j Desktop the installation of neuler does not work",
+    "search_snippet": "Found this link and it works on Debian: https://registry.npmjs.org/neuler",
+    "body": "<P>Found this link and it works on Debian: <A href=\"https://registry.npmjs.org/neuler\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">https://registry.npmjs.org/neuler</A></P>",
+    "teaser": "",
+    "board": {
+      "type": "board",
+      "id": "graph_platform",
+      "href": "/boards/graph_platform",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/bd-p/graph_platform"
+    },
+    "conversation": {
+      "type": "conversation",
+      "id": "62604",
+      "href": "/conversations/62604",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/on-debian-linux-with-neo4j-desktop-the-installation-of-neuler/td-p/62604",
+      "style": "forum",
+      "thread_style": "forum",
+      "messages_count": 2,
+      "solved": false,
+      "last_post_time": "2022-12-02T07:41:16.562-08:00",
+      "last_post_time_friendly": "12-02-2022"
+    },
+    "topic": {
+      "type": "message",
+      "id": "62604",
+      "href": "/messages/62604",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/on-debian-linux-with-neo4j-desktop-the-installation-of-neuler/m-p/62604#M37017"
+    },
+    "parent": {
+      "type": "message",
+      "id": "62604",
+      "href": "/messages/62604",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/on-debian-linux-with-neo4j-desktop-the-installation-of-neuler/m-p/62604#M37017"
+    },
+    "post_time": "2022-12-02T07:41:16.562-08:00",
+    "post_time_friendly": "12-02-2022",
+    "depth": 1,
+    "read_only": false,
+    "edit_frozen": false,
+    "language": "EN",
+    "can_accept_solution": false,
+    "placeholder": false,
+    "is_solution": false,
+    "solution_data": {},
+    "metrics": {
+      "type": "message_metrics",
+      "views": 141
+    },
+    "current_revision": {
+      "type": "revision",
+      "id": "62784_1",
+      "last_edit_author": {
+        "type": "user",
+        "id": "11439",
+        "href": "/users/11439",
+        "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/11439",
+        "login": "andreas_kuczera"
+      },
+      "last_edit_time": "2022-12-02T07:41:16.562-08:00"
+    },
+    "kudos": {
+      "query": "SELECT * FROM kudos WHERE message.id = '62784'"
+    },
+    "tags": {
+      "query": "SELECT * FROM tags WHERE messages.id = '62784'"
+    },
+    "labels": {
+      "query": "SELECT * FROM labels WHERE messages.id = '62784'"
+    },
+    "images": {
+      "query": "SELECT * FROM images WHERE messages.id = '62784'"
+    },
+    "videos": {
+      "query": "SELECT * FROM videos WHERE messages.id = '62784'"
+    },
+    "attachments": {
+      "query": "SELECT * FROM attachments WHERE message.id = '62784'"
+    },
+    "replies": {
+      "query": "SELECT * FROM messages WHERE parent.id = '62784'"
+    },
+    "ratings": {
+      "query": "SELECT * FROM ratings WHERE message.id = '62784'"
+    },
+    "custom_tags": {
+      "query": "SELECT * FROM custom_tags WHERE messages.id = '62784'"
+    },
+    "moderation_status": "approved",
+    "visibility_scope": "public",
+    "user_context": {
+      "type": "user_context",
+      "kudo": false,
+      "read": false,
+      "can_reply": false,
+      "can_kudo": false,
+      "can_delete": false
+    },
+    "device_id": "firefox_102_0",
+    "popularity": 0.00001831952506064562,
+    "excluded_from_kudos_leaderboards": false,
+    "is_promoted": false
+  },
+  {
+    "type": "message",
+    "id": "62781",
+    "href": "/messages/62781",
+    "view_href": "https://community.neo4j.com/t5/graphacademy-discussions/unable-to-submit-t-shirt-order-form/m-p/62781#M1681",
+    "author": {
+      "type": "user",
+      "id": "14818",
+      "href": "/users/14818",
+      "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/14818",
+      "login": "steggy"
+    },
+    "subject": "Re: Unable to submit t-shirt order form",
+    "search_snippet": "Hi @darciosavilela I was just testing this to see what I see. Try logging out of graph academy and then visiting that link. When I wasn't logged in, I was prompted to log in and then saw the page. If...",
+    "body": "<P>Hi <a href=\"https://community.neo4j.com/t5/user/viewprofilepage/user-id/15570\">@darciosavilela</a> I was just testing this to see what I see. Try logging out of graph academy and then visiting that link. When I wasn't logged in, I was prompted to log in and then saw the page. If I'm logged in to graph academy, then I see the same thing you did. </P>",
+    "teaser": "",
+    "board": {
+      "type": "board",
+      "id": "graphacademy_discussions",
+      "href": "/boards/graphacademy_discussions",
+      "view_href": "https://community.neo4j.com/t5/graphacademy-discussions/bd-p/graphacademy_discussions"
+    },
+    "conversation": {
+      "type": "conversation",
+      "id": "61986",
+      "href": "/conversations/61986",
+      "view_href": "https://community.neo4j.com/t5/graphacademy-discussions/unable-to-submit-t-shirt-order-form/td-p/61986",
+      "style": "forum",
+      "thread_style": "forum",
+      "messages_count": 11,
+      "solved": false,
+      "last_post_time": "2022-12-29T07:04:00.351-08:00",
+      "last_post_time_friendly": "12-29-2022"
+    },
+    "topic": {
+      "type": "message",
+      "id": "61986",
+      "href": "/messages/61986",
+      "view_href": "https://community.neo4j.com/t5/graphacademy-discussions/unable-to-submit-t-shirt-order-form/m-p/61986#M1615"
+    },
+    "parent": {
+      "type": "message",
+      "id": "61986",
+      "href": "/messages/61986",
+      "view_href": "https://community.neo4j.com/t5/graphacademy-discussions/unable-to-submit-t-shirt-order-form/m-p/61986#M1615"
+    },
+    "post_time": "2022-12-02T06:24:12.417-08:00",
+    "post_time_friendly": "12-02-2022",
+    "depth": 1,
+    "read_only": false,
+    "edit_frozen": false,
+    "language": "EN",
+    "can_accept_solution": false,
+    "placeholder": false,
+    "is_solution": false,
+    "solution_data": {},
+    "metrics": {
+      "type": "message_metrics",
+      "views": 677
+    },
+    "current_revision": {
+      "type": "revision",
+      "id": "62781_1",
+      "last_edit_author": {
+        "type": "user",
+        "id": "14818",
+        "href": "/users/14818",
+        "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/14818",
+        "login": "steggy"
+      },
+      "last_edit_time": "2022-12-02T06:24:12.417-08:00"
+    },
+    "kudos": {
+      "query": "SELECT * FROM kudos WHERE message.id = '62781'"
+    },
+    "tags": {
+      "query": "SELECT * FROM tags WHERE messages.id = '62781'"
+    },
+    "labels": {
+      "query": "SELECT * FROM labels WHERE messages.id = '62781'"
+    },
+    "images": {
+      "query": "SELECT * FROM images WHERE messages.id = '62781'"
+    },
+    "videos": {
+      "query": "SELECT * FROM videos WHERE messages.id = '62781'"
+    },
+    "attachments": {
+      "query": "SELECT * FROM attachments WHERE message.id = '62781'"
+    },
+    "replies": {
+      "query": "SELECT * FROM messages WHERE parent.id = '62781'"
+    },
+    "ratings": {
+      "query": "SELECT * FROM ratings WHERE message.id = '62781'"
+    },
+    "custom_tags": {
+      "query": "SELECT * FROM custom_tags WHERE messages.id = '62781'"
+    },
+    "moderation_status": "approved",
+    "visibility_scope": "public",
+    "user_context": {
+      "type": "user_context",
+      "kudo": false,
+      "read": false,
+      "can_reply": false,
+      "can_kudo": false,
+      "can_delete": false
+    },
+    "device_id": "google_chrome_108",
+    "popularity": -1438.2725694444443,
+    "excluded_from_kudos_leaderboards": false,
+    "is_promoted": false
+  },
+  {
+    "type": "message",
+    "id": "62778",
+    "href": "/messages/62778",
+    "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/neo-clienterror-statement-syntaxerror-expected-i-i-query/m-p/62778#M37089",
+    "author": {
+      "type": "user",
+      "id": "15375",
+      "href": "/users/15375",
+      "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/15375",
+      "login": "Reuben"
+    },
+    "subject": "Re: Neo.ClientError.Statement.SyntaxError –– expected  'i/I' –– Query",
+    "search_snippet": "Got it!",
+    "body": "<P>Got it!</P>",
+    "teaser": "",
+    "board": {
+      "type": "board",
+      "id": "graph_platform",
+      "href": "/boards/graph_platform",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/bd-p/graph_platform"
+    },
+    "conversation": {
+      "type": "conversation",
+      "id": "62773",
+      "href": "/conversations/62773",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/neo-clienterror-statement-syntaxerror-expected-i-i-query/td-p/62773",
+      "style": "forum",
+      "thread_style": "forum",
+      "messages_count": 3,
+      "solved": true,
+      "last_post_time": "2022-12-02T05:21:10.082-08:00",
+      "last_post_time_friendly": "12-02-2022"
+    },
+    "topic": {
+      "type": "message",
+      "id": "62773",
+      "href": "/messages/62773",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/neo-clienterror-statement-syntaxerror-expected-i-i-query/m-p/62773#M37086"
+    },
+    "parent": {
+      "type": "message",
+      "id": "62773",
+      "href": "/messages/62773",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/neo-clienterror-statement-syntaxerror-expected-i-i-query/m-p/62773#M37086"
+    },
+    "post_time": "2022-12-02T05:21:10.082-08:00",
+    "post_time_friendly": "12-02-2022",
+    "depth": 1,
+    "read_only": false,
+    "edit_frozen": false,
+    "language": "EN",
+    "can_accept_solution": false,
+    "placeholder": false,
+    "is_solution": false,
+    "solution_data": {},
+    "metrics": {
+      "type": "message_metrics",
+      "views": 216
+    },
+    "current_revision": {
+      "type": "revision",
+      "id": "62778_5",
+      "last_edit_author": {
+        "type": "user",
+        "id": "15375",
+        "href": "/users/15375",
+        "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/15375",
+        "login": "Reuben"
+      },
+      "last_edit_time": "2022-12-02T06:06:58.667-08:00"
+    },
+    "kudos": {
+      "query": "SELECT * FROM kudos WHERE message.id = '62778'"
+    },
+    "tags": {
+      "query": "SELECT * FROM tags WHERE messages.id = '62778'"
+    },
+    "labels": {
+      "query": "SELECT * FROM labels WHERE messages.id = '62778'"
+    },
+    "images": {
+      "query": "SELECT * FROM images WHERE messages.id = '62778'"
+    },
+    "videos": {
+      "query": "SELECT * FROM videos WHERE messages.id = '62778'"
+    },
+    "attachments": {
+      "query": "SELECT * FROM attachments WHERE message.id = '62778'"
+    },
+    "replies": {
+      "query": "SELECT * FROM messages WHERE parent.id = '62778'"
+    },
+    "ratings": {
+      "query": "SELECT * FROM ratings WHERE message.id = '62778'"
+    },
+    "custom_tags": {
+      "query": "SELECT * FROM custom_tags WHERE messages.id = '62778'"
+    },
+    "moderation_status": "approved",
+    "visibility_scope": "public",
+    "user_context": {
+      "type": "user_context",
+      "kudo": false,
+      "read": false,
+      "can_reply": false,
+      "can_kudo": false,
+      "can_delete": false
+    },
+    "device_id": "google_chrome_107",
+    "popularity": -1439.3232325,
+    "excluded_from_kudos_leaderboards": false,
+    "is_promoted": false
+  },
+  {
+    "type": "message",
+    "id": "62777",
+    "href": "/messages/62777",
+    "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/exact-match-for-string-with-contains/m-p/62777#M37088",
+    "author": {
+      "type": "user",
+      "id": "9010",
+      "href": "/users/9010",
+      "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/9010",
+      "login": "glilienfield"
+    },
+    "subject": "Re: Exact match for string with CONTAINS",
+    "search_snippet": "Maybe you should store the descriptions as a list instead of a comma concatenated string. You could then determine if the list contains the exact phrase you want.      \n if that is not an option, you...",
+    "body": "<P>Maybe you should store the descriptions as a list instead of a comma concatenated string. You could then determine if the list contains the exact phrase you want. <BR /><BR /></P>\n<P>if that is not an option, you could split the string into a list and determine if the list contains the exact string you want to match. <BR /><BR /></P>\n<P>you could also use a grep search to restrict you results so that it is a whole word from a comma concatenated list. </P>\n<P><A href=\"https://neo4j.com/docs/cypher-manual/current/functions/string/#functions-split\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">https://neo4j.com/docs/cypher-manual/current/functions/string/#functions-split</A></P>",
+    "teaser": "",
+    "board": {
+      "type": "board",
+      "id": "graph_platform",
+      "href": "/boards/graph_platform",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/bd-p/graph_platform"
+    },
+    "conversation": {
+      "type": "conversation",
+      "id": "62766",
+      "href": "/conversations/62766",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/exact-match-for-string-with-contains/td-p/62766",
+      "style": "forum",
+      "thread_style": "forum",
+      "messages_count": 4,
+      "solved": false,
+      "last_post_time": "2022-12-05T12:40:50.100-08:00",
+      "last_post_time_friendly": "12-05-2022"
+    },
+    "topic": {
+      "type": "message",
+      "id": "62766",
+      "href": "/messages/62766",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/exact-match-for-string-with-contains/m-p/62766#M37084"
+    },
+    "parent": {
+      "type": "message",
+      "id": "62766",
+      "href": "/messages/62766",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/exact-match-for-string-with-contains/m-p/62766#M37084"
+    },
+    "post_time": "2022-12-02T05:10:37.470-08:00",
+    "post_time_friendly": "12-02-2022",
+    "depth": 1,
+    "read_only": false,
+    "edit_frozen": false,
+    "language": "EN",
+    "can_accept_solution": false,
+    "placeholder": false,
+    "is_solution": false,
+    "solution_data": {},
+    "metrics": {
+      "type": "message_metrics",
+      "views": 224
+    },
+    "current_revision": {
+      "type": "revision",
+      "id": "62777_1",
+      "last_edit_author": {
+        "type": "user",
+        "id": "9010",
+        "href": "/users/9010",
+        "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/9010",
+        "login": "glilienfield"
+      },
+      "last_edit_time": "2022-12-02T05:10:37.470-08:00"
+    },
+    "kudos": {
+      "query": "SELECT * FROM kudos WHERE message.id = '62777'"
+    },
+    "tags": {
+      "query": "SELECT * FROM tags WHERE messages.id = '62777'"
+    },
+    "labels": {
+      "query": "SELECT * FROM labels WHERE messages.id = '62777'"
+    },
+    "images": {
+      "query": "SELECT * FROM images WHERE messages.id = '62777'"
+    },
+    "videos": {
+      "query": "SELECT * FROM videos WHERE messages.id = '62777'"
+    },
+    "attachments": {
+      "query": "SELECT * FROM attachments WHERE message.id = '62777'"
+    },
+    "replies": {
+      "query": "SELECT * FROM messages WHERE parent.id = '62777'"
+    },
+    "ratings": {
+      "query": "SELECT * FROM ratings WHERE message.id = '62777'"
+    },
+    "custom_tags": {
+      "query": "SELECT * FROM custom_tags WHERE messages.id = '62777'"
+    },
+    "moderation_status": "approved",
+    "visibility_scope": "public",
+    "user_context": {
+      "type": "user_context",
+      "kudo": false,
+      "read": false,
+      "can_reply": false,
+      "can_kudo": false,
+      "can_delete": false
+    },
+    "device_id": "apple_iphone_ver16_1",
+    "popularity": -1439.4989633333332,
+    "excluded_from_kudos_leaderboards": false,
+    "is_promoted": false
+  },
+  {
+    "type": "message",
+    "id": "62776",
+    "href": "/messages/62776",
+    "view_href": "https://community.neo4j.com/t5/general-discussions/calculating-quantiles-in-cypher/m-p/62776#M3856",
+    "author": {
+      "type": "user",
+      "id": "9010",
+      "href": "/users/9010",
+      "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/9010",
+      "login": "glilienfield"
+    },
+    "subject": "Re: Calculating Quantiles in cypher",
+    "search_snippet": "There are also the cypher aggregate functions if you don’t want to use the apoc library.  \n https://neo4j.com/docs/cypher-manual/current/functions/aggregating/#functions-percentilecont",
+    "body": "<P>There are also the cypher aggregate functions if you don’t want to use the apoc library. </P>\n<P><A href=\"https://neo4j.com/docs/cypher-manual/current/functions/aggregating/#functions-percentilecont\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">https://neo4j.com/docs/cypher-manual/current/functions/aggregating/#functions-percentilecont</A></P>",
+    "teaser": "",
+    "board": {
+      "type": "board",
+      "id": "general_discussions",
+      "href": "/boards/general_discussions",
+      "view_href": "https://community.neo4j.com/t5/general-discussions/bd-p/general_discussions"
+    },
+    "conversation": {
+      "type": "conversation",
+      "id": "62764",
+      "href": "/conversations/62764",
+      "view_href": "https://community.neo4j.com/t5/general-discussions/calculating-quantiles-in-cypher/td-p/62764",
+      "style": "forum",
+      "thread_style": "forum",
+      "messages_count": 6,
+      "solved": true,
+      "last_post_time": "2022-12-02T04:56:35.386-08:00",
+      "last_post_time_friendly": "12-02-2022"
+    },
+    "topic": {
+      "type": "message",
+      "id": "62764",
+      "href": "/messages/62764",
+      "view_href": "https://community.neo4j.com/t5/general-discussions/calculating-quantiles-in-cypher/m-p/62764#M3851"
+    },
+    "parent": {
+      "type": "message",
+      "id": "62764",
+      "href": "/messages/62764",
+      "view_href": "https://community.neo4j.com/t5/general-discussions/calculating-quantiles-in-cypher/m-p/62764#M3851"
+    },
+    "post_time": "2022-12-02T04:56:35.386-08:00",
+    "post_time_friendly": "12-02-2022",
+    "depth": 1,
+    "read_only": false,
+    "edit_frozen": false,
+    "language": "EN",
+    "can_accept_solution": false,
+    "placeholder": false,
+    "is_solution": false,
+    "solution_data": {},
+    "metrics": {
+      "type": "message_metrics",
+      "views": 349
+    },
+    "current_revision": {
+      "type": "revision",
+      "id": "62776_1",
+      "last_edit_author": {
+        "type": "user",
+        "id": "9010",
+        "href": "/users/9010",
+        "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/9010",
+        "login": "glilienfield"
+      },
+      "last_edit_time": "2022-12-02T04:56:35.386-08:00"
+    },
+    "kudos": {
+      "query": "SELECT * FROM kudos WHERE message.id = '62776'"
+    },
+    "tags": {
+      "query": "SELECT * FROM tags WHERE messages.id = '62776'"
+    },
+    "labels": {
+      "query": "SELECT * FROM labels WHERE messages.id = '62776'"
+    },
+    "images": {
+      "query": "SELECT * FROM images WHERE messages.id = '62776'"
+    },
+    "videos": {
+      "query": "SELECT * FROM videos WHERE messages.id = '62776'"
+    },
+    "attachments": {
+      "query": "SELECT * FROM attachments WHERE message.id = '62776'"
+    },
+    "replies": {
+      "query": "SELECT * FROM messages WHERE parent.id = '62776'"
+    },
+    "ratings": {
+      "query": "SELECT * FROM ratings WHERE message.id = '62776'"
+    },
+    "custom_tags": {
+      "query": "SELECT * FROM custom_tags WHERE messages.id = '62776'"
+    },
+    "moderation_status": "approved",
+    "visibility_scope": "public",
+    "user_context": {
+      "type": "user_context",
+      "kudo": false,
+      "read": false,
+      "can_reply": false,
+      "can_kudo": false,
+      "can_delete": false
+    },
+    "device_id": "apple_iphone_ver16_1",
+    "popularity": -1439.7328816666666,
+    "excluded_from_kudos_leaderboards": false,
+    "is_promoted": false
+  },
+  {
+    "type": "message",
+    "id": "62775",
+    "href": "/messages/62775",
+    "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/neo-clienterror-statement-syntaxerror-expected-i-i-query/m-p/62775#M37087",
+    "author": {
+      "type": "user",
+      "id": "9010",
+      "href": "/users/9010",
+      "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/9010",
+      "login": "glilienfield"
+    },
+    "subject": "Re: Neo.ClientError.Statement.SyntaxError –– expected  'i/I' –– Query",
+    "search_snippet": "You have two ‘where’ clauses. Change the second ‘where’ clause to ‘and’. \n Also, you can’t order by a node, as you are trying to do with ‘order by f’ change it to ‘order by f.first_name asc’ \n finall...",
+    "body": "<P>You have two ‘where’ clauses. Change the second ‘where’ clause to ‘and’.</P>\n<P>Also, you can’t order by a node, as you are trying to do with ‘order by f’ change it to ‘order by f.first_name asc’</P>\n<P>finally, you can’t have a pattern as a predicate. You can change them to use ‘exists’ to convert them to predicates. For example, change ‘<SPAN>(</SPAN><SPAN>f</SPAN><SPAN>)-[:</SPAN><SPAN>first_name</SPAN><SPAN>]-&gt;(</SPAN><SPAN>n</SPAN><SPAN>)’ in the ‘where’ clause to ‘exists((f)-[:first_name]-&gt;(n))’.</SPAN></P>\n<P><SPAN>question: why do you need to match to the other nodes ‘race’ and ‘hometown’, as it seems you just want to find the last name of everyone whose first name contains ‘jay’. You will not receive your expected results you list with your query, because all three don’t match the values of race and hometown in your query. You should get your expected results with the following query:</SPAN></P>\n<P> </P>\n<DIV><SPAN>MATCH</SPAN><SPAN>(f:name</SPAN><SPAN>)</SPAN></DIV>\n<DIV><SPAN>WHERE</SPAN> <SPAN>f</SPAN><SPAN>.</SPAN><SPAN>first_name </SPAN><SPAN>contains</SPAN> <SPAN>'Jay'</SPAN></DIV>\n<DIV><SPAN>RETURN</SPAN> <SPAN>f</SPAN></DIV>\n<DIV><SPAN>ORDER</SPAN> <SPAN>BY</SPAN> <SPAN>f</SPAN> <SPAN>asc</SPAN></DIV>\n<DIV><SPAN>LIMIT</SPAN> <SPAN>10</SPAN></DIV>\n<DIV> </DIV>\n<DIV><SPAN>Just realized one more issue, you limit the ‘name’ node to have a first name exactly equal to ‘Jay’ in the match, so the where clause looking for first names contains ‘Jay’ will not work. </SPAN></DIV>",
+    "teaser": "",
+    "board": {
+      "type": "board",
+      "id": "graph_platform",
+      "href": "/boards/graph_platform",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/bd-p/graph_platform"
+    },
+    "conversation": {
+      "type": "conversation",
+      "id": "62773",
+      "href": "/conversations/62773",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/neo-clienterror-statement-syntaxerror-expected-i-i-query/td-p/62773",
+      "style": "forum",
+      "thread_style": "forum",
+      "messages_count": 3,
+      "solved": true,
+      "last_post_time": "2022-12-02T05:21:10.082-08:00",
+      "last_post_time_friendly": "12-02-2022"
+    },
+    "topic": {
+      "type": "message",
+      "id": "62773",
+      "href": "/messages/62773",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/neo-clienterror-statement-syntaxerror-expected-i-i-query/m-p/62773#M37086"
+    },
+    "parent": {
+      "type": "message",
+      "id": "62773",
+      "href": "/messages/62773",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/neo-clienterror-statement-syntaxerror-expected-i-i-query/m-p/62773#M37086"
+    },
+    "post_time": "2022-12-02T04:32:50.600-08:00",
+    "post_time_friendly": "12-02-2022",
+    "depth": 1,
+    "read_only": false,
+    "edit_frozen": false,
+    "language": "EN",
+    "can_accept_solution": false,
+    "placeholder": false,
+    "is_solution": true,
+    "solution_data": {
+      "type": "solution_data",
+      "message_id": "62775",
+      "accepter": {
+        "type": "user",
+        "id": "15375",
+        "href": "/users/15375",
+        "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/15375",
+        "login": "Reuben"
+      },
+      "time": "2022-12-02T06:07:07.000-08:00"
+    },
+    "metrics": {
+      "type": "message_metrics",
+      "views": 223
+    },
+    "current_revision": {
+      "type": "revision",
+      "id": "62775_3",
+      "last_edit_author": {
+        "type": "user",
+        "id": "9010",
+        "href": "/users/9010",
+        "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/9010",
+        "login": "glilienfield"
+      },
+      "last_edit_time": "2022-12-02T04:49:20.060-08:00"
+    },
+    "kudos": {
+      "query": "SELECT * FROM kudos WHERE message.id = '62775'"
+    },
+    "tags": {
+      "query": "SELECT * FROM tags WHERE messages.id = '62775'"
+    },
+    "labels": {
+      "query": "SELECT * FROM labels WHERE messages.id = '62775'"
+    },
+    "images": {
+      "query": "SELECT * FROM images WHERE messages.id = '62775'"
+    },
+    "videos": {
+      "query": "SELECT * FROM videos WHERE messages.id = '62775'"
+    },
+    "attachments": {
+      "query": "SELECT * FROM attachments WHERE message.id = '62775'"
+    },
+    "replies": {
+      "query": "SELECT * FROM messages WHERE parent.id = '62775'"
+    },
+    "ratings": {
+      "query": "SELECT * FROM ratings WHERE message.id = '62775'"
+    },
+    "custom_tags": {
+      "query": "SELECT * FROM custom_tags WHERE messages.id = '62775'"
+    },
+    "moderation_status": "approved",
+    "visibility_scope": "public",
+    "user_context": {
+      "type": "user_context",
+      "kudo": false,
+      "read": false,
+      "can_reply": false,
+      "can_kudo": false,
+      "can_delete": false
+    },
+    "device_id": "apple_iphone_ver16_1",
+    "popularity": -1440.1286608333332,
+    "excluded_from_kudos_leaderboards": false,
+    "is_promoted": false
+  },
+  {
+    "type": "message",
+    "id": "62768",
+    "href": "/messages/62768",
+    "view_href": "https://community.neo4j.com/t5/general-discussions/calculating-quantiles-in-cypher/m-p/62768#M3853",
+    "author": {
+      "type": "user",
+      "id": "15788",
+      "href": "/users/15788",
+      "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/15788",
+      "login": "kashu94"
+    },
+    "subject": "Re: Calculating Quantiles in cypher",
+    "search_snippet": "Yes, I've come across that, but I'm not sure how to use them for a list ....",
+    "body": "<P>Yes, I've come across that, but I'm not sure how to use them for a list .... </P>",
+    "teaser": "",
+    "board": {
+      "type": "board",
+      "id": "general_discussions",
+      "href": "/boards/general_discussions",
+      "view_href": "https://community.neo4j.com/t5/general-discussions/bd-p/general_discussions"
+    },
+    "conversation": {
+      "type": "conversation",
+      "id": "62764",
+      "href": "/conversations/62764",
+      "view_href": "https://community.neo4j.com/t5/general-discussions/calculating-quantiles-in-cypher/td-p/62764",
+      "style": "forum",
+      "thread_style": "forum",
+      "messages_count": 6,
+      "solved": true,
+      "last_post_time": "2022-12-02T04:56:35.386-08:00",
+      "last_post_time_friendly": "12-02-2022"
+    },
+    "topic": {
+      "type": "message",
+      "id": "62764",
+      "href": "/messages/62764",
+      "view_href": "https://community.neo4j.com/t5/general-discussions/calculating-quantiles-in-cypher/m-p/62764#M3851"
+    },
+    "parent": {
+      "type": "message",
+      "id": "62764",
+      "href": "/messages/62764",
+      "view_href": "https://community.neo4j.com/t5/general-discussions/calculating-quantiles-in-cypher/m-p/62764#M3851"
+    },
+    "post_time": "2022-12-02T01:54:25.982-08:00",
+    "post_time_friendly": "12-02-2022",
+    "depth": 1,
+    "read_only": false,
+    "edit_frozen": false,
+    "language": "EN",
+    "can_accept_solution": false,
+    "placeholder": false,
+    "is_solution": false,
+    "solution_data": {},
+    "metrics": {
+      "type": "message_metrics",
+      "views": 366
+    },
+    "current_revision": {
+      "type": "revision",
+      "id": "62768_1",
+      "last_edit_author": {
+        "type": "user",
+        "id": "15788",
+        "href": "/users/15788",
+        "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/15788",
+        "login": "kashu94"
+      },
+      "last_edit_time": "2022-12-02T01:54:25.982-08:00"
+    },
+    "kudos": {
+      "query": "SELECT * FROM kudos WHERE message.id = '62768'"
+    },
+    "tags": {
+      "query": "SELECT * FROM tags WHERE messages.id = '62768'"
+    },
+    "labels": {
+      "query": "SELECT * FROM labels WHERE messages.id = '62768'"
+    },
+    "images": {
+      "query": "SELECT * FROM images WHERE messages.id = '62768'"
+    },
+    "videos": {
+      "query": "SELECT * FROM videos WHERE messages.id = '62768'"
+    },
+    "attachments": {
+      "query": "SELECT * FROM attachments WHERE message.id = '62768'"
+    },
+    "replies": {
+      "query": "SELECT * FROM messages WHERE parent.id = '62768'"
+    },
+    "ratings": {
+      "query": "SELECT * FROM ratings WHERE message.id = '62768'"
+    },
+    "custom_tags": {
+      "query": "SELECT * FROM custom_tags WHERE messages.id = '62768'"
+    },
+    "moderation_status": "approved",
+    "visibility_scope": "public",
+    "user_context": {
+      "type": "user_context",
+      "kudo": false,
+      "read": false,
+      "can_reply": false,
+      "can_kudo": false,
+      "can_delete": false
+    },
+    "device_id": "google_chrome_107",
+    "popularity": -1442.7688583333334,
+    "excluded_from_kudos_leaderboards": false,
+    "is_promoted": false
+  },
+  {
+    "type": "message",
+    "id": "62767",
+    "href": "/messages/62767",
+    "view_href": "https://community.neo4j.com/t5/general-discussions/calculating-quantiles-in-cypher/m-p/62767#M3852",
+    "author": {
+      "type": "user",
+      "id": "15587",
+      "href": "/users/15587",
+      "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/15587",
+      "login": "amina"
+    },
+    "subject": "Re: Calculating Quantiles in cypher",
+    "search_snippet": "Hi, \n Please,have a look at this page about apoc.agg.percentiles function: https://neo4j.com/labs/apoc/4.4/overview/apoc.agg/apoc.agg.percentiles/",
+    "body": "<P>Hi,</P>\n<P>Please,have a look at this page about apoc.agg.percentiles function: <A href=\"https://neo4j.com/labs/apoc/4.4/overview/apoc.agg/apoc.agg.percentiles/\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">https://neo4j.com/labs/apoc/4.4/overview/apoc.agg/apoc.agg.percentiles/</A> </P>\n<P> </P>",
+    "teaser": "",
+    "board": {
+      "type": "board",
+      "id": "general_discussions",
+      "href": "/boards/general_discussions",
+      "view_href": "https://community.neo4j.com/t5/general-discussions/bd-p/general_discussions"
+    },
+    "conversation": {
+      "type": "conversation",
+      "id": "62764",
+      "href": "/conversations/62764",
+      "view_href": "https://community.neo4j.com/t5/general-discussions/calculating-quantiles-in-cypher/td-p/62764",
+      "style": "forum",
+      "thread_style": "forum",
+      "messages_count": 6,
+      "solved": true,
+      "last_post_time": "2022-12-02T04:56:35.386-08:00",
+      "last_post_time_friendly": "12-02-2022"
+    },
+    "topic": {
+      "type": "message",
+      "id": "62764",
+      "href": "/messages/62764",
+      "view_href": "https://community.neo4j.com/t5/general-discussions/calculating-quantiles-in-cypher/m-p/62764#M3851"
+    },
+    "parent": {
+      "type": "message",
+      "id": "62764",
+      "href": "/messages/62764",
+      "view_href": "https://community.neo4j.com/t5/general-discussions/calculating-quantiles-in-cypher/m-p/62764#M3851"
+    },
+    "post_time": "2022-12-02T01:33:30.269-08:00",
+    "post_time_friendly": "12-02-2022",
+    "depth": 1,
+    "read_only": false,
+    "edit_frozen": false,
+    "language": "EN",
+    "can_accept_solution": false,
+    "placeholder": false,
+    "is_solution": false,
+    "solution_data": {},
+    "metrics": {
+      "type": "message_metrics",
+      "views": 367
+    },
+    "current_revision": {
+      "type": "revision",
+      "id": "62767_1",
+      "last_edit_author": {
+        "type": "user",
+        "id": "15587",
+        "href": "/users/15587",
+        "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/15587",
+        "login": "amina"
+      },
+      "last_edit_time": "2022-12-02T01:33:30.269-08:00"
+    },
+    "kudos": {
+      "query": "SELECT * FROM kudos WHERE message.id = '62767'"
+    },
+    "tags": {
+      "query": "SELECT * FROM tags WHERE messages.id = '62767'"
+    },
+    "labels": {
+      "query": "SELECT * FROM labels WHERE messages.id = '62767'"
+    },
+    "images": {
+      "query": "SELECT * FROM images WHERE messages.id = '62767'"
+    },
+    "videos": {
+      "query": "SELECT * FROM videos WHERE messages.id = '62767'"
+    },
+    "attachments": {
+      "query": "SELECT * FROM attachments WHERE message.id = '62767'"
+    },
+    "replies": {
+      "query": "SELECT * FROM messages WHERE parent.id = '62767'"
+    },
+    "ratings": {
+      "query": "SELECT * FROM ratings WHERE message.id = '62767'"
+    },
+    "custom_tags": {
+      "query": "SELECT * FROM custom_tags WHERE messages.id = '62767'"
+    },
+    "moderation_status": "approved",
+    "visibility_scope": "public",
+    "user_context": {
+      "type": "user_context",
+      "kudo": false,
+      "read": false,
+      "can_reply": false,
+      "can_kudo": false,
+      "can_delete": false
+    },
+    "device_id": "google_chrome_96",
+    "popularity": -1443.1176719444445,
+    "excluded_from_kudos_leaderboards": false,
+    "is_promoted": false
+  },
+  {
+    "type": "message",
+    "id": "62759",
+    "href": "/messages/62759",
+    "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/find-similarity-of-given-node-with-entire-graph/m-p/62759#M37080",
+    "author": {
+      "type": "user",
+      "id": "9010",
+      "href": "/users/9010",
+      "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/9010",
+      "login": "glilienfield"
+    },
+    "subject": "Re: Find similarity of given node with entire graph",
+    "search_snippet": "Have you tried to use the gds KNN algorithm? If so, what went wrong?",
+    "body": "<P>Have you tried to use the gds KNN algorithm? If so, what went wrong?  </P>",
+    "teaser": "",
+    "board": {
+      "type": "board",
+      "id": "graph_platform",
+      "href": "/boards/graph_platform",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/bd-p/graph_platform"
+    },
+    "conversation": {
+      "type": "conversation",
+      "id": "62747",
+      "href": "/conversations/62747",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/find-similarity-of-given-node-with-entire-graph/td-p/62747",
+      "style": "forum",
+      "thread_style": "forum",
+      "messages_count": 10,
+      "solved": false,
+      "last_post_time": "2022-12-08T11:58:19.043-08:00",
+      "last_post_time_friendly": "12-08-2022"
+    },
+    "topic": {
+      "type": "message",
+      "id": "62747",
+      "href": "/messages/62747",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/find-similarity-of-given-node-with-entire-graph/m-p/62747#M37077"
+    },
+    "parent": {
+      "type": "message",
+      "id": "62747",
+      "href": "/messages/62747",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/find-similarity-of-given-node-with-entire-graph/m-p/62747#M37077"
+    },
+    "post_time": "2022-12-01T19:46:39.449-08:00",
+    "post_time_friendly": "12-01-2022",
+    "depth": 1,
+    "read_only": false,
+    "edit_frozen": false,
+    "language": "EN",
+    "can_accept_solution": false,
+    "placeholder": false,
+    "is_solution": false,
+    "solution_data": {},
+    "metrics": {
+      "type": "message_metrics",
+      "views": 390
+    },
+    "current_revision": {
+      "type": "revision",
+      "id": "62759_1",
+      "last_edit_author": {
+        "type": "user",
+        "id": "9010",
+        "href": "/users/9010",
+        "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/9010",
+        "login": "glilienfield"
+      },
+      "last_edit_time": "2022-12-01T19:46:39.449-08:00"
+    },
+    "kudos": {
+      "query": "SELECT * FROM kudos WHERE message.id = '62759'"
+    },
+    "tags": {
+      "query": "SELECT * FROM tags WHERE messages.id = '62759'"
+    },
+    "labels": {
+      "query": "SELECT * FROM labels WHERE messages.id = '62759'"
+    },
+    "images": {
+      "query": "SELECT * FROM images WHERE messages.id = '62759'"
+    },
+    "videos": {
+      "query": "SELECT * FROM videos WHERE messages.id = '62759'"
+    },
+    "attachments": {
+      "query": "SELECT * FROM attachments WHERE message.id = '62759'"
+    },
+    "replies": {
+      "query": "SELECT * FROM messages WHERE parent.id = '62759'"
+    },
+    "ratings": {
+      "query": "SELECT * FROM ratings WHERE message.id = '62759'"
+    },
+    "custom_tags": {
+      "query": "SELECT * FROM custom_tags WHERE messages.id = '62759'"
+    },
+    "moderation_status": "approved",
+    "visibility_scope": "public",
+    "user_context": {
+      "type": "user_context",
+      "kudo": false,
+      "read": false,
+      "can_reply": false,
+      "can_kudo": false,
+      "can_delete": false
+    },
+    "device_id": "safari_16_0_mac",
+    "popularity": -1448.898495,
+    "excluded_from_kudos_leaderboards": false,
+    "is_promoted": false
+  },
+  {
+    "type": "message",
+    "id": "62758",
+    "href": "/messages/62758",
+    "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/adjacency-matrix/m-p/62758#M37079",
+    "author": {
+      "type": "user",
+      "id": "9010",
+      "href": "/users/9010",
+      "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/9010",
+      "login": "glilienfield"
+    },
+    "subject": "Re: Adjacency matrix",
+    "search_snippet": "Just a couple notes. The order of the query operations will cause the 'match(p:part) collect(p)' block to be repeated for each customer node.  Also, its not allowed to introduce a variable in a patte...",
+    "body": "<P>Just a couple notes. The order of the query operations will cause the 'match(p:part) collect(p)' block to be repeated for each customer node.  Also, its not allowed to introduce a variable in a pattern expression, so returning r.revenue isn't allowed. I refactored your query to resolve these two issues. </P>\n<pre class=\"lia-code-sample language-markup\"><code>match(c:customer)\nwith collect(c) as customers\nmatch(p:part)\nwith customers, collect(p) as parts\nunwind customers as customer\nunwind parts as part\noptional match (customer)-[r:customer_to_part]-&gt;(part)\nreturn customer.id as cust_id, part.id as part_id,\ncase\n    when r is not null then r.revenue\n    else 0\nend as value</code></pre>",
+    "teaser": "",
+    "board": {
+      "type": "board",
+      "id": "graph_platform",
+      "href": "/boards/graph_platform",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/bd-p/graph_platform"
+    },
+    "conversation": {
+      "type": "conversation",
+      "id": "62751",
+      "href": "/conversations/62751",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/adjacency-matrix/td-p/62751",
+      "style": "forum",
+      "thread_style": "forum",
+      "messages_count": 3,
+      "solved": true,
+      "last_post_time": "2022-12-03T04:47:39.749-08:00",
+      "last_post_time_friendly": "12-03-2022"
+    },
+    "topic": {
+      "type": "message",
+      "id": "62751",
+      "href": "/messages/62751",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/adjacency-matrix/m-p/62751#M37078"
+    },
+    "parent": {
+      "type": "message",
+      "id": "62751",
+      "href": "/messages/62751",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/adjacency-matrix/m-p/62751#M37078"
+    },
+    "post_time": "2022-12-01T19:15:05.708-08:00",
+    "post_time_friendly": "12-01-2022",
+    "depth": 1,
+    "read_only": false,
+    "edit_frozen": false,
+    "language": "EN",
+    "can_accept_solution": false,
+    "placeholder": false,
+    "is_solution": true,
+    "solution_data": {
+      "type": "solution_data",
+      "message_id": "62758",
+      "accepter": {
+        "type": "user",
+        "id": "2735",
+        "href": "/users/2735",
+        "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/2735",
+        "login": "redha_benhisse1"
+      },
+      "time": "2022-12-03T04:46:52.000-08:00"
+    },
+    "metrics": {
+      "type": "message_metrics",
+      "views": 197
+    },
+    "current_revision": {
+      "type": "revision",
+      "id": "62758_1",
+      "last_edit_author": {
+        "type": "user",
+        "id": "9010",
+        "href": "/users/9010",
+        "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/9010",
+        "login": "glilienfield"
+      },
+      "last_edit_time": "2022-12-01T19:15:05.708-08:00"
+    },
+    "kudos": {
+      "query": "SELECT * FROM kudos WHERE message.id = '62758'"
+    },
+    "tags": {
+      "query": "SELECT * FROM tags WHERE messages.id = '62758'"
+    },
+    "labels": {
+      "query": "SELECT * FROM labels WHERE messages.id = '62758'"
+    },
+    "images": {
+      "query": "SELECT * FROM images WHERE messages.id = '62758'"
+    },
+    "videos": {
+      "query": "SELECT * FROM videos WHERE messages.id = '62758'"
+    },
+    "attachments": {
+      "query": "SELECT * FROM attachments WHERE message.id = '62758'"
+    },
+    "replies": {
+      "query": "SELECT * FROM messages WHERE parent.id = '62758'"
+    },
+    "ratings": {
+      "query": "SELECT * FROM ratings WHERE message.id = '62758'"
+    },
+    "custom_tags": {
+      "query": "SELECT * FROM custom_tags WHERE messages.id = '62758'"
+    },
+    "moderation_status": "approved",
+    "visibility_scope": "public",
+    "user_context": {
+      "type": "user_context",
+      "kudo": false,
+      "read": false,
+      "can_reply": false,
+      "can_kudo": false,
+      "can_delete": false
+    },
+    "device_id": "safari_16_0_mac",
+    "popularity": 0.000018084575042526026,
+    "excluded_from_kudos_leaderboards": false,
+    "is_promoted": false
+  },
+  {
+    "type": "message",
+    "id": "62783",
+    "href": "/messages/62783",
+    "view_href": "https://community.neo4j.com/t5/graphacademy-discussions/unable-to-submit-t-shirt-order-form/m-p/62783#M1682",
+    "author": {
+      "type": "user",
+      "id": "15570",
+      "href": "/users/15570",
+      "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/15570",
+      "login": "darciosavilela"
+    },
+    "subject": "Re: Unable to submit t-shirt order form",
+    "search_snippet": "Hi, tks for reply. \n Here are my steps for scenario 1:  1- Not logged in of graph academy  2 - Click on link https://graphacademy.neo4j.com/account/rewards/neo4j-certification/  3 - Site prompted me ...",
+    "body": "<P>Hi, tks for reply.</P>\n<P>Here are my steps for scenario 1:<BR />1- Not logged in of graph academy<BR />2 - Click on link <A href=\"https://graphacademy.neo4j.com/account/rewards/neo4j-certification/\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">https://graphacademy.neo4j.com/account/rewards/neo4j-certification/</A><BR />3 - Site prompted me to log in<BR />4 - When I log, I immediately see that \"page not found\" page<BR /><BR /><SPAN>Scenario 2:<BR /></SPAN>1 - First I log in graph academy<BR />2 - Click on link: <A href=\"https://graphacademy.neo4j.com/account/rewards/neo4j-certification/\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">https://graphacademy.neo4j.com/account/rewards/neo4j-certification/</A><BR />3 - I see the form<BR />4 - <SPAN>When I click the submit button, a \"page not found\" is prompted</SPAN></P>\n<P><SPAN>Darcio</SPAN></P>",
+    "teaser": "",
+    "board": {
+      "type": "board",
+      "id": "graphacademy_discussions",
+      "href": "/boards/graphacademy_discussions",
+      "view_href": "https://community.neo4j.com/t5/graphacademy-discussions/bd-p/graphacademy_discussions"
+    },
+    "conversation": {
+      "type": "conversation",
+      "id": "61986",
+      "href": "/conversations/61986",
+      "view_href": "https://community.neo4j.com/t5/graphacademy-discussions/unable-to-submit-t-shirt-order-form/td-p/61986",
+      "style": "forum",
+      "thread_style": "forum",
+      "messages_count": 11,
+      "solved": false,
+      "last_post_time": "2022-12-29T07:04:00.351-08:00",
+      "last_post_time_friendly": "12-29-2022"
+    },
+    "topic": {
+      "type": "message",
+      "id": "61986",
+      "href": "/messages/61986",
+      "view_href": "https://community.neo4j.com/t5/graphacademy-discussions/unable-to-submit-t-shirt-order-form/m-p/61986#M1615"
+    },
+    "parent": {
+      "type": "message",
+      "id": "62781",
+      "href": "/messages/62781",
+      "view_href": "https://community.neo4j.com/t5/graphacademy-discussions/unable-to-submit-t-shirt-order-form/m-p/62781#M1681"
+    },
+    "post_time": "2022-12-02T06:38:59.067-08:00",
+    "post_time_friendly": "12-02-2022",
+    "depth": 2,
+    "read_only": false,
+    "edit_frozen": false,
+    "language": "EN",
+    "can_accept_solution": false,
+    "placeholder": false,
+    "is_solution": false,
+    "solution_data": {},
+    "metrics": {
+      "type": "message_metrics",
+      "views": 674
+    },
+    "current_revision": {
+      "type": "revision",
+      "id": "62783_1",
+      "last_edit_author": {
+        "type": "user",
+        "id": "15570",
+        "href": "/users/15570",
+        "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/15570",
+        "login": "darciosavilela"
+      },
+      "last_edit_time": "2022-12-02T06:38:59.067-08:00"
+    },
+    "kudos": {
+      "query": "SELECT * FROM kudos WHERE message.id = '62783'"
+    },
+    "tags": {
+      "query": "SELECT * FROM tags WHERE messages.id = '62783'"
+    },
+    "labels": {
+      "query": "SELECT * FROM labels WHERE messages.id = '62783'"
+    },
+    "images": {
+      "query": "SELECT * FROM images WHERE messages.id = '62783'"
+    },
+    "videos": {
+      "query": "SELECT * FROM videos WHERE messages.id = '62783'"
+    },
+    "attachments": {
+      "query": "SELECT * FROM attachments WHERE message.id = '62783'"
+    },
+    "replies": {
+      "query": "SELECT * FROM messages WHERE parent.id = '62783'"
+    },
+    "ratings": {
+      "query": "SELECT * FROM ratings WHERE message.id = '62783'"
+    },
+    "custom_tags": {
+      "query": "SELECT * FROM custom_tags WHERE messages.id = '62783'"
+    },
+    "moderation_status": "approved",
+    "visibility_scope": "public",
+    "user_context": {
+      "type": "user_context",
+      "kudo": false,
+      "read": false,
+      "can_reply": false,
+      "can_kudo": false,
+      "can_delete": false
+    },
+    "device_id": "google_chrome_107",
+    "popularity": -1438.0262680555556,
+    "excluded_from_kudos_leaderboards": false,
+    "is_promoted": false
+  },
+  {
+    "type": "message",
+    "id": "62782",
+    "href": "/messages/62782",
+    "view_href": "https://community.neo4j.com/t5/general-discussions/how-to-search-for-the-most-similar-array-of-numbers-against-a/m-p/62782#M3857",
+    "author": {
+      "type": "user",
+      "id": "15906",
+      "href": "/users/15906",
+      "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/15906",
+      "login": "tony156"
+    },
+    "subject": "Re: how to search for the most similar array of numbers against a given array.",
+    "search_snippet": "Thank you so much. I will give it a try.",
+    "body": "<P>Thank you so much. I will give it a try.</P>",
+    "teaser": "",
+    "board": {
+      "type": "board",
+      "id": "general_discussions",
+      "href": "/boards/general_discussions",
+      "view_href": "https://community.neo4j.com/t5/general-discussions/bd-p/general_discussions"
+    },
+    "conversation": {
+      "type": "conversation",
+      "id": "62341",
+      "href": "/conversations/62341",
+      "view_href": "https://community.neo4j.com/t5/general-discussions/how-to-search-for-the-most-similar-array-of-numbers-against-a/td-p/62341",
+      "style": "forum",
+      "thread_style": "forum",
+      "messages_count": 10,
+      "solved": false,
+      "last_post_time": "2022-12-02T06:37:35.342-08:00",
+      "last_post_time_friendly": "12-02-2022"
+    },
+    "topic": {
+      "type": "message",
+      "id": "62341",
+      "href": "/messages/62341",
+      "view_href": "https://community.neo4j.com/t5/general-discussions/how-to-search-for-the-most-similar-array-of-numbers-against-a/m-p/62341#M3814"
+    },
+    "parent": {
+      "type": "message",
+      "id": "62746",
+      "href": "/messages/62746",
+      "view_href": "https://community.neo4j.com/t5/general-discussions/how-to-search-for-the-most-similar-array-of-numbers-against-a/m-p/62746#M3848"
+    },
+    "post_time": "2022-12-02T06:37:35.342-08:00",
+    "post_time_friendly": "12-02-2022",
+    "depth": 2,
+    "read_only": false,
+    "edit_frozen": false,
+    "language": "EN",
+    "can_accept_solution": false,
+    "placeholder": false,
+    "is_solution": false,
+    "solution_data": {},
+    "metrics": {
+      "type": "message_metrics",
+      "views": 362
+    },
+    "current_revision": {
+      "type": "revision",
+      "id": "62782_1",
+      "last_edit_author": {
+        "type": "user",
+        "id": "15906",
+        "href": "/users/15906",
+        "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/15906",
+        "login": "tony156"
+      },
+      "last_edit_time": "2022-12-02T06:37:35.342-08:00"
+    },
+    "kudos": {
+      "query": "SELECT * FROM kudos WHERE message.id = '62782'"
+    },
+    "tags": {
+      "query": "SELECT * FROM tags WHERE messages.id = '62782'"
+    },
+    "labels": {
+      "query": "SELECT * FROM labels WHERE messages.id = '62782'"
+    },
+    "images": {
+      "query": "SELECT * FROM images WHERE messages.id = '62782'"
+    },
+    "videos": {
+      "query": "SELECT * FROM videos WHERE messages.id = '62782'"
+    },
+    "attachments": {
+      "query": "SELECT * FROM attachments WHERE message.id = '62782'"
+    },
+    "replies": {
+      "query": "SELECT * FROM messages WHERE parent.id = '62782'"
+    },
+    "ratings": {
+      "query": "SELECT * FROM ratings WHERE message.id = '62782'"
+    },
+    "custom_tags": {
+      "query": "SELECT * FROM custom_tags WHERE messages.id = '62782'"
+    },
+    "moderation_status": "approved",
+    "visibility_scope": "public",
+    "user_context": {
+      "type": "user_context",
+      "kudo": false,
+      "read": false,
+      "can_reply": false,
+      "can_kudo": false,
+      "can_delete": false
+    },
+    "device_id": "firefox_107_0",
+    "popularity": -1438.0495302777779,
+    "excluded_from_kudos_leaderboards": false,
+    "is_promoted": false
+  },
+  {
+    "type": "message",
+    "id": "62780",
+    "href": "/messages/62780",
+    "view_href": "https://community.neo4j.com/t5/graphacademy-discussions/unable-to-submit-t-shirt-order-form/m-p/62780#M1680",
+    "author": {
+      "type": "user",
+      "id": "15570",
+      "href": "/users/15570",
+      "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/15570",
+      "login": "darciosavilela"
+    },
+    "subject": "Re: Unable to submit t-shirt order form",
+    "search_snippet": "Hi Elaine, \n It seems not ok yet. When I click the button, a \"page not found\" is prompted. See attached screenshot. \n Darcio",
+    "body": "<P>Hi Elaine,</P>\n<P>It seems not ok yet. When I click the button, a \"page not found\" is prompted. See attached screenshot.</P>\n<P>Darcio</P>\n<P> </P>",
+    "teaser": "",
+    "board": {
+      "type": "board",
+      "id": "graphacademy_discussions",
+      "href": "/boards/graphacademy_discussions",
+      "view_href": "https://community.neo4j.com/t5/graphacademy-discussions/bd-p/graphacademy_discussions"
+    },
+    "conversation": {
+      "type": "conversation",
+      "id": "61986",
+      "href": "/conversations/61986",
+      "view_href": "https://community.neo4j.com/t5/graphacademy-discussions/unable-to-submit-t-shirt-order-form/td-p/61986",
+      "style": "forum",
+      "thread_style": "forum",
+      "messages_count": 11,
+      "solved": false,
+      "last_post_time": "2022-12-29T07:04:00.351-08:00",
+      "last_post_time_friendly": "12-29-2022"
+    },
+    "topic": {
+      "type": "message",
+      "id": "61986",
+      "href": "/messages/61986",
+      "view_href": "https://community.neo4j.com/t5/graphacademy-discussions/unable-to-submit-t-shirt-order-form/m-p/61986#M1615"
+    },
+    "parent": {
+      "type": "message",
+      "id": "62714",
+      "href": "/messages/62714",
+      "view_href": "https://community.neo4j.com/t5/graphacademy-discussions/unable-to-submit-t-shirt-order-form/m-p/62714#M1666"
+    },
+    "post_time": "2022-12-02T06:09:26.189-08:00",
+    "post_time_friendly": "12-02-2022",
+    "depth": 2,
+    "read_only": false,
+    "edit_frozen": false,
+    "language": "EN",
+    "can_accept_solution": false,
+    "placeholder": false,
+    "is_solution": false,
+    "solution_data": {},
+    "metrics": {
+      "type": "message_metrics",
+      "views": 679
+    },
+    "current_revision": {
+      "type": "revision",
+      "id": "62780_1",
+      "last_edit_author": {
+        "type": "user",
+        "id": "15570",
+        "href": "/users/15570",
+        "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/15570",
+        "login": "darciosavilela"
+      },
+      "last_edit_time": "2022-12-02T06:09:26.189-08:00"
+    },
+    "kudos": {
+      "query": "SELECT * FROM kudos WHERE message.id = '62780'"
+    },
+    "tags": {
+      "query": "SELECT * FROM tags WHERE messages.id = '62780'"
+    },
+    "labels": {
+      "query": "SELECT * FROM labels WHERE messages.id = '62780'"
+    },
+    "images": {
+      "query": "SELECT * FROM images WHERE messages.id = '62780'"
+    },
+    "videos": {
+      "query": "SELECT * FROM videos WHERE messages.id = '62780'"
+    },
+    "attachments": {
+      "query": "SELECT * FROM attachments WHERE message.id = '62780'"
+    },
+    "replies": {
+      "query": "SELECT * FROM messages WHERE parent.id = '62780'"
+    },
+    "ratings": {
+      "query": "SELECT * FROM ratings WHERE message.id = '62780'"
+    },
+    "custom_tags": {
+      "query": "SELECT * FROM custom_tags WHERE messages.id = '62780'"
+    },
+    "moderation_status": "approved",
+    "visibility_scope": "public",
+    "user_context": {
+      "type": "user_context",
+      "kudo": false,
+      "read": false,
+      "can_reply": false,
+      "can_kudo": false,
+      "can_delete": false
+    },
+    "device_id": "google_chrome_107",
+    "popularity": -1438.518748611111,
+    "excluded_from_kudos_leaderboards": false,
+    "is_promoted": false
+  },
+  {
+    "type": "message",
+    "id": "62771",
+    "href": "/messages/62771",
+    "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/return-a-count-value-from-a-sub-query-and-check-if-a-condtion-is/m-p/62771#M37085",
+    "author": {
+      "type": "user",
+      "id": "14795",
+      "href": "/users/14795",
+      "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/14795",
+      "login": "Lukas_Sebastian"
+    },
+    "subject": "Re: Return a COUNT VALUE from a SUB-QUERY and check if a condtion is satisfied",
+    "search_snippet": "Hello @glilienfield, \n thanks for your reply, but that is not what I wanted. I wanted to be flexible in the way I do the nesting with count. Since CALL {}-subquery can not be placed inside of a CALL ...",
+    "body": "<P>Hello <a href=\"https://community.neo4j.com/t5/user/viewprofilepage/user-id/9010\">@glilienfield</a>,</P>\n<P>thanks for your reply, but that is not what I wanted. I wanted to be flexible in the way I do the nesting with count. Since CALL {}-subquery can not be placed inside of a CALL {}-subquery, I assumed it should work with EXISTS{}-SUBQUERY. However, in EXISTS{}-SUBQUERY, no WITH-Clause can be called to define what shall be counted. CALL-IN-A-CALL still does not work see it at:</P>\n<P><A href=\"https://neo4j.com/docs/cypher-manual/5/clauses/call-subquery/\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">https://neo4j.com/docs/cypher-manual/5/clauses/call-subquery/</A><BR /><A href=\"https://neo4j.com/docs/cypher-manual/4.4/clauses/call-subquery/\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">https://neo4j.com/docs/cypher-manual/4.4/clauses/call-subquery/</A></P>\n<P>That is just regarding Cypher 4.4. I also asked my question in the discord developer chat, and just a few weeks later, they created Cypher 5.X functionality for subquery with Count. See: <A href=\"https://neo4j.com/docs/cypher-cheat-sheet/5/\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">https://neo4j.com/docs/cypher-cheat-sheet/5/</A></P>\n<P>From now on Cypher has the Subcall-procedure for COUNT.</P>\n<P>MATCH (p:Regesta)<BR />WHERE COUNT { (p)--(d:other) } &gt; 1<BR />RETURN p.name AS name</P>\n<P>In this example the path will be counted and inside of the COUNT{} x further COUNTS{} can be placed.</P>",
+    "teaser": "",
+    "board": {
+      "type": "board",
+      "id": "graph_platform",
+      "href": "/boards/graph_platform",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/bd-p/graph_platform"
+    },
+    "conversation": {
+      "type": "conversation",
+      "id": "60249",
+      "href": "/conversations/60249",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/return-a-count-value-from-a-sub-query-and-check-if-a-condtion-is/td-p/60249",
+      "style": "forum",
+      "thread_style": "forum",
+      "messages_count": 3,
+      "solved": true,
+      "last_post_time": "2022-12-02T03:56:18.436-08:00",
+      "last_post_time_friendly": "12-02-2022"
+    },
+    "topic": {
+      "type": "message",
+      "id": "60249",
+      "href": "/messages/60249",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/return-a-count-value-from-a-sub-query-and-check-if-a-condtion-is/m-p/60249#M35755"
+    },
+    "parent": {
+      "type": "message",
+      "id": "60264",
+      "href": "/messages/60264",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/return-a-count-value-from-a-sub-query-and-check-if-a-condtion-is/m-p/60264#M35763"
+    },
+    "post_time": "2022-12-02T03:56:18.436-08:00",
+    "post_time_friendly": "12-02-2022",
+    "depth": 2,
+    "read_only": false,
+    "edit_frozen": false,
+    "language": "EN",
+    "can_accept_solution": false,
+    "placeholder": false,
+    "is_solution": true,
+    "solution_data": {
+      "type": "solution_data",
+      "message_id": "62771",
+      "accepter": {
+        "type": "user",
+        "id": "14795",
+        "href": "/users/14795",
+        "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/14795",
+        "login": "Lukas_Sebastian"
+      },
+      "time": "2022-12-02T03:56:27.000-08:00"
+    },
+    "metrics": {
+      "type": "message_metrics",
+      "views": 175
+    },
+    "current_revision": {
+      "type": "revision",
+      "id": "62771_1",
+      "last_edit_author": {
+        "type": "user",
+        "id": "14795",
+        "href": "/users/14795",
+        "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/14795",
+        "login": "Lukas_Sebastian"
+      },
+      "last_edit_time": "2022-12-02T03:56:18.436-08:00"
+    },
+    "kudos": {
+      "query": "SELECT * FROM kudos WHERE message.id = '62771'"
+    },
+    "tags": {
+      "query": "SELECT * FROM tags WHERE messages.id = '62771'"
+    },
+    "labels": {
+      "query": "SELECT * FROM labels WHERE messages.id = '62771'"
+    },
+    "images": {
+      "query": "SELECT * FROM images WHERE messages.id = '62771'"
+    },
+    "videos": {
+      "query": "SELECT * FROM videos WHERE messages.id = '62771'"
+    },
+    "attachments": {
+      "query": "SELECT * FROM attachments WHERE message.id = '62771'"
+    },
+    "replies": {
+      "query": "SELECT * FROM messages WHERE parent.id = '62771'"
+    },
+    "ratings": {
+      "query": "SELECT * FROM ratings WHERE message.id = '62771'"
+    },
+    "custom_tags": {
+      "query": "SELECT * FROM custom_tags WHERE messages.id = '62771'"
+    },
+    "moderation_status": "approved",
+    "visibility_scope": "public",
+    "user_context": {
+      "type": "user_context",
+      "kudo": false,
+      "read": false,
+      "can_reply": false,
+      "can_kudo": false,
+      "can_delete": false
+    },
+    "device_id": "firefox_107_0",
+    "popularity": -1440.7376072222223,
+    "excluded_from_kudos_leaderboards": false,
+    "is_promoted": false
+  },
+  {
+    "type": "message",
+    "id": "62769",
+    "href": "/messages/62769",
+    "view_href": "https://community.neo4j.com/t5/general-discussions/calculating-quantiles-in-cypher/m-p/62769#M3854",
+    "author": {
+      "type": "user",
+      "id": "15587",
+      "href": "/users/15587",
+      "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/15587",
+      "login": "amina"
+    },
+    "subject": "Re: Calculating Quantiles in cypher",
+    "search_snippet": "Hi,   \n  in my case, the list is the different values of annot.value returned by a query. annot is a node that has a property named 'value' with a float type.   \n match (:Search{searchId:\"4e69-9ebd-b...",
+    "body": "<P><SPAN>Hi, </SPAN></P>\n<P><SPAN>in my case, the list is the different values of annot.value returned by a query. annot is a node that has a property named 'value' with a float type. </SPAN></P>\n<pre class=\"lia-code-sample language-cypher\"><code>match (:Search{searchId:\"4e69-9ebd-b02e1b0c0d49\"})-[:FIRST]-&gt;(:SearchSession)-[:ANNOTATION]-&gt;(annot:FigureAnnotation)\nRETURN apoc.agg.percentiles(annot.value, [0.25, 0.5, 0.75, 1.0]) AS percentiles;</code></pre>\n<P> perhaps you can make a similar query?</P>",
+    "teaser": "",
+    "board": {
+      "type": "board",
+      "id": "general_discussions",
+      "href": "/boards/general_discussions",
+      "view_href": "https://community.neo4j.com/t5/general-discussions/bd-p/general_discussions"
+    },
+    "conversation": {
+      "type": "conversation",
+      "id": "62764",
+      "href": "/conversations/62764",
+      "view_href": "https://community.neo4j.com/t5/general-discussions/calculating-quantiles-in-cypher/td-p/62764",
+      "style": "forum",
+      "thread_style": "forum",
+      "messages_count": 6,
+      "solved": true,
+      "last_post_time": "2022-12-02T04:56:35.386-08:00",
+      "last_post_time_friendly": "12-02-2022"
+    },
+    "topic": {
+      "type": "message",
+      "id": "62764",
+      "href": "/messages/62764",
+      "view_href": "https://community.neo4j.com/t5/general-discussions/calculating-quantiles-in-cypher/m-p/62764#M3851"
+    },
+    "parent": {
+      "type": "message",
+      "id": "62768",
+      "href": "/messages/62768",
+      "view_href": "https://community.neo4j.com/t5/general-discussions/calculating-quantiles-in-cypher/m-p/62768#M3853"
+    },
+    "post_time": "2022-12-02T02:14:47.507-08:00",
+    "post_time_friendly": "12-02-2022",
+    "depth": 2,
+    "read_only": false,
+    "edit_frozen": false,
+    "language": "EN",
+    "can_accept_solution": false,
+    "placeholder": false,
+    "is_solution": true,
+    "solution_data": {
+      "type": "solution_data",
+      "message_id": "62769",
+      "accepter": {
+        "type": "user",
+        "id": "15788",
+        "href": "/users/15788",
+        "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/15788",
+        "login": "kashu94"
+      },
+      "time": "2022-12-02T02:41:28.000-08:00"
+    },
+    "metrics": {
+      "type": "message_metrics",
+      "views": 364
+    },
+    "current_revision": {
+      "type": "revision",
+      "id": "62769_1",
+      "last_edit_author": {
+        "type": "user",
+        "id": "15587",
+        "href": "/users/15587",
+        "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/15587",
+        "login": "amina"
+      },
+      "last_edit_time": "2022-12-02T02:14:47.507-08:00"
+    },
+    "kudos": {
+      "query": "SELECT * FROM kudos WHERE message.id = '62769'"
+    },
+    "tags": {
+      "query": "SELECT * FROM tags WHERE messages.id = '62769'"
+    },
+    "labels": {
+      "query": "SELECT * FROM labels WHERE messages.id = '62769'"
+    },
+    "images": {
+      "query": "SELECT * FROM images WHERE messages.id = '62769'"
+    },
+    "videos": {
+      "query": "SELECT * FROM videos WHERE messages.id = '62769'"
+    },
+    "attachments": {
+      "query": "SELECT * FROM attachments WHERE message.id = '62769'"
+    },
+    "replies": {
+      "query": "SELECT * FROM messages WHERE parent.id = '62769'"
+    },
+    "ratings": {
+      "query": "SELECT * FROM ratings WHERE message.id = '62769'"
+    },
+    "custom_tags": {
+      "query": "SELECT * FROM custom_tags WHERE messages.id = '62769'"
+    },
+    "moderation_status": "approved",
+    "visibility_scope": "public",
+    "user_context": {
+      "type": "user_context",
+      "kudo": false,
+      "read": false,
+      "can_reply": false,
+      "can_kudo": false,
+      "can_delete": false
+    },
+    "device_id": "google_chrome_96",
+    "popularity": 0.000018216102311963765,
+    "excluded_from_kudos_leaderboards": false,
+    "is_promoted": false
+  },
+  {
+    "type": "message",
+    "id": "62763",
+    "href": "/messages/62763",
+    "view_href": "https://community.neo4j.com/t5/integrations/issue-with-relationship-property-creation-in-spark-submit-job/m-p/62763#M1354",
+    "author": {
+      "type": "user",
+      "id": "15202",
+      "href": "/users/15202",
+      "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/15202",
+      "login": "arjanv"
+    },
+    "subject": "Re: Issue with relationship property creation in Spark submit job: Please provide a valid WRITE quer",
+    "search_snippet": "Hello @Cobra , \n Thanks for your reply, I tried your solution and it works. But when I want to set multiple items it doesn't. \n MATCH (s:Destination {EXPERIENCE: event.CODE}) \nMATCH (t:Experience {ID...",
+    "body": "<P>Hello <a href=\"https://community.neo4j.com/t5/user/viewprofilepage/user-id/3843\">@Cobra</a> ,</P>\n<P>Thanks for your reply, I tried your solution and it works. But when I want to set multiple items it doesn't.</P>\n<pre class=\"lia-code-sample language-cypher\"><code>MATCH (s:Destination {EXPERIENCE: event.CODE}) \nMATCH (t:Experience {ID: event.ID}) \nMERGE (s)-[r:HAS_EXPERIENCE]-&gt;(t) \nSET r.weight = event.WEIGHT, r.height = event.HEIGHT</code></pre>\n<P>This doesn't work and this also doesn't work:</P>\n<pre class=\"lia-code-sample language-cypher\"><code>SET r += {weight: event.WEIGHT, height: event.HEIGHT }</code></pre>\n<P>Any idea why? Does it only support a single property to set?</P>",
+    "teaser": "",
+    "board": {
+      "type": "board",
+      "id": "integrations",
+      "href": "/boards/integrations",
+      "view_href": "https://community.neo4j.com/t5/integrations/bd-p/integrations"
+    },
+    "conversation": {
+      "type": "conversation",
+      "id": "60934",
+      "href": "/conversations/60934",
+      "view_href": "https://community.neo4j.com/t5/integrations/issue-with-relationship-property-creation-in-spark-submit-job/td-p/60934",
+      "style": "forum",
+      "thread_style": "forum",
+      "messages_count": 4,
+      "solved": true,
+      "last_post_time": "2023-01-16T01:33:02.655-08:00",
+      "last_post_time_friendly": "01-16-2023"
+    },
+    "topic": {
+      "type": "message",
+      "id": "60934",
+      "href": "/messages/60934",
+      "view_href": "https://community.neo4j.com/t5/integrations/issue-with-relationship-property-creation-in-spark-submit-job/m-p/60934#M1318"
+    },
+    "parent": {
+      "type": "message",
+      "id": "61199",
+      "href": "/messages/61199",
+      "view_href": "https://community.neo4j.com/t5/integrations/issue-with-relationship-property-creation-in-spark-submit-job/m-p/61199#M1328"
+    },
+    "post_time": "2022-12-01T23:27:04.441-08:00",
+    "post_time_friendly": "12-01-2022",
+    "depth": 2,
+    "read_only": false,
+    "edit_frozen": false,
+    "language": "EN",
+    "can_accept_solution": false,
+    "placeholder": false,
+    "is_solution": false,
+    "solution_data": {},
+    "metrics": {
+      "type": "message_metrics",
+      "views": 296
+    },
+    "current_revision": {
+      "type": "revision",
+      "id": "62763_1",
+      "last_edit_author": {
+        "type": "user",
+        "id": "15202",
+        "href": "/users/15202",
+        "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/15202",
+        "login": "arjanv"
+      },
+      "last_edit_time": "2022-12-01T23:27:04.441-08:00"
+    },
+    "kudos": {
+      "query": "SELECT * FROM kudos WHERE message.id = '62763'"
+    },
+    "tags": {
+      "query": "SELECT * FROM tags WHERE messages.id = '62763'"
+    },
+    "labels": {
+      "query": "SELECT * FROM labels WHERE messages.id = '62763'"
+    },
+    "images": {
+      "query": "SELECT * FROM images WHERE messages.id = '62763'"
+    },
+    "videos": {
+      "query": "SELECT * FROM videos WHERE messages.id = '62763'"
+    },
+    "attachments": {
+      "query": "SELECT * FROM attachments WHERE message.id = '62763'"
+    },
+    "replies": {
+      "query": "SELECT * FROM messages WHERE parent.id = '62763'"
+    },
+    "ratings": {
+      "query": "SELECT * FROM ratings WHERE message.id = '62763'"
+    },
+    "custom_tags": {
+      "query": "SELECT * FROM custom_tags WHERE messages.id = '62763'"
+    },
+    "moderation_status": "approved",
+    "visibility_scope": "public",
+    "user_context": {
+      "type": "user_context",
+      "kudo": false,
+      "read": false,
+      "can_reply": false,
+      "can_kudo": false,
+      "can_delete": false
+    },
+    "device_id": "google_chrome_107",
+    "popularity": -1445.2248658333333,
+    "excluded_from_kudos_leaderboards": false,
+    "is_promoted": false
+  },
+  {
+    "type": "message",
+    "id": "62762",
+    "href": "/messages/62762",
+    "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/5-x-fulltext-index-time-is-much-longer-than-4-x-fulltext-index/m-p/62762#M37083",
+    "author": {
+      "type": "user",
+      "id": "15507",
+      "href": "/users/15507",
+      "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/15507",
+      "login": "Dongho"
+    },
+    "subject": "Re: 5.x fulltext index time is much longer than 4.x fulltext index time.",
+    "search_snippet": "Yes, it it.",
+    "body": "<P>Yes, it it.</P>",
+    "teaser": "",
+    "board": {
+      "type": "board",
+      "id": "graph_platform",
+      "href": "/boards/graph_platform",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/bd-p/graph_platform"
+    },
+    "conversation": {
+      "type": "conversation",
+      "id": "62621",
+      "href": "/conversations/62621",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/5-x-fulltext-index-time-is-much-longer-than-4-x-fulltext-index/td-p/62621",
+      "style": "forum",
+      "thread_style": "forum",
+      "messages_count": 3,
+      "solved": false,
+      "last_post_time": "2022-12-01T22:04:47.193-08:00",
+      "last_post_time_friendly": "12-01-2022"
+    },
+    "topic": {
+      "type": "message",
+      "id": "62621",
+      "href": "/messages/62621",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/5-x-fulltext-index-time-is-much-longer-than-4-x-fulltext-index/m-p/62621#M37029"
+    },
+    "parent": {
+      "type": "message",
+      "id": "62712",
+      "href": "/messages/62712",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/5-x-fulltext-index-time-is-much-longer-than-4-x-fulltext-index/m-p/62712#M37063"
+    },
+    "post_time": "2022-12-01T22:04:47.193-08:00",
+    "post_time_friendly": "12-01-2022",
+    "depth": 2,
+    "read_only": false,
+    "edit_frozen": false,
+    "language": "EN",
+    "can_accept_solution": false,
+    "placeholder": false,
+    "is_solution": false,
+    "solution_data": {},
+    "metrics": {
+      "type": "message_metrics",
+      "views": 211
+    },
+    "current_revision": {
+      "type": "revision",
+      "id": "62762_1",
+      "last_edit_author": {
+        "type": "user",
+        "id": "15507",
+        "href": "/users/15507",
+        "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/15507",
+        "login": "Dongho"
+      },
+      "last_edit_time": "2022-12-01T22:04:47.193-08:00"
+    },
+    "kudos": {
+      "query": "SELECT * FROM kudos WHERE message.id = '62762'"
+    },
+    "tags": {
+      "query": "SELECT * FROM tags WHERE messages.id = '62762'"
+    },
+    "labels": {
+      "query": "SELECT * FROM labels WHERE messages.id = '62762'"
+    },
+    "images": {
+      "query": "SELECT * FROM images WHERE messages.id = '62762'"
+    },
+    "videos": {
+      "query": "SELECT * FROM videos WHERE messages.id = '62762'"
+    },
+    "attachments": {
+      "query": "SELECT * FROM attachments WHERE message.id = '62762'"
+    },
+    "replies": {
+      "query": "SELECT * FROM messages WHERE parent.id = '62762'"
+    },
+    "ratings": {
+      "query": "SELECT * FROM ratings WHERE message.id = '62762'"
+    },
+    "custom_tags": {
+      "query": "SELECT * FROM custom_tags WHERE messages.id = '62762'"
+    },
+    "moderation_status": "approved",
+    "visibility_scope": "public",
+    "user_context": {
+      "type": "user_context",
+      "kudo": false,
+      "read": false,
+      "can_reply": false,
+      "can_kudo": false,
+      "can_delete": false
+    },
+    "device_id": "google_chrome_107",
+    "popularity": -1446.5963305555556,
+    "excluded_from_kudos_leaderboards": false,
+    "is_promoted": false
+  },
+  {
+    "type": "message",
+    "id": "62760",
+    "href": "/messages/62760",
+    "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/find-similarity-of-given-node-with-entire-graph/m-p/62760#M37081",
+    "author": {
+      "type": "user",
+      "id": "15906",
+      "href": "/users/15906",
+      "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/15906",
+      "login": "tony156"
+    },
+    "subject": "Re: Find similarity of given node with entire graph",
+    "search_snippet": "Yes I used knn but it was taking long (2 minutes) to calculate nearest neighbors for 40000 nodes in my database. What I'm hoping for is to calculate the nearest neighbor for one given node only. I tr...",
+    "body": "<P>Yes I used knn but it was taking long (2 minutes) to calculate nearest neighbors for 40000 nodes in my database. What I'm hoping for is to calculate the nearest neighbor for one given node only. I tried to find if knn has such functionality but couldn't find any.</P>",
+    "teaser": "",
+    "board": {
+      "type": "board",
+      "id": "graph_platform",
+      "href": "/boards/graph_platform",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/bd-p/graph_platform"
+    },
+    "conversation": {
+      "type": "conversation",
+      "id": "62747",
+      "href": "/conversations/62747",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/find-similarity-of-given-node-with-entire-graph/td-p/62747",
+      "style": "forum",
+      "thread_style": "forum",
+      "messages_count": 10,
+      "solved": false,
+      "last_post_time": "2022-12-08T11:58:19.043-08:00",
+      "last_post_time_friendly": "12-08-2022"
+    },
+    "topic": {
+      "type": "message",
+      "id": "62747",
+      "href": "/messages/62747",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/find-similarity-of-given-node-with-entire-graph/m-p/62747#M37077"
+    },
+    "parent": {
+      "type": "message",
+      "id": "62759",
+      "href": "/messages/62759",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/find-similarity-of-given-node-with-entire-graph/m-p/62759#M37080"
+    },
+    "post_time": "2022-12-01T20:31:13.770-08:00",
+    "post_time_friendly": "12-01-2022",
+    "depth": 2,
+    "read_only": false,
+    "edit_frozen": false,
+    "language": "EN",
+    "can_accept_solution": false,
+    "placeholder": false,
+    "is_solution": false,
+    "solution_data": {},
+    "metrics": {
+      "type": "message_metrics",
+      "views": 388
+    },
+    "current_revision": {
+      "type": "revision",
+      "id": "62760_1",
+      "last_edit_author": {
+        "type": "user",
+        "id": "15906",
+        "href": "/users/15906",
+        "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/15906",
+        "login": "tony156"
+      },
+      "last_edit_time": "2022-12-01T20:31:13.770-08:00"
+    },
+    "kudos": {
+      "query": "SELECT * FROM kudos WHERE message.id = '62760'"
+    },
+    "tags": {
+      "query": "SELECT * FROM tags WHERE messages.id = '62760'"
+    },
+    "labels": {
+      "query": "SELECT * FROM labels WHERE messages.id = '62760'"
+    },
+    "images": {
+      "query": "SELECT * FROM images WHERE messages.id = '62760'"
+    },
+    "videos": {
+      "query": "SELECT * FROM videos WHERE messages.id = '62760'"
+    },
+    "attachments": {
+      "query": "SELECT * FROM attachments WHERE message.id = '62760'"
+    },
+    "replies": {
+      "query": "SELECT * FROM messages WHERE parent.id = '62760'"
+    },
+    "ratings": {
+      "query": "SELECT * FROM ratings WHERE message.id = '62760'"
+    },
+    "custom_tags": {
+      "query": "SELECT * FROM custom_tags WHERE messages.id = '62760'"
+    },
+    "moderation_status": "approved",
+    "visibility_scope": "public",
+    "user_context": {
+      "type": "user_context",
+      "kudo": false,
+      "read": false,
+      "can_reply": false,
+      "can_kudo": false,
+      "can_delete": false
+    },
+    "device_id": "firefox_107_0",
+    "popularity": -1448.1556236111112,
+    "excluded_from_kudos_leaderboards": false,
+    "is_promoted": false
+  },
+  {
+    "type": "message",
+    "id": "62770",
+    "href": "/messages/62770",
+    "view_href": "https://community.neo4j.com/t5/general-discussions/calculating-quantiles-in-cypher/m-p/62770#M3855",
+    "author": {
+      "type": "user",
+      "id": "15788",
+      "href": "/users/15788",
+      "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/15788",
+      "login": "kashu94"
+    },
+    "subject": "Re: Calculating Quantiles in cypher",
+    "search_snippet": "Thanks, I did it this way and it worked ... \n   \n  WITH [4, 6, 1, 3, 10, 5] as list\nUNWIND list as l\nRETURN apoc.agg.percentiles(l, [0.25, 0.5, 0.75, 1.0]) AS percentiles",
+    "body": "<P>Thanks, I did it this way and it worked ...</P>\n<DIV> </DIV>\n<DIV><pre class=\"lia-code-sample language-cypher\"><code>WITH [4, 6, 1, 3, 10, 5] as list\nUNWIND list as l\nRETURN apoc.agg.percentiles(l, [0.25, 0.5, 0.75, 1.0]) AS percentiles</code></pre></DIV>",
+    "teaser": "",
+    "board": {
+      "type": "board",
+      "id": "general_discussions",
+      "href": "/boards/general_discussions",
+      "view_href": "https://community.neo4j.com/t5/general-discussions/bd-p/general_discussions"
+    },
+    "conversation": {
+      "type": "conversation",
+      "id": "62764",
+      "href": "/conversations/62764",
+      "view_href": "https://community.neo4j.com/t5/general-discussions/calculating-quantiles-in-cypher/td-p/62764",
+      "style": "forum",
+      "thread_style": "forum",
+      "messages_count": 6,
+      "solved": true,
+      "last_post_time": "2022-12-02T04:56:35.386-08:00",
+      "last_post_time_friendly": "12-02-2022"
+    },
+    "topic": {
+      "type": "message",
+      "id": "62764",
+      "href": "/messages/62764",
+      "view_href": "https://community.neo4j.com/t5/general-discussions/calculating-quantiles-in-cypher/m-p/62764#M3851"
+    },
+    "parent": {
+      "type": "message",
+      "id": "62769",
+      "href": "/messages/62769",
+      "view_href": "https://community.neo4j.com/t5/general-discussions/calculating-quantiles-in-cypher/m-p/62769#M3854"
+    },
+    "post_time": "2022-12-02T02:41:17.399-08:00",
+    "post_time_friendly": "12-02-2022",
+    "depth": 3,
+    "read_only": false,
+    "edit_frozen": false,
+    "language": "EN",
+    "can_accept_solution": false,
+    "placeholder": false,
+    "is_solution": false,
+    "solution_data": {},
+    "metrics": {
+      "type": "message_metrics",
+      "views": 360
+    },
+    "current_revision": {
+      "type": "revision",
+      "id": "62770_1",
+      "last_edit_author": {
+        "type": "user",
+        "id": "15788",
+        "href": "/users/15788",
+        "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/15788",
+        "login": "kashu94"
+      },
+      "last_edit_time": "2022-12-02T02:41:17.399-08:00"
+    },
+    "kudos": {
+      "query": "SELECT * FROM kudos WHERE message.id = '62770'"
+    },
+    "tags": {
+      "query": "SELECT * FROM tags WHERE messages.id = '62770'"
+    },
+    "labels": {
+      "query": "SELECT * FROM labels WHERE messages.id = '62770'"
+    },
+    "images": {
+      "query": "SELECT * FROM images WHERE messages.id = '62770'"
+    },
+    "videos": {
+      "query": "SELECT * FROM videos WHERE messages.id = '62770'"
+    },
+    "attachments": {
+      "query": "SELECT * FROM attachments WHERE message.id = '62770'"
+    },
+    "replies": {
+      "query": "SELECT * FROM messages WHERE parent.id = '62770'"
+    },
+    "ratings": {
+      "query": "SELECT * FROM ratings WHERE message.id = '62770'"
+    },
+    "custom_tags": {
+      "query": "SELECT * FROM custom_tags WHERE messages.id = '62770'"
+    },
+    "moderation_status": "approved",
+    "visibility_scope": "public",
+    "user_context": {
+      "type": "user_context",
+      "kudo": false,
+      "read": false,
+      "can_reply": false,
+      "can_kudo": false,
+      "can_delete": false
+    },
+    "device_id": "google_chrome_107",
+    "popularity": 0.00001822445999954763,
+    "excluded_from_kudos_leaderboards": false,
+    "is_promoted": false
+  },
+  {
+    "type": "message",
+    "id": "62765",
+    "href": "/messages/62765",
+    "view_href": "https://community.neo4j.com/t5/graphacademy-discussions/sandbox-in-graphacademy-apparently-not-working/m-p/62765#M1679",
+    "author": {
+      "type": "user",
+      "id": "16005",
+      "href": "/users/16005",
+      "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/16005",
+      "login": "jannik"
+    },
+    "subject": "Re: Sandbox in graphacademy apparently not working !",
+    "search_snippet": "I tried, but that did not change anything. I tried from a different network and that fixed the problem. Apparently some firewall configuration blocked the traffic to the sanbdox for some reason. Than...",
+    "body": "<P>I tried, but that did not change anything. I tried from a different network and that fixed the problem. Apparently some firewall configuration blocked the traffic to the sanbdox for some reason. Thanks for your support.</P>",
+    "teaser": "",
+    "board": {
+      "type": "board",
+      "id": "graphacademy_discussions",
+      "href": "/boards/graphacademy_discussions",
+      "view_href": "https://community.neo4j.com/t5/graphacademy-discussions/bd-p/graphacademy_discussions"
+    },
+    "conversation": {
+      "type": "conversation",
+      "id": "59904",
+      "href": "/conversations/59904",
+      "view_href": "https://community.neo4j.com/t5/graphacademy-discussions/sandbox-in-graphacademy-apparently-not-working/td-p/59904",
+      "style": "forum",
+      "thread_style": "forum",
+      "messages_count": 28,
+      "solved": true,
+      "last_post_time": "2022-12-13T20:13:54.047-08:00",
+      "last_post_time_friendly": "12-13-2022"
+    },
+    "topic": {
+      "type": "message",
+      "id": "59904",
+      "href": "/messages/59904",
+      "view_href": "https://community.neo4j.com/t5/graphacademy-discussions/sandbox-in-graphacademy-apparently-not-working/m-p/59904#M1356"
+    },
+    "parent": {
+      "type": "message",
+      "id": "62725",
+      "href": "/messages/62725",
+      "view_href": "https://community.neo4j.com/t5/graphacademy-discussions/sandbox-in-graphacademy-apparently-not-working/m-p/62725#M1677"
+    },
+    "post_time": "2022-12-01T23:52:49.731-08:00",
+    "post_time_friendly": "12-01-2022",
+    "depth": 3,
+    "read_only": false,
+    "edit_frozen": false,
+    "language": "EN",
+    "can_accept_solution": false,
+    "placeholder": false,
+    "is_solution": false,
+    "solution_data": {},
+    "metrics": {
+      "type": "message_metrics",
+      "views": 1713
+    },
+    "current_revision": {
+      "type": "revision",
+      "id": "62765_1",
+      "last_edit_author": {
+        "type": "user",
+        "id": "16005",
+        "href": "/users/16005",
+        "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/16005",
+        "login": "jannik"
+      },
+      "last_edit_time": "2022-12-01T23:52:49.731-08:00"
+    },
+    "kudos": {
+      "query": "SELECT * FROM kudos WHERE message.id = '62765'"
+    },
+    "tags": {
+      "query": "SELECT * FROM tags WHERE messages.id = '62765'"
+    },
+    "labels": {
+      "query": "SELECT * FROM labels WHERE messages.id = '62765'"
+    },
+    "images": {
+      "query": "SELECT * FROM images WHERE messages.id = '62765'"
+    },
+    "videos": {
+      "query": "SELECT * FROM videos WHERE messages.id = '62765'"
+    },
+    "attachments": {
+      "query": "SELECT * FROM attachments WHERE message.id = '62765'"
+    },
+    "replies": {
+      "query": "SELECT * FROM messages WHERE parent.id = '62765'"
+    },
+    "ratings": {
+      "query": "SELECT * FROM ratings WHERE message.id = '62765'"
+    },
+    "custom_tags": {
+      "query": "SELECT * FROM custom_tags WHERE messages.id = '62765'"
+    },
+    "moderation_status": "approved",
+    "visibility_scope": "public",
+    "user_context": {
+      "type": "user_context",
+      "kudo": false,
+      "read": false,
+      "can_reply": false,
+      "can_kudo": false,
+      "can_delete": false
+    },
+    "device_id": "firefox_107_0",
+    "popularity": -1444.7956083333333,
+    "excluded_from_kudos_leaderboards": false,
+    "is_promoted": false
+  },
+  {
+    "type": "message",
+    "id": "62761",
+    "href": "/messages/62761",
+    "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/find-similarity-of-given-node-with-entire-graph/m-p/62761#M37082",
+    "author": {
+      "type": "user",
+      "id": "9010",
+      "href": "/users/9010",
+      "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/9010",
+      "login": "glilienfield"
+    },
+    "subject": "Re: Find similarity of given node with entire graph",
+    "search_snippet": "There looks to be a filtered version of KNN, where you can specify the source and/or target nodes. The filter can be for specific nodes or labels. With this, you should be able to specify your single...",
+    "body": "<P>There looks to be a filtered version of KNN, where you can specify the source and/or target nodes. The filter can be for specific nodes or labels. With this, you should be able to specify your single node in the filtered source nodes, so it finds the the K nearest neighbors for your single node. <BR /><BR /></P>\n<P>it looks to be in alpha state</P>\n<P><A href=\"https://neo4j.com/docs/graph-data-science/current/algorithms/alpha/filtered-knn/\" target=\"_blank\" rel=\"noopener nofollow noreferrer\">https://neo4j.com/docs/graph-data-science/current/algorithms/alpha/filtered-knn/</A></P>",
+    "teaser": "",
+    "board": {
+      "type": "board",
+      "id": "graph_platform",
+      "href": "/boards/graph_platform",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/bd-p/graph_platform"
+    },
+    "conversation": {
+      "type": "conversation",
+      "id": "62747",
+      "href": "/conversations/62747",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/find-similarity-of-given-node-with-entire-graph/td-p/62747",
+      "style": "forum",
+      "thread_style": "forum",
+      "messages_count": 10,
+      "solved": false,
+      "last_post_time": "2022-12-08T11:58:19.043-08:00",
+      "last_post_time_friendly": "12-08-2022"
+    },
+    "topic": {
+      "type": "message",
+      "id": "62747",
+      "href": "/messages/62747",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/find-similarity-of-given-node-with-entire-graph/m-p/62747#M37077"
+    },
+    "parent": {
+      "type": "message",
+      "id": "62760",
+      "href": "/messages/62760",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/find-similarity-of-given-node-with-entire-graph/m-p/62760#M37081"
+    },
+    "post_time": "2022-12-01T20:48:38.766-08:00",
+    "post_time_friendly": "12-01-2022",
+    "depth": 3,
+    "read_only": false,
+    "edit_frozen": false,
+    "language": "EN",
+    "can_accept_solution": false,
+    "placeholder": false,
+    "is_solution": false,
+    "solution_data": {},
+    "metrics": {
+      "type": "message_metrics",
+      "views": 387
+    },
+    "current_revision": {
+      "type": "revision",
+      "id": "62761_2",
+      "last_edit_author": {
+        "type": "user",
+        "id": "9010",
+        "href": "/users/9010",
+        "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/9010",
+        "login": "glilienfield"
+      },
+      "last_edit_time": "2022-12-01T20:49:01.667-08:00"
+    },
+    "kudos": {
+      "query": "SELECT * FROM kudos WHERE message.id = '62761'"
+    },
+    "tags": {
+      "query": "SELECT * FROM tags WHERE messages.id = '62761'"
+    },
+    "labels": {
+      "query": "SELECT * FROM labels WHERE messages.id = '62761'"
+    },
+    "images": {
+      "query": "SELECT * FROM images WHERE messages.id = '62761'"
+    },
+    "videos": {
+      "query": "SELECT * FROM videos WHERE messages.id = '62761'"
+    },
+    "attachments": {
+      "query": "SELECT * FROM attachments WHERE message.id = '62761'"
+    },
+    "replies": {
+      "query": "SELECT * FROM messages WHERE parent.id = '62761'"
+    },
+    "ratings": {
+      "query": "SELECT * FROM ratings WHERE message.id = '62761'"
+    },
+    "custom_tags": {
+      "query": "SELECT * FROM custom_tags WHERE messages.id = '62761'"
+    },
+    "moderation_status": "approved",
+    "visibility_scope": "public",
+    "user_context": {
+      "type": "user_context",
+      "kudo": false,
+      "read": false,
+      "can_reply": false,
+      "can_kudo": false,
+      "can_delete": false
+    },
+    "device_id": "apple_iphone_ver16_1",
+    "popularity": -1447.8653425,
+    "excluded_from_kudos_leaderboards": false,
+    "is_promoted": false
+  },
+  {
+    "type": "message",
+    "id": "62787",
+    "href": "/messages/62787",
+    "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/find-similarity-of-given-node-with-entire-graph/m-p/62787#M37094",
+    "author": {
+      "type": "user",
+      "id": "15906",
+      "href": "/users/15906",
+      "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/15906",
+      "login": "tony156"
+    },
+    "subject": "Re: Find similarity of given node with entire graph",
+    "search_snippet": "Ah I see thank you. I guess I'd have to wait for next release gds. In the mean time I'll find some other ways.",
+    "body": "<P>Ah I see thank you. I guess I'd have to wait for next release gds. In the mean time I'll find some other ways.</P>",
+    "teaser": "",
+    "board": {
+      "type": "board",
+      "id": "graph_platform",
+      "href": "/boards/graph_platform",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/bd-p/graph_platform"
+    },
+    "conversation": {
+      "type": "conversation",
+      "id": "62747",
+      "href": "/conversations/62747",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/find-similarity-of-given-node-with-entire-graph/td-p/62747",
+      "style": "forum",
+      "thread_style": "forum",
+      "messages_count": 10,
+      "solved": false,
+      "last_post_time": "2022-12-08T11:58:19.043-08:00",
+      "last_post_time_friendly": "12-08-2022"
+    },
+    "topic": {
+      "type": "message",
+      "id": "62747",
+      "href": "/messages/62747",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/find-similarity-of-given-node-with-entire-graph/m-p/62747#M37077"
+    },
+    "parent": {
+      "type": "message",
+      "id": "62761",
+      "href": "/messages/62761",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/find-similarity-of-given-node-with-entire-graph/m-p/62761#M37082"
+    },
+    "post_time": "2022-12-02T09:12:09.448-08:00",
+    "post_time_friendly": "12-02-2022",
+    "depth": 4,
+    "read_only": false,
+    "edit_frozen": false,
+    "language": "EN",
+    "can_accept_solution": false,
+    "placeholder": false,
+    "is_solution": false,
+    "solution_data": {},
+    "metrics": {
+      "type": "message_metrics",
+      "views": 376
+    },
+    "current_revision": {
+      "type": "revision",
+      "id": "62787_1",
+      "last_edit_author": {
+        "type": "user",
+        "id": "15906",
+        "href": "/users/15906",
+        "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/15906",
+        "login": "tony156"
+      },
+      "last_edit_time": "2022-12-02T09:12:09.448-08:00"
+    },
+    "kudos": {
+      "query": "SELECT * FROM kudos WHERE message.id = '62787'"
+    },
+    "tags": {
+      "query": "SELECT * FROM tags WHERE messages.id = '62787'"
+    },
+    "labels": {
+      "query": "SELECT * FROM labels WHERE messages.id = '62787'"
+    },
+    "images": {
+      "query": "SELECT * FROM images WHERE messages.id = '62787'"
+    },
+    "videos": {
+      "query": "SELECT * FROM videos WHERE messages.id = '62787'"
+    },
+    "attachments": {
+      "query": "SELECT * FROM attachments WHERE message.id = '62787'"
+    },
+    "replies": {
+      "query": "SELECT * FROM messages WHERE parent.id = '62787'"
+    },
+    "ratings": {
+      "query": "SELECT * FROM ratings WHERE message.id = '62787'"
+    },
+    "custom_tags": {
+      "query": "SELECT * FROM custom_tags WHERE messages.id = '62787'"
+    },
+    "moderation_status": "approved",
+    "visibility_scope": "public",
+    "user_context": {
+      "type": "user_context",
+      "kudo": false,
+      "read": false,
+      "can_reply": false,
+      "can_kudo": false,
+      "can_delete": false
+    },
+    "device_id": "firefox_107_0",
+    "popularity": -1435.4733625,
+    "excluded_from_kudos_leaderboards": false,
+    "is_promoted": false
+  },
+  {
+    "type": "message",
+    "id": "62789",
+    "href": "/messages/62789",
+    "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/find-similarity-of-given-node-with-entire-graph/m-p/62789#M37095",
+    "author": {
+      "type": "user",
+      "id": "9010",
+      "href": "/users/9010",
+      "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/9010",
+      "login": "glilienfield"
+    },
+    "subject": "Re: Find similarity of given node with entire graph",
+    "search_snippet": "As I understand, the alpha and beta versions are accurate. They just may change before being fully promoted to non alpha or beta versions",
+    "body": "<P>As I understand, the alpha and beta versions are accurate. They just may change before being fully promoted to non alpha or beta versions </P>",
+    "teaser": "",
+    "board": {
+      "type": "board",
+      "id": "graph_platform",
+      "href": "/boards/graph_platform",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/bd-p/graph_platform"
+    },
+    "conversation": {
+      "type": "conversation",
+      "id": "62747",
+      "href": "/conversations/62747",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/find-similarity-of-given-node-with-entire-graph/td-p/62747",
+      "style": "forum",
+      "thread_style": "forum",
+      "messages_count": 10,
+      "solved": false,
+      "last_post_time": "2022-12-08T11:58:19.043-08:00",
+      "last_post_time_friendly": "12-08-2022"
+    },
+    "topic": {
+      "type": "message",
+      "id": "62747",
+      "href": "/messages/62747",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/find-similarity-of-given-node-with-entire-graph/m-p/62747#M37077"
+    },
+    "parent": {
+      "type": "message",
+      "id": "62787",
+      "href": "/messages/62787",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/find-similarity-of-given-node-with-entire-graph/m-p/62787#M37094"
+    },
+    "post_time": "2022-12-02T10:38:34.634-08:00",
+    "post_time_friendly": "12-02-2022",
+    "depth": 5,
+    "read_only": false,
+    "edit_frozen": false,
+    "language": "EN",
+    "can_accept_solution": false,
+    "placeholder": false,
+    "is_solution": false,
+    "solution_data": {},
+    "metrics": {
+      "type": "message_metrics",
+      "views": 373
+    },
+    "current_revision": {
+      "type": "revision",
+      "id": "62789_1",
+      "last_edit_author": {
+        "type": "user",
+        "id": "9010",
+        "href": "/users/9010",
+        "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/9010",
+        "login": "glilienfield"
+      },
+      "last_edit_time": "2022-12-02T10:38:34.634-08:00"
+    },
+    "kudos": {
+      "query": "SELECT * FROM kudos WHERE message.id = '62789'"
+    },
+    "tags": {
+      "query": "SELECT * FROM tags WHERE messages.id = '62789'"
+    },
+    "labels": {
+      "query": "SELECT * FROM labels WHERE messages.id = '62789'"
+    },
+    "images": {
+      "query": "SELECT * FROM images WHERE messages.id = '62789'"
+    },
+    "videos": {
+      "query": "SELECT * FROM videos WHERE messages.id = '62789'"
+    },
+    "attachments": {
+      "query": "SELECT * FROM attachments WHERE message.id = '62789'"
+    },
+    "replies": {
+      "query": "SELECT * FROM messages WHERE parent.id = '62789'"
+    },
+    "ratings": {
+      "query": "SELECT * FROM ratings WHERE message.id = '62789'"
+    },
+    "custom_tags": {
+      "query": "SELECT * FROM custom_tags WHERE messages.id = '62789'"
+    },
+    "moderation_status": "approved",
+    "visibility_scope": "public",
+    "user_context": {
+      "type": "user_context",
+      "kudo": false,
+      "read": false,
+      "can_reply": false,
+      "can_kudo": false,
+      "can_delete": false
+    },
+    "device_id": "apple_iphone_ver16_1",
+    "popularity": -1434.0330233333334,
+    "excluded_from_kudos_leaderboards": false,
+    "is_promoted": false
+  },
+  {
+    "type": "message",
+    "id": "62756",
+    "href": "/messages/62756",
+    "view_href": "https://community.neo4j.com/t5/graphacademy-discussions/cannot-create-new-database-from-dump-file/m-p/62756#M1678",
+    "author": {
+      "type": "user",
+      "id": "9980",
+      "href": "/users/9980",
+      "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/9980",
+      "login": "mauuuuu5"
+    },
+    "subject": "Re: Cannot create new database from dump-file",
+    "search_snippet": "Hi thank you for your post, I managed to run until step 8, but when executing the command \n  CREATE   DATABASE neo4j  -  p2p  -  data_v43, it shows the following error.   \n     Image   \n   \n The data...",
+    "body": "<P>Hi thank you for your post, I managed to run until step 8, but when executing the command</P>\n<DIV><SPAN>CREATE</SPAN><SPAN> DATABASE neo4j</SPAN><SPAN>-</SPAN><SPAN>p2p</SPAN><SPAN>-</SPAN><SPAN>data_v43, it shows the following error. </SPAN></DIV>\n<DIV><span class=\"lia-inline-image-display-wrapper lia-image-align-inline\" image-alt=\"Image\" style=\"width: 999px;\"><img src=\"https://community.neo4j.com/t5/image/serverpage/image-id/7681i11DA6F02C0B3B22C/image-size/large/is-moderation-mode/true?v=v2&amp;px=999\" role=\"button\" title=\"Neo4j.JPG\" alt=\"Image\" /><span class=\"lia-inline-image-caption\" onclick=\"event.preventDefault();\">Image</span></span></DIV>\n<DIV><BR />\n<P>The data is from <A href=\"https://drive.google.com/drive/folders/1LaNFObKnZb1Ty8T7kPLCYlXDUlHU7FGa\" target=\"_self\" rel=\"nofollow noopener noreferrer\">Exploring Fraud Detection With Neo4j </A></P>\n<P>Thank you</P>\n<P> </P>\n</DIV>",
+    "teaser": "",
+    "board": {
+      "type": "board",
+      "id": "graphacademy_discussions",
+      "href": "/boards/graphacademy_discussions",
+      "view_href": "https://community.neo4j.com/t5/graphacademy-discussions/bd-p/graphacademy_discussions"
+    },
+    "conversation": {
+      "type": "conversation",
+      "id": "39914",
+      "href": "/conversations/39914",
+      "view_href": "https://community.neo4j.com/t5/graphacademy-discussions/cannot-create-new-database-from-dump-file/td-p/39914",
+      "style": "forum",
+      "thread_style": "forum",
+      "messages_count": 36,
+      "solved": false,
+      "last_post_time": "2022-12-05T05:52:08.408-08:00",
+      "last_post_time_friendly": "12-05-2022"
+    },
+    "topic": {
+      "type": "message",
+      "id": "39914",
+      "href": "/messages/39914",
+      "view_href": "https://community.neo4j.com/t5/graphacademy-discussions/cannot-create-new-database-from-dump-file/m-p/39914#M719"
+    },
+    "parent": {
+      "type": "message",
+      "id": "39946",
+      "href": "/messages/39946",
+      "view_href": "https://community.neo4j.com/t5/graphacademy-discussions/cannot-create-new-database-from-dump-file/m-p/39946#M751"
+    },
+    "post_time": "2022-12-01T17:37:09.770-08:00",
+    "post_time_friendly": "12-01-2022",
+    "depth": 5,
+    "read_only": false,
+    "edit_frozen": false,
+    "language": "EN",
+    "can_accept_solution": false,
+    "placeholder": false,
+    "is_solution": false,
+    "solution_data": {},
+    "metrics": {
+      "type": "message_metrics",
+      "views": 1511
+    },
+    "current_revision": {
+      "type": "revision",
+      "id": "62756_2",
+      "last_edit_author": {
+        "type": "user",
+        "id": "9980",
+        "href": "/users/9980",
+        "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/9980",
+        "login": "mauuuuu5"
+      },
+      "last_edit_time": "2022-12-01T17:39:42.052-08:00"
+    },
+    "kudos": {
+      "query": "SELECT * FROM kudos WHERE message.id = '62756'"
+    },
+    "tags": {
+      "query": "SELECT * FROM tags WHERE messages.id = '62756'"
+    },
+    "labels": {
+      "query": "SELECT * FROM labels WHERE messages.id = '62756'"
+    },
+    "images": {
+      "query": "SELECT * FROM images WHERE messages.id = '62756'"
+    },
+    "videos": {
+      "query": "SELECT * FROM videos WHERE messages.id = '62756'"
+    },
+    "attachments": {
+      "query": "SELECT * FROM attachments WHERE message.id = '62756'"
+    },
+    "replies": {
+      "query": "SELECT * FROM messages WHERE parent.id = '62756'"
+    },
+    "ratings": {
+      "query": "SELECT * FROM ratings WHERE message.id = '62756'"
+    },
+    "custom_tags": {
+      "query": "SELECT * FROM custom_tags WHERE messages.id = '62756'"
+    },
+    "moderation_status": "approved",
+    "visibility_scope": "public",
+    "user_context": {
+      "type": "user_context",
+      "kudo": false,
+      "read": false,
+      "can_reply": false,
+      "can_kudo": false,
+      "can_delete": false
+    },
+    "device_id": "google_chrome_107",
+    "popularity": -1451.0567491666666,
+    "excluded_from_kudos_leaderboards": false,
+    "is_promoted": false
+  },
+  {
+    "type": "message",
+    "id": "62790",
+    "href": "/messages/62790",
+    "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/find-similarity-of-given-node-with-entire-graph/m-p/62790#M37096",
+    "author": {
+      "type": "user",
+      "id": "15906",
+      "href": "/users/15906",
+      "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/15906",
+      "login": "tony156"
+    },
+    "subject": "Re: Find similarity of given node with entire graph",
+    "search_snippet": "I just tried the filtered knn algorithm and it worked ! but it takes around 1 minute for only 40,000 nodes compared. Is that common?",
+    "body": "<P>I just tried the filtered knn algorithm and it worked ! but it takes around 1 minute for only 40,000 nodes compared. Is that common?</P>",
+    "teaser": "",
+    "board": {
+      "type": "board",
+      "id": "graph_platform",
+      "href": "/boards/graph_platform",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/bd-p/graph_platform"
+    },
+    "conversation": {
+      "type": "conversation",
+      "id": "62747",
+      "href": "/conversations/62747",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/find-similarity-of-given-node-with-entire-graph/td-p/62747",
+      "style": "forum",
+      "thread_style": "forum",
+      "messages_count": 10,
+      "solved": false,
+      "last_post_time": "2022-12-08T11:58:19.043-08:00",
+      "last_post_time_friendly": "12-08-2022"
+    },
+    "topic": {
+      "type": "message",
+      "id": "62747",
+      "href": "/messages/62747",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/find-similarity-of-given-node-with-entire-graph/m-p/62747#M37077"
+    },
+    "parent": {
+      "type": "message",
+      "id": "62789",
+      "href": "/messages/62789",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/find-similarity-of-given-node-with-entire-graph/m-p/62789#M37095"
+    },
+    "post_time": "2022-12-02T10:40:15.751-08:00",
+    "post_time_friendly": "12-02-2022",
+    "depth": 6,
+    "read_only": false,
+    "edit_frozen": false,
+    "language": "EN",
+    "can_accept_solution": false,
+    "placeholder": false,
+    "is_solution": false,
+    "solution_data": {},
+    "metrics": {
+      "type": "message_metrics",
+      "views": 372
+    },
+    "current_revision": {
+      "type": "revision",
+      "id": "62790_1",
+      "last_edit_author": {
+        "type": "user",
+        "id": "15906",
+        "href": "/users/15906",
+        "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/15906",
+        "login": "tony156"
+      },
+      "last_edit_time": "2022-12-02T10:40:15.751-08:00"
+    },
+    "kudos": {
+      "query": "SELECT * FROM kudos WHERE message.id = '62790'"
+    },
+    "tags": {
+      "query": "SELECT * FROM tags WHERE messages.id = '62790'"
+    },
+    "labels": {
+      "query": "SELECT * FROM labels WHERE messages.id = '62790'"
+    },
+    "images": {
+      "query": "SELECT * FROM images WHERE messages.id = '62790'"
+    },
+    "videos": {
+      "query": "SELECT * FROM videos WHERE messages.id = '62790'"
+    },
+    "attachments": {
+      "query": "SELECT * FROM attachments WHERE message.id = '62790'"
+    },
+    "replies": {
+      "query": "SELECT * FROM messages WHERE parent.id = '62790'"
+    },
+    "ratings": {
+      "query": "SELECT * FROM ratings WHERE message.id = '62790'"
+    },
+    "custom_tags": {
+      "query": "SELECT * FROM custom_tags WHERE messages.id = '62790'"
+    },
+    "moderation_status": "approved",
+    "visibility_scope": "public",
+    "user_context": {
+      "type": "user_context",
+      "kudo": false,
+      "read": false,
+      "can_reply": false,
+      "can_kudo": false,
+      "can_delete": false
+    },
+    "device_id": "firefox_107_0",
+    "popularity": -1434.0049302777777,
+    "excluded_from_kudos_leaderboards": false,
+    "is_promoted": false
+  },
+  {
+    "type": "message",
+    "id": "62794",
+    "href": "/messages/62794",
+    "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/find-similarity-of-given-node-with-entire-graph/m-p/62794#M37099",
+    "author": {
+      "type": "user",
+      "id": "9010",
+      "href": "/users/9010",
+      "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/9010",
+      "login": "glilienfield"
+    },
+    "subject": "Re: Find similarity of given node with entire graph",
+    "search_snippet": "Are there target nodes you can filter out to speed up the calculation.",
+    "body": "<P>Are there target nodes you can filter out to speed up the calculation. </P>",
+    "teaser": "",
+    "board": {
+      "type": "board",
+      "id": "graph_platform",
+      "href": "/boards/graph_platform",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/bd-p/graph_platform"
+    },
+    "conversation": {
+      "type": "conversation",
+      "id": "62747",
+      "href": "/conversations/62747",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/find-similarity-of-given-node-with-entire-graph/td-p/62747",
+      "style": "forum",
+      "thread_style": "forum",
+      "messages_count": 10,
+      "solved": false,
+      "last_post_time": "2022-12-08T11:58:19.043-08:00",
+      "last_post_time_friendly": "12-08-2022"
+    },
+    "topic": {
+      "type": "message",
+      "id": "62747",
+      "href": "/messages/62747",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/find-similarity-of-given-node-with-entire-graph/m-p/62747#M37077"
+    },
+    "parent": {
+      "type": "message",
+      "id": "62790",
+      "href": "/messages/62790",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/find-similarity-of-given-node-with-entire-graph/m-p/62790#M37096"
+    },
+    "post_time": "2022-12-02T11:46:55.293-08:00",
+    "post_time_friendly": "12-02-2022",
+    "depth": 7,
+    "read_only": false,
+    "edit_frozen": false,
+    "language": "EN",
+    "can_accept_solution": false,
+    "placeholder": false,
+    "is_solution": false,
+    "solution_data": {},
+    "metrics": {
+      "type": "message_metrics",
+      "views": 369
+    },
+    "current_revision": {
+      "type": "revision",
+      "id": "62794_1",
+      "last_edit_author": {
+        "type": "user",
+        "id": "9010",
+        "href": "/users/9010",
+        "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/9010",
+        "login": "glilienfield"
+      },
+      "last_edit_time": "2022-12-02T11:46:55.293-08:00"
+    },
+    "kudos": {
+      "query": "SELECT * FROM kudos WHERE message.id = '62794'"
+    },
+    "tags": {
+      "query": "SELECT * FROM tags WHERE messages.id = '62794'"
+    },
+    "labels": {
+      "query": "SELECT * FROM labels WHERE messages.id = '62794'"
+    },
+    "images": {
+      "query": "SELECT * FROM images WHERE messages.id = '62794'"
+    },
+    "videos": {
+      "query": "SELECT * FROM videos WHERE messages.id = '62794'"
+    },
+    "attachments": {
+      "query": "SELECT * FROM attachments WHERE message.id = '62794'"
+    },
+    "replies": {
+      "query": "SELECT * FROM messages WHERE parent.id = '62794'"
+    },
+    "ratings": {
+      "query": "SELECT * FROM ratings WHERE message.id = '62794'"
+    },
+    "custom_tags": {
+      "query": "SELECT * FROM custom_tags WHERE messages.id = '62794'"
+    },
+    "moderation_status": "approved",
+    "visibility_scope": "public",
+    "user_context": {
+      "type": "user_context",
+      "kudo": false,
+      "read": false,
+      "can_reply": false,
+      "can_kudo": false,
+      "can_delete": false
+    },
+    "device_id": "apple_iphone_ver16_1",
+    "popularity": -1432.8939247222222,
+    "excluded_from_kudos_leaderboards": false,
+    "is_promoted": false
+  },
+  {
+    "type": "message",
+    "id": "62792",
+    "href": "/messages/62792",
+    "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/find-similarity-of-given-node-with-entire-graph/m-p/62792#M37098",
+    "author": {
+      "type": "user",
+      "id": "9010",
+      "href": "/users/9010",
+      "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/9010",
+      "login": "glilienfield"
+    },
+    "subject": "Re: Find similarity of given node with entire graph",
+    "search_snippet": "Sorry, I am not a user of GDS, so I can’t comment.",
+    "body": "<P>Sorry, I am not a user of GDS, so I can’t comment.</P>",
+    "teaser": "",
+    "board": {
+      "type": "board",
+      "id": "graph_platform",
+      "href": "/boards/graph_platform",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/bd-p/graph_platform"
+    },
+    "conversation": {
+      "type": "conversation",
+      "id": "62747",
+      "href": "/conversations/62747",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/find-similarity-of-given-node-with-entire-graph/td-p/62747",
+      "style": "forum",
+      "thread_style": "forum",
+      "messages_count": 10,
+      "solved": false,
+      "last_post_time": "2022-12-08T11:58:19.043-08:00",
+      "last_post_time_friendly": "12-08-2022"
+    },
+    "topic": {
+      "type": "message",
+      "id": "62747",
+      "href": "/messages/62747",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/find-similarity-of-given-node-with-entire-graph/m-p/62747#M37077"
+    },
+    "parent": {
+      "type": "message",
+      "id": "62790",
+      "href": "/messages/62790",
+      "view_href": "https://community.neo4j.com/t5/neo4j-graph-platform/find-similarity-of-given-node-with-entire-graph/m-p/62790#M37096"
+    },
+    "post_time": "2022-12-02T10:51:58.155-08:00",
+    "post_time_friendly": "12-02-2022",
+    "depth": 7,
+    "read_only": false,
+    "edit_frozen": false,
+    "language": "EN",
+    "can_accept_solution": false,
+    "placeholder": false,
+    "is_solution": false,
+    "solution_data": {},
+    "metrics": {
+      "type": "message_metrics",
+      "views": 370
+    },
+    "current_revision": {
+      "type": "revision",
+      "id": "62792_2",
+      "last_edit_author": {
+        "type": "user",
+        "id": "9010",
+        "href": "/users/9010",
+        "view_href": "https://community.neo4j.com/t5/user/viewprofilepage/user-id/9010",
+        "login": "glilienfield"
+      },
+      "last_edit_time": "2022-12-02T10:52:07.732-08:00"
+    },
+    "kudos": {
+      "query": "SELECT * FROM kudos WHERE message.id = '62792'"
+    },
+    "tags": {
+      "query": "SELECT * FROM tags WHERE messages.id = '62792'"
+    },
+    "labels": {
+      "query": "SELECT * FROM labels WHERE messages.id = '62792'"
+    },
+    "images": {
+      "query": "SELECT * FROM images WHERE messages.id = '62792'"
+    },
+    "videos": {
+      "query": "SELECT * FROM videos WHERE messages.id = '62792'"
+    },
+    "attachments": {
+      "query": "SELECT * FROM attachments WHERE message.id = '62792'"
+    },
+    "replies": {
+      "query": "SELECT * FROM messages WHERE parent.id = '62792'"
+    },
+    "ratings": {
+      "query": "SELECT * FROM ratings WHERE message.id = '62792'"
+    },
+    "custom_tags": {
+      "query": "SELECT * FROM custom_tags WHERE messages.id = '62792'"
+    },
+    "moderation_status": "approved",
+    "visibility_scope": "public",
+    "user_context": {
+      "type": "user_context",
+      "kudo": false,
+      "read": false,
+      "can_reply": false,
+      "can_kudo": false,
+      "can_delete": false
+    },
+    "device_id": "apple_iphone_ver16_1",
+    "popularity": -1433.8098083333334,
+    "excluded_from_kudos_leaderboards": false,
+    "is_promoted": false
+  }
+]

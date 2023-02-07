@@ -5,6 +5,7 @@ export interface DiscourseApiConfiguration {
   baseUrl: string
   apiKey: string
   apiUsername: string
+  discourseConnectSecret: string
 }
 export const discourseAPI = ({baseUrl, apiKey, apiUsername}:DiscourseApiConfiguration) => {
 
@@ -35,6 +36,7 @@ export const discourseAPI = ({baseUrl, apiKey, apiUsername}:DiscourseApiConfigur
     getTopic: discourse.path("/t/{id}.json").method('get').create(),
     getPost: discourse.path("/posts/{id}.json").method('get').create(),
     getUser: discourse.path("/u/{username}.json").method('get').create(),
+    getUserByExternalId: discourse.path("/u/by-external/{external_id}.json").method('get').create()
   };  
 }
 

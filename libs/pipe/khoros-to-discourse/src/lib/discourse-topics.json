@@ -1,0 +1,340 @@
+[
+  {
+    "title": "Adjacency matrix",
+    "external_id": "khoros_62751",
+    "created_at": "2022-12-01T15:14:50.517-08:00",
+    "embed_url": "https://community.neo4j.com/t5/neo4j-graph-platform/adjacency-matrix/td-p/62751",
+    "raw": "Hi everyone\n\nI would like to find the adjacency matrix of the following bipartite graph\n\n![redha_benhisse1_0-1669936093203.jpeg](https://community.neo4j.com/t5/image/serverpage/image-id/7678iE097F6BBC2643319/image-size/medium/is-moderation-mode/true?v=v2&px=400 \"redha_benhisse1_0-1669936093203.jpeg\")\n\nif the link exists, the matrix takes the value revenue. otherwise, it takes 0.\n\n```cypher\nMATCH (c:customer)\nWITH collect(c) AS cust\nUNWIND cust AS a\nMATCH (p:part)\nWITH collect(p) AS par\nUNWIND par AS b\nRETURN a.id AS cutomer, b.id AS part, \nCASE \nWHEN EXISTS((a)-[r:customer_to_part]->(b)) THEN r.revenue \nELSE 0 \nEND AS value\n```\n\nBut this does not work.\n\nCan you please help me to find the right matrix",
+    "category": 10,
+    "tags": [
+      "test",
+      "delete-me",
+      "from-khoros"
+    ]
+  },
+  {
+    "title": "Find similarity of given node with entire graph",
+    "external_id": "khoros_62747",
+    "created_at": "2022-12-01T14:40:40.813-08:00",
+    "embed_url": "https://community.neo4j.com/t5/neo4j-graph-platform/find-similarity-of-given-node-with-entire-graph/td-p/62747",
+    "raw": "Hi, I'm new to neo4j. I'm trying to use knn in gds do calculate similarities. I understand that knn calculates similarities between all pairs of nodes in the graph and find the most similar k nodes. However, what I'm looking for is, for given a node N, I need to find the node in the database that is most similar to N. How can I achieve this goal? Thank you for your help.",
+    "category": 10,
+    "tags": [
+      "test",
+      "delete-me",
+      "from-khoros"
+    ]
+  },
+  {
+    "title": "Updating maps doesn't work using APOC library",
+    "external_id": "khoros_62737",
+    "created_at": "2022-12-01T09:17:46.639-08:00",
+    "embed_url": "https://community.neo4j.com/t5/general-discussions/updating-maps-doesn-t-work-using-apoc-library/td-p/62737",
+    "raw": "I have my edge attributes in the form of dictionaries as we'd refer in python or maps. I was testing the working of updating one such edge attribute using APOC library. So, let's say I have an edge attribute qty\\_dict = {'5':1, '10':2}\n\nI was trying to update this by merging it with another such map, suppose {'5':2, '4':1, '3':3}.  \nSo, when I merge, I would like to see the resultant dict as qty\\_dict = {'5':3, '4':1, '3':3, '10':2}\n\nPlease have a look at what I've tried so far ...",
+    "category": 10,
+    "tags": [
+      "test",
+      "delete-me",
+      "from-khoros"
+    ]
+  },
+  {
+    "title": "Need no-code JSON Data Load?",
+    "external_id": "khoros_62735",
+    "created_at": "2022-12-01T09:11:44.442-08:00",
+    "embed_url": "https://community.neo4j.com/t5/neo4j-graph-platform/need-no-code-json-data-load/td-p/62735",
+    "raw": "Help us shape the future of visual data mapping from JSON to graph by taking a few moments to review our [survey](https://neo4j.typeform.com/to/UZeLaTp6).\n\nWe're currently exploring extending the scope of Neo4j Data Importer (available both [standalone](https://links.iterable.com/u/click?_t=1501d46330e04333829bd287b85f0c68&_m=1RVkmwePPHKu5pW0rc0uKu64P5XzsJKhL&_e=Tbv0ixXElABNbjsMcZw7fcrwj0q62TzHZg9x4DeWC5CKE40EepBie8EFn_wjfYKfsQR8gVsbupG7LqCKIDRN9obfhMR4TECjXdxpiXgQspIvixtmERrhaAfrRR2pChENSAfm47y_KKBkyFtJnyPEMGmeFhrxCbq1HD8VxGzOSxLvTBAGAWn637iqkbGglHR8lqyXNOI8QREtPte8WeZWRC05SolJrXAqIzMyhdhsUUo%3D) and via [Workspace](https://links.iterable.com/u/click?_t=1501d46330e04333829bd287b85f0c68&_m=1RVkmwePPHKu5pW0rc0uKu64P5XzsJKhL&_e=Tbv0ixXElABNbjsMcZw7fQ3BuP5loVeeX5guxgng30dH9qX1P6CoangiyNE9WhKEuO2OI4BQ5cJ7XzBgnVG47Dewzk9s1D9UwtJm6kjeLaqXG249u_zYqGbkiPG6hscAOyuHY08VcJBZyLdPpNwBRglK9QV8ISQvwF-tx42sQ6NfmE7F6jUFK4kF5ROcIHqIKkvI97w1dtFbRUePyST3gakNoHkuZuH07XGM8XxRaMQ%3D)) to support JSON in addition to Flat Files (CSV, TSV). Our aim is to give everyone a no-code approach to loading their JSON data into a graph and we'd love to hear more about your needs.\n\n[JSON Data Load Survey](https://links.iterable.com/u/click?_t=1501d46330e04333829bd287b85f0c68&_m=1RVkmwePPHKu5pW0rc0uKu64P5XzsJKhL&_e=Tbv0ixXElABNbjsMcZw7fTQLX1k4P7OnuKr7rnS9pDWw6bTr6tLE9CmJe75dPkbuyd1z0WGqkUeyzk74A_WcVswhP7kbwONup7hdFqSLKNk5AwGrDFwF9vJjS1XGzTFV5a9WkWC9MfTEnuUgotqjDaBqDoaJtynC0JwGCTweDMELeQP9nkL25Uc214IfbGo6Fjle3w2tCPeHGtEEvvbQ3fxW1t1Gw6jAE4H5QnOsWdc%3D)\n\nThanks for your interest and do reach out to us on our [feedback page](https://links.iterable.com/u/click?_t=1501d46330e04333829bd287b85f0c68&_m=1RVkmwePPHKu5pW0rc0uKu64P5XzsJKhL&_e=Tbv0ixXElABNbjsMcZw7fWh0E7JgwL_rWTSklw0nJt6vWW18Ylj9X30TPLI8AhpaYinitzVL1RMF2EUP8bMUTyu3pPkRwTatJmEsVQ7Jqcs4OWPRPylDglsFV99UqiB0GmErSx7mgplLJwaxTjQo3w6Y2whtBoh5-_lw8qd-TYCKcOyuyB3dYegvcfN6uQ-bNUMgiMgJuKqoOkeUCPcXHA%3D%3D) if you have any questions.",
+    "category": 10,
+    "tags": [
+      "test",
+      "delete-me",
+      "from-khoros"
+    ]
+  },
+  {
+    "title": "Help with data import and creating a complex relationship",
+    "external_id": "khoros_62727",
+    "created_at": "2022-12-01T08:20:46.771-08:00",
+    "embed_url": "https://community.neo4j.com/t5/neo4j-graph-platform/help-with-data-import-and-creating-a-complex-relationship/td-p/62727",
+    "raw": "Hi I'm a neo4j beginner. I want to build a complex relationship using csv file.\n\ncompany\\_name,ticker,isin,country,marketcap,industry,concept,concept\\_id,year\\_quarter,total\\_hits,total\\_documents  \nBBVA BANCO FRANCES ADR,,US0589341009,US,1200.0,Financial,Payment services,138,2017-03,1.0,1.0  \nBBVA BANCO FRANCES ADR,,US0589341009,US,1200.0,Financial,Digital banking ,130,2017-03,5.0,1.0  \nBBVA BANCO FRANCES,FRAN,ARP125991090,AR,1213.25704,Financial,Payment services,138,2017-03,1.0,1.0\n\nHere is the csv sample data.\n\nI want to build relationship like this (company\\_name,industry,concept) -\\[:hist{num:total\\_hits}->year\\_quarter\\]\n\nI'm very appreciate if you can help me.\n\nthanks",
+    "category": 10,
+    "tags": [
+      "test",
+      "delete-me",
+      "from-khoros"
+    ]
+  },
+  {
+    "title": "Hello, everyone, we've just joined the Neo4J Startup Program with our AI/NLP team at Kairntech.com",
+    "external_id": "khoros_62703",
+    "created_at": "2022-12-01T02:59:35.013-08:00",
+    "embed_url": "https://community.neo4j.com/t5/introduce-yourself/hello-everyone-we-ve-just-joined-the-neo4j-startup-program-with/td-p/62703",
+    "raw": "Happy to be here.\n\nI am co founder at Kairntech.com. We specialize in the building AI/NLP software solutions that analyse large amounts of text for industry use cases. Naturally, results that come out of our analyses offer themselves to get imported into Graph Databases such as Neo4J for further analysis.\n\nThis is why we have joined the program and we are looking forward to fruitful exchanges and good contacts in the community. In order to get an idea about what we do regarding Knowledge Graphs, you'll find more here ([https://www.youtube.com/watch?v=lAY-B-yuZqU)](https://www.youtube.com/watch?v=lAY-B-yuZqU)) and here ([https://kairntech.com/blog/news/knowledge-graph-visualizes-knowledge-on-psychoses-from-unstructured-literature/)](https://kairntech.com/blog/news/knowledge-graph-visualizes-knowledge-on-psychoses-from-unstructured-literature/)).\n\nEnjoy,\n\nStefan",
+    "category": 10,
+    "tags": [
+      "test",
+      "delete-me",
+      "from-khoros"
+    ]
+  },
+  {
+    "title": "queries cross graphs",
+    "external_id": "khoros_62702",
+    "created_at": "2022-12-01T02:50:51.577-08:00",
+    "embed_url": "https://community.neo4j.com/t5/graphacademy-discussions/queries-cross-graphs/td-p/62702",
+    "raw": "Hello,\n\nI'm using a composite database KB that includes two graphs KB.actors and KB.searches\n\nI need to get information about actors that are in KB.actors graph using ids of actors that are the result of a filtre on KB.searches.\n\nI tried this query:\n\nUSE KB.searches\n\nMATCH(n:Company) WHERE ...\n\nWITH n.entityId as companyId\n\nUSE KB.actors\n\nMATCH(n:Company)-\\[:ALIAS\\]->(a:Alias)\n\nWHERE n.entityId\\=companyId\n\nRETURN companyId, a.term\n\nThe query doesn't work \"\n\nUSE can only appear at the beginning of a (sub-)query\n\"USE geotrend.actors\n\nIs there any way to join data cross a composite database graphs? is it possible to do it?\n\nThanks,",
+    "category": 10,
+    "tags": [
+      "test",
+      "delete-me",
+      "from-khoros"
+    ]
+  },
+  {
+    "title": "Getting \"The transaction has been closed.\" error while projecting a subgraph with GDS",
+    "external_id": "khoros_62694",
+    "created_at": "2022-12-01T01:28:26.990-08:00",
+    "embed_url": "https://community.neo4j.com/t5/neo4j-graph-platform/getting-quot-the-transaction-has-been-closed-quot-error-while/td-p/62694",
+    "raw": "Hi!\n\nI'm trying to provide a WCC (weakly connected components) analysis for my graph\n\nIt's very big. I'm trying to make a projection of my graph with\n\n**gds.graph.project.cypher(MY\\_QUERY)**\n\nBut it doesn't work and returns the following:  \n\nFailed to invoke procedure \\`gds.graph.project.cypher\\`: Caused by: org.neo4j.graphdb.NotInTransactionException: The transaction has been closed.\n\nAnd a funny moment is that when I manually reduce number of nodes in my projection it does work  \n  \nSo **question 1**  \nHow can I avoid this error?\n\n**Question 2 (optional)  \n  \n**Further on, if my main graph gets some new relationships, do I have to start the whole procedure again? Or I can somehow use the results, computed 1 step before  \nOr maybe I should use something else?  \n  \nThank u in advance, badly need your help - I'm already about to give in",
+    "category": 10,
+    "tags": [
+      "test",
+      "delete-me",
+      "from-khoros"
+    ]
+  },
+  {
+    "title": "Learn with Neo4j: Deploy Neo4j applications using Netlify - 7 December",
+    "external_id": "khoros_62693",
+    "created_at": "2022-12-01T00:51:46.869-08:00",
+    "embed_url": "https://community.neo4j.com/t5/events/learn-with-neo4j-deploy-neo4j-applications-using-netlify-7/td-p/62693",
+    "raw": "After Adam’s appearance on the Learn With Jason show earlier in the year to talk about Neo4j, we thought we would return the favour by inviting Jason to educate us on deploying our Neo4j projects using Netlify. We will look at the various Netlify features available for deploying a Node.js application that connects to a Neo4j Aura database.\n\nJason Lengstorf  \nTwitter: [https://twitter.com/jlengstorf](https://twitter.com/jlengstorf)  \nWeb: [https://www.learnwithjason.dev/](https://www.learnwithjason.dev/)\n\nAdam Cowley  \nTwitter: [https://twitter.com/adamcowley](https://twitter.com/adamcowley)  \nAdam on Learn with Jason: [https://www.learnwithjason.dev/build-neo4j-applications-with-node-js](https://www.learnwithjason.dev/build-neo4j-applications-with-node-js)  \n\nWatch live: [https://youtu.be/e9k-I\\_CQ9Z8](https://youtu.be/e9k-I_CQ9Z8)  \n7 December 2022 - 9am PDT / 12pm EDT / 5pm GMT / 6pm CET / 10:30pm IST",
+    "category": 10,
+    "tags": [
+      "test",
+      "delete-me",
+      "from-khoros"
+    ]
+  },
+  {
+    "title": "Cannot connect to Neo4j Aura database with Node server in docker container",
+    "external_id": "khoros_62691",
+    "created_at": "2022-11-30T21:41:56.293-08:00",
+    "embed_url": "https://community.neo4j.com/t5/neo4j-graph-platform/cannot-connect-to-neo4j-aura-database-with-node-server-in-docker/td-p/62691",
+    "raw": "I'm currently using a database instance from Neo4j Aura. That works fine when trying to connect my Node GraphQL server locally or from Heroku.\n\nHowever, when I deployed my GraphQL server to a docker container, I'm getting the following error:\n\nNeo4jError: Failed to connect to server. Please ensure that your database is listening on the correct host and port and that you have compatible encryption settings both on Neo4j server and driver. Note that the default encryption setting has changed in Neo4j 4.0. Caused by: getaddrinfo ENOTFOUND <my-database>.databases.neo4j.io\n\nIs there some setting I'm overlooking?\n\nMy env var for the neo4j connection is \"neo4j+s://<my-database>.databases.neo4j.io\"",
+    "category": 10,
+    "tags": [
+      "test",
+      "delete-me",
+      "from-khoros"
+    ]
+  },
+  {
+    "title": "Power BI Live Load",
+    "external_id": "khoros_62627",
+    "created_at": "2022-11-29T23:01:51.000-08:00",
+    "embed_url": "https://community.neo4j.com/t5/general-discussions/power-bi-live-load/td-p/62627",
+    "raw": "Hi All,\n\nI am looking for Neo4j Power BI connector to load live data into PowerBI. Can anyone please suggest if there is any mechanism to load live data from Neo4j into PowerBI?",
+    "category": 10,
+    "tags": [
+      "test",
+      "delete-me",
+      "from-khoros"
+    ]
+  },
+  {
+    "title": "Docker neo4j admin import not working",
+    "external_id": "khoros_62287",
+    "created_at": "2022-11-21T10:44:34.810-08:00",
+    "embed_url": "https://community.neo4j.com/t5/general-discussions/docker-neo4j-admin-import-not-working/td-p/62287",
+    "raw": "Hi all,\n\nI am new to docker neo4j and met an interesting problem when trying to use docker admin import - the import failed due to neostore file locked, a common issue when DB is still running, but when I check the db status, it reported that it's not running.\n\n~/neo4j-test04 $ docker exec -it --user $(id -u):$(id -g) neo4j-test04 neo4j stop\n\nNeo4j not running\n\n~/neo4j-test04 $ docker exec -it --user $(id -u):$(id -g) neo4j-test04 neo4j status\n\nNeo4j is not running\n\nThen I checked further in browser, it is actually working and I can create/pull nodes.\n\n![mengjiakang2017_0-1669056078423.png](https://community.neo4j.com/t5/image/serverpage/image-id/7615i537CE5EC0446C7FB/image-size/medium/is-moderation-mode/true?v=v2&px=400 \"mengjiakang2017_0-1669056078423.png\")\n\nthen I checked the docker logs below - and see the data/ folder issue\n\ndocker logs neo4j-test06\n\nWarning: Folder mounted to \"/logs\" is not writable from inside container. Changing folder owner to neo4j.\n\nWarning: Folder mounted to \"/data\" is not writable from inside container. Changing folder owner to neo4j.\n\nChanged password for user 'neo4j'.\n\nDirectories in use:\n\nhome: /var/lib/neo4j\n\nconfig: /var/lib/neo4j/conf\n\nlogs: /logs\n\nplugins: /plugins\n\nimport: /var/lib/neo4j/import\n\ndata: /var/lib/neo4j/data\n\ncertificates: /var/lib/neo4j/certificates\n\nrun: /var/lib/neo4j/run\n\nStarting Neo4j.\n\n2022-11-17 17:29:58.423+0000 WARN Unrecognized setting. No declared setting with name: apoc.export.file.enabled\n\n2022-11-17 17:29:58.426+0000 WARN Unrecognized setting. No declared setting with name: apoc.import.file.enabled\n\n2022-11-17 17:29:58.426+0000 WARN Unrecognized setting. No declared setting with name: apoc.import.file.use\\_neo4j\\_config\n\n2022-11-17 17:29:58.426+0000 INFO Starting...\n\n2022-11-17 17:30:00.198+0000 INFO \\======== Neo4j 4.1.4 ========\n\n2022-11-17 17:30:01.444+0000 INFO Initializing system graph model for component 'security-users' with version -1 and status UNINITIALIZED\n\n2022-11-17 17:30:01.447+0000 INFO Setting up initial user from \\`auth.ini\\` file: neo4j\n\n2022-11-17 17:30:01.447+0000 INFO Creating new user 'neo4j' (passwordChangeRequired=false, suspended=false)\n\n2022-11-17 17:30:01.453+0000 INFO Setting version for 'security-users' to 2\n\n2022-11-17 17:30:01.456+0000 INFO After initialization of system graph model component 'security-users' have version 2 and status CURRENT\n\n2022-11-17 17:30:01.459+0000 INFO Performing postInitialization step for component 'security-users' with version 2 and status CURRENT\n\n2022-11-17 17:30:01.559+0000 INFO Bolt enabled on 0.0.0.0:7687.\n\n2022-11-17 17:30:02.449+0000 INFO Remote interface available at [http://localhost:7474/](http://localhost:7474/)\n\n2022-11-17 17:30:02.451+0000 INFO Started.\n\n2022-11-17 21:14:37.052+0000 INFO Neo4j Server shutdown initiated by request\n\n2022-11-17 21:14:37.054+0000 INFO Stopping...\n\n2022-11-17 21:14:42.527+0000 INFO Stopped.\n\nChanged password for user 'neo4j'.\n\nDirectories in use:\n\nhome: /var/lib/neo4j\n\nconfig: /var/lib/neo4j/conf\n\nlogs: /logs\n\nplugins: /plugins\n\nimport: /var/lib/neo4j/import\n\ndata: /var/lib/neo4j/data\n\ncertificates: /var/lib/neo4j/certificates\n\nrun: /var/lib/neo4j/run\n\nStarting Neo4j.\n\nDid anyone see this before? Thanks!",
+    "category": 10,
+    "tags": [
+      "test",
+      "delete-me",
+      "from-khoros"
+    ]
+  },
+  {
+    "title": "Neo4j Protocol Connection Issue",
+    "external_id": "khoros_60376",
+    "created_at": "2022-09-20T10:47:30.415-07:00",
+    "embed_url": "https://community.neo4j.com/t5/integrations/neo4j-protocol-connection-issue/td-p/60376",
+    "raw": "Looking for help with connecting to neo4j instance.\n\nWe are able to connect to our neo4j server via the bolt protocol with \"bolt://remote.hostname:7687\", however when using the neo4j protocol \"neo4j://remote.hostname:7687\" we receive the below error:\n\n2022-09-16 22:53:03.386+0000 INFO Query started: id:72473 - 0 ms: 0 B - bolt-session bolt neo4j-cypher-shell/v4.4.9 client/our-ip-address server/ip-address> <none> - \\*\\*\\*\\*- CALL dbms.routing.getRoutingTable($context, $database) - {context: {address: 'remote.hostname:7687'}, database: <null>} - runtime=null - {}\n\ncypher-shell -a neo4j://remote.hostname:7687 -u \\*\\*\\*\\* -p \\*\\*\\*\\*  \nFailed to connect to neo4j://remote.hostname:7687, fallback to bolt://remote.hostname:7687  \nConnected to Neo4j using Bolt protocol version 4.1 at bolt://remote.hostname:7687 as user \\*\\*\\*\\*.\n\nAny help on how we can go about resolving this issue would be great!",
+    "category": 10,
+    "tags": [
+      "test",
+      "delete-me",
+      "from-khoros"
+    ]
+  },
+  {
+    "title": "how to search for the most similar array of numbers against a given array.",
+    "external_id": "khoros_62341",
+    "created_at": "2022-11-22T09:14:25.525-08:00",
+    "embed_url": "https://community.neo4j.com/t5/general-discussions/how-to-search-for-the-most-similar-array-of-numbers-against-a/td-p/62341",
+    "raw": "Hi everyone, I'm new to Neo4j.\n\nLet say I have a graph of spectrum, where each spectrum has intensity (an array of numbers) as its property. I want to search a given spectrum against these spectrum to find the spectrum that is most similar. I'm trying k-nearest neighbor algorithm but it is looking for k-nearest-node for each node in the graph, but I want to find the nearest node to a given node only.\n\nThank you for your help",
+    "category": 10,
+    "tags": [
+      "test",
+      "delete-me",
+      "from-khoros"
+    ]
+  },
+  {
+    "title": "Golang Driver | Neo4j Performance Issue",
+    "external_id": "khoros_62293",
+    "created_at": "2022-11-21T12:59:04.825-08:00",
+    "embed_url": "https://community.neo4j.com/t5/neo4j-graph-platform/golang-driver-neo4j-performance-issue/td-p/62293",
+    "raw": "I have to believe I MUST be doing something wrong. I am a database expert by the way, having worked in engineering and consulting at database companies for 24 years, and I'm a language expert in over 13 languages. So I know what I am doing.\n\nBut when I run a simple benchmark for simple inserts into an ODBMS or RDBMS, or just about any other DBMS, records with two columns (or properties) I consistently get between 10,000 up to 30,000 tps. But with Neo4j I get an appalling 11 tps. I was getting over 10,000 TPS 23 years ago with ObjectStore, so I cannot understand why when I follow documentation I only get 11 TPS with Neo4j? Can someone point out what I am doing incorrectly?\n\nI have to be doing something terribly wrong. This same hardware (64 GB RAM, 2 TB NVMe, 10 Gbps Eth) gets bleeding edge performance with any other database. I have assigned 16 GB to the database. And I am simply trying to insert a few dozen records, upwards of a few thousand. So this is a VERY SMALL database, no reason to be slow. And I am not setting up ANY relationships, only inserting nodes.\n\nCan someone explain to me what I could possibly be doing wrong in the code below that would result in this sort of performance? I am literally copying the code out of the golang driver \"benchmark\" (for the most part).\n\n```\n\tctx := context.Background()\n\n\t// create an auth token...\n\tneo4jAuthToken := getNeoAuthToken(neo4jUsername, neo4jPassword, neo4jRealm)\n\n\t// create a driver...\n\tdriver, err := neo4j.NewDriverWithContext(neo4jUri, neo4jAuthToken)\n\tif err != nil {\n\t\tlog.Fatal(err)\n\t}\n\tdefer driver.Close(ctx)\n\n\tif err := driver.VerifyConnectivity(ctx); err != nil {\n\t\tlog.Fatalf(\"failed to verify connection: %s\", err)\n\t}\n\n\t// create the session configuration...\n\tconfig := neo4j.SessionConfig{\n\t\tAccessMode: neo4j.AccessModeWrite,\n\t}\n\n\tcount := 100\n\tstart := time.Now()\n\tfor i := 0; i < count; i++ {\n\t\tsession := driver.NewSession(ctx, config)\n\t\tdefer session.Close(ctx)\n\n\t\tname := fmt.Sprintf(\"jim_%d\", i)\n\t\t_, err = session.Run(ctx, `CREATE (n:Account {name: $name, hash: $hash}) RETURN n`,\n\t\t\tmap[string]interface{}{\n\t\t\t\t\"name\": name,\n\t\t\t\t\"hash\": hash(name),\n\t\t\t})\n\t\tif err != nil {\n\t\t\tlog.Fatal(err)\n\t\t}\n\t}\n\telapsed := time.Since(start).Milliseconds()\n\trate := float64(count) * 1000 / float64(elapsed)\n\tfmt.Println(\"Time to load: \" + strconv.Itoa(int(elapsed)))\n\tfmt.Println(\"Rate in load: \" + fmt.Sprintf(\"%f\", rate))\n```\n\n\\`\\`",
+    "category": 10,
+    "tags": [
+      "test",
+      "delete-me",
+      "from-khoros"
+    ]
+  },
+  {
+    "title": "Wrong query in CSV data importer tutorial",
+    "external_id": "khoros_61508",
+    "created_at": "2022-10-27T05:59:24.511-07:00",
+    "embed_url": "https://community.neo4j.com/t5/graphacademy-discussions/wrong-query-in-csv-data-importer-tutorial/td-p/61508",
+    "raw": "Hi!\n\nI'd like to inform that one of the queries on [this tutorial](https://graphacademy.neo4j.com/courses/importing-data/3-refactoring-imported-data/1-transform-strings/) is not the right one.\n\nThis is the query I am referring to:\n\n ![Screen Shot 2022-10-27 at 09.56.17.png](https://community.neo4j.com/t5/image/serverpage/image-id/7526i3EE8BB0F2A30375B/image-size/medium/is-moderation-mode/true?v=v2&px=400 \"Screen Shot 2022-10-27 at 09.56.17.png\")\n\nI believe it should be:\n\n```\nCALL apoc.meta.relTypeProperties()\nYIELD relType, sourceNodeLabels, targetNodeLabels, propertyName, propertyTypes, mandatory, propertyObservations, totalObservations\n```\n\n Thanks",
+    "category": 10,
+    "tags": [
+      "test",
+      "delete-me",
+      "from-khoros"
+    ]
+  },
+  {
+    "title": "Unable to place t-shirt order",
+    "external_id": "khoros_61578",
+    "created_at": "2022-10-28T11:42:31.708-07:00",
+    "embed_url": "https://community.neo4j.com/t5/graphacademy-discussions/unable-to-place-t-shirt-order/td-p/61578",
+    "raw": "I have completed the professional certification exam and when I am trying to submit the t-shirt form it is throwing message \" Your order request has failed because we could not verify that you met the requirements. You must be a certified professional and not submitted an order before. If you feel like this is incorrect please contact devrel@neo4j.com \"\n\nAlthough I am using same login and credentials as graphacademy.",
+    "category": 10,
+    "tags": [
+      "test",
+      "delete-me",
+      "from-khoros"
+    ]
+  },
+  {
+    "title": "Unable to place T-Shirt order",
+    "external_id": "khoros_61661",
+    "created_at": "2022-11-01T06:09:18.563-07:00",
+    "embed_url": "https://community.neo4j.com/t5/graphacademy-discussions/unable-to-place-t-shirt-order/td-p/61661",
+    "raw": "Hi  [@elaine\\_rosenber](https://community.neo4j.com/t5/user/viewprofilepage/user-id/1937) ,\n\nI am unable to order the t-shirt after passing the certification. I am getting the following message:\n\n_Your order request has failed because we could not verify that you met the requirements. You must be a certified professional and not submitted an order before. If you feel like this is incorrect please contact [devrel@neo4j.com](mailto:devrel@neo4j.com)_\n\nCould you guys help me to validate if my request went through ?\n\nThanks!",
+    "category": 10,
+    "tags": [
+      "test",
+      "delete-me",
+      "from-khoros"
+    ]
+  },
+  {
+    "title": "BoltConnectionError",
+    "external_id": "khoros_61710",
+    "created_at": "2022-11-02T20:08:39.825-07:00",
+    "embed_url": "https://community.neo4j.com/t5/graphacademy-discussions/boltconnectionerror/td-p/61710",
+    "raw": "",
+    "category": 10,
+    "tags": [
+      "test",
+      "delete-me",
+      "from-khoros"
+    ]
+  },
+  {
+    "title": "data processing graph",
+    "external_id": "khoros_61857",
+    "created_at": "2022-11-08T08:18:55.452-08:00",
+    "embed_url": "https://community.neo4j.com/t5/graphacademy-discussions/data-processing-graph/td-p/61857",
+    "raw": "Hi, I'm a noob and I've just finished my very first neo4j-fundamentals-course.\n\nI'd like to import my own test-data to play around with, it's about input-output-relationships between data- and codeobjects (an inventory of some data processing environment), e.g.:   \ndataObject1 -> processObjectx -> dataObjecty etc. (essentially a simple to-from-table).\n\nI'd like to be able to do simple impact- and lineage analyses (e.g. if there is a change in some table, which other tables are directly or indirectly dependend etc.)\n\nWhat's the best way to model these relationships for neo4j import? \n\nThank you very much for your help 🙂",
+    "category": 10,
+    "tags": [
+      "test",
+      "delete-me",
+      "from-khoros"
+    ]
+  },
+  {
+    "title": "Sandbox in Cypher Fundamentals not working",
+    "external_id": "khoros_61893",
+    "created_at": "2022-11-09T02:03:43.755-08:00",
+    "embed_url": "https://community.neo4j.com/t5/graphacademy-discussions/sandbox-in-cypher-fundamentals-not-working/td-p/61893",
+    "raw": "I've been working through the Cypher Fundamentals training and for the last couple of days everything has been fine.  However, in the middle of a session I've lost the ability to connect to the Sandbox.  \n\nI am connected to the sandbox Movie database outside of the course and I am able to make successful queries there.  The error message refers to a \"websocket connection failure\"  I've used Edge and Chrome both without success; I've logged out and in to my account and have terminated/restarted the movie DB and used my personal laptop as well as my work laptop, without success.\n\nChrome indicates the following error: \n\n\"Access to fetch at '[https://987f5871d598b3b67ec40cdb599c8ea5.neo4jsandbox.com:7687/](https://987f5871d598b3b67ec40cdb599c8ea5.neo4jsandbox.com:7687/)' from origin '[https://graphacademy.neo4j.com](https://graphacademy.neo4j.com)' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.\"\n\nWhat are my options getting the sandbox working again?  If conf. files are involved, I may need some guidance as this is a new area for me.\n\nThanks in advance for any assistance offered.",
+    "category": 10,
+    "tags": [
+      "test",
+      "delete-me",
+      "from-khoros"
+    ]
+  },
+  {
+    "title": "Unable to submit t-shirt order form",
+    "external_id": "khoros_61986",
+    "created_at": "2022-11-11T05:44:36.015-08:00",
+    "embed_url": "https://community.neo4j.com/t5/graphacademy-discussions/unable-to-submit-t-shirt-order-form/td-p/61986",
+    "raw": "Hello\n\nI have finished my Neo4j Certified Professional test, but when I try to submit t-shirt form a 'Internal Server Error' prompt me. Is there something to do? Tks!![Screen Shot 2022-11-11 at 10.39.50.png](https://community.neo4j.com/t5/image/serverpage/image-id/7580i3EE8592558D79B41/image-size/large/is-moderation-mode/true?v=v2&px=999 \"Screen Shot 2022-11-11 at 10.39.50.png\")",
+    "category": 10,
+    "tags": [
+      "test",
+      "delete-me",
+      "from-khoros"
+    ]
+  },
+  {
+    "title": "5.x fulltext index time is much longer than 4.x fulltext index time.",
+    "external_id": "khoros_62621",
+    "created_at": "2022-11-29T19:46:19.007-08:00",
+    "embed_url": "https://community.neo4j.com/t5/neo4j-graph-platform/5-x-fulltext-index-time-is-much-longer-than-4-x-fulltext-index/td-p/62621",
+    "raw": "I installed neo4j 5.2 and tested several index methods. Fulltext index on News(3.7M nodes) title and content took 9 mins in 5.2 but it took 1 min only in 4.4.12. on my desktop. (BTW text index took 12 mins on News content only in Neo4j 5.2)\n\nIt looks fulltext index is not optimized in 5.x though fulltext query performance is almost same with 4.4.12 fulltext index.\n\nAnyone has the similar experience with me? The figures will be different on different machine but the magnitude would be similar.",
+    "category": 10,
+    "tags": [
+      "test",
+      "delete-me",
+      "from-khoros"
+    ]
+  },
+  {
+    "title": "Sandbox in graphacademy apparently not working !",
+    "external_id": "khoros_59904",
+    "created_at": "2022-09-05T13:07:55.297-07:00",
+    "embed_url": "https://community.neo4j.com/t5/graphacademy-discussions/sandbox-in-graphacademy-apparently-not-working/td-p/59904",
+    "raw": "I'm having a difficult time trying to do the exercises along the course,\n\ni disabled adblock but still not working\n\ni get this error in the console \"Uncaught (in promise) TypeError: Cannot read properties of undefined (reading 'code')\"",
+    "category": 10,
+    "tags": [
+      "test",
+      "delete-me",
+      "from-khoros"
+    ]
+  },
+  {
+    "title": "How to optimize the performance of scanning edge data",
+    "external_id": "khoros_62530",
+    "created_at": "2022-11-27T22:23:26.113-08:00",
+    "embed_url": "https://community.neo4j.com/t5/neo4j-graph-platform/how-to-optimize-the-performance-of-scanning-edge-data/td-p/62530",
+    "raw": "I have a graph that has 80 million vertexes and 30 million edges. I need to scan all the edge data, including the ids of its starting and ending vertexes.But the performance is poor and I need to optimize it.\n\nThis is my query:\n\nMATCH (v)-\\[e:E1\\]->(n) RETURN id(v) AS starting, id(n) AS ending, e.prop1, e.prop2,...\n\nCan anyone give some ideas on optimization or possible solutions for this scenario?",
+    "category": 10,
+    "tags": [
+      "test",
+      "delete-me",
+      "from-khoros"
+    ]
+  },
+  {
+    "title": "How to Create the same name (or category) node in a load csv query",
+    "external_id": "khoros_62624",
+    "created_at": "2022-11-29T22:04:54.183-08:00",
+    "embed_url": "https://community.neo4j.com/t5/nodes/how-to-create-the-same-name-or-category-node-in-a-load-csv-query/td-p/62624",
+    "raw": "**The following is my query**\n\n##################################\n\nCALL apoc.periodic.iterate('\n\nCALL apoc.load.json(\"Mydata\") YIELD value return value','\n\nUNWIND value.Event AS col\\_event\n\nCREATE(process:Process{eventid: coalesce(col\\_event.System.EventID, \"No ID\"),\n\ncomputer:coalesce(col\\_event.EventData.Computer,\"No Computer\"),\n\nrulename:coalesce(col\\_event.EventData.Rulename,\"No Rulename\")})\n\nCREATE(process:Process{eventid: coalesce(col\\_event.System.EventID, \"No ID\"),\n\neuid:col\\_event.System.EventRecordID})',\n\n{batchSize:10000, iterateList:true, parallel:true})\n\n##################################\n\nHowever, the error messages shows \"Variable \\`process\\` already declared\".\n\nQuestion : How can I adjust the above result so that **I can CREATE the above two types of node and all names and Process** in just _**one query (CALL apoc.periodic.iterate)**_?\n\nRemark : I know that I can query another CALL apoc.periodic.iterate to make it, however I want include all the query within a apoc.periodic.iterate command.\n\nThanks !",
+    "category": 10,
+    "tags": [
+      "test",
+      "delete-me",
+      "from-khoros"
+    ]
+  }
+]

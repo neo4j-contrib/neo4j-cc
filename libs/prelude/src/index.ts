@@ -1,12 +1,19 @@
-export * as E from "@effect/core/io/Effect"
-export * as L from "@effect/core/io/Layer"
+export { pipe } from "@fp-ts/data/Function";
 
-export * as Schedule from "@effect/core/io/Schedule"
-export * as Duration from "@tsplus/stdlib/data/Duration"
-export * as Exit from "@effect/core/io/Exit"
-export * as Cause from "@effect/core/io/Cause"
+export * as Schedule from "@effect/io/Schedule"
+export * as Layer from "@effect/io/Layer";
+export * as Effect from "@effect/io/Effect";
+export * as Logger from "@effect/io/Logger";
+export * as Exit from "@effect/io/Exit"
+export * as Cause from "@effect/io/Cause"
+export * as Scope from "@effect/io/Scope";
 
-export { Tag } from "@tsplus/stdlib/service/Tag"
-
-export { pipe } from "@fp-ts/core/internal/Function";
 export * as Option from "@fp-ts/data/Option"
+export * as Either from "@fp-ts/data/Either"
+export * as Context from "@fp-ts/data/Context"
+export * as Chunk from "@fp-ts/data/Chunk"
+export * as Duration from "@fp-ts/data/Duration"
+export * as ReadonlyArray from "@fp-ts/data/ReadonlyArray"
+export * as HashMap from "@fp-ts/data/HashMap"
+export * as HashSet from "@fp-ts/data/HashSet"
+
