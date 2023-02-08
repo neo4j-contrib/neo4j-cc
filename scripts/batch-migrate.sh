@@ -21,7 +21,8 @@ GREEN='\033[0;32m'
 RED='\033[0;31m'   
 NOCOLOR='\033[0m'
 
-CC_GO_FLAGS="--discourseKey=78c6318630db9526f9066d443d7b2144d10bb29beb251adbd6749d51f0fcf799 --discourseUsername=abk --discourseUrl=https://discourse.neo4j.com --discourseSecret=AKpf6uahPl02hw3XroRRGdQY6hQtU8bXYQ72pK-j3YtQ3SNn1puaVWppgFxfBkcX --khorosURL=https://community.neo4j.com --khorosUser=neo4j-khoros-ro --khorosPassword=djg_tdt8pxz9WJM_npf"
+DISCOURSE_FLAGS="--discourseKey=$DISCOURSE_API_KEY --discourseUsername=$DISCOURSE_API_USER --discourseUrl=$DISCOURSE_API_URL --discourseSecret=$DISCOURSE_CONNECT_SECRET"
+KHOROS_FLAGS="--khorosURL=$KHOROS_API_URL --khorosUser=$KHOROS_LOGIN --khorosPassword=$KHOROS_PASSWORD"
 
 echo "#############################################"
 echo "# Batch migration from Khoros to Discourse...\n"
@@ -29,7 +30,7 @@ echo "# Batch migration from Khoros to Discourse...\n"
 for DAY in $( $DATE_RANGE ) ; do
   echo "\n########################"
   echo "# Migrating $DAY\n"
-  ./bin/run k2d $CC_GO_FLAGS --date=$DAY
+  ./bin/run k2d $DISCOURSE_FLAGS $KHOROS_FLAGS --date=$DAY
   RET=$?
   # echo $RET;
   if [ $RET -ne 0 ]; then 
