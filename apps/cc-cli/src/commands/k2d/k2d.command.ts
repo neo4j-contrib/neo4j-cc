@@ -213,11 +213,11 @@ const doCommand = (argv:CommandOptions):Effect.Effect<KhorosService | DiscourseS
     // )), 
     Effect.bind("khoros_sync_discourse_users", ({discourse, khoros_sync_pairs}) => syncSsoUsers(khoros_sync_pairs, discourse)),
     // Effect.tap(({khoros_sync_discourse_users}) => Effect.log(`synced users with discourse: ${khoros_sync_discourse_users.length}`)),
-    // Effect.tap(({khoros_sync_discourse_users}) => pipe(
-    //   khoros_sync_discourse_users,
-    //   Chunk.map( a => `(:KhorosUser {login:${a[0].login}, sso_id:${a[0].sso_id}})-->(:SsoUserDetails {username:${a[1].username}, external_id:${a[1].external_id}}, email:${a[1].email})-->(:DiscoursePrivateUser {username:${a[2].username}, id:${a[2].id}, ${a[2].single_sign_on_record.external_id}})`),
-    //   Effect.forEach(Effect.log)
-    // )),
+    Effect.tap(({khoros_sync_discourse_users}) => pipe(
+      khoros_sync_discourse_users,
+      Chunk.map( a => `(:KhorosUser {login:${a[0].login}, sso_id:${a[0].sso_id}})-->(:SsoUserDetails {username:${a[1].username}, external_id:${a[1].external_id}}, email:${a[1].email})-->(:DiscoursePrivateUser {username:${a[2].username}, id:${a[2].id}, ${a[2].single_sign_on_record.external_id}})`),
+      Effect.forEach(Effect.log)
+    )),
     // Effect.tap( ({khoros_sync_discourse_users}) => pipe(khoros_sync_discourse_users,Chunk.map(pathOfKhorosSsoDiscourse),Chunk.forEach(toConsole),Effect.unit)),
     Effect.bind("khoros_discourse_topics", ({khoros, discourse, khoros_topics, discourse_categories, khoros_sync_discourse_users}) => pipe(
       khoros_topics,

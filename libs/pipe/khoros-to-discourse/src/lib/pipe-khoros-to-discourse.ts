@@ -14,8 +14,8 @@ export const nameFor = (author:KhorosAuthor):string => [author.first_name || "",
 export const khorosToSsoUserDetails = (author:KhorosAuthor):Option.Option<SsoUserDetails> => pipe(
   (author.sso_id !== undefined) 
   ? Option.some({
-      // email: `khoros.${author.id}@community.neo4j.com`, // author.email ABKTODO: re-run user migration with real emails
-      email: author.email, // ABKTODO: re-run user migration with real emails
+      // email: `khoros.${author.id}@community.neo4j.com`, // ABKTODO: use this to migrate content posted by users with multiple accounts, sharing an email
+      email: author.email, // ABKTODO: re-run user migration with real emails, which must be unique on discourse
       external_id: author.sso_id, 
       name: nameFor(author),
       username: author.login,

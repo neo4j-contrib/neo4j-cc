@@ -20,11 +20,12 @@ import {
   makeLocalFileSystemService
 } from '@neo4j-cc/data-access-fs'
 
-import { FetchError, HttpService, jsonBody, bufferBody, JsonBodyError, htmlToMd, HtmlParseError } from '@neo4j-cc/data-access-http';
-import { ApiResponse } from 'openapi-typescript-fetch';
-import { parseISO } from 'date-fns';
 
-export type SubcommandErrors = FetchError | JsonBodyError | KhorosError | HtmlParseError | FileSystemError | PE.ParseError
+import { FetchError, HttpService, jsonBody, bufferBody, JsonBodyError, htmlToMd, HtmlParseError, LiveHttpService, HttpError, BufferBodyError } from '@neo4j-cc/data-access-http';
+import { ApiResponse } from 'openapi-typescript-fetch';
+import { parseISO, formatISO } from 'date-fns';
+
+export type SubcommandErrors = HttpError | FetchError | JsonBodyError | KhorosError | HtmlParseError | FileSystemError | PE.ParseError | BufferBodyError
 
 interface ItemWithMarkdown extends Item {
   body_md: string
@@ -36,11 +37,13 @@ export interface CommandOptions {
   khorosUser: string,
   khorosPassword: string,
   date: string,
+  dir: string,
   page: number
 }
 
 interface SubcommandArgs {
-  khoros: KhorosService
+  khoros: KhorosService,
+  fs: FileSystemService
 }
 /**
  * Map CLI options to configuration needed by service. 
@@ -82,10 +85,17 @@ const getAllMessages = ({khoros}:SubcommandArgs) => pipe(
 )
 
 
-const getAllMessagesOnDate = ({day}:{day:Date}) => ({khoros}:SubcommandArgs) => pipe(
+const writeAllMessagesOnDate = ({day}:{day:Date}) => ({khoros, fs}:SubcommandArgs) => pipe(
   khoros.getMessagesOnDate({day}),
-  Effect.flatMap(Effect.forEach(appendMarkdownBody)),
-  Effect.tap( (a) => { console.log(JSON.stringify(Chunk.toReadonlyArray(a))); return Effect.succeed(undefined)}),
+  Effect.flatMap((messages) => pipe(
+    messages,
+    Chunk.toReadonlyArray,
+    (messageArray) => fs.write({path: pathForMessagesOnDate(day), content: messageArray }),
+    Effect.tap( () => Effect.log(`Wrote ${messages.length} messages on ${formatISO(day, {representation:'date'})}`)),
+    Effect.map(() => messages)
+  )), 
+  Effect.flatMap(Effect.forEach(writeAttachments)),
+  Effect.map(x => x),
   Effect.asUnit
 )
 
@@ -119,7 +129,11 @@ const showAllUserIDs = ({khoros}:SubcommandArgs) => pipe(
   Effect.asUnit
 )
 
-const pathForUser = (user:KhorosAuthor) => `./exports/khoros/users/${user.login}.json`
+const pathForUser = (user:KhorosAuthor) => `./users/${user.login}.json`
+
+const pathForAttachment = (attachment:Item) => `./attachments${attachment.href}/${attachment.filename}`
+
+const pathForMessagesOnDate = (day:Date) => `messages/messages.${formatISO(day, {representation:'date'})}.json`
 
 const writeUser = (user:KhorosAuthor) => pipe(
   Effect.service(FileSystemService), // like declaring that `FileSystemService` is required in the environment
@@ -156,23 +170,24 @@ const getMessageAttachments = (message:Item) => pipe(
 )
 
 const readAttachment = (attachment:Item) => pipe(
-  Effect.service(HttpService), // like declaring that `FileSystemService` is required in the environment
-  Effect.flatMap((http) => http.request(attachment.url)),
+  Effect.service(HttpService), // like declaring that `HttpService` is required in the environment
+  Effect.flatMap((http) => http.request(attachment.url, {headers:{"content-type": attachment.content_type}})),
   Effect.flatMap(bufferBody)
 )
 
-const pathForAttachment = (attachment:Item) => `./exports/khoros/attachments/${attachment.href}/${attachment.filename}`
-
-const writeAttachment = (attachment:Item, buffer:ArrayBuffer) => pipe(
+const writeAttachment = (attachment:Item, arrayBuffer:ArrayBuffer) => pipe(
   Effect.service(FileSystemService),
-  Effect.flatMap( ({write}) => write({path: pathForAttachment(attachment), content: buffer}))
+  Effect.flatMap( ({write}) => write({path: pathForAttachment(attachment), content: Buffer.from(arrayBuffer)}))
 )
 const writeAttachments = (message:Item) => pipe(
   getMessageAttachments(message),
-  Effect.map(Effect.forEach ((attachment) => pipe(
+  // Effect.tap((attachments) => Effect.log(`message ${message.id} has ${attachments.length} attachments`)),
+  Effect.flatMap(Effect.forEach ((attachment) => pipe(
     readAttachment(attachment),
-    Effect.map(x => x)
-  )))
+    Effect.flatMap(buffer => writeAttachment(attachment, buffer)),
+    Effect.tap(() => Effect.log(`wrote ${attachment.content_type} attachment ${attachment.filename}`))
+  ))),
+  Effect.map(x => x)
 )
   
   // Effect.bind("khoros", () => Effect.service(KhorosService)),
@@ -209,9 +224,9 @@ const writeBoards = ({khoros}:SubcommandArgs) => pipe(
   Effect.asUnit
 )
 
-const subcommands = (argv:CommandOptions):Record<string, (args:SubcommandArgs) => Effect.Effect<KhorosService | FileSystemService, SubcommandErrors, void>> => ({
+const subcommands = (argv:CommandOptions):Record<string, (args:SubcommandArgs) => Effect.Effect<HttpService | KhorosService | FileSystemService, SubcommandErrors, void>> => ({
   // 'messages': ({khoros}:{khoros:KhorosService}) => khoros.getMessagesOnDate({day:dateOfDay(argv.date)}),
-  'messages': getAllMessagesOnDate({day:dateOfDay(argv.date)}),
+  'messages': writeAllMessagesOnDate({day:dateOfDay(argv.date)}),
   // 'messages': getFirstMessageOnDate({day:dateOfDay(argv.date)}),
   // 'messages': writeSpecialUserMessages({id:'2', href:'/somewhere', type: AuthorType.User, view_href: '/view_somewhere'}),
   'boards': writeBoards,
@@ -219,7 +234,7 @@ const subcommands = (argv:CommandOptions):Record<string, (args:SubcommandArgs) =
   'users': writeAllUsers
 })
 
-const doCommand = (argv:CommandOptions):Effect.Effect<KhorosService | FileSystemService, unknown, void> => {
+const doCommand = (argv:CommandOptions):Effect.Effect<HttpService | KhorosService | FileSystemService, unknown, void> => {
   return pipe(
     Effect.Do(),
     Effect.bind("khoros", () => Effect.service(KhorosService)),
@@ -256,6 +271,12 @@ const builder = (argv:Argv):Argv<CommandOptions> => argv.positional('collection'
     demandOption: false,
     describe: 'day (ISO-8601 calendar date)'
   },
+  dir: {
+    type: 'string',
+    demandOption: false,
+    describe: 'root directory for exported data',
+    default: 'exports/khoros'
+  },
   page: {
     type: 'number',
     demandOption: false,
@@ -267,7 +288,8 @@ const handler = (argv:CommandOptions) => pipe(
   doCommand(argv),
   Effect.provideLayer(pipe(
     makeLiveKhorosServiceLayer(toServiceConfig(argv)),
-    Layer.provideMerge(makeLocalFileSystemService({path:'.'}))
+    Layer.provideMerge(makeLocalFileSystemService({path:argv.dir})),
+    Layer.provideMerge(LiveHttpService)
   )),
   Effect.unsafeRunPromise
 )

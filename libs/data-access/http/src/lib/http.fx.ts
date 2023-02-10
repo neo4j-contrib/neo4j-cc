@@ -2,6 +2,7 @@ import fetch from 'cross-fetch';
 
 import { pipe, Effect, Context, Either, Duration, Schedule } from "@neo4j-cc/prelude";
 import { FetchError, HttpError, JsonBodyError, BufferBodyError } from './http-errors';
+import { request } from './data-access-http';
 
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
@@ -13,31 +14,6 @@ export interface HttpService {
 
 export const HttpService = Context.Tag<HttpService>();
 
-const requestHttp = (input: RequestInfo, init?: RequestInit) =>
-  pipe(
-    Effect.asyncInterruptEither<never, FetchError | HttpError, Response>((resume) => {
-      const controller = new AbortController();
-      fetch(input, { ...(init ?? {}), signal: controller.signal })
-        .then((response) => {
-          // console.log(input,init,response)
-          if (response.ok) {
-              resume(Effect.succeed(response))
-          } else {
-            resume(Effect.fail(new HttpError(response)))
-          }
-          // resume(Effect.succeed(() => response));
-        })
-        .catch((error) => {
-          resume(Effect.fail(new FetchError(error)));
-        });
-      return Either.left(
-        Effect.succeed(() => {
-          controller.abort();
-        })
-      );
-    }),
-    // httpRequestCount
-  );
 
 
 const defaultRetrySchedule = pipe(
@@ -49,7 +25,7 @@ const defaultRetrySchedule = pipe(
 
 export const makeHttpService = pipe(
   Effect.Do(),
-  Effect.bindValue("request", () => requestHttp),
+  Effect.bindValue("request", () => request),
   Effect.bindValue("defaultRetrySchedule", () => defaultRetrySchedule)
 )
 
