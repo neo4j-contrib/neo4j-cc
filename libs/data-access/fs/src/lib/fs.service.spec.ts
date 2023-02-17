@@ -25,7 +25,7 @@ describe('FileSystemService', () => {
   const runWithFileSystem = (program:Effect.Effect<FileSystemService, FileSystemError, ExistsResult>) => pipe(
     program, // program requires a `LoggerService`
     Effect.provideLayer(makeTmpFileSystemService()), // `LiveApp` provides a wired-up `LoggerService`
-    Effect.unsafeRunPromise // Run the effect inside a promise
+    Effect.runPromise // Run the effect inside a promise
   )
 
   it('write', async () => {

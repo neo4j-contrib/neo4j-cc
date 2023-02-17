@@ -3,9 +3,9 @@ import {pipe, Effect, Chunk, Option, ReadonlyArray} from "@neo4j-cc/prelude"
 /* eslint-disable @typescript-eslint/no-empty-interface */
 import * as S from "@fp-ts/schema/Schema";
 import * as P from "@fp-ts/schema/Parser";
-import * as PE from "@fp-ts/schema/ParseError";
+import * as PR from "@fp-ts/schema/ParseResult";
 
-import * as Equivalence from '@fp-ts/data/Equivalence'
+import * as Equivalence from '@fp-ts/core/typeclass/Equivalence'
 import { ListCategoriesResponseContent } from "./discourse.types";
 
 export const SsoRecord = S.struct({
@@ -131,7 +131,7 @@ export interface DiscoursePrivateUser extends S.Infer<typeof DiscoursePrivateUse
 
 export const decodePrivateUser = (i:unknown) => P.decode<DiscoursePrivateUser>(DiscoursePrivateUser)(i, {isUnexpectedAllowed:true})
 
-export const equivalentByExternalId = Equivalence.make<DiscoursePrivateUser>((that) => (self) => (that.single_sign_on_record.external_id === self.single_sign_on_record.external_id))
+export const equivalentByExternalId = Equivalence.make<DiscoursePrivateUser>((self, that) => (that.single_sign_on_record.external_id === self.single_sign_on_record.external_id))
 
 export const DiscourseCategory = S.struct({
   id: S.number, // 101,
@@ -185,11 +185,11 @@ export const extractCategoriesFrom = (response:ListCategoriesResponseContent) =>
   Effect.forEach(category => pipe(
     category, 
     decodeCategory,
-    (pr => { if (PE.isFailure(pr)) { console.log('failed to parse category', JSON.stringify(category)) }; return pr }),
-    (pr => PE.isSuccess(pr) 
+    (pr => { if (PR.isFailure(pr)) { console.log('failed to parse category', JSON.stringify(category)) }; return pr }),
+    (pr => PR.isSuccess(pr) 
       ? Effect.succeed(pr.right) 
       : Effect.fail(pr.left[0]) ) ,
-    (x) => x as Effect.Effect<never, PE.ParseError, DiscourseCategory>,
+    (x) => x as Effect.Effect<never, PR.ParseError, DiscourseCategory>,
     Effect.map(parsedCategory => pipe(
       Option.fromNullable(parsedCategory.subcategory_list),
       Option.map(list => list as DiscourseCategory[]),
@@ -198,5 +198,5 @@ export const extractCategoriesFrom = (response:ListCategoriesResponseContent) =>
       Chunk.concat(Chunk.of(parsedCategory))
     )),
   )),
-  Effect.map(Chunk.flatten)
+  Effect.map<Chunk.Chunk<Chunk.Chunk<DiscourseCategory>>, Chunk.Chunk<DiscourseCategory>>(Chunk.flatten)
 )

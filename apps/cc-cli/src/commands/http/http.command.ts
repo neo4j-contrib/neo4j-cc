@@ -63,7 +63,7 @@ const run = async (toolbox: Toolbox) => {
   const preparedCommand = pipe(
     todo,
     Effect.provideLayer(makeCliServiceFromToolbox(toolbox)),
-    Effect.unsafeRunPromise
+    Effect.runPromise
   )
   return preparedCommand
 }

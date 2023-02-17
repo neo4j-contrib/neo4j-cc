@@ -7,7 +7,7 @@ import { QueryASingleCollection } from './generated/models/quicktypes'
 
 describe("Khoros V2 API", () => {
   const api = new KhorosV2({
-    BASE: "https://community.neo4j.com/api/2.0"
+    BASE: "https://khoros.neo4j.com/api/2.0"
   })
 
   it("getMessage", async () => {

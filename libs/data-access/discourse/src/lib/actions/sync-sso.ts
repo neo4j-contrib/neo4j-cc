@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
 import * as S from "@fp-ts/schema/Schema";
 import * as P from "@fp-ts/schema/Parser";
-import * as PE from "@fp-ts/schema/ParseError";
+import * as PR from "@fp-ts/schema/ParseResult";
 
 import { jsonBody, request } from '@neo4j-cc/data-access-http'
 
@@ -70,7 +70,7 @@ export const createOrUpdateSsoUserAt = (api:DiscourseApiConfiguration) => {
       //   ? pipe()
       Effect.flatMap(jsonBody),
       Effect.map(decodePrivateUser),
-      Effect.flatMap( parsedUser => PE.isSuccess(parsedUser) ? Effect.succeed(parsedUser.right) : Effect.fail(parsedUser.left[0]))
+      Effect.flatMap( parsedUser => PR.isSuccess(parsedUser) ? Effect.succeed(parsedUser.right) : Effect.fail(parsedUser.left[0]))
     )
   }
   return syncSso

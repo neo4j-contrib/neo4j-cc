@@ -1,8 +1,7 @@
 import { pipe, Effect, Layer, Logger, Chunk, Option, Duration, HashSet, Either, HashMap, ReadonlyArray } from '@neo4j-cc/prelude';
 
-import * as Order from '@fp-ts/core/typeclass/Order';
-
-import * as PE from "@fp-ts/schema/ParseError";
+import * as PR from "@fp-ts/schema/ParseResult";
+import * as String from "@fp-ts/core/String"
 
 import { Argv, CommandModule } from 'yargs';
 
@@ -126,8 +125,8 @@ const authorsFromMessages = (messages:Chunk.Chunk<KhorosMessage>, khoros:KhorosS
   // Effect.map(Chunk.compact),
   // Effect.map(Chunk.map(decodeAuthor)),
   // Effect.map(x => x),
-  // Effect.collect(Chunk.map((a) => PE.isSuccess(a) ? Either.right(a.right) : Either.left(a.left))),
-  // Effect.flatMap(Effect.forEach(pr => PE.isSuccess(pr) ? Effect.succeed(pr.right) : Effect.fail(pr.left[0]))),
+  // Effect.collect(Chunk.map((a) => PR.isSuccess(a) ? Either.right(a.right) : Either.left(a.left))),
+  // Effect.flatMap(Effect.forEach(pr => PR.isSuccess(pr) ? Effect.succeed(pr.right) : Effect.fail(pr.left[0]))),
 )
 
 const topicsFromMessages = (messages:Chunk.Chunk<KhorosMessage>, khoros:KhorosService) => pipe(
@@ -135,7 +134,7 @@ const topicsFromMessages = (messages:Chunk.Chunk<KhorosMessage>, khoros:KhorosSe
   Effect.forEach( message => (message.depth === 0) ? Effect.succeed(message) : khoros.getMessageById(message.topic.id)),
   Effect.map(dedupeById),
   Effect.map(Chunk.map(decodeMessage)),
-  Effect.flatMap(Effect.forEach(pr => PE.isSuccess(pr) ? Effect.succeed(pr.right) : Effect.fail(new JsonBodyError("could not decode a KhorosMessage"))))
+  Effect.flatMap(Effect.forEach(pr => PR.isSuccess(pr) ? Effect.succeed(pr.right) : Effect.fail(new JsonBodyError("could not decode a KhorosMessage"))))
 )
 
 const postsFromMessages = (messages:Chunk.Chunk<KhorosMessage>) => pipe(
@@ -156,7 +155,7 @@ const syncSsoUsers = (userPairs:Chunk.Chunk<[KhorosAuthor, SsoUserDetails]>, dis
   // Effect.map(HashMap.from)
   // Effect.flatMap(Effect.forEach(jsonBody)),
   // Effect.map(Chunk.map(decodeUser)),
-  // Effect.flatMap(Effect.forEach(pr => PE.isSuccess(pr) ? Effect.succeed(pr.right) : Effect.fail(pr.left[0]) ))
+  // Effect.flatMap(Effect.forEach(pr => PR.isSuccess(pr) ? Effect.succeed(pr.right) : Effect.fail(pr.left[0]) ))
   // Effect.asUnit
 )
 
@@ -175,7 +174,7 @@ const doCommand = (argv:CommandOptions):Effect.Effect<KhorosService | DiscourseS
       khoros.getAllMessagesOnDate({day:dateOfDay(argv.date)}),
       Effect.map(sortItemsByMessageDepth),
       Effect.map(Chunk.map(decodeMessage)),
-      Effect.flatMap(Effect.forEach(pr => PE.isSuccess(pr) ? Effect.succeed(pr.right) : Effect.fail(new DiscourseServiceError(`failed to decode KhorosMessage, because: ${JSON.stringify(pr.left[0])}`))))
+      Effect.flatMap(Effect.forEach(pr => PR.isSuccess(pr) ? Effect.succeed(pr.right) : Effect.fail(new DiscourseServiceError(`failed to decode KhorosMessage, because: ${JSON.stringify(pr.left[0])}`))))
     )),
     Effect.tap( ({khoros_messages}) => Effect.log(`khoros_messages: ${khoros_messages.length}`)),
     // Effect.tap( ({khoros_messages}) => toConsole(JSON.stringify(Chunk.toReadonlyArray(khoros_messages)))),
@@ -228,7 +227,7 @@ const doCommand = (argv:CommandOptions):Effect.Effect<KhorosService | DiscourseS
           khoros.getLabelsForMessage(khorosTopic.id), 
           Effect.map( labels => [...tags, ...labels]),
           Effect.map(ReadonlyArray.map(tag => tag.toLowerCase())),
-          Effect.map(ReadonlyArray.uniq)
+          Effect.map(ReadonlyArray.uniq(String.Equivalence))
         )),
         // Effect.tap(tags => Effect.log(`message tags: ${JSON.stringify(tags)}`)),
         Effect.map( allTags => renameCategorySlugs(allTags, discourse_categories) ),
@@ -351,7 +350,7 @@ const handler = (argv:CommandOptions) => pipe(
     Layer.provideMerge(makeLocalFileSystemService({path:'.'})),
     Layer.provideMerge(makeDiscourseService(toDiscourseConfig(argv)))
   )),
-  Effect.unsafeRunPromise
+  Effect.runPromise
 )
 
 export const KhorosToDiscourseCommandModule:CommandModule<unknown, CommandOptions> = {
@@ -373,8 +372,9 @@ const renameCategorySlugs = (allTags: string[], discourse_categories: readonly D
 
 const removeUnacceptableTags = (allTags: string[]): readonly string[] => pipe(
   allTags,
-  ReadonlyArray.filter( tag => pipe(
-    ReadonlyArray.of(["kudos-4"]),
-    ReadonlyArray.elem(tag)
-  ))
+  ReadonlyArray.difference(String.Equivalence)(["kudos-4"]) // removes given tags from allTags
+  // ReadonlyArray.filter( tag => pipe(
+  //   ReadonlyArray.of(["kudos-4"]),
+  //   ReadonlyArray.contains((self, that) => (self === that)))
+  // ))
 )

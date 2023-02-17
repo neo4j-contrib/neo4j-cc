@@ -4,7 +4,7 @@ import * as P from "@fp-ts/schema/Parser";
 
 import { Effect, Layer, Context, pipe, Option } from "@neo4j-cc/prelude"
 
-import { jsonBody, request, headersAsRecord } from '@neo4j-cc/data-access-http'
+import { jsonBody, request, headersAsRecord, JsonBodyError } from '@neo4j-cc/data-access-http'
 
 import { DiscourseApiConfiguration } from '../data-access-discourse';
 import { CreateTopicPostPMResponseContent, GetTopicResponseContent } from "../discourse.types";
@@ -193,8 +193,8 @@ export const getTopicByExternalIdAt = (api:DiscourseApiConfiguration):({ externa
     return pipe(
       request(`${api.baseUrl}/t/external_id/${external_id}.json`, requestOptions),
       Effect.flatMap(jsonBody),
-      Effect.map(x => Option.some<GetTopicResponseContent>(x as GetTopicResponseContent)),
-      Effect.catchTag("HttpError", (error) => (error.response.status === 404) ? Effect.succeed(Option.none) : Effect.fail(error))
+      Effect.map<unknown, Option.Option<GetTopicResponseContent>>(x => Option.some(x as GetTopicResponseContent)),
+      Effect.catchTag("HttpError", (error) => (error.response.status === 404) ? Effect.succeed(Option.none<GetTopicResponseContent>()) : Effect.fail(error))
     )
 
   }

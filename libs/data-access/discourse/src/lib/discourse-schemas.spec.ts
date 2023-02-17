@@ -1,6 +1,6 @@
 import {pipe, Effect, Chunk, Option, Either, ReadonlyArray } from '@neo4j-cc/prelude';
 
-import * as PE from "@fp-ts/schema/ParseError";
+import * as PR from "@fp-ts/schema/ParseResult";
 
 import {decodePrivateUser, decodePublicUser, extractCategoriesFrom} from './discourse-schemas'
 
@@ -15,7 +15,7 @@ describe("Discourse User", () => {
       samplePublicUsers,
       Chunk.fromIterable,
       Chunk.map(decodePublicUser),
-      Chunk.filter(PE.isSuccess),
+      Chunk.filter(PR.isSuccess),
       Chunk.map( pe => pe.right),
       // Chunk.filter(PE.isFailure),
       // Chunk.map( pe => pe.left),
@@ -31,7 +31,7 @@ describe("Discourse User", () => {
       samplePrivateUsers,
       Chunk.fromIterable,
       Chunk.map(decodePrivateUser),
-      Chunk.filter(PE.isSuccess),
+      Chunk.filter(PR.isSuccess),
       Chunk.map( pe => pe.right),
       // Chunk.filter(PE.isFailure),
       // Chunk.map( pe => pe.left),
@@ -50,7 +50,7 @@ describe("DiscourseCategory", () => {
       sampleDiscourseCategoryList as unknown as ListCategoriesResponseContent,
       extractCategoriesFrom,
       Effect.map(Chunk.map(category => category.slug)),
-      Effect.unsafeRunSync
+      Effect.runSync
     )
     // console.log(decodedCategories)
     expect(Chunk.size(decodedCategories)).toBeGreaterThan(sampleDiscourseCategoryList.category_list.categories.length)

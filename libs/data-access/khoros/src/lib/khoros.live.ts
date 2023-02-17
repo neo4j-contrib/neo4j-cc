@@ -6,10 +6,10 @@ import { CancelablePromise, KhorosV2 } from "./generated";
 import { QueryASingleCollection, Item } from "./generated/models/quicktypes";
 import { GetAllMessagesArgs, GetUserByIdArgs, GetUsersByIdRangeArgs, GetMessagesOnDateArgs, KhorosApiConfig, KhorosService, GetMessagesWithCursor, GetMessageOnDateWithCursor, KhorosError } from "./khoros.service";
 import { endOfDay, getMilliseconds, getTime, startOfDay } from "date-fns";
-import { decodeAuthor, decodeBoard, decodeMessage } from "./khoros-schemas";
+import { decodeAuthor, decodeBoard, decodeKudo, decodeMessage } from "./khoros-schemas";
 
 
-import * as PE from "@fp-ts/schema/ParseError";
+import * as PR from "@fp-ts/schema/ParseResult";
 
 export interface KhorosServiceAuthorization {
   url: string,
@@ -68,7 +68,7 @@ export const makeAuthorizedService = (auth:KhorosServiceAuthorization):KhorosSer
       {q: `SELECT * FROM messages WHERE id = '${messageId}'`}
     ),
     Effect.flatMap( (result) => (result.data.size > 0) 
-      ? pipe(result.data.items[0], decodeMessage, pr => PE.isSuccess(pr) ? Effect.succeed(pr.right) : Effect.fail(new KhorosError(`could not parse KhorosMessage ${result.data.items[0].id}, because: ${JSON.stringify(pr.left[0])}`)))
+      ? pipe(result.data.items[0], decodeMessage, pr => PR.isSuccess(pr) ? Effect.succeed(pr.right) : Effect.fail(new KhorosError(`could not parse KhorosMessage ${result.data.items[0].id}, because: ${JSON.stringify(pr.left[0])}`)))
       : Effect.fail(new KhorosError(`Message ${messageId} not found`)))
   )
 
@@ -77,19 +77,39 @@ export const makeAuthorizedService = (auth:KhorosServiceAuthorization):KhorosSer
       {q: `SELECT * FROM tags WHERE messages.id = '${messageId}'`}
     ),
     Effect.flatMap( (result) => (result.data.size > 0) ? Effect.succeed(Chunk.fromIterable(result.data.items)) : Effect.succeed(Chunk.empty<Item>())),
-    Effect.map(Chunk.map(item => (item.text !== undefined) ? Option.some(item.text) : Option.none)),
+    Effect.map(Chunk.map(item => (item.text !== undefined) ? Option.some(item.text) : Option.none<string>())),
     Effect.map(Chunk.compact),
     Effect.map(Chunk.toReadonlyArray)
   )
 
+  const getCustomTagsForMessage = (messageId:string) => pipe(
+    query<QueryASingleCollection>(
+      {q: `SELECT * FROM custom_tags WHERE messages.id = '${messageId}'`}
+    ),
+    Effect.flatMap( (result) => (result.data.size > 0) ? Effect.succeed(Chunk.fromIterable(result.data.items)) : Effect.succeed(Chunk.empty<Item>())),
+    Effect.map(Chunk.map(item => (item.text !== undefined) ? Option.some(item.text) : Option.none<string>())),
+    Effect.map(Chunk.compact),
+    Effect.map(Chunk.toReadonlyArray)
+  )
+  
   const getLabelsForMessage = (messageId:string) => pipe(
     query<QueryASingleCollection>(
       {q: `SELECT * FROM labels WHERE messages.id = '${messageId}'`}
     ),
     Effect.flatMap( (result) => (result.data.size > 0) ? Effect.succeed(Chunk.fromIterable(result.data.items)) : Effect.succeed(Chunk.empty<Item>())),
-    Effect.map(Chunk.map(item => (item.text !== undefined) ? Option.some(item.text) : Option.none)),
+    Effect.map(Chunk.map(item => (item.text !== undefined) ? Option.some(item.text) : Option.none<string>())),
     Effect.map(Chunk.compact),
     Effect.map(Chunk.toReadonlyArray)
+  )
+
+  const getKudosForMessage = (messageId:string) => pipe(
+    query<QueryASingleCollection>(
+      {q: `SELECT * FROM kudos WHERE message.id = '${messageId}'`}
+    ),
+    Effect.flatMap( (result) => (result.data.size > 0) ? Effect.succeed(Chunk.fromIterable(result.data.items)) : Effect.succeed(Chunk.empty<Item>())),
+    Effect.map(Chunk.map(decodeKudo)),
+    Effect.map(Chunk.map(pr => PR.isSuccess(pr) ? Effect.succeed(pr.right) : Effect.fail(pr.left[0]))),
+    Effect.flatMap(Effect.collectAll)
   )
 
   const getTopicsOnDate = ({day}:GetMessagesOnDateArgs) => pipe(
@@ -115,7 +135,7 @@ export const makeAuthorizedService = (auth:KhorosServiceAuthorization):KhorosSer
       ),
       Effect.delay(Duration.seconds(1)),
       Effect.map(({items, cursor}) => ({items:Chunk.fromIterable(items), cursor})),
-      Effect.map( (page) =>  (Chunk.size(page.items) > 0) ? Option.some([page.items, page.cursor]) : Option.none))
+      Effect.map( (page) =>  (Chunk.size(page.items) > 0) ? Option.some([page.items, page.cursor]) : Option.none()))
     ),
     Effect.map(Chunk.flatten)
   )
@@ -139,7 +159,7 @@ export const makeAuthorizedService = (auth:KhorosServiceAuthorization):KhorosSer
       Effect.delay(Duration.seconds(1)),
       Effect.flatMap(({items, cursor}) => Effect.struct({as:pager(items), cursor:Effect.succeed(cursor)})),
       
-      Effect.map( (page) => (page.cursor !== undefined) ? Option.some([page.as, page.cursor]) : Option.none))
+      Effect.map( (page) => (page.cursor !== undefined) ? Option.some([page.as, page.cursor]) : Option.none()))
     )
   )
   
@@ -151,7 +171,7 @@ export const makeAuthorizedService = (auth:KhorosServiceAuthorization):KhorosSer
     // Effect.tap((a) => Effect.log(JSON.stringify(a))),
     Effect.map( itemsFromResult ),
     Effect.map(Chunk.map(decodeBoard)),
-    Effect.flatMap(Effect.forEach(pr => PE.isSuccess(pr) 
+    Effect.flatMap(Effect.forEach(pr => PR.isSuccess(pr) 
       ? Effect.succeed(pr.right) 
       : Effect.fail(new KhorosError(`could not parse KhorosBoard, because: ${JSON.stringify(pr.left[0])}`)))
     )
@@ -164,9 +184,9 @@ export const makeAuthorizedService = (auth:KhorosServiceAuthorization):KhorosSer
     ),
     // Effect.tap((a) => Effect.log(JSON.stringify(a))),
     // Effect.flatMap( (result) => (result.data.size > 0) ? Effect.succeed(result.data.items[0]) : Effect.fail(new KhorosError(`User not found for ID ${id}`)))
-    Effect.map( (result) => (result.data.size > 0) ? Option.some(result.data.items[0]) : Option.none),
+    Effect.map( (result) => (result.data.size > 0) ? Option.some(result.data.items[0]) : Option.none()),
     Effect.map(Option.map(decodeAuthor)),
-    Effect.flatMap(Option.match(() => Effect.succeed(Option.none), (pr) => PE.isSuccess(pr) ? Effect.succeed(Option.some(pr.right)) : Effect.fail(pr.left[0])))
+    Effect.flatMap(Option.match(() => Effect.succeed(Option.none()), (pr) => PR.isSuccess(pr) ? Effect.succeed(Option.some(pr.right)) : Effect.fail(pr.left[0])))
   )
   
   const getUsersWithinRange = ({from, to}:GetUsersByIdRangeArgs) => pipe(
@@ -182,7 +202,7 @@ export const makeAuthorizedService = (auth:KhorosServiceAuthorization):KhorosSer
       query<QueryASingleCollection>(
         {q:`SELECT id FROM users ORDER BY id ASC ${optionalLimitLiQL(1000)} ${optionalCursorLiQL(cursor)}`}
       ),
-      Effect.map( (result) => ((result.data.size > 0) && (result.data.next_cursor !== undefined)) ? Option.some([Chunk.fromIterable(result.data.items), result.data.next_cursor]) : Option.none)
+      Effect.map( (result) => ((result.data.size > 0) && (result.data.next_cursor !== undefined)) ? Option.some([Chunk.fromIterable(result.data.items), result.data.next_cursor]) : Option.none())
     )),
     Effect.map(Chunk.flatten),
     // Effect.flatMap((items) => Effect.tuple(Effect.succeed(0), (items.length > 10) ? Effect.succeed(1) : Effect.fail("why")))
@@ -201,7 +221,9 @@ export const makeAuthorizedService = (auth:KhorosServiceAuthorization):KhorosSer
     getAllUserIDs,
     getUsersWithinRange,
     getTagsForMessage,
-    getLabelsForMessage
+    getLabelsForMessage,
+    getKudosForMessage,
+    getCustomTagsForMessage
   }
 }
 

@@ -9,7 +9,7 @@ import { KhorosService } from './khoros.service';
 
 const TEST_TIMEOUT = 20 * 1000;
 
-const KHOROS_API_URL = process.env.NX_KHOROS_API_URL || 'https://community.neo4j.com'
+const KHOROS_API_URL = process.env.NX_KHOROS_API_URL || 'https://khoros.neo4j.com'
 const KHOROS_LOGIN = process.env.NX_KHOROS_LOGIN || '<missing login for Khoros>'
 const KHOROS_PASSWORD = process.env.NX_KHOROS_PASSWORD || '<missing password for Khoros>'
 
@@ -33,7 +33,7 @@ describe("LiveKhorosService", () => {
     const result = await pipe(
       live,
       Effect.flatMap( (khoros) => khoros.query<QueryASingleCollection>({q:`SELECT * FROM messages ORDER BY last_publish_time DESC LIMIT 10`})),
-      Effect.unsafeRunPromise
+      Effect.runPromise
     )
     // console.log(result);
     expect(result).toBeDefined()
@@ -45,7 +45,7 @@ describe("LiveKhorosService", () => {
       Effect.bind("khoros", () => live),
       Effect.bind("result", ({khoros}) => khoros.query<QueryASingleCollection>({q:`SELECT * FROM messages ORDER BY last_publish_time DESC LIMIT 10`})),
       Effect.map(({result}) => result),
-      Effect.unsafeRunPromise
+      Effect.runPromise
 
     )
     // console.log(result);
@@ -68,7 +68,7 @@ describe("LiveKhorosService", () => {
   //   )
   //   const result = await pipe(
   //     unfoldMessages,
-  //     Effect.unsafeRunPromise
+  //     Effect.runPromise
   //   )
   //   // console.log(Chunk.unsafeHead(result))
   //   expect(result.length).toBe(pageLimit * pageSize)
@@ -82,7 +82,7 @@ describe("LiveKhorosService", () => {
       Effect.bind("khoros", () => live),
       Effect.bind("page1", ({khoros}) => khoros.getMessagesWithCursor({limit:resultLimit})),
       Effect.bind("page2", ({khoros, page1}) => khoros.getMessagesWithCursor({cursor: page1.cursor})),
-      Effect.unsafeRunPromise
+      Effect.runPromise
     )
     // console.log(JSON.stringify(result.page1.items))
     expect(result.page1).toBeDefined();
@@ -100,7 +100,7 @@ describe("LiveKhorosService", () => {
       live,
       Effect.flatMap( (khoros) => khoros.getAllMessages(pager)),
       Effect.map( (a)  => a.length),
-      Effect.unsafeRunPromise
+      Effect.runPromise
     )
     expect(result).toBeGreaterThan(1)
   })
@@ -108,7 +108,7 @@ describe("LiveKhorosService", () => {
     const result = await pipe(
       live,
       Effect.flatMap( (khoros) => khoros.getBoards()),
-      Effect.unsafeRunPromise
+      Effect.runPromise
     )
     // console.log(result)
     expect(result.length).toBeGreaterThan(4)
@@ -119,11 +119,11 @@ describe("LiveKhorosService", () => {
     const result = await pipe(
       live,
       Effect.flatMap( (khoros) => khoros.getUserById({id:testableUserId})),
-      Effect.unsafeRunPromiseEither
+      Effect.runPromise
     )
     // console.log(result)
-    expect(Either.isRight(result)).toBeTruthy();
-    expect(Either.getOrNull(result)?.id).toBe(testableUserId)
+    expect(Option.isSome(result)).toBeTruthy();
+    expect(Option.getOrNull(result)?.id).toBe(testableUserId)
   })
 
   it("get latest messages", async () => {
@@ -131,9 +131,9 @@ describe("LiveKhorosService", () => {
       live,
       Effect.flatMap( (khoros) => khoros.getLatestMessages()),
       Effect.map(Chunk.unsafeHead),
-      Effect.unsafeRunPromise
+      Effect.runPromise
     )
-    console.log(result)
+    // console.log(result)
     expect(result).toBeDefined()
   })
   it("can get tags for a message", async () => {
@@ -142,8 +142,7 @@ describe("LiveKhorosService", () => {
       Effect.bind("khoros", () => live),
       Effect.bind("messageWithTags", ({khoros}) => pipe(khoros.getMessageById('64247'))),
       Effect.flatMap(({khoros, messageWithTags}) => khoros.getTagsForMessage(messageWithTags.id)),
-      Effect.map(Chunk.toReadonlyArray),
-      Effect.unsafeRunPromise
+      Effect.runPromise
     )
     // console.log('tags:', result)
     expect(result).toBeDefined()
@@ -156,8 +155,7 @@ describe("LiveKhorosService", () => {
       Effect.bind("khoros", () => live),
       Effect.bind("messageWithTags", ({khoros}) => pipe(khoros.getMessageById('64017'))),
       Effect.flatMap(({khoros, messageWithTags}) => khoros.getLabelsForMessage(messageWithTags.id)),
-      Effect.map(Chunk.toReadonlyArray),
-      Effect.unsafeRunPromise
+      Effect.runPromise
     )
     // console.log('labels:', result)
     expect(result).toBeDefined()

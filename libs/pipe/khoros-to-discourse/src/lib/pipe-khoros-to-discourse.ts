@@ -1,6 +1,6 @@
 import {pipe, Effect, Chunk, Option, ReadonlyArray} from '@neo4j-cc/prelude';
 
-import * as PE from "@fp-ts/schema/ParseError";
+import * as PR from "@fp-ts/schema/ParseResult";
 import { nanoid } from 'nanoid';
 import { parseISO, formatISO, isSameSecond } from 'date-fns'
 
@@ -21,7 +21,7 @@ export const khorosToSsoUserDetails = (author:KhorosAuthor):Option.Option<SsoUse
       username: author.login,
       author: false
     })
-  : Option.none
+  : Option.none<SsoUserDetails>()
 )
 
 export const externalIdFor = (message:KhorosMessage) => `khoros_${message.id}`
@@ -65,12 +65,12 @@ export const khorosToDiscoursePost = (topic_id: number, post:KhorosMessage):Effe
 export const findDiscourseTopicForKhorosMessage = (khorosMessageId:string, topicPairs:Chunk.Chunk<[KhorosMessage, GetTopicResponseContent]>) => pipe(
   topicPairs,
   Chunk.findFirst( topicPair => topicPair[0].id === khorosMessageId),
-  Option.flatMap( foundPair => (foundPair[1].id !== undefined) ? Option.some(foundPair[1]) : Option.none)
+  Option.flatMap( foundPair => (foundPair[1].id !== undefined) ? Option.some(foundPair[1]) : Option.none())
 )
 
 export const topicHasPost = (topic:GetTopicResponseContent, post:NewDiscoursePost, postedAsUsername:string) => pipe(
-  (topic.post_stream !== undefined) ? Option.some(topic.post_stream) : Option.none,
-  Option.flatMap(post_stream => (post_stream.posts !== undefined) ? Option.some(post_stream.posts) : Option.none),
+  (topic.post_stream !== undefined) ? Option.some(topic.post_stream) : Option.none(),
+  Option.flatMap(post_stream => (post_stream.posts !== undefined) ? Option.some(post_stream.posts) : Option.none()),
   Option.flatMap(posts => pipe(
     Chunk.fromIterable(posts),
     Chunk.findFirst(existingPost => (existingPost.created_at === post.created_at) && (existingPost.username === postedAsUsername))
@@ -90,8 +90,8 @@ export const showTime = (a:string|undefined) => (a !== undefined)
     : 'unknown'
 
 export const findPostInTopic = (topic:GetTopicResponseContent, newPost:NewDiscoursePost, postedAsUsername:string) => pipe(
-  (topic.post_stream !== undefined) ? Option.some(topic.post_stream) : Option.none,
-  Option.flatMap(post_stream => (post_stream.posts !== undefined) ? Option.some(post_stream.posts) : Option.none),
+  (topic.post_stream !== undefined) ? Option.some(topic.post_stream) : Option.none(),
+  Option.flatMap(post_stream => (post_stream.posts !== undefined) ? Option.some(post_stream.posts) : Option.none()),
   Option.flatMap(posts => pipe(
     Chunk.fromIterable(posts),
     // Chunk.map(existingPost => {console.log(`\texisting post: ${showTime(existingPost.created_at)} by ${existingPost.username}`); return existingPost}),

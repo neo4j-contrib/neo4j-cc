@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
 import * as S from "@fp-ts/schema/Schema";
 import * as P from "@fp-ts/schema/Parser";
-import * as PE from "@fp-ts/schema/ParseError";
+import * as PR from "@fp-ts/schema/ParseResult";
 
 import { Effect, Layer, Context, pipe } from "@neo4j-cc/prelude"
 
@@ -56,7 +56,7 @@ export const acceptPostAt = (api:DiscourseApiConfiguration) => {
       request(`${api.baseUrl}/solution/accept`, requestOptions),
       Effect.flatMap(jsonBody),
       Effect.map(x => decodeOperationSuccessResponse(x)),
-      Effect.flatMap( pr => PE.isSuccess(pr) ? Effect.succeed(pr.right) : Effect.fail(pr.left[0]))
+      Effect.flatMap( pr => PR.isSuccess(pr) ? Effect.succeed(pr.right) : Effect.fail(pr.left[0]))
     )
 
   }

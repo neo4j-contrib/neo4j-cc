@@ -9,11 +9,11 @@ const TEST_TIMEOUT = 20 * 1000;
 
 describe("KhorosService", () => {
   const api = new KhorosV2({
-    BASE: `${process.env.NX_KHOROS_API_URL || 'https://community.neo4j.com'}/api/2.0` // "https://community.neo4j.com/api/2.0"
+    BASE: `${process.env.NX_KHOROS_API_URL || 'https://khoros.neo4j.com'}/api/2.0` // "https://community.neo4j.com/api/2.0"
   })
 
   const makeLiveKhorosServiceFromEnvironment = () => {
-    const KHOROS_API_URL = process.env.NX_KHOROS_API_URL || 'https://community.neo4j.com'
+    const KHOROS_API_URL = process.env.NX_KHOROS_API_URL || 'https://khoros.neo4j.com'
     const KHOROS_LOGIN = process.env.NX_KHOROS_LOGIN || '<missing login for Khoros>'
     const KHOROS_PASSWORD = process.env.NX_KHOROS_PASSWORD || '<missing password for Khoros>'
 
@@ -30,7 +30,7 @@ describe("KhorosService", () => {
         () => api.default.getSearch({q:`SELECT * FROM messages ORDER BY last_publish_time DESC LIMIT 10`}),
         (reason) => Effect.fail(reason)
       ),
-      Effect.unsafeRunPromise
+      Effect.runPromise
     )
     // console.log(result);
     expect(result).toBeDefined()
@@ -43,7 +43,7 @@ describe("KhorosService", () => {
         () => api.default.getSearch({q:`SELECT * FROM messages ORDER BY last_publish_time DESC LIMIT 10`}),
         (reason) => reason
       )),
-      Effect.unsafeRunPromise
+      Effect.runPromise
 
     )
     // console.log(result);
@@ -72,7 +72,7 @@ describe("KhorosService", () => {
   //   const result = await pipe(
   //     getFromKhoros,
   //     Effect.provideLayer(makeLiveKhorosServiceFromEnvironment()),
-  //     Effect.unsafeRunPromise
+  //     Effect.runPromise
   //   )
   //   // console.log(Chunk.unsafeHead(result))
   //   expect(result.length).toBe(pageLimit * pageSize)

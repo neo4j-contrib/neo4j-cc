@@ -26,7 +26,7 @@ describe("acceptPost", () => {
       Effect.flatMap( (newTopic) => createPost(arbitraryPost(newTopic.topic_id))),
       Effect.flatMap( (firstReply) => acceptPost(firstReply)),
       // Effect.flatMap(jsonBody),
-      Effect.unsafeRunPromiseEither
+      Effect.runPromiseEither
     )
 
     if (Either.isLeft(result)) {

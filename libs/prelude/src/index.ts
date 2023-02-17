@@ -1,4 +1,4 @@
-export { pipe } from "@fp-ts/data/Function";
+export { pipe } from "@fp-ts/core/Function";
 
 export * as Schedule from "@effect/io/Schedule"
 export * as Layer from "@effect/io/Layer";
@@ -8,12 +8,13 @@ export * as Exit from "@effect/io/Exit"
 export * as Cause from "@effect/io/Cause"
 export * as Scope from "@effect/io/Scope";
 
-export * as Option from "@fp-ts/data/Option"
-export * as Either from "@fp-ts/data/Either"
-export * as Context from "@fp-ts/data/Context"
-export * as Chunk from "@fp-ts/data/Chunk"
-export * as Duration from "@fp-ts/data/Duration"
-export * as ReadonlyArray from "@fp-ts/data/ReadonlyArray"
-export * as HashMap from "@fp-ts/data/HashMap"
-export * as HashSet from "@fp-ts/data/HashSet"
+export * as Option from "@fp-ts/core/Option"
+export * as Either from "@fp-ts/core/Either"
+export * as ReadonlyArray from "@fp-ts/core/ReadonlyArray"
+
+export * as Context from "@effect/data/Context"
+export * as Chunk from "@effect/data/Chunk"
+export * as Duration from "@effect/data/Duration"
+export * as HashMap from "@effect/data/HashMap"
+export * as HashSet from "@effect/data/HashSet"
 

@@ -38,7 +38,7 @@ const getCategories = ({discourse}:DiscourseCommandArgs) => pipe(
   discourse.listCategories(),
   // Effect.map(response => response.category_list.categories),
   Effect.map(Chunk.map( (category) => ([category.id, category.name] as [number, string]))),
-  Effect.map(HashMap.from)
+  Effect.map(HashMap.fromIterable)
 )
 
 const listCategories = pipe(
@@ -86,7 +86,7 @@ const handler = (argv:CommandOptions) =>  pipe(
   Effect.provideLayer(pipe(
     makeDiscourseService(toServiceConfig(argv))
   )),
-  Effect.unsafeRunPromise
+  Effect.runPromise
 )
 
 export const DiscourseCommandModule:CommandModule<unknown, CommandOptions> = {

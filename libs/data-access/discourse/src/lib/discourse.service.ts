@@ -2,7 +2,7 @@ import { Effect, Layer, Context, Option, Chunk, pipe, Schedule, Duration } from 
 import { FetchError, HttpError, jsonBody, JsonBodyError, request } from "@neo4j-cc/data-access-http";
 import { ApiResponse, Fetcher } from 'openapi-typescript-fetch';
 
-import * as PE from "@fp-ts/schema/ParseError";
+import * as PR from "@fp-ts/schema/ParseResult";
 
 import { DiscourseApiConfiguration } from './data-access-discourse'
 
@@ -11,7 +11,7 @@ import { GetSiteResponseContent, CreateTopicPostPMResponseContent, ListCategorie
 import { createOrUpdateSsoUserAt, SsoUserDetails } from "./actions/sync-sso";
 import { createPostAt, createTopicAsUserAt, createPostAsUserAt, createTopicAt, getOrCreateTopicAsUserAt, getOrCreateTopicAt, getTopicByExternalIdAt, NewDiscoursePost, NewDiscourseTopic } from "./actions/create-post";
 import { decodePublicUser, decodePrivateUser, DiscoursePublicUser, decodeCategory, DiscourseCategory, extractCategoriesFrom, DiscoursePrivateUser, DiscoursePublicUserItem, decodePublicUserItem } from "./discourse-schemas";
-import { ParseError } from "@fp-ts/schema/ParseError";
+import { ParseError } from "@fp-ts/schema/ParseResult";
 import { acceptPostAt, DiscoursePost, OperationSuccessResponse } from "./actions/accept-post";
 
 
@@ -37,7 +37,7 @@ export interface DiscourseService {
   readonly getTopic: (id: string) => Effect.Effect<never, DiscourseApiError, GetTopicResponseContent>
   readonly syncSso: (userDetails: SsoUserDetails) => Effect.Effect<never, DiscourseApiError, DiscoursePrivateUser>
   readonly getUser: (username: string) => Effect.Effect<never, DiscourseApiError, DiscoursePublicUser>
-  readonly getUserAdminDetails: (userid: number) => Effect.Effect<never, FetchError | PE.ParseError, DiscoursePrivateUser>
+  readonly getUserAdminDetails: (userid: number) => Effect.Effect<never, FetchError | ParseError, DiscoursePrivateUser>
   readonly getUserByExternalId: (external_id: string) => Effect.Effect<never, DiscourseApiError, DiscoursePublicUser>
 }
 
@@ -108,7 +108,7 @@ const configureDiscourseService = (api: DiscourseApiConfiguration): Effect.Effec
         // Effect.catchAll((error) => { console.log("failed to extract because", error); return Effect.fail(error)}),
         // Effect.map( response => response.category_list.categories ),
         // Effect.map(Chunk.fromIterable),
-        // Effect.flatMap(Effect.forEach(category => pipe(category, decodeCategory, (pr => PE.isSuccess(pr) ? Effect.succeed(pr.right) : Effect.fail(pr.left[0]))))),
+        // Effect.flatMap(Effect.forEach(category => pipe(category, decodeCategory, (pr => PR.isSuccess(pr) ? Effect.succeed(pr.right) : Effect.fail(pr.left[0]))))),
       ),
       listCategoryTopics: discourse.path("/c/{slug}/{id}/none.json").method('get').create(),
       listSubcategoryTopics: discourse.path("/c/{category}/{subcategory}/{id}.json").method('get').create(),
@@ -119,7 +119,7 @@ const configureDiscourseService = (api: DiscourseApiConfiguration): Effect.Effec
         Effect.map( response => response.directory_items),
         Effect.map(Chunk.fromIterable),
         Effect.map(Chunk.map(decodePublicUserItem)),
-        Effect.flatMap(Effect.forEach( pr => PE.isSuccess(pr) ? Effect.succeed(pr.right) : Effect.fail(pr.left[0])))
+        Effect.flatMap(Effect.forEach( pr => PR.isSuccess(pr) ? Effect.succeed(pr.right) : Effect.fail(pr.left[0])))
       ),
       // listUsersPublic: discourse.path("/directory_items.json").method('get').create(),
       listBadges: discourse.path("/admin/badges.json").method('get').create(),
@@ -132,19 +132,19 @@ const configureDiscourseService = (api: DiscourseApiConfiguration): Effect.Effec
         // Effect.tap( (response) => {console.log(response.user); return Effect.unit() }),
         // Effect.map((response) => decodeMinimalUser(response.user)),
         Effect.map(response => decodePublicUser(response.user)),
-        Effect.flatMap( parsedUser => PE.isSuccess(parsedUser) ? Effect.succeed(parsedUser.right) : Effect.fail(parsedUser.left[0]))
+        Effect.flatMap( parsedUser => PR.isSuccess(parsedUser) ? Effect.succeed(parsedUser.right) : Effect.fail(parsedUser.left[0]))
         // Effect.flatMap( (response) => decodeUser(response.user)),
       ),
       getUserAdminDetails: (userid: number) => pipe(
         requestFx(discourse.path("/admin/users/{id}.json").method('get').create(), {id:userid}),
         Effect.map(decodePrivateUser),
-        Effect.flatMap( parsedUser => PE.isSuccess(parsedUser) ? Effect.succeed(parsedUser.right) : Effect.fail(parsedUser.left[0]))
+        Effect.flatMap( parsedUser => PR.isSuccess(parsedUser) ? Effect.succeed(parsedUser.right) : Effect.fail(parsedUser.left[0]))
       ),
       getUserByExternalId: (external_id:string):Effect.Effect<never, DiscourseApiError, DiscoursePublicUser> => pipe(
         requestFx(discourse.path("/u/by-external/{external_id}.json").method('get').create(), {external_id}),
         // Effect.tap( (response) => {console.log(response.user); return Effect.unit() }),
         Effect.map((response) => decodePublicUser(response.user)),
-        Effect.flatMap( parsedUser => PE.isSuccess(parsedUser) ? Effect.succeed(parsedUser.right) : Effect.fail(parsedUser.left[0]))
+        Effect.flatMap( parsedUser => PR.isSuccess(parsedUser) ? Effect.succeed(parsedUser.right) : Effect.fail(parsedUser.left[0]))
         // Effect.flatMap( (response) => decodeUser(response.user)),
       ),
       createTopic: createTopicAt(api),

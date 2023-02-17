@@ -3,11 +3,11 @@ import {pipe, Chunk, ReadonlyArray} from "@neo4j-cc/prelude"
 /* eslint-disable @typescript-eslint/no-empty-interface */
 import * as S from "@fp-ts/schema/Schema";
 import * as P from "@fp-ts/schema/Parser";
-import * as PE from "@fp-ts/schema/ParseError";
 import * as Order from "@fp-ts/core/typeclass/Order";
 
 import { Item } from './generated/models/quicktypes';
-import * as Equivalence from '@fp-ts/data/Equivalence'
+import * as Equivalence from '@fp-ts/core/typeclass/Equivalence'
+
 
 export const KhorosAvatar = S.struct({
   type: S.literal('avatar'),
@@ -158,14 +158,14 @@ export interface KhorosMessage extends S.Infer<typeof KhorosMessage> {}
 
 export const decodeMessage = P.decode<KhorosMessage>(KhorosMessage)
 
-export const equivalentBySsoId = Equivalence.make<KhorosAuthor>((that) => (self) => (that.sso_id === self.sso_id))
+export const equivalentBySsoId = Equivalence.make<KhorosAuthor>((self, that) => (that.sso_id === self.sso_id))
 
-export const equivalentByItemId = Equivalence.make<Pick<Item, "id">>((that) => (self) => (that.id === self.id))
+export const equivalentByItemId = Equivalence.make<Pick<Item, "id">>((self, that) => (that.id === self.id))
 
 export const dedupeBySsoId = (chunks:Chunk.Chunk<KhorosAuthor>) => pipe(
   chunks,
   Chunk.toReadonlyArray,
-  ReadonlyArray.uniqBy(equivalentBySsoId),
+  ReadonlyArray.uniq(equivalentBySsoId),
   Chunk.fromIterable
 )
 
@@ -212,13 +212,39 @@ export const decodeBoard = P.decode<KhorosBoard>(KhorosBoard)
 
 export const compareNumbers = (that:number) => (self:number) => (that < self) ? 1 : (that > self) ? -1 : 0
 
-export const orderItemsByMessageDepth = Order.fromCompare<Item>((that) => (self) => compareNumbers(that.depth || 0)(self.depth || 0))
+export const orderItemsByMessageDepth = Order.make<Item>((self, that) => compareNumbers(that.depth || 0)(self.depth || 0))
 
 export const sortItemsByMessageDepth = Chunk.sort(orderItemsByMessageDepth)
 
 export const dedupeById = (chunks:Chunk.Chunk<Pick<Item, "id">>) => pipe(
   chunks,
   Chunk.toReadonlyArray,
-  ReadonlyArray.uniqBy(equivalentByItemId),
+  ReadonlyArray.uniq(equivalentByItemId),
   Chunk.fromIterable
 )
+
+export const KhorosKudo = S.struct({
+  type: S.literal("kudo"),
+  id: S.string, // "11940",
+  href: S.string, // "/kudos/11940",
+  user: S.struct({
+      type: S.literal("user"), // "user",
+      id: S.string, // "15016",
+      href: S.string, // "/users/15016",
+      view_href: S.string, // "https://khoros.neo4j.com/t5/user/viewprofilepage/user-id/15016",
+      login: S.string, // "Monica"
+  }),
+  message: S.struct({
+      type: S.literal("message"), // "message",
+      id: S.string, // "57501",
+      href: S.string, // "/messages/57501",
+      view_href: S.string, // "https://khoros.neo4j.com/t5/graphacademy-discussions/flask-configuration-for-training/m-p/57501#M1115"
+  }),
+  time: S.string, // "2022-08-14T22:32:00.000-07:00",
+  weight: S.number // 1
+})
+
+
+export interface KhorosKudo extends S.Infer<typeof KhorosKudo> {}
+
+export const decodeKudo = P.decode<KhorosKudo>(KhorosKudo)

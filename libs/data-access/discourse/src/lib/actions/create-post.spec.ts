@@ -19,7 +19,7 @@ describe.skip("createTopic", () => {
     const result = await pipe(
       createTopic(arbitraryTopic()),
       // Effect.flatMap(jsonBody),
-      Effect.unsafeRunPromiseEither
+      Effect.runPromiseEither
     )
     // 422 is because of a parse error of the params
     // see: https://github.com/discourse/discourse/blob/f05da14fb607c4b3906f0f83faea4b0f5694f043/app/controllers/admin/users_controller.rb#L511

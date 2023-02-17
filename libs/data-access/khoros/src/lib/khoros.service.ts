@@ -3,9 +3,9 @@ import { FetchError } from "@neo4j-cc/data-access-http";
 import { ApiResponse, ApiError, Fetcher } from 'openapi-typescript-fetch';
 import { KhorosV2 } from "./generated";
 import { QueryASingleCollection, Item } from "./generated/models/quicktypes";
-import { KhorosAuthor, KhorosBoard, KhorosMessage } from "./khoros-schemas";
+import { KhorosAuthor, KhorosBoard, KhorosKudo, KhorosMessage } from "./khoros-schemas";
 
-import * as PE from "@fp-ts/schema/ParseError";
+import * as PR from "@fp-ts/schema/ParseResult";
 
 export class KhorosError {
   readonly _tag = "KhorosError";
@@ -54,10 +54,12 @@ export interface KhorosService {
   readonly getBoards: () => Effect.Effect<never, FetchError | KhorosError, Chunk.Chunk<KhorosBoard>>
   readonly getAllUserIDs: () => Effect.Effect<never, FetchError, Chunk.Chunk<Item>>
   // readonly getUserById: (args:GetUserByIdArgs) => Effect.Effect<never, FetchError, readonly Item[]>
-  readonly getUserById: (args: GetUserByIdArgs) => Effect.Effect<never, FetchError | KhorosError | PE.ParseError, Option.Option<KhorosAuthor>>
+  readonly getUserById: (args: GetUserByIdArgs) => Effect.Effect<never, FetchError | KhorosError | PR.ParseError, Option.Option<KhorosAuthor>>
   readonly getUsersWithinRange: (args:GetUsersByIdRangeArgs) => Effect.Effect<never, FetchError, Chunk.Chunk<Item>>
   readonly getTagsForMessage: (messageId:string) => Effect.Effect<never, FetchError | KhorosError, readonly string[]>
   readonly getLabelsForMessage: (messageId:string) => Effect.Effect<never, FetchError | KhorosError, readonly string[]>
+  readonly getKudosForMessage: (messageId: string) => Effect.Effect<never, FetchError | PR.ParseError, Chunk.Chunk<KhorosKudo>>
+  readonly getCustomTagsForMessage: (messageId:string) => Effect.Effect<never, FetchError | KhorosError, readonly string[]>
 }
 
 export const KhorosService: Context.Tag<KhorosService> = Context.Tag<KhorosService>()

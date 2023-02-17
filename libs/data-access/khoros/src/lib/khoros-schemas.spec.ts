@@ -1,18 +1,20 @@
-import {pipe, Chunk, Option} from '@neo4j-cc/prelude';
+import {pipe, Chunk, Option, Either, Effect} from '@neo4j-cc/prelude';
 
 import * as Order from "@fp-ts/core/typeclass/Order";
 
-import * as PE from "@fp-ts/schema/ParseError";
+import * as PR from "@fp-ts/schema/ParseResult";
 
 import * as HashMap from "@fp-ts/data/HashMap"
 
 import * as jetpack from "fs-jetpack";
 
-import {dedupeBySsoId,decodeAuthor, compareNumbers, sortItemsByMessageDepth} from './khoros-schemas'
+import {dedupeBySsoId,decodeAuthor, compareNumbers, sortItemsByMessageDepth, decodeKudo} from './khoros-schemas'
 
-import authorsWithDuplicates from './khoros-authors-with-duplictes.json'
+import authorsWithDuplicates from './khoros-authors-with-duplicates.json'
 
 import khorosMessages from './khoros-messages.json'
+
+import khorosKudos from './khoros-kudos.json'
 
 import { Item } from './generated';
 
@@ -22,7 +24,7 @@ describe("KhorosAuthor", () => {
       authorsWithDuplicates,
       Chunk.fromIterable,
       Chunk.map(decodeAuthor),
-      Chunk.filter(PE.isSuccess),
+      Chunk.filter(PR.isSuccess),
       Chunk.map( pe => pe.right),
       dedupeBySsoId
     )
@@ -36,7 +38,7 @@ describe("ordering", () => {
     const expectedOrder = [1,2,3,4,5,6]
     const sortedNumbers = pipe(
       Chunk.fromIterable(jumbledNumbers),
-      Chunk.sort(Order.fromCompare(compareNumbers)),
+      Chunk.sort(Order.number),
       Chunk.toReadonlyArray
     )
     expect(sortedNumbers).toStrictEqual(expectedOrder)
@@ -51,7 +53,7 @@ describe("Khoros messages", () => {
     const result = pipe(
       testMap,
       HashMap.set('c', "See"),
-      HashMap.modifyAt('c', (v) => Option.some(pipe(v, Option.match(() => "NoSee", (previous) => `${previous}!`)))),
+      HashMap.modifyAt('c', (v:Option.Option<string>) => Option.some(pipe(v, Option.match(() => "NoSee", (previous) => `${previous}!`)))),
       HashMap.get('c')
     )
     expect(Option.isSome(result))
@@ -68,7 +70,7 @@ describe("Khoros messages", () => {
       Chunk.reduce(HashMap.empty<string, Chunk.Chunk<Item>>(), (m, item) => pipe(
         m, 
         HashMap.modifyAt(item.topic?.id || '-1', 
-          (v) => Option.some(pipe(v, Option.match(() => Chunk.of(item), (c) => Chunk.append(item)(c)))))
+          (v:Option.Option<Chunk.Chunk<string>>) => Option.some(pipe(v, Option.match(() => Chunk.of(item), (c) => Chunk.append(item)(c)))))
       ))
     )
     const threadedRecord = pipe(
@@ -83,5 +85,20 @@ describe("Khoros messages", () => {
     dirContext.write(filePath, threadedRecord);
     
     expect(threadedMessages).toBeDefined()
+  })
+})
+
+describe("KhorosKudos", () => {
+  it("decodes", async () => {
+    const result = await pipe(
+      Chunk.fromIterable(khorosKudos.data.items),
+      Chunk.map(decodeKudo),
+      Effect.forEach(pr => (PR.isSuccess(pr) ? Effect.succeed(pr.right) : Effect.fail(pr.left[0]))),
+      Effect.runPromiseEither
+    )
+    if (Either.isLeft(result)) {
+      console.error(result.left)
+    }
+    expect(Either.isRight(result))
   })
 })

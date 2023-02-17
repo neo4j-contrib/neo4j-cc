@@ -12,7 +12,7 @@ describe("LiveDiscourseService", () => {
       apiUsername: ''
     }
     const live = new LiveDiscourseService(config);
-    const site = await Effect.unsafeRunPromise(live.getSite())
+    const site = await Effect.runPromise(live.getSite())
     console.log(site)
     expect(true).toBeTruthy()
   })

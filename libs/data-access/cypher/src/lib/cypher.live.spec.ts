@@ -31,7 +31,7 @@ describe("cypher", () => {
 
 describe("cypher fx", () => {
   it("acquire driver works", async () => {
-    const driver = await Effect.unsafeRunPromise(
+    const driver = await Effect.runPromise(
       acquireDriver(localDriverArgs)
     )
     expect(driver).toBeDefined()
@@ -41,7 +41,7 @@ describe("cypher fx", () => {
       acquireDriver(localDriverArgs),
       Effect.map( (_) => "unexpected driver success"),
       Effect.catchTag("Neo4jDbmsError", () => Effect.succeed("expected driver failure")),
-      Effect.unsafeRunPromise
+      Effect.runPromise
     )
     expect(result).toBe("expected driver failure")
   })
@@ -49,7 +49,7 @@ describe("cypher fx", () => {
     const result = await pipe(
       acquireDriver(localDriverArgs),
       Effect.flatMap( (driver) => releaseDriver(driver) ),
-      Effect.unsafeRunPromise
+      Effect.runPromise
     )
   })
   it("acts as a scoped resource", async () => {

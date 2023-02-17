@@ -1,7 +1,7 @@
 import 'cross-fetch/polyfill';
 
 import { pipe } from "@neo4j-cc/prelude"
-import * as A from "@fp-ts/data/ReadonlyArray"
+import * as A from "@fp-ts/core/ReadonlyArray"
 
 import { discourseAPI, GetTopicContent } from './data-access-discourse';
 

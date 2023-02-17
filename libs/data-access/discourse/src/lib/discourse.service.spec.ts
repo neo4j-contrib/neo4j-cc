@@ -36,7 +36,7 @@ describe("DiscourseService", () => {
     const result = await pipe(
       discourseFunctionEffect(fut),
       // Effect.catchAllCause(Effect.logErrorCause),
-      Effect.unsafeRunPromiseEither
+      Effect.runPromiseEither
     )
     if (Either.isLeft(result)) {
       console.error(result.left)
@@ -51,7 +51,7 @@ describe("DiscourseService", () => {
       discourseFunctionEffect(createTopic),
       Effect.map(x => x),
       // Effect.catchAllCause(Effect.logErrorCause),
-      Effect.unsafeRunPromiseEither
+      Effect.runPromiseEither
     )
     if (Either.isLeft(result)) {
       console.error(result.left)
@@ -68,7 +68,7 @@ describe("DiscourseService", () => {
       Effect.bind("freshTopic", ({discourse}:{discourse:DiscourseService}) => discourse.createTopic(arbitraryTopic())),
       Effect.flatMap(({discourse, freshTopic}) => discourse.getTopic(`${freshTopic.topic_id}`)),
       discourseLayer,
-      Effect.unsafeRunPromiseEither
+      Effect.runPromiseEither
     )
     if (Either.isLeft(result)) {
       console.error(result.left)
@@ -83,7 +83,7 @@ describe("DiscourseService", () => {
       Effect.bind("freshTopic", ({discourse}:{discourse:DiscourseService}) => discourse.createTopic(arbitraryTopic())),
       Effect.flatMap(({discourse, freshTopic}) => discourse.createPost(arbitraryPost(freshTopic.topic_id))),
       discourseLayer,
-      Effect.unsafeRunPromiseEither
+      Effect.runPromiseEither
     )
     if (Either.isLeft(result)) {
       console.error(result.left)
@@ -103,7 +103,7 @@ describe("DiscourseService", () => {
       Effect.bind("freshTopic", ({discourse, topicDetail}) => discourse.createTopic(topicDetail)),
       Effect.flatMap(({discourse, topicDetail}) => discourse.getTopicByExternalId({external_id:topicDetail.external_id})),
       discourseLayer,
-      Effect.unsafeRunPromiseEither
+      Effect.runPromiseEither
     )
     if (Either.isLeft(result)) {
       console.error(result.left)
@@ -125,7 +125,7 @@ describe("DiscourseService", () => {
       Effect.bind("refreshedTopic", ({discourse, topicDetail}) => discourse.getOrCreateTopic(topicDetail)),
       Effect.flatMap(({freshTopic, refreshedTopic}) => (freshTopic.id === refreshedTopic.id) ? Effect.succeed("topics match") : Effect.fail("topics do not match")),
       discourseLayer,
-      Effect.unsafeRunPromiseEither
+      Effect.runPromiseEither
     )
     if (Either.isLeft(result)) {
       console.error(result.left)
@@ -150,7 +150,7 @@ describe("DiscourseService", () => {
     const result = await pipe(
       discourseFunctionEffect(createTopic),
       Effect.map(x => x),
-      Effect.unsafeRunPromiseEither
+      Effect.runPromiseEither
     )
     if (Either.isLeft(result)) {
       console.error(result.left)
@@ -166,7 +166,7 @@ describe("DiscourseService", () => {
     const result = await pipe(
       discourseFunctionEffect(createTopic),
       Effect.map(Option.match(() => "not found", JSON.stringify)),
-      Effect.unsafeRunPromiseEither
+      Effect.runPromiseEither
     )
     if (Either.isLeft(result)) {
       console.error(result.left)
@@ -186,7 +186,7 @@ describe("DiscourseService", () => {
       Effect.bind("firstReply", ({discourse, freshTopic}) => discourse.createPost(arbitraryPost(freshTopic.topic_id))),
       Effect.flatMap(({discourse, firstReply}) => discourse.acceptPost(firstReply)),
       discourseLayer,
-      Effect.unsafeRunPromiseEither
+      Effect.runPromiseEither
     )
     if (Either.isLeft(result)) {
       console.error(result.left)
@@ -217,7 +217,7 @@ describe("DiscourseService", () => {
         discourse.createPost
       )),
       discourseLayer,
-      Effect.unsafeRunPromiseEither
+      Effect.runPromiseEither
     )
     if (Either.isLeft(result)) {
       console.error(result.left)
@@ -236,7 +236,7 @@ describe("DiscourseService", () => {
       discourseFunctionEffect<Chunk.Chunk<DiscoursePublicUserItem>>(fut),
       // Effect.catchAllCause(Effect.logErrorCause),
       // Effect.map(response => response),
-      Effect.unsafeRunPromiseEither
+      Effect.runPromiseEither
     )
     if (Either.isLeft(result)) {
       console.error(result.left)
@@ -258,7 +258,7 @@ describe("DiscourseService", () => {
       discourseFunctionEffect(getAuthor),
       Effect.map(x => x),
       // Effect.catchAllCause(Effect.logErrorCause),
-      Effect.unsafeRunPromiseEither
+      Effect.runPromiseEither
     )
     if (Either.isLeft(result)) {
       console.error(result.left)
@@ -286,7 +286,7 @@ describe("DiscourseService", () => {
       discourseFunctionEffect(getAuthor),
       // Effect.map(x => x),
       // Effect.catchAllCause(Effect.logErrorCause),
-      Effect.unsafeRunPromiseEither
+      Effect.runPromiseEither
     )
     if (Either.isLeft(result)) {
       console.error(result.left)
@@ -312,12 +312,12 @@ describe("DiscourseService", () => {
       discourseFunctionEffect(getRandomByExternalId),
       // Effect.map(x => x),
       // Effect.catchAllCause(Effect.logErrorCause),
-      Effect.unsafeRunPromiseEither
+      Effect.runPromiseEither
     )
     if (Either.isLeft(result)) {
       console.error(result.left)
     } else {
-      console.log("found user by external id", result.right)
+      // console.log("found user by external id", result.right)
     }
     expect(Either.isRight(result)).toBeTruthy()
 
@@ -338,7 +338,7 @@ describe("DiscourseService", () => {
       discourseFunctionEffect(randomUserPost),
       // Effect.map(x => x),
       // Effect.catchAllCause(Effect.logErrorCause),
-      Effect.unsafeRunPromiseEither
+      Effect.runPromiseEither
     )
     if (Either.isLeft(result)) {
       console.error(result.left)

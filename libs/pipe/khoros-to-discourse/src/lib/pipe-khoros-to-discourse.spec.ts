@@ -1,6 +1,6 @@
 import {pipe, Effect, Chunk, Option, ReadonlyArray } from '@neo4j-cc/prelude';
 
-import * as PE from "@fp-ts/schema/ParseError";
+import * as PR from "@fp-ts/schema/ParseResult";
 
 import {KhorosAuthor, decodeAuthor, dedupeBySsoId, KhorosMessage, decodeMessage, decodeBoard} from '@neo4j-cc/data-access-khoros';
 
@@ -16,7 +16,7 @@ import khorosMessages from './khoros-messages.json'
 import khorosBoards from './khoros-boards.json'
 import discourseCategories from './discourse-categories.json'
 
-const expectChunksOfSuccess = Chunk.every(PE.isSuccess);
+const expectChunksOfSuccess = Chunk.every(PR.isSuccess);
 
 describe('Khoros Authors', () => {
 
@@ -43,7 +43,7 @@ describe('Khoros Authors', () => {
     const deduped = pipe(
       Chunk.fromIterable(khorosAuthorsWithDuplicates), 
       Chunk.map(decodeAuthor),
-      Chunk.filter(PE.isSuccess),
+      Chunk.filter(PR.isSuccess),
       Chunk.map( pe => pe.right),
       dedupeBySsoId
     )
@@ -54,7 +54,7 @@ describe('Khoros Authors', () => {
     const allCompliant = pipe(
       Chunk.fromIterable(khorosAuthors), 
       Chunk.map(decodeAuthor),
-      Chunk.filter(PE.isSuccess),
+      Chunk.filter(PR.isSuccess),
       Chunk.map( pe => pe.right),
       dedupeBySsoId,
       Chunk.map(khorosToDiscourseAuthor),
@@ -100,10 +100,10 @@ describe("Khoros Messages", () => {
     const result = await pipe(
       Chunk.fromIterable(khorosTopics),
       Chunk.map(decodeMessage),
-      Chunk.filter(PE.isSuccess),
+      Chunk.filter(PR.isSuccess),
       Chunk.map(x => x.right),
       Effect.forEach(message => khorosToDiscourseTopic(message, 10, ["test", "delete-me", "from-khoros"])),
-      Effect.unsafeRunPromise
+      Effect.runPromise
     )
     // console.log(JSON.stringify(Chunk.toReadonlyArray(result)));
     expect(result.length).toBe(khorosTopics.length)
@@ -117,8 +117,8 @@ describe("Categories and Boards", () => {
       khorosBoards,
       Chunk.fromIterable,
       Chunk.map(decodeBoard),
-      // Chunk.every(PE.isSuccess),
-      Chunk.filter(PE.isSuccess),
+      // Chunk.every(PR.isSuccess),
+      Chunk.filter(PR.isSuccess),
       Chunk.map(pr => pr.right.id)
     )
     // console.log("boards", Chunk.toReadonlyArray(result))
@@ -130,8 +130,8 @@ describe("Categories and Boards", () => {
       discourseCategories,
       Chunk.fromIterable,
       Chunk.map(decodeCategory),
-      // Chunk.every(PE.isSuccess),
-      Chunk.filter(PE.isSuccess),
+      // Chunk.every(PR.isSuccess),
+      Chunk.filter(PR.isSuccess),
       Chunk.map(pr => [pr.right.slug, pr.right.id])
       // Chunk.map( board => categoryForBoard(board.right))
     )
@@ -144,13 +144,13 @@ describe("Categories and Boards", () => {
     const messages = pipe(
       Chunk.fromIterable(khorosMessages),
       Chunk.map(decodeMessage),
-      Chunk.filter(PE.isSuccess),
+      Chunk.filter(PR.isSuccess),
       Chunk.map(pr => pr.right)
     );
     const categories = pipe(
       Chunk.fromIterable(discourseCategories),
       Chunk.map(decodeCategory),
-      Chunk.filter(PE.isSuccess),
+      Chunk.filter(PR.isSuccess),
       Chunk.map(pr => pr.right)
     )
     const result = pipe(
