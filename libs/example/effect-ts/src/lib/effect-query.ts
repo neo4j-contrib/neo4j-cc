@@ -1,12 +1,8 @@
-import * as Chunk from '@effect/data/Chunk';
-import * as HashSet from '@effect/data/HashSet';
-import * as Effect from '@effect/io/Effect';
 import * as DataSource from '@effect/query/DataSource';
 import * as Query from '@effect/query/Query';
 import * as Request from '@effect/query/Request';
-import * as Either from '@fp-ts/core/Either';
-import { pipe } from '@fp-ts/core/Function';
-import * as ReadonlyArray from '@fp-ts/core/ReadonlyArray';
+
+import { pipe, Either, Chunk, HashSet, Effect, ReadonlyArray } from "@neo4j-cc/prelude";
 
 export const userIds: ReadonlyArray<number> = ReadonlyArray.range(1, 26);
 

@@ -1,6 +1,5 @@
-import { pipe, Effect, Chunk, Option, ReadonlyArray } from '@neo4j-cc/prelude';
+import { pipe, Effect, Chunk, Option, ReadonlyArray, ParseResult as PR } from '@neo4j-cc/prelude';
 
-import * as PR from '@fp-ts/schema/ParseResult';
 import { nanoid } from 'nanoid';
 import { parseISO, formatISO, isSameSecond } from 'date-fns';
 

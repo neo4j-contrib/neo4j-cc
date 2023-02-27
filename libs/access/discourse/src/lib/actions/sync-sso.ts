@@ -1,13 +1,10 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import * as S from '@fp-ts/schema/Schema';
-import * as P from '@fp-ts/schema/Parser';
-import * as PR from '@fp-ts/schema/ParseResult';
 
 import { jsonBody, request } from '@neo4j-cc/access-http';
 
 import DiscourseSSO from 'discourse-sso';
 import { DiscourseApiConfiguration } from '../data-access-discourse';
-import { Effect, pipe } from '@neo4j-cc/prelude';
+import { Effect, pipe, Schema as S, Parser as P, ParseResult as PR } from '@neo4j-cc/prelude';
 import { decodePrivateUser } from '../discourse-schemas';
 
 export const SsoUserDetails = S.struct({

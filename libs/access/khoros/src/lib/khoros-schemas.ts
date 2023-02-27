@@ -1,12 +1,8 @@
-import { pipe, Chunk, ReadonlyArray } from '@neo4j-cc/prelude';
+import { pipe, Chunk, ReadonlyArray, Schema as S, Parser as P, Order, Equivalence } from '@neo4j-cc/prelude';
 
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import * as S from '@fp-ts/schema/Schema';
-import * as P from '@fp-ts/schema/Parser';
-import * as Order from '@fp-ts/core/typeclass/Order';
 
 import { Item } from './generated/models/quicktypes';
-import * as Equivalence from '@fp-ts/core/typeclass/Equivalence';
 
 export const KhorosAvatar = S.struct({
   type: S.literal('avatar'),

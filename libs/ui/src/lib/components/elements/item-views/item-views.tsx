@@ -1,12 +1,12 @@
-import { pipe } from '@neo4j-cc/prelude';
-import { has } from 'fp-ts/lib/ReadonlyRecord';
+import { pipe, ReadonlyRecord } from '@neo4j-cc/prelude';
+import { has } from '@effect/data/ReadonlyRecord';
 import './item-views.module.scss';
 
 export type ViewableRecord = Record<'key', string> & Partial<Record<'name', string>> & Record<string, unknown>
 export type ViewablePrimitive = string | number
 export type ViewableItem =  ViewableRecord | ViewablePrimitive;
 
-export const isViewableRecord = (o:unknown):o is ViewableRecord => (typeof o === 'object' && o !== null && has('key', o))
+export const isViewableRecord = (o:unknown):o is ViewableRecord => (typeof o === 'object' && o !== null && has(o as ReadonlyRecord.ReadonlyRecord<unknown>, 'key'))
 
 export const match = <B,>(
     onRecord:(item:ViewableRecord) => B, 

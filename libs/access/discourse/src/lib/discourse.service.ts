@@ -7,6 +7,8 @@ import {
   pipe,
   Schedule,
   Duration,
+  ParseError,
+  ParseResult
 } from '@neo4j-cc/prelude';
 import {
   FetchError,
@@ -16,8 +18,6 @@ import {
   request,
 } from '@neo4j-cc/access-http';
 import { ApiResponse, Fetcher } from 'openapi-typescript-fetch';
-
-import * as PR from '@fp-ts/schema/ParseResult';
 
 import { DiscourseApiConfiguration } from './data-access-discourse';
 
@@ -54,7 +54,7 @@ import {
   DiscoursePublicUserItem,
   decodePublicUserItem,
 } from './discourse-schemas';
-import { ParseError } from '@fp-ts/schema/ParseResult';
+
 import {
   acceptPostAt,
   DiscoursePost,
@@ -65,6 +65,7 @@ export class DiscourseServiceError {
   readonly _tag = 'DiscourseServiceError';
   constructor(readonly error: unknown, readonly detail?: unknown) {}
 }
+
 
 export type DiscourseApiError =
   | FetchError
@@ -273,7 +274,7 @@ const configureDiscourseService = (
         Effect.map(Chunk.map(decodePublicUserItem)),
         Effect.flatMap(
           Effect.forEach((pr) =>
-            PR.isSuccess(pr)
+            ParseResult.isSuccess(pr)
               ? Effect.succeed(pr.right)
               : Effect.fail(pr.left[0])
           )
@@ -299,7 +300,7 @@ const configureDiscourseService = (
         // Effect.map((response) => decodeMinimalUser(response.user)),
         Effect.map((response) => decodePublicUser(response.user)),
         Effect.flatMap((parsedUser) =>
-          PR.isSuccess(parsedUser)
+          ParseResult.isSuccess(parsedUser)
             ? Effect.succeed(parsedUser.right)
             : Effect.fail(parsedUser.left[0])
         )
@@ -313,7 +314,7 @@ const configureDiscourseService = (
         ),
         Effect.map(decodePrivateUser),
         Effect.flatMap((parsedUser) =>
-          PR.isSuccess(parsedUser)
+          ParseResult.isSuccess(parsedUser)
             ? Effect.succeed(parsedUser.right)
             : Effect.fail(parsedUser.left[0])
         )
@@ -332,7 +333,7 @@ const configureDiscourseService = (
         // Effect.tap( (response) => {console.log(response.user); return Effect.unit() }),
         Effect.map((response) => decodePublicUser(response.user)),
         Effect.flatMap((parsedUser) =>
-          PR.isSuccess(parsedUser)
+          ParseResult.isSuccess(parsedUser)
             ? Effect.succeed(parsedUser.right)
             : Effect.fail(parsedUser.left[0])
         )

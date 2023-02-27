@@ -1,7 +1,6 @@
 import 'cross-fetch/polyfill';
 
-import { pipe } from '@neo4j-cc/prelude';
-import * as A from '@fp-ts/core/ReadonlyArray';
+import { pipe, ReadonlyArray } from '@neo4j-cc/prelude';
 
 import { discourseAPI, GetTopicContent } from './data-access-discourse';
 
@@ -33,7 +32,7 @@ describe('dataAccessDiscourse', () => {
       });
       const xs = pipe(
         data.category_list.categories,
-        A.map((category) => [category.slug, category.id])
+        ReadonlyArray.map((category) => [category.slug, category.id])
       );
       // console.log(xs)
       expect(xs).toContainEqual(['neo4j-graph-platform', 10]);
@@ -43,7 +42,7 @@ describe('dataAccessDiscourse', () => {
       const { data } = await discourse.listGroups({});
       const xs = pipe(
         data.groups,
-        A.map((group) => group.name)
+        ReadonlyArray.map((group) => group.name)
       );
       // console.log(xs)
       expect(xs).toContain('ninja');
@@ -65,7 +64,7 @@ describe('dataAccessDiscourse', () => {
       });
       const xs = pipe(
         data,
-        A.map((user) => user.name)
+        ReadonlyArray.map((user) => user.name)
       );
       // console.log(xs)
       expect(xs).toContain('Michael Hunger');
@@ -79,7 +78,7 @@ describe('dataAccessDiscourse', () => {
       });
       const xs = pipe(
         data.directory_items,
-        A.map((user) => user.user.username)
+        ReadonlyArray.map((user) => user.user.username)
       );
       // console.log(xs)
       expect(xs).toContain('abk');
@@ -102,7 +101,7 @@ describe('dataAccessDiscourse', () => {
       const { data } = await discourse.listBadges({});
       const xs = pipe(
         data.badges,
-        A.map((user) => user.name)
+        ReadonlyArray.map((user) => user.name)
       );
       console.log(xs);
       expect(xs).toContain('Neo4j Ninja');
@@ -117,7 +116,7 @@ describe('dataAccessDiscourse', () => {
       });
       const xs = pipe(
         data.topic_list.topics,
-        A.map((topic) => topic.slug)
+        ReadonlyArray.map((topic) => topic.slug)
       );
       console.log(xs);
       expect(xs).toContain('about-the-neo4j-graph-platform');
@@ -134,7 +133,7 @@ describe('dataAccessDiscourse', () => {
       });
       const xs = pipe(
         data.topic_list.topics,
-        A.map((topic) => topic.slug)
+        ReadonlyArray.map((topic) => topic.slug)
       );
       // console.log(xs)
       expect(xs).toContain('about-the-cypher-category');

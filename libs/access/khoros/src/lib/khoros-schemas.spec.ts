@@ -1,10 +1,4 @@
-import { pipe, Chunk, Option, Either, Effect } from '@neo4j-cc/prelude';
-
-import * as Order from '@fp-ts/core/typeclass/Order';
-
-import * as PR from '@fp-ts/schema/ParseResult';
-
-import * as HashMap from '@fp-ts/data/HashMap';
+import { pipe, Chunk, Option, Either, Effect, Order, ParseResult as PR, HashMap } from '@neo4j-cc/prelude';
 
 import * as jetpack from 'fs-jetpack';
 

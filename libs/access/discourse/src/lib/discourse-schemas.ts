@@ -1,11 +1,7 @@
-import { pipe, Effect, Chunk, Option, ReadonlyArray } from '@neo4j-cc/prelude';
+import { pipe, Effect, Chunk, Option, Schema as S,  Parser as P, ParseResult as PR, Equivalence} from '@neo4j-cc/prelude';
 
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import * as S from '@fp-ts/schema/Schema';
-import * as P from '@fp-ts/schema/Parser';
-import * as PR from '@fp-ts/schema/ParseResult';
 
-import * as Equivalence from '@fp-ts/core/typeclass/Equivalence';
 import { ListCategoriesResponseContent } from './discourse.types';
 
 export const SsoRecord = S.struct({

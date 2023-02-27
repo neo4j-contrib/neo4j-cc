@@ -10,10 +10,10 @@ import {
   Either,
   HashMap,
   ReadonlyArray,
+  ParseResult as PR,
+  String
 } from '@neo4j-cc/prelude';
 
-import * as PR from '@fp-ts/schema/ParseResult';
-import * as String from '@fp-ts/core/String';
 
 import { Argv, CommandModule } from 'yargs';
 

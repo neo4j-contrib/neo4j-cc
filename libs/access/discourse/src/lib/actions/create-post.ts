@@ -1,8 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import * as S from '@fp-ts/schema/Schema';
-import * as P from '@fp-ts/schema/Parser';
 
-import { Effect, Layer, Context, pipe, Option } from '@neo4j-cc/prelude';
+import { Effect, Layer, Context, pipe, Option, Schema as S, Parser as P } from '@neo4j-cc/prelude';
 
 import {
   jsonBody,

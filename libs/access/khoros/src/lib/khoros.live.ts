@@ -8,6 +8,7 @@ import {
   Either,
   Duration,
   Chunk,
+  ParseResult as PR
 } from '@neo4j-cc/prelude';
 import { FetchError, request, jsonBody } from '@neo4j-cc/access-http';
 import { ApiResponse, ApiError, Fetcher } from 'openapi-typescript-fetch';
@@ -31,8 +32,6 @@ import {
   decodeKudo,
   decodeMessage,
 } from './khoros-schemas';
-
-import * as PR from '@fp-ts/schema/ParseResult';
 
 export interface KhorosServiceAuthorization {
   url: string;

@@ -6,6 +6,7 @@ import {
   Option,
   Duration,
   Chunk,
+  ParseResult as PR
 } from '@neo4j-cc/prelude';
 import { FetchError } from '@neo4j-cc/access-http';
 import { ApiResponse, ApiError, Fetcher } from 'openapi-typescript-fetch';
@@ -17,8 +18,6 @@ import {
   KhorosKudo,
   KhorosMessage,
 } from './khoros-schemas';
-
-import * as PR from '@fp-ts/schema/ParseResult';
 
 export class KhorosError {
   readonly _tag = 'KhorosError';
