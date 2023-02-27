@@ -1,4 +1,5 @@
 {
+  "name": "server-greta-bot",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/server/greta-bot/src",
   "projectType": "application",
@@ -12,7 +13,8 @@
         "tsConfig": "apps/server/greta-bot/tsconfig.app.json",
         "assets": ["apps/server/greta-bot/src/assets"],
         "target": "node",
-        "compiler": "tsc"
+        "compiler": "tsc",
+        "babelUpwardRootMode": true
       },
       "configurations": {
         "production": {
@@ -50,6 +52,5 @@
       }
     }
   },
-  "tags": [],
-  "name": "server-greta-bot"
+  "tags": []
 }

@@ -12,7 +12,8 @@
         "main": "apps/cc-cli/src/main.ts",
         "tsConfig": "apps/cc-cli/tsconfig.app.json",
         "target": "node",
-        "compiler": "tsc"
+        "compiler": "tsc",
+        "babelUpwardRootMode": true
       },
       "configurations": {
         "production": {

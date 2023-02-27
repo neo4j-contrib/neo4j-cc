@@ -17,27 +17,16 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "paths": {
-      "@neo4j-cc/data-access-cc": ["libs/data-access/cc/src/index.ts"],
-      "@neo4j-cc/data-access-csv": ["libs/data-access/csv/src/index.ts"],
-      "@neo4j-cc/data-access-cypher": ["libs/data-access/cypher/src/index.ts"],
-      "@neo4j-cc/data-access-discourse": [
-        "libs/data-access/discourse/src/index.ts"
-      ],
-      "@neo4j-cc/data-access-fs": ["libs/data-access/fs/src/index.ts"],
-      "@neo4j-cc/data-access-github": ["libs/data-access/github/src/index.ts"],
-      "@neo4j-cc/data-access-hopin": ["libs/data-access/hopin/src/index.ts"],
-      "@neo4j-cc/data-access-http": ["libs/data-access/http/src/index.ts"],
-      "@neo4j-cc/data-access-khoros": ["libs/data-access/khoros/src/index.ts"],
-      "@neo4j-cc/data-access-neo4j": ["libs/data-access/neo4j/src/index.ts"],
+      "@neo4j-cc/access-cc": ["libs/access/cc/src/index.ts"],
+      "@neo4j-cc/access-csv": ["libs/access/csv/src/index.ts"],
+      "@neo4j-cc/access-cypher": ["libs/access/cypher/src/index.ts"],
+      "@neo4j-cc/access-discourse": ["libs/access/discourse/src/index.ts"],
+      "@neo4j-cc/access-fs": ["libs/access/fs/src/index.ts"],
+      "@neo4j-cc/access-github": ["libs/access/github/src/index.ts"],
+      "@neo4j-cc/access-http": ["libs/access/http/src/index.ts"],
+      "@neo4j-cc/access-khoros": ["libs/access/khoros/src/index.ts"],
+      "@neo4j-cc/access-neo4j": ["libs/access/neo4j/src/index.ts"],
       "@neo4j-cc/example/effect-ts": ["libs/example/effect-ts/src/index.ts"],
-      "@neo4j-cc/feature/ninja-leaderboard": [
-        "libs/feature/ninja-leaderboard/src/index.ts"
-      ],
-      "@neo4j-cc/feature/person": ["libs/feature/person/src/index.ts"],
-      "@neo4j-cc/feature/release-notes": [
-        "libs/feature/release-notes/src/index.ts"
-      ],
-      "@neo4j-cc/feature/twin4j": ["libs/feature/twin4j/src/index.ts"],
       "@neo4j-cc/graphql-types": ["libs/graphql-types/src/index.ts"],
       "@neo4j-cc/model": ["libs/model/src/index.ts"],
       "@neo4j-cc/nest/neo4j-dbms": ["libs/nest/neo4j-dbms/src/index.ts"],

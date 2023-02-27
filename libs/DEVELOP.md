@@ -1,8 +1,8 @@
 # Neo4j CC Libraries
 
+- `access/` for access to remote data sources
 - `model/` for pure model definitions
-- `feature/` for complex, application-specific container components
-- `data-access/` for complex, application-specific container components
+- `feature/` for complex, application-specific presentational components
 - `ui/` for generic, shared presentational components
 - `util/` for pure functional code
 - `nest/` for nest modules used by apps/api

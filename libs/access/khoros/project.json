@@ -1,0 +1,60 @@
+{
+  "name": "access-khoros",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/access/khoros/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/access/khoros",
+        "main": "libs/access/khoros/src/index.ts",
+        "tsConfig": "libs/access/khoros/tsconfig.lib.json",
+        "assets": ["libs/access/khoros/*.md"]
+      }
+    },
+    "publish": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node tools/scripts/publish.mjs data-access-khoros {args.ver} {args.tag}"
+      },
+      "dependsOn": ["build"]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/access/khoros/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/vite:test",
+      "outputs": ["{workspaceRoot}/coverage/libs/access/khoros"],
+      "options": {
+        "passWithNoTests": true
+      }
+    },
+    "postman": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "p2o ./libs/access/khoros/assets/khoros-v2-API.postman_collection.json -f ./libs/access/khoros/assets/khoros-v2-API.openapi.yml"
+      }
+    },
+    "openapi": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["postman"],
+      "options": {
+        "command": "openapi -i libs/access/khoros/assets/khoros-v2-API.openapi.yml -o libs/access/khoros/src/lib/generated/ --name KhorosV2 --useOptions"
+      }
+    },
+    "quicktype": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["openapi"],
+      "options": {
+        "command": "quicktype -s postman -o libs/access/khoros/src/lib/generated/models/quicktypes.ts libs/access/khoros/assets/khoros-v2-API.postman_collection.json"
+      }
+    }
+  },
+  "tags": []
+}

@@ -1,5 +1,4 @@
-
-import { whoami } from '@neo4j-cc/data-access-github';
+import { whoami } from '@neo4j-cc/access-github';
 import { GluegunCommand } from 'gluegun';
 import { Toolbox } from 'gluegun/build/types/domain/toolbox';
 import { CommandModule } from 'yargs';
@@ -23,15 +22,18 @@ const run = async (toolbox: Toolbox) => {
   console.log(`octokitty is go, go, go! ${login}`);
 };
 
-
 export const GithubCommand: GluegunCommand<Toolbox> = {
   name: 'gh',
   run,
 };
 
-export const GithubYargsCommand:CommandModule = {
+export const GithubYargsCommand: CommandModule = {
   command: 'github',
   describe: 'calls to GitHub GraphQL API',
-  builder: (yargs) => { return yargs},
-  handler: (args) => { console.log('git the hub') }
-}
+  builder: (yargs) => {
+    return yargs;
+  },
+  handler: (args) => {
+    console.log('git the hub');
+  },
+};

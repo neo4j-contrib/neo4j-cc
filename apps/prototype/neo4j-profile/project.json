@@ -1,4 +1,5 @@
 {
+  "name": "prototype-neo4j-profile",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/prototype/neo4j-profile/src",
   "projectType": "application",
@@ -18,7 +19,8 @@
         ],
         "styles": ["apps/prototype/neo4j-profile/src/styles.scss"],
         "scripts": [],
-        "webpackConfig": "@nrwl/react/plugins/webpack"
+        "webpackConfig": "@nrwl/react/plugins/webpack",
+        "babelUpwardRootMode": true
       },
       "configurations": {
         "production": {
@@ -88,6 +90,5 @@
       }
     }
   },
-  "tags": [],
-  "name": "prototype-neo4j-profile"
+  "tags": []
 }

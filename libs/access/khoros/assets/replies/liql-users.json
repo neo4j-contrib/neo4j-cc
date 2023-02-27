@@ -1,0 +1,3370 @@
+{
+  "status": "success",
+  "message": "",
+  "http_code": 200,
+  "data": {
+    "type": "users",
+    "list_item_type": "user",
+    "size": 25,
+    "items": [
+      {
+        "type": "user",
+        "id": "112",
+        "sso_id": "google-oauth2|105445908982687642008",
+        "href": "/users/112",
+        "view_href": "/t5/user/viewprofilepage/user-id/112",
+        "login": "neo4j",
+        "email": "yolande.poirier@neotechnology.com",
+        "remember_password": true,
+        "first_name": "Yolande",
+        "last_name": "Poirier",
+        "online_status": "offline",
+        "personal_info_privacy": "none",
+        "email_address_privacy": "none",
+        "online_status_privacy": "all",
+        "rank": {
+          "type": "rank",
+          "id": "26",
+          "name": "Visitor",
+          "position": 23,
+          "bold": false,
+          "roles_granted": {
+            "query": "SELECT * FROM roles WHERE ranks_granting.id = '26'"
+          },
+          "roles_removed": {
+            "query": "SELECT * FROM roles WHERE ranks_removing.id = '26'"
+          },
+          "formula_enabled": false,
+          "formula": "",
+          "simple_criteria": {
+            "type": "simple_rank_criteria",
+            "role": {},
+            "user": {},
+            "number_of_posts": 0,
+            "number_of_page_views": 0,
+            "number_of_signins": 0,
+            "minutes_online": 0,
+            "minutes_since_registering": 0,
+            "simple_formula": ""
+          },
+          "rank_status": "active"
+        },
+        "avatar": {
+          "type": "avatar",
+          "profile": "https://lh3.googleusercontent.com/a-/AOh14GjqZFHHePIfOePy2LM7qOIR3dFVsF7kWSKutdom=s96-c",
+          "message": "https://lh3.googleusercontent.com/a-/AOh14GjqZFHHePIfOePy2LM7qOIR3dFVsF7kWSKutdom=s96-c",
+          "inline": "https://lh3.googleusercontent.com/a-/AOh14GjqZFHHePIfOePy2LM7qOIR3dFVsF7kWSKutdom=s96-c",
+          "favicon": "https://lh3.googleusercontent.com/a-/AOh14GjqZFHHePIfOePy2LM7qOIR3dFVsF7kWSKutdom=s96-c",
+          "print": "https://lh3.googleusercontent.com/a-/AOh14GjqZFHHePIfOePy2LM7qOIR3dFVsF7kWSKutdom=s96-c"
+        },
+        "kudos_received": {
+          "query": "SELECT * FROM kudos WHERE message.author.id = '112'"
+        },
+        "kudos_given": {
+          "query": "SELECT * FROM kudos WHERE user.id = '112'"
+        },
+        "solutions_authored": {
+          "query": "SELECT * FROM messages WHERE author.id = '112' AND is_solution = true"
+        },
+        "topics": {
+          "query": "SELECT * FROM messages WHERE author.id = '112' AND depth = 0"
+        },
+        "threads_participated": {
+          "query": "SELECT * FROM messages WHERE participants.id = '112' AND depth = 0"
+        },
+        "images": {
+          "query": "SELECT * FROM images WHERE owner.id = '112'"
+        },
+        "public_images": {
+          "query": "SELECT * FROM images WHERE owner.id = '112' AND album.privacy_level = 'public' AND visibility = 'public'"
+        },
+        "albums": {
+          "query": "SELECT * FROM albums WHERE owner.id = '112'"
+        },
+        "videos": {
+          "query": "SELECT * FROM videos WHERE owner.id = '112'"
+        },
+        "user_badges": {
+          "list_item_type": "user_badge",
+          "size": 1,
+          "items": [
+            {
+              "type": "user_badge",
+              "badge": {
+                "type": "badge",
+                "id": "1",
+                "description": "Thank you for taking the first step in your community journey by simply registering to be a part!",
+                "title": "Welcome!",
+                "icon_url": "https://vbeyi74497.stage.lithium.com/html/@E21F644E1F6794D7A70609A41D99B42C/badge_icons/05.22_Registration%20Badge.svg",
+                "awarded": 88,
+                "activation_date": "2020-07-29T14:04:45.443-07:00"
+              },
+              "earned_date": "2022-06-13T10:59:34.092-07:00"
+            }
+          ]
+        },
+        "following": {
+          "query": "SELECT * FROM users WHERE followers.id = '112'"
+        },
+        "followers": {
+          "query": "SELECT * FROM users WHERE following.id = '112'"
+        },
+        "language": "en",
+        "metrics": {
+          "type": "user_metrics"
+        },
+        "settings": {
+          "query": "SELECT * FROM settings WHERE user.id = '112'"
+        },
+        "registration_data": {
+          "type": "registration_data",
+          "registration_time": "2022-06-13T10:59:00.556-07:00",
+          "status": "fully-registered",
+          "registration_access_level": "all",
+          "confirm_email_status": true,
+          "sso_registration_fields": []
+        },
+        "mailbox": {
+          "type": "mailbox"
+        },
+        "banned": false,
+        "deleted": false,
+        "roles": {
+          "query": "SELECT * FROM roles WHERE users.id = '112'"
+        },
+        "messages": {
+          "query": "SELECT * FROM messages WHERE author.id = '112'"
+        },
+        "reviews": {
+          "query": "SELECT * FROM reviews WHERE author.id = '112'"
+        },
+        "last_visit_time": "2022-06-16T08:34:25.386-07:00",
+        "date_pattern": "MM-dd-yyyy",
+        "friendly_date_enabled": false,
+        "friendly_date_max_age": 31
+      },
+      {
+        "type": "user",
+        "id": "111",
+        "sso_id": "google-oauth2|101928766642941765224",
+        "href": "/users/111",
+        "view_href": "/t5/user/viewprofilepage/user-id/111",
+        "login": "",
+        "email": "kevin.zoll@khoros.com",
+        "remember_password": true,
+        "first_name": "Kevin",
+        "last_name": "Zoll",
+        "online_status": "offline",
+        "personal_info_privacy": "none",
+        "email_address_privacy": "none",
+        "online_status_privacy": "all",
+        "rank": {
+          "type": "rank",
+          "id": "-1",
+          "name": "Not applicable",
+          "position": 100,
+          "bold": false,
+          "roles_granted": {
+            "query": "SELECT * FROM roles WHERE ranks_granting.id = '-1'"
+          },
+          "roles_removed": {
+            "query": "SELECT * FROM roles WHERE ranks_removing.id = '-1'"
+          },
+          "formula_enabled": false,
+          "formula": "",
+          "simple_criteria": {
+            "type": "simple_rank_criteria",
+            "role": {},
+            "user": {},
+            "number_of_posts": 0,
+            "number_of_page_views": 0,
+            "number_of_signins": 0,
+            "minutes_online": 0,
+            "minutes_since_registering": 0,
+            "simple_formula": ""
+          },
+          "rank_status": "active"
+        },
+        "avatar": {
+          "type": "avatar",
+          "profile": "https://lh3.googleusercontent.com/a-/AOh14GiM6fOfaR0wtazIcDWF1YK-kAPxs4ar7t05noN_=s96-c",
+          "message": "https://lh3.googleusercontent.com/a-/AOh14GiM6fOfaR0wtazIcDWF1YK-kAPxs4ar7t05noN_=s96-c",
+          "inline": "https://lh3.googleusercontent.com/a-/AOh14GiM6fOfaR0wtazIcDWF1YK-kAPxs4ar7t05noN_=s96-c",
+          "favicon": "https://lh3.googleusercontent.com/a-/AOh14GiM6fOfaR0wtazIcDWF1YK-kAPxs4ar7t05noN_=s96-c",
+          "print": "https://lh3.googleusercontent.com/a-/AOh14GiM6fOfaR0wtazIcDWF1YK-kAPxs4ar7t05noN_=s96-c"
+        },
+        "kudos_received": {
+          "query": "SELECT * FROM kudos WHERE message.author.id = '111'"
+        },
+        "kudos_given": {
+          "query": "SELECT * FROM kudos WHERE user.id = '111'"
+        },
+        "solutions_authored": {
+          "query": "SELECT * FROM messages WHERE author.id = '111' AND is_solution = true"
+        },
+        "topics": {
+          "query": "SELECT * FROM messages WHERE author.id = '111' AND depth = 0"
+        },
+        "threads_participated": {
+          "query": "SELECT * FROM messages WHERE participants.id = '111' AND depth = 0"
+        },
+        "images": {
+          "query": "SELECT * FROM images WHERE owner.id = '111'"
+        },
+        "public_images": {
+          "query": "SELECT * FROM images WHERE owner.id = '111' AND album.privacy_level = 'public' AND visibility = 'public'"
+        },
+        "albums": {
+          "query": "SELECT * FROM albums WHERE owner.id = '111'"
+        },
+        "videos": {
+          "query": "SELECT * FROM videos WHERE owner.id = '111'"
+        },
+        "user_badges": {
+          "list_item_type": "user_badge",
+          "size": 0,
+          "items": []
+        },
+        "following": {
+          "query": "SELECT * FROM users WHERE followers.id = '111'"
+        },
+        "followers": {
+          "query": "SELECT * FROM users WHERE following.id = '111'"
+        },
+        "language": "en",
+        "metrics": {
+          "type": "user_metrics"
+        },
+        "settings": {
+          "query": "SELECT * FROM settings WHERE user.id = '111'"
+        },
+        "registration_data": {
+          "type": "registration_data",
+          "registration_time": "2022-06-06T13:46:42.414-07:00",
+          "status": "fully-registered",
+          "registration_access_level": "all",
+          "confirm_email_status": true,
+          "sso_registration_fields": []
+        },
+        "mailbox": {
+          "type": "mailbox"
+        },
+        "banned": false,
+        "deleted": false,
+        "roles": {
+          "query": "SELECT * FROM roles WHERE users.id = '111'"
+        },
+        "messages": {
+          "query": "SELECT * FROM messages WHERE author.id = '111'"
+        },
+        "reviews": {
+          "query": "SELECT * FROM reviews WHERE author.id = '111'"
+        },
+        "last_visit_time": "2022-06-06T13:47:15.269-07:00",
+        "date_pattern": "MM-dd-yyyy",
+        "friendly_date_enabled": false,
+        "friendly_date_max_age": 31
+      },
+      {
+        "type": "user",
+        "id": "110",
+        "sso_id": "awdawd",
+        "href": "/users/110",
+        "view_href": "/t5/user/viewprofilepage/user-id/110",
+        "login": "kh-kevinzoll1",
+        "email": "kevin.zoll@khoros.com",
+        "remember_password": true,
+        "first_name": "Kevin",
+        "last_name": "Zoll",
+        "online_status": "offline",
+        "personal_info_privacy": "none",
+        "email_address_privacy": "none",
+        "online_status_privacy": "all",
+        "rank": {
+          "type": "rank",
+          "id": "26",
+          "name": "Visitor",
+          "position": 23,
+          "bold": false,
+          "roles_granted": {
+            "query": "SELECT * FROM roles WHERE ranks_granting.id = '26'"
+          },
+          "roles_removed": {
+            "query": "SELECT * FROM roles WHERE ranks_removing.id = '26'"
+          },
+          "formula_enabled": false,
+          "formula": "",
+          "simple_criteria": {
+            "type": "simple_rank_criteria",
+            "role": {},
+            "user": {},
+            "number_of_posts": 0,
+            "number_of_page_views": 0,
+            "number_of_signins": 0,
+            "minutes_online": 0,
+            "minutes_since_registering": 0,
+            "simple_formula": ""
+          },
+          "rank_status": "active"
+        },
+        "avatar": {
+          "type": "avatar",
+          "profile": "https://lh3.googleusercontent.com/a-/AOh14GiM6fOfaR0wtazIcDWF1YK-kAPxs4ar7t05noN_=s96-c",
+          "message": "https://lh3.googleusercontent.com/a-/AOh14GiM6fOfaR0wtazIcDWF1YK-kAPxs4ar7t05noN_=s96-c",
+          "inline": "https://lh3.googleusercontent.com/a-/AOh14GiM6fOfaR0wtazIcDWF1YK-kAPxs4ar7t05noN_=s96-c",
+          "favicon": "https://lh3.googleusercontent.com/a-/AOh14GiM6fOfaR0wtazIcDWF1YK-kAPxs4ar7t05noN_=s96-c",
+          "print": "https://lh3.googleusercontent.com/a-/AOh14GiM6fOfaR0wtazIcDWF1YK-kAPxs4ar7t05noN_=s96-c"
+        },
+        "kudos_received": {
+          "query": "SELECT * FROM kudos WHERE message.author.id = '110'"
+        },
+        "kudos_given": {
+          "query": "SELECT * FROM kudos WHERE user.id = '110'"
+        },
+        "solutions_authored": {
+          "query": "SELECT * FROM messages WHERE author.id = '110' AND is_solution = true"
+        },
+        "topics": {
+          "query": "SELECT * FROM messages WHERE author.id = '110' AND depth = 0"
+        },
+        "threads_participated": {
+          "query": "SELECT * FROM messages WHERE participants.id = '110' AND depth = 0"
+        },
+        "images": {
+          "query": "SELECT * FROM images WHERE owner.id = '110'"
+        },
+        "public_images": {
+          "query": "SELECT * FROM images WHERE owner.id = '110' AND album.privacy_level = 'public' AND visibility = 'public'"
+        },
+        "albums": {
+          "query": "SELECT * FROM albums WHERE owner.id = '110'"
+        },
+        "videos": {
+          "query": "SELECT * FROM videos WHERE owner.id = '110'"
+        },
+        "user_badges": {
+          "list_item_type": "user_badge",
+          "size": 1,
+          "items": [
+            {
+              "type": "user_badge",
+              "badge": {
+                "type": "badge",
+                "id": "1",
+                "description": "Thank you for taking the first step in your community journey by simply registering to be a part!",
+                "title": "Welcome!",
+                "icon_url": "https://vbeyi74497.stage.lithium.com/html/@E21F644E1F6794D7A70609A41D99B42C/badge_icons/05.22_Registration%20Badge.svg",
+                "awarded": 88,
+                "activation_date": "2020-07-29T14:04:45.443-07:00"
+              },
+              "earned_date": "2022-06-06T13:45:17.253-07:00"
+            }
+          ]
+        },
+        "following": {
+          "query": "SELECT * FROM users WHERE followers.id = '110'"
+        },
+        "followers": {
+          "query": "SELECT * FROM users WHERE following.id = '110'"
+        },
+        "language": "en",
+        "metrics": {
+          "type": "user_metrics"
+        },
+        "settings": {
+          "query": "SELECT * FROM settings WHERE user.id = '110'"
+        },
+        "registration_data": {
+          "type": "registration_data",
+          "registration_time": "2022-06-06T13:44:49.007-07:00",
+          "status": "fully-registered",
+          "registration_access_level": "all",
+          "confirm_email_status": true,
+          "sso_registration_fields": []
+        },
+        "mailbox": {
+          "type": "mailbox"
+        },
+        "banned": false,
+        "deleted": false,
+        "roles": {
+          "query": "SELECT * FROM roles WHERE users.id = '110'"
+        },
+        "messages": {
+          "query": "SELECT * FROM messages WHERE author.id = '110'"
+        },
+        "reviews": {
+          "query": "SELECT * FROM reviews WHERE author.id = '110'"
+        },
+        "last_visit_time": "2022-06-06T13:45:19.838-07:00",
+        "date_pattern": "MM-dd-yyyy",
+        "friendly_date_enabled": false,
+        "friendly_date_max_age": 31
+      },
+      {
+        "type": "user",
+        "id": "109",
+        "sso_id": "google-oauth2|100719120526897811820",
+        "href": "/users/109",
+        "view_href": "/t5/user/viewprofilepage/user-id/109",
+        "login": "shinyzhu",
+        "email": "shiny.zhu@neotechnology.com",
+        "remember_password": true,
+        "first_name": "Shiny",
+        "last_name": "Zhu",
+        "online_status": "offline",
+        "personal_info_privacy": "none",
+        "email_address_privacy": "none",
+        "online_status_privacy": "all",
+        "rank": {
+          "type": "rank",
+          "id": "20",
+          "name": "Node",
+          "position": 22,
+          "bold": true,
+          "color": "3557b4",
+          "roles_granted": {
+            "query": "SELECT * FROM roles WHERE ranks_granting.id = '20'"
+          },
+          "roles_removed": {
+            "query": "SELECT * FROM roles WHERE ranks_removing.id = '20'"
+          },
+          "formula_enabled": true,
+          "formula": "(registrationAge >= 1440) && ((((net_threads) + (net_replies*2) + (net_blog_articles*10) + (net_blog_comments) + (net_idea_threads*5) + (net_idea_comments) + (net_contributed_posts*5) + (net_published_tkb_articles*10) + (net_tkb_comments)) >=1)||(overall_posts >2)) && (((net_accepted_solutions*10) + (net_kudos_weight_given) + (net_kudos_weight_received*2) + (tagging_tag_count)) >=0)",
+          "simple_criteria": {
+            "type": "simple_rank_criteria",
+            "role": {},
+            "user": {},
+            "number_of_posts": 0,
+            "number_of_page_views": 0,
+            "number_of_signins": 0,
+            "minutes_online": 0,
+            "minutes_since_registering": 0,
+            "simple_formula": ""
+          },
+          "rank_status": "active"
+        },
+        "avatar": {
+          "type": "avatar",
+          "profile": "https://lh3.googleusercontent.com/a-/AOh14GgEY2L5NNFIi9rQ1jYp3eEzgRWMG5t3Sd6qYDaB=s96-c",
+          "message": "https://lh3.googleusercontent.com/a-/AOh14GgEY2L5NNFIi9rQ1jYp3eEzgRWMG5t3Sd6qYDaB=s96-c",
+          "inline": "https://lh3.googleusercontent.com/a-/AOh14GgEY2L5NNFIi9rQ1jYp3eEzgRWMG5t3Sd6qYDaB=s96-c",
+          "favicon": "https://lh3.googleusercontent.com/a-/AOh14GgEY2L5NNFIi9rQ1jYp3eEzgRWMG5t3Sd6qYDaB=s96-c",
+          "print": "https://lh3.googleusercontent.com/a-/AOh14GgEY2L5NNFIi9rQ1jYp3eEzgRWMG5t3Sd6qYDaB=s96-c"
+        },
+        "kudos_received": {
+          "query": "SELECT * FROM kudos WHERE message.author.id = '109'"
+        },
+        "kudos_given": {
+          "query": "SELECT * FROM kudos WHERE user.id = '109'"
+        },
+        "solutions_authored": {
+          "query": "SELECT * FROM messages WHERE author.id = '109' AND is_solution = true"
+        },
+        "topics": {
+          "query": "SELECT * FROM messages WHERE author.id = '109' AND depth = 0"
+        },
+        "threads_participated": {
+          "query": "SELECT * FROM messages WHERE participants.id = '109' AND depth = 0"
+        },
+        "images": {
+          "query": "SELECT * FROM images WHERE owner.id = '109'"
+        },
+        "public_images": {
+          "query": "SELECT * FROM images WHERE owner.id = '109' AND album.privacy_level = 'public' AND visibility = 'public'"
+        },
+        "albums": {
+          "query": "SELECT * FROM albums WHERE owner.id = '109'"
+        },
+        "videos": {
+          "query": "SELECT * FROM videos WHERE owner.id = '109'"
+        },
+        "user_badges": {
+          "list_item_type": "user_badge",
+          "size": 5,
+          "items": [
+            {
+              "type": "user_badge",
+              "badge": {
+                "type": "badge",
+                "id": "1",
+                "description": "Thank you for taking the first step in your community journey by simply registering to be a part!",
+                "title": "Welcome!",
+                "icon_url": "https://vbeyi74497.stage.lithium.com/html/@E21F644E1F6794D7A70609A41D99B42C/badge_icons/05.22_Registration%20Badge.svg",
+                "awarded": 88,
+                "activation_date": "2020-07-29T14:04:45.443-07:00"
+              },
+              "earned_date": "2022-05-19T04:32:02.082-07:00"
+            },
+            {
+              "type": "user_badge",
+              "badge": {
+                "type": "badge",
+                "id": "2",
+                "description": "Thank you for participating in the community. Whether you arrived with a problem to be solved or a solution to provide, we hope you will continue.",
+                "title": "First Contribution",
+                "icon_url": "https://vbeyi74497.stage.lithium.com/html/@C9252C74D1FD3DE3A95D66575D5309A2/badge_icons/05.22_Topics%201%20Badge.svg",
+                "awarded": 31,
+                "activation_date": "2020-07-29T14:43:04.833-07:00"
+              },
+              "earned_date": "2022-05-19T05:08:09.078-07:00"
+            },
+            {
+              "type": "user_badge",
+              "badge": {
+                "type": "badge",
+                "id": "5",
+                "description": "You have received your first like for creating content that was found to be generally valuable. Congrats!",
+                "title": "First Kudo",
+                "icon_url": "https://vbeyi74497.stage.lithium.com/html/@DAA16A730DE6DC0CF5524DF7A3CD0560/badge_icons/05.22_KudosRecieved%201%20Badge.svg",
+                "awarded": 21,
+                "activation_date": "2022-05-12T14:11:29.042-07:00"
+              },
+              "earned_date": "2022-05-19T12:59:14.578-07:00"
+            },
+            {
+              "type": "user_badge",
+              "badge": {
+                "type": "badge",
+                "id": "11",
+                "description": "Congrats on posting your first reply! Posting replies is a great way to get involved. Keep it up!",
+                "title": "First Reply",
+                "icon_url": "https://vbeyi74497.stage.lithium.com/html/@4F0BC35A67CE97A389E3650EEB0FCA7C/badge_icons/05.22_Replies%201%20Badge.svg",
+                "awarded": 22,
+                "activation_date": "2022-05-12T14:11:34.897-07:00"
+              },
+              "earned_date": "2022-05-19T05:11:22.090-07:00"
+            },
+            {
+              "type": "user_badge",
+              "badge": {
+                "type": "badge",
+                "id": "16",
+                "description": "Congrats! One of your replies has been accepted as a solution, thank you for your thoughtful reply!",
+                "title": "First Solution",
+                "icon_url": "https://vbeyi74497.stage.lithium.com/html/@8D8FAC236A4C1443E08EC58F54D491A2/badge_icons/05.22_Solutions1%20Badge.svg",
+                "awarded": 13,
+                "activation_date": "2022-05-12T14:11:52.250-07:00"
+              },
+              "earned_date": "2022-05-26T07:12:00.751-07:00"
+            }
+          ]
+        },
+        "following": {
+          "query": "SELECT * FROM users WHERE followers.id = '109'"
+        },
+        "followers": {
+          "query": "SELECT * FROM users WHERE following.id = '109'"
+        },
+        "language": "en",
+        "metrics": {
+          "type": "user_metrics"
+        },
+        "settings": {
+          "query": "SELECT * FROM settings WHERE user.id = '109'"
+        },
+        "registration_data": {
+          "type": "registration_data",
+          "registration_time": "2022-05-19T04:31:42.855-07:00",
+          "status": "fully-registered",
+          "registration_access_level": "all",
+          "confirm_email_status": true,
+          "sso_registration_fields": []
+        },
+        "mailbox": {
+          "type": "mailbox"
+        },
+        "banned": false,
+        "deleted": false,
+        "roles": {
+          "query": "SELECT * FROM roles WHERE users.id = '109'"
+        },
+        "messages": {
+          "query": "SELECT * FROM messages WHERE author.id = '109'"
+        },
+        "reviews": {
+          "query": "SELECT * FROM reviews WHERE author.id = '109'"
+        },
+        "last_visit_time": "2022-05-27T04:04:24.761-07:00",
+        "date_pattern": "MM-dd-yyyy",
+        "friendly_date_enabled": false,
+        "friendly_date_max_age": 31
+      },
+      {
+        "type": "user",
+        "id": "108",
+        "sso_id": "google-oauth2|101817542383283739115",
+        "href": "/users/108",
+        "view_href": "/t5/user/viewprofilepage/user-id/108",
+        "login": "michael_hunger",
+        "email": "michael.hunger@neotechnology.com",
+        "remember_password": true,
+        "first_name": "Michael",
+        "last_name": "Hunger",
+        "online_status": "offline",
+        "personal_info_privacy": "none",
+        "email_address_privacy": "none",
+        "online_status_privacy": "all",
+        "rank": {
+          "type": "rank",
+          "id": "26",
+          "name": "Visitor",
+          "position": 23,
+          "bold": false,
+          "roles_granted": {
+            "query": "SELECT * FROM roles WHERE ranks_granting.id = '26'"
+          },
+          "roles_removed": {
+            "query": "SELECT * FROM roles WHERE ranks_removing.id = '26'"
+          },
+          "formula_enabled": false,
+          "formula": "",
+          "simple_criteria": {
+            "type": "simple_rank_criteria",
+            "role": {},
+            "user": {},
+            "number_of_posts": 0,
+            "number_of_page_views": 0,
+            "number_of_signins": 0,
+            "minutes_online": 0,
+            "minutes_since_registering": 0,
+            "simple_formula": ""
+          },
+          "rank_status": "active"
+        },
+        "avatar": {
+          "type": "avatar",
+          "profile": "https://lh3.googleusercontent.com/a-/AOh14GgW-oljt73WEvcsrondk43op2aaeohMxalvUrmkwQ=s96-c",
+          "message": "https://lh3.googleusercontent.com/a-/AOh14GgW-oljt73WEvcsrondk43op2aaeohMxalvUrmkwQ=s96-c",
+          "inline": "https://lh3.googleusercontent.com/a-/AOh14GgW-oljt73WEvcsrondk43op2aaeohMxalvUrmkwQ=s96-c",
+          "favicon": "https://lh3.googleusercontent.com/a-/AOh14GgW-oljt73WEvcsrondk43op2aaeohMxalvUrmkwQ=s96-c",
+          "print": "https://lh3.googleusercontent.com/a-/AOh14GgW-oljt73WEvcsrondk43op2aaeohMxalvUrmkwQ=s96-c"
+        },
+        "kudos_received": {
+          "query": "SELECT * FROM kudos WHERE message.author.id = '108'"
+        },
+        "kudos_given": {
+          "query": "SELECT * FROM kudos WHERE user.id = '108'"
+        },
+        "solutions_authored": {
+          "query": "SELECT * FROM messages WHERE author.id = '108' AND is_solution = true"
+        },
+        "topics": {
+          "query": "SELECT * FROM messages WHERE author.id = '108' AND depth = 0"
+        },
+        "threads_participated": {
+          "query": "SELECT * FROM messages WHERE participants.id = '108' AND depth = 0"
+        },
+        "images": {
+          "query": "SELECT * FROM images WHERE owner.id = '108'"
+        },
+        "public_images": {
+          "query": "SELECT * FROM images WHERE owner.id = '108' AND album.privacy_level = 'public' AND visibility = 'public'"
+        },
+        "albums": {
+          "query": "SELECT * FROM albums WHERE owner.id = '108'"
+        },
+        "videos": {
+          "query": "SELECT * FROM videos WHERE owner.id = '108'"
+        },
+        "user_badges": {
+          "list_item_type": "user_badge",
+          "size": 1,
+          "items": [
+            {
+              "type": "user_badge",
+              "badge": {
+                "type": "badge",
+                "id": "1",
+                "description": "Thank you for taking the first step in your community journey by simply registering to be a part!",
+                "title": "Welcome!",
+                "icon_url": "https://vbeyi74497.stage.lithium.com/html/@E21F644E1F6794D7A70609A41D99B42C/badge_icons/05.22_Registration%20Badge.svg",
+                "awarded": 88,
+                "activation_date": "2020-07-29T14:04:45.443-07:00"
+              },
+              "earned_date": "2022-05-18T08:35:48.581-07:00"
+            }
+          ]
+        },
+        "following": {
+          "query": "SELECT * FROM users WHERE followers.id = '108'"
+        },
+        "followers": {
+          "query": "SELECT * FROM users WHERE following.id = '108'"
+        },
+        "language": "en",
+        "metrics": {
+          "type": "user_metrics"
+        },
+        "settings": {
+          "query": "SELECT * FROM settings WHERE user.id = '108'"
+        },
+        "registration_data": {
+          "type": "registration_data",
+          "registration_time": "2022-05-18T08:34:58.549-07:00",
+          "status": "fully-registered",
+          "registration_access_level": "all",
+          "confirm_email_status": true,
+          "sso_registration_fields": []
+        },
+        "mailbox": {
+          "type": "mailbox"
+        },
+        "banned": false,
+        "deleted": false,
+        "roles": {
+          "query": "SELECT * FROM roles WHERE users.id = '108'"
+        },
+        "messages": {
+          "query": "SELECT * FROM messages WHERE author.id = '108'"
+        },
+        "reviews": {
+          "query": "SELECT * FROM reviews WHERE author.id = '108'"
+        },
+        "last_visit_time": "2022-05-19T07:45:17.771-07:00",
+        "date_pattern": "MM-dd-yyyy",
+        "friendly_date_enabled": false,
+        "friendly_date_max_age": 31
+      },
+      {
+        "type": "user",
+        "id": "107",
+        "sso_id": "google-oauth2|111127078757986119427",
+        "href": "/users/107",
+        "view_href": "/t5/user/viewprofilepage/user-id/107",
+        "login": "mdavidallen",
+        "email": "david.allen@neotechnology.com",
+        "remember_password": true,
+        "first_name": "David",
+        "last_name": "Allen",
+        "online_status": "offline",
+        "personal_info_privacy": "none",
+        "email_address_privacy": "none",
+        "online_status_privacy": "all",
+        "rank": {
+          "type": "rank",
+          "id": "20",
+          "name": "Node",
+          "position": 22,
+          "bold": true,
+          "color": "3557b4",
+          "roles_granted": {
+            "query": "SELECT * FROM roles WHERE ranks_granting.id = '20'"
+          },
+          "roles_removed": {
+            "query": "SELECT * FROM roles WHERE ranks_removing.id = '20'"
+          },
+          "formula_enabled": true,
+          "formula": "(registrationAge >= 1440) && ((((net_threads) + (net_replies*2) + (net_blog_articles*10) + (net_blog_comments) + (net_idea_threads*5) + (net_idea_comments) + (net_contributed_posts*5) + (net_published_tkb_articles*10) + (net_tkb_comments)) >=1)||(overall_posts >2)) && (((net_accepted_solutions*10) + (net_kudos_weight_given) + (net_kudos_weight_received*2) + (tagging_tag_count)) >=0)",
+          "simple_criteria": {
+            "type": "simple_rank_criteria",
+            "role": {},
+            "user": {},
+            "number_of_posts": 0,
+            "number_of_page_views": 0,
+            "number_of_signins": 0,
+            "minutes_online": 0,
+            "minutes_since_registering": 0,
+            "simple_formula": ""
+          },
+          "rank_status": "active"
+        },
+        "avatar": {
+          "type": "avatar",
+          "profile": "https://lh3.googleusercontent.com/a-/AOh14GiWfc939ABg-jAF7iXTPjX6biJO0vfyiit9pO5SOw=s96-c",
+          "message": "https://lh3.googleusercontent.com/a-/AOh14GiWfc939ABg-jAF7iXTPjX6biJO0vfyiit9pO5SOw=s96-c",
+          "inline": "https://lh3.googleusercontent.com/a-/AOh14GiWfc939ABg-jAF7iXTPjX6biJO0vfyiit9pO5SOw=s96-c",
+          "favicon": "https://lh3.googleusercontent.com/a-/AOh14GiWfc939ABg-jAF7iXTPjX6biJO0vfyiit9pO5SOw=s96-c",
+          "print": "https://lh3.googleusercontent.com/a-/AOh14GiWfc939ABg-jAF7iXTPjX6biJO0vfyiit9pO5SOw=s96-c"
+        },
+        "kudos_received": {
+          "query": "SELECT * FROM kudos WHERE message.author.id = '107'"
+        },
+        "kudos_given": {
+          "query": "SELECT * FROM kudos WHERE user.id = '107'"
+        },
+        "solutions_authored": {
+          "query": "SELECT * FROM messages WHERE author.id = '107' AND is_solution = true"
+        },
+        "topics": {
+          "query": "SELECT * FROM messages WHERE author.id = '107' AND depth = 0"
+        },
+        "threads_participated": {
+          "query": "SELECT * FROM messages WHERE participants.id = '107' AND depth = 0"
+        },
+        "images": {
+          "query": "SELECT * FROM images WHERE owner.id = '107'"
+        },
+        "public_images": {
+          "query": "SELECT * FROM images WHERE owner.id = '107' AND album.privacy_level = 'public' AND visibility = 'public'"
+        },
+        "albums": {
+          "query": "SELECT * FROM albums WHERE owner.id = '107'"
+        },
+        "videos": {
+          "query": "SELECT * FROM videos WHERE owner.id = '107'"
+        },
+        "user_badges": {
+          "list_item_type": "user_badge",
+          "size": 3,
+          "items": [
+            {
+              "type": "user_badge",
+              "badge": {
+                "type": "badge",
+                "id": "1",
+                "description": "Thank you for taking the first step in your community journey by simply registering to be a part!",
+                "title": "Welcome!",
+                "icon_url": "https://vbeyi74497.stage.lithium.com/html/@E21F644E1F6794D7A70609A41D99B42C/badge_icons/05.22_Registration%20Badge.svg",
+                "awarded": 88,
+                "activation_date": "2020-07-29T14:04:45.443-07:00"
+              },
+              "earned_date": "2022-05-18T08:32:23.588-07:00"
+            },
+            {
+              "type": "user_badge",
+              "badge": {
+                "type": "badge",
+                "id": "2",
+                "description": "Thank you for participating in the community. Whether you arrived with a problem to be solved or a solution to provide, we hope you will continue.",
+                "title": "First Contribution",
+                "icon_url": "https://vbeyi74497.stage.lithium.com/html/@C9252C74D1FD3DE3A95D66575D5309A2/badge_icons/05.22_Topics%201%20Badge.svg",
+                "awarded": 31,
+                "activation_date": "2020-07-29T14:43:04.833-07:00"
+              },
+              "earned_date": "2022-05-18T08:36:47.584-07:00"
+            },
+            {
+              "type": "user_badge",
+              "badge": {
+                "type": "badge",
+                "id": "5",
+                "description": "You have received your first like for creating content that was found to be generally valuable. Congrats!",
+                "title": "First Kudo",
+                "icon_url": "https://vbeyi74497.stage.lithium.com/html/@DAA16A730DE6DC0CF5524DF7A3CD0560/badge_icons/05.22_KudosRecieved%201%20Badge.svg",
+                "awarded": 21,
+                "activation_date": "2022-05-12T14:11:29.042-07:00"
+              },
+              "earned_date": "2022-05-19T05:10:32.579-07:00"
+            }
+          ]
+        },
+        "following": {
+          "query": "SELECT * FROM users WHERE followers.id = '107'"
+        },
+        "followers": {
+          "query": "SELECT * FROM users WHERE following.id = '107'"
+        },
+        "language": "en",
+        "metrics": {
+          "type": "user_metrics"
+        },
+        "settings": {
+          "query": "SELECT * FROM settings WHERE user.id = '107'"
+        },
+        "registration_data": {
+          "type": "registration_data",
+          "registration_time": "2022-05-18T08:32:13.123-07:00",
+          "status": "fully-registered",
+          "registration_access_level": "all",
+          "confirm_email_status": true,
+          "sso_registration_fields": []
+        },
+        "mailbox": {
+          "type": "mailbox"
+        },
+        "banned": false,
+        "deleted": false,
+        "roles": {
+          "query": "SELECT * FROM roles WHERE users.id = '107'"
+        },
+        "messages": {
+          "query": "SELECT * FROM messages WHERE author.id = '107'"
+        },
+        "reviews": {
+          "query": "SELECT * FROM reviews WHERE author.id = '107'"
+        },
+        "last_visit_time": "2022-05-18T09:10:49.855-07:00",
+        "date_pattern": "MM-dd-yyyy",
+        "friendly_date_enabled": false,
+        "friendly_date_max_age": 31
+      },
+      {
+        "type": "user",
+        "id": "106",
+        "sso_id": "google-oauth2|105025158987162572230",
+        "href": "/users/106",
+        "view_href": "/t5/user/viewprofilepage/user-id/106",
+        "login": "Trevor_S",
+        "email": "trevor.swatek@neotechnology.com",
+        "remember_password": true,
+        "first_name": "Trevor",
+        "last_name": "Swatek",
+        "online_status": "offline",
+        "personal_info_privacy": "none",
+        "email_address_privacy": "none",
+        "online_status_privacy": "all",
+        "rank": {
+          "type": "rank",
+          "id": "2",
+          "name": "Administrator",
+          "position": 3,
+          "bold": true,
+          "color": "ED1252",
+          "roles_granted": {
+            "query": "SELECT * FROM roles WHERE ranks_granting.id = '2'"
+          },
+          "roles_removed": {
+            "query": "SELECT * FROM roles WHERE ranks_removing.id = '2'"
+          },
+          "icon_left": "/i/rank_icons/admin.gif",
+          "formula_enabled": false,
+          "formula": "",
+          "simple_criteria": {
+            "type": "simple_rank_criteria",
+            "role": {
+              "type": "role",
+              "id": "t:Administrator",
+              "href": "/roles/t:Administrator"
+            },
+            "user": {},
+            "number_of_posts": 0,
+            "number_of_page_views": 0,
+            "number_of_signins": 0,
+            "minutes_online": 0,
+            "minutes_since_registering": 0,
+            "simple_formula": "hasRole(\"Administrator\")"
+          },
+          "rank_status": "active"
+        },
+        "avatar": {
+          "type": "avatar",
+          "profile": "https://lh3.googleusercontent.com/a/AATXAJzPTqBiemIgrxj6g4jsQ3CTBwlyp4sZ0Xksl1nT=s96-c",
+          "message": "https://lh3.googleusercontent.com/a/AATXAJzPTqBiemIgrxj6g4jsQ3CTBwlyp4sZ0Xksl1nT=s96-c",
+          "inline": "https://lh3.googleusercontent.com/a/AATXAJzPTqBiemIgrxj6g4jsQ3CTBwlyp4sZ0Xksl1nT=s96-c",
+          "favicon": "https://lh3.googleusercontent.com/a/AATXAJzPTqBiemIgrxj6g4jsQ3CTBwlyp4sZ0Xksl1nT=s96-c",
+          "print": "https://lh3.googleusercontent.com/a/AATXAJzPTqBiemIgrxj6g4jsQ3CTBwlyp4sZ0Xksl1nT=s96-c"
+        },
+        "kudos_received": {
+          "query": "SELECT * FROM kudos WHERE message.author.id = '106'"
+        },
+        "kudos_given": {
+          "query": "SELECT * FROM kudos WHERE user.id = '106'"
+        },
+        "solutions_authored": {
+          "query": "SELECT * FROM messages WHERE author.id = '106' AND is_solution = true"
+        },
+        "topics": {
+          "query": "SELECT * FROM messages WHERE author.id = '106' AND depth = 0"
+        },
+        "threads_participated": {
+          "query": "SELECT * FROM messages WHERE participants.id = '106' AND depth = 0"
+        },
+        "images": {
+          "query": "SELECT * FROM images WHERE owner.id = '106'"
+        },
+        "public_images": {
+          "query": "SELECT * FROM images WHERE owner.id = '106' AND album.privacy_level = 'public' AND visibility = 'public'"
+        },
+        "albums": {
+          "query": "SELECT * FROM albums WHERE owner.id = '106'"
+        },
+        "videos": {
+          "query": "SELECT * FROM videos WHERE owner.id = '106'"
+        },
+        "user_badges": {
+          "list_item_type": "user_badge",
+          "size": 2,
+          "items": [
+            {
+              "type": "user_badge",
+              "badge": {
+                "type": "badge",
+                "id": "1",
+                "description": "Thank you for taking the first step in your community journey by simply registering to be a part!",
+                "title": "Welcome!",
+                "icon_url": "https://vbeyi74497.stage.lithium.com/html/@E21F644E1F6794D7A70609A41D99B42C/badge_icons/05.22_Registration%20Badge.svg",
+                "awarded": 88,
+                "activation_date": "2020-07-29T14:04:45.443-07:00"
+              },
+              "earned_date": "2022-05-17T08:02:29.323-07:00"
+            },
+            {
+              "type": "user_badge",
+              "badge": {
+                "type": "badge",
+                "id": "2",
+                "description": "Thank you for participating in the community. Whether you arrived with a problem to be solved or a solution to provide, we hope you will continue.",
+                "title": "First Contribution",
+                "icon_url": "https://vbeyi74497.stage.lithium.com/html/@C9252C74D1FD3DE3A95D66575D5309A2/badge_icons/05.22_Topics%201%20Badge.svg",
+                "awarded": 31,
+                "activation_date": "2020-07-29T14:43:04.833-07:00"
+              },
+              "earned_date": "2022-05-18T08:08:56.080-07:00"
+            }
+          ]
+        },
+        "following": {
+          "query": "SELECT * FROM users WHERE followers.id = '106'"
+        },
+        "followers": {
+          "query": "SELECT * FROM users WHERE following.id = '106'"
+        },
+        "language": "en",
+        "metrics": {
+          "type": "user_metrics"
+        },
+        "settings": {
+          "query": "SELECT * FROM settings WHERE user.id = '106'"
+        },
+        "registration_data": {
+          "type": "registration_data",
+          "registration_time": "2022-05-17T08:00:50.783-07:00",
+          "status": "fully-registered",
+          "registration_access_level": "all",
+          "confirm_email_status": true,
+          "sso_registration_fields": []
+        },
+        "mailbox": {
+          "type": "mailbox"
+        },
+        "banned": false,
+        "deleted": false,
+        "roles": {
+          "query": "SELECT * FROM roles WHERE users.id = '106'"
+        },
+        "messages": {
+          "query": "SELECT * FROM messages WHERE author.id = '106'"
+        },
+        "reviews": {
+          "query": "SELECT * FROM reviews WHERE author.id = '106'"
+        },
+        "last_visit_time": "2022-06-01T15:49:49.321-07:00",
+        "date_pattern": "MM-dd-yyyy",
+        "friendly_date_enabled": false,
+        "friendly_date_max_age": 31
+      },
+      {
+        "type": "user",
+        "id": "105",
+        "sso_id": "google-oauth2|102648154651786115226",
+        "href": "/users/105",
+        "view_href": "/t5/user/viewprofilepage/user-id/105",
+        "login": "nikitapatwari",
+        "email": "nikita.patwari@neotechnology.com",
+        "remember_password": true,
+        "first_name": "Nikita",
+        "last_name": "Patwari",
+        "online_status": "offline",
+        "personal_info_privacy": "none",
+        "email_address_privacy": "none",
+        "online_status_privacy": "all",
+        "rank": {
+          "type": "rank",
+          "id": "26",
+          "name": "Visitor",
+          "position": 23,
+          "bold": false,
+          "roles_granted": {
+            "query": "SELECT * FROM roles WHERE ranks_granting.id = '26'"
+          },
+          "roles_removed": {
+            "query": "SELECT * FROM roles WHERE ranks_removing.id = '26'"
+          },
+          "formula_enabled": false,
+          "formula": "",
+          "simple_criteria": {
+            "type": "simple_rank_criteria",
+            "role": {},
+            "user": {},
+            "number_of_posts": 0,
+            "number_of_page_views": 0,
+            "number_of_signins": 0,
+            "minutes_online": 0,
+            "minutes_since_registering": 0,
+            "simple_formula": ""
+          },
+          "rank_status": "active"
+        },
+        "avatar": {
+          "type": "avatar",
+          "profile": "https://lh3.googleusercontent.com/a-/AOh14Gj1Sxx_4UJ9E9EkUtOcUn4pLdVbhCYDfKHYGCNI=s96-c",
+          "message": "https://lh3.googleusercontent.com/a-/AOh14Gj1Sxx_4UJ9E9EkUtOcUn4pLdVbhCYDfKHYGCNI=s96-c",
+          "inline": "https://lh3.googleusercontent.com/a-/AOh14Gj1Sxx_4UJ9E9EkUtOcUn4pLdVbhCYDfKHYGCNI=s96-c",
+          "favicon": "https://lh3.googleusercontent.com/a-/AOh14Gj1Sxx_4UJ9E9EkUtOcUn4pLdVbhCYDfKHYGCNI=s96-c",
+          "print": "https://lh3.googleusercontent.com/a-/AOh14Gj1Sxx_4UJ9E9EkUtOcUn4pLdVbhCYDfKHYGCNI=s96-c"
+        },
+        "kudos_received": {
+          "query": "SELECT * FROM kudos WHERE message.author.id = '105'"
+        },
+        "kudos_given": {
+          "query": "SELECT * FROM kudos WHERE user.id = '105'"
+        },
+        "solutions_authored": {
+          "query": "SELECT * FROM messages WHERE author.id = '105' AND is_solution = true"
+        },
+        "topics": {
+          "query": "SELECT * FROM messages WHERE author.id = '105' AND depth = 0"
+        },
+        "threads_participated": {
+          "query": "SELECT * FROM messages WHERE participants.id = '105' AND depth = 0"
+        },
+        "images": {
+          "query": "SELECT * FROM images WHERE owner.id = '105'"
+        },
+        "public_images": {
+          "query": "SELECT * FROM images WHERE owner.id = '105' AND album.privacy_level = 'public' AND visibility = 'public'"
+        },
+        "albums": {
+          "query": "SELECT * FROM albums WHERE owner.id = '105'"
+        },
+        "videos": {
+          "query": "SELECT * FROM videos WHERE owner.id = '105'"
+        },
+        "user_badges": {
+          "list_item_type": "user_badge",
+          "size": 1,
+          "items": [
+            {
+              "type": "user_badge",
+              "badge": {
+                "type": "badge",
+                "id": "1",
+                "description": "Thank you for taking the first step in your community journey by simply registering to be a part!",
+                "title": "Welcome!",
+                "icon_url": "https://vbeyi74497.stage.lithium.com/html/@E21F644E1F6794D7A70609A41D99B42C/badge_icons/05.22_Registration%20Badge.svg",
+                "awarded": 88,
+                "activation_date": "2020-07-29T14:04:45.443-07:00"
+              },
+              "earned_date": "2022-05-06T14:18:03.514-07:00"
+            }
+          ]
+        },
+        "following": {
+          "query": "SELECT * FROM users WHERE followers.id = '105'"
+        },
+        "followers": {
+          "query": "SELECT * FROM users WHERE following.id = '105'"
+        },
+        "language": "en",
+        "metrics": {
+          "type": "user_metrics"
+        },
+        "settings": {
+          "query": "SELECT * FROM settings WHERE user.id = '105'"
+        },
+        "registration_data": {
+          "type": "registration_data",
+          "registration_time": "2022-05-06T14:17:26.152-07:00",
+          "status": "fully-registered",
+          "registration_access_level": "all",
+          "confirm_email_status": true,
+          "sso_registration_fields": []
+        },
+        "mailbox": {
+          "type": "mailbox"
+        },
+        "banned": false,
+        "deleted": false,
+        "roles": {
+          "query": "SELECT * FROM roles WHERE users.id = '105'"
+        },
+        "messages": {
+          "query": "SELECT * FROM messages WHERE author.id = '105'"
+        },
+        "reviews": {
+          "query": "SELECT * FROM reviews WHERE author.id = '105'"
+        },
+        "last_visit_time": "2022-05-06T14:49:58.228-07:00",
+        "date_pattern": "MM-dd-yyyy",
+        "friendly_date_enabled": false,
+        "friendly_date_max_age": 31
+      },
+      {
+        "type": "user",
+        "id": "104",
+        "sso_id": "google-oauth2|115367716171858489047",
+        "href": "/users/104",
+        "view_href": "/t5/user/viewprofilepage/user-id/104",
+        "login": "anarivas",
+        "email": "ana.rivas@khoros.com",
+        "remember_password": true,
+        "first_name": "Ana",
+        "last_name": "Rivas",
+        "online_status": "offline",
+        "personal_info_privacy": "none",
+        "email_address_privacy": "none",
+        "online_status_privacy": "all",
+        "rank": {
+          "type": "rank",
+          "id": "2",
+          "name": "Administrator",
+          "position": 3,
+          "bold": true,
+          "color": "ED1252",
+          "roles_granted": {
+            "query": "SELECT * FROM roles WHERE ranks_granting.id = '2'"
+          },
+          "roles_removed": {
+            "query": "SELECT * FROM roles WHERE ranks_removing.id = '2'"
+          },
+          "icon_left": "/i/rank_icons/admin.gif",
+          "formula_enabled": false,
+          "formula": "",
+          "simple_criteria": {
+            "type": "simple_rank_criteria",
+            "role": {
+              "type": "role",
+              "id": "t:Administrator",
+              "href": "/roles/t:Administrator"
+            },
+            "user": {},
+            "number_of_posts": 0,
+            "number_of_page_views": 0,
+            "number_of_signins": 0,
+            "minutes_online": 0,
+            "minutes_since_registering": 0,
+            "simple_formula": "hasRole(\"Administrator\")"
+          },
+          "rank_status": "active"
+        },
+        "avatar": {
+          "type": "avatar",
+          "profile": "https://lh3.googleusercontent.com/a-/AOh14GjZo6h7_GamQPJUrBT4JIGCNQZUjCx1ApTAhmbjqw=s96-c",
+          "message": "https://lh3.googleusercontent.com/a-/AOh14GjZo6h7_GamQPJUrBT4JIGCNQZUjCx1ApTAhmbjqw=s96-c",
+          "inline": "https://lh3.googleusercontent.com/a-/AOh14GjZo6h7_GamQPJUrBT4JIGCNQZUjCx1ApTAhmbjqw=s96-c",
+          "favicon": "https://lh3.googleusercontent.com/a-/AOh14GjZo6h7_GamQPJUrBT4JIGCNQZUjCx1ApTAhmbjqw=s96-c",
+          "print": "https://lh3.googleusercontent.com/a-/AOh14GjZo6h7_GamQPJUrBT4JIGCNQZUjCx1ApTAhmbjqw=s96-c"
+        },
+        "kudos_received": {
+          "query": "SELECT * FROM kudos WHERE message.author.id = '104'"
+        },
+        "kudos_given": {
+          "query": "SELECT * FROM kudos WHERE user.id = '104'"
+        },
+        "solutions_authored": {
+          "query": "SELECT * FROM messages WHERE author.id = '104' AND is_solution = true"
+        },
+        "topics": {
+          "query": "SELECT * FROM messages WHERE author.id = '104' AND depth = 0"
+        },
+        "threads_participated": {
+          "query": "SELECT * FROM messages WHERE participants.id = '104' AND depth = 0"
+        },
+        "images": {
+          "query": "SELECT * FROM images WHERE owner.id = '104'"
+        },
+        "public_images": {
+          "query": "SELECT * FROM images WHERE owner.id = '104' AND album.privacy_level = 'public' AND visibility = 'public'"
+        },
+        "albums": {
+          "query": "SELECT * FROM albums WHERE owner.id = '104'"
+        },
+        "videos": {
+          "query": "SELECT * FROM videos WHERE owner.id = '104'"
+        },
+        "user_badges": {
+          "list_item_type": "user_badge",
+          "size": 1,
+          "items": [
+            {
+              "type": "user_badge",
+              "badge": {
+                "type": "badge",
+                "id": "1",
+                "description": "Thank you for taking the first step in your community journey by simply registering to be a part!",
+                "title": "Welcome!",
+                "icon_url": "https://vbeyi74497.stage.lithium.com/html/@E21F644E1F6794D7A70609A41D99B42C/badge_icons/05.22_Registration%20Badge.svg",
+                "awarded": 88,
+                "activation_date": "2020-07-29T14:04:45.443-07:00"
+              },
+              "earned_date": "2022-05-04T20:40:44.512-07:00"
+            }
+          ]
+        },
+        "following": {
+          "query": "SELECT * FROM users WHERE followers.id = '104'"
+        },
+        "followers": {
+          "query": "SELECT * FROM users WHERE following.id = '104'"
+        },
+        "language": "en",
+        "metrics": {
+          "type": "user_metrics"
+        },
+        "settings": {
+          "query": "SELECT * FROM settings WHERE user.id = '104'"
+        },
+        "registration_data": {
+          "type": "registration_data",
+          "registration_time": "2022-05-04T20:40:30.606-07:00",
+          "status": "fully-registered",
+          "registration_access_level": "all",
+          "confirm_email_status": true,
+          "sso_registration_fields": []
+        },
+        "mailbox": {
+          "type": "mailbox"
+        },
+        "banned": false,
+        "deleted": false,
+        "roles": {
+          "query": "SELECT * FROM roles WHERE users.id = '104'"
+        },
+        "messages": {
+          "query": "SELECT * FROM messages WHERE author.id = '104'"
+        },
+        "reviews": {
+          "query": "SELECT * FROM reviews WHERE author.id = '104'"
+        },
+        "last_visit_time": "2022-05-11T09:48:57.422-07:00",
+        "date_pattern": "MM-dd-yyyy",
+        "friendly_date_enabled": false,
+        "friendly_date_max_age": 31
+      },
+      {
+        "type": "user",
+        "id": "103",
+        "sso_id": "google-oauth2|104004304825287076241",
+        "href": "/users/103",
+        "view_href": "/t5/user/viewprofilepage/user-id/103",
+        "login": "JulieH",
+        "email": "julie.hamel@neotechnology.com",
+        "remember_password": true,
+        "first_name": "Julie",
+        "last_name": "Hamel",
+        "biography": "This is a bio",
+        "online_status": "offline",
+        "personal_info_privacy": "none",
+        "email_address_privacy": "none",
+        "online_status_privacy": "all",
+        "rank": {
+          "type": "rank",
+          "id": "2",
+          "name": "Administrator",
+          "position": 3,
+          "bold": true,
+          "color": "ED1252",
+          "roles_granted": {
+            "query": "SELECT * FROM roles WHERE ranks_granting.id = '2'"
+          },
+          "roles_removed": {
+            "query": "SELECT * FROM roles WHERE ranks_removing.id = '2'"
+          },
+          "icon_left": "/i/rank_icons/admin.gif",
+          "formula_enabled": false,
+          "formula": "",
+          "simple_criteria": {
+            "type": "simple_rank_criteria",
+            "role": {
+              "type": "role",
+              "id": "t:Administrator",
+              "href": "/roles/t:Administrator"
+            },
+            "user": {},
+            "number_of_posts": 0,
+            "number_of_page_views": 0,
+            "number_of_signins": 0,
+            "minutes_online": 0,
+            "minutes_since_registering": 0,
+            "simple_formula": "hasRole(\"Administrator\")"
+          },
+          "rank_status": "active"
+        },
+        "avatar": {
+          "type": "avatar",
+          "profile": "https://lh3.googleusercontent.com/a-/AOh14GiU0OPJSSgx57Sa7rMJcxrDs5RGTXDVW2u7VvjM=s96-c",
+          "message": "https://lh3.googleusercontent.com/a-/AOh14GiU0OPJSSgx57Sa7rMJcxrDs5RGTXDVW2u7VvjM=s96-c",
+          "inline": "https://lh3.googleusercontent.com/a-/AOh14GiU0OPJSSgx57Sa7rMJcxrDs5RGTXDVW2u7VvjM=s96-c",
+          "favicon": "https://lh3.googleusercontent.com/a-/AOh14GiU0OPJSSgx57Sa7rMJcxrDs5RGTXDVW2u7VvjM=s96-c",
+          "print": "https://lh3.googleusercontent.com/a-/AOh14GiU0OPJSSgx57Sa7rMJcxrDs5RGTXDVW2u7VvjM=s96-c"
+        },
+        "kudos_received": {
+          "query": "SELECT * FROM kudos WHERE message.author.id = '103'"
+        },
+        "kudos_given": {
+          "query": "SELECT * FROM kudos WHERE user.id = '103'"
+        },
+        "solutions_authored": {
+          "query": "SELECT * FROM messages WHERE author.id = '103' AND is_solution = true"
+        },
+        "topics": {
+          "query": "SELECT * FROM messages WHERE author.id = '103' AND depth = 0"
+        },
+        "threads_participated": {
+          "query": "SELECT * FROM messages WHERE participants.id = '103' AND depth = 0"
+        },
+        "images": {
+          "query": "SELECT * FROM images WHERE owner.id = '103'"
+        },
+        "public_images": {
+          "query": "SELECT * FROM images WHERE owner.id = '103' AND album.privacy_level = 'public' AND visibility = 'public'"
+        },
+        "albums": {
+          "query": "SELECT * FROM albums WHERE owner.id = '103'"
+        },
+        "videos": {
+          "query": "SELECT * FROM videos WHERE owner.id = '103'"
+        },
+        "user_badges": {
+          "list_item_type": "user_badge",
+          "size": 3,
+          "items": [
+            {
+              "type": "user_badge",
+              "badge": {
+                "type": "badge",
+                "id": "1",
+                "description": "Thank you for taking the first step in your community journey by simply registering to be a part!",
+                "title": "Welcome!",
+                "icon_url": "https://vbeyi74497.stage.lithium.com/html/@E21F644E1F6794D7A70609A41D99B42C/badge_icons/05.22_Registration%20Badge.svg",
+                "awarded": 88,
+                "activation_date": "2020-07-29T14:04:45.443-07:00"
+              },
+              "earned_date": "2022-04-28T08:31:48.937-07:00"
+            },
+            {
+              "type": "user_badge",
+              "badge": {
+                "type": "badge",
+                "id": "2",
+                "description": "Thank you for participating in the community. Whether you arrived with a problem to be solved or a solution to provide, we hope you will continue.",
+                "title": "First Contribution",
+                "icon_url": "https://vbeyi74497.stage.lithium.com/html/@C9252C74D1FD3DE3A95D66575D5309A2/badge_icons/05.22_Topics%201%20Badge.svg",
+                "awarded": 31,
+                "activation_date": "2020-07-29T14:43:04.833-07:00"
+              },
+              "earned_date": "2022-04-28T09:29:00.932-07:00"
+            },
+            {
+              "type": "user_badge",
+              "badge": {
+                "type": "badge",
+                "id": "4",
+                "description": "Awarded to our community superusers who joined the Ninja program",
+                "title": "Ninja",
+                "icon_url": "https://vbeyi74497.stage.lithium.com/html/@1AC559E4D549C773BE7AD72382CE188E/badge_icons/05.22_Ninja.svg",
+                "awarded": 3,
+                "activation_date": "2022-04-27T12:40:09.027-07:00"
+              },
+              "earned_date": "2022-04-29T12:16:59.804-07:00"
+            }
+          ]
+        },
+        "following": {
+          "query": "SELECT * FROM users WHERE followers.id = '103'"
+        },
+        "followers": {
+          "query": "SELECT * FROM users WHERE following.id = '103'"
+        },
+        "language": "en",
+        "metrics": {
+          "type": "user_metrics"
+        },
+        "settings": {
+          "query": "SELECT * FROM settings WHERE user.id = '103'"
+        },
+        "registration_data": {
+          "type": "registration_data",
+          "registration_time": "2022-04-28T08:28:18.539-07:00",
+          "status": "fully-registered",
+          "registration_access_level": "all",
+          "confirm_email_status": true,
+          "sso_registration_fields": []
+        },
+        "mailbox": {
+          "type": "mailbox"
+        },
+        "banned": false,
+        "deleted": false,
+        "roles": {
+          "query": "SELECT * FROM roles WHERE users.id = '103'"
+        },
+        "messages": {
+          "query": "SELECT * FROM messages WHERE author.id = '103'"
+        },
+        "reviews": {
+          "query": "SELECT * FROM reviews WHERE author.id = '103'"
+        },
+        "last_visit_time": "2022-06-01T10:53:16.744-07:00",
+        "date_pattern": "MM-dd-yyyy",
+        "friendly_date_enabled": false,
+        "friendly_date_max_age": 31
+      },
+      {
+        "type": "user",
+        "id": "102",
+        "sso_id": "google-oauth2|116323739531938445574",
+        "href": "/users/102",
+        "view_href": "/t5/user/viewprofilepage/user-id/102",
+        "login": "abk_neo",
+        "email": "andreas.kollegger@neotechnology.com",
+        "remember_password": true,
+        "first_name": "Andreas",
+        "last_name": "Kollegger",
+        "online_status": "offline",
+        "personal_info_privacy": "none",
+        "email_address_privacy": "none",
+        "online_status_privacy": "all",
+        "rank": {
+          "type": "rank",
+          "id": "26",
+          "name": "Visitor",
+          "position": 23,
+          "bold": false,
+          "roles_granted": {
+            "query": "SELECT * FROM roles WHERE ranks_granting.id = '26'"
+          },
+          "roles_removed": {
+            "query": "SELECT * FROM roles WHERE ranks_removing.id = '26'"
+          },
+          "formula_enabled": false,
+          "formula": "",
+          "simple_criteria": {
+            "type": "simple_rank_criteria",
+            "role": {},
+            "user": {},
+            "number_of_posts": 0,
+            "number_of_page_views": 0,
+            "number_of_signins": 0,
+            "minutes_online": 0,
+            "minutes_since_registering": 0,
+            "simple_formula": ""
+          },
+          "rank_status": "active"
+        },
+        "avatar": {
+          "type": "avatar",
+          "profile": "https://lh3.googleusercontent.com/a-/AOh14GiHLsMhhfaBDcaL48KXeCvbRkpuo8D_fvQBHzLgTQ=s96-c",
+          "message": "https://lh3.googleusercontent.com/a-/AOh14GiHLsMhhfaBDcaL48KXeCvbRkpuo8D_fvQBHzLgTQ=s96-c",
+          "inline": "https://lh3.googleusercontent.com/a-/AOh14GiHLsMhhfaBDcaL48KXeCvbRkpuo8D_fvQBHzLgTQ=s96-c",
+          "favicon": "https://lh3.googleusercontent.com/a-/AOh14GiHLsMhhfaBDcaL48KXeCvbRkpuo8D_fvQBHzLgTQ=s96-c",
+          "print": "https://lh3.googleusercontent.com/a-/AOh14GiHLsMhhfaBDcaL48KXeCvbRkpuo8D_fvQBHzLgTQ=s96-c"
+        },
+        "kudos_received": {
+          "query": "SELECT * FROM kudos WHERE message.author.id = '102'"
+        },
+        "kudos_given": {
+          "query": "SELECT * FROM kudos WHERE user.id = '102'"
+        },
+        "solutions_authored": {
+          "query": "SELECT * FROM messages WHERE author.id = '102' AND is_solution = true"
+        },
+        "topics": {
+          "query": "SELECT * FROM messages WHERE author.id = '102' AND depth = 0"
+        },
+        "threads_participated": {
+          "query": "SELECT * FROM messages WHERE participants.id = '102' AND depth = 0"
+        },
+        "images": {
+          "query": "SELECT * FROM images WHERE owner.id = '102'"
+        },
+        "public_images": {
+          "query": "SELECT * FROM images WHERE owner.id = '102' AND album.privacy_level = 'public' AND visibility = 'public'"
+        },
+        "albums": {
+          "query": "SELECT * FROM albums WHERE owner.id = '102'"
+        },
+        "videos": {
+          "query": "SELECT * FROM videos WHERE owner.id = '102'"
+        },
+        "user_badges": {
+          "list_item_type": "user_badge",
+          "size": 1,
+          "items": [
+            {
+              "type": "user_badge",
+              "badge": {
+                "type": "badge",
+                "id": "1",
+                "description": "Thank you for taking the first step in your community journey by simply registering to be a part!",
+                "title": "Welcome!",
+                "icon_url": "https://vbeyi74497.stage.lithium.com/html/@E21F644E1F6794D7A70609A41D99B42C/badge_icons/05.22_Registration%20Badge.svg",
+                "awarded": 88,
+                "activation_date": "2020-07-29T14:04:45.443-07:00"
+              },
+              "earned_date": "2022-04-22T00:32:53.930-07:00"
+            }
+          ]
+        },
+        "following": {
+          "query": "SELECT * FROM users WHERE followers.id = '102'"
+        },
+        "followers": {
+          "query": "SELECT * FROM users WHERE following.id = '102'"
+        },
+        "language": "en",
+        "metrics": {
+          "type": "user_metrics"
+        },
+        "settings": {
+          "query": "SELECT * FROM settings WHERE user.id = '102'"
+        },
+        "registration_data": {
+          "type": "registration_data",
+          "registration_time": "2022-04-22T00:32:39.286-07:00",
+          "status": "fully-registered",
+          "registration_access_level": "all",
+          "confirm_email_status": true,
+          "sso_registration_fields": []
+        },
+        "mailbox": {
+          "type": "mailbox"
+        },
+        "banned": false,
+        "deleted": false,
+        "roles": {
+          "query": "SELECT * FROM roles WHERE users.id = '102'"
+        },
+        "messages": {
+          "query": "SELECT * FROM messages WHERE author.id = '102'"
+        },
+        "reviews": {
+          "query": "SELECT * FROM reviews WHERE author.id = '102'"
+        },
+        "last_visit_time": "2022-05-31T01:41:35.343-07:00",
+        "date_pattern": "MM-dd-yyyy",
+        "friendly_date_enabled": false,
+        "friendly_date_max_age": 31
+      },
+      {
+        "type": "user",
+        "id": "101",
+        "sso_id": "auth0|62616172353f8e006affb74d",
+        "href": "/users/101",
+        "view_href": "/t5/user/viewprofilepage/user-id/101",
+        "login": "abk_me_db",
+        "email": "akollegger@me.com",
+        "remember_password": true,
+        "online_status": "offline",
+        "personal_info_privacy": "none",
+        "email_address_privacy": "none",
+        "online_status_privacy": "all",
+        "rank": {
+          "type": "rank",
+          "id": "26",
+          "name": "Visitor",
+          "position": 23,
+          "bold": false,
+          "roles_granted": {
+            "query": "SELECT * FROM roles WHERE ranks_granting.id = '26'"
+          },
+          "roles_removed": {
+            "query": "SELECT * FROM roles WHERE ranks_removing.id = '26'"
+          },
+          "formula_enabled": false,
+          "formula": "",
+          "simple_criteria": {
+            "type": "simple_rank_criteria",
+            "role": {},
+            "user": {},
+            "number_of_posts": 0,
+            "number_of_page_views": 0,
+            "number_of_signins": 0,
+            "minutes_online": 0,
+            "minutes_since_registering": 0,
+            "simple_formula": ""
+          },
+          "rank_status": "active"
+        },
+        "avatar": {
+          "type": "avatar",
+          "profile": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/avatar-8/avatar-theme/candy/avatar-collection/Hermes_Default/avatar-display-size/profile/version/2?xdesc=1.0",
+          "message": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/avatar-8/avatar-theme/candy/avatar-collection/Hermes_Default/avatar-display-size/message/version/2?xdesc=1.0",
+          "inline": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/avatar-8/avatar-theme/candy/avatar-collection/Hermes_Default/avatar-display-size/inline/version/2?xdesc=1.0",
+          "favicon": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/avatar-8/avatar-theme/candy/avatar-collection/Hermes_Default/avatar-display-size/favicon/version/2?xdesc=1.0",
+          "print": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/avatar-8/avatar-theme/candy/avatar-collection/Hermes_Default/avatar-display-size/print/version/2?xdesc=1.0"
+        },
+        "kudos_received": {
+          "query": "SELECT * FROM kudos WHERE message.author.id = '101'"
+        },
+        "kudos_given": {
+          "query": "SELECT * FROM kudos WHERE user.id = '101'"
+        },
+        "solutions_authored": {
+          "query": "SELECT * FROM messages WHERE author.id = '101' AND is_solution = true"
+        },
+        "topics": {
+          "query": "SELECT * FROM messages WHERE author.id = '101' AND depth = 0"
+        },
+        "threads_participated": {
+          "query": "SELECT * FROM messages WHERE participants.id = '101' AND depth = 0"
+        },
+        "images": {
+          "query": "SELECT * FROM images WHERE owner.id = '101'"
+        },
+        "public_images": {
+          "query": "SELECT * FROM images WHERE owner.id = '101' AND album.privacy_level = 'public' AND visibility = 'public'"
+        },
+        "albums": {
+          "query": "SELECT * FROM albums WHERE owner.id = '101'"
+        },
+        "videos": {
+          "query": "SELECT * FROM videos WHERE owner.id = '101'"
+        },
+        "user_badges": {
+          "list_item_type": "user_badge",
+          "size": 1,
+          "items": [
+            {
+              "type": "user_badge",
+              "badge": {
+                "type": "badge",
+                "id": "1",
+                "description": "Thank you for taking the first step in your community journey by simply registering to be a part!",
+                "title": "Welcome!",
+                "icon_url": "https://vbeyi74497.stage.lithium.com/html/@E21F644E1F6794D7A70609A41D99B42C/badge_icons/05.22_Registration%20Badge.svg",
+                "awarded": 88,
+                "activation_date": "2020-07-29T14:04:45.443-07:00"
+              },
+              "earned_date": "2022-04-21T06:52:09.931-07:00"
+            }
+          ]
+        },
+        "following": {
+          "query": "SELECT * FROM users WHERE followers.id = '101'"
+        },
+        "followers": {
+          "query": "SELECT * FROM users WHERE following.id = '101'"
+        },
+        "language": "en",
+        "metrics": {
+          "type": "user_metrics"
+        },
+        "settings": {
+          "query": "SELECT * FROM settings WHERE user.id = '101'"
+        },
+        "registration_data": {
+          "type": "registration_data",
+          "registration_time": "2022-04-21T06:51:48.349-07:00",
+          "status": "fully-registered",
+          "registration_access_level": "all",
+          "confirm_email_status": true,
+          "sso_registration_fields": []
+        },
+        "mailbox": {
+          "type": "mailbox"
+        },
+        "banned": false,
+        "deleted": false,
+        "roles": {
+          "query": "SELECT * FROM roles WHERE users.id = '101'"
+        },
+        "messages": {
+          "query": "SELECT * FROM messages WHERE author.id = '101'"
+        },
+        "reviews": {
+          "query": "SELECT * FROM reviews WHERE author.id = '101'"
+        },
+        "last_visit_time": "2022-04-22T00:30:53.478-07:00",
+        "date_pattern": "MM-dd-yyyy",
+        "friendly_date_enabled": false,
+        "friendly_date_max_age": 31
+      },
+      {
+        "type": "user",
+        "id": "100",
+        "sso_id": "github|53756",
+        "href": "/users/100",
+        "view_href": "/t5/user/viewprofilepage/user-id/100",
+        "login": "abk_github",
+        "email": "akollegger@gmail.com",
+        "remember_password": true,
+        "online_status": "offline",
+        "personal_info_privacy": "none",
+        "email_address_privacy": "none",
+        "online_status_privacy": "all",
+        "rank": {
+          "type": "rank",
+          "id": "20",
+          "name": "Node",
+          "position": 22,
+          "bold": true,
+          "color": "3557b4",
+          "roles_granted": {
+            "query": "SELECT * FROM roles WHERE ranks_granting.id = '20'"
+          },
+          "roles_removed": {
+            "query": "SELECT * FROM roles WHERE ranks_removing.id = '20'"
+          },
+          "formula_enabled": true,
+          "formula": "(registrationAge >= 1440) && ((((net_threads) + (net_replies*2) + (net_blog_articles*10) + (net_blog_comments) + (net_idea_threads*5) + (net_idea_comments) + (net_contributed_posts*5) + (net_published_tkb_articles*10) + (net_tkb_comments)) >=1)||(overall_posts >2)) && (((net_accepted_solutions*10) + (net_kudos_weight_given) + (net_kudos_weight_received*2) + (tagging_tag_count)) >=0)",
+          "simple_criteria": {
+            "type": "simple_rank_criteria",
+            "role": {},
+            "user": {},
+            "number_of_posts": 0,
+            "number_of_page_views": 0,
+            "number_of_signins": 0,
+            "minutes_online": 0,
+            "minutes_since_registering": 0,
+            "simple_formula": ""
+          },
+          "rank_status": "active"
+        },
+        "avatar": {
+          "type": "avatar",
+          "profile": "https://avatars.githubusercontent.com/u/53756?v=4",
+          "message": "https://avatars.githubusercontent.com/u/53756?v=4",
+          "inline": "https://avatars.githubusercontent.com/u/53756?v=4",
+          "favicon": "https://avatars.githubusercontent.com/u/53756?v=4",
+          "print": "https://avatars.githubusercontent.com/u/53756?v=4"
+        },
+        "kudos_received": {
+          "query": "SELECT * FROM kudos WHERE message.author.id = '100'"
+        },
+        "kudos_given": {
+          "query": "SELECT * FROM kudos WHERE user.id = '100'"
+        },
+        "solutions_authored": {
+          "query": "SELECT * FROM messages WHERE author.id = '100' AND is_solution = true"
+        },
+        "topics": {
+          "query": "SELECT * FROM messages WHERE author.id = '100' AND depth = 0"
+        },
+        "threads_participated": {
+          "query": "SELECT * FROM messages WHERE participants.id = '100' AND depth = 0"
+        },
+        "images": {
+          "query": "SELECT * FROM images WHERE owner.id = '100'"
+        },
+        "public_images": {
+          "query": "SELECT * FROM images WHERE owner.id = '100' AND album.privacy_level = 'public' AND visibility = 'public'"
+        },
+        "albums": {
+          "query": "SELECT * FROM albums WHERE owner.id = '100'"
+        },
+        "videos": {
+          "query": "SELECT * FROM videos WHERE owner.id = '100'"
+        },
+        "user_badges": {
+          "list_item_type": "user_badge",
+          "size": 2,
+          "items": [
+            {
+              "type": "user_badge",
+              "badge": {
+                "type": "badge",
+                "id": "1",
+                "description": "Thank you for taking the first step in your community journey by simply registering to be a part!",
+                "title": "Welcome!",
+                "icon_url": "https://vbeyi74497.stage.lithium.com/html/@E21F644E1F6794D7A70609A41D99B42C/badge_icons/05.22_Registration%20Badge.svg",
+                "awarded": 88,
+                "activation_date": "2020-07-29T14:04:45.443-07:00"
+              },
+              "earned_date": "2022-04-21T01:02:39.431-07:00"
+            },
+            {
+              "type": "user_badge",
+              "badge": {
+                "type": "badge",
+                "id": "11",
+                "description": "Congrats on posting your first reply! Posting replies is a great way to get involved. Keep it up!",
+                "title": "First Reply",
+                "icon_url": "https://vbeyi74497.stage.lithium.com/html/@4F0BC35A67CE97A389E3650EEB0FCA7C/badge_icons/05.22_Replies%201%20Badge.svg",
+                "awarded": 22,
+                "activation_date": "2022-05-12T14:11:34.897-07:00"
+              },
+              "earned_date": "2022-05-12T14:11:35.328-07:00"
+            }
+          ]
+        },
+        "following": {
+          "query": "SELECT * FROM users WHERE followers.id = '100'"
+        },
+        "followers": {
+          "query": "SELECT * FROM users WHERE following.id = '100'"
+        },
+        "language": "en",
+        "metrics": {
+          "type": "user_metrics"
+        },
+        "settings": {
+          "query": "SELECT * FROM settings WHERE user.id = '100'"
+        },
+        "registration_data": {
+          "type": "registration_data",
+          "registration_time": "2022-04-21T01:02:18.050-07:00",
+          "status": "fully-registered",
+          "registration_access_level": "all",
+          "confirm_email_status": true,
+          "sso_registration_fields": []
+        },
+        "mailbox": {
+          "type": "mailbox"
+        },
+        "banned": false,
+        "deleted": false,
+        "roles": {
+          "query": "SELECT * FROM roles WHERE users.id = '100'"
+        },
+        "messages": {
+          "query": "SELECT * FROM messages WHERE author.id = '100'"
+        },
+        "reviews": {
+          "query": "SELECT * FROM reviews WHERE author.id = '100'"
+        },
+        "last_visit_time": "2022-04-26T00:10:55.806-07:00",
+        "date_pattern": "MM-dd-yyyy",
+        "friendly_date_enabled": false,
+        "friendly_date_max_age": 31
+      },
+      {
+        "type": "user",
+        "id": "99",
+        "href": "/users/99",
+        "view_href": "/t5/user/viewprofilepage/user-id/99",
+        "login": "kh_Keyon_890",
+        "email": "Keyon_890@example.com",
+        "remember_password": true,
+        "first_name": "Keyon_890",
+        "last_name": "Smitham",
+        "online_status": "offline",
+        "personal_info_privacy": "none",
+        "email_address_privacy": "none",
+        "online_status_privacy": "all",
+        "rank": {
+          "type": "rank",
+          "id": "26",
+          "name": "Visitor",
+          "position": 23,
+          "bold": false,
+          "roles_granted": {
+            "query": "SELECT * FROM roles WHERE ranks_granting.id = '26'"
+          },
+          "roles_removed": {
+            "query": "SELECT * FROM roles WHERE ranks_removing.id = '26'"
+          },
+          "formula_enabled": false,
+          "formula": "",
+          "simple_criteria": {
+            "type": "simple_rank_criteria",
+            "role": {},
+            "user": {},
+            "number_of_posts": 0,
+            "number_of_page_views": 0,
+            "number_of_signins": 0,
+            "minutes_online": 0,
+            "minutes_since_registering": 0,
+            "simple_formula": ""
+          },
+          "rank_status": "active"
+        },
+        "avatar": {
+          "type": "avatar",
+          "profile": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/knitting/avatar-theme/candy/avatar-collection/hobbies/avatar-display-size/profile/version/2?xdesc=1.0",
+          "message": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/knitting/avatar-theme/candy/avatar-collection/hobbies/avatar-display-size/message/version/2?xdesc=1.0",
+          "inline": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/knitting/avatar-theme/candy/avatar-collection/hobbies/avatar-display-size/inline/version/2?xdesc=1.0",
+          "favicon": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/knitting/avatar-theme/candy/avatar-collection/hobbies/avatar-display-size/favicon/version/2?xdesc=1.0",
+          "print": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/knitting/avatar-theme/candy/avatar-collection/hobbies/avatar-display-size/print/version/2?xdesc=1.0"
+        },
+        "kudos_received": {
+          "query": "SELECT * FROM kudos WHERE message.author.id = '99'"
+        },
+        "kudos_given": {
+          "query": "SELECT * FROM kudos WHERE user.id = '99'"
+        },
+        "solutions_authored": {
+          "query": "SELECT * FROM messages WHERE author.id = '99' AND is_solution = true"
+        },
+        "topics": {
+          "query": "SELECT * FROM messages WHERE author.id = '99' AND depth = 0"
+        },
+        "threads_participated": {
+          "query": "SELECT * FROM messages WHERE participants.id = '99' AND depth = 0"
+        },
+        "images": {
+          "query": "SELECT * FROM images WHERE owner.id = '99'"
+        },
+        "public_images": {
+          "query": "SELECT * FROM images WHERE owner.id = '99' AND album.privacy_level = 'public' AND visibility = 'public'"
+        },
+        "albums": {
+          "query": "SELECT * FROM albums WHERE owner.id = '99'"
+        },
+        "videos": {
+          "query": "SELECT * FROM videos WHERE owner.id = '99'"
+        },
+        "user_badges": {
+          "list_item_type": "user_badge",
+          "size": 0,
+          "items": []
+        },
+        "following": {
+          "query": "SELECT * FROM users WHERE followers.id = '99'"
+        },
+        "followers": {
+          "query": "SELECT * FROM users WHERE following.id = '99'"
+        },
+        "language": "en",
+        "metrics": {
+          "type": "user_metrics"
+        },
+        "settings": {
+          "query": "SELECT * FROM settings WHERE user.id = '99'"
+        },
+        "registration_data": {
+          "type": "registration_data",
+          "registration_time": "2022-04-20T12:25:34.494-07:00",
+          "status": "fully-registered",
+          "registration_access_level": "all",
+          "confirm_email_status": false,
+          "sso_registration_fields": []
+        },
+        "mailbox": {
+          "type": "mailbox"
+        },
+        "deleted": false,
+        "roles": {
+          "query": "SELECT * FROM roles WHERE users.id = '99'"
+        },
+        "messages": {
+          "query": "SELECT * FROM messages WHERE author.id = '99'"
+        },
+        "reviews": {
+          "query": "SELECT * FROM reviews WHERE author.id = '99'"
+        },
+        "last_visit_time": "2022-04-20T12:56:05.611-07:00",
+        "date_pattern": "MM-dd-yyyy",
+        "friendly_date_enabled": false,
+        "friendly_date_max_age": 31
+      },
+      {
+        "type": "user",
+        "id": "98",
+        "href": "/users/98",
+        "view_href": "/t5/user/viewprofilepage/user-id/98",
+        "login": "kh_Sheldon_349",
+        "email": "Sheldon_349@example.com",
+        "remember_password": true,
+        "first_name": "Sheldon_349",
+        "last_name": "Rodriguez",
+        "online_status": "offline",
+        "personal_info_privacy": "none",
+        "email_address_privacy": "none",
+        "online_status_privacy": "all",
+        "rank": {
+          "type": "rank",
+          "id": "26",
+          "name": "Visitor",
+          "position": 23,
+          "bold": false,
+          "roles_granted": {
+            "query": "SELECT * FROM roles WHERE ranks_granting.id = '26'"
+          },
+          "roles_removed": {
+            "query": "SELECT * FROM roles WHERE ranks_removing.id = '26'"
+          },
+          "formula_enabled": false,
+          "formula": "",
+          "simple_criteria": {
+            "type": "simple_rank_criteria",
+            "role": {},
+            "user": {},
+            "number_of_posts": 0,
+            "number_of_page_views": 0,
+            "number_of_signins": 0,
+            "minutes_online": 0,
+            "minutes_since_registering": 0,
+            "simple_formula": ""
+          },
+          "rank_status": "active"
+        },
+        "avatar": {
+          "type": "avatar",
+          "profile": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/robocyborg/avatar-theme/candy/avatar-collection/robots/avatar-display-size/profile/version/2?xdesc=1.0",
+          "message": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/robocyborg/avatar-theme/candy/avatar-collection/robots/avatar-display-size/message/version/2?xdesc=1.0",
+          "inline": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/robocyborg/avatar-theme/candy/avatar-collection/robots/avatar-display-size/inline/version/2?xdesc=1.0",
+          "favicon": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/robocyborg/avatar-theme/candy/avatar-collection/robots/avatar-display-size/favicon/version/2?xdesc=1.0",
+          "print": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/robocyborg/avatar-theme/candy/avatar-collection/robots/avatar-display-size/print/version/2?xdesc=1.0"
+        },
+        "kudos_received": {
+          "query": "SELECT * FROM kudos WHERE message.author.id = '98'"
+        },
+        "kudos_given": {
+          "query": "SELECT * FROM kudos WHERE user.id = '98'"
+        },
+        "solutions_authored": {
+          "query": "SELECT * FROM messages WHERE author.id = '98' AND is_solution = true"
+        },
+        "topics": {
+          "query": "SELECT * FROM messages WHERE author.id = '98' AND depth = 0"
+        },
+        "threads_participated": {
+          "query": "SELECT * FROM messages WHERE participants.id = '98' AND depth = 0"
+        },
+        "images": {
+          "query": "SELECT * FROM images WHERE owner.id = '98'"
+        },
+        "public_images": {
+          "query": "SELECT * FROM images WHERE owner.id = '98' AND album.privacy_level = 'public' AND visibility = 'public'"
+        },
+        "albums": {
+          "query": "SELECT * FROM albums WHERE owner.id = '98'"
+        },
+        "videos": {
+          "query": "SELECT * FROM videos WHERE owner.id = '98'"
+        },
+        "user_badges": {
+          "list_item_type": "user_badge",
+          "size": 0,
+          "items": []
+        },
+        "following": {
+          "query": "SELECT * FROM users WHERE followers.id = '98'"
+        },
+        "followers": {
+          "query": "SELECT * FROM users WHERE following.id = '98'"
+        },
+        "language": "en",
+        "metrics": {
+          "type": "user_metrics"
+        },
+        "settings": {
+          "query": "SELECT * FROM settings WHERE user.id = '98'"
+        },
+        "registration_data": {
+          "type": "registration_data",
+          "registration_time": "2022-04-20T12:25:32.339-07:00",
+          "status": "fully-registered",
+          "registration_access_level": "all",
+          "confirm_email_status": false,
+          "sso_registration_fields": []
+        },
+        "mailbox": {
+          "type": "mailbox"
+        },
+        "deleted": false,
+        "roles": {
+          "query": "SELECT * FROM roles WHERE users.id = '98'"
+        },
+        "messages": {
+          "query": "SELECT * FROM messages WHERE author.id = '98'"
+        },
+        "reviews": {
+          "query": "SELECT * FROM reviews WHERE author.id = '98'"
+        },
+        "last_visit_time": "2022-04-20T12:55:35.974-07:00",
+        "date_pattern": "MM-dd-yyyy",
+        "friendly_date_enabled": false,
+        "friendly_date_max_age": 31
+      },
+      {
+        "type": "user",
+        "id": "97",
+        "href": "/users/97",
+        "view_href": "/t5/user/viewprofilepage/user-id/97",
+        "login": "kh_Blanca_596",
+        "email": "Blanca_596@example.com",
+        "remember_password": true,
+        "first_name": "Blanca_596",
+        "last_name": "Wehner",
+        "online_status": "offline",
+        "personal_info_privacy": "none",
+        "email_address_privacy": "none",
+        "online_status_privacy": "all",
+        "rank": {
+          "type": "rank",
+          "id": "26",
+          "name": "Visitor",
+          "position": 23,
+          "bold": false,
+          "roles_granted": {
+            "query": "SELECT * FROM roles WHERE ranks_granting.id = '26'"
+          },
+          "roles_removed": {
+            "query": "SELECT * FROM roles WHERE ranks_removing.id = '26'"
+          },
+          "formula_enabled": false,
+          "formula": "",
+          "simple_criteria": {
+            "type": "simple_rank_criteria",
+            "role": {},
+            "user": {},
+            "number_of_posts": 0,
+            "number_of_page_views": 0,
+            "number_of_signins": 0,
+            "minutes_online": 0,
+            "minutes_since_registering": 0,
+            "simple_formula": ""
+          },
+          "rank_status": "active"
+        },
+        "avatar": {
+          "type": "avatar",
+          "profile": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/death/avatar-theme/candy/avatar-collection/monsters/avatar-display-size/profile/version/2?xdesc=1.0",
+          "message": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/death/avatar-theme/candy/avatar-collection/monsters/avatar-display-size/message/version/2?xdesc=1.0",
+          "inline": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/death/avatar-theme/candy/avatar-collection/monsters/avatar-display-size/inline/version/2?xdesc=1.0",
+          "favicon": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/death/avatar-theme/candy/avatar-collection/monsters/avatar-display-size/favicon/version/2?xdesc=1.0",
+          "print": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/death/avatar-theme/candy/avatar-collection/monsters/avatar-display-size/print/version/2?xdesc=1.0"
+        },
+        "kudos_received": {
+          "query": "SELECT * FROM kudos WHERE message.author.id = '97'"
+        },
+        "kudos_given": {
+          "query": "SELECT * FROM kudos WHERE user.id = '97'"
+        },
+        "solutions_authored": {
+          "query": "SELECT * FROM messages WHERE author.id = '97' AND is_solution = true"
+        },
+        "topics": {
+          "query": "SELECT * FROM messages WHERE author.id = '97' AND depth = 0"
+        },
+        "threads_participated": {
+          "query": "SELECT * FROM messages WHERE participants.id = '97' AND depth = 0"
+        },
+        "images": {
+          "query": "SELECT * FROM images WHERE owner.id = '97'"
+        },
+        "public_images": {
+          "query": "SELECT * FROM images WHERE owner.id = '97' AND album.privacy_level = 'public' AND visibility = 'public'"
+        },
+        "albums": {
+          "query": "SELECT * FROM albums WHERE owner.id = '97'"
+        },
+        "videos": {
+          "query": "SELECT * FROM videos WHERE owner.id = '97'"
+        },
+        "user_badges": {
+          "list_item_type": "user_badge",
+          "size": 0,
+          "items": []
+        },
+        "following": {
+          "query": "SELECT * FROM users WHERE followers.id = '97'"
+        },
+        "followers": {
+          "query": "SELECT * FROM users WHERE following.id = '97'"
+        },
+        "language": "en",
+        "metrics": {
+          "type": "user_metrics"
+        },
+        "settings": {
+          "query": "SELECT * FROM settings WHERE user.id = '97'"
+        },
+        "registration_data": {
+          "type": "registration_data",
+          "registration_time": "2022-04-20T12:25:30.054-07:00",
+          "status": "fully-registered",
+          "registration_access_level": "all",
+          "confirm_email_status": false,
+          "sso_registration_fields": []
+        },
+        "mailbox": {
+          "type": "mailbox"
+        },
+        "deleted": false,
+        "roles": {
+          "query": "SELECT * FROM roles WHERE users.id = '97'"
+        },
+        "messages": {
+          "query": "SELECT * FROM messages WHERE author.id = '97'"
+        },
+        "reviews": {
+          "query": "SELECT * FROM reviews WHERE author.id = '97'"
+        },
+        "last_visit_time": "2022-04-20T12:55:35.944-07:00",
+        "date_pattern": "MM-dd-yyyy",
+        "friendly_date_enabled": false,
+        "friendly_date_max_age": 31
+      },
+      {
+        "type": "user",
+        "id": "96",
+        "href": "/users/96",
+        "view_href": "/t5/user/viewprofilepage/user-id/96",
+        "login": "kh_Victoria_916",
+        "email": "Victoria_916@example.com",
+        "remember_password": true,
+        "first_name": "Victoria_916",
+        "last_name": "Douglas",
+        "online_status": "offline",
+        "personal_info_privacy": "none",
+        "email_address_privacy": "none",
+        "online_status_privacy": "all",
+        "rank": {
+          "type": "rank",
+          "id": "26",
+          "name": "Visitor",
+          "position": 23,
+          "bold": false,
+          "roles_granted": {
+            "query": "SELECT * FROM roles WHERE ranks_granting.id = '26'"
+          },
+          "roles_removed": {
+            "query": "SELECT * FROM roles WHERE ranks_removing.id = '26'"
+          },
+          "formula_enabled": false,
+          "formula": "",
+          "simple_criteria": {
+            "type": "simple_rank_criteria",
+            "role": {},
+            "user": {},
+            "number_of_posts": 0,
+            "number_of_page_views": 0,
+            "number_of_signins": 0,
+            "minutes_online": 0,
+            "minutes_since_registering": 0,
+            "simple_formula": ""
+          },
+          "rank_status": "active"
+        },
+        "avatar": {
+          "type": "avatar",
+          "profile": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/avatar-12/avatar-theme/candy/avatar-collection/Hermes_Default/avatar-display-size/profile/version/2?xdesc=1.0",
+          "message": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/avatar-12/avatar-theme/candy/avatar-collection/Hermes_Default/avatar-display-size/message/version/2?xdesc=1.0",
+          "inline": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/avatar-12/avatar-theme/candy/avatar-collection/Hermes_Default/avatar-display-size/inline/version/2?xdesc=1.0",
+          "favicon": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/avatar-12/avatar-theme/candy/avatar-collection/Hermes_Default/avatar-display-size/favicon/version/2?xdesc=1.0",
+          "print": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/avatar-12/avatar-theme/candy/avatar-collection/Hermes_Default/avatar-display-size/print/version/2?xdesc=1.0"
+        },
+        "kudos_received": {
+          "query": "SELECT * FROM kudos WHERE message.author.id = '96'"
+        },
+        "kudos_given": {
+          "query": "SELECT * FROM kudos WHERE user.id = '96'"
+        },
+        "solutions_authored": {
+          "query": "SELECT * FROM messages WHERE author.id = '96' AND is_solution = true"
+        },
+        "topics": {
+          "query": "SELECT * FROM messages WHERE author.id = '96' AND depth = 0"
+        },
+        "threads_participated": {
+          "query": "SELECT * FROM messages WHERE participants.id = '96' AND depth = 0"
+        },
+        "images": {
+          "query": "SELECT * FROM images WHERE owner.id = '96'"
+        },
+        "public_images": {
+          "query": "SELECT * FROM images WHERE owner.id = '96' AND album.privacy_level = 'public' AND visibility = 'public'"
+        },
+        "albums": {
+          "query": "SELECT * FROM albums WHERE owner.id = '96'"
+        },
+        "videos": {
+          "query": "SELECT * FROM videos WHERE owner.id = '96'"
+        },
+        "user_badges": {
+          "list_item_type": "user_badge",
+          "size": 0,
+          "items": []
+        },
+        "following": {
+          "query": "SELECT * FROM users WHERE followers.id = '96'"
+        },
+        "followers": {
+          "query": "SELECT * FROM users WHERE following.id = '96'"
+        },
+        "language": "en",
+        "metrics": {
+          "type": "user_metrics"
+        },
+        "settings": {
+          "query": "SELECT * FROM settings WHERE user.id = '96'"
+        },
+        "registration_data": {
+          "type": "registration_data",
+          "registration_time": "2022-04-20T12:25:27.841-07:00",
+          "status": "fully-registered",
+          "registration_access_level": "all",
+          "confirm_email_status": false,
+          "sso_registration_fields": []
+        },
+        "mailbox": {
+          "type": "mailbox"
+        },
+        "deleted": false,
+        "roles": {
+          "query": "SELECT * FROM roles WHERE users.id = '96'"
+        },
+        "messages": {
+          "query": "SELECT * FROM messages WHERE author.id = '96'"
+        },
+        "reviews": {
+          "query": "SELECT * FROM reviews WHERE author.id = '96'"
+        },
+        "last_visit_time": "2022-04-20T12:55:35.909-07:00",
+        "date_pattern": "MM-dd-yyyy",
+        "friendly_date_enabled": false,
+        "friendly_date_max_age": 31
+      },
+      {
+        "type": "user",
+        "id": "95",
+        "href": "/users/95",
+        "view_href": "/t5/user/viewprofilepage/user-id/95",
+        "login": "kh_Marcus_714",
+        "email": "Marcus_714@example.com",
+        "remember_password": true,
+        "first_name": "Marcus_714",
+        "last_name": "Rath",
+        "online_status": "offline",
+        "personal_info_privacy": "none",
+        "email_address_privacy": "none",
+        "online_status_privacy": "all",
+        "rank": {
+          "type": "rank",
+          "id": "26",
+          "name": "Visitor",
+          "position": 23,
+          "bold": false,
+          "roles_granted": {
+            "query": "SELECT * FROM roles WHERE ranks_granting.id = '26'"
+          },
+          "roles_removed": {
+            "query": "SELECT * FROM roles WHERE ranks_removing.id = '26'"
+          },
+          "formula_enabled": false,
+          "formula": "",
+          "simple_criteria": {
+            "type": "simple_rank_criteria",
+            "role": {},
+            "user": {},
+            "number_of_posts": 0,
+            "number_of_page_views": 0,
+            "number_of_signins": 0,
+            "minutes_online": 0,
+            "minutes_since_registering": 0,
+            "simple_formula": ""
+          },
+          "rank_status": "active"
+        },
+        "avatar": {
+          "type": "avatar",
+          "profile": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/trumpet/avatar-theme/candy/avatar-collection/music/avatar-display-size/profile/version/2?xdesc=1.0",
+          "message": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/trumpet/avatar-theme/candy/avatar-collection/music/avatar-display-size/message/version/2?xdesc=1.0",
+          "inline": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/trumpet/avatar-theme/candy/avatar-collection/music/avatar-display-size/inline/version/2?xdesc=1.0",
+          "favicon": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/trumpet/avatar-theme/candy/avatar-collection/music/avatar-display-size/favicon/version/2?xdesc=1.0",
+          "print": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/trumpet/avatar-theme/candy/avatar-collection/music/avatar-display-size/print/version/2?xdesc=1.0"
+        },
+        "kudos_received": {
+          "query": "SELECT * FROM kudos WHERE message.author.id = '95'"
+        },
+        "kudos_given": {
+          "query": "SELECT * FROM kudos WHERE user.id = '95'"
+        },
+        "solutions_authored": {
+          "query": "SELECT * FROM messages WHERE author.id = '95' AND is_solution = true"
+        },
+        "topics": {
+          "query": "SELECT * FROM messages WHERE author.id = '95' AND depth = 0"
+        },
+        "threads_participated": {
+          "query": "SELECT * FROM messages WHERE participants.id = '95' AND depth = 0"
+        },
+        "images": {
+          "query": "SELECT * FROM images WHERE owner.id = '95'"
+        },
+        "public_images": {
+          "query": "SELECT * FROM images WHERE owner.id = '95' AND album.privacy_level = 'public' AND visibility = 'public'"
+        },
+        "albums": {
+          "query": "SELECT * FROM albums WHERE owner.id = '95'"
+        },
+        "videos": {
+          "query": "SELECT * FROM videos WHERE owner.id = '95'"
+        },
+        "user_badges": {
+          "list_item_type": "user_badge",
+          "size": 0,
+          "items": []
+        },
+        "following": {
+          "query": "SELECT * FROM users WHERE followers.id = '95'"
+        },
+        "followers": {
+          "query": "SELECT * FROM users WHERE following.id = '95'"
+        },
+        "language": "en",
+        "metrics": {
+          "type": "user_metrics"
+        },
+        "settings": {
+          "query": "SELECT * FROM settings WHERE user.id = '95'"
+        },
+        "registration_data": {
+          "type": "registration_data",
+          "registration_time": "2022-04-20T12:25:25.739-07:00",
+          "status": "fully-registered",
+          "registration_access_level": "all",
+          "confirm_email_status": false,
+          "sso_registration_fields": []
+        },
+        "mailbox": {
+          "type": "mailbox"
+        },
+        "deleted": false,
+        "roles": {
+          "query": "SELECT * FROM roles WHERE users.id = '95'"
+        },
+        "messages": {
+          "query": "SELECT * FROM messages WHERE author.id = '95'"
+        },
+        "reviews": {
+          "query": "SELECT * FROM reviews WHERE author.id = '95'"
+        },
+        "last_visit_time": "2022-04-20T12:55:35.868-07:00",
+        "date_pattern": "MM-dd-yyyy",
+        "friendly_date_enabled": false,
+        "friendly_date_max_age": 31
+      },
+      {
+        "type": "user",
+        "id": "94",
+        "href": "/users/94",
+        "view_href": "/t5/user/viewprofilepage/user-id/94",
+        "login": "kh_Oda_940",
+        "email": "Oda_940@example.com",
+        "remember_password": true,
+        "first_name": "Oda_940",
+        "last_name": "Walter",
+        "online_status": "offline",
+        "personal_info_privacy": "none",
+        "email_address_privacy": "none",
+        "online_status_privacy": "all",
+        "rank": {
+          "type": "rank",
+          "id": "26",
+          "name": "Visitor",
+          "position": 23,
+          "bold": false,
+          "roles_granted": {
+            "query": "SELECT * FROM roles WHERE ranks_granting.id = '26'"
+          },
+          "roles_removed": {
+            "query": "SELECT * FROM roles WHERE ranks_removing.id = '26'"
+          },
+          "formula_enabled": false,
+          "formula": "",
+          "simple_criteria": {
+            "type": "simple_rank_criteria",
+            "role": {},
+            "user": {},
+            "number_of_posts": 0,
+            "number_of_page_views": 0,
+            "number_of_signins": 0,
+            "minutes_online": 0,
+            "minutes_since_registering": 0,
+            "simple_formula": ""
+          },
+          "rank_status": "active"
+        },
+        "avatar": {
+          "type": "avatar",
+          "profile": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/ball/avatar-theme/candy/avatar-collection/toys/avatar-display-size/profile/version/2?xdesc=1.0",
+          "message": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/ball/avatar-theme/candy/avatar-collection/toys/avatar-display-size/message/version/2?xdesc=1.0",
+          "inline": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/ball/avatar-theme/candy/avatar-collection/toys/avatar-display-size/inline/version/2?xdesc=1.0",
+          "favicon": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/ball/avatar-theme/candy/avatar-collection/toys/avatar-display-size/favicon/version/2?xdesc=1.0",
+          "print": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/ball/avatar-theme/candy/avatar-collection/toys/avatar-display-size/print/version/2?xdesc=1.0"
+        },
+        "kudos_received": {
+          "query": "SELECT * FROM kudos WHERE message.author.id = '94'"
+        },
+        "kudos_given": {
+          "query": "SELECT * FROM kudos WHERE user.id = '94'"
+        },
+        "solutions_authored": {
+          "query": "SELECT * FROM messages WHERE author.id = '94' AND is_solution = true"
+        },
+        "topics": {
+          "query": "SELECT * FROM messages WHERE author.id = '94' AND depth = 0"
+        },
+        "threads_participated": {
+          "query": "SELECT * FROM messages WHERE participants.id = '94' AND depth = 0"
+        },
+        "images": {
+          "query": "SELECT * FROM images WHERE owner.id = '94'"
+        },
+        "public_images": {
+          "query": "SELECT * FROM images WHERE owner.id = '94' AND album.privacy_level = 'public' AND visibility = 'public'"
+        },
+        "albums": {
+          "query": "SELECT * FROM albums WHERE owner.id = '94'"
+        },
+        "videos": {
+          "query": "SELECT * FROM videos WHERE owner.id = '94'"
+        },
+        "user_badges": {
+          "list_item_type": "user_badge",
+          "size": 0,
+          "items": []
+        },
+        "following": {
+          "query": "SELECT * FROM users WHERE followers.id = '94'"
+        },
+        "followers": {
+          "query": "SELECT * FROM users WHERE following.id = '94'"
+        },
+        "language": "en",
+        "metrics": {
+          "type": "user_metrics"
+        },
+        "settings": {
+          "query": "SELECT * FROM settings WHERE user.id = '94'"
+        },
+        "registration_data": {
+          "type": "registration_data",
+          "registration_time": "2022-04-20T12:25:23.551-07:00",
+          "status": "fully-registered",
+          "registration_access_level": "all",
+          "confirm_email_status": false,
+          "sso_registration_fields": []
+        },
+        "mailbox": {
+          "type": "mailbox"
+        },
+        "deleted": false,
+        "roles": {
+          "query": "SELECT * FROM roles WHERE users.id = '94'"
+        },
+        "messages": {
+          "query": "SELECT * FROM messages WHERE author.id = '94'"
+        },
+        "reviews": {
+          "query": "SELECT * FROM reviews WHERE author.id = '94'"
+        },
+        "last_visit_time": "2022-04-20T12:55:35.830-07:00",
+        "date_pattern": "MM-dd-yyyy",
+        "friendly_date_enabled": false,
+        "friendly_date_max_age": 31
+      },
+      {
+        "type": "user",
+        "id": "93",
+        "href": "/users/93",
+        "view_href": "/t5/user/viewprofilepage/user-id/93",
+        "login": "kh_Branson_98",
+        "email": "Branson_98@example.com",
+        "remember_password": true,
+        "first_name": "Branson_98",
+        "last_name": "Olson",
+        "online_status": "offline",
+        "personal_info_privacy": "none",
+        "email_address_privacy": "none",
+        "online_status_privacy": "all",
+        "rank": {
+          "type": "rank",
+          "id": "26",
+          "name": "Visitor",
+          "position": 23,
+          "bold": false,
+          "roles_granted": {
+            "query": "SELECT * FROM roles WHERE ranks_granting.id = '26'"
+          },
+          "roles_removed": {
+            "query": "SELECT * FROM roles WHERE ranks_removing.id = '26'"
+          },
+          "formula_enabled": false,
+          "formula": "",
+          "simple_criteria": {
+            "type": "simple_rank_criteria",
+            "role": {},
+            "user": {},
+            "number_of_posts": 0,
+            "number_of_page_views": 0,
+            "number_of_signins": 0,
+            "minutes_online": 0,
+            "minutes_since_registering": 0,
+            "simple_formula": ""
+          },
+          "rank_status": "active"
+        },
+        "avatar": {
+          "type": "avatar",
+          "profile": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/fruit/avatar-theme/candy/avatar-collection/food/avatar-display-size/profile/version/2?xdesc=1.0",
+          "message": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/fruit/avatar-theme/candy/avatar-collection/food/avatar-display-size/message/version/2?xdesc=1.0",
+          "inline": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/fruit/avatar-theme/candy/avatar-collection/food/avatar-display-size/inline/version/2?xdesc=1.0",
+          "favicon": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/fruit/avatar-theme/candy/avatar-collection/food/avatar-display-size/favicon/version/2?xdesc=1.0",
+          "print": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/fruit/avatar-theme/candy/avatar-collection/food/avatar-display-size/print/version/2?xdesc=1.0"
+        },
+        "kudos_received": {
+          "query": "SELECT * FROM kudos WHERE message.author.id = '93'"
+        },
+        "kudos_given": {
+          "query": "SELECT * FROM kudos WHERE user.id = '93'"
+        },
+        "solutions_authored": {
+          "query": "SELECT * FROM messages WHERE author.id = '93' AND is_solution = true"
+        },
+        "topics": {
+          "query": "SELECT * FROM messages WHERE author.id = '93' AND depth = 0"
+        },
+        "threads_participated": {
+          "query": "SELECT * FROM messages WHERE participants.id = '93' AND depth = 0"
+        },
+        "images": {
+          "query": "SELECT * FROM images WHERE owner.id = '93'"
+        },
+        "public_images": {
+          "query": "SELECT * FROM images WHERE owner.id = '93' AND album.privacy_level = 'public' AND visibility = 'public'"
+        },
+        "albums": {
+          "query": "SELECT * FROM albums WHERE owner.id = '93'"
+        },
+        "videos": {
+          "query": "SELECT * FROM videos WHERE owner.id = '93'"
+        },
+        "user_badges": {
+          "list_item_type": "user_badge",
+          "size": 0,
+          "items": []
+        },
+        "following": {
+          "query": "SELECT * FROM users WHERE followers.id = '93'"
+        },
+        "followers": {
+          "query": "SELECT * FROM users WHERE following.id = '93'"
+        },
+        "language": "en",
+        "metrics": {
+          "type": "user_metrics"
+        },
+        "settings": {
+          "query": "SELECT * FROM settings WHERE user.id = '93'"
+        },
+        "registration_data": {
+          "type": "registration_data",
+          "registration_time": "2022-04-20T12:25:21.096-07:00",
+          "status": "fully-registered",
+          "registration_access_level": "all",
+          "confirm_email_status": false,
+          "sso_registration_fields": []
+        },
+        "mailbox": {
+          "type": "mailbox"
+        },
+        "deleted": false,
+        "roles": {
+          "query": "SELECT * FROM roles WHERE users.id = '93'"
+        },
+        "messages": {
+          "query": "SELECT * FROM messages WHERE author.id = '93'"
+        },
+        "reviews": {
+          "query": "SELECT * FROM reviews WHERE author.id = '93'"
+        },
+        "last_visit_time": "2022-04-20T12:55:35.796-07:00",
+        "date_pattern": "MM-dd-yyyy",
+        "friendly_date_enabled": false,
+        "friendly_date_max_age": 31
+      },
+      {
+        "type": "user",
+        "id": "92",
+        "href": "/users/92",
+        "view_href": "/t5/user/viewprofilepage/user-id/92",
+        "login": "kh_Dayna_830",
+        "email": "Dayna_830@example.com",
+        "remember_password": true,
+        "first_name": "Dayna_830",
+        "last_name": "Stoltenberg",
+        "online_status": "offline",
+        "personal_info_privacy": "none",
+        "email_address_privacy": "none",
+        "online_status_privacy": "all",
+        "rank": {
+          "type": "rank",
+          "id": "26",
+          "name": "Visitor",
+          "position": 23,
+          "bold": false,
+          "roles_granted": {
+            "query": "SELECT * FROM roles WHERE ranks_granting.id = '26'"
+          },
+          "roles_removed": {
+            "query": "SELECT * FROM roles WHERE ranks_removing.id = '26'"
+          },
+          "formula_enabled": false,
+          "formula": "",
+          "simple_criteria": {
+            "type": "simple_rank_criteria",
+            "role": {},
+            "user": {},
+            "number_of_posts": 0,
+            "number_of_page_views": 0,
+            "number_of_signins": 0,
+            "minutes_online": 0,
+            "minutes_since_registering": 0,
+            "simple_formula": ""
+          },
+          "rank_status": "active"
+        },
+        "avatar": {
+          "type": "avatar",
+          "profile": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/xylophone/avatar-theme/candy/avatar-collection/music/avatar-display-size/profile/version/2?xdesc=1.0",
+          "message": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/xylophone/avatar-theme/candy/avatar-collection/music/avatar-display-size/message/version/2?xdesc=1.0",
+          "inline": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/xylophone/avatar-theme/candy/avatar-collection/music/avatar-display-size/inline/version/2?xdesc=1.0",
+          "favicon": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/xylophone/avatar-theme/candy/avatar-collection/music/avatar-display-size/favicon/version/2?xdesc=1.0",
+          "print": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/xylophone/avatar-theme/candy/avatar-collection/music/avatar-display-size/print/version/2?xdesc=1.0"
+        },
+        "kudos_received": {
+          "query": "SELECT * FROM kudos WHERE message.author.id = '92'"
+        },
+        "kudos_given": {
+          "query": "SELECT * FROM kudos WHERE user.id = '92'"
+        },
+        "solutions_authored": {
+          "query": "SELECT * FROM messages WHERE author.id = '92' AND is_solution = true"
+        },
+        "topics": {
+          "query": "SELECT * FROM messages WHERE author.id = '92' AND depth = 0"
+        },
+        "threads_participated": {
+          "query": "SELECT * FROM messages WHERE participants.id = '92' AND depth = 0"
+        },
+        "images": {
+          "query": "SELECT * FROM images WHERE owner.id = '92'"
+        },
+        "public_images": {
+          "query": "SELECT * FROM images WHERE owner.id = '92' AND album.privacy_level = 'public' AND visibility = 'public'"
+        },
+        "albums": {
+          "query": "SELECT * FROM albums WHERE owner.id = '92'"
+        },
+        "videos": {
+          "query": "SELECT * FROM videos WHERE owner.id = '92'"
+        },
+        "user_badges": {
+          "list_item_type": "user_badge",
+          "size": 0,
+          "items": []
+        },
+        "following": {
+          "query": "SELECT * FROM users WHERE followers.id = '92'"
+        },
+        "followers": {
+          "query": "SELECT * FROM users WHERE following.id = '92'"
+        },
+        "language": "en",
+        "metrics": {
+          "type": "user_metrics"
+        },
+        "settings": {
+          "query": "SELECT * FROM settings WHERE user.id = '92'"
+        },
+        "registration_data": {
+          "type": "registration_data",
+          "registration_time": "2022-04-20T12:25:18.573-07:00",
+          "status": "fully-registered",
+          "registration_access_level": "all",
+          "confirm_email_status": false,
+          "sso_registration_fields": []
+        },
+        "mailbox": {
+          "type": "mailbox"
+        },
+        "deleted": false,
+        "roles": {
+          "query": "SELECT * FROM roles WHERE users.id = '92'"
+        },
+        "messages": {
+          "query": "SELECT * FROM messages WHERE author.id = '92'"
+        },
+        "reviews": {
+          "query": "SELECT * FROM reviews WHERE author.id = '92'"
+        },
+        "last_visit_time": "2022-04-20T12:55:35.754-07:00",
+        "date_pattern": "MM-dd-yyyy",
+        "friendly_date_enabled": false,
+        "friendly_date_max_age": 31
+      },
+      {
+        "type": "user",
+        "id": "91",
+        "href": "/users/91",
+        "view_href": "/t5/user/viewprofilepage/user-id/91",
+        "login": "kh_Morton_286",
+        "email": "Morton_286@example.com",
+        "remember_password": true,
+        "first_name": "Morton_286",
+        "last_name": "Bogan",
+        "online_status": "offline",
+        "personal_info_privacy": "none",
+        "email_address_privacy": "none",
+        "online_status_privacy": "all",
+        "rank": {
+          "type": "rank",
+          "id": "26",
+          "name": "Visitor",
+          "position": 23,
+          "bold": false,
+          "roles_granted": {
+            "query": "SELECT * FROM roles WHERE ranks_granting.id = '26'"
+          },
+          "roles_removed": {
+            "query": "SELECT * FROM roles WHERE ranks_removing.id = '26'"
+          },
+          "formula_enabled": false,
+          "formula": "",
+          "simple_criteria": {
+            "type": "simple_rank_criteria",
+            "role": {},
+            "user": {},
+            "number_of_posts": 0,
+            "number_of_page_views": 0,
+            "number_of_signins": 0,
+            "minutes_online": 0,
+            "minutes_since_registering": 0,
+            "simple_formula": ""
+          },
+          "rank_status": "active"
+        },
+        "avatar": {
+          "type": "avatar",
+          "profile": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/werewolf/avatar-theme/candy/avatar-collection/monsters/avatar-display-size/profile/version/2?xdesc=1.0",
+          "message": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/werewolf/avatar-theme/candy/avatar-collection/monsters/avatar-display-size/message/version/2?xdesc=1.0",
+          "inline": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/werewolf/avatar-theme/candy/avatar-collection/monsters/avatar-display-size/inline/version/2?xdesc=1.0",
+          "favicon": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/werewolf/avatar-theme/candy/avatar-collection/monsters/avatar-display-size/favicon/version/2?xdesc=1.0",
+          "print": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/werewolf/avatar-theme/candy/avatar-collection/monsters/avatar-display-size/print/version/2?xdesc=1.0"
+        },
+        "kudos_received": {
+          "query": "SELECT * FROM kudos WHERE message.author.id = '91'"
+        },
+        "kudos_given": {
+          "query": "SELECT * FROM kudos WHERE user.id = '91'"
+        },
+        "solutions_authored": {
+          "query": "SELECT * FROM messages WHERE author.id = '91' AND is_solution = true"
+        },
+        "topics": {
+          "query": "SELECT * FROM messages WHERE author.id = '91' AND depth = 0"
+        },
+        "threads_participated": {
+          "query": "SELECT * FROM messages WHERE participants.id = '91' AND depth = 0"
+        },
+        "images": {
+          "query": "SELECT * FROM images WHERE owner.id = '91'"
+        },
+        "public_images": {
+          "query": "SELECT * FROM images WHERE owner.id = '91' AND album.privacy_level = 'public' AND visibility = 'public'"
+        },
+        "albums": {
+          "query": "SELECT * FROM albums WHERE owner.id = '91'"
+        },
+        "videos": {
+          "query": "SELECT * FROM videos WHERE owner.id = '91'"
+        },
+        "user_badges": {
+          "list_item_type": "user_badge",
+          "size": 0,
+          "items": []
+        },
+        "following": {
+          "query": "SELECT * FROM users WHERE followers.id = '91'"
+        },
+        "followers": {
+          "query": "SELECT * FROM users WHERE following.id = '91'"
+        },
+        "language": "en",
+        "metrics": {
+          "type": "user_metrics"
+        },
+        "settings": {
+          "query": "SELECT * FROM settings WHERE user.id = '91'"
+        },
+        "registration_data": {
+          "type": "registration_data",
+          "registration_time": "2022-04-20T12:25:16.327-07:00",
+          "status": "fully-registered",
+          "registration_access_level": "all",
+          "confirm_email_status": false,
+          "sso_registration_fields": []
+        },
+        "mailbox": {
+          "type": "mailbox"
+        },
+        "deleted": false,
+        "roles": {
+          "query": "SELECT * FROM roles WHERE users.id = '91'"
+        },
+        "messages": {
+          "query": "SELECT * FROM messages WHERE author.id = '91'"
+        },
+        "reviews": {
+          "query": "SELECT * FROM reviews WHERE author.id = '91'"
+        },
+        "last_visit_time": "2022-04-20T12:55:35.718-07:00",
+        "date_pattern": "MM-dd-yyyy",
+        "friendly_date_enabled": false,
+        "friendly_date_max_age": 31
+      },
+      {
+        "type": "user",
+        "id": "90",
+        "href": "/users/90",
+        "view_href": "/t5/user/viewprofilepage/user-id/90",
+        "login": "kh_Torey_377",
+        "email": "Torey_377@example.com",
+        "remember_password": true,
+        "first_name": "Torey_377",
+        "last_name": "Emmerich",
+        "online_status": "offline",
+        "personal_info_privacy": "none",
+        "email_address_privacy": "none",
+        "online_status_privacy": "all",
+        "rank": {
+          "type": "rank",
+          "id": "26",
+          "name": "Visitor",
+          "position": 23,
+          "bold": false,
+          "roles_granted": {
+            "query": "SELECT * FROM roles WHERE ranks_granting.id = '26'"
+          },
+          "roles_removed": {
+            "query": "SELECT * FROM roles WHERE ranks_removing.id = '26'"
+          },
+          "formula_enabled": false,
+          "formula": "",
+          "simple_criteria": {
+            "type": "simple_rank_criteria",
+            "role": {},
+            "user": {},
+            "number_of_posts": 0,
+            "number_of_page_views": 0,
+            "number_of_signins": 0,
+            "minutes_online": 0,
+            "minutes_since_registering": 0,
+            "simple_formula": ""
+          },
+          "rank_status": "active"
+        },
+        "avatar": {
+          "type": "avatar",
+          "profile": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/mummy/avatar-theme/candy/avatar-collection/monsters/avatar-display-size/profile/version/2?xdesc=1.0",
+          "message": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/mummy/avatar-theme/candy/avatar-collection/monsters/avatar-display-size/message/version/2?xdesc=1.0",
+          "inline": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/mummy/avatar-theme/candy/avatar-collection/monsters/avatar-display-size/inline/version/2?xdesc=1.0",
+          "favicon": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/mummy/avatar-theme/candy/avatar-collection/monsters/avatar-display-size/favicon/version/2?xdesc=1.0",
+          "print": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/mummy/avatar-theme/candy/avatar-collection/monsters/avatar-display-size/print/version/2?xdesc=1.0"
+        },
+        "kudos_received": {
+          "query": "SELECT * FROM kudos WHERE message.author.id = '90'"
+        },
+        "kudos_given": {
+          "query": "SELECT * FROM kudos WHERE user.id = '90'"
+        },
+        "solutions_authored": {
+          "query": "SELECT * FROM messages WHERE author.id = '90' AND is_solution = true"
+        },
+        "topics": {
+          "query": "SELECT * FROM messages WHERE author.id = '90' AND depth = 0"
+        },
+        "threads_participated": {
+          "query": "SELECT * FROM messages WHERE participants.id = '90' AND depth = 0"
+        },
+        "images": {
+          "query": "SELECT * FROM images WHERE owner.id = '90'"
+        },
+        "public_images": {
+          "query": "SELECT * FROM images WHERE owner.id = '90' AND album.privacy_level = 'public' AND visibility = 'public'"
+        },
+        "albums": {
+          "query": "SELECT * FROM albums WHERE owner.id = '90'"
+        },
+        "videos": {
+          "query": "SELECT * FROM videos WHERE owner.id = '90'"
+        },
+        "user_badges": {
+          "list_item_type": "user_badge",
+          "size": 0,
+          "items": []
+        },
+        "following": {
+          "query": "SELECT * FROM users WHERE followers.id = '90'"
+        },
+        "followers": {
+          "query": "SELECT * FROM users WHERE following.id = '90'"
+        },
+        "language": "en",
+        "metrics": {
+          "type": "user_metrics"
+        },
+        "settings": {
+          "query": "SELECT * FROM settings WHERE user.id = '90'"
+        },
+        "registration_data": {
+          "type": "registration_data",
+          "registration_time": "2022-04-20T12:25:13.984-07:00",
+          "status": "fully-registered",
+          "registration_access_level": "all",
+          "confirm_email_status": false,
+          "sso_registration_fields": []
+        },
+        "mailbox": {
+          "type": "mailbox"
+        },
+        "deleted": false,
+        "roles": {
+          "query": "SELECT * FROM roles WHERE users.id = '90'"
+        },
+        "messages": {
+          "query": "SELECT * FROM messages WHERE author.id = '90'"
+        },
+        "reviews": {
+          "query": "SELECT * FROM reviews WHERE author.id = '90'"
+        },
+        "last_visit_time": "2022-04-20T12:55:35.673-07:00",
+        "date_pattern": "MM-dd-yyyy",
+        "friendly_date_enabled": false,
+        "friendly_date_max_age": 31
+      },
+      {
+        "type": "user",
+        "id": "89",
+        "href": "/users/89",
+        "view_href": "/t5/user/viewprofilepage/user-id/89",
+        "login": "kh_Shanny_818",
+        "email": "Shanny_818@example.com",
+        "remember_password": true,
+        "first_name": "Shanny_818",
+        "last_name": "D'Amore",
+        "online_status": "offline",
+        "personal_info_privacy": "none",
+        "email_address_privacy": "none",
+        "online_status_privacy": "all",
+        "rank": {
+          "type": "rank",
+          "id": "26",
+          "name": "Visitor",
+          "position": 23,
+          "bold": false,
+          "roles_granted": {
+            "query": "SELECT * FROM roles WHERE ranks_granting.id = '26'"
+          },
+          "roles_removed": {
+            "query": "SELECT * FROM roles WHERE ranks_removing.id = '26'"
+          },
+          "formula_enabled": false,
+          "formula": "",
+          "simple_criteria": {
+            "type": "simple_rank_criteria",
+            "role": {},
+            "user": {},
+            "number_of_posts": 0,
+            "number_of_page_views": 0,
+            "number_of_signins": 0,
+            "minutes_online": 0,
+            "minutes_since_registering": 0,
+            "simple_formula": ""
+          },
+          "rank_status": "active"
+        },
+        "avatar": {
+          "type": "avatar",
+          "profile": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/toychance/avatar-theme/candy/avatar-collection/toys/avatar-display-size/profile/version/2?xdesc=1.0",
+          "message": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/toychance/avatar-theme/candy/avatar-collection/toys/avatar-display-size/message/version/2?xdesc=1.0",
+          "inline": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/toychance/avatar-theme/candy/avatar-collection/toys/avatar-display-size/inline/version/2?xdesc=1.0",
+          "favicon": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/toychance/avatar-theme/candy/avatar-collection/toys/avatar-display-size/favicon/version/2?xdesc=1.0",
+          "print": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/toychance/avatar-theme/candy/avatar-collection/toys/avatar-display-size/print/version/2?xdesc=1.0"
+        },
+        "kudos_received": {
+          "query": "SELECT * FROM kudos WHERE message.author.id = '89'"
+        },
+        "kudos_given": {
+          "query": "SELECT * FROM kudos WHERE user.id = '89'"
+        },
+        "solutions_authored": {
+          "query": "SELECT * FROM messages WHERE author.id = '89' AND is_solution = true"
+        },
+        "topics": {
+          "query": "SELECT * FROM messages WHERE author.id = '89' AND depth = 0"
+        },
+        "threads_participated": {
+          "query": "SELECT * FROM messages WHERE participants.id = '89' AND depth = 0"
+        },
+        "images": {
+          "query": "SELECT * FROM images WHERE owner.id = '89'"
+        },
+        "public_images": {
+          "query": "SELECT * FROM images WHERE owner.id = '89' AND album.privacy_level = 'public' AND visibility = 'public'"
+        },
+        "albums": {
+          "query": "SELECT * FROM albums WHERE owner.id = '89'"
+        },
+        "videos": {
+          "query": "SELECT * FROM videos WHERE owner.id = '89'"
+        },
+        "user_badges": {
+          "list_item_type": "user_badge",
+          "size": 0,
+          "items": []
+        },
+        "following": {
+          "query": "SELECT * FROM users WHERE followers.id = '89'"
+        },
+        "followers": {
+          "query": "SELECT * FROM users WHERE following.id = '89'"
+        },
+        "language": "en",
+        "metrics": {
+          "type": "user_metrics"
+        },
+        "settings": {
+          "query": "SELECT * FROM settings WHERE user.id = '89'"
+        },
+        "registration_data": {
+          "type": "registration_data",
+          "registration_time": "2022-04-20T12:25:11.194-07:00",
+          "status": "fully-registered",
+          "registration_access_level": "all",
+          "confirm_email_status": false,
+          "sso_registration_fields": []
+        },
+        "mailbox": {
+          "type": "mailbox"
+        },
+        "deleted": false,
+        "roles": {
+          "query": "SELECT * FROM roles WHERE users.id = '89'"
+        },
+        "messages": {
+          "query": "SELECT * FROM messages WHERE author.id = '89'"
+        },
+        "reviews": {
+          "query": "SELECT * FROM reviews WHERE author.id = '89'"
+        },
+        "last_visit_time": "2022-04-20T12:55:35.630-07:00",
+        "date_pattern": "MM-dd-yyyy",
+        "friendly_date_enabled": false,
+        "friendly_date_max_age": 31
+      },
+      {
+        "type": "user",
+        "id": "88",
+        "sso_id": "google-oauth2|102122849804641984163",
+        "href": "/users/88",
+        "view_href": "/t5/user/viewprofilepage/user-id/88",
+        "login": "akollegger",
+        "email": "akollegger@gmail.com",
+        "remember_password": true,
+        "online_status": "offline",
+        "personal_info_privacy": "none",
+        "email_address_privacy": "none",
+        "online_status_privacy": "all",
+        "rank": {
+          "type": "rank",
+          "id": "26",
+          "name": "Visitor",
+          "position": 23,
+          "bold": false,
+          "roles_granted": {
+            "query": "SELECT * FROM roles WHERE ranks_granting.id = '26'"
+          },
+          "roles_removed": {
+            "query": "SELECT * FROM roles WHERE ranks_removing.id = '26'"
+          },
+          "formula_enabled": false,
+          "formula": "",
+          "simple_criteria": {
+            "type": "simple_rank_criteria",
+            "role": {},
+            "user": {},
+            "number_of_posts": 0,
+            "number_of_page_views": 0,
+            "number_of_signins": 0,
+            "minutes_online": 0,
+            "minutes_since_registering": 0,
+            "simple_formula": ""
+          },
+          "rank_status": "active"
+        },
+        "avatar": {
+          "type": "avatar",
+          "profile": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/avatar-4/avatar-theme/candy/avatar-collection/Hermes_Default/avatar-display-size/profile/version/2?xdesc=1.0",
+          "message": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/avatar-4/avatar-theme/candy/avatar-collection/Hermes_Default/avatar-display-size/message/version/2?xdesc=1.0",
+          "inline": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/avatar-4/avatar-theme/candy/avatar-collection/Hermes_Default/avatar-display-size/inline/version/2?xdesc=1.0",
+          "favicon": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/avatar-4/avatar-theme/candy/avatar-collection/Hermes_Default/avatar-display-size/favicon/version/2?xdesc=1.0",
+          "print": "https://vbeyi74497.stage.lithium.com/t5/image/serverpage/avatar-name/avatar-4/avatar-theme/candy/avatar-collection/Hermes_Default/avatar-display-size/print/version/2?xdesc=1.0"
+        },
+        "kudos_received": {
+          "query": "SELECT * FROM kudos WHERE message.author.id = '88'"
+        },
+        "kudos_given": {
+          "query": "SELECT * FROM kudos WHERE user.id = '88'"
+        },
+        "solutions_authored": {
+          "query": "SELECT * FROM messages WHERE author.id = '88' AND is_solution = true"
+        },
+        "topics": {
+          "query": "SELECT * FROM messages WHERE author.id = '88' AND depth = 0"
+        },
+        "threads_participated": {
+          "query": "SELECT * FROM messages WHERE participants.id = '88' AND depth = 0"
+        },
+        "images": {
+          "query": "SELECT * FROM images WHERE owner.id = '88'"
+        },
+        "public_images": {
+          "query": "SELECT * FROM images WHERE owner.id = '88' AND album.privacy_level = 'public' AND visibility = 'public'"
+        },
+        "albums": {
+          "query": "SELECT * FROM albums WHERE owner.id = '88'"
+        },
+        "videos": {
+          "query": "SELECT * FROM videos WHERE owner.id = '88'"
+        },
+        "user_badges": {
+          "list_item_type": "user_badge",
+          "size": 1,
+          "items": [
+            {
+              "type": "user_badge",
+              "badge": {
+                "type": "badge",
+                "id": "1",
+                "description": "Thank you for taking the first step in your community journey by simply registering to be a part!",
+                "title": "Welcome!",
+                "icon_url": "https://vbeyi74497.stage.lithium.com/html/@E21F644E1F6794D7A70609A41D99B42C/badge_icons/05.22_Registration%20Badge.svg",
+                "awarded": 88,
+                "activation_date": "2020-07-29T14:04:45.443-07:00"
+              },
+              "earned_date": "2022-04-20T01:32:45.974-07:00"
+            }
+          ]
+        },
+        "following": {
+          "query": "SELECT * FROM users WHERE followers.id = '88'"
+        },
+        "followers": {
+          "query": "SELECT * FROM users WHERE following.id = '88'"
+        },
+        "language": "en",
+        "metrics": {
+          "type": "user_metrics"
+        },
+        "settings": {
+          "query": "SELECT * FROM settings WHERE user.id = '88'"
+        },
+        "registration_data": {
+          "type": "registration_data",
+          "registration_time": "2022-04-20T01:32:31.194-07:00",
+          "status": "fully-registered",
+          "registration_access_level": "all",
+          "confirm_email_status": true,
+          "sso_registration_fields": []
+        },
+        "mailbox": {
+          "type": "mailbox"
+        },
+        "banned": false,
+        "deleted": false,
+        "roles": {
+          "query": "SELECT * FROM roles WHERE users.id = '88'"
+        },
+        "messages": {
+          "query": "SELECT * FROM messages WHERE author.id = '88'"
+        },
+        "reviews": {
+          "query": "SELECT * FROM reviews WHERE author.id = '88'"
+        },
+        "last_visit_time": "2022-04-20T02:36:54.483-07:00",
+        "date_pattern": "MM-dd-yyyy",
+        "friendly_date_enabled": false,
+        "friendly_date_max_age": 31
+      }
+    ],
+    "next_cursor": "MjIuNHwyLjB8aXwyNXwxNTowfGludCwxMTIsODg"
+  },
+  "metadata": {}
+}

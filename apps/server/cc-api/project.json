@@ -1,4 +1,5 @@
 {
+  "name": "server-cc-api",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/server/cc-api/src",
   "projectType": "application",
@@ -12,7 +13,8 @@
         "tsConfig": "apps/server/cc-api/tsconfig.app.json",
         "assets": ["apps/server/cc-api/src/assets"],
         "target": "node",
-        "compiler": "tsc"
+        "compiler": "tsc",
+        "babelUpwardRootMode": true
       },
       "configurations": {
         "production": {
@@ -55,6 +57,5 @@
       }
     }
   },
-  "tags": [],
-  "name": "server-cc-api"
+  "tags": []
 }

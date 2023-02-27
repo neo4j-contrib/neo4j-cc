@@ -1,4 +1,5 @@
 {
+  "name": "server-cc-nest",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/server/cc-nest/src",
   "projectType": "application",
@@ -12,7 +13,8 @@
         "outputPath": "dist/apps/server/cc-nest",
         "main": "apps/server/cc-nest/src/main.ts",
         "tsConfig": "apps/server/cc-nest/tsconfig.app.json",
-        "assets": ["apps/server/cc-nest/src/assets"]
+        "assets": ["apps/server/cc-nest/src/assets"],
+        "babelUpwardRootMode": true
       },
       "configurations": {
         "production": {
@@ -55,6 +57,5 @@
       }
     }
   },
-  "tags": [],
-  "name": "server-cc-nest"
+  "tags": []
 }

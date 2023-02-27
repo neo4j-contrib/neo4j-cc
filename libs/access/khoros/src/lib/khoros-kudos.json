@@ -1,0 +1,73 @@
+{
+  "status": "success",
+  "message": "",
+  "http_code": 200,
+  "data": {
+      "type": "kudos",
+      "list_item_type": "kudo",
+      "size": 3,
+      "items": [
+          {
+              "type": "kudo",
+              "id": "11940",
+              "href": "/kudos/11940",
+              "user": {
+                  "type": "user",
+                  "id": "15016",
+                  "href": "/users/15016",
+                  "view_href": "https://khoros.neo4j.com/t5/user/viewprofilepage/user-id/15016",
+                  "login": "Monica"
+              },
+              "message": {
+                  "type": "message",
+                  "id": "57501",
+                  "href": "/messages/57501",
+                  "view_href": "https://khoros.neo4j.com/t5/graphacademy-discussions/flask-configuration-for-training/m-p/57501#M1115"
+              },
+              "time": "2022-08-14T22:32:00.000-07:00",
+              "weight": 1
+          },
+          {
+              "type": "kudo",
+              "id": "11878",
+              "href": "/kudos/11878",
+              "user": {
+                  "type": "user",
+                  "id": "14939",
+                  "href": "/users/14939",
+                  "view_href": "https://khoros.neo4j.com/t5/user/viewprofilepage/user-id/14939",
+                  "login": "Alex29"
+              },
+              "message": {
+                  "type": "message",
+                  "id": "57501",
+                  "href": "/messages/57501",
+                  "view_href": "https://khoros.neo4j.com/t5/graphacademy-discussions/flask-configuration-for-training/m-p/57501#M1115"
+              },
+              "time": "2022-08-04T18:29:00.000-07:00",
+              "weight": 1
+          },
+          {
+              "type": "kudo",
+              "id": "11823",
+              "href": "/kudos/11823",
+              "user": {
+                  "type": "user",
+                  "id": "14891",
+                  "href": "/users/14891",
+                  "view_href": "https://khoros.neo4j.com/t5/user/viewprofilepage/user-id/14891",
+                  "login": "Mohamed_kamal"
+              },
+              "message": {
+                  "type": "message",
+                  "id": "57501",
+                  "href": "/messages/57501",
+                  "view_href": "https://khoros.neo4j.com/t5/graphacademy-discussions/flask-configuration-for-training/m-p/57501#M1115"
+              },
+              "time": "2022-07-29T03:18:00.000-07:00",
+              "weight": 1
+          }
+      ]
+  },
+  "metadata": {}
+}

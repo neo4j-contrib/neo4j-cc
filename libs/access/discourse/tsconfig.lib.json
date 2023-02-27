@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../../dist/out-tsc",
+    "declaration": true,
+    "types": []
+  },
+  "include": [
+    "**/*.ts",
+    "src/lib/discourse.live.nots",
+    "src/lib/discourse.live.spec.nots"
+  ],
+  "exclude": ["**/*.spec.ts", "jest.config.ts"]
+}

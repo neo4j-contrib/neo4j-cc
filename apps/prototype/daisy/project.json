@@ -1,4 +1,5 @@
 {
+  "name": "prototype-daisy",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/prototype/daisy/src",
   "projectType": "application",
@@ -21,7 +22,8 @@
         ],
         "styles": ["apps/prototype/daisy/src/styles.scss"],
         "scripts": [],
-        "webpackConfig": "@nrwl/react/plugins/webpack"
+        "webpackConfig": "@nrwl/react/plugins/webpack",
+        "babelUpwardRootMode": true
       },
       "configurations": {
         "development": {
@@ -79,6 +81,5 @@
       }
     }
   },
-  "tags": [],
-  "name": "prototype-daisy"
+  "tags": []
 }

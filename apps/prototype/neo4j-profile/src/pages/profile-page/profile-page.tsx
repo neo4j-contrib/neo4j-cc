@@ -1,6 +1,6 @@
 import './profile-page.css';
 
-import { usePersonsQuery } from '@neo4j-cc/data-access-cc';
+import { usePersonsQuery } from '@neo4j-cc/access-cc';
 
 /* eslint-disable-next-line */
 export interface ProfilePageProps {}
