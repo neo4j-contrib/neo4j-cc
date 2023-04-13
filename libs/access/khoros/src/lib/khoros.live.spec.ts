@@ -21,11 +21,11 @@ import { KhorosService } from './khoros.service';
 const TEST_TIMEOUT = 20 * 1000;
 
 const KHOROS_API_URL =
-  process.env.NX_KHOROS_API_URL || 'https://khoros.neo4j.com';
+  process.env.NX_KHOROS_API_URL || '';
 const KHOROS_LOGIN =
-  process.env.NX_KHOROS_LOGIN || '<missing login for Khoros>';
+  process.env.NX_KHOROS_LOGIN || '';
 const KHOROS_PASSWORD =
-  process.env.NX_KHOROS_PASSWORD || '<missing password for Khoros>';
+  process.env.NX_KHOROS_PASSWORD || '';
 
 // "response": {
 //   "status": "success",
@@ -46,6 +46,12 @@ describe('LiveKhorosService', () => {
   //   jest.useRealTimers();
   //   jest.setTimeout(TEST_TIMEOUT);
   // })
+
+  it("is configured", () => {
+    expect(KHOROS_API_URL).toMatch(/https?:\/\/\w+/)
+    expect(KHOROS_LOGIN).toMatch(/[\w.@]+/)
+    expect(KHOROS_PASSWORD).toMatch(/.+/)
+  })
 
   it('can search effectfully', async () => {
     const result = await pipe(

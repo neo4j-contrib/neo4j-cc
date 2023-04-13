@@ -103,7 +103,7 @@ describe('KhorosService', () => {
 
   it('getBoards', async () => {
     const khorosService = pipe(
-      Effect.service(KhorosService),
+      KhorosService,
       Effect.provideLayer(makeLiveKhorosServiceFromEnvironment())
     );
   });

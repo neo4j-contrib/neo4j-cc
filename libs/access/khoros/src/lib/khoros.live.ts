@@ -27,10 +27,10 @@ import {
 } from './khoros.service';
 import { endOfDay, getMilliseconds, getTime, startOfDay } from 'date-fns';
 import {
-  decodeAuthor,
-  decodeBoard,
-  decodeKudo,
-  decodeMessage,
+  parseAuthor,
+  parseBoard,
+  parseKudo,
+  parseMessage,
 } from './khoros-schemas';
 
 export interface KhorosServiceAuthorization {
@@ -104,14 +104,14 @@ export const makeAuthorizedService = (
       }),
       Effect.flatMap((result) =>
         result.data.size > 0
-          ? pipe(result.data.items[0], decodeMessage, (pr) =>
-              PR.isSuccess(pr)
+          ? pipe(result.data.items[0], parseMessage, (pr) =>
+              Either.isRight(pr)
                 ? Effect.succeed(pr.right)
                 : Effect.fail(
                     new KhorosError(
                       `could not parse KhorosMessage ${
                         result.data.items[0].id
-                      }, because: ${JSON.stringify(pr.left[0])}`
+                      }, because: ${JSON.stringify(pr.left)}`
                     )
                   )
             )
@@ -192,10 +192,10 @@ export const makeAuthorizedService = (
           ? Effect.succeed(Chunk.fromIterable(result.data.items))
           : Effect.succeed(Chunk.empty<Item>())
       ),
-      Effect.map(Chunk.map(decodeKudo)),
+      Effect.map(Chunk.map(parseKudo)),
       Effect.map(
         Chunk.map((pr) =>
-          PR.isSuccess(pr) ? Effect.succeed(pr.right) : Effect.fail(pr.left[0])
+          Either.isRight(pr) ? Effect.succeed(pr.right) : Effect.fail(pr.left)
         )
       ),
       Effect.flatMap(Effect.collectAll)
@@ -276,7 +276,7 @@ export const makeAuthorizedService = (
           getMessagesWithCursor({ cursor }),
           Effect.delay(Duration.seconds(1)),
           Effect.flatMap(({ items, cursor }) =>
-            Effect.struct({ as: pager(items), cursor: Effect.succeed(cursor) })
+            Effect.nonEmptyStruct({ as: pager(items), cursor: Effect.succeed(cursor) })
           ),
 
           Effect.map((page) =>
@@ -293,15 +293,15 @@ export const makeAuthorizedService = (
       query<QueryASingleCollection>({ q: `SELECT * FROM boards` }),
       // Effect.tap((a) => Effect.log(JSON.stringify(a))),
       Effect.map(itemsFromResult),
-      Effect.map(Chunk.map(decodeBoard)),
+      Effect.map(Chunk.map(parseBoard)),
       Effect.flatMap(
         Effect.forEach((pr) =>
-          PR.isSuccess(pr)
+          Either.isRight(pr)
             ? Effect.succeed(pr.right)
             : Effect.fail(
                 new KhorosError(
                   `could not parse KhorosBoard, because: ${JSON.stringify(
-                    pr.left[0]
+                    pr.left
                   )}`
                 )
               )
@@ -320,14 +320,14 @@ export const makeAuthorizedService = (
       Effect.map((result) =>
         result.data.size > 0 ? Option.some(result.data.items[0]) : Option.none()
       ),
-      Effect.map(Option.map(decodeAuthor)),
+      Effect.map(Option.map(parseAuthor)),
       Effect.flatMap(
         Option.match(
           () => Effect.succeed(Option.none()),
           (pr) =>
-            PR.isSuccess(pr)
+            Either.isRight(pr)
               ? Effect.succeed(Option.some(pr.right))
-              : Effect.fail(pr.left[0])
+              : Effect.fail(pr.left)
         )
       )
     );
@@ -405,7 +405,7 @@ export const makeLiveKhorosService = (config: KhorosApiConfig) => {
   return pipe(
     retrieveSessionKey(),
     Effect.flatMap(jsonBody),
-    // Effect.tap( (a) => Effect.succeed(console.log(a))),
+    // Effect.tap( (a) => Effect.log(JSON.stringify(a))),
     Effect.map((a) => (a as any).response.value['$']),
     Effect.map((token) => makeAuthorizedService({ url: config.baseUrl, token }))
   );

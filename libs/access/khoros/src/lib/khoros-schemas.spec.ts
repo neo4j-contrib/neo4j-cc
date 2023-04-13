@@ -4,10 +4,10 @@ import * as jetpack from 'fs-jetpack';
 
 import {
   dedupeBySsoId,
-  decodeAuthor,
+  parseAuthor,
   compareNumbers,
   sortItemsByMessageDepth,
-  decodeKudo,
+  parseKudo,
 } from './khoros-schemas';
 
 import authorsWithDuplicates from './khoros-authors-with-duplicates.json';
@@ -23,8 +23,8 @@ describe('KhorosAuthor', () => {
     const dedupedAuthors = pipe(
       authorsWithDuplicates,
       Chunk.fromIterable,
-      Chunk.map(decodeAuthor),
-      Chunk.filter(PR.isSuccess),
+      Chunk.map(parseAuthor),
+      Chunk.filter(Either.isRight),
       Chunk.map((pe) => pe.right),
       dedupeBySsoId
     );
@@ -75,23 +75,17 @@ describe('Khoros messages', () => {
       Chunk.fromIterable(khorosMessages),
       Chunk.map((x) => x as unknown as Item),
       sortItemsByMessageDepth,
-      Chunk.reduce(HashMap.empty<string, Chunk.Chunk<Item>>(), (m, item) =>
-        pipe(
-          m,
-          HashMap.modifyAt(
-            item.topic?.id || '-1',
-            (v: Option.Option<Chunk.Chunk<string>>) =>
-              Option.some(
-                pipe(
-                  v,
-                  Option.match(
-                    () => Chunk.of(item),
-                    (c) => Chunk.append(item)(c)
-                  )
-                )
-              )
+      Chunk.reduce(HashMap.empty<string, Chunk.Chunk<Item>>(), (m, item) => HashMap.modifyAt(
+          item.topic?.id || '-1',
+          (v: Option.Option<Chunk.Chunk<Item>>) => pipe(
+            v,
+            Option.match(
+              () => Chunk.of(item),
+              (c) => Chunk.append(item)(c)
+            ),
+            Option.some
           )
-        )
+        )(m)
       )
     );
     const threadedRecord = pipe(
@@ -114,9 +108,9 @@ describe('KhorosKudos', () => {
   it('decodes', async () => {
     const result = await pipe(
       Chunk.fromIterable(khorosKudos.data.items),
-      Chunk.map(decodeKudo),
+      Chunk.map(parseKudo),
       Effect.forEach((pr) =>
-        PR.isSuccess(pr) ? Effect.succeed(pr.right) : Effect.fail(pr.left[0])
+        Either.isRight(pr) ? Effect.succeed(pr.right) : Effect.fail(pr.left)
       ),
       Effect.runPromiseEither
     );

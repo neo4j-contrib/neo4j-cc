@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
 
-import { Effect, Layer, Context, pipe, Schema as S, Parser as P, ParseResult as PR } from '@neo4j-cc/prelude';
+import { Effect, Layer, Context, pipe, Schema as S, Parser as P, ParseResult as PR, Either } from '@neo4j-cc/prelude';
 
 import { jsonBody, request } from '@neo4j-cc/access-http';
 
@@ -11,21 +11,21 @@ export const OperationSuccessResponse = S.struct({
 });
 
 export interface OperationSuccessResponse
-  extends S.Infer<typeof OperationSuccessResponse> {}
+  extends S.To<typeof OperationSuccessResponse> {}
 
 export const decodeOperationSuccessResponse =
-  P.decode<OperationSuccessResponse>(OperationSuccessResponse);
+  S.parseEither<OperationSuccessResponse,OperationSuccessResponse>(OperationSuccessResponse);
 
 export const DiscoursePost = S.struct({
   id: S.number,
   created_at: S.string, // ISO date
 });
 
-export interface DiscoursePost extends S.Infer<typeof DiscoursePost> {}
+export interface DiscoursePost extends S.To<typeof DiscoursePost> {}
 
-export const decodeDiscoursePostStrict = P.decode(DiscoursePost);
+export const decodeDiscoursePostStrict = S.parseEither<DiscoursePost,DiscoursePost>(DiscoursePost);
 export const decodeDiscoursePost = (i: unknown) =>
-  decodeDiscoursePostStrict(i, { isUnexpectedAllowed: true });
+  decodeDiscoursePostStrict(i);
 
 export const isDiscoursePost = P.is(DiscoursePost);
 
@@ -54,7 +54,7 @@ export const acceptPostAt = (api: DiscourseApiConfiguration) => {
       Effect.flatMap(jsonBody),
       Effect.map((x) => decodeOperationSuccessResponse(x)),
       Effect.flatMap((pr) =>
-        PR.isSuccess(pr) ? Effect.succeed(pr.right) : Effect.fail(pr.left[0])
+        Either.isRight(pr) ? Effect.succeed(pr.right) : Effect.fail(pr.left)
       )
     );
   };

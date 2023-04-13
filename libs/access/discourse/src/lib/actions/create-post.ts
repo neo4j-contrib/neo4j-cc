@@ -27,9 +27,9 @@ export const NewDiscourseTopic = S.struct({
   tags: S.optional(S.array(S.string)),
 });
 
-export interface NewDiscourseTopic extends S.Infer<typeof NewDiscourseTopic> {}
+export interface NewDiscourseTopic extends S.To<typeof NewDiscourseTopic> {}
 
-export const decodeNewDiscourseTopic = P.decode(NewDiscourseTopic);
+export const decodeNewDiscourseTopic = S.parseEither<NewDiscourseTopic,NewDiscourseTopic>(NewDiscourseTopic);
 
 export const isDiscourseTopic = P.is(NewDiscourseTopic);
 
@@ -40,9 +40,9 @@ export const NewDiscoursePost = S.struct({
   reply_to_post_number: S.optional(S.number), // post number replied to
 });
 
-export interface NewDiscoursePost extends S.Infer<typeof NewDiscoursePost> {}
+export interface NewDiscoursePost extends S.To<typeof NewDiscoursePost> {}
 
-export const decodeNewDiscoursePost = P.decode(NewDiscoursePost);
+export const decodeNewDiscoursePost = P.parseEither<NewDiscoursePost,NewDiscoursePost>(NewDiscoursePost);
 
 export const isNewDiscoursePost = P.is(NewDiscoursePost);
 

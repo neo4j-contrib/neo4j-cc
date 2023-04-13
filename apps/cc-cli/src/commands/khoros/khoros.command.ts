@@ -6,7 +6,8 @@ import {
   Chunk,
   Option,
   Duration,
-  ParseResult as PR
+  ParseResult as PR,
+  Either
 } from '@neo4j-cc/prelude';
 
 import { Argv, CommandModule } from 'yargs';
@@ -20,7 +21,7 @@ import {
   KhorosAuthor,
   KhorosKudo,
   QueryASingleCollection,
-  decodeAuthor,
+  parseAuthor,
 } from '@neo4j-cc/access-khoros';
 import {
   FileSystemError,
@@ -133,9 +134,9 @@ const dropMessageProperty = (kudo: KhorosKudo) => ({
 const enrichMessage = (message: Item) =>
   pipe(
     Effect.Do(),
-    Effect.bind('khoros', () => Effect.service(KhorosService)),
+    Effect.bind('khoros', () => KhorosService),
     Effect.bind('details', ({ khoros }) =>
-      Effect.struct({
+      Effect.all({
         tags: khoros.getTagsForMessage(message.id),
         labels: khoros.getLabelsForMessage(message.id),
         custom_tags: khoros.getCustomTagsForMessage(message.id),
@@ -151,7 +152,7 @@ const enrichMessage = (message: Item) =>
 
 const writeEnrichedMessagesOnDate = (day: Date, messages: Chunk.Chunk<Item>) =>
   pipe(
-    Effect.service(FileSystemService),
+    FileSystemService,
     Effect.flatMap((fs) =>
       pipe(
         messages,
@@ -206,7 +207,7 @@ const pathForLabelsOf = (message: Item) =>
 
 const writeUser = (user: KhorosAuthor) =>
   pipe(
-    Effect.service(FileSystemService), // like declaring that `FileSystemService` is required in the environment
+    FileSystemService, // like declaring that `FileSystemService` is required in the environment
     Effect.flatMap(({ write }) =>
       write({ path: pathForUser(user), content: JSON.stringify(user) })
     ) // use the `FileSystemService.write()` function, ignoring void result
@@ -219,9 +220,9 @@ const writeAllUsers = ({ khoros }: SubcommandArgs) =>
       Effect.forEach((userIdItem) =>
         pipe(
           khoros.getUserById({ id: userIdItem.id }),
-          Effect.map(decodeAuthor),
+          Effect.map(parseAuthor),
           Effect.flatMap((pr) =>
-            PR.isSuccess(pr)
+            Either.isRight(pr)
               ? Effect.succeed(pr.right)
               : Effect.fail(pr.left[0])
           ),
@@ -235,7 +236,7 @@ const writeAllUsers = ({ khoros }: SubcommandArgs) =>
 
 const getMessageAttachments = (message: Item) =>
   pipe(
-    Effect.service(KhorosService),
+    KhorosService,
     Effect.flatMap((khoros) =>
       khoros.query<QueryASingleCollection>({ q: message.attachments.query })
     ),
@@ -246,7 +247,7 @@ const getMessageAttachments = (message: Item) =>
 
 const readAttachment = (attachment: Item) =>
   pipe(
-    Effect.service(HttpService), // like declaring that `HttpService` is required in the environment
+    HttpService, // like declaring that `HttpService` is required in the environment
     Effect.flatMap((http) =>
       http.request(attachment.url, {
         headers: { 'content-type': attachment.content_type },
@@ -257,7 +258,7 @@ const readAttachment = (attachment: Item) =>
 
 const writeAttachment = (attachment: Item, arrayBuffer: ArrayBuffer) =>
   pipe(
-    Effect.service(FileSystemService),
+    FileSystemService,
     Effect.flatMap(({ write }) =>
       write({
         path: pathForAttachment(attachment),
@@ -287,13 +288,13 @@ const exportAttachments = (message: Item) =>
 
 const getMessageTags = (messageId: string) =>
   pipe(
-    Effect.service(KhorosService),
+    KhorosService,
     Effect.flatMap((khoros) => khoros.getTagsForMessage(messageId))
   );
 
 const writeMessageTags = (message: Item, tags: readonly string[]) =>
   pipe(
-    Effect.service(FileSystemService),
+    FileSystemService,
     Effect.flatMap(({ write }) =>
       write({ path: pathForTagsOf(message), content: tags })
     ),
@@ -348,8 +349,8 @@ const doCommand = (
 > => {
   return pipe(
     Effect.Do(),
-    Effect.bind('khoros', () => Effect.service(KhorosService)),
-    Effect.bind('fs', () => Effect.service(FileSystemService)),
+    Effect.bind('khoros', () => KhorosService),
+    Effect.bind('fs', () => FileSystemService),
     Effect.bind(
       'response',
       subcommands(argv)[argv.collection as CollectionName]

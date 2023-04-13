@@ -4,8 +4,8 @@ import { jsonBody, request } from '@neo4j-cc/access-http';
 
 import DiscourseSSO from 'discourse-sso';
 import { DiscourseApiConfiguration } from '../data-access-discourse';
-import { Effect, pipe, Schema as S, Parser as P, ParseResult as PR } from '@neo4j-cc/prelude';
-import { decodePrivateUser } from '../discourse-schemas';
+import { Effect, pipe, Schema as S, Parser as P, ParseResult as PR, Either } from '@neo4j-cc/prelude';
+import { parsePrivateUser } from '../discourse-schemas';
 
 export const SsoUserDetails = S.struct({
   name: S.string,
@@ -15,9 +15,9 @@ export const SsoUserDetails = S.struct({
   require_activation: S.optional(S.boolean),
 });
 
-export interface SsoUserDetails extends S.Infer<typeof SsoUserDetails> {}
+export interface SsoUserDetails extends S.To<typeof SsoUserDetails> {}
 
-export const decodeSsoUserDetails = P.decode(SsoUserDetails);
+export const parseSsoUserDetails = S.parseEither(SsoUserDetails);
 
 export const isSsoUserDetails = P.is(SsoUserDetails);
 
@@ -69,11 +69,11 @@ export const createOrUpdateSsoUserAt = (api: DiscourseApiConfiguration) => {
       // Effect.catchTag("HttpError", (error) => ((error.response.status === 401)) || (error.response.status === 403) || (error.response.status === 422) )
       //   ? pipe()
       Effect.flatMap(jsonBody),
-      Effect.map(decodePrivateUser),
+      Effect.map(parsePrivateUser),
       Effect.flatMap((parsedUser) =>
-        PR.isSuccess(parsedUser)
+        Either.isRight(parsedUser)
           ? Effect.succeed(parsedUser.right)
-          : Effect.fail(parsedUser.left[0])
+          : Effect.fail(parsedUser.left)
       )
     );
   };

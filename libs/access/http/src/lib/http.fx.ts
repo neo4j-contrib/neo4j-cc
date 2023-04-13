@@ -7,6 +7,7 @@ import {
   Either,
   Duration,
   Schedule,
+  Layer
 } from '@neo4j-cc/prelude';
 import {
   FetchError,
@@ -28,17 +29,12 @@ export interface HttpService {
 
 export const HttpService = Context.Tag<HttpService>();
 
-const defaultRetrySchedule = pipe(
+export const defaultRetrySchedule = pipe(
   Schedule.exponential(Duration.millis(10), 2.0),
   Schedule.either(Schedule.spaced(Duration.seconds(1))),
   Schedule.compose(Schedule.elapsed()),
   Schedule.whileOutput(Duration.lessThanOrEqualTo(Duration.seconds(30)))
 );
 
-export const makeHttpService = pipe(
-  Effect.Do(),
-  Effect.bindValue('request', () => request),
-  Effect.bindValue('defaultRetrySchedule', () => defaultRetrySchedule)
-);
 
-export const LiveHttpService = Effect.toLayer(HttpService)(makeHttpService);
+export const LiveHttpService = Layer.succeed(HttpService, { request });

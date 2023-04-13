@@ -29,6 +29,12 @@
       }
     },
     "test": {
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "libs/access/khoros/jest.config.ts"
+      }
+    },
+    "vtest": {
       "executor": "@nrwl/vite:test",
       "outputs": ["{workspaceRoot}/coverage/libs/access/khoros"],
       "options": {

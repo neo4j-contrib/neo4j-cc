@@ -1,4 +1,4 @@
-import { Brand } from '@tsplus/runtime/brand';
+import { Brand } from '@neo4j-cc/prelude';
 
 export const liqlCollectionNames = ['messages', 'attachments', 'users'];
 
@@ -8,19 +8,19 @@ export type LiQuery = {
   query: string;
 };
 
-export type AbsoluteURL = Brand<string>;
+export type AbsoluteURL = string & Brand.Brand<"AbsoluteURL">;
 
-export type RelativeURL = Brand<string>;
+export type RelativeURL = string & Brand.Brand<"RelativeURL">;
 
-export type EmailAddress = Brand<string>;
+export type EmailAddress = string & Brand.Brand<"EmailAddress">;
 
-export type LiDateTime = Brand<string>;
+export type LiDateTime = string & Brand.Brand<"LiDateTime">;
 
-export type LiDate = Brand<string>;
+export type LiDate = string & Brand.Brand<"LiDate">;
 
-export type RawHTML = Brand<string>;
+export type RawHTML = string & Brand.Brand<"RawHTML">;
 
-export type LiModerationStatus = Brand<string>;
+export type LiModerationStatus = string & Brand.Brand<"LiModerationStatus">;
 
 /**
  * Used to lazily allow anything until a correct

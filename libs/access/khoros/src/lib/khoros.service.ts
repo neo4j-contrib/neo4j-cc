@@ -123,7 +123,7 @@ export interface KhorosService {
   ) => Effect.Effect<never, FetchError | KhorosError, readonly string[]>;
 }
 
-export const KhorosService: Context.Tag<KhorosService> =
+export const KhorosService =
   Context.Tag<KhorosService>();
 
 // export const requestEffect = <RequestArgs, RequestResult>(f:(args:RequestArgs) => Promise<RequestResult>, args:RequestArgs) => {

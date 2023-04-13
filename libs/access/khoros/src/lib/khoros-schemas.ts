@@ -1,4 +1,4 @@
-import { pipe, Chunk, ReadonlyArray, Schema as S, Parser as P, Order, Equivalence } from '@neo4j-cc/prelude';
+import { pipe, Chunk, ReadonlyArray, Either, Schema as S, Parser as P, Order, Equivalence, ParseError } from '@neo4j-cc/prelude';
 
 /* eslint-disable @typescript-eslint/no-empty-interface */
 
@@ -76,9 +76,11 @@ export const KhorosAuthor = S.struct({
   rank: KhorosRank,
 });
 
-export interface KhorosAuthor extends S.Infer<typeof KhorosAuthor> {}
+export interface KhorosAuthor extends S.To<typeof KhorosAuthor> {}
 
-export const decodeAuthor = P.decode<KhorosAuthor>(KhorosAuthor);
+export const parseAuthor = S.parseEither<KhorosAuthor, KhorosAuthor>(KhorosAuthor)
+
+parseAuthor({})
 
 export const KhorosBoardReference = S.struct({
   type: S.literal('board'),
@@ -150,9 +152,9 @@ export const KhorosMessage = S.struct({
   ),
 });
 
-export interface KhorosMessage extends S.Infer<typeof KhorosMessage> {}
+export interface KhorosMessage extends S.To<typeof KhorosMessage> {}
 
-export const decodeMessage = P.decode<KhorosMessage>(KhorosMessage);
+export const parseMessage = P.parseEither<KhorosMessage, KhorosMessage>(KhorosMessage);
 
 export const equivalentBySsoId = Equivalence.make<KhorosAuthor>(
   (self, that) => that.sso_id === self.sso_id
@@ -206,9 +208,9 @@ export const KhorosBoard = S.struct({
   comments_enabled: S.optional(S.boolean),
 });
 
-export interface KhorosBoard extends S.Infer<typeof KhorosBoard> {}
+export interface KhorosBoard extends S.To<typeof KhorosBoard> {}
 
-export const decodeBoard = P.decode<KhorosBoard>(KhorosBoard);
+export const parseBoard = P.parseEither<KhorosBoard, KhorosBoard>(KhorosBoard);
 
 export const compareNumbers = (that: number) => (self: number) =>
   that < self ? 1 : that > self ? -1 : 0;
@@ -248,6 +250,6 @@ export const KhorosKudo = S.struct({
   weight: S.number, // 1
 });
 
-export interface KhorosKudo extends S.Infer<typeof KhorosKudo> {}
+export interface KhorosKudo extends S.To<typeof KhorosKudo> {}
 
-export const decodeKudo = P.decode<KhorosKudo>(KhorosKudo);
+export const parseKudo = P.parseEither<KhorosKudo, KhorosKudo>(KhorosKudo);

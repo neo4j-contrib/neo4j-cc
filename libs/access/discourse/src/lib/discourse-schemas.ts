@@ -1,4 +1,4 @@
-import { pipe, Effect, Chunk, Option, Schema as S,  Parser as P, ParseResult as PR, Equivalence} from '@neo4j-cc/prelude';
+import { pipe, Effect, Chunk, Option, Schema as S,  Parser as P, ParseResult as PR, Equivalence, Either} from '@neo4j-cc/prelude';
 
 /* eslint-disable @typescript-eslint/no-empty-interface */
 
@@ -68,12 +68,10 @@ export const DiscoursePublicUserItem = S.struct({
   }),
 });
 export interface DiscoursePublicUserItem
-  extends S.Infer<typeof DiscoursePublicUserItem> {}
+  extends S.To<typeof DiscoursePublicUserItem> {}
 
-export const decodePublicUserItem = (user: unknown) =>
-  P.decode<DiscoursePublicUserItem>(DiscoursePublicUserItem)(user, {
-    isUnexpectedAllowed: true,
-  });
+export const parsePublicUserItem = (user: unknown) =>
+  S.parseEither<DiscoursePublicUserItem, DiscoursePublicUserItem>(DiscoursePublicUserItem)(user);
 
 export const DiscoursePublicUser = S.struct({
   id: S.number,
@@ -105,12 +103,10 @@ export const DiscoursePublicUser = S.struct({
 });
 
 export interface DiscoursePublicUser
-  extends S.Infer<typeof DiscoursePublicUser> {}
+  extends S.To<typeof DiscoursePublicUser> {}
 
-export const decodePublicUser = (user: unknown) =>
-  P.decode<DiscoursePublicUser>(DiscoursePublicUser)(user, {
-    isUnexpectedAllowed: true,
-  });
+export const parsePublicUser = (user: unknown) =>
+  S.parseEither<DiscoursePublicUser,DiscoursePublicUser>(DiscoursePublicUser)(user);
 
 export const DiscoursePrivateUser = S.struct({
   id: S.number, // 19149,
@@ -128,12 +124,10 @@ export const DiscoursePrivateUser = S.struct({
 });
 
 export interface DiscoursePrivateUser
-  extends S.Infer<typeof DiscoursePrivateUser> {}
+  extends S.To<typeof DiscoursePrivateUser> {}
 
-export const decodePrivateUser = (i: unknown) =>
-  P.decode<DiscoursePrivateUser>(DiscoursePrivateUser)(i, {
-    isUnexpectedAllowed: true,
-  });
+export const parsePrivateUser = (i: unknown) =>
+  S.parseEither<DiscoursePrivateUser,DiscoursePrivateUser>(DiscoursePrivateUser)(i);
 
 export const equivalentByExternalId = Equivalence.make<DiscoursePrivateUser>(
   (self, that) =>
@@ -183,9 +177,9 @@ export const DiscourseCategory = S.struct({
   subcategory_list: S.optional(S.array(S.any)),
 });
 
-export interface DiscourseCategory extends S.Infer<typeof DiscourseCategory> {}
+export interface DiscourseCategory extends S.To<typeof DiscourseCategory> {}
 
-export const decodeCategory = P.decode<DiscourseCategory>(DiscourseCategory);
+export const parseCategory = S.parseEither<DiscourseCategory,DiscourseCategory>(DiscourseCategory);
 
 export const extractCategoriesFrom = (
   response: ListCategoriesResponseContent
@@ -195,15 +189,15 @@ export const extractCategoriesFrom = (
     Effect.forEach((category) =>
       pipe(
         category,
-        decodeCategory,
+        parseCategory,
         (pr) => {
-          if (PR.isFailure(pr)) {
+          if (Either.isLeft(pr)) {
             console.log('failed to parse category', JSON.stringify(category));
           }
           return pr;
         },
         (pr) =>
-          PR.isSuccess(pr) ? Effect.succeed(pr.right) : Effect.fail(pr.left[0]),
+          Either.isRight(pr) ? Effect.succeed(pr.right) : Effect.fail(pr.left),
         (x) => x as Effect.Effect<never, PR.ParseError, DiscourseCategory>,
         Effect.map((parsedCategory) =>
           pipe(

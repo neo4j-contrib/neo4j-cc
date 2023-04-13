@@ -8,7 +8,8 @@ import {
   Schedule,
   Duration,
   ParseError,
-  ParseResult
+  ParseResult,
+  Either
 } from '@neo4j-cc/prelude';
 import {
   FetchError,
@@ -44,15 +45,15 @@ import {
   NewDiscourseTopic,
 } from './actions/create-post';
 import {
-  decodePublicUser,
-  decodePrivateUser,
+  parsePublicUser,
+  parsePrivateUser,
   DiscoursePublicUser,
-  decodeCategory,
+  parseCategory,
   DiscourseCategory,
   extractCategoriesFrom,
   DiscoursePrivateUser,
   DiscoursePublicUserItem,
-  decodePublicUserItem,
+  parsePublicUserItem,
 } from './discourse-schemas';
 
 import {
@@ -160,8 +161,7 @@ export interface DiscourseService {
   ) => Effect.Effect<never, DiscourseApiError, DiscoursePublicUser>;
 }
 
-export const DiscourseService: Context.Tag<DiscourseService> =
-  Context.Tag<DiscourseService>();
+export const DiscourseService = Context.Tag<DiscourseService>();
 
 // const effectfulRequest = <ArgRecord, RequestResult>(fetch:(input: ArgRecord, init: RequestInit | undefined) => Promise<RequestResult>) => {
 //   const go = (input:ArgRecord) => {
@@ -271,12 +271,12 @@ const configureDiscourseService = (
         ),
         Effect.map((response) => response.directory_items),
         Effect.map(Chunk.fromIterable),
-        Effect.map(Chunk.map(decodePublicUserItem)),
+        Effect.map(Chunk.map(parsePublicUserItem)),
         Effect.flatMap(
           Effect.forEach((pr) =>
-            ParseResult.isSuccess(pr)
+            Either.isRight(pr)
               ? Effect.succeed(pr.right)
-              : Effect.fail(pr.left[0])
+              : Effect.fail(pr.left)
           )
         )
       ),
@@ -298,11 +298,11 @@ const configureDiscourseService = (
         }),
         // Effect.tap( (response) => {console.log(response.user); return Effect.unit() }),
         // Effect.map((response) => decodeMinimalUser(response.user)),
-        Effect.map((response) => decodePublicUser(response.user)),
+        Effect.map((response) => parsePublicUser(response.user)),
         Effect.flatMap((parsedUser) =>
-          ParseResult.isSuccess(parsedUser)
+          Either.isRight(parsedUser)
             ? Effect.succeed(parsedUser.right)
-            : Effect.fail(parsedUser.left[0])
+            : Effect.fail(parsedUser.left)
         )
         // Effect.flatMap( (response) => decodeUser(response.user)),
       ),
@@ -312,11 +312,11 @@ const configureDiscourseService = (
           discourse.path('/admin/users/{id}.json').method('get').create(),
           { id: userid }
         ),
-        Effect.map(decodePrivateUser),
+        Effect.map(parsePrivateUser),
         Effect.flatMap((parsedUser) =>
-          ParseResult.isSuccess(parsedUser)
+          Either.isRight(parsedUser)
             ? Effect.succeed(parsedUser.right)
-            : Effect.fail(parsedUser.left[0])
+            : Effect.fail(parsedUser.left)
         )
       ),
     getUserByExternalId: (
@@ -331,11 +331,11 @@ const configureDiscourseService = (
           { external_id }
         ),
         // Effect.tap( (response) => {console.log(response.user); return Effect.unit() }),
-        Effect.map((response) => decodePublicUser(response.user)),
+        Effect.map((response) => parsePublicUser(response.user)),
         Effect.flatMap((parsedUser) =>
-          ParseResult.isSuccess(parsedUser)
+          Either.isRight(parsedUser)
             ? Effect.succeed(parsedUser.right)
-            : Effect.fail(parsedUser.left[0])
+            : Effect.fail(parsedUser.left)
         )
         // Effect.flatMap( (response) => decodeUser(response.user)),
       ),
